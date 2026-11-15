@@ -299,6 +299,51 @@
   .time .ampm{font-weight:300!important;letter-spacing:.04em!important}
   .date em{font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic;font-weight:400!important}
   .panel-title,.date,.spot-name,.business-feature .hd,.nfl-name,.secondary-title{letter-spacing:-.01em!important;font-weight:300!important}
+
+  /* NFL card is tappable / remote-focusable; opens the live scores overlay. */
+  .nfl-panel{cursor:pointer}
+  .nfl-panel:focus{outline:none}
+  .nfl-panel:focus-visible,.nfl-panel:focus{
+    box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
+  }
+  .nfl-overlay{position:absolute;inset:0;z-index:30;display:flex;align-items:stretch;justify-content:center;
+    padding:74px 120px 54px}
+  .nfl-overlay[hidden]{display:none!important}
+  .nfl-overlay-backdrop{position:absolute;inset:0;background:rgba(8,9,11,.62)}
+  .nfl-overlay-sheet{position:relative;z-index:1;width:100%;min-width:0;min-height:0;display:flex;flex-direction:column;
+    padding:48px 56px 40px;border-radius:22px;border:1px solid var(--hair);background:rgba(16,17,20,.96);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.028),0 24px 80px rgba(0,0,0,.35);backdrop-filter:blur(8px)}
+  .nfl-overlay-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:32px;flex:none}
+  .nfl-overlay-sheet .panel-title{font-size:66px}
+  .nfl-overlay-sheet .panel-deck{font-size:26px}
+  .nfl-overlay-close{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:18px 32px;border-radius:12px;
+    border:1px solid var(--hair);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;
+    font:500 26px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+  .nfl-overlay-close:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
+  .nfl-scoreboard{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-auto-rows:minmax(0,1fr);gap:20px 28px;align-content:stretch}
+  .nfl-scoreboard.sb-msg{display:flex;align-items:center;justify-content:center;color:var(--muted);
+    font-size:36px;letter-spacing:.04em}
+  .sb-game{position:relative;display:flex;flex-direction:column;justify-content:center;gap:12px;min-width:0;
+    padding:22px 32px 20px 36px;border-radius:16px;border:1px solid var(--hair);background:var(--panel)}
+  .sb-game.live{border-color:rgba(201,168,106,.42);box-shadow:inset 4px 0 0 var(--gold);padding-left:40px}
+  .sb-team{display:grid;grid-template-columns:72px minmax(0,1fr) auto auto;align-items:center;gap:18px;min-width:0}
+  .sb-logo{width:64px;height:64px;object-fit:contain;flex:none}
+  .sb-logo-fallback{width:64px;height:64px;display:none;align-items:center;justify-content:center;
+    border-radius:10px;background:rgba(255,255,255,.05);color:var(--muted);font-size:22px;letter-spacing:.06em;font-weight:500}
+  .sb-team.no-logo .sb-logo{display:none}
+  .sb-team.no-logo .sb-logo-fallback{display:flex}
+  .sb-name{font:300 42px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
+    white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .sb-abbr{font-size:26px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
+  .sb-score{font:300 56px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
+    font-feature-settings:"tnum" 1,"lnum" 1;min-width:1.55em;text-align:right}
+  .sb-score.empty{color:var(--soft);font-size:44px}
+  .sb-team.loser .sb-name,.sb-team.loser .sb-abbr,.sb-team.loser .sb-score{color:var(--soft)}
+  .sb-meta{display:flex;align-items:center;gap:16px;min-width:0;color:var(--muted);
+    font-size:24px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding-left:90px}
+  .sb-meta .live-tag{color:var(--gold)}
+  .sb-status{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -366,7 +411,7 @@
   </main>
 
   <section class="lower" aria-label="News and market board">
-    <section class="panel nfl-panel" aria-label="NFL standings for Pittsburgh Steelers, Minnesota Vikings, and Green Bay Packers, sample data">
+    <section class="panel nfl-panel" id="nfl-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="nfl-overlay" aria-expanded="false" title="Open live scores" aria-label="NFL standings for Pittsburgh Steelers, Minnesota Vikings, and Green Bay Packers, sample data">
       <div class="panel-head"><div><div class="panel-title">NFL <span style="color:var(--gold)">·</span> Standings</div><div class="panel-deck" id="nfl-deck">Three teams · sample data</div></div><span class="panel-number">03 / NFL</span></div>
       <div id="nfl" aria-label="Sample NFL team records, division ranks, streaks and next games"></div>
       <div class="nfl-foot"><span id="nfl-foot">Records &amp; fixtures are illustrative</span><span class="line"></span></div>
@@ -387,6 +432,20 @@
     <span class="mock-label" id="credit-label">Sample data · mockup</span>
     <div class="tape-viewport"><div class="tape-track" id="tape-track"></div></div>
   </footer>
+
+  <div id="nfl-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop" id="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="nfl-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="nfl-overlay-title">NFL <span style="color:var(--gold)">·</span> Scores</div>
+          <div class="panel-deck" id="nfl-overlay-deck">This week · ESPN</div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="nfl-overlay-close" aria-label="Close scores">Close</button>
+      </div>
+      <div id="nfl-scoreboard" class="nfl-scoreboard sb-msg">Loading scores…</div>
+    </div>
+  </div>
 </div>
 <script>
 /* ------------------------------------------------------------------
@@ -765,6 +824,139 @@ refreshAll();
 window.setInterval(refreshAll,POLL_MS);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape()); // re-measure the tape with final fonts
 window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
+
+const ESPN_NFL_SB='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
+let nflOverlayOpen=false,nflSbTimer=null;
+function scoreboardTeam(c){
+  const t=c.team||{};
+  const rec=(c.records||[]).find(r=>r.type==='total'||r.name==='overall');
+  return {name:t.displayName||t.name||'',short:t.shortDisplayName||t.name||'',abbrev:t.abbreviation||'',
+    score:c.score==null||c.score===''?null:String(c.score),logo:t.logo||t.logos?.[0]?.href||'',
+    record:rec?.summary||'',winner:!!c.winner,color:t.color?('#'+String(t.color).replace(/^#/,'')):''};
+}
+function scoreboardStatus(ev,comp){
+  const st=comp?.status||ev.status||{};
+  const type=st.type||{};
+  const state=type.state||'pre';
+  if(state==='post'){const d=type.shortDetail||type.description||'Final';return /final/i.test(d)?d:'Final';}
+  if(state==='in'){
+    const name=type.name||'',detail=type.shortDetail||type.detail||'';
+    if(/HALFTIME/i.test(name)||/halftime/i.test(detail))return 'Halftime';
+    if(/END_PERIOD/i.test(name))return (st.period===2||/half/i.test(detail))?'Halftime':(st.period>4?'End OT':'End Q'+st.period);
+    const clock=st.displayClock&&st.displayClock!=='0:00'?st.displayClock:'';
+    const period=st.period||0;
+    if(period>4)return clock?('OT '+clock):(detail||'OT');
+    if(period>=1)return clock?('Q'+period+' '+clock):(detail||('Q'+period));
+    return detail||'Live';
+  }
+  const when=new Date(comp?.date||ev.date);
+  if(isNaN(+when))return type.shortDetail||'Scheduled';
+  const day=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(when);
+  return day+' '+new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(when)+' ET';
+}
+function parseNflScoreboard(raw){
+  const games=(raw.events||[]).map(ev=>{
+    const comp=ev.competitions?.[0]||{};
+    const st=comp.status||ev.status||{};
+    const type=st.type||{};
+    const away=(comp.competitors||[]).find(c=>c.homeAway==='away');
+    const home=(comp.competitors||[]).find(c=>c.homeAway==='home');
+    if(!away||!home)return null;
+    return {id:String(ev.id||comp.id||''),start:comp.date||ev.date,state:type.state||'pre',status:scoreboardStatus(ev,comp),
+      period:st.period||0,clock:st.displayClock||'',completed:!!type.completed,away:scoreboardTeam(away),home:scoreboardTeam(home)};
+  }).filter(Boolean);
+  const order={in:0,pre:1,post:2};
+  games.sort((a,b)=>(order[a.state]??9)-(order[b.state]??9)||new Date(a.start)-new Date(b.start)||String(a.id).localeCompare(String(b.id)));
+  return {provider:'ESPN',week:raw.week?.number??null,season:raw.season?.year??null,
+    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games};
+}
+async function loadNflScoreboard(){
+  try{
+    const r=await fetch(ESPN_NFL_SB+'?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    const parsed=parseNflScoreboard(await r.json());
+    if(!parsed.games.length&&parsed.week==null)throw new Error('empty scoreboard');
+    return {source:'espn',data:parsed,asOf:new Date().toISOString()};
+  }catch(e){
+    let fb=LIVE_DATA?.nflScoreboard;
+    try{
+      const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+      if(r.ok){const d=await r.json();if(d.nflScoreboard?.games){fb=d.nflScoreboard;if(LIVE_DATA)LIVE_DATA.nflScoreboard=fb;}}
+    }catch(_){}
+    if(fb?.games)return {source:'data.json',data:fb,asOf:fb.asOf,fallback:true,error:e};
+    throw e;
+  }
+}
+function renderNflScoreboard(board,meta){
+  const box=$('nfl-scoreboard');
+  const games=board?.games||[];
+  const week=board?.week!=null?`Week ${board.week}`:'This week';
+  const src=meta?.source==='data.json'?'ESPN via saved data':'ESPN';
+  const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
+  const bye=board?.byes?.length?` · Bye ${board.byes.join(', ')}`:'';
+  $('nfl-overlay-deck').textContent=`${week} · ${src}${as}${bye}`;
+  if(!games.length){box.className='nfl-scoreboard sb-msg';box.textContent='No games this week';return;}
+  box.className='nfl-scoreboard';
+  const teamRow=(t,g)=>{
+    const loser=(g.state==='post'||g.completed)&&!t.winner&&(g.away.winner||g.home.winner);
+    const hide=g.state==='pre'||t.score==null||t.score==='';
+    const score=hide?'—':esc(t.score);
+    const empty=hide?' empty':'';
+    const logo=t.logo?`<img class="sb-logo" src="${esc(t.logo)}" alt="" onerror="this.parentNode.classList.add('no-logo')">`:'';
+    return `<div class="sb-team${loser?' loser':''}${t.logo?'':' no-logo'}">${logo}<span class="sb-logo-fallback">${esc(t.abbrev||'')}</span><span class="sb-name">${esc(t.name||t.short||'')}</span><span class="sb-abbr">${esc(t.abbrev||'')}</span><span class="sb-score${empty}">${score}</span></div>`;
+  };
+  box.innerHTML=games.map(g=>{
+    const live=g.state==='in';
+    const done=g.state==='post'||g.completed;
+    const tag=live?`<span class="live-tag">Live</span>`:'';
+    return `<article class="sb-game${live?' live':''}" aria-label="${esc((g.away?.abbrev||'')+' at '+(g.home?.abbrev||'')+', '+(g.status||''))}">${teamRow(g.away,g)}${teamRow(g.home,g)}<div class="sb-meta">${tag}<span class="sb-status">${esc(g.status||'')}</span></div></article>`;
+  }).join('');
+}
+async function refreshNflOverlay(){
+  if(!nflOverlayOpen)return;
+  try{const res=await loadNflScoreboard();renderNflScoreboard(res.data,res);}
+  catch(e){
+    console.warn('nfl scoreboard',e);
+    const box=$('nfl-scoreboard');
+    if(!box.querySelector('.sb-game')){box.className='nfl-scoreboard sb-msg';box.textContent='Scores unavailable right now';}
+    $('nfl-overlay-deck').textContent='This week · ESPN · unavailable';
+  }
+}
+function openNflOverlay(){
+  if(nflOverlayOpen)return;
+  nflOverlayOpen=true;
+  const ov=$('nfl-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  $('nfl-card').setAttribute('aria-expanded','true');
+  $('nfl-scoreboard').className='nfl-scoreboard sb-msg';
+  $('nfl-scoreboard').textContent='Loading scores…';
+  $('nfl-overlay-deck').textContent='This week · ESPN';
+  refreshNflOverlay();
+  clearInterval(nflSbTimer);
+  nflSbTimer=setInterval(refreshNflOverlay,60000);
+  const close=$('nfl-overlay-close');
+  if(close)close.focus();
+}
+function closeNflOverlay(){
+  if(!nflOverlayOpen)return;
+  nflOverlayOpen=false;
+  clearInterval(nflSbTimer);nflSbTimer=null;
+  const ov=$('nfl-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+  $('nfl-card').setAttribute('aria-expanded','false');
+  $('nfl-card').focus();
+}
+$('nfl-card').addEventListener('click',openNflOverlay);
+$('nfl-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeNflOverlay();});
+$('nfl-overlay-backdrop').addEventListener('click',closeNflOverlay);
+$('nfl-overlay').addEventListener('click',e=>{if(e.target===$('nfl-overlay'))closeNflOverlay();});
+document.addEventListener('keydown',e=>{
+  const code=e.keyCode||e.which;
+  const isEsc=code===27||code===10009||e.key==='Escape'||e.key==='XF86Back';
+  const isEnter=code===13||e.key==='Enter';
+  if(isEsc&&nflOverlayOpen){e.preventDefault();closeNflOverlay();return;}
+  if(isEnter&&!nflOverlayOpen&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();}
+});
 
 window.setInterval(tick,1000);
 window.setInterval(rotateSpotlight,15000);

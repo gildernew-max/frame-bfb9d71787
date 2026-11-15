@@ -207,6 +207,107 @@ async function fetchNFL() {
   return { provider: 'ESPN', teams: rows };
 }
 
+// ---------- NFL scoreboard (ESPN public JSON; fallback for the live overlay) ----------
+function scoreboardTeam(c) {
+  const t = c.team || {};
+  const rec = (c.records || []).find(r => r.type === 'total' || r.name === 'overall');
+  const color = t.color ? `#${String(t.color).replace(/^#/, '')}` : '';
+  const logo = t.logo || t.logos?.[0]?.href || '';
+  return {
+    name: t.displayName || t.name || '',
+    short: t.shortDisplayName || t.name || '',
+    abbrev: t.abbreviation || '',
+    score: c.score == null || c.score === '' ? null : String(c.score),
+    logo,
+    record: rec?.summary || '',
+    winner: !!c.winner,
+    color
+  };
+}
+function scoreboardStatus(ev, comp, etFmt) {
+  const st = comp?.status || ev.status || {};
+  const type = st.type || {};
+  const state = type.state || 'pre';
+  if (state === 'post') {
+    const d = type.shortDetail || type.description || 'Final';
+    return /final/i.test(d) ? d : 'Final';
+  }
+  if (state === 'in') {
+    const name = type.name || '';
+    const detail = type.shortDetail || type.detail || '';
+    if (/HALFTIME/i.test(name) || /halftime/i.test(detail)) return 'Halftime';
+    if (/END_PERIOD/i.test(name)) {
+      if (st.period === 2 || /half/i.test(detail)) return 'Halftime';
+      return st.period > 4 ? 'End OT' : `End Q${st.period}`;
+    }
+    const clock = st.displayClock && st.displayClock !== '0:00' ? st.displayClock : '';
+    const period = st.period || 0;
+    if (period > 4) return clock ? `OT ${clock}` : (detail || 'OT');
+    if (period >= 1) return clock ? `Q${period} ${clock}` : (detail || `Q${period}`);
+    return detail || 'Live';
+  }
+  const when = new Date(comp?.date || ev.date);
+  if (Number.isNaN(+when)) return type.shortDetail || 'Scheduled';
+  return etFmt(when);
+}
+export function parseNflScoreboard(raw) {
+  const etFmt = when => {
+    const day = new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short' }).format(when);
+    const time = new Intl.DateTimeFormat('en-US', { timeZone: TZ, hour: 'numeric', minute: '2-digit' }).format(when);
+    return `${day} ${time} ET`;
+  };
+  const games = (raw.events || []).map(ev => {
+    const comp = ev.competitions?.[0] || {};
+    const st = comp.status || ev.status || {};
+    const type = st.type || {};
+    const away = (comp.competitors || []).find(c => c.homeAway === 'away');
+    const home = (comp.competitors || []).find(c => c.homeAway === 'home');
+    if (!away || !home) return null;
+    return {
+      id: String(ev.id || comp.id || ''),
+      start: comp.date || ev.date,
+      state: type.state || 'pre',
+      status: scoreboardStatus(ev, comp, etFmt),
+      period: st.period || 0,
+      clock: st.displayClock || '',
+      completed: !!type.completed,
+      away: scoreboardTeam(away),
+      home: scoreboardTeam(home)
+    };
+  }).filter(Boolean);
+  const order = { in: 0, pre: 1, post: 2 };
+  games.sort((a, b) => (order[a.state] ?? 9) - (order[b.state] ?? 9) || new Date(a.start) - new Date(b.start) || String(a.id).localeCompare(String(b.id)));
+  return {
+    provider: 'ESPN',
+    week: raw.week?.number ?? null,
+    season: raw.season?.year ?? null,
+    byes: (raw.week?.teamsOnBye || []).map(t => t.abbreviation).filter(Boolean),
+    games
+  };
+}
+async function fetchNFLScoreboard() {
+  const raw = await getJSON('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard');
+  const parsed = parseNflScoreboard(raw);
+  if (!parsed.games.length && !parsed.week) throw new Error('ESPN scoreboard empty');
+  return parsed;
+}
+function scoreboardDue(sec, now, et) {
+  if (!sec || !sec.asOf) return true;
+  if (sec.lastError && ageMin(sec.lastAttempt, now) < 50) return false;
+  const games = sec.games || [];
+  const liveOrSoon = games.some(g => {
+    if (g.state === 'in') return true;
+    if (g.state !== 'pre') return false;
+    const start = new Date(g.start).getTime();
+    return Number.isFinite(start) && start - now <= 30 * MIN && start + 4 * 60 * MIN >= +now;
+  });
+  const window = (et.weekday === 'Sun' && et.mins >= 9 * 60)
+    || (['Thu', 'Mon'].includes(et.weekday) && et.mins >= 18 * 60)
+    || (et.weekday === 'Sat' && et.mins >= 12 * 60);
+  if (liveOrSoon || window) return ageMin(sec.asOf, now) >= 12;
+  return ageMin(sec.asOf, now) >= 6 * 60;
+}
+
 // ---------- headlines (BBC News + NPR RSS) ----------
 const FEEDS = [
   { src: 'BBC News', url: 'https://feeds.bbci.co.uk/news/business/rss.xml' },
@@ -549,6 +650,11 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     ran.push('nfl');
     try { out.nfl = ok(await fetchNFL(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e) { out.nfl = { ...(prev.nfl || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
+  }
+  if (force || scoreboardDue(prev.nflScoreboard, now, et)) {
+    ran.push('nflScoreboard');
+    try { out.nflScoreboard = ok(await fetchNFLScoreboard(), { asOf: nowIso, lastAttempt: nowIso }); }
+    catch (e) { out.nflScoreboard = { ...(prev.nflScoreboard || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
   }
   if (force || sectionDue(prev.news, now, et, 'hourly')) {
     ran.push('news');
