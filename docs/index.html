@@ -67,7 +67,7 @@
     font-size:30px;font-weight:400;white-space:nowrap}
   .market-status .dot{height:12px;width:12px;background:var(--gold);border-radius:50%;opacity:.9}
   .market-status .note{color:var(--soft);font-size:30px;letter-spacing:.12em;text-transform:uppercase;margin-left:12px}
-  .clock-accent{position:absolute;right:64px;bottom:46px;width:114px;height:1px;background:var(--gold);opacity:.4}
+  .clock-accent{position:absolute;right:64px;bottom:46px;width:114px;height:1px;background:var(--gold);opacity:.4;pointer-events:none}
   .clock-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,36%);gap:12px 64px;align-items:stretch}
   .clock-main{display:flex;flex-direction:column;min-width:0}
   #treasury{display:flex;flex-direction:column;min-width:0;min-height:0;justify-content:flex-end;padding:16px 0 18px}
@@ -80,12 +80,16 @@
   .ty-date{font-size:30px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .ty-chg{font-size:30px;color:var(--soft);letter-spacing:.06em;margin-top:7px;white-space:nowrap}
   .ty-chg .up{color:var(--up)}.ty-chg .down{color:var(--down)}
-  .ty-plot{flex:1;min-height:168px;margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr);
-    grid-template-rows:minmax(0,1fr) 40px}
+  .ty-plot{flex:1;min-height:168px;margin-top:14px;position:relative;display:grid;grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr);min-width:0}
   .ty-plot svg{width:100%;height:100%;display:block;grid-column:1;grid-row:1}
-  .ty-x{grid-column:1;grid-row:2;position:relative;color:var(--soft);font-size:30px;letter-spacing:.12em;
-    text-transform:uppercase;font-weight:500}
-  .ty-x span{position:absolute;top:8px;white-space:nowrap}
+  .ty-x{display:none}
+  .year-marks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+  .year-mark{position:absolute;top:0;bottom:0;width:0;border-left:2px dashed rgba(240,237,230,.35);pointer-events:none}
+  .year-mark span{position:absolute;top:4px;left:0;transform:translateX(-50%);font-family:Inter,"SF Pro Display",system-ui,sans-serif;
+    font-size:30px;font-weight:500;line-height:1;color:rgba(240,237,230,.60);white-space:nowrap;
+    font-feature-settings:"tnum" 1,"lnum" 1;pointer-events:none;letter-spacing:-.02em}
+  .year-mark.alt span{top:36px}
 
   /* WEATHER: restrained pictograms, a daylight diagram and forecast miniatures */
   .weather-panel{padding:43px 48px 35px;display:flex;flex-direction:column}
@@ -290,9 +294,15 @@
   .stock-hero .change-pill{font-size:36px;padding:12px 18px}
   .stock-chart-wrap{flex:1;min-height:0;position:relative;border:1px solid var(--hair);border-radius:18px;
     background:var(--panel);padding:28px 28px 12px}
-  .stock-chart-inner{position:absolute;inset:28px 28px 12px;display:flex;flex-direction:column}
-  .stock-chart-plot{flex:1;width:100%;min-height:0;display:block}
-  .stock-chart-x{position:relative;height:48px;flex:none}
+  .stock-chart-inner{position:absolute;inset:28px 28px 12px;display:grid;
+    grid-template-columns:160px minmax(0,1fr);grid-template-rows:minmax(0,1fr) 48px;min-width:0;min-height:0}
+  .stock-chart-y{position:relative;grid-column:1;grid-row:1;min-width:0}
+  .stock-chart-y span{position:absolute;right:16px;font-family:Inter,"SF Pro Display",system-ui,sans-serif;
+    font-size:32px;font-weight:500;line-height:1;color:rgba(240,237,230,.60);white-space:nowrap;
+    pointer-events:none;font-feature-settings:"tnum" 1,"lnum" 1}
+  .stock-chart-plotbox{position:relative;grid-column:2;grid-row:1;min-width:0;min-height:0;overflow:hidden}
+  .stock-chart-plot{width:100%;height:100%;min-height:0;display:block}
+  .stock-chart-x{position:relative;height:48px;grid-column:2;grid-row:2}
   .stock-chart-x span{position:absolute;top:10px;font-family:Inter,"SF Pro Display",system-ui,sans-serif;
     font-size:32px;font-weight:500;line-height:1;color:rgba(240,237,230,.60);white-space:nowrap;pointer-events:none}
   .stock-chart-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
@@ -412,11 +422,12 @@
   .panel-title,.date,.spot-name,.business-feature .hd,.nfl-name,.secondary-title{letter-spacing:-.01em!important;font-weight:300!important}
 
   /* Tappable / remote-focusable cards open a full-stage overlay. */
-  .nfl-panel,.weather-panel,.business-panel{cursor:pointer}
-  .nfl-panel:focus,.weather-panel:focus,.business-panel:focus{outline:none}
+  .nfl-panel,.weather-panel,.business-panel,.clock-panel{cursor:pointer}
+  .nfl-panel:focus,.weather-panel:focus,.business-panel:focus,.clock-panel:focus{outline:none}
   .nfl-panel:focus-visible,.nfl-panel:focus,
   .weather-panel:focus-visible,.weather-panel:focus,
-  .business-panel:focus-visible,.business-panel:focus{
+  .business-panel:focus-visible,.business-panel:focus,
+  .clock-panel:focus-visible,.clock-panel:focus{
     box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
   }
   .nfl-overlay{position:absolute;inset:0;z-index:30;display:flex;align-items:stretch;justify-content:center;
@@ -511,6 +522,44 @@
   #alert-banner[hidden]{display:none!important}
   #alert-banner .kicker{color:var(--gold);font-size:30px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
   #alert-banner .alert-text{min-width:0;overflow:hidden;white-space:nowrap}
+
+  /* WORLD CLOCK: 5×2 city cards, live local times, day/night weather */
+  .wc-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+    grid-template-rows:repeat(2,minmax(0,1fr));gap:24px}
+  .wc-card{position:relative;min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column;
+    padding:28px 30px 22px;border:1px solid var(--hair);border-radius:18px;background:var(--panel)}
+  .wc-card.day{background:linear-gradient(165deg,rgba(201,168,106,.11),rgba(255,255,255,.028) 46%,rgba(16,17,20,.18));
+    border-color:rgba(201,168,106,.22)}
+  .wc-card.night{background:linear-gradient(165deg,rgba(36,48,86,.34),rgba(255,255,255,.02) 48%,rgba(8,10,18,.4));
+    border-color:rgba(111,168,220,.16)}
+  .wc-cue{position:absolute;top:26px;right:26px;width:18px;height:18px;border-radius:50%;pointer-events:none}
+  .wc-card.day .wc-cue{background:var(--gold);box-shadow:0 0 18px rgba(201,168,106,.5)}
+  .wc-card.night .wc-cue{background:transparent;box-shadow:inset -6px 0 0 0 #9BB6D6;opacity:.9}
+  .wc-city{font-size:30px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);
+    line-height:1.25;padding-right:36px;max-width:100%}
+  .wc-time{font:300 96px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;
+    font-feature-settings:"tnum" 1,"lnum" 1;margin-top:14px;white-space:nowrap;color:var(--ink)}
+  .wc-time .colon{color:var(--gold);opacity:.75;padding:0 .02em}
+  .wc-time .ampm{font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;
+    color:var(--muted);margin-left:12px;position:relative;top:-38px}
+  .wc-offset{min-height:42px;margin-top:6px;font-size:36px;font-weight:300;color:var(--soft);letter-spacing:.01em}
+  .wc-now{display:flex;align-items:center;gap:16px;margin-top:20px;min-width:0}
+  .wc-now .wx{width:72px;height:72px;flex:none;filter:drop-shadow(0 0 14px rgba(232,176,75,.08))}
+  .wc-temp{font:300 72px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em;
+    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap}
+  .wc-temp sup{font-size:32px;color:var(--muted);position:relative;top:0}
+  .wc-cond{font-size:44px;font-weight:300;color:var(--muted);min-width:0;line-height:1.2}
+  .wc-hl{margin-top:10px;font-size:36px;font-weight:300;color:var(--muted);white-space:nowrap}
+  .wc-hl b{color:var(--ink);font-weight:400}
+  .wc-days{margin-top:auto;padding-top:18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:10px;border-top:1px solid var(--hair)}
+  .wc-day{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;text-align:center}
+  .wc-day .d{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .wc-day .wx{width:48px;height:48px}
+  .wc-day .hl{font-size:36px;font-weight:300;white-space:nowrap}
+  .wc-day .hl span{color:var(--soft);margin-left:8px}
+  .wc-msg{flex:1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:44px;font-weight:300}
+
 </style>
 </head>
 <body>
@@ -534,7 +583,7 @@
 </svg>
 <div id="stage">
   <main class="top" aria-label="Time and weather">
-    <section class="panel clock-panel" aria-label="Clock">
+    <section class="panel clock-panel" id="clock-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="world-overlay" aria-expanded="false" title="Open world clock" aria-label="Clock, opens world clock">
       <div class="clock-top"><span class="kicker" id="greeting">Good morning</span><span class="folio">The morning board <span style="color:var(--gold);margin:0 10px">/</span> 01</span></div>
       <div class="clock-body">
         <div class="clock-main">
@@ -692,6 +741,20 @@
         <button type="button" class="nfl-overlay-close" id="stock-overlay-close" aria-label="Close stock">Close</button>
       </div>
       <div id="stock-overlay-body" class="stock-body"></div>
+    </div>
+  </div>
+
+  <div id="world-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="world-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="world-overlay-title">World <span style="color:var(--gold)">·</span> Clock</div>
+          <div class="panel-deck" id="world-overlay-deck">Open-Meteo</div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="world-overlay-close" aria-label="Close world clock">Close</button>
+      </div>
+      <div class="wc-grid" id="world-clock-grid"></div>
     </div>
   </div>
 
@@ -958,6 +1021,7 @@ function tick(){
   const h=Number(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hourCycle:'h23'}).format(now));
   $('greeting').textContent=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
   updateSun(now);
+  updateWorldClockTimes();
 }
 function fit(){
   const w=window.innerWidth||document.documentElement.clientWidth||screen.width,h=window.innerHeight||document.documentElement.clientHeight||screen.height;
@@ -967,6 +1031,7 @@ function fit(){
   if(typeof layoutWeatherMaps==='function')requestAnimationFrame(layoutWeatherMaps);
   if(typeof scheduleHeadlineClamp==='function')scheduleHeadlineClamp();
   if(typeof relayoutHourlyChart==='function')requestAnimationFrame(relayoutHourlyChart);
+  if(typeof layoutAllYearMarks==='function')requestAnimationFrame(layoutAllYearMarks);
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
 tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
@@ -1217,6 +1282,113 @@ function futuresNote(key,q){
 // Clock-panel Treasury chart. Switch the displayed series by changing `id` and labels
 // (fetcher already stores DGS7 history alongside DGS10).
 const TREASURY_CHART={id:'DGS10',label:'10-Year',longLabel:'10-Year Treasury'};
+function parseChartTime(v){
+  if(v==null||v==='')return null;
+  if(typeof v==='number'){
+    var t=v>1e12?v:v*1000;
+    var d=new Date(t);
+    return isNaN(+d)?null:+d;
+  }
+  var str=String(v);
+  var d=new Date(/T/.test(str)?str:str+'T12:00:00Z');
+  return isNaN(+d)?null:+d;
+}
+function yearBoundaryTimes(t0,t1){
+  if(!(t1>t0))return [];
+  var y0=new Date(t0).getUTCFullYear();
+  if(Date.UTC(y0,0,1)<=t0)y0+=1;
+  var marks=[],y;
+  for(y=y0;;y++){
+    var t=Date.UTC(y,0,1);
+    if(t>t1)break;
+    if(t>=t0&&t<=t1)marks.push({year:y,t:t});
+  }
+  return marks;
+}
+function xAtTimeIndex(times,target,left,innerW){
+  var n=times.length;
+  if(n<2)return null;
+  if(target<times[0]||target>times[n-1])return null;
+  var i,a,b,f,idx;
+  for(i=1;i<n;i++){
+    if(times[i]>=target){
+      a=times[i-1];b=times[i];
+      f=(b===a)?1:(target-a)/(b-a);
+      idx=(i-1)+f;
+      return left+innerW*(idx/(n-1));
+    }
+  }
+  return null;
+}
+function yearMarkHtml(times,left,w,right){
+  if(!times||times.length<2)return '';
+  var inner=w-left-right;
+  var marks=yearBoundaryTimes(times[0],times[times.length-1]);
+  var html='',i,x,pct,stagger;
+  for(i=0;i<marks.length;i++){
+    x=xAtTimeIndex(times,marks[i].t,left,inner);
+    if(x==null)continue;
+    pct=(x/w*100).toFixed(2);
+    stagger=i%2===1;
+    html+='<div class="year-mark'+(stagger?' alt':'')+'" style="left:'+pct+'%"><span>'+marks[i].year+'</span></div>';
+  }
+  return html;
+}
+function layoutYearMarks(root){
+  if(!root)return;
+  var W=root.clientWidth||0;
+  if(W<2)return;
+  var gap=14, rows=[[],[]], marks=root.querySelectorAll('.year-mark'), i, j, span, lw, lineX, left, row, items, last;
+  for(i=0;i<marks.length;i++){
+    span=marks[i].querySelector('span');
+    if(!span)continue;
+    span.style.left='';
+    span.style.transform='';
+    lw=span.offsetWidth||76;
+    lineX=marks[i].offsetLeft;
+    left=lineX-lw/2;
+    if(left<2)left=2;
+    if(left+lw>W-2)left=W-lw-2;
+    if(left<2)left=2;
+    row=marks[i].classList.contains('alt')?1:0;
+    rows[row].push({span:span,lineX:lineX,lw:lw,left:left});
+  }
+  function pack(items){
+    if(!items.length)return;
+    items.sort(function(a,b){return a.left-b.left;});
+    for(i=1;i<items.length;i++){
+      if(items[i].left<items[i-1].left+items[i-1].lw+gap)
+        items[i].left=items[i-1].left+items[i-1].lw+gap;
+    }
+    last=items[items.length-1];
+    if(last.left+last.lw>W-2){
+      last.left=Math.max(2,W-2-last.lw);
+      for(i=items.length-2;i>=0;i--){
+        if(items[i].left+items[i].lw+gap>items[i+1].left)
+          items[i].left=items[i+1].left-items[i].lw-gap;
+      }
+      if(items[0].left<2){
+        items[0].left=2;
+        for(i=1;i<items.length;i++){
+          if(items[i].left<items[i-1].left+items[i-1].lw+gap)
+            items[i].left=items[i-1].left+items[i-1].lw+gap;
+        }
+      }
+    }
+  }
+  pack(rows[0]);pack(rows[1]);
+  for(i=0;i<2;i++){
+    items=rows[i];
+    for(j=0;j<items.length;j++){
+      items[j].span.style.transform='none';
+      items[j].span.style.left=(items[j].left-items[j].lineX)+'px';
+    }
+  }
+}
+function layoutAllYearMarks(){
+  var nodes=document.querySelectorAll('.year-marks'), i;
+  for(i=0;i<nodes.length;i++)layoutYearMarks(nodes[i]);
+}
 function treasuryHistory(series){
   if(series?.history10y?.length>=2)return {rows:series.history10y,years:10};
   if(series?.history5y?.length>=2)return {rows:series.history5y,years:5};
@@ -1260,16 +1432,10 @@ function applyTreasury(r){
   const hist=s&&treasuryHistory(s);
   if(!s?.latest||!hist){el.hidden=true;el.innerHTML='';el.removeAttribute('aria-label');return;}
   const rows=hist.rows, last=s.latest, yearAgo=s.yearAgo;
-  const plot=treasuryLineSVG(rows,720,260,{l:4,r:6,t:10,b:8});
+  const plot=treasuryLineSVG(rows,720,260,{l:4,r:6,t:72,b:10});
   const dates=rows.map(row=>Array.isArray(row)?row[0]:row.date);
-  const xLabels=['2021','2023','2026'].map(y=>{
-    let idx=dates.findIndex(d=>String(d).slice(0,4)>=y);
-    if(idx<0)idx=dates.length-1;
-    const t=dates.length<=1?0:idx/(dates.length-1);
-    const left=(t*100).toFixed(2)+'%';
-    const transform=t<=0.001?'none':t>=0.999?'translateX(-100%)':'translateX(-50%)';
-    return `<span style="left:${left};transform:${transform}">${esc(y)}</span>`;
-  }).join('');
+  const times=dates.map(parseChartTime).filter(function(t){return t!=null;});
+  const yearHtml=yearMarkHtml(times,plot.pad.left,plot.w,plot.pad.right);
   const d=new Date(last.date+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
   let chg='';
   if(yearAgo&&Number.isFinite(yearAgo.v)){
@@ -1280,7 +1446,8 @@ function applyTreasury(r){
   el.setAttribute('aria-label',`${TREASURY_CHART.longLabel} ${last.v.toFixed(2)} percent, ${hist.years}-year trend`);
   el.innerHTML=`<div class="ty-kicker">${esc(TREASURY_CHART.longLabel)}</div>
     <div class="ty-head"><div class="ty-value">${last.v.toFixed(2)}%</div><div class="ty-meta"><div class="ty-date">${esc(d)}</div>${chg}</div></div>
-    <div class="ty-plot">${plot.svg}<div class="ty-x">${xLabels}</div></div>`;
+    <div class="ty-plot">${plot.svg}<div class="year-marks">${yearHtml}</div></div>`;
+  layoutYearMarks(el.querySelector('.year-marks'));
 }
 function applyRates(r){
   const s=r?.series||r||{}; const ten=s.DGS10, ff=s.DFF||s.FEDFUNDS, mo=s.MORTGAGE30US;
@@ -1498,11 +1665,282 @@ function paintScoreboardPage(){
   updateSbPageBtn();
 }
 
+
+var WORLD_CITIES=[
+  {id:'sandy-springs',name:'Sandy Springs, GA',lat:33.9243,lon:-84.3786,tz:'America/New_York'},
+  {id:'st-paul',name:'St. Paul, MN',lat:44.9537,lon:-93.0900,tz:'America/Chicago'},
+  {id:'boston',name:'Boston, MA',lat:42.3601,lon:-71.0589,tz:'America/New_York'},
+  {id:'pittsburgh',name:'Pittsburgh, PA',lat:40.4406,lon:-79.9959,tz:'America/New_York'},
+  {id:'san-miguel',name:'San Miguel de Allende, MX',lat:20.9144,lon:-100.7436,tz:'America/Mexico_City'},
+  {id:'ajijic',name:'Ajijic, MX',lat:20.2997,lon:-103.2617,tz:'America/Mexico_City'},
+  {id:'seoul',name:'Seoul, South Korea',lat:37.5665,lon:126.9780,tz:'Asia/Seoul'},
+  {id:'barcelona',name:'Barcelona, Spain',lat:41.3874,lon:2.1686,tz:'Europe/Madrid'},
+  {id:'florence',name:'Florence, Italy',lat:43.7696,lon:11.2558,tz:'Europe/Rome'},
+  {id:'tokyo',name:'Tokyo, Japan',lat:35.6762,lon:139.6503,tz:'Asia/Tokyo'}
+];
+var WORLD_HOME_TZ='America/New_York';
+var WC_CACHE_KEY='frame-world-clock-v1';
+var wcRefreshTimer=null;
+var wcWeather=null;
+var wcWeatherFallback=false;
+
+function wcPart(parts,type){
+  var i;
+  for(i=0;i<parts.length;i++)if(parts[i].type===type)return parts[i].value;
+  return '';
+}
+function wcLocalClock(date,tz){
+  var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(date);
+  return {
+    y:+wcPart(parts,'year'),
+    m:+wcPart(parts,'month'),
+    d:+wcPart(parts,'day'),
+    h:+wcPart(parts,'hour'),
+    min:+wcPart(parts,'minute')
+  };
+}
+function formatWorldTime(tz){
+  var parts=new Intl.DateTimeFormat('en-US',{timeZone:tz,hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(new Date());
+  return {hour:wcPart(parts,'hour'),minute:wcPart(parts,'minute'),ampm:wcPart(parts,'dayPeriod')};
+}
+function worldTimeHtml(tz){
+  var p=formatWorldTime(tz);
+  return p.hour+'<span class="colon">:</span>'+p.minute+'<span class="ampm">'+p.ampm+'</span>';
+}
+function worldOffsetLabel(tz){
+  if(tz===WORLD_HOME_TZ)return '';
+  var now=new Date();
+  var home=wcLocalClock(now,WORLD_HOME_TZ);
+  var city=wcLocalClock(now,tz);
+  if(!home||!city)return '';
+  var homeMin=Date.UTC(home.y,home.m-1,home.d,home.h,home.min);
+  var cityMin=Date.UTC(city.y,city.m-1,city.d,city.h,city.min);
+  var diffMin=Math.round((cityMin-homeMin)/60000);
+  var offH=Math.round(diffMin/60);
+  var dayDiff=Math.round((Date.UTC(city.y,city.m-1,city.d)-Date.UTC(home.y,home.m-1,home.d))/86400000);
+  var day='';
+  if(dayDiff===1)day='Tomorrow';
+  else if(dayDiff===-1)day='Yesterday';
+  else if(dayDiff>1)day='+'+dayDiff+' days';
+  else if(dayDiff<-1)day=String(dayDiff)+' days';
+  var off='';
+  if(offH>0)off='+'+offH+'h';
+  else if(offH<0)off='\u2212'+Math.abs(offH)+'h';
+  if(day&&off)return day+' \u00b7 '+off;
+  return day||off;
+}
+function updateWorldClockTimes(){
+  var ov=$('world-overlay');
+  if(!ov||ov.hidden)return;
+  var grid=$('world-clock-grid');
+  if(!grid)return;
+  var times=grid.querySelectorAll('.wc-time'), offs=grid.querySelectorAll('.wc-offset'), i, tz;
+  for(i=0;i<times.length;i++){
+    tz=times[i].getAttribute('data-tz');
+    if(tz)times[i].innerHTML=worldTimeHtml(tz);
+  }
+  for(i=0;i<offs.length;i++){
+    tz=offs[i].getAttribute('data-tz');
+    if(tz)offs[i].textContent=worldOffsetLabel(tz);
+  }
+}
+function wcIsFinite(n){return typeof n==='number'&&isFinite(n);}
+function wcWeekday(iso){
+  var d=new Date(String(iso)+'T12:00:00Z');
+  return new Intl.DateTimeFormat('en-US',{weekday:'short',timeZone:'UTC'}).format(d);
+}
+function worldClockUrl(){
+  var lats=[], lons=[], i;
+  for(i=0;i<WORLD_CITIES.length;i++){
+    lats.push(WORLD_CITIES[i].lat);
+    lons.push(WORLD_CITIES[i].lon);
+  }
+  return 'https://api.open-meteo.com/v1/forecast?latitude='+lats.join(',')
+    +'&longitude='+lons.join(',')
+    +'&current=temperature_2m,weather_code,is_day'
+    +'&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset'
+    +'&temperature_unit=fahrenheit&timezone=auto&forecast_days=4&t='+Date.now();
+}
+function readWcCache(){
+  try{
+    var raw=localStorage.getItem(WC_CACHE_KEY);
+    if(!raw)return null;
+    var data=JSON.parse(raw);
+    if(data&&data.cities&&data.cities.length)return data;
+    return null;
+  }catch(e){return null;}
+}
+function writeWcCache(data){
+  try{localStorage.setItem(WC_CACHE_KEY,JSON.stringify(data));}catch(e){}
+}
+function parseWorldClockResponse(raw,asOf){
+  var rows=Array.isArray(raw)?raw:[raw];
+  var cities=[], i, j, meta, d, cur, daily, codes, maxs, mins, days, sunr, suns, iconPair, forecast, isDay, ip, rise, set;
+  for(i=0;i<WORLD_CITIES.length;i++){
+    meta=WORLD_CITIES[i];
+    d=rows[i]||{};
+    cur=d.current||{};
+    daily=d.daily||{};
+    codes=daily.weather_code||[];
+    maxs=daily.temperature_2m_max||[];
+    mins=daily.temperature_2m_min||[];
+    days=daily.time||[];
+    sunr=daily.sunrise||[];
+    suns=daily.sunset||[];
+    iconPair=wmoIcon(cur.weather_code);
+    forecast=[];
+    for(j=1;j<days.length&&forecast.length<3;j++){
+      ip=wmoIcon(codes[j]);
+      forecast.push({
+        d:wcWeekday(days[j]),
+        i:ip[0],
+        h:wcIsFinite(Number(maxs[j]))?Math.round(Number(maxs[j])):null,
+        l:wcIsFinite(Number(mins[j]))?Math.round(Number(mins[j])):null
+      });
+    }
+    isDay=null;
+    if(cur.is_day==1||cur.is_day==='1')isDay=true;
+    else if(cur.is_day==0||cur.is_day==='0')isDay=false;
+    if(isDay==null&&sunr[0]&&suns[0]){
+      rise=Date.parse(sunr[0]);
+      set=Date.parse(suns[0]);
+      if(wcIsFinite(rise)&&wcIsFinite(set))isDay=Date.now()>=rise&&Date.now()<set;
+    }
+    if(isDay==null){
+      var loc=wcLocalClock(new Date(),meta.tz);
+      isDay=!!(loc&&loc.h>=6&&loc.h<18);
+    }
+    cities.push({
+      id:meta.id,name:meta.name,tz:meta.tz,
+      temp:wcIsFinite(Number(cur.temperature_2m))?Math.round(Number(cur.temperature_2m)):null,
+      i:iconPair[0],cond:iconPair[1],
+      isDay:!!isDay,
+      todayH:wcIsFinite(Number(maxs[0]))?Math.round(Number(maxs[0])):null,
+      todayL:wcIsFinite(Number(mins[0]))?Math.round(Number(mins[0])):null,
+      days:forecast
+    });
+  }
+  return {asOf:asOf||new Date().toISOString(),cities:cities};
+}
+async function loadWorldClockWeather(){
+  var liveErr=null;
+  try{
+    var r=await fetch(worldClockUrl(),{cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    var parsed=parseWorldClockResponse(await r.json(),new Date().toISOString());
+    var ok=0,i;
+    for(i=0;i<parsed.cities.length;i++)if(parsed.cities[i].temp!=null)ok++;
+    if(!ok)throw new Error('empty world weather');
+    writeWcCache(parsed);
+    return {data:parsed,fallback:false};
+  }catch(e){liveErr=e;}
+  var cached=readWcCache();
+  if(cached&&cached.cities&&cached.cities.length)return {data:cached,fallback:true};
+  return {data:null,fallback:true,error:liveErr};
+}
+function deg(n){return n==null?'\u2014':n+'\u00b0';}
+function renderWorldClockWeather(data,fallback){
+  var deck=$('world-overlay-deck');
+  if(deck){
+    if(data&&data.asOf&&fallback)deck.textContent='Open-Meteo \u00b7 As of '+fmtTime(data.asOf);
+    else if(data)deck.textContent='Open-Meteo';
+    else deck.textContent='Weather unavailable';
+  }
+  var grid=$('world-clock-grid');
+  if(!grid)return;
+  var byId={}, i, c;
+  if(data&&data.cities){
+    for(i=0;i<data.cities.length;i++)byId[data.cities[i].id]=data.cities[i];
+  }
+  var cards=grid.querySelectorAll('.wc-card');
+  for(i=0;i<cards.length;i++){
+    c=byId[cards[i].getAttribute('data-id')];
+    var now=cards[i].querySelector('.wc-now');
+    var hl=cards[i].querySelector('.wc-hl');
+    var days=cards[i].querySelector('.wc-days');
+    if(!c||c.temp==null){
+      cards[i].classList.remove('day','night');
+      if(now)now.innerHTML='<div class="wc-cond">'+(data?'Weather unavailable':'Loading weather')+'</div>';
+      if(hl)hl.textContent='';
+      if(days)days.innerHTML='';
+      continue;
+    }
+    cards[i].classList.toggle('day',!!c.isDay);
+    cards[i].classList.toggle('night',!c.isDay);
+    if(now){
+      now.innerHTML=icon(c.i)+'<div class="wc-temp">'+deg(c.temp)+'</div><div class="wc-cond">'+esc(c.cond||'')+'</div>';
+    }
+    if(hl)hl.innerHTML=c.todayH==null&&c.todayL==null?'':'High <b>'+deg(c.todayH)+'</b> \u00b7 Low <b>'+deg(c.todayL)+'</b>';
+    if(days){
+      days.innerHTML=(c.days||[]).map(function(d){
+        return '<div class="wc-day"><div class="d">'+esc(d.d||'')+'</div>'+icon(d.i)+'<div class="hl">'+deg(d.h)+'<span>'+deg(d.l)+'</span></div></div>';
+      }).join('');
+    }
+  }
+}
+function buildWorldClockCards(){
+  var grid=$('world-clock-grid');
+  if(!grid)return;
+  grid.innerHTML=WORLD_CITIES.map(function(city){
+    return '<article class="wc-card" data-id="'+city.id+'">'
+      +'<div class="wc-cue" aria-hidden="true"></div>'
+      +'<div class="wc-city">'+esc(city.name)+'</div>'
+      +'<div class="wc-time" data-tz="'+city.tz+'">'+worldTimeHtml(city.tz)+'</div>'
+      +'<div class="wc-offset" data-tz="'+city.tz+'">'+worldOffsetLabel(city.tz)+'</div>'
+      +'<div class="wc-now"><div class="wc-cond">Loading weather</div></div>'
+      +'<div class="wc-hl"></div>'
+      +'<div class="wc-days"></div>'
+      +'</article>';
+  }).join('');
+}
+async function refreshWorldClockWeather(){
+  if(openOverlay!=='world')return;
+  var res=await loadWorldClockWeather();
+  if(openOverlay!=='world')return;
+  wcWeather=res.data;
+  wcWeatherFallback=!!res.fallback;
+  renderWorldClockWeather(wcWeather,wcWeatherFallback);
+}
+function openWorldClockOverlay(){
+  if(openOverlay==='world')return;
+  closeOpenOverlay();
+  openOverlay='world';
+  var ov=$('world-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  var card=$('clock-card');
+  if(card)card.setAttribute('aria-expanded','true');
+  buildWorldClockCards();
+  var cached=readWcCache();
+  if(cached){
+    wcWeather=cached;wcWeatherFallback=true;
+    renderWorldClockWeather(cached,true);
+  }else{
+    var deck=$('world-overlay-deck');
+    if(deck)deck.textContent='Open-Meteo';
+  }
+  updateWorldClockTimes();
+  refreshWorldClockWeather();
+  clearInterval(wcRefreshTimer);
+  wcRefreshTimer=setInterval(refreshWorldClockWeather,15*60*1000);
+  var close=$('world-overlay-close');
+  if(close)close.focus();
+}
+function closeWorldClockOverlay(){
+  if(openOverlay!=='world')return;
+  openOverlay=null;
+  clearInterval(wcRefreshTimer);wcRefreshTimer=null;
+  var ov=$('world-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+  var card=$('clock-card');
+  if(card){card.setAttribute('aria-expanded','false');card.focus();}
+}
+
 function closeOpenOverlay(){
   if(openOverlay==='nfl')closeNflOverlay();
   else if(openOverlay==='weather')closeWeatherOverlay();
   else if(openOverlay==='news')closeNewsOverlay();
   else if(openOverlay==='stock')closeStockOverlay();
+  else if(openOverlay==='world')closeWorldClockOverlay();
 }
 function wmoIcon(code){
   const c=Number(code);
@@ -1784,6 +2222,8 @@ function setScoreboardLeague(league){
 function openNflOverlay(){
   if(openOverlay==='nfl')return;
   closeOpenOverlay();
+  scoreboardLeague='nfl';
+  sbPage=0;stopSbPager();
   openOverlay='nfl';
   const ov=$('nfl-overlay');
   ov.hidden=false;ov.setAttribute('aria-hidden','false');
@@ -2451,18 +2891,77 @@ function fmtVol(v){
 function fmtPe(v){return v==null||!Number.isFinite(+v)||+v<=0?'—':Number(v).toFixed(1);}
 function fmtPxNum(v,dp=2){return v==null||!Number.isFinite(+v)?'—':Number(v).toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});}
 function stockMetric(lbl,val){return `<div class="stock-metric"><div class="lbl">${esc(lbl)}</div><div class="val">${val}</div></div>`;}
-function stockHistoryChart(points,up){
+function nicePriceTicks(min,max){
+  if(!(max>min)){
+    var mid=Number.isFinite(max)?max:(Number.isFinite(min)?min:0);
+    var pad=Math.max(Math.abs(mid)*0.04,1);
+    min=mid-pad;max=mid+pad;
+  }
+  var span=max-min;
+  function stepFor(divs){
+    var raw=span/divs;
+    var mag=Math.pow(10,Math.floor(Math.log10(raw||1)));
+    var r=raw/mag;
+    if(r<=1)return 1*mag;
+    if(r<=2)return 2*mag;
+    if(r<=2.5)return 2.5*mag;
+    if(r<=5)return 5*mag;
+    return 10*mag;
+  }
+  function ticks(step){
+    var t0=Math.floor(min/step)*step, t1=Math.ceil(max/step)*step, out=[], i, v;
+    for(i=0,v=t0;i<16&&v<=t1+step*1e-9;i++,v=t0+i*step)out.push(+v.toPrecision(12));
+    return out;
+  }
+  var best=ticks(stepFor(4)), cands=[ticks(stepFor(4)),ticks(stepFor(3)),ticks(stepFor(5))], c, i;
+  for(i=0;i<cands.length;i++){
+    c=cands[i];
+    if(c.length>=4&&c.length<=5){best=c;break;}
+    if(c.length>=3&&c.length<=6&&Math.abs(c.length-5)<Math.abs(best.length-5))best=c;
+  }
+  if(best.length>5)best=ticks(stepFor(3));
+  if(best.length<4){
+    c=ticks(stepFor(5));
+    if(c.length>=4&&c.length<=6)best=c;
+  }
+  return best;
+}
+function fmtAxisPx(v,dollar,step){
+  var abs=Math.abs(step||0), dp=0;
+  if(abs>0&&abs<1)dp=abs<0.1?2:1;
+  else if(abs>=1&&abs<10&&Math.abs(v-Math.round(v))>1e-8)dp=1;
+  var n=Number(v).toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});
+  return dollar?('$'+n):n;
+}
+function stockHistoryChart(points,up,dollar){
   if(!points||points.length<2)return '<div class="stock-chart-msg">Chart unavailable</div>';
-  const w=1200,h=520,left=20,right=24,top=24,bottom=48;
-  const vals=points.map(p=>p.c),mn=Math.min(...vals),mx=Math.max(...vals),pad=(mx-mn||Math.abs(mx)*.01||1)*.12;
+  const w=1200,h=520,left=8,right=16,top=40,bottom=48,bottomPad=20;
+  const vals=points.map(p=>p.c),mn=Math.min(...vals),mx=Math.max(...vals);
+  const ticks=nicePriceTicks(mn,mx);
+  const lo=ticks[0], hi=ticks[ticks.length-1], span=hi-lo||1;
+  const plotH=h-bottom;
+  const yOf=v=>top+(plotH-top-bottomPad)*(1-(v-lo)/span);
   const xy=points.map((p,i)=>{
     const x=left+(w-left-right)*i/(points.length-1);
-    const y=top+(h-top-bottom)*(1-(p.c-mn+pad)/(mx-mn+2*pad));
+    const y=yOf(p.c);
     return [x,y,p];
   });
   const line=xy.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
-  const fill=line+` L${xy[xy.length-1][0].toFixed(1)},${h-bottom} L${xy[0][0].toFixed(1)},${h-bottom} Z`;
+  const fill=line+` L${xy[xy.length-1][0].toFixed(1)},${plotH} L${xy[0][0].toFixed(1)},${plotH} Z`;
   const color=up?'#99C7A6':'#E29A91';
+  const step=ticks.length>1?ticks[1]-ticks[0]:1;
+  const grid=ticks.map(v=>{
+    const y=yOf(v);
+    return `<path d="M${left} ${y.toFixed(1)}H${w-right}"/>`;
+  }).join('');
+  const yHtml=ticks.map(v=>{
+    const y=yOf(v);
+    const pct=(y/plotH*100);
+    let trans='-50%';
+    if(pct<4)trans='0';
+    else if(pct>96)trans='-100%';
+    return `<span style="top:${pct.toFixed(2)}%;transform:translateY(${trans})">${fmtAxisPx(v,dollar,step)}</span>`;
+  }).join('');
   const months=[];
   let last='';
   xy.forEach(([x,,p])=>{
@@ -2472,19 +2971,24 @@ function stockHistoryChart(points,up){
   });
   const monthLabels=months.filter((m,i)=>i===0||i===months.length-1||months[i].lab!==months[i-1].lab);
   const lastPt=xy[xy.length-1];
-  const plotH=h-bottom;
   const xHtml=monthLabels.map((m,i,arr)=>{
     const pct=(m.x/w*100).toFixed(2);
     const trans=i===0?'0':(i===arr.length-1?'-100%':'-50%');
     return `<span style="left:${pct}%;transform:translateX(${trans})">${m.lab}</span>`;
   }).join('');
+  const times=points.map(p=>parseChartTime(p.t)).filter(function(t){return t!=null;});
+  const yearHtml=yearMarkHtml(times,left,w,right);
   return `<div class="stock-chart-inner">
-    <svg class="stock-chart-plot" viewBox="0 0 ${w} ${plotH}" preserveAspectRatio="none" aria-label="Six-month daily price">
-      <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
-      <g stroke="rgba(255,255,255,.08)" stroke-width="1">${[0.25,0.5,0.75].map(t=>`<path d="M${left} ${(top+(plotH-top)*t).toFixed(1)}H${w-right}" stroke-dasharray="4 10"/>`).join('')}</g>
-      <path d="${fill}" fill="url(#stock-area)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-      <circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="6" fill="${color}"/>
-    </svg>
+    <div class="stock-chart-y">${yHtml}</div>
+    <div class="stock-chart-plotbox">
+      <svg class="stock-chart-plot" viewBox="0 0 ${w} ${plotH}" preserveAspectRatio="none" aria-label="Six-month daily price">
+        <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
+        <g stroke="rgba(255,255,255,.10)" stroke-width="1">${grid}</g>
+        <path d="${fill}" fill="url(#stock-area)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="6" fill="${color}"/>
+      </svg>
+      <div class="year-marks">${yearHtml}</div>
+    </div>
     <div class="stock-chart-x">${xHtml}</div>
   </div>`;
 }
@@ -2545,10 +3049,11 @@ function renderStockOverlay(key,extra={}){
   const news=companyHeadlines(d.news||[],key,name).slice(0,5);
   const newsHtml=news.length?news.map(n=>`<div class="stock-news-item"><div class="meta">${esc(n.src||'News')}${n.pub?' · '+esc(newsTime(n.pub)) :''}</div><div class="hd" data-full="${esc(n.hd)}">${esc(n.hd)}</div></div>`).join(''):`<div class="stock-news-item"><div class="hd" style="color:var(--muted)">No recent headlines</div></div>`;
   body.className='stock-body';
-  body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up)}</div></div>
+  body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up,dollar)}</div></div>
     <div class="stock-side"><div class="stock-metrics">${stockMetric('P/E (TTM)',esc(fmtPe(d.peTTM)))}${stockMetric('Market cap',esc(fmtCap(d.marketCap)))}${stockMetric('52-week range',esc(range))}${stockMetric('Volume',esc(fmtVol(d.volume??q?.vol)))}</div>
     <div class="stock-news"><div class="stock-news-label">Latest headlines</div>${newsHtml}</div></div>`;
   scheduleHeadlineClamp();
+  layoutAllYearMarks();
 }
 async function refreshStockOverlay(key){
   if(openOverlay!=='stock')return;
@@ -2593,6 +3098,9 @@ $('market-grid').addEventListener('click',e=>{const k=stockTileKeyFromEvent(e);i
 $('spotlight').addEventListener('click',e=>{e.preventDefault();openStockOverlay($('spotlight').dataset.symbol||spotSymbols[spotIndex]);});
 $('stock-overlay').addEventListener('click',closeStockOverlay);
 $('stock-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeStockOverlay();});
+$('clock-card').addEventListener('click',openWorldClockOverlay);
+$('world-overlay').addEventListener('click',closeWorldClockOverlay);
+$('world-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeWorldClockOverlay();});
 $('nfl-card').addEventListener('click',openNflOverlay);
 $('weather-card').addEventListener('click',openWeatherOverlay);
 $('news-card').addEventListener('click',openNewsOverlay);
@@ -2625,7 +3133,8 @@ document.addEventListener('keydown',e=>{
   if(isEnter&&stockFocus&&!openOverlay){e.preventDefault();openStockOverlay(stockFocus.dataset.symbol||spotSymbols[spotIndex]);return;}
   if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();return;}
   if(isEnter&&document.activeElement===$('weather-card')){e.preventDefault();openWeatherOverlay();return;}
-  if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();}
+  if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();return;}
+  if(isEnter&&document.activeElement===$('clock-card')){e.preventDefault();openWorldClockOverlay();}
 });
 
 const ALERT_PRI={nws:3,market:2,score:1};
