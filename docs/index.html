@@ -419,7 +419,7 @@
     font-size:36px;letter-spacing:.04em;grid-template-rows:none}
   .sb-game{position:relative;display:flex;flex-direction:column;justify-content:center;gap:16px;min-width:0;
     padding:26px 40px 22px 40px;border-radius:16px;border:1px solid var(--hair);background:var(--panel)}
-  .sb-game.live{border-color:rgba(201,168,106,.42);box-shadow:inset 4px 0 0 var(--gold);padding-left:44px}
+  .sb-game.live,.sb-game.pin{border-color:rgba(201,168,106,.42);box-shadow:inset 4px 0 0 var(--gold);padding-left:44px}
   .sb-team{display:grid;grid-template-columns:88px minmax(0,1fr) auto auto;align-items:center;gap:20px;min-width:0}
   .sb-logo{width:76px;height:76px;object-fit:contain;flex:none}
   .sb-logo-fallback{width:76px;height:76px;display:none;align-items:center;justify-content:center;
@@ -428,7 +428,7 @@
   .sb-team.no-logo .sb-logo-fallback{display:flex}
   .sb-name{font:300 54px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
     white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
-  .sb-rec{color:var(--muted);font-weight:300;letter-spacing:0;font-size:.82em;margin-left:.3em}
+  .sb-rec{color:var(--muted);font-weight:300;letter-spacing:0;font-size:32px;margin-left:.3em}
   .sb-team.loser .sb-rec{color:var(--soft)}
   .sb-abbr{font-size:30px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
   .sb-score{font:300 72px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
@@ -1226,6 +1226,14 @@ let openOverlay=null,nflSbTimer=null,scoreboardLeague='nfl';
 const SB_PAGE_SIZE=12,SB_PAGE_MS=15000;
 let sbPage=0,sbPageCount=1,sbPageTimer=null,sbPageGames=[];
 function rankedTeam(t){const r=Number(t?.rank);return Number.isFinite(r)&&r>=1&&r<=25;}
+const PINNED_NFL=new Set(['PIT','MIN','GB']);
+function isPinnedNfl(g){
+  return [g?.away,g?.home].some(t=>{
+    const ab=String(t?.abbrev||'').toUpperCase();
+    if(PINNED_NFL.has(ab))return true;
+    return /(steelers|vikings|packers)/i.test(`${t?.name||''} ${t?.short||''}`);
+  });
+}
 function scoreboardSortKey(g){
   if(g.state==='in')return 0;
   if(rankedTeam(g.away)&&rankedTeam(g.home))return 1;
@@ -1233,8 +1241,12 @@ function scoreboardSortKey(g){
   if(g.completed||g.state==='post')return 4;
   return 3;
 }
-function sortScoreboardGames(games){
+function sortScoreboardGames(games,league){
   return games.slice().sort((a,b)=>{
+    if(league==='nfl'){
+      const pa=isPinnedNfl(a)?0:1,pb=isPinnedNfl(b)?0:1;
+      if(pa!==pb)return pa-pb;
+    }
     const ka=scoreboardSortKey(a),kb=scoreboardSortKey(b);
     if(ka!==kb)return ka-kb;
     const best=g=>Math.min(rankedTeam(g.away)?g.away.rank:99,rankedTeam(g.home)?g.home.rank:99);
@@ -1282,7 +1294,8 @@ function paintScoreboardPage(){
   box.innerHTML=page.map(g=>{
     const live=g.state==='in';
     const tag=live?`<span class="live-tag">Live</span>`:'';
-    return `<article class="sb-game${live?' live':''}" aria-label="${esc((g.away?.abbrev||'')+' at '+(g.home?.abbrev||'')+', '+(g.status||''))}">${sbTeamRow(g.away,g)}${sbTeamRow(g.home,g)}<div class="sb-meta">${tag}<span class="sb-status">${esc(g.status||'')}</span></div></article>`;
+    const pin=scoreboardLeague==='nfl'&&isPinnedNfl(g);
+    return `<article class="sb-game${live?' live':''}${pin?' pin':''}" aria-label="${esc((g.away?.abbrev||'')+' at '+(g.home?.abbrev||'')+', '+(g.status||''))}">${sbTeamRow(g.away,g)}${sbTeamRow(g.home,g)}<div class="sb-meta">${tag}<span class="sb-status">${esc(g.status||'')}</span></div></article>`;
   }).join('');
   updateSbPageBtn();
 }
@@ -1465,7 +1478,7 @@ function renderNflScoreboard(board,meta){
     sbPageGames=[];sbPage=0;sbPageCount=1;stopSbPager();updateSbPageBtn();
     box.className='nfl-scoreboard sb-msg';box.textContent='No games this week';return;
   }
-  sbPageGames=sortScoreboardGames(games);
+  sbPageGames=sortScoreboardGames(games,league);
   sbPageCount=Math.max(1,Math.ceil(sbPageGames.length/SB_PAGE_SIZE));
   if(sbPage>=sbPageCount)sbPage=0;
   paintScoreboardPage();
