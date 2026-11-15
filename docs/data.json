@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T16:12:00.328Z",
+ "generatedAt": "2026-11-15T16:29:36.263Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -10,12 +10,12 @@
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 47,
+     "temp": 48,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 2,
-     "windDir": "WSW",
-     "observed": "2026-11-15T11:00"
+     "windMph": 1,
+     "windDir": "W",
+     "observed": "2026-11-15T11:15"
     },
     "today": {
      "h": 55,
@@ -54,12 +54,12 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 33,
+     "temp": 35,
      "i": "cloud",
      "cond": "Overcast",
      "windMph": 5,
      "windDir": "SSE",
-     "observed": "2026-11-15T10:00"
+     "observed": "2026-11-15T10:15"
     },
     "today": {
      "h": 47,
@@ -95,8 +95,8 @@
     ]
    }
   },
-  "asOf": "2026-11-15T16:12:00.328Z",
-  "lastAttempt": "2026-11-15T16:12:00.328Z",
+  "asOf": "2026-11-15T16:29:36.263Z",
+  "lastAttempt": "2026-11-15T16:29:36.263Z",
   "lastError": null
  },
  "nfl": {
@@ -157,8 +157,8 @@
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-15T16:12:00.328Z",
-  "lastAttempt": "2026-11-15T16:12:00.328Z",
+  "asOf": "2026-11-15T16:29:36.263Z",
+  "lastAttempt": "2026-11-15T16:29:36.263Z",
   "lastError": null
  },
  "news": {
@@ -195,8 +195,8 @@
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-15T16:12:00.328Z",
-  "lastAttempt": "2026-11-15T16:12:00.328Z",
+  "asOf": "2026-11-15T16:29:36.263Z",
+  "lastAttempt": "2026-11-15T16:29:36.263Z",
   "credit": "BBC News · NPR",
   "lastError": null
  },
@@ -208,7 +208,7 @@
    "isOpen": false,
    "session": null,
    "holiday": null,
-   "checkedAt": "2026-11-15T16:12:00.328Z"
+   "checkedAt": "2026-11-15T16:29:36.263Z"
   },
   "quotes": {
    "NVDA": {
@@ -254,43 +254,43 @@
     "upcoming": true
    },
    "DOW": {
-    "s": "DIA",
-    "n": "Dow Jones fund",
-    "kind": "fund",
-    "tracks": "Dow Jones",
-    "symbol": "DIA",
-    "px": 523.15,
-    "ch": 0.1302,
-    "d": 0.68,
-    "pc": 522.47,
-    "t": 1794603600,
-    "quoteTime": "2026-11-13T21:00:00.000Z"
+    "s": "DJIA",
+    "n": "Dow Jones",
+    "kind": "index",
+    "symbol": "^DJI",
+    "source": "Yahoo Finance",
+    "px": 52347.55,
+    "ch": 0.09648750322582889,
+    "d": 50.46015625000291,
+    "pc": 52297.08984375,
+    "t": 1794606206,
+    "quoteTime": "2026-11-13T21:43:26.000Z"
    },
    "SPX": {
-    "s": "SPY",
-    "n": "S&P 500 fund",
-    "kind": "fund",
-    "tracks": "S&P 500",
-    "symbol": "SPY",
-    "px": 754.37,
-    "ch": -0.3632,
-    "d": -2.75,
-    "pc": 757.12,
-    "t": 1794603600,
-    "quoteTime": "2026-11-13T21:00:00.000Z"
+    "s": "SPX",
+    "n": "S&P 500",
+    "kind": "index",
+    "symbol": "^GSPC",
+    "source": "Yahoo Finance",
+    "px": 7561.67,
+    "ch": -0.40474557108436426,
+    "d": -30.729902343749927,
+    "pc": 7592.39990234375,
+    "t": 1794606199,
+    "quoteTime": "2026-11-13T21:43:19.000Z"
    },
    "NASDAQ": {
-    "s": "QQQ",
-    "n": "Nasdaq fund",
-    "kind": "fund",
-    "tracks": "Nasdaq",
-    "symbol": "QQQ",
-    "px": 679.89,
-    "ch": -1.2032,
-    "d": -8.28,
-    "pc": 688.17,
-    "t": 1794603600,
-    "quoteTime": "2026-11-13T21:00:00.000Z"
+    "s": "NASDAQ",
+    "n": "Nasdaq",
+    "kind": "index",
+    "symbol": "^IXIC",
+    "source": "Yahoo Finance",
+    "px": 25136.273,
+    "ch": -0.9060002750349951,
+    "d": -229.81684374999895,
+    "pc": 25366.08984375,
+    "t": 1794608159,
+    "quoteTime": "2026-11-13T22:15:59.000Z"
    }
   },
   "history": {
@@ -314,28 +314,29 @@
    ],
    "DOW": [
     {
-     "t": 1794603600,
-     "c": 523.15
+     "t": 1794606206,
+     "c": 52347.55
     }
    ],
    "SPX": [
     {
-     "t": 1794603600,
-     "c": 754.37
+     "t": 1794606199,
+     "c": 7561.67
     }
    ],
    "NASDAQ": [
     {
-     "t": 1794603600,
-     "c": 679.89
+     "t": 1794608159,
+     "c": 25136.273
     }
    ]
   },
-  "lastAttempt": "2026-11-15T16:12:00.328Z",
-  "asOf": "2026-11-15T16:12:00.328Z"
+  "lastAttempt": "2026-11-15T16:29:36.263Z",
+  "asOf": "2026-11-15T16:29:36.263Z",
+  "indexSource": "Yahoo Finance"
  },
  "lastRun": {
-  "at": "2026-11-15T16:12:00.328Z",
+  "at": "2026-11-15T16:29:36.263Z",
   "ran": [
    "weather",
    "nfl",
