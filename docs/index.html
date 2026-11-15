@@ -65,6 +65,29 @@
   .market-status .dot{height:12px;width:12px;background:var(--gold);border-radius:50%;opacity:.9}
   .market-status .note{color:var(--soft);font-size:23px;letter-spacing:.12em;text-transform:uppercase;margin-left:12px}
   .clock-accent{position:absolute;right:64px;bottom:46px;width:114px;height:1px;background:var(--gold);opacity:.4}
+  .clock-body{flex:1;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 48px;align-items:stretch}
+  .clock-main{display:flex;flex-direction:column;min-width:0}
+  #treasury{display:flex;flex-direction:column;min-width:0;min-height:0;justify-content:flex-end;padding:16px 0 18px 12px}
+  #treasury[hidden]{display:none}
+  .ty-kicker{font-size:22px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .ty-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:2px}
+  .ty-value{font:200 96px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em;
+    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap}
+  .ty-meta{text-align:right;min-width:0}
+  .ty-date{font-size:24px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+  .ty-chg{font-size:24px;color:var(--soft);letter-spacing:.06em;margin-top:7px;white-space:nowrap}
+  .ty-chg .up{color:var(--up)}.ty-chg .down{color:var(--down)}
+  .ty-plot{flex:1;min-height:168px;margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) 62px;
+    grid-template-rows:minmax(0,1fr) 34px;column-gap:8px}
+  .ty-plot svg{width:100%;height:100%;display:block;grid-column:1;grid-row:1}
+  .ty-y{grid-column:2;grid-row:1;position:relative;color:var(--soft);font-size:20px;letter-spacing:.04em;
+    font-feature-settings:"tnum" 1}
+  .ty-y span{position:absolute;right:0;transform:translateY(-50%);white-space:nowrap}
+  .ty-x{grid-column:1;grid-row:2;position:relative;color:var(--soft);font-size:20px;letter-spacing:.08em;
+    text-transform:uppercase}
+  .ty-x span{position:absolute;top:8px;transform:translateX(-50%);white-space:nowrap}
+  .ty-x span:first-child{transform:none}
+  .ty-x span:last-child{transform:translateX(-100%)}
 
   /* WEATHER: restrained pictograms, a daylight diagram and forecast miniatures */
   .weather-panel{padding:43px 48px 35px;display:flex;flex-direction:column}
@@ -369,9 +392,14 @@
   <main class="top" aria-label="Time and weather">
     <section class="panel clock-panel" aria-label="Clock">
       <div class="clock-top"><span class="kicker" id="greeting">Good morning</span><span class="folio">The morning board <span style="color:var(--gold);margin:0 10px">/</span> 01</span></div>
-      <div class="time" id="time">9<span class="colon">:</span>16<span class="ampm">AM</span></div>
-      <div class="date" id="date"><em>Sunday,</em> November 15, 2026</div>
-      <div class="market-status"><span class="dot"></span><span id="ms-text">Markets closed · opens Mon 9:30</span><span class="note" id="ms-note">sample</span></div>
+      <div class="clock-body">
+        <div class="clock-main">
+          <div class="time" id="time">9<span class="colon">:</span>16<span class="ampm">AM</span></div>
+          <div class="date" id="date"><em>Sunday,</em> November 15, 2026</div>
+          <div class="market-status"><span class="dot"></span><span id="ms-text">Markets closed · opens Mon 9:30</span><span class="note" id="ms-note">sample</span></div>
+        </div>
+        <aside id="treasury" hidden></aside>
+      </div>
       <div class="clock-accent"></div>
     </section>
     <section class="panel weather-panel" aria-label="Atlanta, Georgia weather, with Saint Paul, Minnesota secondary weather, all sample data">
@@ -785,6 +813,81 @@ function futuresNote(key,q){
   const label='Futures';
   return `${label} ${pct}<br>Open ~${money(it.expectedOpen,0)}`;
 }
+// Clock-panel Treasury chart. Switch the displayed series by changing `id` and labels
+// (fetcher already stores DGS7 history alongside DGS10).
+const TREASURY_CHART={id:'DGS10',label:'10-Year',longLabel:'10-Year Treasury'};
+function treasuryHistory(series){
+  if(series?.history10y?.length>=2)return {rows:series.history10y,years:10};
+  if(series?.history5y?.length>=2)return {rows:series.history5y,years:5};
+  return null;
+}
+function niceYieldTicks(min,max,n=4){
+  const span=(max-min)||1, raw=span/Math.max(1,n-1), mag=Math.pow(10,Math.floor(Math.log10(raw)));
+  let step=[1,2,2.5,5,10].map(x=>x*mag).find(x=>x>=raw)||mag*10;
+  if(span<=8)step=Math.min(step,1);
+  const t0=Math.ceil((min-1e-9)/step)*step, ticks=[];
+  for(let v=t0;v<=max+1e-9;v+=step)ticks.push(+v.toFixed(6));
+  if(ticks.length<2){ticks.length=0;ticks.push(+min.toFixed(2),+max.toFixed(2));}
+  return ticks;
+}
+function treasuryLineSVG(rows,w,h,pad){
+  const vals=rows.map(r=>Array.isArray(r)?r[1]:r.v);
+  const left=pad.l,right=pad.r,top=pad.t,bottom=pad.b;
+  const mn=Math.min(...vals),mx=Math.max(...vals),room=(mx-mn||.25)*.12;
+  const lo=mn-room,hi=mx+room,span=hi-lo||1;
+  const pts=vals.map((v,i)=>{
+    const x=left+(w-left-right)*i/Math.max(1,vals.length-1);
+    const y=top+(h-top-bottom)*(1-(v-lo)/span);
+    return [x,y];
+  });
+  const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const last=pts[pts.length-1];
+  const ticks=niceYieldTicks(lo,hi,4);
+  const grid=ticks.map(v=>{
+    const y=top+(h-top-bottom)*(1-(v-lo)/span);
+    return `<path d="M${left} ${y.toFixed(1)}H${w-right}"/>`;
+  }).join('');
+  return {svg:`<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1">${grid}</g>
+    <path d="${line}" fill="none" stroke="var(--gold)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="var(--gold)"/>
+  </svg>`,ticks,lo,hi,pad:{left,right,top,bottom},w,h};
+}
+function applyTreasury(r){
+  const el=$('treasury'); if(!el)return;
+  const s=(r?.series||{})[TREASURY_CHART.id];
+  const hist=s&&treasuryHistory(s);
+  if(!s?.latest||!hist){el.hidden=true;el.innerHTML='';el.removeAttribute('aria-label');return;}
+  const rows=hist.rows, last=s.latest, yearAgo=s.yearAgo;
+  const plot=treasuryLineSVG(rows,720,260,{l:4,r:6,t:10,b:8});
+  const yTicks=plot.ticks.map(v=>{
+    const y=plot.pad.top+(plot.h-plot.pad.top-plot.pad.bottom)*(1-(v-plot.lo)/(plot.hi-plot.lo||1));
+    const pct=(plot.h?100*y/plot.h:0);
+    return `<span style="top:${pct.toFixed(2)}%">${v.toFixed(v%1?1:0)}%</span>`;
+  }).join('');
+  const dates=rows.map(row=>Array.isArray(row)?row[0]:row.date);
+  const yearOf=d=>d.slice(0,4);
+  const years=[yearOf(dates[0])];
+  const mid=yearOf(dates[Math.floor((dates.length-1)/2)]);
+  if(mid!==years[0])years.push(mid);
+  const end=yearOf(dates[dates.length-1]);
+  if(end!==years[years.length-1])years.push(end);
+  const xLabels=years.map((y,i,arr)=>{
+    const left=i===0?'0%':i===arr.length-1?'100%':(100*i/(arr.length-1)).toFixed(2)+'%';
+    return `<span style="left:${left}">${esc(y)}</span>`;
+  }).join('');
+  const d=new Date(last.date+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
+  let chg='';
+  if(yearAgo&&Number.isFinite(yearAgo.v)){
+    const diff=last.v-yearAgo.v, up=diff>=0;
+    chg=`<div class="ty-chg"><span class="${up?'up':'down'}">${up?'+':'−'}${Math.abs(diff).toFixed(2)}</span> vs 1 year</div>`;
+  }
+  el.hidden=false;
+  el.setAttribute('aria-label',`${TREASURY_CHART.longLabel} ${last.v.toFixed(2)} percent, ${hist.years}-year trend`);
+  el.innerHTML=`<div class="ty-kicker">${esc(TREASURY_CHART.longLabel)}</div>
+    <div class="ty-head"><div class="ty-value">${last.v.toFixed(2)}%</div><div class="ty-meta"><div class="ty-date">${esc(d)}</div>${chg}</div></div>
+    <div class="ty-plot">${plot.svg}<div class="ty-y">${yTicks}</div><div class="ty-x">${xLabels}</div></div>`;
+}
 function applyRates(r){
   const s=r?.series||r||{}; const ten=s.DGS10, ff=s.DFF||s.FEDFUNDS, mo=s.MORTGAGE30US;
   if(!r?.asOf||!ten?.latest||!(ten.history5y?.length>=2)){RATES_SLIDE=null;TAPE_RATES='';return;}
@@ -805,6 +908,7 @@ function applyLive(d){
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
   try{applyRates(d.rates);}catch(e){console.error('rates',e);RATES_SLIDE=null;TAPE_RATES='';}
+  try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
   try{if(changed('rates',[RATES_SLIDE,TAPE_RATES])){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
@@ -812,7 +916,7 @@ function applyLive(d){
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
   const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
   if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
-  if(RATES_SLIDE)credits.push('Rates: FRED');
+  if(RATES_SLIDE||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
   $('credit-label').textContent=credits.join(' · ');
 }
 async function refreshAll(){

@@ -461,7 +461,8 @@ async function fetchStocks(prev, key, et, now) {
 
 // ---------- rates (FRED CSV, Treasury.gov XML fallback for DGS10) ----------
 const FRED_SERIES = [
-  { id: 'DGS10', name: '10-Year Treasury' },
+  { id: 'DGS10', name: '10-Year Treasury', history: true },
+  { id: 'DGS7', name: '7-Year Treasury', history: true },
   { id: 'DFF', name: 'Fed funds (effective)' },
   { id: 'MORTGAGE30US', name: '30-yr mortgage' }
 ];
@@ -492,12 +493,13 @@ function yearAgoObs(rows, latestDate) {
   for (const r of rows) if (r.date <= targetKey && (!best || r.date > best.date)) best = r;
   return best;
 }
-function last5y(rows, latestDate) {
+function lastYears(rows, latestDate, years) {
   const d = new Date(latestDate + 'T00:00:00Z');
-  d.setUTCFullYear(d.getUTCFullYear() - 5);
+  d.setUTCFullYear(d.getUTCFullYear() - years);
   const key = d.toISOString().slice(0, 10);
   return rows.filter(r => r.date >= key);
 }
+const last5y = (rows, latestDate) => lastYears(rows, latestDate, 5);
 function isoWeekKey(dateStr) {
   const d = new Date(dateStr + 'T00:00:00Z');
   const dayNum = (d.getUTCDay() + 6) % 7; // Mon=0..Sun=6
@@ -547,7 +549,10 @@ async function fetchRates(prevRates, et) {
       const latest = rows[rows.length - 1];
       const prior = rows[rows.length - 2] || null;
       const entry = { id: s.id, name: s.name, latest, prior, yearAgo: yearAgoObs(rows, latest.date) };
-      if (s.id === 'DGS10') entry.history5y = downsampleWeekly(last5y(rows, latest.date));
+      if (s.history) {
+        entry.history5y = downsampleWeekly(lastYears(rows, latest.date, 5));
+        entry.history10y = downsampleWeekly(lastYears(rows, latest.date, 10));
+      }
       series[s.id] = entry;
     } catch (e1) {
       if (s.id === 'DGS10') {
@@ -556,7 +561,7 @@ async function fetchRates(prevRates, et) {
           const latest = rows[rows.length - 1];
           const prior = rows[rows.length - 2] || null;
           const prevEntry = prevSeries.DGS10 || {};
-          series.DGS10 = { id: 'DGS10', name: '10-Year Treasury', latest, prior, yearAgo: prevEntry.yearAgo || null, history5y: prevEntry.history5y || [] };
+          series.DGS10 = { id: 'DGS10', name: '10-Year Treasury', latest, prior, yearAgo: prevEntry.yearAgo || null, history5y: prevEntry.history5y || [], history10y: prevEntry.history10y || [] };
           usedTreasury = true;
           continue;
         } catch (e2) {
