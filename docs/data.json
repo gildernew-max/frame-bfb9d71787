@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T22:33:29.586Z",
+ "generatedAt": "2026-11-15T22:53:24.047Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -4588,11 +4588,11 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-15T22:33:29.586Z",
+  "at": "2026-11-15T22:53:24.047Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "news"
+   "usTempGrid"
   ]
  },
  "rates": {
@@ -11004,16 +11004,16 @@
     "id": "401873061",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 10:17",
+    "period": 3,
+    "clock": "10:17",
     "completed": false,
     "away": {
      "name": "Los Angeles Rams",
      "short": "Rams",
      "id": "14",
      "abbrev": "LAR",
-     "score": "17",
+     "score": "23",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
      "record": "5-4",
      "winner": false,
@@ -11037,16 +11037,16 @@
     "id": "401873062",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 8:27",
+    "period": 3,
+    "clock": "8:27",
     "completed": false,
     "away": {
      "name": "Seattle Seahawks",
      "short": "Seahawks",
      "id": "26",
      "abbrev": "SEA",
-     "score": "7",
+     "score": "14",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
      "record": "5-4",
      "winner": false,
@@ -11070,16 +11070,16 @@
     "id": "401873063",
     "start": "2026-11-15T21:25Z",
     "state": "in",
-    "status": "Q2 4:04",
+    "status": "Q2 0:07",
     "period": 2,
-    "clock": "4:04",
+    "clock": "0:07",
     "completed": false,
     "away": {
      "name": "San Francisco 49ers",
      "short": "49ers",
      "id": "25",
      "abbrev": "SF",
-     "score": "10",
+     "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
      "record": "7-1",
      "winner": false,
@@ -11463,8 +11463,8 @@
     }
    }
   ],
-  "asOf": "2026-11-15T22:33:29.586Z",
-  "lastAttempt": "2026-11-15T22:33:29.586Z",
+  "asOf": "2026-11-15T22:53:24.047Z",
+  "lastAttempt": "2026-11-15T22:53:24.047Z",
   "lastError": null
  },
  "alerts": {
@@ -11475,8 +11475,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-15T22:33:29.586Z",
-  "lastAttempt": "2026-11-15T22:33:29.586Z",
+  "asOf": "2026-11-15T22:53:24.047Z",
+  "lastAttempt": "2026-11-15T22:53:24.047Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12117,5 +12117,9 @@
   "asOf": "2026-11-15T21:38:42.551Z",
   "lastAttempt": "2026-11-15T21:38:42.551Z",
   "lastError": null
+ },
+ "usTempGrid": {
+  "lastAttempt": "2026-11-15T22:53:24.047Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  }
 }
