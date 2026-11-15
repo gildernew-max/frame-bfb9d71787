@@ -184,6 +184,25 @@ export async function weatherNWS(now) {
   return { provider: 'National Weather Service', credit: 'Weather: NWS', cities: out };
 }
 
+// ---------- NWS alerts for the primary dashboard location ----------
+async function fetchNwsAlerts() {
+  const c = CITIES.atlanta;
+  const raw = await getJSON(`https://api.weather.gov/alerts/active?point=${c.lat},${c.lon}`, { accept: 'application/geo+json' });
+  const items = (raw.features || []).map(f => {
+    const p = f.properties || {};
+    return {
+      id: p.id || f.id || '',
+      event: p.event || '',
+      headline: p.headline || p.event || '',
+      severity: p.severity || '',
+      status: p.status || '',
+      ends: p.ends || p.expires || null,
+      onset: p.onset || p.effective || null
+    };
+  }).filter(x => x.status === 'Actual' && /Watch|Warning$/i.test(x.event || ''));
+  return { provider: 'NWS', point: { name: c.name, lat: c.lat, lon: c.lon }, items };
+}
+
 // ---------- NFL (ESPN public JSON) ----------
 const TEAMS = [
   { code: 'PIT', id: 23, team: 'Pittsburgh Steelers', color: '#272727', gold: '#FFB612' },
@@ -695,6 +714,11 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       try { out.weather = ok(await weatherNWS(now), { asOf: nowIso, lastAttempt: nowIso, note: `Open-Meteo failed: ${why(e1)}` }); }
       catch (e2) { out.weather = { ...(prev.weather || {}), lastAttempt: nowIso, lastError: `Open-Meteo: ${why(e1)}; NWS: ${why(e2)}` }; }
     }
+  }
+  if (force || !prev.alerts?.asOf || ageMin(prev.alerts.asOf, now) >= 12) {
+    ran.push('alerts');
+    try { out.alerts = ok(await fetchNwsAlerts(), { asOf: nowIso, lastAttempt: nowIso }); }
+    catch (e) { out.alerts = { ...(prev.alerts || {}), lastAttempt: nowIso, lastError: `NWS: ${why(e)}` }; }
   }
   if (force || sectionDue(prev.nfl, now, et, 'daily6')) {
     ran.push('nfl');

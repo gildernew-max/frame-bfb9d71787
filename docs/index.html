@@ -407,6 +407,13 @@
   .news-full-time{font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
   .news-full-hd{font:300 36px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em}
   .news-full-sum{margin-top:8px;font-size:26px;line-height:1.35;color:var(--muted);font-weight:300}
+  #alert-banner{position:absolute;left:0;right:0;top:0;z-index:40;display:flex;align-items:center;justify-content:center;
+    gap:22px;min-height:72px;padding:18px 120px;border-bottom:1px solid rgba(201,168,106,.48);
+    background:linear-gradient(180deg,rgba(201,168,106,.20),rgba(16,17,20,.92) 86%);
+    color:var(--ink);font:400 32px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.03em}
+  #alert-banner[hidden]{display:none!important}
+  #alert-banner .kicker{color:var(--gold);font-size:22px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+  #alert-banner .alert-text{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -548,8 +555,19 @@
       <div id="news-overlay-list" class="news-full"></div>
     </div>
   </div>
+
+  <div id="alert-banner" hidden role="status" aria-live="polite"></div>
 </div>
 <script>
+const ALERTS={
+  marketDayDropPct:2,      // S&P or Dow, cash session, percent
+  futuresDropPct:1.5,      // YM or ES futures while the cash market is closed
+  scoreBannerMs:60000,     // how long a TD/FG banner stays up
+  livePollMs:60000,        // NFL score poll, only while games are live
+  nwsPollMs:5*60*1000,     // active watches/warnings for the dashboard city
+  nwsPoint:{name:'Atlanta, GA',lat:33.749,lon:-84.388},
+  nwsEvent:/Watch|Warning$/i
+};
 /* ------------------------------------------------------------------
    LIVE DATA HOOK — replace sample values or wire fetchers here.
    const LIVE = {
@@ -968,6 +986,7 @@ function applyLive(d){
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
   try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
+  try{checkMarketAlerts();scheduleScoreWatch();if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
@@ -983,6 +1002,8 @@ async function refreshAll(){
 }
 refreshAll();
 window.setInterval(refreshAll,POLL_MS);
+refreshNwsAlerts();
+window.setInterval(refreshNwsAlerts,ALERTS.nwsPollMs);
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape()); // re-measure the tape with final fonts
 window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
 
@@ -1351,7 +1372,163 @@ document.addEventListener('keydown',e=>{
   if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();}
 });
 
+const ALERT_PRI={nws:3,market:2,score:1};
+let bannerState={kind:null,text:'',until:0,priority:0};
+let nflPrevScores={}, nflWatchTimer=null, nwsTimer=null;
+function renderBanner(){
+  const el=$('alert-banner'); if(!el)return;
+  if(!bannerState.kind){el.hidden=true;el.innerHTML='';return;}
+  const label=bannerState.kind==='nws'?'Alert':bannerState.kind==='market'?'Markets':'NFL';
+  el.hidden=false;
+  el.innerHTML=`<span class="kicker">${label}</span><span class="alert-text">${esc(bannerState.text)}</span>`;
+}
+function showBanner(kind,text,ms){
+  const pri=ALERT_PRI[kind]||0, now=Date.now();
+  if(bannerState.kind&&bannerState.priority>pri&&(!bannerState.until||bannerState.until>now))return;
+  bannerState={kind,text,until:ms?now+ms:0,priority:pri};
+  renderBanner();
+}
+function clearBanner(kind){
+  if(kind&&bannerState.kind!==kind)return;
+  bannerState={kind:null,text:'',until:0,priority:0};
+  renderBanner();
+  checkMarketAlerts();
+  if(!bannerState.kind)checkNwsBanner();
+}
+function expireBanner(){
+  if(bannerState.until&&Date.now()>=bannerState.until)clearBanner(bannerState.kind);
+}
+function marketAlertText(){
+  const open=marketOpenNow(LIVE_DATA);
+  if(open){
+    const qs=LIVE_DATA?.stocks?.quotes||{};
+    for(const key of ['SPX','DOW']){
+      const q=qs[key], ch=q?.ch;
+      if(Number.isFinite(ch)&&ch<=-ALERTS.marketDayDropPct){
+        const name=key==='SPX'?'S&P 500':'Dow';
+        return `${name} ${ch.toFixed(2)}%`;
+      }
+    }
+    return null;
+  }
+  const items=LIVE_DATA?.futures?.items||{};
+  for(const key of ['SPX','DOW']){
+    const it=items[key];
+    if(it?.valid!==false&&Number.isFinite(it?.changePct)&&it.changePct<=-ALERTS.futuresDropPct){
+      const name=key==='SPX'?'S&P':'Dow';
+      return `${name} futures ${it.changePct.toFixed(2)}%`;
+    }
+  }
+  return null;
+}
+function checkMarketAlerts(){
+  const text=marketAlertText();
+  if(text)showBanner('market',text);
+  else if(bannerState.kind==='market')clearBanner('market');
+}
+let lastNwsText=null;
+function nwsHeadline(a){return (a.headline||a.event||'').replace(/\s+/g,' ').trim();}
+function pickNws(items){
+  const hits=(items||[]).filter(p=>{
+    if((p.status||'Actual')!=='Actual')return false;
+    if(!ALERTS.nwsEvent.test(p.event||p.headline||''))return false;
+    if(p.ends&&new Date(p.ends)<new Date())return false;
+    return true;
+  });
+  hits.sort((a,b)=>((/Warning$/i.test(b.event||'')?1:0)-(/Warning$/i.test(a.event||'')?1:0)));
+  return hits[0]||null;
+}
+function checkNwsBanner(){
+  const hit=pickNws(LIVE_DATA?.alerts?.items||[]);
+  const text=hit?nwsHeadline(hit):null;
+  lastNwsText=text;
+  if(text)showBanner('nws',text);
+  else if(bannerState.kind==='nws')clearBanner('nws');
+}
+async function refreshNwsAlerts(){
+  try{
+    const {lat,lon}=ALERTS.nwsPoint;
+    const r=await fetch(`https://api.weather.gov/alerts/active?point=${lat},${lon}`,{headers:{Accept:'application/geo+json'},cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    const raw=await r.json();
+    const items=(raw.features||[]).map(f=>{
+      const p=f.properties||{};
+      return {id:p.id||f.id||'',event:p.event||'',headline:p.headline||p.event||'',severity:p.severity||'',status:p.status||'',ends:p.ends||p.expires||null};
+    });
+    if(LIVE_DATA)LIVE_DATA.alerts={provider:'NWS',items,asOf:new Date().toISOString(),point:ALERTS.nwsPoint};
+    checkNwsBanner();
+    return;
+  }catch(e){console.warn('nws alerts',e);}
+  try{
+    const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    if(r.ok){const d=await r.json();if(d.alerts&&LIVE_DATA)LIVE_DATA.alerts=d.alerts;}
+  }catch(_){}
+  checkNwsBanner();
+}
+function scoreDeltaType(d){
+  if(d>=6)return 'TD';
+  if(d===3)return 'FG';
+  if(d===2)return 'SAFETY';
+  if(d===1)return 'XP';
+  if(d>0)return 'SCORE';
+  return null;
+}
+function flattenScores(games){
+  const out={};
+  for(const g of games||[]){
+    if(!g?.id)continue;
+    out[g.id]={state:g.state,away:{name:g.away?.short||g.away?.name||g.away?.abbrev,score:Number(g.away?.score)},home:{name:g.home?.short||g.home?.name||g.home?.abbrev,score:Number(g.home?.score)}};
+  }
+  return out;
+}
+function nflWatchWindow(){
+  const e=etNow();
+  return e.wd==='Sun'||(e.wd==='Sat'&&e.mins>=12*60)||(['Thu','Mon'].includes(e.wd)&&e.mins>=18*60)||(['Thu','Mon'].includes(e.wd)&&e.mins<2*60);
+}
+async function pollLiveNflScores(){
+  let games=null;
+  try{
+    const r=await fetch(ESPN_NFL_SB+'?t='+Date.now(),{cache:'no-store'});
+    if(r.ok)games=parseEspnScoreboard(await r.json()).games;
+  }catch(e){console.warn('nfl watch',e);}
+  if(!games&&LIVE_DATA?.nflScoreboard?.games)games=LIVE_DATA.nflScoreboard.games;
+  const live=(games||[]).some(g=>g.state==='in');
+  const cur=flattenScores(games);
+  if(Object.keys(nflPrevScores).length){
+    for(const id of Object.keys(cur)){
+      const prev=nflPrevScores[id], now=cur[id];
+      if(!prev||!now)continue;
+      for(const side of ['away','home']){
+        const before=prev[side]?.score, after=now[side]?.score;
+        if(!Number.isFinite(before)||!Number.isFinite(after)||after<=before)continue;
+        const typ=scoreDeltaType(after-before);
+        if(!typ)continue;
+        showBanner('score',`${typ} ${now[side].name||''} ${after}`.replace(/\s+/g,' ').trim(),ALERTS.scoreBannerMs);
+        break;
+      }
+      if(bannerState.kind==='score')break;
+    }
+  }
+  nflPrevScores=cur;
+  if(!live&&!nflWatchWindow())stopNflWatch();
+}
+function startNflWatch(){
+  if(nflWatchTimer)return;
+  pollLiveNflScores();
+  nflWatchTimer=setInterval(pollLiveNflScores,ALERTS.livePollMs);
+}
+function stopNflWatch(){
+  if(!nflWatchTimer)return;
+  clearInterval(nflWatchTimer);nflWatchTimer=null;
+}
+function scheduleScoreWatch(){
+  const live=(LIVE_DATA?.nflScoreboard?.games||[]).some(g=>g.state==='in');
+  if(live||nflWatchWindow())startNflWatch();
+  else stopNflWatch();
+}
+
 window.setInterval(tick,1000);
+window.setInterval(expireBanner,1000);
 window.setInterval(rotateSpotlight,15000);
 window.setInterval(()=>{newsIndex=(newsIndex+1)%DATA.news.length;showNews(newsIndex);},12000);
 </script>
