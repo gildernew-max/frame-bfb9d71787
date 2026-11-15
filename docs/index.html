@@ -509,16 +509,22 @@ function rotateSpotlight(){
     $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
 }
 let newsIndex=0;
+function renderNewsList(k){
+  // The list never repeats the lead: it starts at the next story and wraps (max 5 rows).
+  const n=DATA.news.length, rest=[];
+  for(let j=1;j<n&&rest.length<5;j++)rest.push((k+j)%n);
+  $('list').innerHTML=rest.map(i=>`<div class="news-li" data-k="${i}"><i>0${i+1}</i><span>${esc(DATA.news[i].hd)}</span></div>`).join('');
+}
 function renderNews(items){
-  $('list').innerHTML=items.map((x,k)=>`<div class="news-li" data-k="${k}"><i>0${k+1}</i><span>${esc(x.hd)}</span></div>`).join('');
+  renderNewsList(0);
   showNews(0,true);
 }
 function showNews(k,instant=false){
   const apply=()=>{
     $('f-src').textContent=DATA.news[k].src;
     $('f-hd').textContent=DATA.news[k].hd;
-    $('f-count').textContent=`0${k+1} / 0${DATA.news.length}`;
-    document.querySelectorAll('.news-li').forEach(el=>el.classList.toggle('on',+el.dataset.k===k));
+    $('f-count').textContent=`0${k+1} / ${String(DATA.news.length).padStart(2,'0')}`;
+    renderNewsList(k);
     $('feature').classList.remove('fade');
   };
   if(instant){apply();return;}
@@ -530,7 +536,17 @@ function renderTape(){
     if(q.upcoming)return `<span class="tape-item"><b class="tape-symbol">ANT</b><span class="tape-change soon">IPO NOV 19 · $70–78</span><span class="tape-sep"></span></span>`;
     return `<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${fmtPrice(q)}</span><span class="tape-change ${q.ch>=0?'up':'down'}">${q.ch>=0?'+':''}${q.ch.toFixed(2)}%</span><span class="tape-sep"></span></span>`;
   }).join('');
-  $('tape-track').innerHTML=`<div class="tape-group">${tape}</div><div class="tape-group" aria-hidden="true">${tape}</div>`;
+  const track=$('tape-track');
+  // Seamless loop: each copy must be at least as wide as the viewport, so repeat the
+  // item set inside one copy as needed, then render two identical copies and slide by
+  // exactly one copy's width (translateX(-50%) of the two-copy track).
+  track.innerHTML=`<div class="tape-group" style="min-width:0">${tape}</div>`;
+  const one=track.firstElementChild.offsetWidth||1, vp=track.parentElement.offsetWidth||3600;
+  const reps=Math.max(1,Math.ceil(vp/one));
+  const copy=tape.repeat(reps);
+  track.innerHTML=`<div class="tape-group" style="min-width:0">${copy}</div><div class="tape-group" style="min-width:0" aria-hidden="true">${copy}</div>`;
+  const w=track.firstElementChild.offsetWidth;
+  track.style.animationDuration=`${(w/(3676/74)).toFixed(2)}s`; // same speed as the design: 3676px per 74s
 }
 
 const TZ='America/New_York'; // Canonical Eastern Time IANA zone for Atlanta, GA
@@ -692,6 +708,7 @@ async function refreshAll(){
 }
 refreshAll();
 window.setInterval(refreshAll,POLL_MS);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape()); // re-measure the tape with final fonts
 window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
 
 window.setInterval(tick,1000);

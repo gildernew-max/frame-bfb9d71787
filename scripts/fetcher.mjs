@@ -217,7 +217,7 @@ async function fetchNews() {
   const seen = new Set();
   const items = all.sort((a, b) => (b.pub || '').localeCompare(a.pub || ''))
     .filter(x => { const k = x.hd.toLowerCase().replace(/[^a-z0-9]/g, ''); if (seen.has(k)) return false; seen.add(k); return true; })
-    .slice(0, 5);
+    .slice(0, 6); // lead story + 5 in the list
   return { items, feedErrors: failed };
 }
 
