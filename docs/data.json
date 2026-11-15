@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T22:53:24.047Z",
+ "generatedAt": "2026-11-15T23:31:18.975Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -545,8 +545,8 @@
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-15T22:33:29.586Z",
-  "lastAttempt": "2026-11-15T22:33:29.586Z",
+  "asOf": "2026-11-15T23:31:18.975Z",
+  "lastAttempt": "2026-11-15T23:31:18.975Z",
   "credit": "BBC News · NPR",
   "lastError": null
  },
@@ -4588,10 +4588,12 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-15T22:53:24.047Z",
+  "at": "2026-11-15T23:31:18.975Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "news",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -10950,44 +10952,44 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-15T20:24:44.042Z",
-  "lastAttempt": "2026-11-15T20:24:44.042Z",
+  "asOf": "2026-11-15T23:31:18.975Z",
+  "lastAttempt": "2026-11-15T23:31:18.975Z",
   "items": {
    "DOW": {
     "symbol": "YM=F",
-    "last": 52418,
-    "lastTime": 1794607198,
+    "last": 52505,
+    "lastTime": 1794784847,
     "settle": 52432,
     "settleDate": "2026-11-13",
     "indexClose": 52347.55,
-    "changePct": -0.026701251144339334,
-    "expectedOpen": 52333.5725492066,
+    "changePct": 0.13922795239548366,
+    "expectedOpen": 52420.43242199421,
     "valid": true
    },
    "SPX": {
     "symbol": "ES=F",
-    "last": 7583,
-    "lastTime": 1794607199,
+    "last": 7598.75,
+    "lastTime": 1794784876,
     "settle": 7585,
     "settleDate": "2026-11-13",
     "indexClose": 7561.67,
-    "changePct": -0.026367831245880026,
-    "expectedOpen": 7559.67615161503,
+    "changePct": 0.1812788398154252,
+    "expectedOpen": 7575.377707646671,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
-    "last": 28034.75,
-    "lastTime": 1794607199,
+    "last": 28159,
+    "lastTime": 1794784877,
     "settle": 28038.25,
     "settleDate": "2026-11-13",
     "indexClose": 25136.273,
-    "changePct": -0.012482947402209482,
-    "expectedOpen": 25133.135252262535,
+    "changePct": 0.4306616853762271,
+    "expectedOpen": 25244.525296942567,
     "valid": true
    }
   },
-  "tradingNow": false
+  "tradingNow": true
  },
  "nflScoreboard": {
   "provider": "ESPN",
@@ -11004,16 +11006,16 @@
     "id": "401873061",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Q3 10:17",
-    "period": 3,
-    "clock": "10:17",
+    "status": "Q4 12:15",
+    "period": 4,
+    "clock": "12:15",
     "completed": false,
     "away": {
      "name": "Los Angeles Rams",
      "short": "Rams",
      "id": "14",
      "abbrev": "LAR",
-     "score": "23",
+     "score": "34",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
      "record": "5-4",
      "winner": false,
@@ -11037,16 +11039,16 @@
     "id": "401873062",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Q3 8:27",
-    "period": 3,
-    "clock": "8:27",
+    "status": "Q4 7:43",
+    "period": 4,
+    "clock": "7:43",
     "completed": false,
     "away": {
      "name": "Seattle Seahawks",
      "short": "Seahawks",
      "id": "26",
      "abbrev": "SEA",
-     "score": "14",
+     "score": "21",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
      "record": "5-4",
      "winner": false,
@@ -11070,16 +11072,16 @@
     "id": "401873063",
     "start": "2026-11-15T21:25Z",
     "state": "in",
-    "status": "Q2 0:07",
-    "period": 2,
-    "clock": "0:07",
+    "status": "Q3 6:59",
+    "period": 3,
+    "clock": "6:59",
     "completed": false,
     "away": {
      "name": "San Francisco 49ers",
      "short": "49ers",
      "id": "25",
      "abbrev": "SF",
-     "score": "17",
+     "score": "31",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
      "record": "7-1",
      "winner": false,
@@ -11091,7 +11093,7 @@
      "short": "Cowboys",
      "id": "6",
      "abbrev": "DAL",
-     "score": "16",
+     "score": "19",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
      "record": "4-5",
      "winner": false,
@@ -11463,8 +11465,8 @@
     }
    }
   ],
-  "asOf": "2026-11-15T22:53:24.047Z",
-  "lastAttempt": "2026-11-15T22:53:24.047Z",
+  "asOf": "2026-11-15T23:31:18.975Z",
+  "lastAttempt": "2026-11-15T23:31:18.975Z",
   "lastError": null
  },
  "alerts": {
@@ -11475,8 +11477,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-15T22:53:24.047Z",
-  "lastAttempt": "2026-11-15T22:53:24.047Z",
+  "asOf": "2026-11-15T23:31:18.975Z",
+  "lastAttempt": "2026-11-15T23:31:18.975Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12119,7 +12121,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-15T22:53:24.047Z",
+  "lastAttempt": "2026-11-15T23:31:18.975Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  }
 }
