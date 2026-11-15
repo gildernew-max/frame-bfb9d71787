@@ -147,7 +147,7 @@
     gap:12px;min-width:0;margin-top:9px}
   .atl-now-highlow{font-size:36px;font-weight:300;color:var(--muted);white-space:nowrap}
   .atl-now-highlow b{color:var(--ink);font-weight:400}
-  .atl-now-wind{font-size:30px;font-weight:300;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .atl-now-wind{font-size:30px;font-weight:300;color:var(--soft);white-space:nowrap}
   .atlanta-cards .forecast{grid-column:span 3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
     gap:15px;margin:0;min-width:0}
   .atlanta-cards .forecast-day{height:296px;padding:24px 12px 21px;
@@ -180,7 +180,7 @@
     white-space:nowrap;font-feature-settings:"tnum" 1}
   .secondary-bottom{display:flex;justify-content:space-between;align-items:baseline;
     min-width:0;gap:10px;margin-top:7px}
-  .secondary-current .secondary-condition{font-size:36px;font-weight:300;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .secondary-current .secondary-condition{font-size:36px;font-weight:300;line-height:1.08;white-space:nowrap}
   .secondary-current .secondary-detail{color:var(--muted);font-size:36px;line-height:1.2;
     white-space:nowrap}
   .secondary-forecast{min-width:0;padding:0;border:0;display:flex;flex-direction:column}
@@ -210,7 +210,7 @@
     border-radius:6px 6px 0 0;background:var(--team-gold)}
   .nfl-main{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:0}
   .nfl-name{font:400 47px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.022em;
-    white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+    white-space:nowrap;min-width:0;overflow:hidden}
   .nfl-record{font:300 60px/1 Inter,"SF Pro Display",system-ui,sans-serif;white-space:nowrap;
     font-feature-settings:"tnum" 1,"lnum" 1}
   .nfl-details{display:flex;align-items:center;gap:19px;min-width:0}
@@ -223,7 +223,7 @@
     color:var(--muted);min-width:0}
   .nfl-next .game-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
     font-weight:500;color:var(--gold);white-space:nowrap}
-  .nfl-next .game-detail{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nfl-next .game-detail{min-width:0;white-space:nowrap;overflow:hidden}
   .nfl-foot{margin-top:26px;display:flex;align-items:center;gap:18px;color:var(--soft);
     font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .nfl-foot .line{height:1px;flex:1;background:var(--hair)}
@@ -264,12 +264,12 @@
     background:var(--panel-light);padding:23px 24px 17px;display:flex;flex-direction:column;justify-content:space-between}
   .quote-card .quote-top{display:flex;justify-content:space-between;align-items:baseline;gap:9px}
   .quote-card .symbol{font-size:30px;letter-spacing:.12em;color:var(--gold);font-weight:500}
-  .quote-card .name{font-size:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);text-align:right}
+  .quote-card .name{font-size:30px;white-space:nowrap;overflow:hidden;color:var(--muted);text-align:right}
   .quote-card .quote-value{font:300 62px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;
     font-feature-settings:"tnum" 1,"lnum" 1}
   .quote-card .quote-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
   .quote-futures{margin-top:8px;font-size:30px;font-weight:500;letter-spacing:.04em;color:var(--soft);
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    white-space:nowrap;overflow:hidden}
   .quote-card .quote-bottom .change-pill{font-size:27px;padding:7px 12px}
   .quote-card .quote-bottom .hint{font-size:30px;color:var(--soft);letter-spacing:.12em;text-transform:uppercase}
   .quote-card.upcoming{border-color:rgba(201,168,106,.35);background:rgba(201,168,106,.045)}
@@ -289,8 +289,12 @@
     font-feature-settings:"tnum" 1,"lnum" 1}
   .stock-hero .change-pill{font-size:36px;padding:12px 18px}
   .stock-chart-wrap{flex:1;min-height:0;position:relative;border:1px solid var(--hair);border-radius:18px;
-    background:var(--panel);padding:28px 28px 20px}
-  .stock-chart-wrap svg{width:100%;height:100%;display:block}
+    background:var(--panel);padding:28px 28px 12px}
+  .stock-chart-inner{position:absolute;inset:28px 28px 12px;display:flex;flex-direction:column}
+  .stock-chart-plot{flex:1;width:100%;min-height:0;display:block}
+  .stock-chart-x{position:relative;height:48px;flex:none}
+  .stock-chart-x span{position:absolute;top:10px;font-family:Inter,"SF Pro Display",system-ui,sans-serif;
+    font-size:32px;font-weight:500;line-height:1;color:rgba(240,237,230,.60);white-space:nowrap;pointer-events:none}
   .stock-chart-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
     color:var(--muted);font-size:32px;letter-spacing:.04em}
   .stock-side{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
@@ -298,14 +302,14 @@
   .stock-metric{padding:22px 24px 20px;border:1px solid var(--hair);border-radius:16px;background:var(--panel);min-width:0}
   .stock-metric .lbl{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
   .stock-metric .val{margin-top:10px;font:300 48px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
-    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap;overflow:hidden}
   .stock-news{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:16px;
     background:var(--panel);padding:8px 8px 12px;overflow:hidden}
   .stock-news-label{padding:16px 20px 8px;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .stock-news-item{padding:16px 20px;border-top:1px solid var(--hair)}
   .stock-news-item .meta{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
   .stock-news-item .hd{margin-top:8px;font:300 40px/1.25 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
-    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+    white-space:pre-line;overflow:hidden;max-height:calc(2 * 1.25em)}
   .stock-ipo{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;
     padding:48px;border:1px solid rgba(201,168,106,.35);border-radius:18px;background:rgba(201,168,106,.05)}
   .stock-ipo .kicker{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
@@ -315,10 +319,21 @@
   .wx-radar-page[hidden]{display:none!important}
   .wx-overlay-body[hidden]{display:none!important}
   .wx-map-card{position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;
-    border:1px solid var(--hair);border-radius:18px;background:var(--panel);overflow:hidden}
+    border:1px solid #1a1b1e;border-radius:18px;background:#141518;overflow:hidden;
+    box-shadow:none;outline:none}
   .wx-map{flex:1;min-height:0;width:100%;background:#141518}
-  .wx-map .leaflet-container{width:100%;height:100%;background:#141518;font-family:Inter,"SF Pro Display",system-ui,sans-serif}
+  .wx-map .leaflet-container{width:100%;height:100%;background:#141518;font-family:Inter,"SF Pro Display",system-ui,sans-serif;
+    outline:none;border:none;box-shadow:none}
   .wx-map .leaflet-control-attribution{display:none}
+  /* Invert basemap *images* only. Filtering the pane or layer wrapper also inverts
+     uncovered gaps (tile alignment / letterbox remainder) into a light seam. */
+  .wx-map .leaflet-baseDark-pane{background:transparent;filter:none}
+  .wx-map .wx-basemap-tile{filter:none}
+  .wx-map .leaflet-baseDark-pane img.leaflet-tile{
+    filter:invert(1) hue-rotate(180deg) brightness(.78) contrast(.95) saturate(.35);
+    border:none;outline:none}
+  .wx-map .leaflet-tile{border:none;outline:none}
+  #radar-map{overflow:hidden}
   .wx-map-kicker{position:absolute;top:18px;left:20px;z-index:500;pointer-events:none;
     font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;
     text-shadow:0 1px 8px rgba(0,0,0,.65)}
@@ -327,10 +342,11 @@
     text-shadow:0 1px 8px rgba(0,0,0,.75)}
   .wx-map-time.delayed{color:var(--gold)}
   .wx-map-credit{grid-column:1/-1;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
-  .wx-temp-label{background:none;border:0;overflow:visible;transform:translate(-50%,-20px)}
-  .wx-temp-label span{display:block;font:500 40px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+  .wx-temp-label{background:none;border:0;overflow:visible;transform:translate(-50%,-20px);
+    width:max-content!important;height:auto!important}
+  .wx-temp-label span{display:block;width:max-content;font:500 40px/1 Inter,"SF Pro Display",system-ui,sans-serif;
     letter-spacing:.02em;text-shadow:-2px -2px 0 #101114,2px -2px 0 #101114,-2px 2px 0 #101114,2px 2px 0 #101114,-2px 0 0 #101114,2px 0 0 #101114,0 -2px 0 #101114,0 2px 0 #101114;white-space:nowrap;text-align:center}
-  .wx-temp-label i{display:block;margin-top:4px;font:500 28px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+  .wx-temp-label i{display:block;width:max-content;margin-top:4px;font:500 28px/1 Inter,"SF Pro Display",system-ui,sans-serif;
     letter-spacing:.10em;text-transform:uppercase;font-style:normal;color:var(--muted);
     text-shadow:-2px -2px 0 #101114,2px -2px 0 #101114,-2px 2px 0 #101114,2px 2px 0 #101114,-2px 0 0 #101114,2px 0 0 #101114,0 -2px 0 #101114,0 2px 0 #101114;text-align:center}
   .wx-temp-label.no-name i{display:none}
@@ -341,6 +357,7 @@
   .business-feature{height:329px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
   .business-feature .src{font-size:30px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .business-feature .hd{font:400 57px/1.18 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.023em;margin-top:19px;
+    white-space:pre-line;overflow:hidden;max-height:calc(2 * 1.18em);
     transition:opacity .85s ease,transform .85s ease}
   .business-feature .src{transition:opacity .85s ease,transform .85s ease}
   .business-feature.fade .src,.business-feature.fade .hd{opacity:0;transform:translateY(12px)}
@@ -355,7 +372,7 @@
     transition:color .65s ease}
   .news-li:last-child{border-bottom:0}
   .news-li i{font-size:30px;color:var(--soft);letter-spacing:.08em;font-style:normal;align-self:start;margin-top:7px}
-  .news-li span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+  .news-li span{white-space:pre-line;overflow:hidden;max-height:calc(2 * 1.2em)}
   .news-li.on{color:var(--ink)}.news-li.on i{color:var(--gold)}
 
   /* Full-width, quiet market ribbon instead of a static footer */
@@ -430,7 +447,7 @@
   .sb-team.no-logo .sb-logo{display:none}
   .sb-team.no-logo .sb-logo-fallback{display:flex}
   .sb-name{font:300 54px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
-    white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+    white-space:nowrap;min-width:0;overflow:hidden}
   .sb-rec{color:var(--muted);font-weight:300;letter-spacing:0;font-size:32px;margin-left:.3em}
   .sb-team.loser .sb-rec{color:var(--soft)}
   .sb-abbr{font-size:30px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
@@ -441,7 +458,7 @@
   .sb-meta{display:flex;align-items:center;gap:18px;min-width:0;color:var(--muted);
     font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding-left:108px}
   .sb-meta .live-tag{color:var(--gold)}
-  .sb-status{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sb-status{min-width:0;overflow:hidden;white-space:nowrap}
   .sb-page{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:16px 22px;border-radius:12px;
     border:1px solid var(--hair);background:transparent;color:var(--muted);cursor:pointer;
     font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;
@@ -455,7 +472,8 @@
     font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .league-toggle button.on{color:var(--ink);border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.28)}
   .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
-  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:40px}
+  #weather-overlay .nfl-overlay-head{margin-bottom:48px}
+  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;gap:40px;padding-top:0}
   .wx7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px;flex:none}
   .wx7-day{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-width:0;
     height:300px;box-sizing:border-box;padding:20px 12px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
@@ -491,7 +509,7 @@
     background:transparent;color:var(--ink);font:500 40px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.03em}
   #alert-banner[hidden]{display:none!important}
   #alert-banner .kicker{color:var(--gold);font-size:30px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-  #alert-banner .alert-text{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #alert-banner .alert-text{min-width:0;overflow:hidden;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -822,11 +840,51 @@ function rotateSpotlight(){
     $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
 }
 let newsIndex=0;
+function clampWordsToLines(text,font,width,maxLines){
+  text=String(text||'').replace(/\s+/g,' ').trim();
+  if(!text||!(width>0))return text;
+  var ctx=clampWordsToLines._ctx;
+  if(!ctx){
+    var c=document.createElement('canvas');
+    ctx=clampWordsToLines._ctx=c.getContext('2d');
+  }
+  ctx.font=font;
+  var words=text.split(' '),lines=[],i=0;
+  while(i<words.length&&lines.length<maxLines){
+    var line=words[i],j=i+1;
+    while(j<words.length){
+      var trial=line+' '+words[j];
+      if(ctx.measureText(trial).width<=width){line=trial;j++;}
+      else break;
+    }
+    lines.push(line);
+    i=j;
+  }
+  return lines.join('\n');
+}
+function clampHeadlineEls(){
+  var els=document.querySelectorAll('.news-li span[data-full], .business-feature .hd[data-full], .stock-news-item .hd[data-full]');
+  for(var i=0;i<els.length;i++){
+    var el=els[i],full=el.getAttribute('data-full')||'';
+    var st=getComputedStyle(el);
+    var font=(st.fontStyle||'normal')+' '+(st.fontWeight||'400')+' '+(st.fontSize||'44px')+' '+(st.fontFamily||'Inter,sans-serif');
+    var w=el.clientWidth;
+    if(w<=0)continue;
+    el.textContent=clampWordsToLines(full,font,w,2);
+  }
+}
+function scheduleHeadlineClamp(){
+  requestAnimationFrame(function(){
+    clampHeadlineEls();
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(clampHeadlineEls).catch(function(){});
+  });
+}
 function renderNewsList(k){
   // The list never repeats the lead: it starts at the next story and wraps (max 5 rows).
   const n=DATA.news.length, rest=[];
   for(let j=1;j<n&&rest.length<5;j++)rest.push((k+j)%n);
-  $('list').innerHTML=rest.map(i=>`<div class="news-li" data-k="${i}"><i>0${i+1}</i><span>${esc(DATA.news[i].hd)}</span></div>`).join('');
+  $('list').innerHTML=rest.map(i=>`<div class="news-li" data-k="${i}"><i>0${i+1}</i><span data-full="${esc(DATA.news[i].hd)}">${esc(DATA.news[i].hd)}</span></div>`).join('');
+  scheduleHeadlineClamp();
 }
 function renderNews(items){
   renderNewsList(0);
@@ -835,10 +893,12 @@ function renderNews(items){
 function showNews(k,instant=false){
   const apply=()=>{
     $('f-src').textContent=DATA.news[k].src;
+    $('f-hd').setAttribute('data-full',DATA.news[k].hd||'');
     $('f-hd').textContent=DATA.news[k].hd;
     $('f-count').textContent=`0${k+1} / ${String(DATA.news.length).padStart(2,'0')}`;
     renderNewsList(k);
     $('feature').classList.remove('fade');
+    scheduleHeadlineClamp();
   };
   if(instant){apply();return;}
   $('feature').classList.add('fade');window.setTimeout(apply,850);
@@ -898,6 +958,7 @@ function fit(){
   if(!(scale>0))return setTimeout(fit,500);
   $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
   if(typeof layoutWeatherMaps==='function')requestAnimationFrame(layoutWeatherMaps);
+  if(typeof scheduleHeadlineClamp==='function')scheduleHeadlineClamp();
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
 tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
@@ -938,7 +999,7 @@ function applyWeather(w){
     $('wx-temp').innerHTML=`${a.now.temp}<sup>°</sup>`;
     $('wx-cond').textContent=a.now.cond;
     $('wx-hl').innerHTML=a.today.h!=null?`High <b>${a.today.h}°</b> &nbsp;·&nbsp; Low <b>${a.today.l}°</b>`:'';
-    $('wx-wind').textContent=a.now.windMph!=null?`Wind ${a.now.windMph} mph ${a.now.windDir}`:'';
+    $('wx-wind').textContent=a.now.windMph!=null?`Wind ${a.now.windMph} mph`:'';
     $('sp-icon').setAttribute('href','#i-'+s.now.i);
     $('sp-temp').textContent=`${s.now.temp}°`;
     $('sp-cond').textContent=s.now.cond;
@@ -952,7 +1013,8 @@ function applyWeather(w){
     document.querySelector('.atlanta-now').setAttribute('aria-label',`Atlanta: ${a.now.temp} degrees, ${a.now.cond}`);
   }
   $('wx-deck').textContent=`Main location · ${w.credit||'Weather: Open-Meteo'}${ao.stale?' · stale':''}`;
-  $('wx-now-note').textContent=ao.text; $('sp-note').textContent=ao.text;
+  const nowStamp=(w.asOf?fmtTime(w.asOf):'')+(ao.stale?' · stale':'');
+  $('wx-now-note').textContent=nowStamp; $('sp-note').textContent=nowStamp;
 }
 function nextGame(n){
   if(!n)return 'No game scheduled';
@@ -1026,7 +1088,7 @@ function futuresNote(key,q){
   if(trading&&(lastAgeMin>40||ageH(f.asOf)>0.75))return null;              // stale while trading: hide
   const pct=`${it.changePct>=0?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%`;
   const label='Futures';
-  return `Futures ${pct} · Open ~${money(it.expectedOpen,0)}`;
+  return `Futures ${pct}`;
 }
 // Clock-panel Treasury chart. Switch the displayed series by changing `id` and labels
 // (fetcher already stores DGS7 history alongside DGS10).
@@ -1105,6 +1167,10 @@ function applyRates(r){
 }
 function applyLive(d){
   if(!d)return;
+  if(typeof writeSbCache==='function'){
+    if(d.nflScoreboard&&d.nflScoreboard.games&&d.nflScoreboard.games.length)writeSbCache('nfl',d.nflScoreboard,d.nflScoreboard.asOf);
+    if(d.cfbScoreboard&&d.cfbScoreboard.games&&d.cfbScoreboard.games.length)writeSbCache('cfb',d.cfbScoreboard,d.cfbScoreboard.asOf);
+  }
   try{applyWeather(d.weather);}catch(e){console.error('weather',e);}
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
@@ -1326,16 +1392,20 @@ function wmoIcon(code){
   return ['cloud','Cloudy'];
 }
 function scoreboardTeam(c){
-  const t=c.team||{};
-  const rec=(c.records||[]).find(r=>r.type==='total'||r.name==='overall');
-  const rankN=Number(c.curatedRank?.current);
+  const t=(c&&c.team)||{};
+  const recs=c&&c.records?c.records:[];
+  const rec=recs.find(function(r){return r.type==='total'||r.name==='overall';});
+  const curated=c&&c.curatedRank?c.curatedRank:{};
+  const rankN=Number(curated.current);
+  const logos=t.logos||[];
+  const logo0=logos.length&&logos[0]?logos[0].href:'';
   return {id:String(t.id||''),name:t.displayName||t.name||'',short:t.shortDisplayName||t.name||'',abbrev:t.abbreviation||'',
-    score:c.score==null||c.score===''?null:String(c.score),logo:t.logo||t.logos?.[0]?.href||'',
-    record:rec?.summary||'',winner:!!c.winner,color:t.color?('#'+String(t.color).replace(/^#/,'')):'',
+    score:!c||c.score==null||c.score===''?null:String(c.score),logo:t.logo||logo0||'',
+    record:rec&&rec.summary?rec.summary:'',winner:!!(c&&c.winner),color:t.color?('#'+String(t.color).replace(/^#/,'')):'',
     rank:Number.isFinite(rankN)&&rankN>=1&&rankN<=25?rankN:null};
 }
 function scoreboardStatus(ev,comp){
-  const st=comp?.status||ev.status||{};
+  const st=(comp&&comp.status)||(ev&&ev.status)||{};
   const type=st.type||{};
   const state=type.state||'pre';
   if(state==='post'){const d=type.shortDetail||type.description||'Final';return /final/i.test(d)?d:'Final';}
@@ -1349,24 +1419,29 @@ function scoreboardStatus(ev,comp){
     if(period>=1)return clock?('Q'+period+' '+clock):(detail||('Q'+period));
     return detail||'Live';
   }
-  const when=new Date(comp?.date||ev.date);
+  const when=new Date((comp&&comp.date)||(ev&&ev.date));
   if(isNaN(+when))return type.shortDetail||'Scheduled';
   const day=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(when);
   return day+' '+new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(when)+' ET';
 }
 function parseEspnScoreboard(raw){
-  const games=(raw.events||[]).map(ev=>{
-    const comp=ev.competitions?.[0]||{};
+  const events=(raw&&raw.events)?raw.events:[];
+  const games=events.map(function(ev){
+    const comps=ev.competitions||[];
+    const comp=comps.length?comps[0]:{};
     const st=comp.status||ev.status||{};
     const type=st.type||{};
-    const away=(comp.competitors||[]).find(c=>c.homeAway==='away');
-    const home=(comp.competitors||[]).find(c=>c.homeAway==='home');
+    const competitors=comp.competitors||[];
+    const away=competitors.find(function(c){return c.homeAway==='away';});
+    const home=competitors.find(function(c){return c.homeAway==='home';});
     if(!away||!home)return null;
     return {id:String(ev.id||comp.id||''),start:comp.date||ev.date,state:type.state||'pre',status:scoreboardStatus(ev,comp),
       period:st.period||0,clock:st.displayClock||'',completed:!!type.completed,away:scoreboardTeam(away),home:scoreboardTeam(home)};
   }).filter(Boolean);
-  return {provider:'ESPN',week:raw.week?.number??null,season:raw.season?.year??null,
-    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games};
+  const week=raw&&raw.week?raw.week:{};
+  const season=raw&&raw.season?raw.season:{};
+  const byes=(week.teamsOnBye||[]).map(function(t){return t.abbreviation;}).filter(Boolean);
+  return {provider:'ESPN',week:week.number!=null?week.number:null,season:season.year!=null?season.year:null,byes:byes,games:games};
 }
 function teamIdFromRef(ref){const m=String(ref||'').match(/\/teams\/(\d+)/);return m?m[1]:'';}
 function parseApRanks(raw){
@@ -1424,10 +1499,13 @@ async function loadApRanks(){
   if(!idx.ok)throw new Error(idx.status);
   const j=await idx.json();
   const avail=j.availableRankings||[];
-  const ap=avail.find(r=>String(r.id)==='1'||/AP Top 25/i.test(r.name||''))||avail.find(r=>/\bAP\b/i.test(r.name||''));
-  const week=ap?.week||j.requestedSeason?.week?.number||j.latestWeek?.number;
-  const year=j.requestedSeason?.year||j.latestSeason?.year;
-  const typ=ap?.seasonType||2;
+  const ap=avail.find(function(r){return String(r.id)==='1'||/AP Top 25/i.test(r.name||'');})||avail.find(function(r){return /\bAP\b/i.test(r.name||'');});
+  const req=j.requestedSeason||{};
+  const reqWeek=req.week||{};
+  const latest=j.latestWeek||{};
+  const week=(ap&&ap.week)||reqWeek.number||latest.number;
+  const year=req.year||(j.latestSeason&&j.latestSeason.year);
+  const typ=(ap&&ap.seasonType)||2;
   if(!year||!week)throw new Error('no AP week');
   const r=await fetch(`https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/${year}/types/${typ}/weeks/${week}/rankings/1?lang=en&region=us`,{cache:'no-store'});
   if(!r.ok)throw new Error(r.status);
@@ -1435,31 +1513,78 @@ async function loadApRanks(){
   if(!ranks.length)throw new Error('empty AP ranks');
   return ranks;
 }
-async function loadScoreboard(league){
-  const cfb=league==='cfb';
-  const url=cfb?ESPN_CFB_SB+'?groups=80&limit=300&t='+Date.now():ESPN_NFL_SB+'?t='+Date.now();
-  const fbKey=cfb?'cfbScoreboard':'nflScoreboard';
+const SB_CACHE_KEY='frame-sb-cache-v1';
+function sbLeagueKey(league){return league==='cfb'?'cfb':'nfl';}
+function sbDataKey(league){return league==='cfb'?'cfbScoreboard':'nflScoreboard';}
+function readSbCache(league){
   try{
-    const r=await fetch(url,{cache:'no-store'});
+    var raw=localStorage.getItem(SB_CACHE_KEY);
+    if(!raw)return null;
+    var all=JSON.parse(raw);
+    var hit=all&&all[sbLeagueKey(league)];
+    if(hit&&hit.board&&hit.board.games&&hit.board.games.length)return hit;
+    return null;
+  }catch(e){return null;}
+}
+function writeSbCache(league,board,asOf){
+  if(!board||!board.games||!board.games.length)return;
+  try{
+    var all={};
+    try{all=JSON.parse(localStorage.getItem(SB_CACHE_KEY)||'{}')||{};}catch(e2){all={};}
+    all[sbLeagueKey(league)]={board:board,asOf:asOf||board.asOf||new Date().toISOString()};
+    localStorage.setItem(SB_CACHE_KEY,JSON.stringify(all));
+  }catch(e){}
+}
+function pickFresherBoard(a,b){
+  var at=a?Date.parse(a.asOf||(a.board&&a.board.asOf)||'')||0:0;
+  var bt=b?Date.parse(b.asOf||(b.board&&b.board.asOf)||'')||0:0;
+  if(bt>at)return b;
+  return a||b||null;
+}
+async function loadScoreboard(league){
+  var cfb=league==='cfb';
+  var url=cfb?ESPN_CFB_SB+'?groups=80&limit=300&t='+Date.now():ESPN_NFL_SB+'?t='+Date.now();
+  var fbKey=sbDataKey(league);
+  var liveErr=null;
+  try{
+    var r=await fetch(url,{cache:'no-store'});
     if(!r.ok)throw new Error(r.status);
-    const parsed=parseEspnScoreboard(await r.json());
+    var parsed=parseEspnScoreboard(await r.json());
     if(cfb){
-      let ap=null;
+      var ap=null;
       try{ap=await loadApRanks();}catch(e){console.warn('AP ranks',e);}
       parsed.games=selectCfbByAp(parsed.games,ap);
       parsed.poll=ap&&ap.length?'AP':(parsed.games.length?'ranked':'');
     }
-    if(!parsed.games.length&&parsed.week==null)throw new Error('empty scoreboard');
-    return {source:'espn',data:parsed,asOf:new Date().toISOString()};
-  }catch(e){
-    let fb=LIVE_DATA?.[fbKey];
-    try{
-      const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
-      if(r.ok){const d=await r.json();if(d[fbKey]?.games){fb=d[fbKey];if(LIVE_DATA)LIVE_DATA[fbKey]=fb;}}
-    }catch(_){}
-    if(fb?.games)return {source:'data.json',data:fb,asOf:fb.asOf,fallback:true,error:e};
-    throw e;
+    if(!(parsed.games&&parsed.games.length)&&parsed.week==null)throw new Error('empty scoreboard');
+    if(parsed.games&&parsed.games.length){
+      if(!LIVE_DATA)LIVE_DATA={};
+      LIVE_DATA[fbKey]=parsed;
+      writeSbCache(league,parsed,parsed.asOf||new Date().toISOString());
+    }
+    return {source:'espn',data:parsed,asOf:new Date().toISOString(),fallback:false};
+  }catch(e){liveErr=e;}
+
+  var cached=readSbCache(league);
+  var fb=LIVE_DATA&&LIVE_DATA[fbKey];
+  try{
+    var r2=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+    if(r2.ok){
+      var d=await r2.json();
+      if(d&&d[fbKey]&&d[fbKey].games&&d[fbKey].games.length){
+        fb=d[fbKey];
+        if(!LIVE_DATA)LIVE_DATA={};
+        LIVE_DATA[fbKey]=fb;
+      }
+    }
+  }catch(e2){}
+  var fromData=fb&&fb.games&&fb.games.length?{board:fb,asOf:fb.asOf}:null;
+  var chosen=pickFresherBoard(cached,fromData);
+  if(chosen&&chosen.board&&chosen.board.games&&chosen.board.games.length){
+    writeSbCache(league,chosen.board,chosen.asOf||chosen.board.asOf);
+    return {source:'cache',data:chosen.board,asOf:chosen.asOf||chosen.board.asOf,fallback:true,error:liveErr};
   }
+  throw liveErr||new Error('no scoreboard');
 }
 function setLeagueToggle(){
   const nfl=$('league-nfl'),cfb=$('league-cfb');
@@ -1472,30 +1597,45 @@ function setLeagueToggle(){
 }
 function renderNflScoreboard(board,meta){
   const box=$('nfl-scoreboard');
-  const games=board?.games||[];
+  const games=(board&&board.games)||[];
   const cfb=scoreboardLeague==='cfb';
-  const week=board?.week!=null?`Week ${board.week}`:'This week';
-  const src=meta?.source==='data.json'?'ESPN via saved data':'ESPN';
-  const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
-  const bye=!cfb&&board?.byes?.length?` · Bye ${board.byes.join(', ')}`:'';
-  const group=cfb?(board?.poll==='AP'?' · AP':' · Top 25'):'';
-  $('nfl-overlay-deck').textContent=`${week}${group} · ${src}${as}${bye}`;
+  const week=board&&board.week!=null?('Week '+board.week):'This week';
+  const src='ESPN';
+  const fallback=meta&&(meta.fallback||(meta.source&&meta.source!=='espn'));
+  const as=fallback&&meta&&meta.asOf?(' · As of '+fmtTime(meta.asOf)):'';
+  const byes=board&&board.byes?board.byes:[];
+  const bye=!cfb&&byes.length?(' · Bye '+byes.join(', ')):'';
+  const group=cfb?((board&&board.poll)==='AP'?' · AP':' · Top 25'):'';
+  $('nfl-overlay-deck').textContent=week+group+' · '+src+as+bye;
   if(!games.length){
     sbPageGames=[];sbPage=0;sbPageCount=1;stopSbPager();updateSbPageBtn();
     box.className='nfl-scoreboard sb-msg';box.textContent='No games this week';return;
   }
-  sbPageGames=sortScoreboardGames(games,league);
+  sbPageGames=sortScoreboardGames(games,scoreboardLeague);
   sbPageCount=Math.max(1,Math.ceil(sbPageGames.length/SB_PAGE_SIZE));
   if(sbPage>=sbPageCount)sbPage=0;
   paintScoreboardPage();
   startSbPager();
 }
+function lastGoodScoreboard(league){
+  var cached=readSbCache(league);
+  var fb=LIVE_DATA&&LIVE_DATA[sbDataKey(league)];
+  var fromData=fb&&fb.games&&fb.games.length?{board:fb,asOf:fb.asOf}:null;
+  return pickFresherBoard(cached,fromData);
+}
 async function refreshNflOverlay(){
   if(openOverlay!=='nfl')return;
-  try{const res=await loadScoreboard(scoreboardLeague);renderNflScoreboard(res.data,res);}
-  catch(e){
+  try{
+    var res=await loadScoreboard(scoreboardLeague);
+    renderNflScoreboard(res.data,res);
+  }catch(e){
     console.warn('scoreboard',e);
-    const box=$('nfl-scoreboard');
+    var last=lastGoodScoreboard(scoreboardLeague);
+    if(last&&last.board&&last.board.games&&last.board.games.length){
+      renderNflScoreboard(last.board,{source:'cache',asOf:last.asOf||last.board.asOf,fallback:true});
+      return;
+    }
+    var box=$('nfl-scoreboard');
     if(!box.querySelector('.sb-game')){box.className='nfl-scoreboard sb-msg';box.textContent='Scores unavailable right now';}
     $('nfl-overlay-deck').textContent='This week · ESPN · unavailable';
   }
@@ -1688,13 +1828,14 @@ const ATL_CENTER=[33.749,-84.388];
 // Chattanooga (~35.05) to Macon (~32.84), with a little room: lat 32.3–35.2.
 // Longitude is a mercator-square around Atlanta so the Atlantic stays off-frame.
 const ATL_BOUNDS=[[32.3,-86.133],[35.2,-82.643]];
+const US_CENTER=[38,-96];
 const US_CITIES=[
   ['Seattle',47.61,-122.33],['SF',37.77,-122.42],['LA',34.05,-118.24],['Phoenix',33.45,-112.07],
   ['Denver',39.74,-104.99],['Salt Lake',40.76,-111.89],['Boise',43.62,-116.20],
   ['Dallas',32.78,-96.80],['Houston',29.76,-95.37],['Minneapolis',44.98,-93.27],
-  ['Chicago',41.88,-87.63],['Kansas City',39.10,-94.58],['St. Louis',38.63,-90.20],
+  ['Chicago',41.88,-87.63],['KC',39.10,-94.58],
   ['New Orleans',29.95,-90.07],['Atlanta',33.75,-84.39],['Nashville',36.16,-86.78],
-  ['Miami',25.76,-80.19],['Charlotte',35.23,-80.84],['DC',38.91,-77.04],
+  ['Miami',25.76,-80.19],['DC',38.91,-77.04],
   ['NYC',40.71,-74.01],['Boston',42.36,-71.06],['Detroit',42.33,-83.05]
 ];
 const CITY_PRIORITY={'Atlanta':0,'NYC':1,'Chicago':2,'LA':3,'SF':4,'DC':5,'Dallas':6};
@@ -1739,11 +1880,13 @@ function setWeatherPage(page){
 function cartoLayer(map){
   if(map&&!map.getPane('baseDark')){
     map.createPane('baseDark');
-    map.getPane('baseDark').style.zIndex=200;
-    map.getPane('baseDark').style.filter='invert(1) hue-rotate(180deg) brightness(.78) contrast(.95) saturate(.35)';
+    const pane=map.getPane('baseDark');
+    pane.style.zIndex=200;
+    pane.style.filter='none';
+    pane.style.background='transparent';
   }
   return L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-    maxZoom:18,attribution:'',pane:'baseDark'
+    maxZoom:18,attribution:'',pane:'baseDark',className:'wx-basemap-tile'
   });
 }
 function tempColor(f){
@@ -1767,14 +1910,19 @@ function mercatorAspect(bounds){
   };
   return ((e-w)/360)/Math.abs(proj(s)-proj(n)||1e-6);
 }
-function fitMapToBounds(map,bounds,pad=0){
-  if(!map)return;
+function fillMapEl(map){
   const el=map.getContainer(),card=el.parentElement;
   el.style.width='100%';el.style.height='100%';el.style.flex='1';el.style.alignSelf='stretch';el.style.margin='0';
   void card.offsetWidth;
+  map.invalidateSize({animate:false});
+  return map.getSize();
+}
+function fitMapToBounds(map,bounds,pad=0){
+  if(!map)return;
+  const el=map.getContainer(),card=el.parentElement;
+  fillMapEl(map);
   // clientWidth/Height are unscaled stage pixels and ignore the #stage CSS transform.
-  // getBoundingClientRect() would be scaled (~0.5 on a 1080p preview) and would undersize the map,
-  // making Leaflet pick a too-low zoom and show the whole Southeast / all of North America.
+  // getBoundingClientRect() would be scaled (~0.5 on a 1080p preview) and would undersize the map.
   const cw=card.clientWidth,ch=card.clientHeight,aspect=mercatorAspect(bounds);
   let width=cw,height=width/aspect;
   if(height>ch){height=ch;width=height*aspect;}
@@ -1791,12 +1939,26 @@ function fitMapToBounds(map,bounds,pad=0){
   map.setMaxBounds(b.pad(0.02));
   map.setView(b.getCenter(),z,{animate:false});
 }
-function fitAtlantaRadar(map){fitMapToBounds(map,ATL_BOUNDS,0);}
-function fitLower48(map){fitMapToBounds(map,US_BOUNDS,0);}
+function fitMapCover(map,center,bounds){
+  if(!map)return;
+  const size=fillMapEl(map);
+  if(!size.x||!size.y)return;
+  const b=L.latLngBounds(bounds);
+  // inside=true: cover the panel (no letterbox); edges of the bounds may be cropped.
+  const z=map.getBoundsZoom(b,true,[0,0]);
+  map.setMaxBounds(b.pad(0.2));
+  map.setView(center,z,{animate:false});
+}
+function fitAtlantaRadar(map){
+  fitMapCover(map,ATL_CENTER,ATL_BOUNDS);
+  // Nudge in a little so the north tile edge / road fringe is cropped off the frame.
+  if(map && map.getZoom) map.setView(ATL_CENTER, map.getZoom()+0.2, {animate:false});
+}
+function fitLower48(map){fitMapCover(map,US_CENTER,US_BOUNDS);}
 function layoutWeatherMaps(){
   if(weatherPage!=='radar')return;
   if(radarMap)fitAtlantaRadar(radarMap);
-  if(tempMap){fitLower48(tempMap);resolveTempLabelOverlaps();}
+  if(tempMap){fitLower48(tempMap);insetTempLabels();resolveTempLabelOverlaps();insetTempLabels();}
   setRadarDeck();
 }
 async function initWeatherMaps(){
@@ -1897,8 +2059,65 @@ async function loadUsTemps(){
       m.addTo(tempMap);
       tempMarkers.push(m);
     });
+    insetTempLabels();
     resolveTempLabelOverlaps();
+    insetTempLabels();
   }catch(e){console.warn('temps',e);}
+}
+const LABEL_INSET=48;
+function tempLabelSize(el){
+  const parts=[...el.querySelectorAll('span,i')].filter(n=>{
+    const st=getComputedStyle(n);
+    return st.display!=='none'&&st.visibility!=='hidden';
+  });
+  if(!parts.length)return {w:0,h:0};
+  let w=0,h=0;
+  if(!tempLabelSize._ctx){
+    const c=document.createElement('canvas');
+    tempLabelSize._ctx=c.getContext('2d');
+  }
+  const ctx=tempLabelSize._ctx;
+  parts.forEach((n,i)=>{
+    let nw=n.offsetWidth||n.scrollWidth||0;
+    if(!nw){
+      const st=getComputedStyle(n);
+      ctx.font=(st.fontWeight||'500')+' '+(st.fontSize||'40px')+' '+(st.fontFamily||'Inter,sans-serif');
+      nw=ctx.measureText((n.textContent||'').trim()).width;
+    }
+    w=Math.max(w,nw);
+    h+=(n.offsetHeight||parseFloat(getComputedStyle(n).fontSize)||0)+(i?4:0);
+  });
+  return {w,h};
+}
+function insetTempLabels(){
+  if(!tempMap)return;
+  const size=tempMap.getSize();
+  if(!size.x||!size.y)return;
+  const geo=m=>tempMap.latLngToContainerPoint(m._geoLatLng||m.getLatLng());
+  tempMarkers.forEach(m=>{
+    if(!m._geoLatLng)m._geoLatLng=m.getLatLng();
+    const el=m.getElement(); if(!el)return;
+    el.classList.remove('is-hidden');
+    const {w,h}=tempLabelSize(el);
+    if(!w||!h)return;
+    const origin=geo(m);
+    // City itself is off the panel (cover crop): don't drag the label onto the map.
+    if(origin.x<-8||origin.x>size.x+8||origin.y<-8||origin.y>size.y+8){
+      el.classList.add('is-hidden');
+      return;
+    }
+    // .wx-temp-label uses transform:translate(-50%,-20px)
+    let pt={x:origin.x,y:origin.y};
+    let left=pt.x-w/2,right=pt.x+w/2,top=pt.y-20,bottom=pt.y-20+h;
+    let dx=0,dy=0;
+    if(left<LABEL_INSET)dx=LABEL_INSET-left;
+    if(right+dx>size.x-LABEL_INSET)dx=(size.x-LABEL_INSET)-right;
+    if(left+dx<LABEL_INSET)dx=LABEL_INSET-left;
+    if(top<LABEL_INSET)dy=LABEL_INSET-top;
+    if(bottom+dy>size.y-LABEL_INSET)dy=(size.y-LABEL_INSET)-bottom;
+    if(top+dy<LABEL_INSET)dy=LABEL_INSET-top;
+    if(dx||dy)m.setLatLng(tempMap.containerPointToLatLng(L.point(pt.x+dx,pt.y+dy)));
+  });
 }
 function labelUnionBox(el){
   const parts=[...el.querySelectorAll('span,i')].filter(n=>{
@@ -2077,16 +2296,23 @@ function stockHistoryChart(points,up){
     const lab=new Intl.DateTimeFormat('en-US',{month:'short'}).format(d);
     if(lab!==last){months.push({x,lab});last=lab;}
   });
-  const monthLabels=months.filter((m,i)=>i===0||i===months.length-1||months[i].lab!==months[i-1].lab)
-    .map(m=>`<text x="${m.x.toFixed(1)}" y="${h-12}" fill="rgba(240,237,230,.60)" font-size="32" font-family="Inter,sans-serif" font-weight="500">${m.lab}</text>`).join('');
+  const monthLabels=months.filter((m,i)=>i===0||i===months.length-1||months[i].lab!==months[i-1].lab);
   const lastPt=xy[xy.length-1];
-  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Six-month daily price">
-    <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
-    <g stroke="rgba(255,255,255,.08)" stroke-width="1">${[0.25,0.5,0.75].map(t=>`<path d="M${left} ${(top+(h-top-bottom)*t).toFixed(1)}H${w-right}" stroke-dasharray="4 10"/>`).join('')}</g>
-    <path d="${fill}" fill="url(#stock-area)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="6" fill="${color}"/>
-    ${monthLabels}
-  </svg>`;
+  const plotH=h-bottom;
+  const xHtml=monthLabels.map((m,i,arr)=>{
+    const pct=(m.x/w*100).toFixed(2);
+    const trans=i===0?'0':(i===arr.length-1?'-100%':'-50%');
+    return `<span style="left:${pct}%;transform:translateX(${trans})">${m.lab}</span>`;
+  }).join('');
+  return `<div class="stock-chart-inner">
+    <svg class="stock-chart-plot" viewBox="0 0 ${w} ${plotH}" preserveAspectRatio="none" aria-label="Six-month daily price">
+      <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
+      <g stroke="rgba(255,255,255,.08)" stroke-width="1">${[0.25,0.5,0.75].map(t=>`<path d="M${left} ${(top+(plotH-top)*t).toFixed(1)}H${w-right}" stroke-dasharray="4 10"/>`).join('')}</g>
+      <path d="${fill}" fill="url(#stock-area)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="6" fill="${color}"/>
+    </svg>
+    <div class="stock-chart-x">${xHtml}</div>
+  </div>`;
 }
 async function loadYahoo6mo(symbol){
   for(const host of ['query1.finance.yahoo.com','query2.finance.yahoo.com']){
@@ -2143,11 +2369,12 @@ function renderStockOverlay(key,extra={}){
   const hi=d.week52High, lo=d.week52Low;
   const range=(hi!=null&&lo!=null)?((dollar?'$':'')+fmtPxNum(lo,2)+' – '+(dollar?'$':'')+fmtPxNum(hi,2)):'—';
   const news=companyHeadlines(d.news||[],key,name).slice(0,5);
-  const newsHtml=news.length?news.map(n=>`<div class="stock-news-item"><div class="meta">${esc(n.src||'News')}${n.pub?' · '+esc(newsTime(n.pub)) :''}</div><div class="hd">${esc(n.hd)}</div></div>`).join(''):`<div class="stock-news-item"><div class="hd" style="color:var(--muted)">No recent headlines</div></div>`;
+  const newsHtml=news.length?news.map(n=>`<div class="stock-news-item"><div class="meta">${esc(n.src||'News')}${n.pub?' · '+esc(newsTime(n.pub)) :''}</div><div class="hd" data-full="${esc(n.hd)}">${esc(n.hd)}</div></div>`).join(''):`<div class="stock-news-item"><div class="hd" style="color:var(--muted)">No recent headlines</div></div>`;
   body.className='stock-body';
   body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up)}</div></div>
     <div class="stock-side"><div class="stock-metrics">${stockMetric('P/E (TTM)',esc(fmtPe(d.peTTM)))}${stockMetric('Market cap',esc(fmtCap(d.marketCap)))}${stockMetric('52-week range',esc(range))}${stockMetric('Volume',esc(fmtVol(d.volume??q?.vol)))}</div>
     <div class="stock-news"><div class="stock-news-label">Latest headlines</div>${newsHtml}</div></div>`;
+  scheduleHeadlineClamp();
 }
 async function refreshStockOverlay(key){
   if(openOverlay!=='stock')return;
