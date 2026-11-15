@@ -587,27 +587,17 @@ function quoteCard(q){
   return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hintHtml||q.hint||'Sample close'}</span></div></div>`;
 }
 const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
-let RATES_SLIDE=null, gridExclude='NVDA';
-function rateSlideHTML(r){
-  return `<div class="spot-copy"><div class="spot-eyebrow">Rates spotlight</div><div class="spot-name">${r.name}</div><div class="spot-symbol">${r.symbolLine}</div><div class="spot-price">${r.value}</div><div class="spot-price-row">${changePill(r)}</div><div class="spot-caption">${r.caption}</div></div><div class="spot-graphic"><span class="chart-top">${r.chartLabel}</span>${areaChart(r.sp,r.ch>=0,'RATES')}</div>`;
-}
+let gridExclude='NVDA';
 function renderMarkets(){
-  const slides=spotSymbols.length+(RATES_SLIDE?1:0); if(spotIndex>=slides)spotIndex=0;
-  if(spotIndex===spotSymbols.length&&RATES_SLIDE){
-    // Rates slide: the grid keeps the previous slide's cards so the layout never changes.
-    $('spot-inner').innerHTML=rateSlideHTML(RATES_SLIDE);
-    $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${slides}  ·  15s`;
-    $('market-grid').innerHTML=tradable().filter(x=>x.s!==gridExclude).map(quoteCard).join('');
-    return;
-  }
+  if(spotIndex>=spotSymbols.length)spotIndex=0;
   const q=tradable(),s=q.find(x=>x.s===spotSymbols[spotIndex]); gridExclude=s.s;
   $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
-  $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length+(RATES_SLIDE?1:0)}  ·  15s`;
+  $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length}  ·  15s`;
   $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
 }
 function rotateSpotlight(){
   $('spotlight').classList.add('is-changing');$('market-grid').classList.add('is-changing');
-  window.setTimeout(()=>{spotIndex=(spotIndex+1)%(spotSymbols.length+(RATES_SLIDE?1:0));renderMarkets();
+  window.setTimeout(()=>{spotIndex=(spotIndex+1)%spotSymbols.length;renderMarkets();
     $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
 }
 let newsIndex=0;
@@ -892,15 +882,8 @@ function applyTreasury(r){
 }
 function applyRates(r){
   const s=r?.series||r||{}; const ten=s.DGS10, ff=s.DFF||s.FEDFUNDS, mo=s.MORTGAGE30US;
-  if(!r?.asOf||!ten?.latest||!(ten.history5y?.length>=2)){RATES_SLIDE=null;TAPE_RATES='';return;}
-  const ao=asOf(r,30);
-  const bp=ten.prior?Math.round((ten.latest.v-ten.prior.v)*100):null;
+  if(!r?.asOf||!ten?.latest){TAPE_RATES='';return;}
   const pct=v=>`${v.toFixed(2)}%`;
-  const parts=[]; if(ff?.latest)parts.push(`Fed funds ${pct(ff.latest.v)}`); if(mo?.latest)parts.push(`Mtg ${pct(mo.latest.v)}`);
-  const d=new Date(ten.latest.date+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
-  RATES_SLIDE={name:'10-Year Yield',symbolLine:`US TREASURY / ${d}`,value:pct(ten.latest.v),ch:bp??0,pill:bp==null?null:`${Math.abs(bp)} bp`,
-    caption:parts.join(' · ')+(ao.stale?' · stale':''),chartLabel:'5-year trend',sp:ten.history5y.map(p=>Array.isArray(p)?p[1]:p.v)};
-  if(bp==null)RATES_SLIDE.ch=null;
   const item=(sym,v)=>`<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${pct(v)}</span><span class="tape-sep"></span></span>`;
   TAPE_RATES=item('10Y',ten.latest.v)+(ff?.latest?item('FED FUNDS',ff.latest.v):'')+(mo?.latest?item('30Y MORTGAGE',mo.latest.v):'');
 }
@@ -909,16 +892,16 @@ function applyLive(d){
   try{applyWeather(d.weather);}catch(e){console.error('weather',e);}
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
-  try{applyRates(d.rates);}catch(e){console.error('rates',e);RATES_SLIDE=null;TAPE_RATES='';}
+  try{applyRates(d.rates);}catch(e){console.error('rates',e);TAPE_RATES='';}
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
-  try{if(changed('rates',[RATES_SLIDE,TAPE_RATES])){lastSig.mk=null;}}catch(e){}
+  try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
   const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
   if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
-  if(RATES_SLIDE||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
+  if(TAPE_RATES||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
   $('credit-label').textContent=credits.join(' · ');
 }
 async function refreshAll(){
