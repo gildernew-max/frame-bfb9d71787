@@ -1755,11 +1755,11 @@ async function initWeatherMaps(){
     return;
   }
   if(!radarMap){
-    radarMap=L.map('radar-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    radarMap=L.map('radar-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,zoomSnap:0.25,zoomDelta:0.25});
     cartoLayer(radarMap).addTo(radarMap);
   }
   if(!tempMap){
-    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,maxBoundsViscosity:1});
+    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,maxBoundsViscosity:1,zoomSnap:0.25,zoomDelta:0.25});
     cartoLayer(tempMap).addTo(tempMap);
   }
   const layout=()=>{
