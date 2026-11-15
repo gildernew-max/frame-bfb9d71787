@@ -312,10 +312,23 @@
   .tape-change{font-size:28px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
   .tape-change.soon{color:var(--gold);font-size:26px}
   .tape-sep{width:5px;height:5px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:15px}
-  .mock-label{position:absolute;right:0;top:0;font-size:20px;letter-spacing:.15em;text-transform:uppercase;
-    color:var(--soft);transform:translateY(-15px);background:var(--bg);padding-left:22px}
+  .source-line{position:absolute;right:0;top:0;z-index:2;transform:translateY(-15px);
+    display:flex;align-items:center;gap:14px;background:var(--bg);padding-left:22px}
+  .mock-label{font-size:20px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}
+  .refresh-asof{font-size:20px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);white-space:nowrap}
+  .refresh-asof[hidden]{display:none!important}
+  .refresh-btn{appearance:none;-webkit-appearance:none;margin:0;padding:0;width:56px;height:56px;border:0;
+    border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;flex:none;
+    display:flex;align-items:center;justify-content:center}
+  .refresh-btn .refresh-icon{width:32px;height:32px;display:block}
+  .refresh-btn:hover{color:var(--gold)}
+  .refresh-btn:focus,.refresh-btn:focus-visible{outline:none;color:var(--gold);
+    box-shadow:0 0 0 2px rgba(201,168,106,.55),0 0 0 5px rgba(201,168,106,.22)}
+  .refresh-btn.spinning{color:var(--gold);pointer-events:none}
+  .refresh-btn.spinning .refresh-icon{animation:refresh-spin .8s linear infinite}
+  @keyframes refresh-spin{to{transform:rotate(360deg)}}
   @keyframes tape-move{to{transform:translateX(-50%)}}
-  @media(prefers-reduced-motion:reduce){.tape-track{animation:none}.spot-inner,.business-feature .hd,.business-feature .src,#market-grid{transition:none}}
+  @media(prefers-reduced-motion:reduce){.tape-track{animation:none}.spot-inner,.business-feature .hd,.business-feature .src,#market-grid{transition:none}.refresh-btn.spinning .refresh-icon{animation:none}}
   /* Inter restore: relax tight serif tracking */
   .clock,.now .temp,.spot-price,.quote-card .quote-value,.secondary-temp,.nfl-record{letter-spacing:-.02em!important}
   .time{font-weight:200!important;letter-spacing:-.02em!important}
@@ -510,7 +523,16 @@
   </section>
 
   <footer class="ticker-footer" aria-label="Scrolling market ticker, example data">
-    <span class="mock-label" id="credit-label">Sample data · mockup</span>
+    <div class="source-line">
+      <button type="button" class="refresh-btn" id="refresh-btn" aria-label="Refresh board" title="Refresh">
+        <svg class="refresh-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.5 12a8.5 8.5 0 1 1-2.46-6"/>
+          <polyline points="21 3 21 9 15 9"/>
+        </svg>
+      </button>
+      <span class="mock-label" id="credit-label">Sample data · mockup</span>
+      <span class="refresh-asof" id="refresh-asof" hidden></span>
+    </div>
     <div class="tape-viewport"><div class="tape-track" id="tape-track"></div></div>
   </footer>
 
@@ -1002,10 +1024,102 @@ function applyLive(d){
   if(TAPE_RATES||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
   $('credit-label').textContent=credits.join(' · ');
 }
+function updateRefreshAsOf(iso){
+  const el=$('refresh-asof'); if(!el)return;
+  const t=iso||new Date().toISOString();
+  if(isNaN(+new Date(t)))return;
+  el.hidden=false;
+  el.textContent=`as of ${fmtTime(t)}`;
+}
 async function refreshAll(){
   try{const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);LIVE_DATA=await r.json();}
   catch(e){console.warn('data.json unavailable; keeping last good data',e);}
   applyLive(LIVE_DATA);
+  updateRefreshAsOf();
+}
+let refreshInFlight=false;
+async function fetchLiveWeather(){
+  const cities={atlanta:{name:'Atlanta, GA',lat:33.749,lon:-84.388,tz:'America/New_York'},
+    saintPaul:{name:'Saint Paul, MN',lat:44.954,lon:-93.090,tz:'America/Chicago'}};
+  const keys=Object.keys(cities);
+  const params=new URLSearchParams({
+    latitude:keys.map(k=>cities[k].lat).join(','),longitude:keys.map(k=>cities[k].lon).join(','),
+    current:'temperature_2m,weather_code,wind_speed_10m,wind_direction_10m',
+    daily:'weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max',
+    hourly:'temperature_2m,weather_code,precipitation_probability',
+    temperature_unit:'fahrenheit',wind_speed_unit:'mph',timezone:'auto',forecast_days:'8'
+  });
+  const r=await fetch('https://api.open-meteo.com/v1/forecast?'+params+'&t='+Date.now(),{cache:'no-store'});
+  if(!r.ok)throw new Error(r.status);
+  const arr=await r.json();
+  const compass=deg=>deg==null?'':['N','NNE','NE','ENE','E','ESE','SE','SSE','S','SSW','SW','WSW','W','WNW','NW','NNW'][Math.round(deg/22.5)%16];
+  const hhmm=local=>local?String(local).slice(11,16):null;
+  const popAt=(a,j)=>{const v=a?.[j];return Number.isFinite(v)?Math.round(v):null;};
+  const out={};
+  keys.forEach((k,i)=>{
+    const d=Array.isArray(arr)?arr[i]:arr;
+    const [icon,cond]=wmoIcon(d.current.weather_code);
+    const days=(d.daily?.time||[]).map((t,j)=>{
+      const [ic,tx]=wmoIcon(d.daily.weather_code[j]);
+      return {date:t,d:new Date(t+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'}),
+        i:ic,text:tx,h:Math.round(d.daily.temperature_2m_max[j]),l:Math.round(d.daily.temperature_2m_min[j]),
+        pop:popAt(d.daily.precipitation_probability_max,j)};
+    });
+    if(!days.length||d.current?.temperature_2m==null)throw new Error('Open-Meteo returned empty data');
+    const observed=d.current.time;
+    const hours=[];
+    for(let j=0;j<(d.hourly?.time||[]).length;j++){
+      const t=d.hourly.time[j];
+      if(observed&&t<observed)continue;
+      const [ic,tx]=wmoIcon(d.hourly.weather_code[j]);
+      hours.push({t,i:ic,text:tx,temp:Math.round(d.hourly.temperature_2m[j]),pop:popAt(d.hourly.precipitation_probability,j)});
+      if(hours.length>=12)break;
+    }
+    out[k]={name:cities[k].name,tz:d.timezone||cities[k].tz,
+      now:{temp:Math.round(d.current.temperature_2m),i:icon,cond,
+        windMph:Math.round(d.current.wind_speed_10m),windDir:compass(d.current.wind_direction_10m),observed:d.current.time},
+      today:{h:days[0].h,l:days[0].l,sunrise:hhmm(d.daily.sunrise[0]),sunset:hhmm(d.daily.sunset[0])},
+      forecast:days.slice(1,4),days7:days.slice(0,7),hourly:hours};
+  });
+  return {provider:'Open-Meteo',credit:'Weather: Open-Meteo',cities:out,asOf:new Date().toISOString(),lastAttempt:new Date().toISOString(),lastError:null};
+}
+async function fetchLiveEspn(){
+  const pairs=[['nfl','nflScoreboard'],['cfb','cfbScoreboard']];
+  await Promise.all(pairs.map(async ([league,key])=>{
+    const res=await loadScoreboard(league);
+    if(!LIVE_DATA)LIVE_DATA={};
+    if(res?.data){res.data.asOf=res.asOf||new Date().toISOString();LIVE_DATA[key]=res.data;}
+  }));
+}
+async function manualRefresh(){
+  if(refreshInFlight)return;
+  refreshInFlight=true;
+  const btn=$('refresh-btn');
+  if(btn){btn.classList.add('spinning');btn.setAttribute('aria-busy','true');}
+  const t0=Date.now();
+  try{
+    await refreshAll();
+    await Promise.all([
+      fetchLiveWeather().then(w=>{
+        if(!LIVE_DATA)LIVE_DATA={};
+        LIVE_DATA.weather=w;
+        try{applyWeather(w);}catch(e){console.error('weather',e);}
+        if(openOverlay==='weather')refreshWeatherOverlay();
+      }).catch(e=>console.warn('refresh weather',e)),
+      fetchLiveEspn().then(()=>{
+        if(openOverlay==='nfl')refreshNflOverlay();
+        try{scheduleScoreWatch();}catch(_){}
+      }).catch(e=>console.warn('refresh espn',e)),
+      Promise.resolve().then(()=>refreshNwsAlerts()).catch(e=>console.warn('refresh nws',e))
+    ]);
+    if(openOverlay==='news'){try{await (typeof refreshNewsOverlay==='function'?refreshNewsOverlay():null);}catch(e){console.warn('refresh news',e);}}
+    updateRefreshAsOf();
+  }finally{
+    const wait=Math.max(0,800-(Date.now()-t0));
+    if(wait)await new Promise(r=>setTimeout(r,wait));
+    if(btn){btn.classList.remove('spinning');btn.setAttribute('aria-busy','false');}
+    refreshInFlight=false;
+  }
 }
 refreshAll();
 window.setInterval(refreshAll,POLL_MS);
@@ -1414,6 +1528,7 @@ function closeNewsOverlay(){
   $('news-card').setAttribute('aria-expanded','false');
   $('news-card').focus();
 }
+$('refresh-btn').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();manualRefresh();});
 $('nfl-card').addEventListener('click',openNflOverlay);
 $('weather-card').addEventListener('click',openWeatherOverlay);
 $('news-card').addEventListener('click',openNewsOverlay);
@@ -1434,6 +1549,9 @@ document.addEventListener('keydown',e=>{
   const isDown=code===40||e.key==='ArrowDown';
   if(openOverlay==='nfl'&&(isUp||isDown)&&sbPageCount>1){e.preventDefault();shiftSbPage(isDown?1:-1);return;}
   if(openOverlay&&(isEsc||isEnter)){e.preventDefault();closeOpenOverlay();return;}
+  const isRefreshKey=e.key==='r'||e.key==='R'||code===403||e.key==='ColorF0Red'||e.key==='Red';
+  if(!openOverlay&&isRefreshKey){e.preventDefault();manualRefresh();return;}
+  if(isEnter&&document.activeElement===$('refresh-btn')){e.preventDefault();manualRefresh();return;}
   if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();return;}
   if(isEnter&&document.activeElement===$('weather-card')){e.preventDefault();openWeatherOverlay();return;}
   if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();}
