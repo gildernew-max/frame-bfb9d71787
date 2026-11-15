@@ -386,7 +386,7 @@
     letter-spacing:.08em;text-transform:uppercase;font-style:normal;color:rgba(240,237,230,.82);
     text-shadow:-2px -2px 0 #101114,2px -2px 0 #101114,-2px 2px 0 #101114,2px 2px 0 #101114,-2px 0 0 #101114,2px 0 0 #101114,0 -2px 0 #101114,0 2px 0 #101114;text-align:center}
   .wx-temp-label.no-name i{display:none}
-  .wx-temp-label.is-hidden{visibility:hidden}
+  .wx-temp-label.is-hidden,.wx-temp-label.is-oob{visibility:hidden}
 
   /* BUSINESS: a refined, gently rotating editorial feature */
   .business-panel .panel-title{font-size:62px}
@@ -2711,7 +2711,7 @@ const CITY_PRIORITY={'Atlanta':0,'Miami':1,'Boston':2,'Seattle':3,'NYC':4,'SF':5
 let weatherPage='forecast',radarMap=null,tempMap=null,radarTimer=null,radarLayer=null,radarHost='',radarFrames=[],radarIdx=0;
 let radarCatalogTimer=null,radarNewest=0,tempMarkers=[];
 let radarLayerA=null,radarLayerB=null,radarFront=0,radarScrubbing=false,ssMarker=null;
-let usStatesGeo=null,tempGrid=null,tempFieldCanvas=null,stateLineLayer=null,radarStateLayer=null;
+let usStatesGeo=null,tempGrid=null,tempFieldCanvas=null,tempFieldDrawnKey=null,stateLineLayer=null,radarStateLayer=null;
 function stopRadarLoop(){if(radarTimer){clearTimeout(radarTimer);radarTimer=null;}}
 function stopRadarCatalogRefresh(){if(radarCatalogTimer){clearInterval(radarCatalogTimer);radarCatalogTimer=null;}}
 function startRadarCatalogRefresh(){
@@ -3116,6 +3116,14 @@ function drawUsTempField(){
   if(!el)return;
   var w=el.clientWidth,h=el.clientHeight;
   if(!w||!h)return;
+  var fieldKey=w+'x'+h+':'+(tempMap.getZoom?tempMap.getZoom():'')+':'+(tempGrid&&tempGrid.asOf||'');
+  if(tempFieldCanvas&&tempFieldDrawnKey===fieldKey){
+    if(typeof L!=='undefined'&&L.DomUtil){
+      L.DomUtil.setPosition(tempFieldCanvas,tempMap.containerPointToLayerPoint([0,0]));
+    }
+    return;
+  }
+  tempFieldDrawnKey=fieldKey;
   if(tempMap&&!tempMap.getPane('tempField')){
     tempMap.createPane('tempField');
     tempMap.getPane('tempField').style.zIndex=350;
@@ -3295,11 +3303,9 @@ function resetTempLabelGeo(){
 function placeTempLabels(){
   if(!tempMap)return;
   resetTempLabelGeo();
-  requestAnimationFrame(()=>{
-    insetTempLabels();
-    resolveTempLabelOverlaps();
-    insetTempLabels();
-  });
+  insetTempLabels();
+  resolveTempLabelOverlaps();
+  insetTempLabels();
 }
 function insetTempLabels(){
   if(!tempMap)return;
@@ -3308,12 +3314,13 @@ function insetTempLabels(){
   tempMarkers.forEach(m=>{
     if(!m._geoLatLng)m._geoLatLng=m.getLatLng();
     const el=m.getElement(); if(!el)return;
-    el.classList.remove('is-hidden');
     const origin=tempMap.latLngToContainerPoint(m._geoLatLng);
     if(origin.x<-8||origin.x>size.x+8||origin.y<-8||origin.y>size.y+8){
-      el.classList.add('is-hidden');
+      el.classList.add('is-oob');
       return;
     }
+    el.classList.remove('is-oob');
+    if(el.classList.contains('is-hidden'))return;
     const box=labelBoxInMap(el,tempMap);
     if(!box)return;
     let dx=0,dy=0;
@@ -3345,59 +3352,86 @@ function boxesOverlap(a,b,pad=6){
 function cityRank(name){
   return CITY_PRIORITY[name]??20;
 }
+function labelName(el){
+  var n=el&&el.querySelector('i');
+  return n&&n.textContent?String(n.textContent).trim():'';
+}
 function resolveTempLabelOverlaps(){
-  const root=$('temp-map'); if(!root)return;
-  const els=[...root.querySelectorAll('.wx-temp-label')];
-  els.forEach(el=>el.classList.remove('no-name','is-hidden'));
-  const rank=el=>{
-    const name=(el.querySelector('i')?.textContent||'').trim();
-    return cityRank(name);
-  };
-  const collide=()=>{
-    const boxes=els.map(labelUnionBox).filter(Boolean).filter(b=>!b.el.classList.contains('is-hidden'));
-    const hits=[];
-    for(let i=0;i<boxes.length;i++){
-      for(let j=i+1;j<boxes.length;j++){
-        if(boxesOverlap(boxes[i],boxes[j]))hits.push([boxes[i].el,boxes[j].el]);
+  if(!tempMap)return;
+  var els=[], mi, el;
+  for(mi=0;mi<tempMarkers.length;mi++){
+    el=tempMarkers[mi].getElement();
+    if(el)els.push(el);
+  }
+  for(mi=0;mi<els.length;mi++)els[mi].classList.remove('no-name','is-hidden');
+  var pad=48;
+  function collide(){
+    var boxes=[], hits=[], a, b, i, j, box;
+    for(i=0;i<els.length;i++){
+      if(els[i].classList.contains('is-hidden')||els[i].classList.contains('is-oob'))continue;
+      box=labelBoxInMap(els[i],tempMap);
+      if(box){box.el=els[i];boxes.push(box);}
+    }
+    for(i=0;i<boxes.length;i++){
+      for(j=i+1;j<boxes.length;j++){
+        a=boxes[i];b=boxes[j];
+        if(a.left<b.right+pad&&a.right>b.left-pad&&a.top<b.bottom+pad&&a.bottom>b.top-pad)hits.push([a.el,b.el]);
       }
     }
     return hits;
-  };
-  const markerOf=el=>tempMarkers.find(m=>m.getElement()===el);
-  const nudge=el=>{
-    const m=markerOf(el); if(!m||!tempMap)return false;
-    const size=tempMap.getSize();
-    const now=tempMap.latLngToContainerPoint(m.getLatLng());
-    const tries=[56,-56,80,-80];
-    for(const dy of tries){
-      const np=L.point(now.x,now.y+dy);
-      if(np.y<LABEL_INSET||np.y>size.y-LABEL_INSET)continue;
+  }
+  function rank(el){return cityRank(labelName(el));}
+  function pickDrop(a,b){
+    if(labelName(a)==='Atlanta')return b;
+    if(labelName(b)==='Atlanta')return a;
+    return rank(a)>=rank(b)?a:b;
+  }
+  function inInset(el){
+    var box=labelBoxInMap(el,tempMap), size=tempMap.getSize();
+    return !!(box&&box.top>=LABEL_INSET&&box.bottom<=size.y-LABEL_INSET&&box.left>=LABEL_INSET&&box.right<=size.x-LABEL_INSET);
+  }
+  function markerOf(el){
+    var i;
+    for(i=0;i<tempMarkers.length;i++)if(tempMarkers[i].getElement()===el)return tempMarkers[i];
+    return null;
+  }
+  function stillHits(el){
+    var hits=collide(), i;
+    for(i=0;i<hits.length;i++)if(hits[i][0]===el||hits[i][1]===el)return true;
+    return false;
+  }
+  function nudge(el){
+    var m=markerOf(el); if(!m)return false;
+    var size=tempMap.getSize();
+    var now=tempMap.latLngToContainerPoint(m.getLatLng());
+    var tries=[[0,-96],[0,96],[0,-140],[0,140],[120,0],[-120,0],[120,-96],[-120,-96],[120,96],[-120,96]];
+    var t, np, k;
+    for(k=0;k<tries.length;k++){
+      t=tries[k];
+      np=L.point(now.x+t[0],now.y+t[1]);
+      if(np.y<LABEL_INSET||np.y>size.y-LABEL_INSET||np.x<LABEL_INSET||np.x>size.x-LABEL_INSET)continue;
       m.setLatLng(tempMap.containerPointToLatLng(np));
-      const box=labelBoxInMap(el,tempMap);
-      if(box&&box.top>=LABEL_INSET&&box.bottom<=size.y-LABEL_INSET&&box.left>=LABEL_INSET&&box.right<=size.x-LABEL_INSET){
-        // Keep the nudge only if it actually cleared the overlap; caller re-checks.
-        return true;
-      }
+      if(inInset(el)&&!stillHits(el))return true;
       m.setLatLng(tempMap.containerPointToLatLng(now));
     }
     return false;
-  };
-  let hits=collide();
-  for(const [a,b] of hits){
-    const drop=rank(a)>=rank(b)?a:b;
-    if(!nudge(drop))drop.classList.add('no-name');
+  }
+  var hits=collide(), i, drop, guard=0;
+  for(i=0;i<hits.length;i++){
+    drop=pickDrop(hits[i][0],hits[i][1]);
+    nudge(drop);
   }
   hits=collide();
-  for(const [a,b] of hits){
-    const drop=rank(a)>=rank(b)?a:b;
-    if(!drop.classList.contains('no-name'))drop.classList.add('no-name');
+  for(i=0;i<hits.length;i++){
+    drop=pickDrop(hits[i][0],hits[i][1]);
+    drop.classList.add('no-name');
   }
   hits=collide();
-  for(const [a,b] of hits){
-    const drop=rank(a)>=rank(b)?a:b;
-    if((drop.querySelector('i')?.textContent||'').trim()==='Atlanta'){
-      (drop===a?b:a).classList.add('is-hidden');
-    }else drop.classList.add('is-hidden');
+  while(hits.length&&guard<16){
+    drop=pickDrop(hits[0][0],hits[0][1]);
+    drop.classList.add('is-hidden');
+    hits=collide();
+    guard++;
   }
 }
 
