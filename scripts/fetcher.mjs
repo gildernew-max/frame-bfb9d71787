@@ -25,7 +25,16 @@ const ageMin = (iso, now) => iso ? (now - new Date(iso)) / MIN : Infinity;
 // ---------- network ----------
 let SECRET = '';
 const clean = s => (SECRET ? String(s).split(SECRET).join('***') : String(s)).slice(0, 300);
+const why = e => clean(`${e?.message || e}${e?.cause?.code ? ' (' + e.cause.code + ')' : e?.cause?.message ? ' (' + e.cause.message + ')' : ''}`);
 async function getText(url, opts = {}) {
+  try { return await getTextOnce(url, opts); }
+  catch (e) { // one retry for transient network errors / 5xx
+    if (!/fetch failed|aborted|HTTP 5\d\d|ECONN|ETIMEDOUT/i.test(String(e.message) + String(e.cause?.code || ''))) throw e;
+    await new Promise(r => setTimeout(r, 3000));
+    return await getTextOnce(url, opts);
+  }
+}
+async function getTextOnce(url, opts = {}) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), opts.timeout || 15000);
   try {
@@ -130,11 +139,13 @@ export async function weatherNWS(now) {
     const days = keys.filter(x => byDate[x].h != null && byDate[x].l != null)
       .map(x => ({ date: x, d: dayLabel(x), i: nwsIcon(byDate[x].text), text: byDate[x].text, h: byDate[x].h, l: byDate[x].l }));
     const today = byDate[todayKey] || {};
+    const first = fc.properties.periods[0] || {};
+    const desc = (o.textDescription || '').trim() || first.shortForecast || '';
     const tempC = o.temperature?.value;
     if (tempC == null) throw new Error('NWS observation missing temperature');
     out[k] = {
       name: c.name, tz: c.tz,
-      now: { temp: Math.round(tempC * 9 / 5 + 32), i: nwsIcon(o.textDescription), cond: o.textDescription || '—',
+      now: { temp: Math.round(tempC * 9 / 5 + 32), i: nwsIcon(desc), cond: desc || '—',
         windMph: o.windSpeed?.value == null ? null : Math.round(o.windSpeed.value * 0.621371), windDir: compass(o.windDirection?.value), observed: o.timestamp },
       today: { h: today.h ?? null, l: today.l ?? null, ...sunTimes(c.lat, c.lon, todayKey, c.tz) },
       forecast: days.filter(x => x.date > todayKey).slice(0, 3)
@@ -286,8 +297,8 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     ran.push('weather');
     try { out.weather = ok(await weatherOpenMeteo(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e1) {
-      try { out.weather = ok(await weatherNWS(now), { asOf: nowIso, lastAttempt: nowIso, note: `Open-Meteo failed: ${clean(e1.message)}` }); }
-      catch (e2) { out.weather = { ...(prev.weather || {}), lastAttempt: nowIso, lastError: `Open-Meteo: ${clean(e1.message)}; NWS: ${clean(e2.message)}` }; }
+      try { out.weather = ok(await weatherNWS(now), { asOf: nowIso, lastAttempt: nowIso, note: `Open-Meteo failed: ${why(e1)}` }); }
+      catch (e2) { out.weather = { ...(prev.weather || {}), lastAttempt: nowIso, lastError: `Open-Meteo: ${why(e1)}; NWS: ${why(e2)}` }; }
     }
   }
   if (force || sectionDue(prev.nfl, now, et, 'daily6')) {
