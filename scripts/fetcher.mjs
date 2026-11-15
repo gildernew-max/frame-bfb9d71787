@@ -543,7 +543,7 @@ async function fetchStocks(prev, key, et, now) {
   const indexSources = [];
   const put = (id, base, q) => {
     const prevKind = quotes[id]?.kind;
-    quotes[id] = { ...base, px: q.c, ch: q.dp, d: q.d, pc: q.pc, t: q.t, quoteTime: new Date(q.t * 1000).toISOString() };
+    quotes[id] = { ...base, px: q.c, ch: q.dp, d: q.d, pc: q.pc, t: q.t, vol: Number.isFinite(q.v) ? q.v : null, quoteTime: new Date(q.t * 1000).toISOString() };
     let h = prevKind && prevKind !== base.kind ? [] : (history[id] || []); // fund <-> index are different scales
     h = h.filter(p => p.t !== q.t);
     h.push({ t: q.t, c: q.c });
@@ -586,6 +586,96 @@ async function fetchStocks(prev, key, et, now) {
     ? uniqSources.map(s => s === 'funds (Finnhub)' ? 'funds' : s).join(' + ')
     : (uniqSources[0] || null);
   return { quotes, history, errors, indexSource };
+}
+
+const OVERLAY_SYMS = [
+  { key: 'NVDA', yahoo: 'NVDA', fh: 'NVDA', name: 'NVIDIA' },
+  { key: 'TSLA', yahoo: 'TSLA', fh: 'TSLA', name: 'Tesla' },
+  { key: 'SPCX', yahoo: 'SPCX', fh: 'SPCX', name: 'SpaceX' },
+  { key: 'ANT', yahoo: 'ANT', fh: 'ANT', name: 'Anthropic' },
+  { key: 'DOW', yahoo: '^DJI', fh: null, name: 'Dow Jones' },
+  { key: 'SPX', yahoo: '^GSPC', fh: null, name: 'S&P 500' },
+  { key: 'NASDAQ', yahoo: '^IXIC', fh: null, name: 'Nasdaq Composite' }
+];
+const numOrNull = v => { const n = Number(v); return Number.isFinite(n) ? n : null; };
+async function yahooHistory6mo(symbol) {
+  const result = await yahooChartResult(symbol, 'interval=1d&range=6mo');
+  const ts = result.timestamp || [];
+  const closes = result.indicators?.quote?.[0]?.close || [];
+  const vols = result.indicators?.quote?.[0]?.volume || [];
+  const points = [];
+  for (let i = 0; i < ts.length; i++) {
+    if (closes[i] == null || !Number.isFinite(closes[i])) continue;
+    points.push({ t: ts[i], c: closes[i], v: Number.isFinite(vols[i]) ? vols[i] : null });
+  }
+  const meta = result.meta || {};
+  const last = points[points.length - 1];
+  return {
+    history6mo: points,
+    volume: numOrNull(meta.regularMarketVolume) ?? last?.v ?? null,
+    week52High: numOrNull(meta.fiftyTwoWeekHigh),
+    week52Low: numOrNull(meta.fiftyTwoWeekLow)
+  };
+}
+async function fetchOverlayDetails(prevDetails, key, quotes) {
+  const details = { ...(prevDetails || {}) };
+  const now = new Date();
+  const to = now.toISOString().slice(0, 10);
+  const from = new Date(+now - 21 * 864e5).toISOString().slice(0, 10);
+  for (const sp of OVERLAY_SYMS) {
+    const prevD = details[sp.key] || {};
+    const upcoming = sp.key === 'ANT' && quotes?.ANT?.upcoming !== false;
+    if (upcoming) {
+      details[sp.key] = {
+        upcoming: true, name: 'Anthropic', firstTrade: ANT_FIRST_TRADE,
+        range: quotes?.ANT?.range || '$70–78', note: quotes?.ANT?.note || 'IPO Nov 19 · $70–78 range'
+      };
+      continue;
+    }
+    const d = { upcoming: false, name: sp.name, symbol: sp.yahoo };
+    try {
+      const hist = await yahooHistory6mo(sp.yahoo);
+      d.history6mo = hist.history6mo;
+      if (hist.volume != null) d.volume = hist.volume;
+      if (hist.week52High != null) d.week52High = hist.week52High;
+      if (hist.week52Low != null) d.week52Low = hist.week52Low;
+    } catch (e) {
+      if (prevD.history6mo?.length) d.history6mo = prevD.history6mo;
+      if (prevD.volume != null) d.volume = prevD.volume;
+      if (prevD.week52High != null) d.week52High = prevD.week52High;
+      if (prevD.week52Low != null) d.week52Low = prevD.week52Low;
+    }
+    if (quotes?.[sp.key]?.vol != null) d.volume = quotes[sp.key].vol;
+    if (key && sp.fh) {
+      try {
+        const m = await finnhub(`stock/metric?symbol=${encodeURIComponent(sp.fh)}&metric=all`, key);
+        const met = m.metric || {};
+        d.peTTM = numOrNull(met.peTTM);
+        const hi = numOrNull(met['52WeekHigh']); const lo = numOrNull(met['52WeekLow']);
+        if (hi != null) d.week52High = hi;
+        if (lo != null) d.week52Low = lo;
+        const avg = numOrNull(met['10DayAverageTradingVolume']);
+        if (avg != null) d.avgVolume = avg;
+      } catch (_) { /* keep yahoo / prior */ }
+      try {
+        const p = await finnhub(`stock/profile2?symbol=${encodeURIComponent(sp.fh)}`, key);
+        const cap = numOrNull(p.marketCapitalization);
+        if (cap != null) d.marketCap = cap; // Finnhub: millions USD
+        if (p.exchange) d.exchange = p.exchange;
+        if (p.name) d.name = p.name;
+      } catch (_) {}
+      try {
+        const news = await finnhub(`company-news?symbol=${encodeURIComponent(sp.fh)}&from=${from}&to=${to}`, key);
+        d.news = (Array.isArray(news) ? news : [])
+          .filter(n => n && n.headline)
+          .sort((a, b) => (b.datetime || 0) - (a.datetime || 0))
+          .slice(0, 5)
+          .map(n => ({ hd: String(n.headline).trim(), src: n.source || '', pub: n.datetime ? new Date(n.datetime * 1000).toISOString() : null }));
+      } catch (_) { if (prevD.news) d.news = prevD.news; }
+    } else if (prevD.news) d.news = prevD.news;
+    details[sp.key] = d;
+  }
+  return details;
 }
 
 // ---------- rates (FRED CSV, Treasury.gov XML fallback for DGS10) ----------
@@ -855,6 +945,12 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     if (reason === 'close') stocks.closeFetchedFor = et.dateKey;
   } else if (key && stocks.quotes) stocks.status = 'live';
   if (!stocks.quotes) stocks.quotes = { ANT: { s: 'ANT', n: 'Anthropic', upcoming: true, note: 'IPO Nov 19 · $70–78 range' } };
+  const hasHist = k => (stocks.details?.[k]?.history6mo || []).length >= 2 || stocks.details?.[k]?.upcoming;
+  const needDetails = force || !stocks.details || !['NVDA', 'TSLA', 'SPCX', 'DOW', 'SPX', 'NASDAQ'].every(hasHist);
+  if (reason || needDetails) {
+    try { stocks.details = await fetchOverlayDetails(ps.details || stocks.details || {}, key, stocks.quotes); }
+    catch (e) { stocks.details = ps.details || stocks.details || {}; }
+  }
   out.stocks = { provider: 'Finnhub', ...stocks };
 
   // Futures ("expected open" note): only while the cash market is closed; never during the session.

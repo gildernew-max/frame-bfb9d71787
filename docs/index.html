@@ -277,6 +277,39 @@
   .upcoming-pill{font-size:24px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,106,.39);
     padding:7px 12px;border-radius:100px;text-transform:uppercase}
   .quote-card.upcoming .ipo-note{font-size:30px;color:#DBC9A5;white-space:nowrap;letter-spacing:-.01em}
+  .quote-card,.spotlight{cursor:pointer}
+  .quote-card:focus,.spotlight:focus{outline:none}
+  .quote-card:focus-visible,.quote-card:focus,.spotlight:focus-visible,.spotlight:focus{
+    box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
+  }
+  .stock-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,0.9fr);gap:48px}
+  .stock-main{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
+  .stock-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
+  .stock-px{font:300 120px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;
+    font-feature-settings:"tnum" 1,"lnum" 1}
+  .stock-hero .change-pill{font-size:36px;padding:12px 18px}
+  .stock-chart-wrap{flex:1;min-height:0;position:relative;border:1px solid var(--hair);border-radius:18px;
+    background:var(--panel);padding:28px 28px 20px}
+  .stock-chart-wrap svg{width:100%;height:100%;display:block}
+  .stock-chart-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:32px;letter-spacing:.04em}
+  .stock-side{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
+  .stock-metrics{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .stock-metric{padding:22px 24px 20px;border:1px solid var(--hair);border-radius:16px;background:var(--panel);min-width:0}
+  .stock-metric .lbl{font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .stock-metric .val{margin-top:10px;font:300 44px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
+    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .stock-news{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:16px;
+    background:var(--panel);padding:8px 8px 12px;overflow:hidden}
+  .stock-news-label{padding:16px 20px 8px;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .stock-news-item{padding:16px 20px;border-top:1px solid var(--hair)}
+  .stock-news-item .meta{font-size:22px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .stock-news-item .hd{margin-top:8px;font:300 30px/1.25 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em}
+  .stock-ipo{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;
+    padding:48px;border:1px solid rgba(201,168,106,.35);border-radius:18px;background:rgba(201,168,106,.05)}
+  .stock-ipo .kicker{font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .stock-ipo .title{font:300 96px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em}
+  .stock-ipo .note{font-size:40px;color:#DBC9A5;font-weight:300}
 
   /* BUSINESS: a refined, gently rotating editorial feature */
   .business-panel .panel-title{font-size:62px}
@@ -585,6 +618,20 @@
     </div>
   </div>
 
+  <div id="stock-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="stock-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="stock-overlay-title">Stock</div>
+          <div class="panel-deck" id="stock-overlay-deck"></div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="stock-overlay-close" aria-label="Close stock">Close</button>
+      </div>
+      <div id="stock-overlay-body" class="stock-body"></div>
+    </div>
+  </div>
+
   <div id="alert-banner" hidden role="status" aria-live="polite"></div>
 </div>
 <script>
@@ -700,16 +747,25 @@ function areaChart(values,up,id){
     <circle cx="${last[0]}" cy="${last[1]}" r="12" fill="${color}" opacity=".16"/><circle cx="${last[0]}" cy="${last[1]}" r="5.5" fill="${color}"/>
     </svg>`;
 }
+function quoteKey(q){return q.key||(q.s==='Composite'?'NASDAQ':q.s==='DJIA'?'DOW':q.s);}
 function quoteCard(q){
-  if(q.pending)return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
-  if(q.upcoming)return `<div class="quote-card upcoming"><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
-  return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hintHtml||q.hint||'Sample close'}</span></div></div>`;
+  const key=quoteKey(q);
+  const attrs=`class="quote-card${q.upcoming?' upcoming':''}" data-symbol="${esc(key)}" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="stock-overlay" aria-label="${esc(q.n||key)}"`;
+  if(q.pending)return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
+  if(q.upcoming)return `<div ${attrs}><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
+  return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hintHtml||q.hint||'Sample close'}</span></div></div>`;
 }
 const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
 let gridExclude='NVDA';
 function renderMarkets(){
   if(spotIndex>=spotSymbols.length)spotIndex=0;
   const q=tradable(),s=q.find(x=>x.s===spotSymbols[spotIndex]); gridExclude=s.s;
+  $('spotlight').dataset.symbol=s.key||s.s;
+  $('spotlight').setAttribute('tabindex','0');
+  $('spotlight').setAttribute('role','button');
+  $('spotlight').setAttribute('aria-haspopup','dialog');
+  $('spotlight').setAttribute('aria-controls','stock-overlay');
+  $('spotlight').setAttribute('aria-label',`Open ${(s.n||s.s)} details`);
   $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
   $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length}  ·  15s`;
   $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
@@ -893,9 +949,9 @@ function applyStocks(st){
     const hist=(st.history?.[key]||[]).map(p=>p.c);
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
-    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
+    return {key,n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
       chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
-  const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
+  const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{key:'ANT',n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
     card('DOW',{n:'Dow Jones',s:'DJIA'}),card('SPX',{n:'S&P 500',s:'SPX'}),card('NASDAQ',{n:'Composite',s:'Composite'})];
   if(changed('mk',quotes)){DATA.quotes=quotes;renderMarkets();renderTape();
@@ -1200,6 +1256,7 @@ function closeOpenOverlay(){
   if(openOverlay==='nfl')closeNflOverlay();
   else if(openOverlay==='weather')closeWeatherOverlay();
   else if(openOverlay==='news')closeNewsOverlay();
+  else if(openOverlay==='stock')closeStockOverlay();
 }
 function wmoIcon(code){
   const c=Number(code);
@@ -1593,7 +1650,148 @@ function closeNewsOverlay(){
   $('news-card').setAttribute('aria-expanded','false');
   $('news-card').focus();
 }
+const STOCK_YAHOO={NVDA:'NVDA',TSLA:'TSLA',SPCX:'SPCX',ANT:'ANT',DOW:'^DJI',SPX:'^GSPC',NASDAQ:'^IXIC'};
+const STOCK_NAMES={NVDA:'NVIDIA',TSLA:'Tesla',SPCX:'SpaceX',ANT:'Anthropic',DOW:'Dow Jones',SPX:'S&P 500',NASDAQ:'Nasdaq Composite'};
+function fmtCap(m){
+  if(m==null||!Number.isFinite(+m))return '—';
+  const n=+m; // Finnhub profile2 is millions USD
+  if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'T';
+  if(n>=1e3)return '$'+(n/1e3).toFixed(2)+'B';
+  if(n>=1)return '$'+n.toFixed(1)+'M';
+  return '$'+(n*1e6).toLocaleString('en-US',{maximumFractionDigits:0});
+}
+function fmtVol(v){
+  if(v==null||!Number.isFinite(+v))return '—';
+  const n=+v;
+  if(n>=1e9)return (n/1e9).toFixed(2)+'B';
+  if(n>=1e6)return (n/1e6).toFixed(2)+'M';
+  if(n>=1e3)return (n/1e3).toFixed(1)+'K';
+  return String(Math.round(n));
+}
+function fmtPe(v){return v==null||!Number.isFinite(+v)||+v<=0?'—':Number(v).toFixed(1);}
+function fmtPxNum(v,dp=2){return v==null||!Number.isFinite(+v)?'—':Number(v).toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});}
+function stockMetric(lbl,val){return `<div class="stock-metric"><div class="lbl">${esc(lbl)}</div><div class="val">${val}</div></div>`;}
+function stockHistoryChart(points,up){
+  if(!points||points.length<2)return '<div class="stock-chart-msg">Chart unavailable</div>';
+  const w=1200,h=520,left=20,right=24,top=24,bottom=48;
+  const vals=points.map(p=>p.c),mn=Math.min(...vals),mx=Math.max(...vals),pad=(mx-mn||Math.abs(mx)*.01||1)*.12;
+  const xy=points.map((p,i)=>{
+    const x=left+(w-left-right)*i/(points.length-1);
+    const y=top+(h-top-bottom)*(1-(p.c-mn+pad)/(mx-mn+2*pad));
+    return [x,y,p];
+  });
+  const line=xy.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const fill=line+` L${xy[xy.length-1][0].toFixed(1)},${h-bottom} L${xy[0][0].toFixed(1)},${h-bottom} Z`;
+  const color=up?'#99C7A6':'#E29A91';
+  const months=[];
+  let last='';
+  xy.forEach(([x,,p])=>{
+    const d=new Date((p.t>1e12?p.t:p.t*1000));
+    const lab=new Intl.DateTimeFormat('en-US',{month:'short'}).format(d);
+    if(lab!==last){months.push({x,lab});last=lab;}
+  });
+  const monthLabels=months.filter((m,i)=>i===0||i===months.length-1||months[i].lab!==months[i-1].lab)
+    .map(m=>`<text x="${m.x.toFixed(1)}" y="${h-14}" fill="#838078" font-size="22" font-family="Inter,sans-serif" letter-spacing="1">${m.lab}</text>`).join('');
+  const lastPt=xy[xy.length-1];
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Six-month daily price">
+    <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="rgba(255,255,255,.08)" stroke-width="1">${[0.25,0.5,0.75].map(t=>`<path d="M${left} ${(top+(h-top-bottom)*t).toFixed(1)}H${w-right}" stroke-dasharray="4 10"/>`).join('')}</g>
+    <path d="${fill}" fill="url(#stock-area)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${lastPt[0]}" cy="${lastPt[1]}" r="6" fill="${color}"/>
+    ${monthLabels}
+  </svg>`;
+}
+async function loadYahoo6mo(symbol){
+  for(const host of ['query1.finance.yahoo.com','query2.finance.yahoo.com']){
+    try{
+      const r=await fetch(`https://${host}/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=6mo&t=${Date.now()}`,{cache:'no-store'});
+      if(!r.ok)continue;
+      const j=await r.json();
+      const res=j?.chart?.result?.[0];
+      const ts=res?.timestamp||[], closes=res?.indicators?.quote?.[0]?.close||[];
+      const pts=[];
+      for(let i=0;i<ts.length;i++){if(closes[i]==null||!Number.isFinite(closes[i]))continue;pts.push({t:ts[i],c:closes[i]});}
+      if(pts.length>=2)return {points:pts,meta:res.meta||{}};
+    }catch(_){}
+  }
+  return null;
+}
+function stockQuote(key){
+  const qs=LIVE_DATA?.stocks?.quotes||{};
+  return qs[key]||null;
+}
+function renderStockOverlay(key,extra={}){
+  const body=$('stock-overlay-body');
+  const q=stockQuote(key);
+  const d={...(LIVE_DATA?.stocks?.details?.[key]||{}),...extra};
+  const upcoming=!!(d.upcoming||(key==='ANT'&&q?.upcoming!==false&&!(q&&q.px&&q.upcoming===false)));
+  const name=d.name||q?.n||STOCK_NAMES[key]||key;
+  const exch=(s=>{if(!s)return (key==='DOW'||key==='SPX'||key==='NASDAQ'?'Index':'');
+    if(/NASDAQ/i.test(s))return 'NASDAQ';if(/NYSE|NEW YORK/i.test(s))return 'NYSE';if(/AMEX/i.test(s))return 'AMEX';return s;})(d.exchange);
+  $('stock-overlay-title').innerHTML=`${esc(name)} <span style="color:var(--gold)">·</span> ${esc(key==='NASDAQ'?'NASDAQ':key==='DOW'?'DJIA':key==='SPX'?'SPX':key)}`;
+  const as=d.asOf||q?.quoteTime||LIVE_DATA?.stocks?.asOf;
+  $('stock-overlay-deck').textContent=`${exch?exch+' · ':''}${as?'as of '+fmtTime(as):'Six-month daily'}`.trim();
+  if(upcoming){
+    body.className='stock-body';
+    body.innerHTML=`<div class="stock-ipo"><div class="kicker">Upcoming IPO</div><div class="title">Anthropic</div><div class="note">${esc(d.note||q?.note||'IPO Nov 19 · $70–78 range')}</div></div>`;
+    return;
+  }
+  const px=q?.px??d.px, ch=q?.ch, dollar=!(key==='DOW'||key==='SPX'||key==='NASDAQ');
+  const pxStr=px==null?'—':(dollar?'$':'')+ (typeof px==='string'?px:fmtPxNum(px,2));
+  const pts=d.history6mo||[];
+  const up=ch==null?true:ch>=0;
+  const hi=d.week52High, lo=d.week52Low;
+  const range=(hi!=null&&lo!=null)?((dollar?'$':'')+fmtPxNum(lo,2)+' – '+(dollar?'$':'')+fmtPxNum(hi,2)):'—';
+  const news=d.news||[];
+  const newsHtml=news.length?news.map(n=>`<div class="stock-news-item"><div class="meta">${esc(n.src||'News')}${n.pub?' · '+esc(newsTime(n.pub)) :''}</div><div class="hd">${esc(n.hd)}</div></div>`).join(''):`<div class="stock-news-item"><div class="hd" style="color:var(--muted)">No recent headlines</div></div>`;
+  body.className='stock-body';
+  body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up)}</div></div>
+    <div class="stock-side"><div class="stock-metrics">${stockMetric('P/E (TTM)',esc(fmtPe(d.peTTM)))}${stockMetric('Market cap',esc(fmtCap(d.marketCap)))}${stockMetric('52-week range',esc(range))}${stockMetric('Volume',esc(fmtVol(d.volume??q?.vol)))}</div>
+    <div class="stock-news"><div class="stock-news-label">Latest headlines</div>${newsHtml}</div></div>`;
+}
+async function refreshStockOverlay(key){
+  if(openOverlay!=='stock')return;
+  const yahoo=STOCK_YAHOO[key];
+  let extra={};
+  if(yahoo){
+    const live=await loadYahoo6mo(yahoo);
+    if(live?.points)extra.history6mo=live.points;
+  }
+  renderStockOverlay(key,extra);
+}
+let stockOverlayKey=null;
+function openStockOverlay(key){
+  if(!key)return;
+  closeOpenOverlay();
+  openOverlay='stock';
+  stockOverlayKey=key;
+  const ov=$('stock-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  $('stock-overlay-body').innerHTML='<div class="stock-chart-msg">Loading…</div>';
+  renderStockOverlay(key);
+  refreshStockOverlay(key);
+  const close=$('stock-overlay-close');
+  if(close)close.focus();
+}
+function closeStockOverlay(){
+  if(openOverlay!=='stock')return;
+  openOverlay=null;stockOverlayKey=null;
+  const ov=$('stock-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+}
+function stockTileKeyFromEvent(e){
+  const card=e.target.closest?.('.quote-card');
+  if(card&&$('market-grid')?.contains(card))return card.dataset.symbol;
+  if(e.currentTarget===$('spotlight')||e.target.closest?.('#spotlight'))return $('spotlight')?.dataset.symbol||spotSymbols[spotIndex];
+  return null;
+}
+
 $('refresh-btn').addEventListener('click',e=>{e.preventDefault();e.stopPropagation();manualRefresh();});
+
+$('market-grid').addEventListener('click',e=>{const k=stockTileKeyFromEvent(e);if(k){e.preventDefault();openStockOverlay(k);}});
+$('spotlight').addEventListener('click',e=>{e.preventDefault();openStockOverlay($('spotlight').dataset.symbol||spotSymbols[spotIndex]);});
+$('stock-overlay').addEventListener('click',closeStockOverlay);
+$('stock-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeStockOverlay();});
 $('nfl-card').addEventListener('click',openNflOverlay);
 $('weather-card').addEventListener('click',openWeatherOverlay);
 $('news-card').addEventListener('click',openNewsOverlay);
@@ -1617,6 +1815,8 @@ document.addEventListener('keydown',e=>{
   const isRefreshKey=e.key==='r'||e.key==='R'||code===403||e.key==='ColorF0Red'||e.key==='Red';
   if(!openOverlay&&isRefreshKey){e.preventDefault();manualRefresh();return;}
   if(isEnter&&document.activeElement===$('refresh-btn')){e.preventDefault();manualRefresh();return;}
+  const stockFocus=document.activeElement?.closest?.('.quote-card')||(document.activeElement===$('spotlight')?document.activeElement:null);
+  if(isEnter&&stockFocus&&!openOverlay){e.preventDefault();openStockOverlay(stockFocus.dataset.symbol||spotSymbols[spotIndex]);return;}
   if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();return;}
   if(isEnter&&document.activeElement===$('weather-card')){e.preventDefault();openWeatherOverlay();return;}
   if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();}
