@@ -358,6 +358,8 @@
   .sb-team.no-logo .sb-logo-fallback{display:flex}
   .sb-name{font:300 42px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
     white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .sb-rec{color:var(--muted);font-weight:300;letter-spacing:0;font-size:.82em;margin-left:.3em}
+  .sb-team.loser .sb-rec{color:var(--soft)}
   .sb-abbr{font-size:26px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
   .sb-score{font:300 56px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     font-feature-settings:"tnum" 1,"lnum" 1;min-width:1.55em;text-align:right}
@@ -1001,13 +1003,16 @@ function renderNflScoreboard(board,meta){
   $('nfl-overlay-deck').textContent=`${week} · ${src}${as}${bye}`;
   if(!games.length){box.className='nfl-scoreboard sb-msg';box.textContent='No games this week';return;}
   box.className='nfl-scoreboard';
+  const fmtRecord=r=>{const s=String(r||'').trim().replace(/-/g,'–');return s?(s.startsWith('(')?s:`(${s})`):'';};
   const teamRow=(t,g)=>{
     const loser=(g.state==='post'||g.completed)&&!t.winner&&(g.away.winner||g.home.winner);
     const hide=g.state==='pre'||t.score==null||t.score==='';
     const score=hide?'—':esc(t.score);
     const empty=hide?' empty':'';
+    const rec=fmtRecord(t.record);
+    const recHtml=rec?` <span class="sb-rec">${esc(rec)}</span>`:'';
     const logo=t.logo?`<img class="sb-logo" src="${esc(t.logo)}" alt="" onerror="this.parentNode.classList.add('no-logo')">`:'';
-    return `<div class="sb-team${loser?' loser':''}${t.logo?'':' no-logo'}">${logo}<span class="sb-logo-fallback">${esc(t.abbrev||'')}</span><span class="sb-name">${esc(t.name||t.short||'')}</span><span class="sb-abbr">${esc(t.abbrev||'')}</span><span class="sb-score${empty}">${score}</span></div>`;
+    return `<div class="sb-team${loser?' loser':''}${t.logo?'':' no-logo'}">${logo}<span class="sb-logo-fallback">${esc(t.abbrev||'')}</span><span class="sb-name">${esc(t.name||t.short||'')}${recHtml}</span><span class="sb-abbr">${esc(t.abbrev||'')}</span><span class="sb-score${empty}">${score}</span></div>`;
   };
   box.innerHTML=games.map(g=>{
     const live=g.state==='in';
@@ -1051,15 +1056,13 @@ function closeNflOverlay(){
   $('nfl-card').focus();
 }
 $('nfl-card').addEventListener('click',openNflOverlay);
-$('nfl-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeNflOverlay();});
-$('nfl-overlay-backdrop').addEventListener('click',closeNflOverlay);
-$('nfl-overlay').addEventListener('click',e=>{if(e.target===$('nfl-overlay'))closeNflOverlay();});
+$('nfl-overlay').addEventListener('click',closeNflOverlay);
 document.addEventListener('keydown',e=>{
   const code=e.keyCode||e.which;
   const isEsc=code===27||code===10009||e.key==='Escape'||e.key==='XF86Back';
   const isEnter=code===13||e.key==='Enter';
-  if(isEsc&&nflOverlayOpen){e.preventDefault();closeNflOverlay();return;}
-  if(isEnter&&!nflOverlayOpen&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();}
+  if(nflOverlayOpen&&(isEsc||isEnter)){e.preventDefault();closeNflOverlay();return;}
+  if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();}
 });
 
 window.setInterval(tick,1000);
