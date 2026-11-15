@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T16:37:22.137Z",
+ "generatedAt": "2026-11-15T16:37:52.102Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -15,7 +15,7 @@
      "cond": "Clear",
      "windMph": 1,
      "windDir": "W",
-     "observed": "2026-11-15T11:15"
+     "observed": "2026-11-15T11:30"
     },
     "today": {
      "h": 55,
@@ -54,12 +54,12 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 35,
+     "temp": 36,
      "i": "cloud",
      "cond": "Overcast",
      "windMph": 5,
      "windDir": "SSE",
-     "observed": "2026-11-15T10:15"
+     "observed": "2026-11-15T10:30"
     },
     "today": {
      "h": 47,
@@ -95,8 +95,8 @@
     ]
    }
   },
-  "asOf": "2026-11-15T16:29:36.263Z",
-  "lastAttempt": "2026-11-15T16:29:36.263Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
   "lastError": null
  },
  "nfl": {
@@ -157,8 +157,8 @@
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-15T16:29:36.263Z",
-  "lastAttempt": "2026-11-15T16:29:36.263Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
   "lastError": null
  },
  "news": {
@@ -195,8 +195,8 @@
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-15T16:29:36.263Z",
-  "lastAttempt": "2026-11-15T16:29:36.263Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
   "credit": "BBC News · NPR",
   "lastError": null
  },
@@ -208,7 +208,7 @@
    "isOpen": false,
    "session": null,
    "holiday": null,
-   "checkedAt": "2026-11-15T16:29:36.263Z"
+   "checkedAt": "2026-11-15T16:37:52.102Z"
   },
   "quotes": {
    "NVDA": {
@@ -331,14 +331,18 @@
     }
    ]
   },
-  "lastAttempt": "2026-11-15T16:29:36.263Z",
-  "asOf": "2026-11-15T16:29:36.263Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
   "indexSource": "Yahoo Finance"
  },
  "lastRun": {
-  "at": "2026-11-15T16:37:22.137Z",
+  "at": "2026-11-15T16:37:52.102Z",
   "ran": [
+   "weather",
+   "nfl",
+   "news",
    "rates",
+   "stocks:initial",
    "futures"
   ]
  },
@@ -1445,35 +1449,35 @@
     }
    }
   },
-  "asOf": "2026-11-15T16:37:22.137Z",
-  "lastAttempt": "2026-11-15T16:37:22.137Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
   "lastError": null
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-15T16:37:22.137Z",
-  "lastAttempt": "2026-11-15T16:37:22.137Z",
+  "asOf": "2026-11-15T16:37:52.102Z",
+  "lastAttempt": "2026-11-15T16:37:52.102Z",
   "items": {
    "DOW": {
     "symbol": "YM=F",
     "last": 52418,
     "lastTime": 1794607198,
-    "settle": 52432,
+    "settle": 52430,
     "settleDate": "2026-11-13",
     "indexClose": 52347.55,
-    "changePct": -0.026701251144339334,
-    "expectedOpen": 52333.5725492066,
+    "changePct": -0.022887659736791913,
+    "expectedOpen": 52335.56887087545,
     "valid": true
    },
    "SPX": {
     "symbol": "ES=F",
     "last": 7583,
     "lastTime": 1794607199,
-    "settle": 7585,
+    "settle": 7584.75,
     "settleDate": "2026-11-13",
     "indexClose": 7561.67,
-    "changePct": -0.026367831245880026,
-    "expectedOpen": 7559.67615161503,
+    "changePct": -0.023072612808596196,
+    "expectedOpen": 7559.925325159036,
     "valid": true
    },
    "NASDAQ": {
