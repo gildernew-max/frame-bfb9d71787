@@ -360,7 +360,7 @@
   .tape-viewport{position:absolute;inset:22px 0 0;overflow:hidden;
     mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
   .tape-track{width:max-content;display:flex;align-items:center;height:65px;animation:tape-move 74s linear infinite;will-change:transform}
-  .tape-group{display:flex;align-items:center;gap:76px;min-width:3600px;flex:none;padding-right:76px;white-space:nowrap}
+  .tape-group{display:flex;align-items:center;gap:96px;flex:none;padding-right:96px;white-space:nowrap}
   .tape-item{display:inline-flex;align-items:baseline;gap:18px;font-size:36px;font-weight:400}
   .tape-symbol{color:#E7DFD1;font-weight:500;letter-spacing:.035em}
   .tape-price{color:var(--muted)}
@@ -382,7 +382,7 @@
   .refresh-btn.spinning{color:var(--gold);pointer-events:none}
   .refresh-btn.spinning .refresh-icon{animation:refresh-spin .8s linear infinite}
   @keyframes refresh-spin{to{transform:rotate(360deg)}}
-  @keyframes tape-move{to{transform:translateX(-50%)}}
+  @keyframes tape-move{to{transform:translateX(calc(-1 * var(--tape-w, 0px)))}}
   @media(prefers-reduced-motion:reduce){.tape-track{animation:none}.spot-inner,.business-feature .hd,.business-feature .src,#market-grid{transition:none}.refresh-btn.spinning .refresh-icon{animation:none}}
   /* Inter restore: relax tight serif tracking */
   .clock,.now .temp,.spot-price,.quote-card .quote-value,.secondary-temp,.nfl-record{letter-spacing:-.02em!important}
@@ -849,12 +849,13 @@ function renderTape(){
   // Seamless loop: each copy must be at least as wide as the viewport, so repeat the
   // item set inside one copy as needed, then render two identical copies and slide by
   // exactly one copy's width (translateX(-50%) of the two-copy track).
-  track.innerHTML=`<div class="tape-group" style="min-width:0">${tape}</div>`;
+  track.innerHTML=`<div class="tape-group">${tape}</div>`;
   const one=track.firstElementChild.offsetWidth||1, vp=track.parentElement.offsetWidth||3600;
   const reps=Math.max(1,Math.ceil(vp/one));
   const copy=tape.repeat(reps);
-  track.innerHTML=`<div class="tape-group" style="min-width:0">${copy}</div><div class="tape-group" style="min-width:0" aria-hidden="true">${copy}</div>`;
+  track.innerHTML=`<div class="tape-group">${copy}</div><div class="tape-group" aria-hidden="true">${copy}</div>`;
   const w=track.firstElementChild.offsetWidth;
+  track.style.setProperty('--tape-w',w+'px');
   track.style.animationDuration=`${(w/(3676/74)).toFixed(2)}s`; // same speed as the design: 3676px per 74s
 }
 
