@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <meta name="theme-color" content="#101114">
 <title>Frame · Morning Board</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -310,6 +312,27 @@
   .stock-ipo .kicker{font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .stock-ipo .title{font:300 96px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em}
   .stock-ipo .note{font-size:40px;color:#DBC9A5;font-weight:300}
+  .wx-radar-page{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:24px 32px}
+  .wx-radar-page[hidden]{display:none!important}
+  .wx-overlay-body[hidden]{display:none!important}
+  .wx-map-card{position:relative;min-width:0;min-height:0;display:flex;flex-direction:column;
+    border:1px solid var(--hair);border-radius:18px;background:var(--panel);overflow:hidden}
+  .wx-map{flex:1;min-height:0;width:100%;background:#141518}
+  .wx-map .leaflet-container{width:100%;height:100%;background:#141518;font-family:Inter,"SF Pro Display",system-ui,sans-serif}
+  .wx-map .leaflet-control-attribution{display:none}
+  .wx-map-kicker{position:absolute;top:18px;left:20px;z-index:500;pointer-events:none;
+    font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;
+    text-shadow:0 1px 8px rgba(0,0,0,.65)}
+  .wx-map-time{position:absolute;bottom:18px;left:20px;z-index:500;pointer-events:none;
+    font-size:28px;letter-spacing:.06em;color:var(--ink);font-weight:300;
+    text-shadow:0 1px 8px rgba(0,0,0,.75)}
+  .wx-map-credit{grid-column:1/-1;font-size:22px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .wx-temp-label{background:none;border:0}
+  .wx-temp-label span{display:block;font:500 22px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    letter-spacing:.02em;text-shadow:0 1px 6px rgba(0,0,0,.85);white-space:nowrap;text-align:center}
+  .wx-temp-label i{display:block;margin-top:2px;font:500 13px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    letter-spacing:.10em;text-transform:uppercase;font-style:normal;color:var(--muted);
+    text-shadow:0 1px 6px rgba(0,0,0,.85);text-align:center}
 
   /* BUSINESS: a refined, gently rotating editorial feature */
   .business-panel .panel-title{font-size:62px}
@@ -598,9 +621,27 @@
           <div class="panel-title" id="weather-overlay-title">Atlanta <span style="color:var(--gold)">·</span> Forecast</div>
           <div class="panel-deck" id="weather-overlay-deck">7-day · Open-Meteo</div>
         </div>
-        <button type="button" class="nfl-overlay-close" id="weather-overlay-close" aria-label="Close forecast">Close</button>
+        <div class="overlay-actions">
+          <div class="league-toggle wx-page-toggle" id="wx-page-toggle" role="tablist" aria-label="Weather view">
+            <button type="button" id="wx-page-forecast" class="on" aria-selected="true">Forecast</button>
+            <button type="button" id="wx-page-radar" aria-selected="false">Radar</button>
+          </div>
+          <button type="button" class="nfl-overlay-close" id="weather-overlay-close" aria-label="Close forecast">Close</button>
+        </div>
       </div>
       <div class="wx-overlay-body" id="weather-overlay-body"></div>
+      <div class="wx-radar-page" id="weather-radar-page" hidden>
+        <div class="wx-map-card">
+          <div class="wx-map-kicker">Atlanta radar</div>
+          <div id="radar-map" class="wx-map" role="img" aria-label="Animated radar centered on Atlanta"></div>
+          <div class="wx-map-time" id="radar-time"></div>
+        </div>
+        <div class="wx-map-card">
+          <div class="wx-map-kicker">US temperatures</div>
+          <div id="temp-map" class="wx-map" role="img" aria-label="Current temperatures across the United States"></div>
+        </div>
+        <div class="wx-map-credit">Radar: RainViewer · Basemap: OpenStreetMap · Temperatures: Open-Meteo</div>
+      </div>
     </div>
   </div>
 
@@ -1570,6 +1611,160 @@ async function refreshWeatherOverlay(){
     $('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
   }
 }
+const US_CITIES=[
+  ['Seattle',47.61,-122.33],['Portland',45.52,-122.68],['San Francisco',37.77,-122.42],['Sacramento',38.58,-121.49],
+  ['Los Angeles',34.05,-118.24],['San Diego',32.72,-117.16],['Las Vegas',36.17,-115.14],['Phoenix',33.45,-112.07],
+  ['Salt Lake City',40.76,-111.89],['Denver',39.74,-104.99],['Albuquerque',35.08,-106.65],['Boise',43.62,-116.20],
+  ['Billings',45.78,-108.50],['Cheyenne',41.14,-104.82],['Oklahoma City',35.47,-97.52],['Dallas',32.78,-96.80],
+  ['Houston',29.76,-95.37],['San Antonio',29.42,-98.49],['Austin',30.27,-97.74],['New Orleans',29.95,-90.07],
+  ['Minneapolis',44.98,-93.27],['Des Moines',41.59,-93.62],['Omaha',41.26,-95.94],['Kansas City',39.10,-94.58],
+  ['St. Louis',38.63,-90.20],['Chicago',41.88,-87.63],['Milwaukee',43.04,-87.91],['Indianapolis',39.77,-86.16],
+  ['Detroit',42.33,-83.05],['Cleveland',41.50,-81.67],['Columbus',39.96,-83.00],['Cincinnati',39.10,-84.51],
+  ['Pittsburgh',40.44,-79.99],['Buffalo',42.89,-78.88],['Boston',42.36,-71.06],['New York',40.71,-74.01],
+  ['Philadelphia',39.95,-75.17],['Baltimore',39.29,-76.61],['Washington',38.91,-77.04],['Richmond',37.54,-77.44],
+  ['Raleigh',35.78,-78.64],['Charlotte',35.23,-80.84],['Atlanta',33.75,-84.39],['Nashville',36.16,-86.78],
+  ['Memphis',35.15,-90.05],['Jacksonville',30.33,-81.66],['Tampa',27.95,-82.46],['Orlando',28.54,-81.38],
+  ['Miami',25.76,-80.19],['Birmingham',33.52,-86.80]
+];
+let weatherPage='forecast',radarMap=null,tempMap=null,radarTimer=null,radarLayer=null,radarHost='',radarFrames=[],radarIdx=0;
+function stopRadarLoop(){if(radarTimer){clearTimeout(radarTimer);radarTimer=null;}}
+function teardownWeatherMaps(){
+  stopRadarLoop();
+  if(radarMap){radarMap.remove();radarMap=null;}
+  if(tempMap){tempMap.remove();tempMap=null;}
+  radarLayer=null;radarFrames=[];radarIdx=0;
+}
+function setWeatherPage(page){
+  weatherPage=page==='radar'?'radar':'forecast';
+  const onRadar=weatherPage==='radar';
+  const f=$('wx-page-forecast'),r=$('wx-page-radar');
+  if(f){f.classList.toggle('on',!onRadar);f.setAttribute('aria-selected',onRadar?'false':'true');}
+  if(r){r.classList.toggle('on',onRadar);r.setAttribute('aria-selected',onRadar?'true':'false');}
+  if($('weather-overlay-body'))$('weather-overlay-body').hidden=onRadar;
+  if($('weather-radar-page'))$('weather-radar-page').hidden=!onRadar;
+  if(onRadar){
+    $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Radar &amp; Map';
+    $('weather-overlay-deck').textContent='RainViewer · Open-Meteo · OpenStreetMap';
+    initWeatherMaps();
+  }else{
+    stopRadarLoop();
+    $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Forecast';
+  }
+}
+function cartoLayer(map){
+  if(map&&!map.getPane('baseDark')){
+    map.createPane('baseDark');
+    map.getPane('baseDark').style.zIndex=200;
+    map.getPane('baseDark').style.filter='invert(1) hue-rotate(180deg) brightness(.78) contrast(.95) saturate(.35)';
+  }
+  return L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:18,attribution:'',pane:'baseDark'
+  });
+}
+function tempColor(f){
+  if(!Number.isFinite(f))return '#ADA8A0';
+  if(f<=10)return '#6FA8DC';
+  if(f>=95)return '#E29A91';
+  // blend through blue → muted → gold → rose
+  const stops=[[10,'#6FA8DC'],[40,'#C9D4DE'],[65,'#C9A86A'],[95,'#E29A91']];
+  let a=stops[0],b=stops[stops.length-1];
+  for(let i=0;i<stops.length-1;i++){if(f>=stops[i][0]&&f<=stops[i+1][0]){a=stops[i];b=stops[i+1];break;}}
+  const t=(f-a[0])/((b[0]-a[0])||1);
+  const hex=h=>parseInt(h,16),to=n=>n.toString(16).padStart(2,'0');
+  const p=(h,i)=>hex(h.slice(1+i*2,3+i*2));
+  const mix=(i)=>Math.round(p(a[1],i)*(1-t)+p(b[1],i)*t);
+  return '#'+to(mix(0))+to(mix(1))+to(mix(2));
+}
+async function initWeatherMaps(){
+  if(typeof L==='undefined'){
+    if($('radar-map'))$('radar-map').innerHTML='<div class="stock-chart-msg">Map library unavailable</div>';
+    return;
+  }
+  const atl=[33.75,-84.39];
+  if(!radarMap){
+    radarMap=L.map('radar-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    cartoLayer(radarMap).addTo(radarMap);
+    radarMap.setView(atl,8);
+    await loadRadarLoop();
+  }else{
+    stopRadarLoop();
+    startRadarLoop();
+  }
+  if(!tempMap){
+    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    cartoLayer(tempMap).addTo(tempMap);
+    tempMap.fitBounds([[24.5,-124.8],[49.4,-66.9]],{padding:[24,24]});
+    await loadUsTemps();
+  }
+  const layout=()=>{
+    if(radarMap){radarMap.invalidateSize();radarMap.setView([33.75,-84.39],8);}
+    if(tempMap){tempMap.invalidateSize();tempMap.fitBounds([[24.5,-124.8],[49.4,-66.9]],{padding:[24,24]});}
+  };
+  requestAnimationFrame(layout);
+  setTimeout(layout,300);
+}
+async function loadRadarLoop(){
+  try{
+    const r=await fetch('https://api.rainviewer.com/public/weather-maps.json?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    const j=await r.json();
+    const host=(j.host||'https://tilecache.rainviewer.com').replace(/\/$/,'');
+    const past=j.radar?.past||[];
+    const cutoff=Math.floor(Date.now()/1000)-2*3600-5*60;
+    radarFrames=past.filter(f=>Number(f.time)>=cutoff);
+    if(radarFrames.length<4)radarFrames=past.slice(-12);
+    if(!radarFrames.length)throw new Error('no radar frames');
+    radarHost=host;
+    radarIdx=0;
+    startRadarLoop();
+  }catch(e){
+    console.warn('radar',e);
+    if($('radar-time'))$('radar-time').textContent='Radar unavailable';
+  }
+}
+function startRadarLoop(){
+  stopRadarLoop();
+  if(!radarFrames.length||!radarMap)return;
+  const show=()=>{
+    const f=radarFrames[radarIdx];
+    if(f&&radarHost){
+      const url=`${radarHost}${f.path}/256/{z}/{x}/{y}/2/1_1.png`;
+      if(!radarLayer){radarLayer=L.tileLayer(url,{opacity:.85,maxZoom:12}).addTo(radarMap);}
+      else radarLayer.setUrl(url);
+    }
+    const t=f?.time;
+    if(t&&$('radar-time')){
+      const d=new Date(t*1000);
+      $('radar-time').textContent=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(d)+' ET';
+    }
+    const last=radarIdx===radarFrames.length-1;
+    radarIdx=(radarIdx+1)%radarFrames.length;
+    radarTimer=setTimeout(show,last?1100:420);
+  };
+  show();
+}
+async function loadUsTemps(){
+  try{
+    const params=new URLSearchParams({
+      latitude:US_CITIES.map(c=>c[1]).join(','),
+      longitude:US_CITIES.map(c=>c[2]).join(','),
+      current:'temperature_2m',temperature_unit:'fahrenheit',timezone:'auto'
+    });
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?'+params,{cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    const arr=await r.json();
+    const rows=Array.isArray(arr)?arr:[arr];
+    rows.forEach((row,i)=>{
+      const city=US_CITIES[i]; if(!city)return;
+      const t=row?.current?.temperature_2m;
+      if(!Number.isFinite(t))return;
+      const color=tempColor(t);
+      const icon=L.divIcon({className:'wx-temp-label',iconSize:[0,0],iconAnchor:[0,0],
+        html:`<span style="color:${color}">${Math.round(t)}°</span><i>${city[0]}</i>`});
+      L.marker([city[1],city[2]],{icon,interactive:false,keyboard:false}).addTo(tempMap);
+    });
+  }catch(e){console.warn('temps',e);}
+}
 function openWeatherOverlay(){
   if(openOverlay==='weather')return;
   closeOpenOverlay();
@@ -1577,7 +1772,9 @@ function openWeatherOverlay(){
   const ov=$('weather-overlay');
   ov.hidden=false;ov.setAttribute('aria-hidden','false');
   $('weather-card').setAttribute('aria-expanded','true');
+  $('weather-overlay-body').hidden=false;
   $('weather-overlay-body').innerHTML='<div class="nfl-scoreboard sb-msg">Loading forecast…</div>';
+  setWeatherPage('forecast');
   refreshWeatherOverlay();
   const close=$('weather-overlay-close');
   if(close)close.focus();
@@ -1585,6 +1782,8 @@ function openWeatherOverlay(){
 function closeWeatherOverlay(){
   if(openOverlay!=='weather')return;
   openOverlay=null;
+  teardownWeatherMaps();
+  setWeatherPage('forecast');
   const ov=$('weather-overlay');
   ov.hidden=true;ov.setAttribute('aria-hidden','true');
   $('weather-card').setAttribute('aria-expanded','false');
@@ -1796,7 +1995,10 @@ $('nfl-card').addEventListener('click',openNflOverlay);
 $('weather-card').addEventListener('click',openWeatherOverlay);
 $('news-card').addEventListener('click',openNewsOverlay);
 $('nfl-overlay').addEventListener('click',e=>{if(e.target.closest('.league-toggle,.sb-page'))return;closeNflOverlay();});
-$('weather-overlay').addEventListener('click',closeWeatherOverlay);
+$('weather-overlay').addEventListener('click',e=>{if(e.target.closest('.wx-page-toggle'))return;closeWeatherOverlay();});
+$('wx-page-forecast').addEventListener('click',e=>{e.stopPropagation();setWeatherPage('forecast');});
+$('wx-page-radar').addEventListener('click',e=>{e.stopPropagation();setWeatherPage('radar');});
+
 $('news-overlay').addEventListener('click',closeNewsOverlay);
 $('sb-page').addEventListener('click',e=>{e.stopPropagation();shiftSbPage(1);});
 $('league-nfl').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('nfl');});
@@ -1808,6 +2010,8 @@ document.addEventListener('keydown',e=>{
   const isLeft=code===37||e.key==='ArrowLeft';
   const isRight=code===39||e.key==='ArrowRight';
   if(openOverlay==='nfl'&&(isLeft||isRight)){e.preventDefault();setScoreboardLeague(isRight?'cfb':'nfl');return;}
+  if(openOverlay==='weather'&&(isLeft||isRight)){e.preventDefault();setWeatherPage(isRight?'radar':'forecast');return;}
+
   const isUp=code===38||e.key==='ArrowUp';
   const isDown=code===40||e.key==='ArrowDown';
   if(openOverlay==='nfl'&&(isUp||isDown)&&sbPageCount>1){e.preventDefault();shiftSbPage(isDown?1:-1);return;}
