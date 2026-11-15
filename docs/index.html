@@ -455,27 +455,28 @@
     font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .league-toggle button.on{color:var(--ink);border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.28)}
   .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
-  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:28px}
+  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:40px}
   .wx7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px;flex:none}
   .wx7-day{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-width:0;
     height:300px;box-sizing:border-box;padding:20px 12px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
   .wx7-day .weekday{font-size:36px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .wx7-day .wx{width:96px;height:96px;margin:4px 0;flex:none}
+  .wx7-day .wx{width:72px;height:72px;margin:4px 0;flex:none}
   .wx7-day .temps{font:300 64px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
   .wx7-day .temps span{color:var(--soft);margin-left:14px}
   .wx7-day .pop{font-size:32px;letter-spacing:.06em;color:var(--blue);font-weight:500}
   .wx7-day .pop.empty{color:var(--soft)}
-  .wx-hourly-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
-  .wx12-wrap{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
-  .wx12{flex:1;min-height:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
-  .wx12-hour{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:0;
-    padding:22px 8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+  .wx-hourly-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;flex:none}
+  .wx12-wrap{flex:none;display:flex;flex-direction:column;gap:0}
+  .wx12{flex:none;height:300px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+  .wx12-hour{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;
+    height:300px;box-sizing:border-box;padding:22px 8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
   .wx12-hour .when{font-size:36px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .wx12-hour .wx{width:96px;height:96px;flex:none}
+  .wx12-hour .wx{width:72px;height:72px;flex:none}
   .wx12-hour .temp{font:300 64px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
   .wx12-hour .pop{font-size:32px;letter-spacing:.04em;color:var(--blue);font-weight:500}
   .wx12-hour .pop.empty{color:var(--soft)}
-  .wx12-spark{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
+  .wx12-chart{flex:none;height:220px;position:relative;width:100%}
+  .wx12-chart svg{width:100%;height:100%;display:block;overflow:visible}
   .news-full{flex:1;min-height:0;display:flex;flex-direction:column;gap:0;overflow:auto}
   .news-full-item{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px 48px;padding:18px 8px;
     border-bottom:1px solid var(--hair)}
@@ -896,6 +897,7 @@ function fit(){
   const scale=Math.min(w/3840,h/2160);
   if(!(scale>0))return setTimeout(fit,500);
   $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
+  if(typeof layoutWeatherMaps==='function')requestAnimationFrame(layoutWeatherMaps);
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
 tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
@@ -1539,12 +1541,16 @@ function closeNflOverlay(){
 }
 function popLabel(v){return v==null||v===''?'':`${v}% rain`;}
 function cityHourKey(tz){const p=new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return `${g('year')}-${g('month')}-${g('day')}T${g('hour')}`;}
+let lastForecastDeck='7-day · Open-Meteo';
+function setRadarDeck(){if($('weather-overlay-deck'))$('weather-overlay-deck').textContent='RainViewer · Open-Meteo · OpenStreetMap';}
 function renderWeatherOverlay(model,meta){
   const body=$('weather-overlay-body');
   const days=model.days7||[], hours=model.hourly||[];
   const src=meta?.source==='data.json'?'Open-Meteo via saved data':'Open-Meteo';
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
-  if(weatherPage!=='radar')$('weather-overlay-deck').textContent=`7-day · next 12 hours · ${src}${as}`;
+  lastForecastDeck=`7-day · next 12 hours · ${src}${as}`;
+  if(weatherPage==='radar')setRadarDeck();
+  else $('weather-overlay-deck').textContent=lastForecastDeck;
   if(!days.length){body.innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';return;}
   const dayHtml=days.map(d=>`<div class="wx7-day"><div class="weekday">${esc(d.d)}</div>${icon(d.i)}<div class="temps">${d.h}°<span>${d.l}°</span></div><div class="pop${d.pop==null?' empty':''}">${d.pop==null?'—':esc(popLabel(d.pop))}</div></div>`).join('');
   const hourSlice=hours.slice(0,12);
@@ -1553,25 +1559,60 @@ function renderWeatherOverlay(model,meta){
     return `<div class="wx12-hour"><div class="when">${esc(when)}</div>${icon(h.i)}<div class="temp">${h.temp}°</div><div class="pop${h.pop==null?' empty':''}">${h.pop==null?'—':esc(popLabel(h.pop))}</div></div>`;
   }).join('');
   const hourly=hourHtml
-    ? `<div class="wx12-wrap"><svg class="wx12-spark" aria-hidden="true"></svg><div class="wx12">${hourHtml}</div></div>`
+    ? `<div class="wx-hourly-label">Next 12 hours</div><div class="wx12">${hourHtml}</div><div class="wx12-chart" id="wx12-chart" aria-label="Hourly temperature"></div>`
     : `<div class="nfl-scoreboard sb-msg">Hourly forecast unavailable</div>`;
-  body.innerHTML=`<div class="wx7">${dayHtml}</div><div class="wx-hourly-label">Next 12 hours</div>${hourly}`;
-  requestAnimationFrame(()=>paintHourlyTempLine());
+  body.innerHTML=`<div class="wx7">${dayHtml}</div>${hourly}`;
+  requestAnimationFrame(()=>paintHourlyChart(hourSlice));
 }
-function paintHourlyTempLine(){
-  const wrap=document.querySelector('#weather-overlay-body .wx12-wrap');
-  const svg=wrap?.querySelector('.wx12-spark');
-  const nodes=[...wrap?.querySelectorAll('.wx12-hour .temp')||[]];
-  if(!svg||nodes.length<2)return;
-  const wr=wrap.getBoundingClientRect();
-  if(wr.width<2||wr.height<2)return;
-  const pts=nodes.map(el=>{
-    const r=el.getBoundingClientRect();
-    return {x:r.left-wr.left+r.width/2,y:r.top-wr.top+r.height/2};
+function smoothTempPath(xs,ys){
+  if(xs.length<2)return '';
+  if(xs.length===2)return `M${xs[0].toFixed(1)},${ys[0].toFixed(1)}L${xs[1].toFixed(1)},${ys[1].toFixed(1)}`;
+  let d=`M${xs[0].toFixed(1)},${ys[0].toFixed(1)}`;
+  for(let i=0;i<xs.length-1;i++){
+    const x0=xs[Math.max(0,i-1)],y0=ys[Math.max(0,i-1)];
+    const x1=xs[i],y1=ys[i],x2=xs[i+1],y2=ys[i+1];
+    const x3=xs[Math.min(xs.length-1,i+2)],y3=ys[Math.min(ys.length-1,i+2)];
+    const c1x=x1+(x2-x0)/6,c1y=y1+(y2-y0)/6;
+    const c2x=x2-(x3-x1)/6,c2y=y2-(y3-y1)/6;
+    d+=`C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
+  }
+  return d;
+}
+function paintHourlyChart(hours){
+  const host=$('wx12-chart');
+  if(!host||!hours||hours.length<2)return;
+  // clientWidth is unscaled stage px; getBoundingClientRect is CSS-transformed and would warp the line.
+  const w=host.clientWidth,h=host.clientHeight;
+  if(w<40||h<40)return;
+  const temps=hours.map(x=>Number(x.temp)).filter(Number.isFinite);
+  if(temps.length<2)return;
+  const lo=Math.min(...temps),hi=Math.max(...temps),span=(hi-lo)||1;
+  const padT=56,padB=20,padX=0;
+  const grid=document.querySelector('#weather-overlay-body .wx12');
+  const cards=[...document.querySelectorAll('#weather-overlay-body .wx12-hour')];
+  const hostLeft=host.getBoundingClientRect().left;
+  const scale=host.getBoundingClientRect().width/(w||1);
+  const xs=temps.map((_,i)=>{
+    if(cards[i]&&scale>0){
+      const r=cards[i].getBoundingClientRect();
+      return (r.left-hostLeft+r.width/2)/scale;
+    }
+    return padX+(w-2*padX)*i/Math.max(1,temps.length-1);
   });
-  svg.setAttribute('viewBox',`0 0 ${wr.width} ${wr.height}`);
-  const d=pts.map((p,i)=>`${i?'L':'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
-  svg.innerHTML=`<path d="${d}" fill="none" stroke="rgba(240,237,230,.5)" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
+  const ys=temps.map(t=>padT+(h-padT-padB)*(1-(t-lo)/span));
+  const line=smoothTempPath(xs,ys);
+  const fill=line+`L${xs[xs.length-1].toFixed(1)},${h-padB}L${xs[0].toFixed(1)},${h-padB}Z`;
+  const labels=temps.map((t,i)=>{
+    const above=ys[i]>padT+36;
+    const ty=above?ys[i]-18:ys[i]+36;
+    return `<circle cx="${xs[i].toFixed(1)}" cy="${ys[i].toFixed(1)}" r="6" fill="#EDE6D8"/>`+
+      `<text x="${xs[i].toFixed(1)}" y="${ty.toFixed(1)}" text-anchor="middle" fill="#EDE6D8" font-size="32" font-family="Inter,sans-serif" font-weight="500">${t}°</text>`;
+  }).join('');
+  host.innerHTML=`<svg viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" preserveAspectRatio="none" aria-hidden="true">
+    <path d="${fill}" fill="rgba(201,168,106,.12)"/>
+    <path d="${line}" fill="none" stroke="#C9A86A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    ${labels}
+  </svg>`;
 }
 function hourLabel(iso,tz){
   const s=iso.length<=16?iso+':00':iso;
@@ -1639,12 +1680,14 @@ async function refreshWeatherOverlay(){
   catch(e){
     console.warn('weather overlay',e);
     $('weather-overlay-body').innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';
-    if(weatherPage!=='radar')$('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
+    if(weatherPage==='radar')setRadarDeck(); else $('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
   }
 }
 const US_BOUNDS=[[24.5,-125],[49.5,-66.5]];
 const ATL_CENTER=[33.749,-84.388];
-const ATL_RADIUS_MI=150;
+// Chattanooga (~35.05) to Macon (~32.84), with a little room: lat 32.3–35.2.
+// Longitude is a mercator-square around Atlanta so the Atlantic stays off-frame.
+const ATL_BOUNDS=[[32.3,-86.133],[35.2,-82.643]];
 const US_CITIES=[
   ['Seattle',47.61,-122.33],['SF',37.77,-122.42],['LA',34.05,-118.24],['Phoenix',33.45,-112.07],
   ['Denver',39.74,-104.99],['Salt Lake',40.76,-111.89],['Boise',43.62,-116.20],
@@ -1690,6 +1733,7 @@ function setWeatherPage(page){
     stopRadarLoop();
     stopRadarCatalogRefresh();
     $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Forecast';
+    if(lastForecastDeck)$('weather-overlay-deck').textContent=lastForecastDeck;
   }
 }
 function cartoLayer(map){
@@ -1715,63 +1759,68 @@ function tempColor(f){
   const mix=(i)=>Math.round(p(a[1],i)*(1-t)+p(b[1],i)*t);
   return '#'+to(mix(0))+to(mix(1))+to(mix(2));
 }
-function atlantaRadarBounds(){
-  const [lat,lon]=ATL_CENTER, mi=ATL_RADIUS_MI;
-  const dLat=mi/69.172;
-  const dLon=mi/(69.172*Math.cos(lat*Math.PI/180));
-  return [[lat-dLat,lon-dLon],[lat+dLat,lon+dLon]];
-}
 function mercatorAspect(bounds){
   const [[s,w],[n,e]]=bounds;
   const proj=lat=>{
     const sin=Math.sin(lat*Math.PI/180);
     return 0.5-Math.log((1+sin)/(1-sin))/(4*Math.PI);
   };
-  return ((e-w)/360)/Math.abs(proj(s)-proj(n) || 1e-6);
+  return ((e-w)/360)/Math.abs(proj(s)-proj(n)||1e-6);
 }
-function fitMapToBounds(map,bounds,pad=8){
+function fitMapToBounds(map,bounds,pad=0){
   if(!map)return;
-  const el=map.getContainer(), card=el.parentElement;
+  const el=map.getContainer(),card=el.parentElement;
   el.style.width='100%';el.style.height='100%';el.style.flex='1';el.style.alignSelf='stretch';el.style.margin='0';
   void card.offsetWidth;
-  const cw=card.clientWidth, ch=card.clientHeight, aspect=mercatorAspect(bounds);
-  let width=cw, height=width/aspect;
+  // clientWidth/Height are unscaled stage pixels and ignore the #stage CSS transform.
+  // getBoundingClientRect() would be scaled (~0.5 on a 1080p preview) and would undersize the map,
+  // making Leaflet pick a too-low zoom and show the whole Southeast / all of North America.
+  const cw=card.clientWidth,ch=card.clientHeight,aspect=mercatorAspect(bounds);
+  let width=cw,height=width/aspect;
   if(height>ch){height=ch;width=height*aspect;}
   el.style.width=Math.max(1,Math.round(width))+'px';
   el.style.height=Math.max(1,Math.round(height))+'px';
   el.style.flex='none';
   el.style.alignSelf='center';
   el.style.margin='auto';
-  map.invalidateSize();
+  map.invalidateSize({animate:false});
   const b=L.latLngBounds(bounds);
-  map.setMaxBounds(b.pad(0.04));
-  map.fitBounds(b,{padding:[pad,pad],animate:false});
+  const size=map.getSize();
+  if(!size.x||!size.y)return;
+  const z=map.getBoundsZoom(b,false,[pad,pad]);
+  map.setMaxBounds(b.pad(0.02));
+  map.setView(b.getCenter(),z,{animate:false});
 }
-function fitAtlantaRadar(map){fitMapToBounds(map,atlantaRadarBounds(),10);}
-function fitLower48(map){fitMapToBounds(map,US_BOUNDS,8);}
+function fitAtlantaRadar(map){fitMapToBounds(map,ATL_BOUNDS,0);}
+function fitLower48(map){fitMapToBounds(map,US_BOUNDS,0);}
+function layoutWeatherMaps(){
+  if(weatherPage!=='radar')return;
+  if(radarMap)fitAtlantaRadar(radarMap);
+  if(tempMap){fitLower48(tempMap);resolveTempLabelOverlaps();}
+  setRadarDeck();
+}
 async function initWeatherMaps(){
   if(typeof L==='undefined'){
     if($('radar-map'))$('radar-map').innerHTML='<div class="stock-chart-msg">Map library unavailable</div>';
     return;
   }
+  const mapOpts={zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,
+    doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,zoomSnap:0,zoomDelta:0.25};
   if(!radarMap){
-    radarMap=L.map('radar-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,zoomSnap:0.25,zoomDelta:0.25});
+    radarMap=L.map('radar-map',mapOpts);
     cartoLayer(radarMap).addTo(radarMap);
   }
   if(!tempMap){
-    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,maxBoundsViscosity:1,zoomSnap:0.25,zoomDelta:0.25});
+    tempMap=L.map('temp-map',Object.assign({},mapOpts,{maxBoundsViscosity:1}));
     cartoLayer(tempMap).addTo(tempMap);
   }
-  const layout=()=>{
-    fitAtlantaRadar(radarMap);
-    fitLower48(tempMap);
-    resolveTempLabelOverlaps();
-  };
-  layout();
+  setRadarDeck();
+  layoutWeatherMaps();
   await loadRadarLoop();
   await loadUsTemps();
-  requestAnimationFrame(layout);
-  setTimeout(layout,350);
+  requestAnimationFrame(layoutWeatherMaps);
+  setTimeout(layoutWeatherMaps,350);
+  setTimeout(layoutWeatherMaps,1000);
 }
 async function loadRadarLoop(){
   try{
