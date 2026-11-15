@@ -1544,7 +1544,7 @@ function renderWeatherOverlay(model,meta){
   const days=model.days7||[], hours=model.hourly||[];
   const src=meta?.source==='data.json'?'Open-Meteo via saved data':'Open-Meteo';
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
-  $('weather-overlay-deck').textContent=`7-day · next 12 hours · ${src}${as}`;
+  if(weatherPage!=='radar')$('weather-overlay-deck').textContent=`7-day · next 12 hours · ${src}${as}`;
   if(!days.length){body.innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';return;}
   const dayHtml=days.map(d=>`<div class="wx7-day"><div class="weekday">${esc(d.d)}</div>${icon(d.i)}<div class="temps">${d.h}°<span>${d.l}°</span></div><div class="pop${d.pop==null?' empty':''}">${d.pop==null?'—':esc(popLabel(d.pop))}</div></div>`).join('');
   const hourSlice=hours.slice(0,12);
@@ -1639,7 +1639,7 @@ async function refreshWeatherOverlay(){
   catch(e){
     console.warn('weather overlay',e);
     $('weather-overlay-body').innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';
-    $('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
+    if(weatherPage!=='radar')$('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
   }
 }
 const US_BOUNDS=[[24.5,-125],[49.5,-66.5]];
@@ -1721,20 +1721,34 @@ function atlantaRadarBounds(){
   const dLon=mi/(69.172*Math.cos(lat*Math.PI/180));
   return [[lat-dLat,lon-dLon],[lat+dLat,lon+dLon]];
 }
-function fitAtlantaRadar(map){
-  if(!map)return;
-  map.invalidateSize();
-  map.fitBounds(atlantaRadarBounds(),{padding:[12,12],maxZoom:10,animate:false});
+function mercatorAspect(bounds){
+  const [[s,w],[n,e]]=bounds;
+  const proj=lat=>{
+    const sin=Math.sin(lat*Math.PI/180);
+    return 0.5-Math.log((1+sin)/(1-sin))/(4*Math.PI);
+  };
+  return ((e-w)/360)/Math.abs(proj(s)-proj(n) || 1e-6);
 }
-function fitLower48(map){
+function fitMapToBounds(map,bounds,pad=8){
   if(!map)return;
+  const el=map.getContainer(), card=el.parentElement;
+  el.style.width='100%';el.style.height='100%';el.style.flex='1';el.style.alignSelf='stretch';el.style.margin='0';
+  void card.offsetWidth;
+  const cw=card.clientWidth, ch=card.clientHeight, aspect=mercatorAspect(bounds);
+  let width=cw, height=width/aspect;
+  if(height>ch){height=ch;width=height*aspect;}
+  el.style.width=Math.max(1,Math.round(width))+'px';
+  el.style.height=Math.max(1,Math.round(height))+'px';
+  el.style.flex='none';
+  el.style.alignSelf='center';
+  el.style.margin='auto';
   map.invalidateSize();
-  const b=L.latLngBounds(US_BOUNDS);
-  // Contain the lower 48 so both coasts stay in view, then clip maxBounds
-  // tightly enough that a leftover world-scale zoom cannot appear.
-  map.setMaxBounds(b.pad(0.08));
-  map.fitBounds(b,{padding:[8,8],animate:false});
+  const b=L.latLngBounds(bounds);
+  map.setMaxBounds(b.pad(0.04));
+  map.fitBounds(b,{padding:[pad,pad],animate:false});
 }
+function fitAtlantaRadar(map){fitMapToBounds(map,atlantaRadarBounds(),10);}
+function fitLower48(map){fitMapToBounds(map,US_BOUNDS,8);}
 async function initWeatherMaps(){
   if(typeof L==='undefined'){
     if($('radar-map'))$('radar-map').innerHTML='<div class="stock-chart-msg">Map library unavailable</div>';
