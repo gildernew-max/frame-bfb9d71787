@@ -1,52 +1,52 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T16:05:47.859Z",
+ "generatedAt": "2026-11-15T16:08:01.791Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 46,
+     "temp": 47,
      "i": "sun",
-     "cond": "—",
-     "windMph": 0,
-     "windDir": "N",
-     "observed": "2026-11-15T15:50:00+00:00"
+     "cond": "Clear",
+     "windMph": 2,
+     "windDir": "WSW",
+     "observed": "2026-11-15T11:00"
     },
     "today": {
-     "h": 58,
-     "l": 36,
+     "h": 55,
+     "l": 29,
      "sunrise": "07:09",
-     "sunset": "17:35"
+     "sunset": "17:34"
     },
     "forecast": [
      {
       "date": "2026-11-16",
       "d": "Mon",
-      "i": "sun",
-      "text": "Sunny",
-      "h": 59,
-      "l": 37
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 57,
+      "l": 34
      },
      {
       "date": "2026-11-17",
       "d": "Tue",
       "i": "sun",
-      "text": "Sunny",
-      "h": 62,
-      "l": 39
+      "text": "Clear",
+      "h": 61,
+      "l": 38
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
       "i": "sun",
-      "text": "Sunny",
-      "h": 66,
-      "l": 41
+      "text": "Clear",
+      "h": 64,
+      "l": 44
      }
     ]
    },
@@ -54,50 +54,49 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 36,
-     "i": "sun",
-     "cond": "Clear",
-     "windMph": 6,
-     "windDir": "ESE",
-     "observed": "2026-11-15T15:50:00+00:00"
+     "temp": 33,
+     "i": "cloud",
+     "cond": "Overcast",
+     "windMph": 5,
+     "windDir": "SSE",
+     "observed": "2026-11-15T10:00"
     },
     "today": {
-     "h": 50,
-     "l": 35,
-     "sunrise": "07:09",
-     "sunset": "16:45"
+     "h": 47,
+     "l": 24,
+     "sunrise": "07:10",
+     "sunset": "16:43"
     },
     "forecast": [
      {
       "date": "2026-11-16",
       "d": "Mon",
-      "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 55,
-      "l": 42
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 54,
+      "l": 32
      },
      {
       "date": "2026-11-17",
       "d": "Tue",
-      "i": "partly",
-      "text": "Mostly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 56,
-      "l": 46
+      "l": 41
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "partly",
-      "text": "Partly Sunny",
-      "h": 58,
-      "l": 47
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 59,
+      "l": 48
      }
     ]
    }
   },
-  "asOf": "2026-11-15T16:05:47.859Z",
-  "lastAttempt": "2026-11-15T16:05:47.859Z",
-  "note": "Open-Meteo failed: fetch failed",
+  "asOf": "2026-11-15T16:08:01.791Z",
+  "lastAttempt": "2026-11-15T16:08:01.791Z",
   "lastError": null
  },
  "nfl": {
@@ -158,8 +157,8 @@
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-15T16:05:47.859Z",
-  "lastAttempt": "2026-11-15T16:05:47.859Z",
+  "asOf": "2026-11-15T16:08:01.791Z",
+  "lastAttempt": "2026-11-15T16:08:01.791Z",
   "lastError": null
  },
  "news": {
@@ -191,8 +190,8 @@
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-15T16:05:47.859Z",
-  "lastAttempt": "2026-11-15T16:05:47.859Z",
+  "asOf": "2026-11-15T16:08:01.791Z",
+  "lastAttempt": "2026-11-15T16:08:01.791Z",
   "credit": "BBC News · NPR",
   "lastError": null
  },
@@ -204,7 +203,7 @@
    "isOpen": false,
    "session": null,
    "holiday": null,
-   "checkedAt": "2026-11-15T16:05:47.859Z"
+   "checkedAt": "2026-11-15T16:08:01.791Z"
   },
   "quotes": {
    "NVDA": {
@@ -327,11 +326,11 @@
     }
    ]
   },
-  "lastAttempt": "2026-11-15T16:05:47.859Z",
-  "asOf": "2026-11-15T16:05:47.859Z"
+  "lastAttempt": "2026-11-15T16:08:01.791Z",
+  "asOf": "2026-11-15T16:08:01.791Z"
  },
  "lastRun": {
-  "at": "2026-11-15T16:05:47.859Z",
+  "at": "2026-11-15T16:08:01.791Z",
   "ran": [
    "weather",
    "nfl",
