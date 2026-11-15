@@ -39,19 +39,19 @@
   .panel{position:relative;min-width:0;min-height:0;overflow:hidden;border-radius:22px;
     border:1px solid var(--hair);background:var(--panel);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.028);backdrop-filter:blur(6px)}
-  .eyebrow,.kicker,.folio,.micro{font-size:28px;font-weight:500;text-transform:uppercase;letter-spacing:.21em}
+  .eyebrow,.kicker,.folio,.micro{font-size:30px;font-weight:500;text-transform:uppercase;letter-spacing:.12em}
   .kicker{color:var(--gold)}.micro,.folio{color:var(--soft)}
   .rule{height:1px;background:var(--hair)}
   .panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:29px}
   .panel-title{font:400 62px/.96 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.035em;color:var(--ink)}
-  .panel-deck{margin-top:13px;color:var(--muted);font-size:27px;letter-spacing:.12em;text-transform:uppercase}
-  .panel-number{font-size:28px;color:var(--gold);letter-spacing:.16em;font-weight:500;white-space:nowrap}
+  .panel-deck{margin-top:13px;color:var(--muted);font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .panel-number{font-size:30px;color:var(--gold);letter-spacing:.12em;font-weight:500;white-space:nowrap}
 
   /* CLOCK: the entire composition's largest typographic moment */
   .clock-panel{padding:48px 64px 48px 68px;display:flex;flex-direction:column}
   .clock-top{display:flex;align-items:center;justify-content:space-between}
   .clock-top .kicker{font-size:30px}
-  .clock-top .folio{font-size:25px}
+  .clock-top .folio{font-size:30px}
   .time{display:flex;align-items:baseline;white-space:nowrap;letter-spacing:-.065em;
     font:300 342px/.91 Inter,"SF Pro Display",system-ui,sans-serif;margin:26px 0 0 -10px;
     font-feature-settings:"tnum" 1,"lnum" 1}
@@ -65,19 +65,19 @@
     border-radius:100px;background:rgba(201,168,106,.065);color:#D5C5A7;
     font-size:30px;font-weight:400;white-space:nowrap}
   .market-status .dot{height:12px;width:12px;background:var(--gold);border-radius:50%;opacity:.9}
-  .market-status .note{color:var(--soft);font-size:23px;letter-spacing:.12em;text-transform:uppercase;margin-left:12px}
+  .market-status .note{color:var(--soft);font-size:30px;letter-spacing:.12em;text-transform:uppercase;margin-left:12px}
   .clock-accent{position:absolute;right:64px;bottom:46px;width:114px;height:1px;background:var(--gold);opacity:.4}
   .clock-body{flex:1;min-height:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 48px;align-items:stretch}
   .clock-main{display:flex;flex-direction:column;min-width:0}
   #treasury{display:flex;flex-direction:column;min-width:0;min-height:0;justify-content:flex-end;padding:16px 0 18px 12px}
   #treasury[hidden]{display:none}
-  .ty-kicker{font-size:22px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .ty-kicker{font-size:30px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
   .ty-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:2px}
   .ty-value{font:200 96px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em;
     font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap}
   .ty-meta{text-align:right;min-width:0}
-  .ty-date{font-size:24px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
-  .ty-chg{font-size:24px;color:var(--soft);letter-spacing:.06em;margin-top:7px;white-space:nowrap}
+  .ty-date{font-size:30px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .ty-chg{font-size:30px;color:var(--soft);letter-spacing:.06em;margin-top:7px;white-space:nowrap}
   .ty-chg .up{color:var(--up)}.ty-chg .down{color:var(--down)}
   .ty-plot{flex:1;min-height:168px;margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) 62px;
     grid-template-rows:minmax(0,1fr) 34px;column-gap:8px}
@@ -107,14 +107,14 @@
   .sun-journey{height:87px;min-height:87px;border-top:1px solid var(--hair);display:flex;align-items:center;
     justify-content:space-between;gap:28px;margin-top:1px;padding-top:4px}
   .sun-caption{flex:0 0 270px;line-height:1.15}
-  .sun-caption .micro{font-size:21px;letter-spacing:.08em;white-space:nowrap}
-  .sun-caption strong{display:block;font-size:29px;font-weight:400;margin-top:4px;color:var(--ink)}
+  .sun-caption .micro{font-size:30px;letter-spacing:.12em;white-space:nowrap}
+  .sun-caption strong{display:block;font-size:36px;font-weight:400;margin-top:4px;color:var(--ink)}
   .sun-caption.set{text-align:right}
   .sun-path{width:100%;max-width:550px;height:74px;overflow:visible}
   .forecast{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:13px}
   .forecast-day{height:190px;min-width:0;padding:16px 15px 14px;border:1px solid var(--hair);border-radius:17px;
     background:rgba(255,255,255,.028);display:flex;align-items:center;flex-direction:column}
-  .forecast-day .weekday{font-size:27px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}
+  .forecast-day .weekday{font-size:30px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;font-weight:500}
   .forecast-day .wx{height:75px;width:75px;margin:3px auto 1px}
   .forecast-day .temps{font-size:38px;letter-spacing:-.02em;font-weight:300;white-space:nowrap}
   .forecast-day .temps span{color:var(--soft);margin-left:15px}
@@ -128,18 +128,18 @@
   .weather-panel{padding:24px 38px 18px;display:flex;flex-direction:column}
   .weather-panel .panel-head{margin-bottom:0;min-height:78px;flex:none}
   .weather-panel .panel-title{font-size:49px}
-  .weather-panel .panel-deck{font-size:22px;margin-top:7px}
-  .weather-panel .panel-number{font-size:23px}
+  .weather-panel .panel-deck{font-size:30px;margin-top:7px}
+  .weather-panel .panel-number{font-size:30px}
   .atlanta-cards{display:grid;grid-template-columns:1.28fr repeat(3,minmax(0,1fr));
     gap:15px;height:296px;flex:none;margin-top:12px;min-width:0}
   .atlanta-now,.atlanta-cards .forecast-day,.secondary-current,.secondary-weather .mini-day{
     border:1px solid var(--hair);border-radius:16px;background:rgba(255,255,255,.028);
     min-width:0;overflow:hidden}
   .atlanta-now{padding:15px 23px 13px;display:flex;flex-direction:column}
-  .atl-now-label{font-size:28px;color:var(--muted);letter-spacing:.10em;text-transform:uppercase;
+  .atl-now-label{font-size:30px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:500;
     font-weight:400;white-space:nowrap}
   .atl-now-label .gold-sep{color:var(--gold);padding:0 6px}
-  .atl-now-label .small-sample{font-size:20px;color:var(--soft);letter-spacing:.13em;margin-left:12px}
+  .atl-now-label .small-sample{font-size:30px;color:var(--soft);letter-spacing:.12em;margin-left:12px}
   .atl-now-visual{display:flex;align-items:center;gap:20px;height:139px;min-height:139px;white-space:nowrap}
   .atl-now-visual .wx{height:126px;width:126px;flex:none;
     filter:drop-shadow(0 0 19px rgba(232,176,75,.09))}
@@ -149,9 +149,9 @@
   .atl-now-condition{font-size:39px;font-weight:300;line-height:1.13;white-space:nowrap}
   .atl-now-bottom{display:flex;justify-content:space-between;align-items:baseline;
     gap:12px;min-width:0;margin-top:9px}
-  .atl-now-highlow{font-size:27px;font-weight:300;color:var(--muted);white-space:nowrap}
+  .atl-now-highlow{font-size:36px;font-weight:300;color:var(--muted);white-space:nowrap}
   .atl-now-highlow b{color:var(--ink);font-weight:400}
-  .atl-now-wind{font-size:22px;font-weight:300;color:var(--soft);white-space:nowrap}
+  .atl-now-wind{font-size:30px;font-weight:300;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .atlanta-cards .forecast{grid-column:span 3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
     gap:15px;margin:0;min-width:0}
   .atlanta-cards .forecast-day{height:296px;padding:24px 12px 21px;
@@ -164,8 +164,8 @@
   .weather-panel .sun-journey{height:74px;min-height:74px;flex:none;
     margin-top:11px;padding-top:0;gap:20px;border-top:1px solid var(--hair)}
   .weather-panel .sun-caption{flex-basis:226px}
-  .weather-panel .sun-caption .micro{font-size:20px}
-  .weather-panel .sun-caption strong{font-size:26px;margin-top:3px}
+  .weather-panel .sun-caption .micro{font-size:30px}
+  .weather-panel .sun-caption strong{font-size:36px;margin-top:3px}
   .weather-panel .sun-path{height:68px;overflow:hidden}
   /* The Saint Paul row mirrors the Atlanta card rhythm, at a quieter scale. */
   .secondary-weather{margin-top:15px;height:181px;flex:none;min-width:0;display:grid;
@@ -173,10 +173,10 @@
     border-radius:0;background:none;box-shadow:none}
   .secondary-current{padding:11px 20px;display:flex;flex-direction:column;
     background:linear-gradient(115deg,rgba(255,255,255,.041),rgba(255,255,255,.018))}
-  .secondary-current .secondary-title{font:300 33px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+  .secondary-current .secondary-title{font:300 36px/1 Inter,"SF Pro Display",system-ui,sans-serif;
     letter-spacing:-.01em;white-space:nowrap}
   .secondary-current .slash{color:var(--gold);margin:0 6px}
-  .secondary-current .secondary-kicker{font-size:19px;color:var(--soft);letter-spacing:.12em;
+  .secondary-current .secondary-kicker{font-size:30px;color:var(--soft);letter-spacing:.12em;font-weight:500;
     text-transform:uppercase;white-space:nowrap}
   .secondary-current .secondary-now{display:flex;align-items:center;gap:16px;margin-top:6px}
   .secondary-current .secondary-now .wx{height:68px;width:68px;flex:none}
@@ -184,15 +184,15 @@
     white-space:nowrap;font-feature-settings:"tnum" 1}
   .secondary-bottom{display:flex;justify-content:space-between;align-items:baseline;
     min-width:0;gap:10px;margin-top:7px}
-  .secondary-current .secondary-condition{font-size:28px;font-weight:300;line-height:1.08;white-space:nowrap}
-  .secondary-current .secondary-detail{color:var(--muted);font-size:22px;line-height:1.2;
+  .secondary-current .secondary-condition{font-size:36px;font-weight:300;line-height:1.08;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .secondary-current .secondary-detail{color:var(--muted);font-size:36px;line-height:1.2;
     white-space:nowrap}
   .secondary-forecast{min-width:0;padding:0;border:0;display:flex;flex-direction:column}
   .mini-days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;
     min-height:0;flex:1}
   .secondary-weather .mini-day{display:flex;flex-direction:column;align-items:center;
     justify-content:center;background:rgba(255,255,255,.028)}
-  .secondary-weather .mini-day .weekday{font-size:25px;letter-spacing:.13em;
+  .secondary-weather .mini-day .weekday{font-size:30px;letter-spacing:.12em;font-weight:500;
     text-transform:uppercase;color:var(--muted)}
   .secondary-weather .mini-day .wx{height:67px;width:67px;margin:7px 0 4px}
   .secondary-weather .mini-day .temps{font-size:38px;font-weight:300;white-space:nowrap}
@@ -202,7 +202,7 @@
   .nfl-panel,.markets-panel,.business-panel{padding:44px 42px 36px}
   .nfl-panel .panel-head,.markets-panel .panel-head,.business-panel .panel-head{min-height:83px}
   .nfl-panel .panel-title{font-size:59px;white-space:nowrap}
-  .nfl-panel .panel-deck{font-size:24px}
+  .nfl-panel .panel-deck{font-size:30px}
   #nfl{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));height:821px;
     margin-top:8px;border-top:1px solid var(--hair)}
   .nfl-team{display:flex;flex-direction:column;justify-content:center;position:relative;
@@ -218,18 +218,18 @@
   .nfl-record{font:300 60px/1 Inter,"SF Pro Display",system-ui,sans-serif;white-space:nowrap;
     font-feature-settings:"tnum" 1,"lnum" 1}
   .nfl-details{display:flex;align-items:center;gap:19px;min-width:0}
-  .nfl-rank{font-size:35px;color:var(--muted);white-space:nowrap}
+  .nfl-rank{font-size:36px;color:var(--muted);white-space:nowrap}
   .nfl-divider{height:20px;width:1px;background:var(--hair)}
   .nfl-streak{font-size:32px;color:var(--ink);white-space:nowrap}
   .nfl-streak b{font-weight:500;color:var(--gold);margin-right:9px;
-    text-transform:uppercase;letter-spacing:.10em;font-size:22px}
-  .nfl-next{display:flex;align-items:center;gap:14px;font-size:38px;line-height:1.2;
+    text-transform:uppercase;letter-spacing:.12em;font-size:30px;font-weight:500}
+  .nfl-next{display:flex;align-items:center;gap:14px;font-size:44px;line-height:1.2;
     color:var(--muted);min-width:0}
-  .nfl-next .game-label{font-size:22px;letter-spacing:.15em;text-transform:uppercase;
+  .nfl-next .game-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;
     font-weight:500;color:var(--gold);white-space:nowrap}
   .nfl-next .game-detail{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .nfl-foot{margin-top:26px;display:flex;align-items:center;gap:18px;color:var(--soft);
-    font-size:23px;letter-spacing:.13em;text-transform:uppercase}
+    font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .nfl-foot .line{height:1px;flex:1;background:var(--hair)}
 
   /* MARKETS: the centerpiece, with a rotating area-chart spotlight */
@@ -245,7 +245,7 @@
   .spot-inner{display:grid;grid-template-columns:510px minmax(0,1fr);gap:10px;
     height:100%;padding:35px 38px 24px;transition:opacity .55s ease,transform .55s ease}
   .spotlight.is-changing .spot-inner{opacity:0;transform:translateY(12px)}
-  .spot-eyebrow{font-size:27px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .spot-eyebrow{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .spot-name{font:400 70px/1 Inter,"SF Pro Display",system-ui,sans-serif;margin-top:17px;letter-spacing:-.035em}
   .spot-symbol{color:var(--muted);font-size:30px;letter-spacing:.13em;margin-top:7px}
   .spot-price{font:300 124px/.98 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.055em;margin-top:13px;
@@ -256,27 +256,29 @@
   .change-pill.up{color:var(--up);background:rgba(143,191,154,.13);border:1px solid rgba(143,191,154,.22)}
   .change-pill.down{color:var(--down);background:rgba(217,138,126,.12);border:1px solid rgba(217,138,126,.20)}
   .spot-price-row{display:flex;align-items:center;gap:22px;margin-top:7px}
-  .spot-caption{font-size:23px;color:var(--soft);letter-spacing:.11em;text-transform:uppercase;margin-top:13px}
+  .spot-caption{font-size:30px;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-top:13px}
   .spot-graphic{position:relative;display:flex;align-items:flex-end;min-width:0}
   .area-chart{width:100%;height:315px;margin-bottom:7px;overflow:visible}
-  .chart-top{position:absolute;top:6px;right:3px;color:var(--soft);font-size:22px;letter-spacing:.16em;text-transform:uppercase}
-  .spot-folio{position:absolute;right:39px;bottom:19px;font-size:23px;letter-spacing:.13em;color:var(--soft)}
+  .chart-top{position:absolute;top:6px;right:3px;color:var(--soft);font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+  .spot-folio{position:absolute;right:39px;bottom:19px;font-size:30px;letter-spacing:.12em;color:var(--soft);font-weight:500}
   #market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,223px);
     gap:18px;margin-top:22px;transition:opacity .5s ease,transform .5s ease}
   #market-grid.is-changing{opacity:.25;transform:translateY(6px)}
   .quote-card{border:1px solid var(--hair);border-radius:17px;min-width:0;overflow:hidden;
     background:var(--panel-light);padding:23px 24px 17px;display:flex;flex-direction:column;justify-content:space-between}
   .quote-card .quote-top{display:flex;justify-content:space-between;align-items:baseline;gap:9px}
-  .quote-card .symbol{font-size:27px;letter-spacing:.14em;color:var(--gold);font-weight:500}
-  .quote-card .name{font-size:25px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);text-align:right}
+  .quote-card .symbol{font-size:30px;letter-spacing:.12em;color:var(--gold);font-weight:500}
+  .quote-card .name{font-size:30px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);text-align:right}
   .quote-card .quote-value{font:300 62px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;
     font-feature-settings:"tnum" 1,"lnum" 1}
   .quote-card .quote-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .quote-futures{margin-top:8px;font-size:30px;font-weight:500;letter-spacing:.04em;color:var(--soft);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .quote-card .quote-bottom .change-pill{font-size:27px;padding:7px 12px}
-  .quote-card .quote-bottom .hint{font-size:22px;color:var(--soft);letter-spacing:.10em;text-transform:uppercase}
+  .quote-card .quote-bottom .hint{font-size:30px;color:var(--soft);letter-spacing:.12em;text-transform:uppercase}
   .quote-card.upcoming{border-color:rgba(201,168,106,.35);background:rgba(201,168,106,.045)}
   .quote-card.upcoming .quote-value{font-size:47px;letter-spacing:-.025em}
-  .upcoming-pill{font-size:24px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,106,.39);
+  .upcoming-pill{font-size:30px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,106,.39);
     padding:7px 12px;border-radius:100px;text-transform:uppercase}
   .quote-card.upcoming .ipo-note{font-size:30px;color:#DBC9A5;white-space:nowrap;letter-spacing:-.01em}
   .quote-card,.spotlight{cursor:pointer}
@@ -337,22 +339,22 @@
   /* BUSINESS: a refined, gently rotating editorial feature */
   .business-panel .panel-title{font-size:62px}
   .business-feature{height:329px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
-  .business-feature .src{font-size:27px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+  .business-feature .src{font-size:30px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .business-feature .hd{font:400 57px/1.18 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.023em;margin-top:19px;
     transition:opacity .85s ease,transform .85s ease}
   .business-feature .src{transition:opacity .85s ease,transform .85s ease}
   .business-feature.fade .src,.business-feature.fade .hd{opacity:0;transform:translateY(12px)}
   .business-feature .feature-bottom{position:absolute;bottom:19px;left:0;right:0;
-    display:flex;align-items:center;justify-content:space-between;font-size:24px;letter-spacing:.15em;
+    display:flex;align-items:center;justify-content:space-between;font-size:30px;letter-spacing:.12em;
     text-transform:uppercase;color:var(--soft)}
   .feature-index{color:var(--gold)}
   #list{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));height:565px}
   .news-li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;
     padding:13px 2px 13px 0;border-bottom:1px solid var(--hair);align-items:center;
-    font-size:34px;font-weight:300;line-height:1.2;color:var(--muted);
+    font-size:44px;font-weight:300;line-height:1.2;color:var(--muted);
     transition:color .65s ease}
   .news-li:last-child{border-bottom:0}
-  .news-li i{font-size:24px;color:var(--soft);letter-spacing:.08em;font-style:normal;align-self:start;margin-top:7px}
+  .news-li i{font-size:30px;color:var(--soft);letter-spacing:.08em;font-style:normal;align-self:start;margin-top:7px}
   .news-li span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
   .news-li.on{color:var(--ink)}.news-li.on i{color:var(--gold)}
 
@@ -362,16 +364,16 @@
     mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
   .tape-track{width:max-content;display:flex;align-items:center;height:65px;animation:tape-move 74s linear infinite;will-change:transform}
   .tape-group{display:flex;align-items:center;gap:76px;min-width:3600px;flex:none;padding-right:76px;white-space:nowrap}
-  .tape-item{display:inline-flex;align-items:baseline;gap:18px;font-size:33px;font-weight:400}
+  .tape-item{display:inline-flex;align-items:baseline;gap:18px;font-size:36px;font-weight:400}
   .tape-symbol{color:#E7DFD1;font-weight:500;letter-spacing:.035em}
   .tape-price{color:var(--muted)}
-  .tape-change{font-size:28px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
-  .tape-change.soon{color:var(--gold);font-size:26px}
+  .tape-change{font-size:36px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
+  .tape-change.soon{color:var(--gold);font-size:36px}
   .tape-sep{width:5px;height:5px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:15px}
   .source-line{position:absolute;right:0;top:0;z-index:2;transform:translateY(-15px);
     display:flex;align-items:center;gap:14px;background:var(--bg);padding-left:22px}
-  .mock-label{font-size:20px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft)}
-  .refresh-asof{font-size:20px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);white-space:nowrap}
+  .mock-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .refresh-asof{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);white-space:nowrap;font-weight:500}
   .refresh-asof[hidden]{display:none!important}
   .refresh-btn{appearance:none;-webkit-appearance:none;margin:0;padding:0;width:56px;height:56px;border:0;
     border-radius:50%;background:transparent;color:var(--muted);cursor:pointer;flex:none;
@@ -409,10 +411,10 @@
     box-shadow:inset 0 1px 0 rgba(255,255,255,.028),0 24px 80px rgba(0,0,0,.35);backdrop-filter:blur(8px)}
   .nfl-overlay-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:32px;flex:none}
   .nfl-overlay-sheet .panel-title{font-size:66px}
-  .nfl-overlay-sheet .panel-deck{font-size:26px}
+  .nfl-overlay-sheet .panel-deck{font-size:30px}
   .nfl-overlay-close{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:18px 32px;border-radius:12px;
     border:1px solid var(--hair);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;
-    font:500 26px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+    font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .nfl-overlay-close:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
   .nfl-scoreboard{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
     grid-template-rows:repeat(6,minmax(0,1fr));gap:24px 36px;align-content:stretch}
@@ -424,25 +426,25 @@
   .sb-team{display:grid;grid-template-columns:88px minmax(0,1fr) auto auto;align-items:center;gap:20px;min-width:0}
   .sb-logo{width:76px;height:76px;object-fit:contain;flex:none}
   .sb-logo-fallback{width:76px;height:76px;display:none;align-items:center;justify-content:center;
-    border-radius:10px;background:rgba(255,255,255,.05);color:var(--muted);font-size:24px;letter-spacing:.06em;font-weight:500}
+    border-radius:10px;background:rgba(255,255,255,.05);color:var(--muted);font-size:30px;letter-spacing:.06em;font-weight:500}
   .sb-team.no-logo .sb-logo{display:none}
   .sb-team.no-logo .sb-logo-fallback{display:flex}
   .sb-name{font:300 54px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
     white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
   .sb-rec{color:var(--muted);font-weight:300;letter-spacing:0;font-size:.82em;margin-left:.3em}
   .sb-team.loser .sb-rec{color:var(--soft)}
-  .sb-abbr{font-size:28px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
+  .sb-abbr{font-size:30px;color:var(--muted);letter-spacing:.10em;font-weight:500;text-transform:uppercase;min-width:3.2em}
   .sb-score{font:300 72px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     font-feature-settings:"tnum" 1,"lnum" 1;min-width:1.55em;text-align:right}
   .sb-score.empty{color:var(--soft);font-size:56px}
   .sb-team.loser .sb-name,.sb-team.loser .sb-abbr,.sb-team.loser .sb-score{color:var(--soft)}
   .sb-meta{display:flex;align-items:center;gap:18px;min-width:0;color:var(--muted);
-    font-size:26px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding-left:108px}
+    font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding-left:108px}
   .sb-meta .live-tag{color:var(--gold)}
   .sb-status{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .sb-page{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:16px 22px;border-radius:12px;
     border:1px solid var(--hair);background:transparent;color:var(--muted);cursor:pointer;
-    font:500 24px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.18em;
+    font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;
     font-feature-settings:"tnum" 1}
   .sb-page:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
   .sb-page[hidden]{display:none!important}
@@ -450,7 +452,7 @@
   .league-toggle{display:flex;gap:8px}
   .league-toggle button{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:16px 26px;border-radius:12px;
     border:1px solid var(--hair);background:rgba(255,255,255,.04);color:var(--muted);cursor:pointer;
-    font:500 24px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+    font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .league-toggle button.on{color:var(--ink);border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.28)}
   .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
   .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:28px}
@@ -478,10 +480,10 @@
     border-bottom:1px solid var(--hair)}
   .news-full-item:last-child{border-bottom:0}
   .news-full-meta{display:flex;flex-direction:column;gap:8px;padding-top:6px}
-  .news-full-src{font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
-  .news-full-time{font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-  .news-full-hd{font:300 36px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em}
-  .news-full-sum{margin-top:8px;font-size:26px;line-height:1.35;color:var(--muted);font-weight:300}
+  .news-full-src{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .news-full-time{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .news-full-hd{font:300 44px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em}
+  .news-full-sum{margin-top:8px;font-size:36px;line-height:1.35;color:var(--muted);font-weight:300}
   #alert-banner{position:absolute;left:0;right:0;top:0;z-index:40;display:flex;align-items:center;justify-content:center;
     gap:22px;min-height:72px;padding:18px 120px;border-bottom:1px solid rgba(201,168,106,.48);
     background:linear-gradient(180deg,rgba(201,168,106,.20),rgba(16,17,20,.92) 86%);
@@ -794,7 +796,9 @@ function quoteCard(q){
   const attrs=`class="quote-card${q.upcoming?' upcoming':''}" data-symbol="${esc(key)}" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="stock-overlay" aria-label="${esc(q.n||key)}"`;
   if(q.pending)return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
   if(q.upcoming)return `<div ${attrs}><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
-  return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hintHtml||q.hint||'Sample close'}</span></div></div>`;
+  const fut=q.hintHtml?`<div class="quote-futures">${q.hintHtml}</div>`:'';
+  const hint=fut?'':`<span class="hint">${q.hint||'Sample close'}</span>`;
+  return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div>${fut}<div class="quote-bottom">${changePill(q)}${hint}</div></div>`;
 }
 const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
 let gridExclude='NVDA';
@@ -1019,7 +1023,7 @@ function futuresNote(key,q){
   if(trading&&(lastAgeMin>40||ageH(f.asOf)>0.75))return null;              // stale while trading: hide
   const pct=`${it.changePct>=0?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%`;
   const label='Futures';
-  return `${label} ${pct}<br>Open ~${money(it.expectedOpen,0)}`;
+  return `Futures ${pct} · Open ~${money(it.expectedOpen,0)}`;
 }
 // Clock-panel Treasury chart. Switch the displayed series by changing `id` and labels
 // (fetcher already stores DGS7 history alongside DGS10).
