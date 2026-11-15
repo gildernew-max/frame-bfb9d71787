@@ -1,10 +1,10 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T15:59:50.318Z",
+ "generatedAt": "2026-11-15T16:05:47.859Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "Open-Meteo",
-  "credit": "Weather: Open-Meteo",
+  "provider": "National Weather Service",
+  "credit": "Weather: NWS",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
@@ -12,41 +12,41 @@
     "now": {
      "temp": 46,
      "i": "sun",
-     "cond": "Clear",
-     "windMph": 1,
-     "windDir": "SW",
-     "observed": "2026-11-15T10:45"
+     "cond": "—",
+     "windMph": 0,
+     "windDir": "N",
+     "observed": "2026-11-15T15:50:00+00:00"
     },
     "today": {
-     "h": 55,
-     "l": 29,
+     "h": 58,
+     "l": 36,
      "sunrise": "07:09",
-     "sunset": "17:34"
+     "sunset": "17:35"
     },
     "forecast": [
      {
       "date": "2026-11-16",
       "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 57,
-      "l": 34
+      "i": "sun",
+      "text": "Sunny",
+      "h": 59,
+      "l": 37
      },
      {
       "date": "2026-11-17",
       "d": "Tue",
       "i": "sun",
-      "text": "Clear",
-      "h": 61,
-      "l": 38
+      "text": "Sunny",
+      "h": 62,
+      "l": 39
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
       "i": "sun",
-      "text": "Clear",
-      "h": 64,
-      "l": 44
+      "text": "Sunny",
+      "h": 66,
+      "l": 41
      }
     ]
    },
@@ -54,49 +54,50 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 32,
-     "i": "partly",
-     "cond": "Partly cloudy",
-     "windMph": 5,
-     "windDir": "SSE",
-     "observed": "2026-11-15T09:45"
+     "temp": 36,
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": 6,
+     "windDir": "ESE",
+     "observed": "2026-11-15T15:50:00+00:00"
     },
     "today": {
-     "h": 47,
-     "l": 24,
-     "sunrise": "07:10",
-     "sunset": "16:43"
+     "h": 50,
+     "l": 35,
+     "sunrise": "07:09",
+     "sunset": "16:45"
     },
     "forecast": [
      {
       "date": "2026-11-16",
       "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 54,
-      "l": 32
+      "i": "partly",
+      "text": "Mostly Sunny",
+      "h": 55,
+      "l": 42
      },
      {
       "date": "2026-11-17",
       "d": "Tue",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "partly",
+      "text": "Mostly Sunny",
       "h": 56,
-      "l": 41
+      "l": 46
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 59,
-      "l": 48
+      "i": "partly",
+      "text": "Partly Sunny",
+      "h": 58,
+      "l": 47
      }
     ]
    }
   },
-  "asOf": "2026-11-15T15:59:50.318Z",
-  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "asOf": "2026-11-15T16:05:47.859Z",
+  "lastAttempt": "2026-11-15T16:05:47.859Z",
+  "note": "Open-Meteo failed: fetch failed",
   "lastError": null
  },
  "nfl": {
@@ -116,8 +117,7 @@
      "homeAway": "away",
      "opponent": "Bengals",
      "oppCode": "CIN",
-     "state": "pre",
-     "tbd": false
+     "state": "pre"
     },
     "season": "2026"
    },
@@ -135,8 +135,7 @@
      "homeAway": "away",
      "opponent": "Packers",
      "oppCode": "GB",
-     "state": "pre",
-     "tbd": false
+     "state": "pre"
     },
     "season": "2026"
    },
@@ -154,14 +153,13 @@
      "homeAway": "home",
      "opponent": "Vikings",
      "oppCode": "MIN",
-     "state": "pre",
-     "tbd": false
+     "state": "pre"
     },
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-15T15:59:50.318Z",
-  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "asOf": "2026-11-15T16:05:47.859Z",
+  "lastAttempt": "2026-11-15T16:05:47.859Z",
   "lastError": null
  },
  "news": {
@@ -193,8 +191,8 @@
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-15T15:59:50.318Z",
-  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "asOf": "2026-11-15T16:05:47.859Z",
+  "lastAttempt": "2026-11-15T16:05:47.859Z",
   "credit": "BBC News · NPR",
   "lastError": null
  },
@@ -206,7 +204,7 @@
    "isOpen": false,
    "session": null,
    "holiday": null,
-   "checkedAt": "2026-11-15T15:59:50.318Z"
+   "checkedAt": "2026-11-15T16:05:47.859Z"
   },
   "quotes": {
    "NVDA": {
@@ -329,11 +327,16 @@
     }
    ]
   },
-  "lastAttempt": "2026-11-15T15:59:50.318Z",
-  "asOf": "2026-11-15T15:59:50.318Z"
+  "lastAttempt": "2026-11-15T16:05:47.859Z",
+  "asOf": "2026-11-15T16:05:47.859Z"
  },
  "lastRun": {
-  "at": "2026-11-15T16:01:45.299Z",
-  "ran": []
+  "at": "2026-11-15T16:05:47.859Z",
+  "ran": [
+   "weather",
+   "nfl",
+   "news",
+   "stocks:initial"
+  ]
  }
 }
