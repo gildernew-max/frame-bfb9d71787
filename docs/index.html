@@ -721,7 +721,7 @@ function futuresNote(key,q){
   const trading=futuresTradingNow(), lastAgeMin=(Date.now()-it.lastTime*1000)/6e4;
   if(trading&&(lastAgeMin>40||ageH(f.asOf)>0.75))return null;              // stale while trading: hide
   const pct=`${it.changePct>=0?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%`;
-  const label=trading?'Futures':`${fmtDay(new Date(it.lastTime*1000).toISOString())} fut.`;
+  const label='Futures';
   return `${label} ${pct}<br>Open ~${money(it.expectedOpen,0)}`;
 }
 function applyRates(r){
