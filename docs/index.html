@@ -325,13 +325,16 @@
   .wx-map-time{position:absolute;bottom:18px;left:20px;z-index:500;pointer-events:none;
     font-size:30px;letter-spacing:.06em;color:var(--ink);font-weight:500;
     text-shadow:0 1px 8px rgba(0,0,0,.75)}
+  .wx-map-time.delayed{color:var(--gold)}
   .wx-map-credit{grid-column:1/-1;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
-  .wx-temp-label{background:none;border:0;overflow:visible}
+  .wx-temp-label{background:none;border:0;overflow:visible;transform:translate(-50%,-20px)}
   .wx-temp-label span{display:block;font:500 40px/1 Inter,"SF Pro Display",system-ui,sans-serif;
     letter-spacing:.02em;text-shadow:-2px -2px 0 #101114,2px -2px 0 #101114,-2px 2px 0 #101114,2px 2px 0 #101114,-2px 0 0 #101114,2px 0 0 #101114,0 -2px 0 #101114,0 2px 0 #101114;white-space:nowrap;text-align:center}
-  .wx-temp-label i{display:block;margin-top:4px;font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+  .wx-temp-label i{display:block;margin-top:4px;font:500 28px/1 Inter,"SF Pro Display",system-ui,sans-serif;
     letter-spacing:.10em;text-transform:uppercase;font-style:normal;color:var(--muted);
     text-shadow:-2px -2px 0 #101114,2px -2px 0 #101114,-2px 2px 0 #101114,2px 2px 0 #101114,-2px 0 0 #101114,2px 0 0 #101114,0 -2px 0 #101114,0 2px 0 #101114;text-align:center}
+  .wx-temp-label.no-name i{display:none}
+  .wx-temp-label.is-hidden{visibility:hidden}
 
   /* BUSINESS: a refined, gently rotating editorial feature */
   .business-panel .panel-title{font-size:62px}
@@ -1639,28 +1642,36 @@ async function refreshWeatherOverlay(){
     $('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
   }
 }
+const US_BOUNDS=[[24.5,-125],[49.5,-66.5]];
+const ATL_CENTER=[33.749,-84.388];
+const ATL_RADIUS_MI=150;
 const US_CITIES=[
-  ['Seattle',47.61,-122.33],['Portland',45.52,-122.68],['San Francisco',37.77,-122.42],['Sacramento',38.58,-121.49],
-  ['Los Angeles',34.05,-118.24],['San Diego',32.72,-117.16],['Las Vegas',36.17,-115.14],['Phoenix',33.45,-112.07],
-  ['Salt Lake City',40.76,-111.89],['Denver',39.74,-104.99],['Albuquerque',35.08,-106.65],['Boise',43.62,-116.20],
-  ['Billings',45.78,-108.50],['Cheyenne',41.14,-104.82],['Oklahoma City',35.47,-97.52],['Dallas',32.78,-96.80],
-  ['Houston',29.76,-95.37],['San Antonio',29.42,-98.49],['Austin',30.27,-97.74],['New Orleans',29.95,-90.07],
-  ['Minneapolis',44.98,-93.27],['Des Moines',41.59,-93.62],['Omaha',41.26,-95.94],['Kansas City',39.10,-94.58],
-  ['St. Louis',38.63,-90.20],['Chicago',41.88,-87.63],['Milwaukee',43.04,-87.91],['Indianapolis',39.77,-86.16],
-  ['Detroit',42.33,-83.05],['Cleveland',41.50,-81.67],['Columbus',39.96,-83.00],['Cincinnati',39.10,-84.51],
-  ['Pittsburgh',40.44,-79.99],['Buffalo',42.89,-78.88],['Boston',42.36,-71.06],['New York',40.71,-74.01],
-  ['Philadelphia',39.95,-75.17],['Baltimore',39.29,-76.61],['Washington',38.91,-77.04],['Richmond',37.54,-77.44],
-  ['Raleigh',35.78,-78.64],['Charlotte',35.23,-80.84],['Atlanta',33.75,-84.39],['Nashville',36.16,-86.78],
-  ['Memphis',35.15,-90.05],['Jacksonville',30.33,-81.66],['Tampa',27.95,-82.46],['Orlando',28.54,-81.38],
-  ['Miami',25.76,-80.19],['Birmingham',33.52,-86.80]
+  ['Seattle',47.61,-122.33],['SF',37.77,-122.42],['LA',34.05,-118.24],['Phoenix',33.45,-112.07],
+  ['Denver',39.74,-104.99],['Salt Lake',40.76,-111.89],['Boise',43.62,-116.20],
+  ['Dallas',32.78,-96.80],['Houston',29.76,-95.37],['Minneapolis',44.98,-93.27],
+  ['Chicago',41.88,-87.63],['Kansas City',39.10,-94.58],['St. Louis',38.63,-90.20],
+  ['New Orleans',29.95,-90.07],['Atlanta',33.75,-84.39],['Nashville',36.16,-86.78],
+  ['Miami',25.76,-80.19],['Charlotte',35.23,-80.84],['DC',38.91,-77.04],
+  ['NYC',40.71,-74.01],['Boston',42.36,-71.06],['Detroit',42.33,-83.05]
 ];
+const CITY_PRIORITY={'Atlanta':0,'NYC':1,'Chicago':2,'LA':3,'SF':4,'DC':5,'Dallas':6};
+
 let weatherPage='forecast',radarMap=null,tempMap=null,radarTimer=null,radarLayer=null,radarHost='',radarFrames=[],radarIdx=0;
+let radarCatalogTimer=null,radarNewest=0,tempMarkers=[];
 function stopRadarLoop(){if(radarTimer){clearTimeout(radarTimer);radarTimer=null;}}
+function stopRadarCatalogRefresh(){if(radarCatalogTimer){clearInterval(radarCatalogTimer);radarCatalogTimer=null;}}
+function startRadarCatalogRefresh(){
+  if(radarCatalogTimer)return;
+  radarCatalogTimer=setInterval(()=>{
+    if(weatherPage==='radar'&&typeof openOverlay!=='undefined'&&openOverlay==='weather')loadRadarLoop();
+  },5*60*1000);
+}
 function teardownWeatherMaps(){
   stopRadarLoop();
+  stopRadarCatalogRefresh();
   if(radarMap){radarMap.remove();radarMap=null;}
   if(tempMap){tempMap.remove();tempMap=null;}
-  radarLayer=null;radarFrames=[];radarIdx=0;
+  radarLayer=null;radarFrames=[];radarIdx=0;radarNewest=0;tempMarkers=[];
 }
 function setWeatherPage(page){
   weatherPage=page==='radar'?'radar':'forecast';
@@ -1674,8 +1685,10 @@ function setWeatherPage(page){
     $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Radar &amp; Map';
     $('weather-overlay-deck').textContent='RainViewer · Open-Meteo · OpenStreetMap';
     initWeatherMaps();
+    startRadarCatalogRefresh();
   }else{
     stopRadarLoop();
+    stopRadarCatalogRefresh();
     $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Forecast';
   }
 }
@@ -1693,7 +1706,6 @@ function tempColor(f){
   if(!Number.isFinite(f))return '#ADA8A0';
   if(f<=10)return '#6FA8DC';
   if(f>=95)return '#E29A91';
-  // blend through blue → muted → gold → rose
   const stops=[[10,'#6FA8DC'],[40,'#C9D4DE'],[65,'#C9A86A'],[95,'#E29A91']];
   let a=stops[0],b=stops[stops.length-1];
   for(let i=0;i<stops.length-1;i++){if(f>=stops[i][0]&&f<=stops[i+1][0]){a=stops[i];b=stops[i+1];break;}}
@@ -1703,52 +1715,73 @@ function tempColor(f){
   const mix=(i)=>Math.round(p(a[1],i)*(1-t)+p(b[1],i)*t);
   return '#'+to(mix(0))+to(mix(1))+to(mix(2));
 }
+function atlantaRadarBounds(){
+  const [lat,lon]=ATL_CENTER, mi=ATL_RADIUS_MI;
+  const dLat=mi/69.172;
+  const dLon=mi/(69.172*Math.cos(lat*Math.PI/180));
+  return [[lat-dLat,lon-dLon],[lat+dLat,lon+dLon]];
+}
+function fitAtlantaRadar(map){
+  if(!map)return;
+  map.invalidateSize();
+  map.fitBounds(atlantaRadarBounds(),{padding:[12,12],maxZoom:10,animate:false});
+}
+function fitLower48(map){
+  if(!map)return;
+  map.invalidateSize();
+  const b=L.latLngBounds(US_BOUNDS);
+  const z=map.getBoundsZoom(b,true);
+  map.setMaxBounds(b.pad(0.01));
+  map.setView(b.getCenter(),z,{animate:false});
+}
 async function initWeatherMaps(){
   if(typeof L==='undefined'){
     if($('radar-map'))$('radar-map').innerHTML='<div class="stock-chart-msg">Map library unavailable</div>';
     return;
   }
-  const atl=[33.75,-84.39];
   if(!radarMap){
     radarMap=L.map('radar-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
     cartoLayer(radarMap).addTo(radarMap);
-    radarMap.setView(atl,8);
-    await loadRadarLoop();
-  }else{
-    stopRadarLoop();
-    startRadarLoop();
   }
   if(!tempMap){
-    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false});
+    tempMap=L.map('temp-map',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,maxBoundsViscosity:1});
     cartoLayer(tempMap).addTo(tempMap);
-    tempMap.fitBounds([[24.5,-124.8],[49.4,-66.9]],{padding:[24,24]});
-    await loadUsTemps();
   }
   const layout=()=>{
-    if(radarMap){radarMap.invalidateSize();radarMap.setView([33.75,-84.39],8);}
-    if(tempMap){tempMap.invalidateSize();tempMap.fitBounds([[24.5,-124.8],[49.4,-66.9]],{padding:[24,24]});}
+    fitAtlantaRadar(radarMap);
+    fitLower48(tempMap);
+    resolveTempLabelOverlaps();
   };
+  layout();
+  await loadRadarLoop();
+  await loadUsTemps();
   requestAnimationFrame(layout);
-  setTimeout(layout,300);
+  setTimeout(layout,350);
 }
 async function loadRadarLoop(){
   try{
-    const r=await fetch('https://api.rainviewer.com/public/weather-maps.json?t='+Date.now(),{cache:'no-store'});
+    const r=await fetch('https://api.rainviewer.com/public/weather-maps.json?t='+Date.now(),{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
     if(!r.ok)throw new Error(r.status);
     const j=await r.json();
     const host=(j.host||'https://tilecache.rainviewer.com').replace(/\/$/,'');
-    const past=j.radar?.past||[];
-    const cutoff=Math.floor(Date.now()/1000)-2*3600-5*60;
-    radarFrames=past.filter(f=>Number(f.time)>=cutoff);
-    if(radarFrames.length<4)radarFrames=past.slice(-12);
-    if(!radarFrames.length)throw new Error('no radar frames');
+    const past=[...(j.radar?.past||[])].filter(f=>Number.isFinite(Number(f.time))).sort((a,b)=>a.time-b.time);
+    const now=Date.now()/1000;
+    const cutoff=now-3600-5*60; // last ~1 hour, 5 minutes of slack
+    let frames=past.filter(f=>Number(f.time)>=cutoff);
+    if(frames.length<3)frames=past.slice(-6);
+    if(!frames.length)throw new Error('no radar frames');
+    radarFrames=frames;
     radarHost=host;
+    radarNewest=frames[frames.length-1].time;
     radarIdx=0;
     startRadarLoop();
   }catch(e){
     console.warn('radar',e);
-    if($('radar-time'))$('radar-time').textContent='Radar unavailable';
+    if($('radar-time')){$('radar-time').textContent='Radar unavailable';$('radar-time').classList.remove('delayed');}
   }
+}
+function radarStampIsDelayed(){
+  return radarNewest&&((Date.now()/1000)-radarNewest)>30*60;
 }
 function startRadarLoop(){
   stopRadarLoop();
@@ -1756,23 +1789,26 @@ function startRadarLoop(){
   const show=()=>{
     const f=radarFrames[radarIdx];
     if(f&&radarHost){
-      const url=`${radarHost}${f.path}/256/{z}/{x}/{y}/2/1_1.png`;
+      const url=`${radarHost}${f.path}/256/{z}/{x}/{y}/2/1_1.png?t=${f.time}`;
       if(!radarLayer){radarLayer=L.tileLayer(url,{opacity:.85,maxZoom:12}).addTo(radarMap);}
       else radarLayer.setUrl(url);
     }
-    const t=f?.time;
-    if(t&&$('radar-time')){
-      const d=new Date(t*1000);
-      const clock=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(d);
-      $('radar-time').textContent='Radar '+clock;
+    const t=f?.time, el=$('radar-time');
+    if(t&&el){
+      const clock=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(new Date(t*1000));
+      const delayed=radarStampIsDelayed();
+      el.textContent='Radar '+clock+(delayed?' (delayed)':'');
+      el.classList.toggle('delayed',!!delayed);
     }
     const last=radarIdx===radarFrames.length-1;
     radarIdx=(radarIdx+1)%radarFrames.length;
-    radarTimer=setTimeout(show,last?1100:420);
+    radarTimer=setTimeout(show,last?1400:450);
   };
   show();
 }
+
 async function loadUsTemps(){
+  if(!tempMap)return;
   try{
     const params=new URLSearchParams({
       latitude:US_CITIES.map(c=>c[1]).join(','),
@@ -1783,6 +1819,8 @@ async function loadUsTemps(){
     if(!r.ok)throw new Error(r.status);
     const arr=await r.json();
     const rows=Array.isArray(arr)?arr:[arr];
+    tempMarkers.forEach(m=>tempMap.removeLayer(m));
+    tempMarkers=[];
     rows.forEach((row,i)=>{
       const city=US_CITIES[i]; if(!city)return;
       const t=row?.current?.temperature_2m;
@@ -1790,10 +1828,67 @@ async function loadUsTemps(){
       const color=tempColor(t);
       const icon=L.divIcon({className:'wx-temp-label',iconSize:[0,0],iconAnchor:[0,0],
         html:`<span style="color:${color}">${Math.round(t)}°</span><i>${city[0]}</i>`});
-      L.marker([city[1],city[2]],{icon,interactive:false,keyboard:false}).addTo(tempMap);
+      const m=L.marker([city[1],city[2]],{icon,interactive:false,keyboard:false});
+      m._cityName=city[0];
+      m.addTo(tempMap);
+      tempMarkers.push(m);
     });
+    resolveTempLabelOverlaps();
   }catch(e){console.warn('temps',e);}
 }
+function labelUnionBox(el){
+  const parts=[...el.querySelectorAll('span,i')].filter(n=>{
+    const st=getComputedStyle(n);
+    return st.display!=='none'&&st.visibility!=='hidden';
+  });
+  if(!parts.length)return null;
+  const rs=parts.map(n=>n.getBoundingClientRect());
+  return {el,left:Math.min(...rs.map(r=>r.left)),right:Math.max(...rs.map(r=>r.right)),
+    top:Math.min(...rs.map(r=>r.top)),bottom:Math.max(...rs.map(r=>r.bottom))};
+}
+function boxesOverlap(a,b,pad=6){
+  return a.left<b.right+pad&&a.right>b.left-pad&&a.top<b.bottom+pad&&a.bottom>b.top-pad;
+}
+function cityRank(name){
+  return CITY_PRIORITY[name]??20;
+}
+function resolveTempLabelOverlaps(){
+  const root=$('temp-map'); if(!root)return;
+  const els=[...root.querySelectorAll('.wx-temp-label')];
+  els.forEach(el=>el.classList.remove('no-name','is-hidden'));
+  const rank=el=>{
+    const name=(el.querySelector('i')?.textContent||'').trim();
+    return cityRank(name);
+  };
+  const collide=()=>{
+    const boxes=els.map(labelUnionBox).filter(Boolean).filter(b=>!b.el.classList.contains('is-hidden'));
+    const hits=[];
+    for(let i=0;i<boxes.length;i++){
+      for(let j=i+1;j<boxes.length;j++){
+        if(boxesOverlap(boxes[i],boxes[j]))hits.push([boxes[i].el,boxes[j].el]);
+      }
+    }
+    return hits;
+  };
+  let hits=collide();
+  for(const [a,b] of hits){
+    const drop=rank(a)>=rank(b)?a:b;
+    drop.classList.add('no-name');
+  }
+  hits=collide();
+  for(const [a,b] of hits){
+    const drop=rank(a)>=rank(b)?a:b;
+    if(!drop.classList.contains('no-name'))drop.classList.add('no-name');
+  }
+  hits=collide();
+  for(const [a,b] of hits){
+    const drop=rank(a)>=rank(b)?a:b;
+    if((drop.querySelector('i')?.textContent||'').trim()==='Atlanta'){
+      (drop===a?b:a).classList.add('is-hidden');
+    }else drop.classList.add('is-hidden');
+  }
+}
+
 function openWeatherOverlay(){
   if(openOverlay==='weather')return;
   closeOpenOverlay();
