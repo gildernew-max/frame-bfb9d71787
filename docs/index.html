@@ -1730,9 +1730,10 @@ function fitLower48(map){
   if(!map)return;
   map.invalidateSize();
   const b=L.latLngBounds(US_BOUNDS);
-  const z=map.getBoundsZoom(b,true);
-  map.setMaxBounds(b.pad(0.01));
-  map.setView(b.getCenter(),z,{animate:false});
+  // Contain the lower 48 so both coasts stay in view, then clip maxBounds
+  // tightly enough that a leftover world-scale zoom cannot appear.
+  map.setMaxBounds(b.pad(0.08));
+  map.fitBounds(b,{padding:[8,8],animate:false});
 }
 async function initWeatherMaps(){
   if(typeof L==='undefined'){
@@ -1760,7 +1761,7 @@ async function initWeatherMaps(){
 }
 async function loadRadarLoop(){
   try{
-    const r=await fetch('https://api.rainviewer.com/public/weather-maps.json?t='+Date.now(),{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
+    const r=await fetch('https://api.rainviewer.com/public/weather-maps.json?t='+Date.now(),{cache:'no-store'});
     if(!r.ok)throw new Error(r.status);
     const j=await r.json();
     const host=(j.host||'https://tilecache.rainviewer.com').replace(/\/$/,'');
