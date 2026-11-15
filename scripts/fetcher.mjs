@@ -617,6 +617,19 @@ async function yahooHistory6mo(symbol) {
     week52Low: numOrNull(meta.fiftyTwoWeekLow)
   };
 }
+
+function newsMentionsCompany(headline, sp) {
+  const hd = String(headline || '');
+  const needles = [sp.yahoo, sp.fh, sp.key, sp.name, ...(
+    { NVDA: ['NVIDIA'], TSLA: ['Tesla'], SPCX: ['SpaceX', 'Space X'], ANT: ['Anthropic'] }[sp.key] || []
+  )].filter(Boolean);
+  return needles.some(nd => {
+    const n = String(nd);
+    if (/^[A-Z0-9.^]{1,6}$/.test(n)) return new RegExp(`\\b${n.replace(/[.^]/g, '\\$&')}\\b`, 'i').test(hd);
+    return hd.toLowerCase().includes(n.toLowerCase());
+  });
+}
+
 async function fetchOverlayDetails(prevDetails, key, quotes) {
   const details = { ...(prevDetails || {}) };
   const now = new Date();
@@ -667,7 +680,7 @@ async function fetchOverlayDetails(prevDetails, key, quotes) {
       try {
         const news = await finnhub(`company-news?symbol=${encodeURIComponent(sp.fh)}&from=${from}&to=${to}`, key);
         d.news = (Array.isArray(news) ? news : [])
-          .filter(n => n && n.headline)
+          .filter(n => n && n.headline && newsMentionsCompany(n.headline, sp))
           .sort((a, b) => (b.datetime || 0) - (a.datetime || 0))
           .slice(0, 5)
           .map(n => ({ hd: String(n.headline).trim(), src: n.source || '', pub: n.datetime ? new Date(n.datetime * 1000).toISOString() : null }));

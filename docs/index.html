@@ -296,18 +296,19 @@
   .stock-side{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
   .stock-metrics{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   .stock-metric{padding:22px 24px 20px;border:1px solid var(--hair);border-radius:16px;background:var(--panel);min-width:0}
-  .stock-metric .lbl{font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .stock-metric .val{margin-top:10px;font:300 44px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
+  .stock-metric .lbl{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .stock-metric .val{margin-top:10px;font:300 48px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .stock-news{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:16px;
     background:var(--panel);padding:8px 8px 12px;overflow:hidden}
-  .stock-news-label{padding:16px 20px 8px;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .stock-news-label{padding:16px 20px 8px;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .stock-news-item{padding:16px 20px;border-top:1px solid var(--hair)}
-  .stock-news-item .meta{font-size:22px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .stock-news-item .hd{margin-top:8px;font:300 30px/1.25 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em}
+  .stock-news-item .meta{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .stock-news-item .hd{margin-top:8px;font:300 40px/1.25 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
   .stock-ipo{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px;
     padding:48px;border:1px solid rgba(201,168,106,.35);border-radius:18px;background:rgba(201,168,106,.05)}
-  .stock-ipo .kicker{font-size:24px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .stock-ipo .kicker{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
   .stock-ipo .title{font:300 96px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em}
   .stock-ipo .note{font-size:40px;color:#DBC9A5;font-weight:300}
   .wx-radar-page{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1fr) auto;gap:24px 32px}
@@ -1903,7 +1904,7 @@ function stockHistoryChart(points,up){
     if(lab!==last){months.push({x,lab});last=lab;}
   });
   const monthLabels=months.filter((m,i)=>i===0||i===months.length-1||months[i].lab!==months[i-1].lab)
-    .map(m=>`<text x="${m.x.toFixed(1)}" y="${h-14}" fill="#838078" font-size="22" font-family="Inter,sans-serif" letter-spacing="1">${m.lab}</text>`).join('');
+    .map(m=>`<text x="${m.x.toFixed(1)}" y="${h-12}" fill="rgba(240,237,230,.60)" font-size="32" font-family="Inter,sans-serif" font-weight="500">${m.lab}</text>`).join('');
   const lastPt=xy[xy.length-1];
   return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="Six-month daily price">
     <defs><linearGradient id="stock-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".28"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
@@ -1932,6 +1933,19 @@ function stockQuote(key){
   const qs=LIVE_DATA?.stocks?.quotes||{};
   return qs[key]||null;
 }
+function companyHeadlines(news,key,name){
+  const extra={NVDA:['nvidia'],TSLA:['tesla'],SPCX:['spacex','space x'],ANT:['anthropic'],
+    SPX:['s&p','s & p','spx','s&p 500'],DOW:['dow','djia','dow jones'],NASDAQ:['nasdaq']};
+  const needles=[key,name,typeof STOCK_NAMES!=='undefined'?STOCK_NAMES[key]:null,...(extra[key]||[])]
+    .filter(Boolean).map(x=>String(x).trim()).filter(Boolean);
+  return (news||[]).filter(n=>{
+    const hd=String(n.hd||n.headline||'');
+    return needles.some(nd=>{
+      if(/^[A-Z0-9.^]{1,6}$/.test(nd)) return new RegExp('\\b'+nd.replace(/[.^]/g,'\\$&')+'\\b','i').test(hd);
+      return hd.toLowerCase().includes(nd.toLowerCase());
+    });
+  });
+}
 function renderStockOverlay(key,extra={}){
   const body=$('stock-overlay-body');
   const q=stockQuote(key);
@@ -1954,7 +1968,7 @@ function renderStockOverlay(key,extra={}){
   const up=ch==null?true:ch>=0;
   const hi=d.week52High, lo=d.week52Low;
   const range=(hi!=null&&lo!=null)?((dollar?'$':'')+fmtPxNum(lo,2)+' – '+(dollar?'$':'')+fmtPxNum(hi,2)):'—';
-  const news=d.news||[];
+  const news=companyHeadlines(d.news||[],key,name).slice(0,5);
   const newsHtml=news.length?news.map(n=>`<div class="stock-news-item"><div class="meta">${esc(n.src||'News')}${n.pub?' · '+esc(newsTime(n.pub)) :''}</div><div class="hd">${esc(n.hd)}</div></div>`).join(''):`<div class="stock-news-item"><div class="hd" style="color:var(--muted)">No recent headlines</div></div>`;
   body.className='stock-body';
   body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up)}</div></div>
