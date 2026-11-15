@@ -2,13 +2,13 @@ name: Update dashboard data
 
 on:
   schedule:
-    # Market-hours window in UTC: covers 9:30 a.m.–4:05 p.m. ET under both EDT (13:30–20:05)
-    # and EST (14:30–21:05). The script itself decides, from the ET clock and Finnhub
-    # market-status (holidays), whether a quote fetch or the ~4:05 close fetch is due.
-    - cron: '*/15 13-21 * * 1-5'
-    # Hourly around the clock: headlines every hour; weather + NFL once a day after 6 a.m. ET
-    # (with hourly retry on failure). Due-ness comes from timestamps inside data.json.
-    - cron: '7 * * * *'
+    # Every 15 min Sun–Fri (UTC). This covers the cash session (9:30–4:05 ET, EST or EDT)
+    # and the equity-futures week (Sun 6 pm – Fri 5 pm ET) for the 'expected open' note.
+    # The script decides what is actually due from the ET clock, Finnhub market-status and
+    # the timestamps in data.json, and commits only when something was fetched.
+    - cron: '*/15 * * * 0-5'
+    # Saturday: hourly is enough (headlines; weather/NFL/rates once a day after 6 a.m. ET).
+    - cron: '7 * * * 6'
   workflow_dispatch:
     inputs:
       force:

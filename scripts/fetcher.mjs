@@ -21,6 +21,22 @@ export function etParts(date = new Date()) {
 }
 const isWeekday = wd => !['Sat', 'Sun'].includes(wd);
 const ageMin = (iso, now) => iso ? (now - new Date(iso)) / MIN : Infinity;
+// Calendar-date-only helpers (time-zone independent once you have a YYYY-MM-DD key).
+const weekdayOf = dateKey => new Date(dateKey + 'T12:00:00Z').toLocaleDateString('en-US', { weekday: 'short', timeZone: 'UTC' });
+function addDaysKey(dateKey, delta) {
+  const d = new Date(dateKey + 'T12:00:00Z');
+  d.setUTCDate(d.getUTCDate() + delta);
+  return d.toISOString().slice(0, 10);
+}
+// Equity index futures trade Sun 18:00 -> Fri 17:00 ET, minus the daily 17:00-18:00 break (Mon-Thu).
+export function futuresTradingAt(date) {
+  const { weekday, mins } = etParts(date);
+  const breakStart = 17 * 60, breakEnd = 18 * 60;
+  if (weekday === 'Sat') return false;
+  if (weekday === 'Sun') return mins >= breakEnd;
+  if (weekday === 'Fri') return mins < breakStart;
+  return mins < breakStart || mins >= breakEnd;
+}
 
 // ---------- network ----------
 let SECRET = '';
@@ -239,8 +255,8 @@ async function finnhub(path, key) {
 const validQuote = q => q && typeof q.c === 'number' && q.c > 0 && q.t > 0;
 
 const YAHOO_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
-async function yahooChartResult(symbol) {
-  const path = `/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+async function yahooChartResult(symbol, params = 'interval=1d&range=5d') {
+  const path = `/v8/finance/chart/${encodeURIComponent(symbol)}?${params}`;
   let lastErr;
   for (const host of ['query1.finance.yahoo.com', 'query2.finance.yahoo.com']) {
     try {
@@ -342,6 +358,162 @@ async function fetchStocks(prev, key, et, now) {
   return { quotes, history, errors, indexSource };
 }
 
+// ---------- rates (FRED CSV, Treasury.gov XML fallback for DGS10) ----------
+const FRED_SERIES = [
+  { id: 'DGS10', name: '10-Year Treasury' },
+  { id: 'DFF', name: 'Fed funds (effective)' },
+  { id: 'MORTGAGE30US', name: '30-yr mortgage' }
+];
+function parseFredCSV(csv, id) {
+  const lines = csv.trim().split(/\r?\n/);
+  const header = (lines[0] || '').split(',');
+  if (header[0] !== 'observation_date' || header[1] !== id) throw new Error(`FRED: unexpected response for ${id}`);
+  const rows = [];
+  for (let i = 1; i < lines.length; i++) {
+    const [date, raw] = lines[i].split(',');
+    if (!date) continue;
+    const v = raw === '.' || raw === '' || raw == null ? NaN : Number(raw);
+    if (Number.isFinite(v)) rows.push({ date, v });
+  }
+  if (!rows.length) throw new Error(`FRED: no observations for ${id}`);
+  return rows;
+}
+async function fetchFredSeries(id) {
+  const csv = await getText(`https://fred.stlouisfed.org/graph/fredgraph.csv?id=${id}`, { timeout: 40000 });
+  return parseFredCSV(csv, id);
+}
+// Last observation on or before (latestDate - 365 days).
+function yearAgoObs(rows, latestDate) {
+  const d = new Date(latestDate + 'T00:00:00Z');
+  d.setUTCDate(d.getUTCDate() - 365);
+  const targetKey = d.toISOString().slice(0, 10);
+  let best = null;
+  for (const r of rows) if (r.date <= targetKey && (!best || r.date > best.date)) best = r;
+  return best;
+}
+function last5y(rows, latestDate) {
+  const d = new Date(latestDate + 'T00:00:00Z');
+  d.setUTCFullYear(d.getUTCFullYear() - 5);
+  const key = d.toISOString().slice(0, 10);
+  return rows.filter(r => r.date >= key);
+}
+function isoWeekKey(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00Z');
+  const dayNum = (d.getUTCDay() + 6) % 7; // Mon=0..Sun=6
+  d.setUTCDate(d.getUTCDate() - dayNum + 3); // nearest Thursday
+  const firstThursday = new Date(Date.UTC(d.getUTCFullYear(), 0, 4));
+  const week = 1 + Math.round((d - firstThursday) / (7 * 86400000));
+  return `${d.getUTCFullYear()}-W${String(week).padStart(2, '0')}`;
+}
+// Last observation of each ISO week (rows must be date-ascending).
+function downsampleWeekly(rows) {
+  const byWeek = new Map();
+  for (const r of rows) byWeek.set(isoWeekKey(r.date), r);
+  return [...byWeek.values()].map(r => [r.date, r.v]);
+}
+function parseTreasuryXML(xml) {
+  return [...xml.matchAll(/<entry>[\s\S]*?<\/entry>/g)].map(m => {
+    const date = (m[0].match(/<d:NEW_DATE[^>]*>([^<]+)</) || [])[1];
+    const yld = (m[0].match(/<d:BC_10YEAR[^>]*>([^<]+)</) || [])[1];
+    const v = Number(yld);
+    return date && Number.isFinite(v) ? { date: date.slice(0, 10), v } : null;
+  }).filter(Boolean);
+}
+async function fetchTreasuryYieldCurve(yyyymm) {
+  const xml = await getText(`https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value_month=${yyyymm}`, { accept: 'application/xml' });
+  return parseTreasuryXML(xml);
+}
+async function fetchTreasuryDGS10(et) {
+  const [y, m] = et.dateKey.split('-').map(Number);
+  let rows = await fetchTreasuryYieldCurve(`${y}${String(m).padStart(2, '0')}`);
+  if (rows.length < 2) {
+    const prevMonth = new Date(Date.UTC(y, m - 2, 1)); // m is 1-based; m-2 -> previous month index
+    const prevRows = await fetchTreasuryYieldCurve(`${prevMonth.getUTCFullYear()}${String(prevMonth.getUTCMonth() + 1).padStart(2, '0')}`);
+    rows = [...prevRows, ...rows];
+  }
+  rows.sort((a, b) => a.date.localeCompare(b.date));
+  if (rows.length < 1) throw new Error('Treasury: no entries');
+  return rows;
+}
+async function fetchRates(prevRates, et) {
+  const prevSeries = prevRates.series || {};
+  const series = {};
+  const seriesErrors = [];
+  let usedTreasury = false;
+  for (const s of FRED_SERIES) {
+    try {
+      const rows = await fetchFredSeries(s.id);
+      const latest = rows[rows.length - 1];
+      const prior = rows[rows.length - 2] || null;
+      const entry = { id: s.id, name: s.name, latest, prior, yearAgo: yearAgoObs(rows, latest.date) };
+      if (s.id === 'DGS10') entry.history5y = downsampleWeekly(last5y(rows, latest.date));
+      series[s.id] = entry;
+    } catch (e1) {
+      if (s.id === 'DGS10') {
+        try {
+          const rows = await fetchTreasuryDGS10(et);
+          const latest = rows[rows.length - 1];
+          const prior = rows[rows.length - 2] || null;
+          const prevEntry = prevSeries.DGS10 || {};
+          series.DGS10 = { id: 'DGS10', name: '10-Year Treasury', latest, prior, yearAgo: prevEntry.yearAgo || null, history5y: prevEntry.history5y || [] };
+          usedTreasury = true;
+          continue;
+        } catch (e2) {
+          seriesErrors.push(`${s.id}: FRED: ${why(e1)}; Treasury: ${why(e2)}`);
+          if (prevSeries[s.id]) series[s.id] = prevSeries[s.id];
+          continue;
+        }
+      }
+      seriesErrors.push(`${s.id}: ${why(e1)}`);
+      if (prevSeries[s.id]) series[s.id] = prevSeries[s.id];
+    }
+  }
+  return { series, seriesErrors, usedTreasury };
+}
+
+// ---------- futures (Yahoo chart API, 5-minute bars) ----------
+const FUTURES = [
+  { sym: 'YM=F', key: 'DOW' },
+  { sym: 'ES=F', key: 'SPX' },
+  { sym: 'NQ=F', key: 'NASDAQ' }
+];
+// Close of the 5-minute bar ending at/just before 16:00 ET (starts 15:55) on dateKey;
+// falls back to the latest non-null bar starting in [15:45, 16:00) if that bar is missing.
+function yahooSettleBar(result, dateKey) {
+  const ts = result.timestamp || [];
+  const closes = result.indicators?.quote?.[0]?.close || [];
+  let onTime = null, fallback = null;
+  for (let i = 0; i < ts.length; i++) {
+    const c = closes[i];
+    if (c == null) continue;
+    const p = etParts(new Date(ts[i] * 1000));
+    if (p.dateKey !== dateKey) continue;
+    if (p.mins === 955) onTime = c;
+    if (p.mins >= 945 && p.mins <= 959) fallback = c;
+  }
+  return onTime ?? fallback ?? null;
+}
+async function fetchFuturesItem(f, settleDate, indexClose) {
+  const result = await yahooChartResult(f.sym, 'interval=5m&range=5d');
+  const last = result.meta?.regularMarketPrice;
+  const lastTime = result.meta?.regularMarketTime;
+  if (!(last > 0) || !Number.isFinite(last) || !(lastTime > 0)) throw new Error('Yahoo: invalid futures quote');
+  const settle = yahooSettleBar(result, settleDate);
+  if (!(settle > 0) || !Number.isFinite(settle)) throw new Error(`Yahoo: no settle bar for ${settleDate}`);
+  const base = { symbol: f.sym, last, lastTime, settle, settleDate, indexClose };
+  const settleMoment = Date.parse(settleDate + 'T16:00:00-05:00'); // approx ET, DST not modeled (matches Stooq above)
+  if (!(lastTime * 1000 > settleMoment)) return { ...base, changePct: null, expectedOpen: null, valid: false };
+  const changePct = (last - settle) / settle * 100;
+  return { ...base, changePct, expectedOpen: indexClose * (1 + changePct / 100), valid: true };
+}
+// Most recent weekday (Mon-Fri) whose 16:00 ET cash close has already happened, as a dateKey.
+function lastCashCloseDateKey(et) {
+  let dk = et.dateKey;
+  if (isWeekday(et.weekday) && et.mins >= 960) return dk;
+  do { dk = addDaysKey(dk, -1); } while (!isWeekday(weekdayOf(dk)));
+  return dk;
+}
+
 // ---------- orchestration ----------
 function sectionDue(sec, now, et, rule) {
   if (!sec || !sec.asOf) return true;
@@ -382,6 +554,14 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     ran.push('news');
     try { out.news = ok(await fetchNews(), { asOf: nowIso, lastAttempt: nowIso, credit: 'BBC News · NPR' }); }
     catch (e) { out.news = { ...(prev.news || {}), lastAttempt: nowIso, lastError: clean(e.message) }; }
+  }
+  if (force || sectionDue(prev.rates, now, et, 'daily6')) {
+    ran.push('rates');
+    const r = await fetchRates(prev.rates || {}, et);
+    if (r.seriesErrors.length < FRED_SERIES.length) {
+      out.rates = ok({ provider: r.usedTreasury ? 'FRED + U.S. Treasury' : 'FRED', credit: 'Rates: FRED', series: r.series,
+        ...(r.seriesErrors.length ? { seriesErrors: r.seriesErrors } : {}) }, { asOf: nowIso, lastAttempt: nowIso });
+    } else out.rates = { ...(prev.rates || {}), lastAttempt: nowIso, lastError: r.seriesErrors.join('; ') };
   }
 
   // Stocks: every 15 min while the US market is open, one close fetch ~4:05 ET, else hold last close.
@@ -426,6 +606,34 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
   } else if (key && stocks.quotes) stocks.status = 'live';
   if (!stocks.quotes) stocks.quotes = { ANT: { s: 'ANT', n: 'Anthropic', upcoming: true, note: 'IPO Nov 19 · $70–78 range' } };
   out.stocks = { provider: 'Finnhub', ...stocks };
+
+  // Futures ("expected open" note): only while the cash market is closed; never during the session.
+  const prevFut = prev.futures || {};
+  if (!inSession) {
+    const futTrading = futuresTradingAt(now);
+    const closeInstant = Date.parse(lastCashCloseDateKey(et) + 'T16:00:00-05:00');
+    const due = force || !prevFut.asOf || (futTrading && ageMin(prevFut.asOf, now) >= 12) ||
+      new Date(prevFut.asOf).getTime() < closeInstant;
+    if (due) {
+      ran.push('futures');
+      const items = {};
+      const symbolErrors = [];
+      for (const f of FUTURES) {
+        const quote = out.stocks.quotes?.[f.key];
+        const settleDate = quote?.kind === 'index' && quote.t ? etParts(new Date(quote.t * 1000)).dateKey : null;
+        try {
+          if (!settleDate) throw new Error(`${f.key}: no index quote`);
+          items[f.key] = await fetchFuturesItem(f, settleDate, quote.px);
+        } catch (e) {
+          symbolErrors.push(`${f.key}: ${why(e)}`);
+          const prevItem = prevFut.items?.[f.key];
+          if (prevItem && settleDate && prevItem.settleDate === settleDate) items[f.key] = prevItem;
+        }
+      }
+      out.futures = { provider: 'Yahoo Finance', asOf: nowIso, lastAttempt: nowIso, items, tradingNow: futTrading,
+        ...(symbolErrors.length ? { symbolErrors } : {}) };
+    }
+  }
   if (ran.length) out.generatedAt = nowIso;
   out.lastRun = { at: nowIso, ran };
   return out;

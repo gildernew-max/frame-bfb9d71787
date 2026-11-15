@@ -449,10 +449,11 @@ const DATA = {
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let SUN={rise:7*60+8,set:17*60+35};
+let TAPE_RATES='';
 const icon=i=>`<svg class="wx" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-${i}"/></svg>`;
 const tradable=()=>DATA.quotes.filter(q=>!q.gap);
 const fmtPrice=q=>q.dollar||q.s==="NVDA"||q.s==="TSLA"||q.s==="SPCX" ? "$"+q.px:q.px;
-const changePill=q=>q.ch==null?'':`<span class="change-pill ${q.ch>=0?'up':'down'}">${q.ch>=0?'▲':'▼'} ${Math.abs(q.ch).toFixed(2)}%</span>`;
+const changePill=q=>q.ch==null?'':`<span class="change-pill ${q.ch>=0?'up':'down'}">${q.ch>=0?'▲':'▼'} ${q.pill||Math.abs(q.ch).toFixed(2)+'%'}</span>`;
 
 function renderForecast(items){
   const low=Math.min(...items.map(x=>x.l))-3, high=Math.max(...items.map(x=>x.h))+3;
@@ -494,18 +495,30 @@ function areaChart(values,up,id){
 function quoteCard(q){
   if(q.pending)return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
   if(q.upcoming)return `<div class="quote-card upcoming"><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
-  return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hint||'Sample close'}</span></div></div>`;
+  return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hintHtml||q.hint||'Sample close'}</span></div></div>`;
 }
 const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
+let RATES_SLIDE=null, gridExclude='NVDA';
+function rateSlideHTML(r){
+  return `<div class="spot-copy"><div class="spot-eyebrow">Rates spotlight</div><div class="spot-name">${r.name}</div><div class="spot-symbol">${r.symbolLine}</div><div class="spot-price">${r.value}</div><div class="spot-price-row">${changePill(r)}</div><div class="spot-caption">${r.caption}</div></div><div class="spot-graphic"><span class="chart-top">${r.chartLabel}</span>${areaChart(r.sp,r.ch>=0,'RATES')}</div>`;
+}
 function renderMarkets(){
-  const q=tradable(),s=q.find(x=>x.s===spotSymbols[spotIndex]);
+  const slides=spotSymbols.length+(RATES_SLIDE?1:0); if(spotIndex>=slides)spotIndex=0;
+  if(spotIndex===spotSymbols.length&&RATES_SLIDE){
+    // Rates slide: the grid keeps the previous slide's cards so the layout never changes.
+    $('spot-inner').innerHTML=rateSlideHTML(RATES_SLIDE);
+    $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${slides}  ·  15s`;
+    $('market-grid').innerHTML=tradable().filter(x=>x.s!==gridExclude).map(quoteCard).join('');
+    return;
+  }
+  const q=tradable(),s=q.find(x=>x.s===spotSymbols[spotIndex]); gridExclude=s.s;
   $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
-  $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 03  ·  15s`;
+  $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length+(RATES_SLIDE?1:0)}  ·  15s`;
   $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
 }
 function rotateSpotlight(){
   $('spotlight').classList.add('is-changing');$('market-grid').classList.add('is-changing');
-  window.setTimeout(()=>{spotIndex=(spotIndex+1)%spotSymbols.length;renderMarkets();
+  window.setTimeout(()=>{spotIndex=(spotIndex+1)%(spotSymbols.length+(RATES_SLIDE?1:0));renderMarkets();
     $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
 }
 let newsIndex=0;
@@ -535,7 +548,7 @@ function renderTape(){
     const sym=q.s==='Composite'?'NASDAQ':q.s;
     if(q.upcoming)return `<span class="tape-item"><b class="tape-symbol">ANT</b><span class="tape-change soon">IPO NOV 19 · $70–78</span><span class="tape-sep"></span></span>`;
     return `<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${fmtPrice(q)}</span><span class="tape-change ${q.ch>=0?'up':'down'}">${q.ch>=0?'+':''}${q.ch.toFixed(2)}%</span><span class="tape-sep"></span></span>`;
-  }).join('');
+  }).join('')+(TAPE_RATES||'');
   const track=$('tape-track');
   // Seamless loop: each copy must be at least as wide as the viewport, so repeat the
   // item set inside one copy as needed, then render two identical copies and slide by
@@ -676,10 +689,11 @@ function applyStocks(st){
   const closeLabel=`${new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}).format(new Date(lastT))} close`;
   const hint=open?`as of ${fmtTime(st.asOf)}`:'Last close';
   const card=(key,base)=>{const q=qs[key];if(!q||!q.px)return {...base,pending:true,hint:'Quote pending'};
+    const fn=!open&&q.kind==='index'?futuresNote(key,q):null;
     const hist=(st.history?.[key]||[]).map(p=>p.c);
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
-    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,
+    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
       chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
   const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
@@ -690,17 +704,54 @@ function applyStocks(st){
   $('ms-note').textContent=open?ao.text:'last close';
   $('mk-deck').textContent=`${open?'Live · 15-min quotes':closeLabel}${ao.stale?' · '+ao.text:''}`;
 }
+// Futures-implied open for index cards while the cash market is closed. Hidden when
+// missing, invalid, from another session, or stale while futures are trading.
+function futuresTradingNow(){
+  const e=etNow(); const wd=e.wd, m=e.mins;
+  if(wd==='Sat')return false;
+  if(wd==='Sun')return m>=1080;
+  if(wd==='Fri')return m<1020;
+  return m<1020||m>=1080;
+}
+function futuresNote(key,q){
+  const f=LIVE_DATA?.futures, it=f?.items?.[key];
+  if(!f||!it||it.valid===false||!Number.isFinite(it.changePct)||!Number.isFinite(it.expectedOpen))return null;
+  if(it.indexClose&&Math.abs(it.indexClose-q.px)>0.01)return null;           // futures computed against a different close
+  if(q.t&&it.settleDate&&new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(q.t*1000))!==it.settleDate)return null;
+  const trading=futuresTradingNow(), lastAgeMin=(Date.now()-it.lastTime*1000)/6e4;
+  if(trading&&(lastAgeMin>40||ageH(f.asOf)>0.75))return null;              // stale while trading: hide
+  const pct=`${it.changePct>=0?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%`;
+  const label=trading?'Futures':`${fmtDay(new Date(it.lastTime*1000).toISOString())} fut.`;
+  return `${label} ${pct}<br>Open ~${money(it.expectedOpen,0)}`;
+}
+function applyRates(r){
+  const s=r?.series||r||{}; const ten=s.DGS10, ff=s.DFF||s.FEDFUNDS, mo=s.MORTGAGE30US;
+  if(!r?.asOf||!ten?.latest||!(ten.history5y?.length>=2)){RATES_SLIDE=null;TAPE_RATES='';return;}
+  const ao=asOf(r,30);
+  const bp=ten.prior?Math.round((ten.latest.v-ten.prior.v)*100):null;
+  const pct=v=>`${v.toFixed(2)}%`;
+  const parts=[]; if(ff?.latest)parts.push(`Fed funds ${pct(ff.latest.v)}`); if(mo?.latest)parts.push(`Mtg ${pct(mo.latest.v)}`);
+  const d=new Date(ten.latest.date+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
+  RATES_SLIDE={name:'10-Year Yield',symbolLine:`US TREASURY / ${d}`,value:pct(ten.latest.v),ch:bp??0,pill:bp==null?null:`${Math.abs(bp)} bp`,
+    caption:parts.join(' · ')+(ao.stale?' · stale':''),chartLabel:'5-year trend',sp:ten.history5y.map(p=>Array.isArray(p)?p[1]:p.v)};
+  if(bp==null)RATES_SLIDE.ch=null;
+  const item=(sym,v)=>`<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${pct(v)}</span><span class="tape-sep"></span></span>`;
+  TAPE_RATES=item('10Y',ten.latest.v)+(ff?.latest?item('FED FUNDS',ff.latest.v):'')+(mo?.latest?item('30Y MORTGAGE',mo.latest.v):'');
+}
 function applyLive(d){
   if(!d)return;
   try{applyWeather(d.weather);}catch(e){console.error('weather',e);}
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
+  try{applyRates(d.rates);}catch(e){console.error('rates',e);RATES_SLIDE=null;TAPE_RATES='';}
+  try{if(changed('rates',[RATES_SLIDE,TAPE_RATES])){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
   const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
   if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
+  if(RATES_SLIDE)credits.push('Rates: FRED');
   $('credit-label').textContent=credits.join(' · ');
 }
 async function refreshAll(){
