@@ -453,24 +453,25 @@
   .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
   .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:28px}
   .wx7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px;flex:none}
-  .wx7-day{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;min-width:0;
-    padding:28px 16px 24px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
-  .wx7-day .weekday{font-size:28px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .wx7-day .wx{width:96px;height:96px;margin:8px 0}
-  .wx7-day .cond{font-size:26px;color:var(--ink);font-weight:300;min-height:1.2em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
-  .wx7-day .temps{font:300 48px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
+  .wx7-day{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-width:0;
+    height:300px;box-sizing:border-box;padding:20px 12px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+  .wx7-day .weekday{font-size:36px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .wx7-day .wx{width:96px;height:96px;margin:4px 0;flex:none}
+  .wx7-day .temps{font:300 64px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
   .wx7-day .temps span{color:var(--soft);margin-left:14px}
-  .wx7-day .pop{font-size:24px;letter-spacing:.06em;color:var(--blue);font-weight:500}
+  .wx7-day .pop{font-size:32px;letter-spacing:.06em;color:var(--blue);font-weight:500}
   .wx7-day .pop.empty{color:var(--soft)}
-  .wx-hourly-label{font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
-  .wx12{flex:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
-  .wx12-hour{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-width:0;
+  .wx-hourly-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .wx12-wrap{flex:1;min-height:0;position:relative;display:flex;flex-direction:column}
+  .wx12{flex:1;min-height:0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+  .wx12-hour{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:0;
     padding:22px 8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
-  .wx12-hour .when{font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
-  .wx12-hour .wx{width:72px;height:72px}
-  .wx12-hour .temp{font:300 42px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
-  .wx12-hour .pop{font-size:22px;letter-spacing:.04em;color:var(--blue);font-weight:500}
+  .wx12-hour .when{font-size:36px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .wx12-hour .wx{width:96px;height:96px;flex:none}
+  .wx12-hour .temp{font:300 64px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
+  .wx12-hour .pop{font-size:32px;letter-spacing:.04em;color:var(--blue);font-weight:500}
   .wx12-hour .pop.empty{color:var(--soft)}
+  .wx12-spark{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2;overflow:visible}
   .news-full{flex:1;min-height:0;display:flex;flex-direction:column;gap:0;overflow:auto}
   .news-full-item{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px 48px;padding:18px 8px;
     border-bottom:1px solid var(--hair)}
@@ -1527,12 +1528,32 @@ function renderWeatherOverlay(model,meta){
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
   $('weather-overlay-deck').textContent=`7-day · next 12 hours · ${src}${as}`;
   if(!days.length){body.innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';return;}
-  const dayHtml=days.map(d=>`<div class="wx7-day"><div class="weekday">${esc(d.d)}</div>${icon(d.i)}<div class="cond">${esc(d.text||'')}</div><div class="temps">${d.h}°<span>${d.l}°</span></div><div class="pop${d.pop==null?' empty':''}">${d.pop==null?'—':esc(popLabel(d.pop))}</div></div>`).join('');
-  const hourHtml=hours.slice(0,12).map(h=>{
+  const dayHtml=days.map(d=>`<div class="wx7-day"><div class="weekday">${esc(d.d)}</div>${icon(d.i)}<div class="temps">${d.h}°<span>${d.l}°</span></div><div class="pop${d.pop==null?' empty':''}">${d.pop==null?'—':esc(popLabel(d.pop))}</div></div>`).join('');
+  const hourSlice=hours.slice(0,12);
+  const hourHtml=hourSlice.map(h=>{
     const when=h.hour||h.t;
     return `<div class="wx12-hour"><div class="when">${esc(when)}</div>${icon(h.i)}<div class="temp">${h.temp}°</div><div class="pop${h.pop==null?' empty':''}">${h.pop==null?'—':esc(popLabel(h.pop))}</div></div>`;
   }).join('');
-  body.innerHTML=`<div class="wx7">${dayHtml}</div><div class="wx-hourly-label">Next 12 hours</div><div class="wx12">${hourHtml||'<div class="nfl-scoreboard sb-msg">Hourly forecast unavailable</div>'}</div>`;
+  const hourly=hourHtml
+    ? `<div class="wx12-wrap"><svg class="wx12-spark" aria-hidden="true"></svg><div class="wx12">${hourHtml}</div></div>`
+    : `<div class="nfl-scoreboard sb-msg">Hourly forecast unavailable</div>`;
+  body.innerHTML=`<div class="wx7">${dayHtml}</div><div class="wx-hourly-label">Next 12 hours</div>${hourly}`;
+  requestAnimationFrame(()=>paintHourlyTempLine());
+}
+function paintHourlyTempLine(){
+  const wrap=document.querySelector('#weather-overlay-body .wx12-wrap');
+  const svg=wrap?.querySelector('.wx12-spark');
+  const nodes=[...wrap?.querySelectorAll('.wx12-hour .temp')||[]];
+  if(!svg||nodes.length<2)return;
+  const wr=wrap.getBoundingClientRect();
+  if(wr.width<2||wr.height<2)return;
+  const pts=nodes.map(el=>{
+    const r=el.getBoundingClientRect();
+    return {x:r.left-wr.left+r.width/2,y:r.top-wr.top+r.height/2};
+  });
+  svg.setAttribute('viewBox',`0 0 ${wr.width} ${wr.height}`);
+  const d=pts.map((p,i)=>`${i?'L':'M'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+  svg.innerHTML=`<path d="${d}" fill="none" stroke="rgba(240,237,230,.5)" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
 }
 function hourLabel(iso,tz){
   const s=iso.length<=16?iso+':00':iso;
