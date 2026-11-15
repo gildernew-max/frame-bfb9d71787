@@ -1,0 +1,339 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-15T15:59:50.318Z",
+ "timezone": "America/New_York",
+ "weather": {
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
+  "cities": {
+   "atlanta": {
+    "name": "Atlanta, GA",
+    "tz": "America/New_York",
+    "now": {
+     "temp": 46,
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": 1,
+     "windDir": "SW",
+     "observed": "2026-11-15T10:45"
+    },
+    "today": {
+     "h": 55,
+     "l": 29,
+     "sunrise": "07:09",
+     "sunset": "17:34"
+    },
+    "forecast": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 57,
+      "l": 34
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
+      "i": "sun",
+      "text": "Clear",
+      "h": 61,
+      "l": 38
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "sun",
+      "text": "Clear",
+      "h": 64,
+      "l": 44
+     }
+    ]
+   },
+   "saintPaul": {
+    "name": "Saint Paul, MN",
+    "tz": "America/Chicago",
+    "now": {
+     "temp": 32,
+     "i": "partly",
+     "cond": "Partly cloudy",
+     "windMph": 5,
+     "windDir": "SSE",
+     "observed": "2026-11-15T09:45"
+    },
+    "today": {
+     "h": 47,
+     "l": 24,
+     "sunrise": "07:10",
+     "sunset": "16:43"
+    },
+    "forecast": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 54,
+      "l": 32
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 56,
+      "l": 41
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 59,
+      "l": 48
+     }
+    ]
+   }
+  },
+  "asOf": "2026-11-15T15:59:50.318Z",
+  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "lastError": null
+ },
+ "nfl": {
+  "provider": "ESPN",
+  "teams": [
+   {
+    "code": "PIT",
+    "id": 23,
+    "team": "Pittsburgh Steelers",
+    "color": "#272727",
+    "gold": "#FFB612",
+    "record": "6–2",
+    "rank": "1st AFC North",
+    "streak": "W4",
+    "next": {
+     "date": "2026-11-16T01:20Z",
+     "homeAway": "away",
+     "opponent": "Bengals",
+     "oppCode": "CIN",
+     "state": "pre",
+     "tbd": false
+    },
+    "season": "2026"
+   },
+   {
+    "code": "MIN",
+    "id": 16,
+    "team": "Minnesota Vikings",
+    "color": "#6A3CA0",
+    "gold": "#FFC62F",
+    "record": "6–2",
+    "rank": "2nd NFC North",
+    "streak": "L2",
+    "next": {
+     "date": "2026-11-15T18:00Z",
+     "homeAway": "away",
+     "opponent": "Packers",
+     "oppCode": "GB",
+     "state": "pre",
+     "tbd": false
+    },
+    "season": "2026"
+   },
+   {
+    "code": "GB",
+    "id": 9,
+    "team": "Green Bay Packers",
+    "color": "#227052",
+    "gold": "#FFB612",
+    "record": "6–3",
+    "rank": "4th NFC North",
+    "streak": "W2",
+    "next": {
+     "date": "2026-11-15T18:00Z",
+     "homeAway": "home",
+     "opponent": "Vikings",
+     "oppCode": "MIN",
+     "state": "pre",
+     "tbd": false
+    },
+    "season": "2026"
+   }
+  ],
+  "asOf": "2026-11-15T15:59:50.318Z",
+  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "lastError": null
+ },
+ "news": {
+  "items": [
+   {
+    "src": "BBC News",
+    "hd": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says",
+    "pub": "2026-11-15T14:56:21.000Z"
+   },
+   {
+    "src": "BBC News",
+    "hd": "Minister backs legal right to job support for young people",
+    "pub": "2026-11-15T13:06:15.000Z"
+   },
+   {
+    "src": "BBC News",
+    "hd": "Beauty advent calendars can cost hundreds but are they value for money?",
+    "pub": "2026-11-15T00:01:07.000Z"
+   },
+   {
+    "src": "NPR",
+    "hd": "Commerce Department under pressure for delaying export controls on Nvidia chips",
+    "pub": "2026-11-14T22:21:07.000Z"
+   },
+   {
+    "src": "NPR",
+    "hd": "These economists say in-person work boosts creativity, but office mandates fall short",
+    "pub": "2026-11-14T12:40:28.000Z"
+   }
+  ],
+  "feedErrors": [],
+  "asOf": "2026-11-15T15:59:50.318Z",
+  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "credit": "BBC News · NPR",
+  "lastError": null
+ },
+ "stocks": {
+  "provider": "Finnhub",
+  "status": "live",
+  "lastError": null,
+  "market": {
+   "isOpen": false,
+   "session": null,
+   "holiday": null,
+   "checkedAt": "2026-11-15T15:59:50.318Z"
+  },
+  "quotes": {
+   "NVDA": {
+    "s": "NVDA",
+    "n": "NVIDIA",
+    "kind": "stock",
+    "px": 162.85,
+    "ch": -2.0097,
+    "d": -3.34,
+    "pc": 166.19,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   },
+   "TSLA": {
+    "s": "TSLA",
+    "n": "Tesla",
+    "kind": "stock",
+    "px": 390.22,
+    "ch": -1.8191,
+    "d": -7.23,
+    "pc": 397.45,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   },
+   "SPCX": {
+    "s": "SPCX",
+    "n": "SpaceX",
+    "kind": "stock",
+    "px": 139.11,
+    "ch": -0.5931,
+    "d": -0.83,
+    "pc": 139.94,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   },
+   "ANT": {
+    "s": "ANT",
+    "n": "Anthropic",
+    "kind": "stock",
+    "firstTrade": "2026-11-19",
+    "range": "$70–78",
+    "note": "IPO Nov 19 · $70–78 range",
+    "upcoming": true
+   },
+   "DOW": {
+    "s": "DIA",
+    "n": "Dow Jones fund",
+    "kind": "fund",
+    "tracks": "Dow Jones",
+    "symbol": "DIA",
+    "px": 523.15,
+    "ch": 0.1302,
+    "d": 0.68,
+    "pc": 522.47,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   },
+   "SPX": {
+    "s": "SPY",
+    "n": "S&P 500 fund",
+    "kind": "fund",
+    "tracks": "S&P 500",
+    "symbol": "SPY",
+    "px": 754.37,
+    "ch": -0.3632,
+    "d": -2.75,
+    "pc": 757.12,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   },
+   "NASDAQ": {
+    "s": "QQQ",
+    "n": "Nasdaq fund",
+    "kind": "fund",
+    "tracks": "Nasdaq",
+    "symbol": "QQQ",
+    "px": 679.89,
+    "ch": -1.2032,
+    "d": -8.28,
+    "pc": 688.17,
+    "t": 1794603600,
+    "quoteTime": "2026-11-13T21:00:00.000Z"
+   }
+  },
+  "history": {
+   "NVDA": [
+    {
+     "t": 1794603600,
+     "c": 162.85
+    }
+   ],
+   "TSLA": [
+    {
+     "t": 1794603600,
+     "c": 390.22
+    }
+   ],
+   "SPCX": [
+    {
+     "t": 1794603600,
+     "c": 139.11
+    }
+   ],
+   "DOW": [
+    {
+     "t": 1794603600,
+     "c": 523.15
+    }
+   ],
+   "SPX": [
+    {
+     "t": 1794603600,
+     "c": 754.37
+    }
+   ],
+   "NASDAQ": [
+    {
+     "t": 1794603600,
+     "c": 679.89
+    }
+   ]
+  },
+  "lastAttempt": "2026-11-15T15:59:50.318Z",
+  "asOf": "2026-11-15T15:59:50.318Z"
+ },
+ "lastRun": {
+  "at": "2026-11-15T16:01:45.299Z",
+  "ran": []
+ }
+}

@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101114">
+<title>Frame · Morning Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#101114; --panel:rgba(255,255,255,.032); --panel-light:rgba(255,255,255,.042);
+    --ink:#F0EDE6; --muted:#ADA8A0; --soft:#838078;
+    --hair:rgba(255,255,255,.095); --gold:#C9A86A;
+    --up:#99C7A6; --down:#E29A91; --blue:#6FA8DC;
+  }
+  *{box-sizing:border-box}
+  html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#0C0D10}
+  body{font-family:Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink);
+       font-feature-settings:"tnum" 1,"lnum" 1;-webkit-font-smoothing:antialiased}
+  .serif{font-family:Inter,"SF Pro Display",system-ui,sans-serif;font-weight:300;letter-spacing:-0.01em}
+  #stage{
+    position:absolute;left:50%;top:50%;width:3840px;height:2160px;
+    transform-origin:center center;display:grid;grid-template-rows:735px minmax(0,1fr) 105px;
+    gap:32px;padding:74px 120px 54px;isolation:isolate;overflow:hidden;
+    background:
+      radial-gradient(1400px 800px at 17% 4%,rgba(201,168,106,.09),transparent 72%),
+      radial-gradient(1300px 880px at 84% 100%,rgba(91,105,119,.075),transparent 76%),
+      linear-gradient(155deg,#17181B 0%,#111216 53%,#0D0F12 100%);
+  }
+  #stage::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(ellipse 85% 76% at 50% 45%,transparent 43%,rgba(0,0,0,.33) 100%)}
+  /* Weather receives more horizontal room; the clock retains its original type scale. */
+  .top{display:grid;grid-template-columns:.90fr 1.18fr;gap:32px;min-height:0}
+  .lower{display:grid;grid-template-columns:.90fr 1.52fr 1.04fr;gap:32px;min-height:0}
+  .panel{position:relative;min-width:0;min-height:0;overflow:hidden;border-radius:22px;
+    border:1px solid var(--hair);background:var(--panel);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.028);backdrop-filter:blur(6px)}
+  .eyebrow,.kicker,.folio,.micro{font-size:28px;font-weight:500;text-transform:uppercase;letter-spacing:.21em}
+  .kicker{color:var(--gold)}.micro,.folio{color:var(--soft)}
+  .rule{height:1px;background:var(--hair)}
+  .panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:29px}
+  .panel-title{font:400 62px/.96 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.035em;color:var(--ink)}
+  .panel-deck{margin-top:13px;color:var(--muted);font-size:27px;letter-spacing:.12em;text-transform:uppercase}
+  .panel-number{font-size:28px;color:var(--gold);letter-spacing:.16em;font-weight:500;white-space:nowrap}
+
+  /* CLOCK: the entire composition's largest typographic moment */
+  .clock-panel{padding:48px 64px 48px 68px;display:flex;flex-direction:column}
+  .clock-top{display:flex;align-items:center;justify-content:space-between}
+  .clock-top .kicker{font-size:30px}
+  .clock-top .folio{font-size:25px}
+  .time{display:flex;align-items:baseline;white-space:nowrap;letter-spacing:-.065em;
+    font:300 342px/.91 Inter,"SF Pro Display",system-ui,sans-serif;margin:26px 0 0 -10px;
+    font-feature-settings:"tnum" 1,"lnum" 1}
+  .time .colon{color:var(--gold);opacity:.75;padding:0 .005em}
+  .time .ampm{align-self:flex-start;font:400 70px/1 Inter,sans-serif;letter-spacing:.06em;
+    color:var(--muted);margin:53px 0 0 27px}
+  .date{font:400 70px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.026em;margin-top:20px;white-space:nowrap}
+  .date em{font-style:normal;color:var(--gold);margin-right:19px}
+  .market-status{display:inline-flex;align-items:center;gap:16px;align-self:flex-start;margin-top:25px;
+    padding:13px 21px 13px 18px;border:1px solid rgba(201,168,106,.21);
+    border-radius:100px;background:rgba(201,168,106,.065);color:#D5C5A7;
+    font-size:30px;font-weight:400;white-space:nowrap}
+  .market-status .dot{height:12px;width:12px;background:var(--gold);border-radius:50%;opacity:.9}
+  .market-status .note{color:var(--soft);font-size:23px;letter-spacing:.12em;text-transform:uppercase;margin-left:12px}
+  .clock-accent{position:absolute;right:64px;bottom:46px;width:114px;height:1px;background:var(--gold);opacity:.4}
+
+  /* WEATHER: restrained pictograms, a daylight diagram and forecast miniatures */
+  .weather-panel{padding:43px 48px 35px;display:flex;flex-direction:column}
+  .weather-panel .panel-head{margin-bottom:7px}
+  .weather-panel .panel-title{font-size:57px}
+  .now{display:grid;grid-template-columns:176px 264px minmax(0,1fr);align-items:center;gap:34px;height:171px}
+  .wx{fill:none;stroke:#D5D9DC;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .now .wx{width:174px;height:174px;filter:drop-shadow(0 0 19px rgba(232,176,75,.09))}
+  .now .temp{font:300 207px/.92 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.07em;
+    white-space:nowrap;font-feature-settings:"tnum" 1}
+  .now .temp sup{font-size:91px;position:relative;top:-.57em;letter-spacing:-.02em;color:var(--muted)}
+  .now .cond{font-size:51px;font-weight:300;line-height:1.16;letter-spacing:-.02em}
+  .now .meta{margin-top:14px;font-size:30px;color:var(--muted);font-weight:300;line-height:1.44}
+  .now .meta b{color:var(--ink);font-weight:400}
+  .sun-journey{height:87px;min-height:87px;border-top:1px solid var(--hair);display:flex;align-items:center;
+    justify-content:space-between;gap:28px;margin-top:1px;padding-top:4px}
+  .sun-caption{flex:0 0 270px;line-height:1.15}
+  .sun-caption .micro{font-size:21px;letter-spacing:.08em;white-space:nowrap}
+  .sun-caption strong{display:block;font-size:29px;font-weight:400;margin-top:4px;color:var(--ink)}
+  .sun-caption.set{text-align:right}
+  .sun-path{width:100%;max-width:550px;height:74px;overflow:visible}
+  .forecast{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:13px}
+  .forecast-day{height:190px;min-width:0;padding:16px 15px 14px;border:1px solid var(--hair);border-radius:17px;
+    background:rgba(255,255,255,.028);display:flex;align-items:center;flex-direction:column}
+  .forecast-day .weekday{font-size:27px;letter-spacing:.13em;color:var(--muted);text-transform:uppercase}
+  .forecast-day .wx{height:75px;width:75px;margin:3px auto 1px}
+  .forecast-day .temps{font-size:38px;letter-spacing:-.02em;font-weight:300;white-space:nowrap}
+  .forecast-day .temps span{color:var(--soft);margin-left:15px}
+  .range-track{height:6px;width:100%;max-width:218px;border-radius:9px;margin-top:8px;
+    background:linear-gradient(90deg,#6FA8DC 0%,#8FACA5 45%,#E8B04B 100%);opacity:.8;
+    position:relative;overflow:hidden}
+  .range-track::before,.range-track::after{content:"";position:absolute;top:0;bottom:0;background:#292D31;opacity:.82}
+  .range-track::before{left:0;width:var(--from)}.range-track::after{right:0;width:var(--to)}
+
+  /* WEATHER ONLY: aligned four-card Atlanta and Saint Paul rows. */
+  .weather-panel{padding:24px 38px 18px;display:flex;flex-direction:column}
+  .weather-panel .panel-head{margin-bottom:0;min-height:78px;flex:none}
+  .weather-panel .panel-title{font-size:49px}
+  .weather-panel .panel-deck{font-size:22px;margin-top:7px}
+  .weather-panel .panel-number{font-size:23px}
+  .atlanta-cards{display:grid;grid-template-columns:1.28fr repeat(3,minmax(0,1fr));
+    gap:15px;height:296px;flex:none;margin-top:12px;min-width:0}
+  .atlanta-now,.atlanta-cards .forecast-day,.secondary-current,.secondary-weather .mini-day{
+    border:1px solid var(--hair);border-radius:16px;background:rgba(255,255,255,.028);
+    min-width:0;overflow:hidden}
+  .atlanta-now{padding:15px 23px 13px;display:flex;flex-direction:column}
+  .atl-now-label{font-size:28px;color:var(--muted);letter-spacing:.10em;text-transform:uppercase;
+    font-weight:400;white-space:nowrap}
+  .atl-now-label .gold-sep{color:var(--gold);padding:0 6px}
+  .atl-now-label .small-sample{font-size:20px;color:var(--soft);letter-spacing:.13em;margin-left:12px}
+  .atl-now-visual{display:flex;align-items:center;gap:20px;height:139px;min-height:139px;white-space:nowrap}
+  .atl-now-visual .wx{height:126px;width:126px;flex:none;
+    filter:drop-shadow(0 0 19px rgba(232,176,75,.09))}
+  .atl-now-visual .temp{font:300 150px/.92 Inter,"SF Pro Display",system-ui,sans-serif;
+    letter-spacing:-.02em;font-feature-settings:"tnum" 1;white-space:nowrap}
+  .atl-now-visual .temp sup{font-size:65px;position:relative;top:0;color:var(--muted)}
+  .atl-now-condition{font-size:39px;font-weight:300;line-height:1.13;white-space:nowrap}
+  .atl-now-bottom{display:flex;justify-content:space-between;align-items:baseline;
+    gap:12px;min-width:0;margin-top:9px}
+  .atl-now-highlow{font-size:27px;font-weight:300;color:var(--muted);white-space:nowrap}
+  .atl-now-highlow b{color:var(--ink);font-weight:400}
+  .atl-now-wind{font-size:22px;font-weight:300;color:var(--soft);white-space:nowrap}
+  .atlanta-cards .forecast{grid-column:span 3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:15px;margin:0;min-width:0}
+  .atlanta-cards .forecast-day{height:296px;padding:24px 12px 21px;
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+  .atlanta-cards .forecast-day .weekday{font-size:30px;letter-spacing:.13em}
+  .atlanta-cards .forecast-day .wx{height:96px;width:96px;margin:16px auto 6px;flex:none}
+  .atlanta-cards .forecast-day .temps{font-size:51px;white-space:nowrap}
+  .atlanta-cards .forecast-day .temps span{margin-left:20px}
+  .atlanta-cards .range-track{margin-top:16px;height:7px;max-width:270px;flex:none}
+  .weather-panel .sun-journey{height:74px;min-height:74px;flex:none;
+    margin-top:11px;padding-top:0;gap:20px;border-top:1px solid var(--hair)}
+  .weather-panel .sun-caption{flex-basis:226px}
+  .weather-panel .sun-caption .micro{font-size:20px}
+  .weather-panel .sun-caption strong{font-size:26px;margin-top:3px}
+  .weather-panel .sun-path{height:68px;overflow:hidden}
+  /* The Saint Paul row mirrors the Atlanta card rhythm, at a quieter scale. */
+  .secondary-weather{margin-top:15px;height:181px;flex:none;min-width:0;display:grid;
+    grid-template-columns:1.28fr minmax(0,3fr);gap:15px;padding:0;border:0;
+    border-radius:0;background:none;box-shadow:none}
+  .secondary-current{padding:11px 20px;display:flex;flex-direction:column;
+    background:linear-gradient(115deg,rgba(255,255,255,.041),rgba(255,255,255,.018))}
+  .secondary-current .secondary-title{font:300 33px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    letter-spacing:-.01em;white-space:nowrap}
+  .secondary-current .slash{color:var(--gold);margin:0 6px}
+  .secondary-current .secondary-kicker{font-size:19px;color:var(--soft);letter-spacing:.12em;
+    text-transform:uppercase;white-space:nowrap}
+  .secondary-current .secondary-now{display:flex;align-items:center;gap:16px;margin-top:6px}
+  .secondary-current .secondary-now .wx{height:68px;width:68px;flex:none}
+  .secondary-current .secondary-temp{font:300 83px/.96 Inter,"SF Pro Display",system-ui,sans-serif;
+    white-space:nowrap;font-feature-settings:"tnum" 1}
+  .secondary-bottom{display:flex;justify-content:space-between;align-items:baseline;
+    min-width:0;gap:10px;margin-top:7px}
+  .secondary-current .secondary-condition{font-size:28px;font-weight:300;line-height:1.08;white-space:nowrap}
+  .secondary-current .secondary-detail{color:var(--muted);font-size:22px;line-height:1.2;
+    white-space:nowrap}
+  .secondary-forecast{min-width:0;padding:0;border:0;display:flex;flex-direction:column}
+  .mini-days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;
+    min-height:0;flex:1}
+  .secondary-weather .mini-day{display:flex;flex-direction:column;align-items:center;
+    justify-content:center;background:rgba(255,255,255,.028)}
+  .secondary-weather .mini-day .weekday{font-size:25px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--muted)}
+  .secondary-weather .mini-day .wx{height:67px;width:67px;margin:7px 0 4px}
+  .secondary-weather .mini-day .temps{font-size:38px;font-weight:300;white-space:nowrap}
+  .secondary-weather .mini-day .temps span{margin-left:14px;color:var(--soft)}
+
+  /* NFL: three editorial score rows, each with a restrained two-color team mark. */
+  .nfl-panel,.markets-panel,.business-panel{padding:44px 42px 36px}
+  .nfl-panel .panel-head,.markets-panel .panel-head,.business-panel .panel-head{min-height:83px}
+  .nfl-panel .panel-title{font-size:59px;white-space:nowrap}
+  .nfl-panel .panel-deck{font-size:24px}
+  #nfl{display:grid;grid-template-rows:repeat(3,minmax(0,1fr));height:821px;
+    margin-top:8px;border-top:1px solid var(--hair)}
+  .nfl-team{display:flex;flex-direction:column;justify-content:center;position:relative;
+    min-width:0;gap:19px;padding:27px 8px 26px 30px;border-bottom:1px solid var(--hair)}
+  .nfl-team:last-child{border-bottom:0}
+  .nfl-team::before{content:"";position:absolute;top:33px;bottom:33px;left:0;width:5px;
+    border-radius:6px;background:var(--team-color);opacity:.94}
+  .nfl-team::after{content:"";position:absolute;top:33px;left:0;width:5px;height:43px;
+    border-radius:6px 6px 0 0;background:var(--team-gold)}
+  .nfl-main{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:0}
+  .nfl-name{font:400 47px/1.08 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.022em;
+    white-space:nowrap;min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .nfl-record{font:300 60px/1 Inter,"SF Pro Display",system-ui,sans-serif;white-space:nowrap;
+    font-feature-settings:"tnum" 1,"lnum" 1}
+  .nfl-details{display:flex;align-items:center;gap:19px;min-width:0}
+  .nfl-rank{font-size:35px;color:var(--muted);white-space:nowrap}
+  .nfl-divider{height:20px;width:1px;background:var(--hair)}
+  .nfl-streak{font-size:32px;color:var(--ink);white-space:nowrap}
+  .nfl-streak b{font-weight:500;color:var(--gold);margin-right:9px;
+    text-transform:uppercase;letter-spacing:.10em;font-size:22px}
+  .nfl-next{display:flex;align-items:center;gap:14px;font-size:38px;line-height:1.2;
+    color:var(--muted);min-width:0}
+  .nfl-next .game-label{font-size:22px;letter-spacing:.15em;text-transform:uppercase;
+    font-weight:500;color:var(--gold);white-space:nowrap}
+  .nfl-next .game-detail{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nfl-foot{margin-top:26px;display:flex;align-items:center;gap:18px;color:var(--soft);
+    font-size:23px;letter-spacing:.13em;text-transform:uppercase}
+  .nfl-foot .line{height:1px;flex:1;background:var(--hair)}
+
+  /* MARKETS: the centerpiece, with a rotating area-chart spotlight */
+  .markets-panel{background:rgba(255,255,255,.038);border-color:rgba(255,255,255,.125)}
+  .markets-panel .panel-title{font-size:66px}
+  .spotlight{height:452px;border:1px solid rgba(201,168,106,.20);border-radius:20px;
+    background:
+      radial-gradient(750px 330px at 84% 110%,rgba(201,168,106,.052),transparent 80%),
+      linear-gradient(145deg,rgba(255,255,255,.042),rgba(255,255,255,.012));
+    overflow:hidden;position:relative}
+  .spotlight::before{content:"";position:absolute;inset:0;pointer-events:none;
+    border-top:1px solid rgba(255,255,255,.05);border-radius:20px}
+  .spot-inner{display:grid;grid-template-columns:510px minmax(0,1fr);gap:10px;
+    height:100%;padding:35px 38px 24px;transition:opacity .55s ease,transform .55s ease}
+  .spotlight.is-changing .spot-inner{opacity:0;transform:translateY(12px)}
+  .spot-eyebrow{font-size:27px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .spot-name{font:400 70px/1 Inter,"SF Pro Display",system-ui,sans-serif;margin-top:17px;letter-spacing:-.035em}
+  .spot-symbol{color:var(--muted);font-size:30px;letter-spacing:.13em;margin-top:7px}
+  .spot-price{font:300 124px/.98 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.055em;margin-top:13px;
+    font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap}
+  .change-pill{display:inline-flex;align-items:center;justify-content:center;gap:9px;flex:none;
+    padding:10px 17px;border-radius:100px;font-size:29px;letter-spacing:.01em;
+    font-weight:500;white-space:nowrap}
+  .change-pill.up{color:var(--up);background:rgba(143,191,154,.13);border:1px solid rgba(143,191,154,.22)}
+  .change-pill.down{color:var(--down);background:rgba(217,138,126,.12);border:1px solid rgba(217,138,126,.20)}
+  .spot-price-row{display:flex;align-items:center;gap:22px;margin-top:7px}
+  .spot-caption{font-size:23px;color:var(--soft);letter-spacing:.11em;text-transform:uppercase;margin-top:13px}
+  .spot-graphic{position:relative;display:flex;align-items:flex-end;min-width:0}
+  .area-chart{width:100%;height:315px;margin-bottom:7px;overflow:visible}
+  .chart-top{position:absolute;top:6px;right:3px;color:var(--soft);font-size:22px;letter-spacing:.16em;text-transform:uppercase}
+  .spot-folio{position:absolute;right:39px;bottom:19px;font-size:23px;letter-spacing:.13em;color:var(--soft)}
+  #market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,223px);
+    gap:18px;margin-top:22px;transition:opacity .5s ease,transform .5s ease}
+  #market-grid.is-changing{opacity:.25;transform:translateY(6px)}
+  .quote-card{border:1px solid var(--hair);border-radius:17px;min-width:0;overflow:hidden;
+    background:var(--panel-light);padding:23px 24px 17px;display:flex;flex-direction:column;justify-content:space-between}
+  .quote-card .quote-top{display:flex;justify-content:space-between;align-items:baseline;gap:9px}
+  .quote-card .symbol{font-size:27px;letter-spacing:.14em;color:var(--gold);font-weight:500}
+  .quote-card .name{font-size:25px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);text-align:right}
+  .quote-card .quote-value{font:300 62px/.95 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;white-space:nowrap;
+    font-feature-settings:"tnum" 1,"lnum" 1}
+  .quote-card .quote-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .quote-card .quote-bottom .change-pill{font-size:27px;padding:7px 12px}
+  .quote-card .quote-bottom .hint{font-size:22px;color:var(--soft);letter-spacing:.10em;text-transform:uppercase}
+  .quote-card.upcoming{border-color:rgba(201,168,106,.35);background:rgba(201,168,106,.045)}
+  .quote-card.upcoming .quote-value{font-size:47px;letter-spacing:-.025em}
+  .upcoming-pill{font-size:24px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(201,168,106,.39);
+    padding:7px 12px;border-radius:100px;text-transform:uppercase}
+  .quote-card.upcoming .ipo-note{font-size:30px;color:#DBC9A5;white-space:nowrap;letter-spacing:-.01em}
+
+  /* BUSINESS: a refined, gently rotating editorial feature */
+  .business-panel .panel-title{font-size:62px}
+  .business-feature{height:329px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
+  .business-feature .src{font-size:27px;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+  .business-feature .hd{font:400 57px/1.18 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.023em;margin-top:19px;
+    transition:opacity .85s ease,transform .85s ease}
+  .business-feature .src{transition:opacity .85s ease,transform .85s ease}
+  .business-feature.fade .src,.business-feature.fade .hd{opacity:0;transform:translateY(12px)}
+  .business-feature .feature-bottom{position:absolute;bottom:19px;left:0;right:0;
+    display:flex;align-items:center;justify-content:space-between;font-size:24px;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--soft)}
+  .feature-index{color:var(--gold)}
+  #list{display:grid;grid-template-rows:repeat(5,minmax(0,1fr));height:565px}
+  .news-li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;
+    padding:13px 2px 13px 0;border-bottom:1px solid var(--hair);align-items:center;
+    font-size:34px;font-weight:300;line-height:1.2;color:var(--muted);
+    transition:color .65s ease}
+  .news-li:last-child{border-bottom:0}
+  .news-li i{font-size:24px;color:var(--soft);letter-spacing:.08em;font-style:normal;align-self:start;margin-top:7px}
+  .news-li span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+  .news-li.on{color:var(--ink)}.news-li.on i{color:var(--gold)}
+
+  /* Full-width, quiet market ribbon instead of a static footer */
+  .ticker-footer{height:105px;border-top:1px solid rgba(201,168,106,.24);position:relative;min-width:0}
+  .tape-viewport{position:absolute;inset:22px 0 0;overflow:hidden;
+    mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
+  .tape-track{width:max-content;display:flex;align-items:center;height:65px;animation:tape-move 74s linear infinite;will-change:transform}
+  .tape-group{display:flex;align-items:center;gap:76px;min-width:3600px;flex:none;padding-right:76px;white-space:nowrap}
+  .tape-item{display:inline-flex;align-items:baseline;gap:18px;font-size:33px;font-weight:400}
+  .tape-symbol{color:#E7DFD1;font-weight:500;letter-spacing:.035em}
+  .tape-price{color:var(--muted)}
+  .tape-change{font-size:28px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
+  .tape-change.soon{color:var(--gold);font-size:26px}
+  .tape-sep{width:5px;height:5px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:15px}
+  .mock-label{position:absolute;right:0;top:0;font-size:20px;letter-spacing:.15em;text-transform:uppercase;
+    color:var(--soft);transform:translateY(-15px);background:var(--bg);padding-left:22px}
+  @keyframes tape-move{to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.tape-track{animation:none}.spot-inner,.business-feature .hd,.business-feature .src,#market-grid{transition:none}}
+  /* Inter restore: relax tight serif tracking */
+  .clock,.now .temp,.spot-price,.quote-card .quote-value,.secondary-temp,.nfl-record{letter-spacing:-.02em!important}
+  .time{font-weight:200!important;letter-spacing:-.02em!important}
+  .time .ampm{font-weight:300!important;letter-spacing:.04em!important}
+  .date em{font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic;font-weight:400!important}
+  .panel-title,.date,.spot-name,.business-feature .hd,.nfl-name,.secondary-title{letter-spacing:-.01em!important;font-weight:300!important}
+</style>
+</head>
+<body>
+<!-- Icon colors are on the symbol geometry, so they survive SVG <use> shadow trees. -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="13" fill="#E8B04B" opacity=".075" stroke="none"/>
+      <g fill="none" stroke="#E8B04B"><circle cx="24" cy="24" r="8"/><path d="M24 6v5M24 37v5M6 24h5M37 24h5M11.3 11.3l3.5 3.5M33.2 33.2l3.5 3.5M11.3 36.7l3.5-3.5M33.2 14.8l3.5-3.5"/></g>
+    </symbol>
+    <symbol id="i-partly" viewBox="0 0 48 48">
+      <circle cx="18" cy="18" r="11" fill="#E8B04B" opacity=".065" stroke="none"/>
+      <g fill="none" stroke="#E8B04B"><circle cx="18" cy="18" r="6.5"/><path d="M18 5v3.5M5 18h3.5M8.8 8.8l2.5 2.5M27.2 8.8l-2.5 2.5"/></g>
+      <path d="M15 38h20a7 7 0 0 0 .6-14 9.5 9.5 0 0 0-18.2 2.6A5.8 5.8 0 0 0 15 38z" fill="#17191C" stroke="#D8DDE1"/>
+    </symbol>
+    <symbol id="i-cloud" viewBox="0 0 48 48"><path d="M13 36h22a8 8 0 0 0 .7-16A11 11 0 0 0 14.6 23 6.6 6.6 0 0 0 13 36z" fill="none" stroke="#D8DDE1"/></symbol>
+    <symbol id="i-rain" viewBox="0 0 48 48"><path d="M13 30h22a8 8 0 0 0 .7-16A11 11 0 0 0 14.6 17 6.6 6.6 0 0 0 13 30z" fill="none" stroke="#D8DDE1"/><path d="M17 35l-2 5M25 35l-2 5M33 35l-2 5" fill="none" stroke="#6FA8DC"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 48 48"><path d="M6 18h24a5 5 0 1 0-5-5M6 26h32a5 5 0 1 1-5 5M6 34h16" fill="none" stroke="#7FC8C0"/></symbol>
+    <symbol id="i-snow" viewBox="0 0 48 48"><path d="M13 28h22a8 8 0 0 0 .7-16A11 11 0 0 0 14.6 15 6.6 6.6 0 0 0 13 28z" fill="none" stroke="#D8DDE1"/><path d="M16 33v9m-4.5-4.5h9M25 33v9m-4.5-4.5h9M34 33v9m-4.5-4.5h9" fill="none" stroke="#D6EAF4"/></symbol>
+  </defs>
+</svg>
+<div id="stage">
+  <main class="top" aria-label="Time and weather">
+    <section class="panel clock-panel" aria-label="Clock">
+      <div class="clock-top"><span class="kicker" id="greeting">Good morning</span><span class="folio">The morning board <span style="color:var(--gold);margin:0 10px">/</span> 01</span></div>
+      <div class="time" id="time">9<span class="colon">:</span>16<span class="ampm">AM</span></div>
+      <div class="date" id="date"><em>Sunday,</em> November 15, 2026</div>
+      <div class="market-status"><span class="dot"></span><span id="ms-text">Markets closed · opens Mon 9:30</span><span class="note" id="ms-note">sample</span></div>
+      <div class="clock-accent"></div>
+    </section>
+    <section class="panel weather-panel" aria-label="Atlanta, Georgia weather, with Saint Paul, Minnesota secondary weather, all sample data">
+      <div class="panel-head"><div><div class="panel-title">Atlanta, GA <span style="color:var(--gold)">/</span> Today</div><div class="panel-deck" id="wx-deck">Main location · sample conditions</div></div><span class="panel-number">02 / WEATHER</span></div>
+      <div class="atlanta-cards" aria-label="Atlanta current conditions and Monday through Wednesday sample forecast">
+        <div class="atlanta-now" aria-label="Atlanta now: 58 degrees, partly cloudy, high 63, low 43">
+          <div class="atl-now-label">Atlanta <span class="gold-sep">·</span> Now <span class="small-sample" id="wx-now-note">Sample</span></div>
+          <div class="atl-now-visual">
+            <svg class="wx" viewBox="0 0 48 48" aria-hidden="true"><use id="wx-icon" href="#i-partly"/></svg>
+            <div class="temp" id="wx-temp">58<sup>°</sup></div>
+          </div>
+          <div class="atl-now-condition" id="wx-cond">Partly cloudy</div>
+          <div class="atl-now-bottom"><div class="atl-now-highlow" id="wx-hl">High <b>63°</b> &nbsp;·&nbsp; Low <b>43°</b></div><div class="atl-now-wind" id="wx-wind">Wind 6 mph NW</div></div>
+        </div>
+        <div class="forecast" id="forecast" aria-label="Atlanta sample three-day forecast, Monday through Wednesday"></div>
+      </div>
+      <div class="sun-journey" aria-label="Illustrative Atlanta daylight path from sunrise at 7:08 AM to sunset at 5:35 PM">
+        <div class="sun-caption"><span class="micro" id="sunrise-label">Sunrise · sample</span><strong id="sunrise-time">7:08 AM</strong></div>
+        <svg class="sun-path" id="sun-path" viewBox="0 0 550 90" role="img" aria-label="Atlanta sun progress between sunrise and sunset">
+          <path d="M 24 75 Q 275 -63 526 75" fill="none" stroke="rgba(255,255,255,.26)" stroke-width="1.6"/>
+          <path d="M24 75H526" fill="none" stroke="rgba(255,255,255,.13)" stroke-width="1" stroke-dasharray="4 9"/>
+          <circle id="sun-glow" cx="275" cy="5" r="18" fill="#E8B04B" opacity=".09"/>
+          <circle id="sun-dot" cx="275" cy="5" r="7" fill="#E8B04B"/>
+          <circle cx="24" cy="75" r="3" fill="#C9A86A"/><circle cx="526" cy="75" r="3" fill="#C9A86A"/>
+        </svg>
+        <div class="sun-caption set"><span class="micro" id="sunset-label">Sunset · sample</span><strong id="sunset-time">5:35 PM</strong></div>
+      </div>
+      <section class="secondary-weather" aria-label="Saint Paul, Minnesota sample current weather and three day forecast">
+        <div class="secondary-current">
+          <div class="secondary-title">Saint Paul, MN <span class="slash">·</span> Now <span class="secondary-kicker" id="sp-note">Sample</span></div>
+          <div class="secondary-now"><svg class="wx" viewBox="0 0 48 48" aria-hidden="true"><use id="sp-icon" href="#i-snow"/></svg><div class="secondary-temp" id="sp-temp">31°</div></div>
+          <div class="secondary-bottom"><div class="secondary-condition" id="sp-cond">Light snow</div><div class="secondary-detail" id="sp-detail">High 34° · Low 23°</div></div>
+        </div>
+        <div class="secondary-forecast"><div class="mini-days" id="saint-forecast" aria-label="Saint Paul Monday through Wednesday sample forecast"></div></div>
+      </section>
+    </section>
+  </main>
+
+  <section class="lower" aria-label="News and market board">
+    <section class="panel nfl-panel" aria-label="NFL standings for Pittsburgh Steelers, Minnesota Vikings, and Green Bay Packers, sample data">
+      <div class="panel-head"><div><div class="panel-title">NFL <span style="color:var(--gold)">·</span> Standings</div><div class="panel-deck" id="nfl-deck">Three teams · sample data</div></div><span class="panel-number">03 / NFL</span></div>
+      <div id="nfl" aria-label="Sample NFL team records, division ranks, streaks and next games"></div>
+      <div class="nfl-foot"><span id="nfl-foot">Records &amp; fixtures are illustrative</span><span class="line"></span></div>
+    </section>
+    <section class="panel markets-panel" aria-label="Markets, example data">
+      <div class="panel-head"><div><div class="panel-title">Markets</div><div class="panel-deck" id="mk-deck">Friday close · example data</div></div><span class="panel-number">04 / WATCHLIST</span></div>
+      <div class="spotlight" id="spotlight"><div class="spot-inner" id="spot-inner"></div><div class="spot-folio" id="spot-folio">SPOTLIGHT 01 / 03</div></div>
+      <div id="market-grid" aria-label="Other quotes and indexes"></div>
+    </section>
+    <section class="panel business-panel" aria-label="Business sample headlines">
+      <div class="panel-head"><div><div class="panel-title">Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
+      <div class="business-feature" id="feature"><div class="src" id="f-src"></div><div class="hd" id="f-hd"></div><div class="feature-bottom"><span>Today's reading <span class="feature-index" id="f-count">01 / 05</span></span><span>Rotates every 12s</span></div></div>
+      <div id="list"></div>
+    </section>
+  </section>
+
+  <footer class="ticker-footer" aria-label="Scrolling market ticker, example data">
+    <span class="mock-label" id="credit-label">Sample data · mockup</span>
+    <div class="tape-viewport"><div class="tape-track" id="tape-track"></div></div>
+  </footer>
+</div>
+<script>
+/* ------------------------------------------------------------------
+   LIVE DATA HOOK — replace sample values or wire fetchers here.
+   const LIVE = {
+     timezone: "America/New_York",
+     weather: { provider: "open-meteo", refreshMin: 15, // or NWS api.weather.gov
+       primary: { name: "Atlanta, GA", lat: 33.749, lon: -84.388, timezone: "America/New_York", forecastDays: 3 },
+       secondary: { name: "Saint Paul, MN", lat: 44.954, lon: -93.090, timezone: "America/Chicago", forecastDays: 3 }
+     },
+     quotes:  { provider: "<quotes API>", apiKey: "<key>", symbols: ["NVDA","TSLA","SPCX","ANT","^DJI","^GSPC","^IXIC"], refreshMin: 5 },
+     upcoming: { ANT: { expectedTrading: "2026-11-19", pricing: "2026-11-18", indicativeRange: "$70–78" } },
+     nfl: { provider: "<NFL standings/schedule API>", teams: ["PIT","MIN","GB"],
+       fields: ["wins","losses","divisionRank","streak","nextOpponent","nextGameTime"],
+       timezone: "America/New_York", refreshMin: 30 },
+     news:    { provider: "<RSS/news API>", feeds: ["<business RSS>"], count: 5, rotateSec: 12 },
+     spotlight: { symbols: ["NVDA","TSLA","SPCX"], rotateSec: 15 }
+   };
+   async function refreshAll(){ ... fetch each, then call render*(data) below ... }
+------------------------------------------------------------------- */
+
+// All quotes, forecasts and headlines below are illustrative; no live feed is connected.
+const DATA = {
+  forecast: [ // Atlanta, GA · sample three-day forecast
+    {d:"Mon", i:"sun", h:64, l:46},
+    {d:"Tue", i:"partly", h:62, l:45},
+    {d:"Wed", i:"rain", h:57, l:47}
+  ],
+  saintPaulForecast: [ // Saint Paul, MN · sample three day forecast
+    {d:"Mon", i:"snow", h:33, l:21},
+    {d:"Tue", i:"cloud", h:29, l:17},
+    {d:"Wed", i:"partly", h:30, l:19}
+  ],
+  nfl: [ // Entire panel is illustrative: not verified live NFL standings or schedule.
+    {team:"Pittsburgh Steelers", code:"PIT", color:"#272727", gold:"#FFB612",
+     record:"7–3", rank:"2nd AFC North", streak:"W2", next:"vs Browns · Sun 1:00 PM ET"},
+    {team:"Minnesota Vikings", code:"MIN", color:"#6A3CA0", gold:"#FFC62F",
+     record:"6–4", rank:"2nd NFC North", streak:"L1", next:"at Lions · Sun 1:00 PM ET"},
+    {team:"Green Bay Packers", code:"GB", color:"#227052", gold:"#FFB612",
+     record:"7–3", rank:"1st NFC North", streak:"W3", next:"vs Bears · Sun 4:25 PM ET"}
+  ],
+  quotes: [
+    {n:"NVIDIA", s:"NVDA", px:"186.42", ch:+1.84, sp:[178,180,179,182,181,184,183,185,184,186.4]},
+    {n:"Tesla",  s:"TSLA", px:"402.17", ch:-0.92, sp:[409,407,410,406,405,407,404,403,405,402.2]},
+    {n:"SpaceX", s:"SPCX", px:"168.25", ch:+1.27, sp:[156,158,157,161,160,163,162,165,164,168.25]},
+    {n:"Anthropic", s:"ANT", upcoming:true, note:"IPO Nov 19 · $70–78 range"},
+    {gap:true},
+    {n:"Dow Jones", s:"DJIA", px:"47,820", ch:+0.41, sp:[47500,47560,47530,47610,47640,47600,47700,47760,47740,47820]},
+    {n:"S&P 500", s:"SPX", px:"6,812", ch:+0.36, sp:[6770,6778,6774,6786,6790,6784,6798,6805,6801,6812]},
+    {n:"Nasdaq", s:"Composite", px:"23,146", ch:-0.22, sp:[23230,23210,23240,23200,23190,23205,23170,23160,23175,23146]}
+  ],
+  news: [
+    {src:"Markets",   hd:"Investors weigh a slower path for rate cuts as inflation cools unevenly"},
+    {src:"Technology",hd:"Chipmakers extend rally as data-center spending plans grow for next year"},
+    {src:"Energy",    hd:"Oil steadies after a volatile week as winter demand outlook improves"},
+    {src:"Real estate",hd:"Commercial lenders see refinancing pressure ease in the office sector"},
+    {src:"Economy",   hd:"Holiday retail forecasts point to modest gains in consumer spending"}
+  ]
+};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let SUN={rise:7*60+8,set:17*60+35};
+const icon=i=>`<svg class="wx" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-${i}"/></svg>`;
+const tradable=()=>DATA.quotes.filter(q=>!q.gap);
+const fmtPrice=q=>q.dollar||q.s==="NVDA"||q.s==="TSLA"||q.s==="SPCX" ? "$"+q.px:q.px;
+const changePill=q=>q.ch==null?'':`<span class="change-pill ${q.ch>=0?'up':'down'}">${q.ch>=0?'▲':'▼'} ${Math.abs(q.ch).toFixed(2)}%</span>`;
+
+function renderForecast(items){
+  const low=Math.min(...items.map(x=>x.l))-3, high=Math.max(...items.map(x=>x.h))+3;
+  $('forecast').innerHTML=items.map(x=>{
+    const from=Math.max(0,100*(x.l-low)/(high-low));
+    const to=Math.max(0,100*(high-x.h)/(high-low));
+    return `<div class="forecast-day"><div class="weekday">${x.d}</div>${icon(x.i)}<div class="temps">${x.h}°<span>${x.l}°</span></div><div class="range-track" style="--from:${from}%;--to:${to}%" aria-hidden="true"></div></div>`;
+  }).join('');
+}
+function renderSaintPaul(items){
+  $('saint-forecast').innerHTML=items.map(x=>
+    `<div class="mini-day"><div class="weekday">${x.d}</div>${icon(x.i)}<div class="temps">${x.h}°<span>${x.l}°</span></div></div>`
+  ).join('');
+}
+function renderNFL(items){
+  $('nfl').innerHTML=items.map(x=>`<div class="nfl-team" style="--team-color:${x.color};--team-gold:${x.gold}">
+    <div class="nfl-main"><span class="nfl-name">${x.team}</span><span class="nfl-record">${x.record}</span></div>
+    <div class="nfl-details"><span class="nfl-rank">${x.rank}</span><span class="nfl-divider"></span><span class="nfl-streak"><b>Streak</b>${x.streak}</span></div>
+    <div class="nfl-next"><span class="game-label">Next</span><span class="game-detail">${x.next}</span></div>
+  </div>`).join('');
+}
+function areaChart(values,up,id){
+  const w=860,h=312,left=18,right=20,top=25,bottom=25;
+  const mn=Math.min(...values),mx=Math.max(...values),pad=(mx-mn||Math.abs(mx)*.01||1)*.17;
+  const points=values.map((v,i)=>{
+    const x=left+(w-left-right)*i/(values.length-1), y=top+(h-top-bottom)*(1-(v-mn+pad)/(mx-mn+2*pad));
+    return [x,y];
+  });
+  const line=points.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const fill=line+` L${points[points.length-1][0]},${h} L${points[0][0]},${h} Z`;
+  const last=points[points.length-1], color=up?'#99C7A6':'#E29A91';
+  return `<svg class="area-chart" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-label="${up===null?'':''}Price trend">
+    <defs><linearGradient id="area-${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${color}" stop-opacity=".26"/><stop offset="100%" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="rgba(255,255,255,.09)" stroke-width="1"><path d="M18 72H840 M18 155H840 M18 238H840" stroke-dasharray="4 10"/></g>
+    <path d="${fill}" fill="url(#area-${id})"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="12" fill="${color}" opacity=".16"/><circle cx="${last[0]}" cy="${last[1]}" r="5.5" fill="${color}"/>
+    </svg>`;
+}
+function quoteCard(q){
+  if(q.pending)return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
+  if(q.upcoming)return `<div class="quote-card upcoming"><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
+  return `<div class="quote-card"><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div><div class="quote-bottom">${changePill(q)}<span class="hint">${q.hint||'Sample close'}</span></div></div>`;
+}
+const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
+function renderMarkets(){
+  const q=tradable(),s=q.find(x=>x.s===spotSymbols[spotIndex]);
+  $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
+  $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 03  ·  15s`;
+  $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
+}
+function rotateSpotlight(){
+  $('spotlight').classList.add('is-changing');$('market-grid').classList.add('is-changing');
+  window.setTimeout(()=>{spotIndex=(spotIndex+1)%spotSymbols.length;renderMarkets();
+    $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
+}
+let newsIndex=0;
+function renderNews(items){
+  $('list').innerHTML=items.map((x,k)=>`<div class="news-li" data-k="${k}"><i>0${k+1}</i><span>${esc(x.hd)}</span></div>`).join('');
+  showNews(0,true);
+}
+function showNews(k,instant=false){
+  const apply=()=>{
+    $('f-src').textContent=DATA.news[k].src;
+    $('f-hd').textContent=DATA.news[k].hd;
+    $('f-count').textContent=`0${k+1} / 0${DATA.news.length}`;
+    document.querySelectorAll('.news-li').forEach(el=>el.classList.toggle('on',+el.dataset.k===k));
+    $('feature').classList.remove('fade');
+  };
+  if(instant){apply();return;}
+  $('feature').classList.add('fade');window.setTimeout(apply,850);
+}
+function renderTape(){
+  const tape=tradable().map(q=>{
+    const sym=q.s==='Composite'?'NASDAQ':q.s;
+    if(q.upcoming)return `<span class="tape-item"><b class="tape-symbol">ANT</b><span class="tape-change soon">IPO NOV 19 · $70–78</span><span class="tape-sep"></span></span>`;
+    return `<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${fmtPrice(q)}</span><span class="tape-change ${q.ch>=0?'up':'down'}">${q.ch>=0?'+':''}${q.ch.toFixed(2)}%</span><span class="tape-sep"></span></span>`;
+  }).join('');
+  $('tape-track').innerHTML=`<div class="tape-group">${tape}</div><div class="tape-group" aria-hidden="true">${tape}</div>`;
+}
+
+const TZ='America/New_York'; // Canonical Eastern Time IANA zone for Atlanta, GA
+function nyParts(now){
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true}).formatToParts(now);
+  const g=t=>parts.find(p=>p.type===t)?.value||'';
+  return {hour:g('hour'),minute:g('minute'),ampm:g('dayPeriod')};
+}
+function updateSun(now){
+  // Sunrise/sunset: sample inputs until live weather loads (SUN is updated by applyLive).
+  const timeParts=new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
+  const g=t=>Number(timeParts.find(p=>p.type===t)?.value||0);
+  const m=g('hour')*60+g('minute'), sunrise=SUN.rise, sunset=SUN.set;
+  const t=Math.max(0,Math.min(1,(m-sunrise)/(sunset-sunrise)));
+    // (sunrise/sunset come from live weather once loaded; see SUN)
+  // Quadratic Bézier point for M24,75 Q275,-63 526,75.
+  const x=(1-t)*(1-t)*24+2*(1-t)*t*275+t*t*526;
+  const y=(1-t)*(1-t)*75+2*(1-t)*t*(-63)+t*t*75;
+  for(const id of ['sun-dot','sun-glow']){$(id).setAttribute('cx',x);$(id).setAttribute('cy',y);}
+  $('sun-dot').style.opacity=m>=sunrise&&m<=sunset?'1':'.32';
+}
+function tick(){
+  const now=new Date(),p=nyParts(now);
+  $('time').innerHTML=`${p.hour}<span class="colon">:</span>${p.minute}<span class="ampm">${p.ampm}</span>`;
+  const wd=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}).format(now);
+  const md=new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'long',day:'numeric',year:'numeric'}).format(now);
+  $('date').innerHTML=`<em>${wd},</em> ${md}`;
+  const h=Number(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hourCycle:'h23'}).format(now));
+  $('greeting').textContent=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+  updateSun(now);
+}
+function fit(){
+  const scale=Math.min(window.innerWidth/3840,window.innerHeight/2160);
+  $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
+}
+renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
+tick();fit();window.addEventListener('resize',fit);
+/* ------------------------------------------------------------------
+   LIVE: polls data.json (written by scripts/update.mjs; no keys in this page)
+   and swaps sample values for real ones. A section with no live data keeps its
+   "sample" labels; a section whose last fetch failed keeps last good data with
+   an "as of" note and a stale flag.
+------------------------------------------------------------------- */
+let LIVE_DATA=null, lastSig={};
+const POLL_MS=3*60*1000;
+const fmtTime=iso=>new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(new Date(iso));
+const fmtDay=iso=>new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(new Date(iso));
+const etNow=()=>{const p=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',hour:'numeric',minute:'2-digit',hourCycle:'h23',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t)?.value;return {wd:g('weekday'),mins:+g('hour')*60+ +g('minute'),key:`${g('year')}-${g('month')}-${g('day')}`};};
+const ageH=iso=>iso?(Date.now()-new Date(iso))/36e5:Infinity;
+const asOf=(sec,maxH)=>{const st=!!sec.lastError||ageH(sec.asOf)>maxH;const today=new Date(sec.asOf).toDateString()===new Date().toDateString();return {stale:st,text:`as of ${today?'':fmtDay(sec.asOf)+' '}${fmtTime(sec.asOf)}${st?' · stale':''}`};};
+const hm=s=>{const [h,m]=s.split(':').map(Number);return h*60+m;};
+const ampm=s=>{let [h,m]=s.split(':').map(Number);const ap=h>=12?'PM':'AM';h=h%12||12;return `${h}:${String(m).padStart(2,'0')} ${ap}`;};
+const changed=(k,v)=>{const s=JSON.stringify(v);if(lastSig[k]===s)return false;lastSig[k]=s;return true;};
+function marketOpenNow(d){
+  const e=etNow(), wk=!['Sat','Sun'].includes(e.wd);
+  const m=d?.stocks?.market; const hol=m&&m.holiday&&new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(m.checkedAt))===e.key;
+  return wk&&!hol&&e.mins>=570&&e.mins<960;
+}
+function nextOpenText(){
+  const e=etNow(), days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; let i=days.indexOf(e.wd);
+  if(i>=1&&i<=5&&e.mins<570)return 'opens 9:30';
+  do{i=(i+1)%7;}while(i===0||i===6);
+  return `opens ${days[i]} 9:30`;
+}
+function applyWeather(w){
+  if(!w?.asOf||!w.cities)return;
+  const a=w.cities.atlanta,s=w.cities.saintPaul,ao=asOf(w,30);
+  if(changed('wx',[w.asOf,a,s])){
+    DATA.forecast=a.forecast.map(x=>({d:x.d,i:x.i,h:x.h,l:x.l}));renderForecast(DATA.forecast);
+    DATA.saintPaulForecast=s.forecast.map(x=>({d:x.d,i:x.i,h:x.h,l:x.l}));renderSaintPaul(DATA.saintPaulForecast);
+    $('wx-icon').setAttribute('href','#i-'+a.now.i);
+    $('wx-temp').innerHTML=`${a.now.temp}<sup>°</sup>`;
+    $('wx-cond').textContent=a.now.cond;
+    $('wx-hl').innerHTML=a.today.h!=null?`High <b>${a.today.h}°</b> &nbsp;·&nbsp; Low <b>${a.today.l}°</b>`:'';
+    $('wx-wind').textContent=a.now.windMph!=null?`Wind ${a.now.windMph} mph ${a.now.windDir}`:'';
+    $('sp-icon').setAttribute('href','#i-'+s.now.i);
+    $('sp-temp').textContent=`${s.now.temp}°`;
+    $('sp-cond').textContent=s.now.cond;
+    $('sp-detail').textContent=s.today.h!=null?`High ${s.today.h}° · Low ${s.today.l}°`:'';
+    if(a.today.sunrise&&a.today.sunset){SUN={rise:hm(a.today.sunrise),set:hm(a.today.sunset)};
+      $('sunrise-time').textContent=ampm(a.today.sunrise);$('sunset-time').textContent=ampm(a.today.sunset);
+      $('sunrise-label').textContent='Sunrise';$('sunset-label').textContent='Sunset';
+      document.querySelector('.sun-journey').setAttribute('aria-label',`Atlanta daylight path from sunrise at ${ampm(a.today.sunrise)} to sunset at ${ampm(a.today.sunset)}`);}
+    document.querySelector('.weather-panel').setAttribute('aria-label','Atlanta, Georgia weather, with Saint Paul, Minnesota secondary weather');
+    document.querySelector('.atlanta-cards').setAttribute('aria-label','Atlanta current conditions and three-day forecast');
+    document.querySelector('.atlanta-now').setAttribute('aria-label',`Atlanta: ${a.now.temp} degrees, ${a.now.cond}`);
+  }
+  $('wx-deck').textContent=`Main location · ${w.credit||'Weather: Open-Meteo'}${ao.stale?' · stale':''}`;
+  $('wx-now-note').textContent=ao.text; $('sp-note').textContent=ao.text;
+}
+function nextGame(n){
+  if(!n)return 'No game scheduled';
+  const when=new Date(n.date), now=new Date();
+  const day=when-now<6*864e5?fmtDay(n.date):new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'short',day:'numeric'}).format(when);
+  return `${n.homeAway==='away'?'at':'vs'} ${n.opponent} · ${day} ${fmtTime(n.date)} ET`;
+}
+function applyNFL(f){
+  if(!f?.asOf||!f.teams?.length)return;
+  const ao=asOf(f,30);
+  const rows=f.teams.map(t=>({team:t.team,code:t.code,color:t.color,gold:t.gold,record:t.record,rank:t.rank||'—',streak:t.streak,next:nextGame(t.next)}));
+  if(changed('nfl',rows)){DATA.nfl=rows;renderNFL(rows);
+    document.querySelector('.nfl-panel').setAttribute('aria-label','NFL standings for Pittsburgh Steelers, Minnesota Vikings, and Green Bay Packers');
+    $('nfl').setAttribute('aria-label','NFL team records, division ranks, streaks and next games');}
+  $('nfl-deck').textContent=`Three teams · ESPN${ao.stale?' · stale':''}`;
+  $('nfl-foot').textContent=`Standings via ESPN · ${ao.text}`;
+}
+function applyNews(n){
+  if(!n?.asOf||!n.items?.length)return;
+  const ao=asOf(n,3);
+  const items=n.items.map(x=>({src:x.src,hd:x.hd}));
+  if(changed('news',items)){DATA.news=items;newsIndex=0;renderNews(items);
+    document.querySelector('.business-panel').setAttribute('aria-label','Business headlines from BBC News and NPR');}
+  const srcs=[...new Set(items.map(x=>x.src))].join(' · ');
+  $('news-deck').textContent=`${srcs} · ${ao.text}`;
+}
+const money=(v,dp=2)=>v.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});
+function applyStocks(st){
+  const open=marketOpenNow(LIVE_DATA);
+  $('ms-text').textContent=open?'Markets open · closes 4:00':`Markets closed · ${nextOpenText()}`;
+  const qs=st?.quotes||{}, hasQuotes=['NVDA','TSLA','SPCX'].every(k=>qs[k]?.px);
+  if(!hasQuotes){
+    if(st?.status==='key-pending'){$('ms-note').textContent='quotes pending';$('mk-deck').textContent='Finnhub key pending · example data';}
+    return;
+  }
+  const maxH=open?0.75:96, ao=asOf(st,maxH);
+  const lastT=Math.max(...Object.values(qs).filter(q=>q.t).map(q=>q.t))*1000;
+  const closeLabel=`${new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}).format(new Date(lastT))} close`;
+  const hint=open?`as of ${fmtTime(st.asOf)}`:'Last close';
+  const card=(key,base)=>{const q=qs[key];if(!q||!q.px)return {...base,pending:true,hint:'Quote pending'};
+    const hist=(st.history?.[key]||[]).map(p=>p.c);
+    const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
+    const isIdx=q.kind==='index';
+    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,isIdx?0:2),ch:q.ch??0,sp,dollar:!isIdx,hint,
+      chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
+  const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
+  const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
+    card('DOW',{n:'Dow Jones',s:'DIA'}),card('SPX',{n:'S&P 500',s:'SPY'}),card('NASDAQ',{n:'Nasdaq',s:'QQQ'})];
+  if(changed('mk',quotes)){DATA.quotes=quotes;renderMarkets();renderTape();
+    document.querySelector('.markets-panel').setAttribute('aria-label','Markets');
+    document.querySelector('.ticker-footer').setAttribute('aria-label','Scrolling market ticker');}
+  $('ms-note').textContent=open?ao.text:'last close';
+  $('mk-deck').textContent=`${open?'Live · 15-min quotes':closeLabel}${ao.stale?' · '+ao.text:''}`;
+}
+function applyLive(d){
+  if(!d)return;
+  try{applyWeather(d.weather);}catch(e){console.error('weather',e);}
+  try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
+  try{applyNews(d.news);}catch(e){console.error('news',e);}
+  try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
+  const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
+  if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
+  if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
+  $('credit-label').textContent=credits.join(' · ');
+}
+async function refreshAll(){
+  try{const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);LIVE_DATA=await r.json();}
+  catch(e){console.warn('data.json unavailable; keeping last good data',e);}
+  applyLive(LIVE_DATA);
+}
+refreshAll();
+window.setInterval(refreshAll,POLL_MS);
+window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
+
+window.setInterval(tick,1000);
+window.setInterval(rotateSpotlight,15000);
+window.setInterval(()=>{newsIndex=(newsIndex+1)%DATA.news.length;showNews(newsIndex);},12000);
+</script>
+</body>
+</html>
