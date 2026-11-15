@@ -1107,7 +1107,7 @@ function applyLive(d){
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
   try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
-  try{if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
+  try{checkMarketAlerts();scheduleScoreWatch();if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
@@ -2071,24 +2071,28 @@ document.addEventListener('keydown',e=>{
 const ALERT_PRI={nws:3,market:2,score:1};
 let bannerState={kind:null,text:'',until:0,priority:0};
 let nflPrevScores={}, nflWatchTimer=null, nwsTimer=null;
+const BANNER_KINDS=new Set(['nws','market','score']);
 function renderBanner(){
   const el=$('alert-banner'); if(!el)return;
-  const on=bannerState.kind==='nws'&&!!bannerState.text;
+  const on=BANNER_KINDS.has(bannerState.kind)&&!!bannerState.text;
   $('stage')?.classList.toggle('has-alert',on);
   if(!on){el.hidden=true;el.innerHTML='';return;}
   el.hidden=false;
   el.innerHTML=`<span class="kicker">ALERT</span><span class="alert-text">${esc(bannerState.text)}</span>`;
 }
 function showBanner(kind,text,ms){
-  if(kind!=='nws'||!text)return;
-  const now=Date.now();
-  bannerState={kind:'nws',text,until:ms?now+ms:0,priority:ALERT_PRI.nws};
+  if(!BANNER_KINDS.has(kind)||!text)return;
+  const pri=ALERT_PRI[kind]||0, now=Date.now();
+  if(bannerState.kind&&bannerState.priority>pri&&(!bannerState.until||bannerState.until>now))return;
+  bannerState={kind,text,until:ms?now+ms:0,priority:pri};
   renderBanner();
 }
 function clearBanner(kind){
   if(kind&&bannerState.kind!==kind)return;
   bannerState={kind:null,text:'',until:0,priority:0};
   renderBanner();
+  checkMarketAlerts();
+  if(!bannerState.kind)checkNwsBanner();
 }
 function expireBanner(){
   if(bannerState.until&&Date.now()>=bannerState.until)clearBanner(bannerState.kind);
@@ -2116,7 +2120,11 @@ function marketAlertText(){
   }
   return null;
 }
-function checkMarketAlerts(){ /* market-drop banners are not shown */ }
+function checkMarketAlerts(){
+  const text=marketAlertText();
+  if(text)showBanner('market',text);
+  else if(bannerState.kind==='market')clearBanner('market');
+}
 let lastNwsText=null;
 function nwsHeadline(a){return (a.headline||a.event||'').replace(/\s+/g,' ').trim();}
 function pickNws(items){
@@ -2194,8 +2202,10 @@ async function pollLiveNflScores(){
         if(!Number.isFinite(before)||!Number.isFinite(after)||after<=before)continue;
         const typ=scoreDeltaType(after-before);
         if(!typ)continue;
+        showBanner('score',`${typ} ${now[side].name||''} ${after}`.replace(/\s+/g,' ').trim(),ALERTS.scoreBannerMs);
         break;
       }
+      if(bannerState.kind==='score')break;
     }
   }
   nflPrevScores=cur;
