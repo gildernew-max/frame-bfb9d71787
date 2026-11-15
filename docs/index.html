@@ -1218,7 +1218,7 @@ function scoreboardTeam(c){
   const t=c.team||{};
   const rec=(c.records||[]).find(r=>r.type==='total'||r.name==='overall');
   const rankN=Number(c.curatedRank?.current);
-  return {name:t.displayName||t.name||'',short:t.shortDisplayName||t.name||'',abbrev:t.abbreviation||'',
+  return {id:String(t.id||''),name:t.displayName||t.name||'',short:t.shortDisplayName||t.name||'',abbrev:t.abbreviation||'',
     score:c.score==null||c.score===''?null:String(c.score),logo:t.logo||t.logos?.[0]?.href||'',
     record:rec?.summary||'',winner:!!c.winner,color:t.color?('#'+String(t.color).replace(/^#/,'')):'',
     rank:Number.isFinite(rankN)&&rankN>=1&&rankN<=25?rankN:null};
@@ -1254,25 +1254,90 @@ function parseEspnScoreboard(raw){
     return {id:String(ev.id||comp.id||''),start:comp.date||ev.date,state:type.state||'pre',status:scoreboardStatus(ev,comp),
       period:st.period||0,clock:st.displayClock||'',completed:!!type.completed,away:scoreboardTeam(away),home:scoreboardTeam(home)};
   }).filter(Boolean);
-  const order={in:0,pre:1,post:2};
-  games.sort((a,b)=>(order[a.state]??9)-(order[b.state]??9)||new Date(a.start)-new Date(b.start)||String(a.id).localeCompare(String(b.id)));
-  const ranked=g=>(g.away?.rank>=1&&g.away.rank<=25)||(g.home?.rank>=1&&g.home.rank<=25);
-  let list=games;
-  if(list.length>24){
-    const keep=list.filter(g=>g.state==='in'||ranked(g));
-    list=keep.length>=8?keep:list.slice(0,24);
-  }
   return {provider:'ESPN',week:raw.week?.number??null,season:raw.season?.year??null,
-    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games:list};
+    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games};
+}
+function teamIdFromRef(ref){const m=String(ref||'').match(/\/teams\/(\d+)/);return m?m[1]:'';}
+function parseApRanks(raw){
+  return (raw?.ranks||[]).map(r=>{
+    const team=r.team||{};
+    const id=String(team.id||teamIdFromRef(team.$ref)||'');
+    const n=Number(r.current||r.rank);
+    if(!id||!Number.isFinite(n)||n<1||n>25)return null;
+    return {rank:n,id,abbrev:team.abbreviation||''};
+  }).filter(Boolean).sort((a,b)=>a.rank-b.rank);
+}
+function apRanksFromGames(games){
+  const m=new Map();
+  for(const g of games){
+    for(const side of ['away','home']){
+      const t=g[side],n=Number(t?.rank);
+      if(Number.isFinite(n)&&n>=1&&n<=25&&!m.has(n))m.set(n,{rank:n,id:String(t.id||''),abbrev:t.abbrev||''});
+    }
+  }
+  return [...m.values()].sort((a,b)=>a.rank-b.rank);
+}
+function selectCfbByAp(games,apRanks){
+  const ranks=(apRanks&&apRanks.length)?apRanks:apRanksFromGames(games);
+  const byTeam=new Map();
+  for(const g of games){
+    for(const side of ['away','home']){
+      const t=g[side];
+      if(t?.id)byTeam.set(String(t.id),g);
+      if(t?.abbrev)byTeam.set(String(t.abbrev).toUpperCase(),g);
+    }
+  }
+  const included=[],seen=new Set();
+  let covered=0;
+  for(const t of ranks){
+    if(covered>=20)break;
+    const g=byTeam.get(String(t.id))||byTeam.get(String(t.abbrev||'').toUpperCase());
+    if(!g)continue;
+    if(!seen.has(g.id)){included.push(g);seen.add(g.id);}
+    covered+=1;
+  }
+  if(apRanks&&apRanks.length){
+    const byId=new Map(apRanks.map(t=>[String(t.id),t.rank]));
+    const byAb=new Map(apRanks.filter(t=>t.abbrev).map(t=>[String(t.abbrev).toUpperCase(),t.rank]));
+    const apply=t=>{
+      if(!t)return;
+      const r=byId.get(String(t.id))||byAb.get(String(t.abbrev||'').toUpperCase());
+      t.rank=Number.isFinite(r)?r:null;
+    };
+    for(const g of included){apply(g.away);apply(g.home);}
+  }
+  return included;
+}
+async function loadApRanks(){
+  const idx=await fetch('https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings?t='+Date.now(),{cache:'no-store'});
+  if(!idx.ok)throw new Error(idx.status);
+  const j=await idx.json();
+  const avail=j.availableRankings||[];
+  const ap=avail.find(r=>String(r.id)==='1'||/AP Top 25/i.test(r.name||''))||avail.find(r=>/\bAP\b/i.test(r.name||''));
+  const week=ap?.week||j.requestedSeason?.week?.number||j.latestWeek?.number;
+  const year=j.requestedSeason?.year||j.latestSeason?.year;
+  const typ=ap?.seasonType||2;
+  if(!year||!week)throw new Error('no AP week');
+  const r=await fetch(`https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/${year}/types/${typ}/weeks/${week}/rankings/1?lang=en&region=us`,{cache:'no-store'});
+  if(!r.ok)throw new Error(r.status);
+  const ranks=parseApRanks(await r.json());
+  if(!ranks.length)throw new Error('empty AP ranks');
+  return ranks;
 }
 async function loadScoreboard(league){
   const cfb=league==='cfb';
-  const url=(cfb?ESPN_CFB_SB:ESPN_NFL_SB)+'?t='+Date.now();
+  const url=cfb?ESPN_CFB_SB+'?groups=80&limit=300&t='+Date.now():ESPN_NFL_SB+'?t='+Date.now();
   const fbKey=cfb?'cfbScoreboard':'nflScoreboard';
   try{
     const r=await fetch(url,{cache:'no-store'});
     if(!r.ok)throw new Error(r.status);
     const parsed=parseEspnScoreboard(await r.json());
+    if(cfb){
+      let ap=null;
+      try{ap=await loadApRanks();}catch(e){console.warn('AP ranks',e);}
+      parsed.games=selectCfbByAp(parsed.games,ap);
+      parsed.poll=ap&&ap.length?'AP':(parsed.games.length?'ranked':'');
+    }
     if(!parsed.games.length&&parsed.week==null)throw new Error('empty scoreboard');
     return {source:'espn',data:parsed,asOf:new Date().toISOString()};
   }catch(e){
@@ -1302,7 +1367,7 @@ function renderNflScoreboard(board,meta){
   const src=meta?.source==='data.json'?'ESPN via saved data':'ESPN';
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
   const bye=!cfb&&board?.byes?.length?` · Bye ${board.byes.join(', ')}`:'';
-  const group=cfb?' · Top 25':'';
+  const group=cfb?(board?.poll==='AP'?' · AP':' · Top 25'):'';
   $('nfl-overlay-deck').textContent=`${week}${group} · ${src}${as}${bye}`;
   if(!games.length){
     sbPageGames=[];sbPage=0;sbPageCount=1;stopSbPager();updateSbPageBtn();

@@ -249,6 +249,7 @@ function scoreboardTeam(c) {
   return {
     name: t.displayName || t.name || '',
     short: t.shortDisplayName || t.name || '',
+    id: String(t.id || ''),
     abbrev: t.abbreviation || '',
     score: c.score == null || c.score === '' ? null : String(c.score),
     logo,
@@ -341,16 +342,80 @@ function scoreboardDue(sec, now, et) {
   if (liveOrSoon || window) return ageMin(sec.asOf, now) >= 12;
   return ageMin(sec.asOf, now) >= 6 * 60;
 }
+function teamIdFromRef(ref) {
+  const m = String(ref || '').match(/\/teams\/(\d+)/);
+  return m ? m[1] : '';
+}
+function parseApRanks(raw) {
+  return (raw?.ranks || []).map(r => {
+    const team = r.team || {};
+    const id = String(team.id || teamIdFromRef(team.$ref) || '');
+    const n = Number(r.current || r.rank);
+    if (!id || !Number.isFinite(n) || n < 1 || n > 25) return null;
+    return { rank: n, id, abbrev: team.abbreviation || '' };
+  }).filter(Boolean).sort((a, b) => a.rank - b.rank);
+}
+function apRanksFromGames(games) {
+  const m = new Map();
+  for (const g of games) {
+    for (const side of ['away', 'home']) {
+      const t = g[side], n = Number(t?.rank);
+      if (Number.isFinite(n) && n >= 1 && n <= 25 && !m.has(n)) m.set(n, { rank: n, id: String(t.id || ''), abbrev: t.abbrev || '' });
+    }
+  }
+  return [...m.values()].sort((a, b) => a.rank - b.rank);
+}
+function selectCfbByAp(games, apRanks) {
+  const ranks = (apRanks && apRanks.length) ? apRanks : apRanksFromGames(games);
+  const byTeam = new Map();
+  for (const g of games) {
+    for (const side of ['away', 'home']) {
+      const t = g[side];
+      if (t?.id) byTeam.set(String(t.id), g);
+      if (t?.abbrev) byTeam.set(String(t.abbrev).toUpperCase(), g);
+    }
+  }
+  const included = [], seen = new Set();
+  let covered = 0;
+  for (const t of ranks) {
+    if (covered >= 20) break;
+    const g = byTeam.get(String(t.id)) || byTeam.get(String(t.abbrev || '').toUpperCase());
+    if (!g) continue; // bye
+    if (!seen.has(g.id)) { included.push(g); seen.add(g.id); }
+    covered += 1;
+  }
+  if (apRanks && apRanks.length) {
+    const byId = new Map(apRanks.map(t => [String(t.id), t.rank]));
+    const byAb = new Map(apRanks.filter(t => t.abbrev).map(t => [String(t.abbrev).toUpperCase(), t.rank]));
+    const apply = t => {
+      if (!t) return;
+      const r = byId.get(String(t.id)) || byAb.get(String(t.abbrev || '').toUpperCase());
+      t.rank = Number.isFinite(r) ? r : null;
+    };
+    for (const g of included) { apply(g.away); apply(g.home); }
+  }
+  return included;
+}
+async function loadApRanks() {
+  const j = await getJSON('https://site.api.espn.com/apis/site/v2/sports/football/college-football/rankings');
+  const avail = j.availableRankings || [];
+  const ap = avail.find(r => String(r.id) === '1' || /AP Top 25/i.test(r.name || '')) || avail.find(r => /\bAP\b/i.test(r.name || ''));
+  const week = ap?.week || j.requestedSeason?.week?.number || j.latestWeek?.number;
+  const year = j.requestedSeason?.year || j.latestSeason?.year;
+  const typ = ap?.seasonType || 2;
+  if (!year || !week) throw new Error('no AP week');
+  const ranks = parseApRanks(await getJSON(`https://sports.core.api.espn.com/v2/sports/football/leagues/college-football/seasons/${year}/types/${typ}/weeks/${week}/rankings/1?lang=en&region=us`));
+  if (!ranks.length) throw new Error('empty AP ranks');
+  return ranks;
+}
 async function fetchCFBScoreboard() {
-  const raw = await getJSON('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard');
+  const raw = await getJSON('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80&limit=300');
   const parsed = parseNflScoreboard(raw);
   if (!parsed.games.length && !parsed.week) throw new Error('ESPN college scoreboard empty');
-  const ranked = g => (g.away?.rank >= 1 && g.away.rank <= 25) || (g.home?.rank >= 1 && g.home.rank <= 25);
-  if (parsed.games.length > 24) {
-    const keep = parsed.games.filter(g => g.state === 'in' || ranked(g));
-    if (keep.length >= 8) parsed.games = keep;
-    else parsed.games = parsed.games.slice(0, 24);
-  }
+  let ap = null;
+  try { ap = await loadApRanks(); } catch (e) { /* curatedRank walk still applies */ }
+  parsed.games = selectCfbByAp(parsed.games, ap);
+  parsed.poll = ap && ap.length ? 'AP' : (parsed.games.length ? 'ranked' : '');
   return parsed;
 }
 function cfbScoreboardDue(sec, now, et) {
