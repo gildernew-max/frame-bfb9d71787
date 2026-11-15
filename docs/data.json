@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T20:13:23.493Z",
+ "generatedAt": "2026-11-15T20:24:00.597Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -336,15 +336,10 @@
   "indexSource": "Yahoo Finance"
  },
  "lastRun": {
-  "at": "2026-11-15T20:13:23.493Z",
+  "at": "2026-11-15T20:24:00.597Z",
   "ran": [
-   "weather",
-   "nfl",
-   "nflScoreboard",
-   "news",
-   "rates",
-   "stocks:initial",
-   "futures"
+   "alerts",
+   "cfbScoreboard"
   ]
  },
  "rates": {
@@ -7161,6 +7156,649 @@
   ],
   "asOf": "2026-11-15T20:13:23.493Z",
   "lastAttempt": "2026-11-15T20:13:23.493Z",
+  "lastError": null
+ },
+ "alerts": {
+  "provider": "NWS",
+  "point": {
+   "name": "Atlanta, GA",
+   "lat": 33.749,
+   "lon": -84.388
+  },
+  "items": [],
+  "asOf": "2026-11-15T20:24:00.597Z",
+  "lastAttempt": "2026-11-15T20:24:00.597Z",
+  "lastError": null
+ },
+ "cfbScoreboard": {
+  "provider": "ESPN",
+  "week": 11,
+  "season": 2026,
+  "byes": [],
+  "games": [
+   {
+    "id": "401856887",
+    "start": "2026-11-15T18:00Z",
+    "state": "in",
+    "status": "Q4 12:47",
+    "period": 4,
+    "clock": "12:47",
+    "completed": false,
+    "away": {
+     "name": "Ole Miss Rebels",
+     "short": "Ole Miss",
+     "abbrev": "MISS",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
+     "record": "6-3",
+     "winner": false,
+     "color": "#13294b",
+     "rank": 19
+    },
+    "home": {
+     "name": "Oklahoma Sooners",
+     "short": "Oklahoma",
+     "abbrev": "OU",
+     "score": "21",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
+     "record": "5-4",
+     "winner": false,
+     "color": "#990000",
+     "rank": null
+    }
+   },
+   {
+    "id": "401858526",
+    "start": "2026-11-14T02:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Illinois Fighting Illini",
+     "short": "Illinois",
+     "abbrev": "ILL",
+     "score": "14",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#ff5f05",
+     "rank": null
+    },
+    "home": {
+     "name": "UCLA Bruins",
+     "short": "UCLA",
+     "abbrev": "UCLA",
+     "score": "22",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png",
+     "record": "10-0",
+     "winner": true,
+     "color": "#2774ae",
+     "rank": 4
+    }
+   },
+   {
+    "id": "401856860",
+    "start": "2026-11-14T03:15Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Houston Cougars",
+     "short": "Houston",
+     "abbrev": "HOU",
+     "score": "32",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#c8102e",
+     "rank": 14
+    },
+    "home": {
+     "name": "Colorado Buffaloes",
+     "short": "Colorado",
+     "abbrev": "COLO",
+     "score": "42",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/38.png",
+     "record": "4-6",
+     "winner": true,
+     "color": "#cfb87c",
+     "rank": null
+    }
+   },
+   {
+    "id": "401858296",
+    "start": "2026-11-14T17:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Duke Blue Devils",
+     "short": "Duke",
+     "abbrev": "DUKE",
+     "score": "25",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#00539b",
+     "rank": null
+    },
+    "home": {
+     "name": "Miami Hurricanes",
+     "short": "Miami",
+     "abbrev": "MIA",
+     "score": "36",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#f47423",
+     "rank": 7
+    }
+   },
+   {
+    "id": "401858301",
+    "start": "2026-11-14T17:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Wake Forest Demon Deacons",
+     "short": "Wake Forest",
+     "abbrev": "WAKE",
+     "score": "49",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/154.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#ceb888",
+     "rank": 13
+    },
+    "home": {
+     "name": "SMU Mustangs",
+     "short": "SMU",
+     "abbrev": "SMU",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2567.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#a80000",
+     "rank": null
+    }
+   },
+   {
+    "id": "401858522",
+    "start": "2026-11-14T17:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Northwestern Wildcats",
+     "short": "Northwestern",
+     "abbrev": "NU",
+     "score": "19",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/77.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#492f92",
+     "rank": null
+    },
+    "home": {
+     "name": "Ohio State Buckeyes",
+     "short": "Ohio State",
+     "abbrev": "OSU",
+     "score": "28",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png",
+     "record": "7-3",
+     "winner": true,
+     "color": "#ba0c2f",
+     "rank": 20
+    }
+   },
+   {
+    "id": "401856889",
+    "start": "2026-11-14T17:45Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Alabama Crimson Tide",
+     "short": "Alabama",
+     "abbrev": "ALA",
+     "score": "21",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#9e1b32",
+     "rank": 3
+    },
+    "home": {
+     "name": "Vanderbilt Commodores",
+     "short": "Vanderbilt",
+     "abbrev": "VAN",
+     "score": "6",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png",
+     "record": "4-6",
+     "winner": false,
+     "color": "#000000",
+     "rank": null
+    }
+   },
+   {
+    "id": "401856888",
+    "start": "2026-11-14T20:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Tennessee Volunteers",
+     "short": "Tennessee",
+     "abbrev": "TENN",
+     "score": "22",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#ff8200",
+     "rank": 8
+    },
+    "home": {
+     "name": "Texas A&M Aggies",
+     "short": "Texas A&M",
+     "abbrev": "TA&M",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png",
+     "record": "4-6",
+     "winner": false,
+     "color": "#500000",
+     "rank": null
+    }
+   },
+   {
+    "id": "401856883",
+    "start": "2026-11-14T20:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Missouri Tigers",
+     "short": "Missouri",
+     "abbrev": "MIZ",
+     "score": "21",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#f1b82d",
+     "rank": 22
+    },
+    "home": {
+     "name": "Georgia Bulldogs",
+     "short": "Georgia",
+     "abbrev": "UGA",
+     "score": "48",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#ba0c2f",
+     "rank": 1
+    }
+   },
+   {
+    "id": "401858294",
+    "start": "2026-11-14T20:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Boston College Eagles",
+     "short": "Boston College",
+     "abbrev": "BC",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/103.png",
+     "record": "4-6",
+     "winner": false,
+     "color": "#8c2232",
+     "rank": null
+    },
+    "home": {
+     "name": "Notre Dame Fighting Irish",
+     "short": "Notre Dame",
+     "abbrev": "ND",
+     "score": "41",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#062340",
+     "rank": 5
+    }
+   },
+   {
+    "id": "401858518",
+    "start": "2026-11-14T20:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "USC Trojans",
+     "short": "USC",
+     "abbrev": "USC",
+     "score": "13",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/30.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#9d2235",
+     "rank": 18
+    },
+    "home": {
+     "name": "Indiana Hoosiers",
+     "short": "Indiana",
+     "abbrev": "IU",
+     "score": "27",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/84.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#970310",
+     "rank": 9
+    }
+   },
+   {
+    "id": "401858523",
+    "start": "2026-11-14T20:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Michigan Wolverines",
+     "short": "Michigan",
+     "abbrev": "MICH",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png",
+     "record": "5-5",
+     "winner": false,
+     "color": "#00274c",
+     "rank": null
+    },
+    "home": {
+     "name": "Oregon Ducks",
+     "short": "Oregon",
+     "abbrev": "ORE",
+     "score": "31",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
+     "record": "7-3",
+     "winner": true,
+     "color": "#00934b",
+     "rank": 16
+    }
+   },
+   {
+    "id": "401860914",
+    "start": "2026-11-14T23:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Oregon State Beavers",
+     "short": "Oregon St",
+     "abbrev": "ORST",
+     "score": "41",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/204.png",
+     "record": "5-5",
+     "winner": false,
+     "color": "#dc4405",
+     "rank": null
+    },
+    "home": {
+     "name": "Boise State Broncos",
+     "short": "Boise St",
+     "abbrev": "BOIS",
+     "score": "46",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/68.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#0033a0",
+     "rank": 24
+    }
+   },
+   {
+    "id": "401856884",
+    "start": "2026-11-14T23:15Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Florida Gators",
+     "short": "Florida",
+     "abbrev": "FLA",
+     "score": "21",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
+     "record": "6-4",
+     "winner": true,
+     "color": "#0021a5",
+     "rank": null
+    },
+    "home": {
+     "name": "Kentucky Wildcats",
+     "short": "Kentucky",
+     "abbrev": "UK",
+     "score": "14",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#0033a0",
+     "rank": 11
+    }
+   },
+   {
+    "id": "401856858",
+    "start": "2026-11-15T00:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Baylor Bears",
+     "short": "Baylor",
+     "abbrev": "BAY",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/239.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#154734",
+     "rank": null
+    },
+    "home": {
+     "name": "BYU Cougars",
+     "short": "BYU",
+     "abbrev": "BYU",
+     "score": "28",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#0047ba",
+     "rank": 10
+    }
+   },
+   {
+    "id": "401856885",
+    "start": "2026-11-15T00:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Texas Longhorns",
+     "short": "Texas",
+     "abbrev": "TEX",
+     "score": "22",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#af5c37",
+     "rank": 6
+    },
+    "home": {
+     "name": "LSU Tigers",
+     "short": "LSU",
+     "abbrev": "LSU",
+     "score": "21",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/99.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#461d76",
+     "rank": 21
+    }
+   },
+   {
+    "id": "401858519",
+    "start": "2026-11-15T00:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Purdue Boilermakers",
+     "short": "Purdue",
+     "abbrev": "PUR",
+     "score": "7",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png",
+     "record": "3-7",
+     "winner": false,
+     "color": "#ceb888",
+     "rank": null
+    },
+    "home": {
+     "name": "Iowa Hawkeyes",
+     "short": "Iowa",
+     "abbrev": "IOWA",
+     "score": "28",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#231f20",
+     "rank": 15
+    }
+   },
+   {
+    "id": "401856882",
+    "start": "2026-11-15T00:45Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "South Carolina Gamecocks",
+     "short": "South Carolina",
+     "abbrev": "SC",
+     "score": "6",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2579.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#73000a",
+     "rank": 17
+    },
+    "home": {
+     "name": "Arkansas Razorbacks",
+     "short": "Arkansas",
+     "abbrev": "ARK",
+     "score": "34",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png",
+     "record": "4-6",
+     "winner": true,
+     "color": "#a32136",
+     "rank": null
+    }
+   },
+   {
+    "id": "401856863",
+    "start": "2026-11-15T02:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Texas Tech Red Raiders",
+     "short": "Texas Tech",
+     "abbrev": "TTU",
+     "score": "52",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#da291c",
+     "rank": 12
+    },
+    "home": {
+     "name": "Oklahoma State Cowboys",
+     "short": "Oklahoma St",
+     "abbrev": "OKST",
+     "score": "27",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/197.png",
+     "record": "6-4",
+     "winner": false,
+     "color": "#fe5c00",
+     "rank": 25
+    }
+   },
+   {
+    "id": "401856864",
+    "start": "2026-11-15T03:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Utah Utes",
+     "short": "Utah",
+     "abbrev": "UTAH",
+     "score": "40",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
+     "record": "10-0",
+     "winner": true,
+     "color": "#be0000",
+     "rank": 2
+    },
+    "home": {
+     "name": "Arizona Wildcats",
+     "short": "Arizona",
+     "abbrev": "ARIZ",
+     "score": "39",
+     "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#cc0033",
+     "rank": 23
+    }
+   }
+  ],
+  "asOf": "2026-11-15T20:24:00.597Z",
+  "lastAttempt": "2026-11-15T20:24:00.597Z",
   "lastError": null
  }
 }
