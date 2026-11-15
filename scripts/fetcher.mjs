@@ -38,7 +38,7 @@ async function getTextOnce(url, opts = {}) {
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), opts.timeout || 15000);
   try {
-    const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: opts.accept || '*/*' }, signal: ctl.signal });
+    const r = await fetch(url, { headers: { 'User-Agent': UA, Accept: opts.accept || '*/*', ...opts.headers }, signal: ctl.signal });
     if (!r.ok) throw new Error(`HTTP ${r.status} from ${new URL(url).host}`);
     return await r.text();
   } finally { clearTimeout(timer); }
@@ -221,14 +221,14 @@ async function fetchNews() {
   return { items, feedErrors: failed };
 }
 
-// ---------- stocks (Finnhub) ----------
+// ---------- stocks (Finnhub) + indexes (Yahoo Finance / Stooq / Finnhub fund) ----------
 const STOCKS = [
   { s: 'NVDA', n: 'NVIDIA' }, { s: 'TSLA', n: 'Tesla' }, { s: 'SPCX', n: 'SpaceX' }
 ];
 const INDEXES = [
-  { key: 'DOW', index: '^DJI', fund: 'DIA', n: 'Dow Jones', label: 'DJIA' },
-  { key: 'SPX', index: '^GSPC', fund: 'SPY', n: 'S&P 500', label: 'SPX' },
-  { key: 'NASDAQ', index: '^IXIC', fund: 'QQQ', n: 'Nasdaq', label: 'NASDAQ' }
+  { key: 'DOW', index: '^DJI', stooq: '^dji', fund: 'DIA', n: 'Dow Jones', label: 'DJIA' },
+  { key: 'SPX', index: '^GSPC', stooq: '^spx', fund: 'SPY', n: 'S&P 500', label: 'SPX' },
+  { key: 'NASDAQ', index: '^IXIC', stooq: '^ndq', fund: 'QQQ', n: 'Nasdaq', label: 'NASDAQ' }
 ];
 export const ANT_FIRST_TRADE = '2026-11-19';
 async function finnhub(path, key) {
@@ -238,36 +238,108 @@ async function finnhub(path, key) {
 }
 const validQuote = q => q && typeof q.c === 'number' && q.c > 0 && q.t > 0;
 
+const YAHOO_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
+async function yahooChartResult(symbol) {
+  const path = `/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=5d`;
+  let lastErr;
+  for (const host of ['query1.finance.yahoo.com', 'query2.finance.yahoo.com']) {
+    try {
+      const j = await getJSON(`https://${host}${path}`, { headers: { 'User-Agent': YAHOO_UA } });
+      const result = j?.chart?.result?.[0];
+      if (!result || !result.meta) throw new Error('Yahoo: no chart result');
+      return result;
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr;
+}
+// Prior trading day's close: last daily bar whose ET date is before the quote's ET date
+// (meta.chartPreviousClose is the close before the whole 5-day window, not yesterday's).
+function yahooPrevClose(result) {
+  const ts = result.timestamp || [];
+  const closes = result.indicators?.quote?.[0]?.close || [];
+  const quoteDateKey = etParts(new Date(result.meta.regularMarketTime * 1000)).dateKey;
+  let best = null;
+  for (let i = 0; i < ts.length; i++) {
+    const c = closes[i];
+    if (c == null) continue;
+    const dateKey = etParts(new Date(ts[i] * 1000)).dateKey;
+    if (dateKey < quoteDateKey && (!best || dateKey > best.dateKey)) best = { dateKey, c };
+  }
+  return best?.c ?? null;
+}
+async function fetchYahooIndex(symbol) {
+  const result = await yahooChartResult(symbol);
+  const price = result.meta?.regularMarketPrice;
+  const t = result.meta?.regularMarketTime;
+  const pc = yahooPrevClose(result);
+  if (!(price > 0) || !Number.isFinite(price) || !(pc > 0) || !Number.isFinite(pc) || !(t > 0)) throw new Error('Yahoo: invalid data');
+  return { c: price, pc, d: price - pc, dp: (price - pc) / pc * 100, t };
+}
+async function fetchStooqIndex(symbol) {
+  const csv = await getText(`https://stooq.com/q/l/?s=${encodeURIComponent(symbol)}&f=sd2t2ohlcp&h&e=csv`, { accept: 'text/csv' });
+  const trimmed = csv.trim();
+  const lines = trimmed.split(/\r?\n/);
+  if (trimmed.startsWith('<') || lines.length < 2) throw new Error('Stooq: bad response');
+  const row = lines[1].split(',');
+  if (row.length < 8) throw new Error('Stooq: bad row');
+  const close = Number(row[6]), prev = Number(row[7]);
+  if (!(close > 0) || !Number.isFinite(close) || !(prev > 0) || !Number.isFinite(prev)) throw new Error('Stooq: invalid numbers');
+  let t = Math.floor(Date.now() / 1000);
+  const parsed = row[1] && row[2] ? Date.parse(`${row[1]}T${row[2]}-05:00`) : NaN; // approx exchange-local (ET); DST not modeled
+  if (Number.isFinite(parsed)) t = Math.floor(parsed / 1000);
+  return { c: close, pc: prev, d: close - prev, dp: (close - prev) / prev * 100, t };
+}
+
 async function fetchStocks(prev, key, et, now) {
   const quotes = { ...(prev.quotes || {}) };
   const history = { ...(prev.history || {}) };
   const errors = [];
+  const indexSources = [];
   const put = (id, base, q) => {
+    const prevKind = quotes[id]?.kind;
     quotes[id] = { ...base, px: q.c, ch: q.dp, d: q.d, pc: q.pc, t: q.t, quoteTime: new Date(q.t * 1000).toISOString() };
-    const h = (history[id] || []).filter(p => p.t !== q.t);
+    let h = prevKind && prevKind !== base.kind ? [] : (history[id] || []); // fund <-> index are different scales
+    h = h.filter(p => p.t !== q.t);
     h.push({ t: q.t, c: q.c });
     history[id] = h.sort((a, b) => a.t - b.t).slice(-80);
   };
-  for (const st of STOCKS) {
-    try { const q = await finnhub(`quote?symbol=${st.s}`, key); if (!validQuote(q)) throw new Error('empty quote'); put(st.s, { s: st.s, n: st.n, kind: 'stock' }, q); }
-    catch (e) { errors.push(`${st.s}: ${clean(e.message)}`); }
+  if (key) {
+    for (const st of STOCKS) {
+      try { const q = await finnhub(`quote?symbol=${st.s}`, key); if (!validQuote(q)) throw new Error('empty quote'); put(st.s, { s: st.s, n: st.n, kind: 'stock' }, q); }
+      catch (e) { errors.push(`${st.s}: ${clean(e.message)}`); }
+    }
+    // ANT: stays "Upcoming" until a real quote appears on/after its first trading day.
+    const antBase = { s: 'ANT', n: 'Anthropic', kind: 'stock', firstTrade: ANT_FIRST_TRADE, range: '$70–78', note: 'IPO Nov 19 · $70–78 range' };
+    if (et.dateKey >= ANT_FIRST_TRADE) {
+      try { const q = await finnhub('quote?symbol=ANT', key); if (validQuote(q) && q.t * 1000 >= Date.parse(ANT_FIRST_TRADE + 'T00:00:00-05:00')) put('ANT', { ...antBase, upcoming: false }, q); else if (!quotes.ANT || quotes.ANT.upcoming !== false) quotes.ANT = { ...antBase, upcoming: true }; }
+      catch (e) { errors.push(`ANT: ${clean(e.message)}`); if (!quotes.ANT) quotes.ANT = { ...antBase, upcoming: true }; }
+    } else quotes.ANT = { ...antBase, upcoming: true };
+  } else if (!quotes.ANT) {
+    quotes.ANT = { s: 'ANT', n: 'Anthropic', kind: 'stock', upcoming: true, firstTrade: ANT_FIRST_TRADE, range: '$70–78', note: 'IPO Nov 19 · $70–78 range' };
   }
-  // ANT: stays "Upcoming" until a real quote appears on/after its first trading day.
-  const antBase = { s: 'ANT', n: 'Anthropic', kind: 'stock', firstTrade: ANT_FIRST_TRADE, range: '$70–78', note: 'IPO Nov 19 · $70–78 range' };
-  if (et.dateKey >= ANT_FIRST_TRADE) {
-    try { const q = await finnhub('quote?symbol=ANT', key); if (validQuote(q) && q.t * 1000 >= Date.parse(ANT_FIRST_TRADE + 'T00:00:00-05:00')) put('ANT', { ...antBase, upcoming: false }, q); else if (!quotes.ANT || quotes.ANT.upcoming !== false) quotes.ANT = { ...antBase, upcoming: true }; }
-    catch (e) { errors.push(`ANT: ${clean(e.message)}`); if (!quotes.ANT) quotes.ANT = { ...antBase, upcoming: true }; }
-  } else quotes.ANT = { ...antBase, upcoming: true };
   for (const ix of INDEXES) {
-    let done = false;
-    try { const q = await finnhub(`quote?symbol=${encodeURIComponent(ix.index)}`, key); if (validQuote(q)) { put(ix.key, { s: ix.label, n: ix.n, kind: 'index', symbol: ix.index }, q); done = true; } }
-    catch { /* index needs a paid plan on Finnhub free tier: fall back to fund */ }
-    if (!done) {
-      try { const q = await finnhub(`quote?symbol=${ix.fund}`, key); if (!validQuote(q)) throw new Error('empty quote'); put(ix.key, { s: ix.fund, n: `${ix.n} fund`, kind: 'fund', tracks: ix.n, symbol: ix.fund }, q); }
-      catch (e) { errors.push(`${ix.fund}: ${clean(e.message)}`); }
+    const base = { s: ix.label, n: ix.n, kind: 'index', symbol: ix.index };
+    try { const q = await fetchYahooIndex(ix.index); put(ix.key, { ...base, source: 'Yahoo Finance' }, q); indexSources.push('Yahoo Finance'); continue; }
+    catch (e1) {
+      try { const q = await fetchStooqIndex(ix.stooq); put(ix.key, { ...base, source: 'Stooq' }, q); indexSources.push('Stooq'); continue; }
+      catch (e2) {
+        if (key) {
+          try {
+            const q = await finnhub(`quote?symbol=${ix.fund}`, key);
+            if (!validQuote(q)) throw new Error('empty quote');
+            put(ix.key, { s: ix.fund, n: `${ix.n} fund`, kind: 'fund', tracks: ix.n, symbol: ix.fund, source: 'Finnhub' }, q);
+            indexSources.push('funds (Finnhub)'); continue;
+          } catch (e3) { errors.push(`${ix.key}: Yahoo: ${clean(e1.message)}; Stooq: ${clean(e2.message)}; Finnhub: ${clean(e3.message)}`); continue; }
+        }
+        errors.push(`${ix.key}: Yahoo: ${clean(e1.message)}; Stooq: ${clean(e2.message)}`);
+      }
     }
   }
-  return { quotes, history, errors };
+  const uniqSources = [...new Set(indexSources)];
+  const indexSource = uniqSources.length > 1
+    ? uniqSources.map(s => s === 'funds (Finnhub)' ? 'funds' : s).join(' + ')
+    : (uniqSources[0] || null);
+  return { quotes, history, errors, indexSource };
 }
 
 // ---------- orchestration ----------
@@ -313,39 +385,46 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
   }
 
   // Stocks: every 15 min while the US market is open, one close fetch ~4:05 ET, else hold last close.
+  // Indexes (Yahoo/Stooq) run on the same cadence regardless of whether a Finnhub key is present.
   const ps = prev.stocks || {};
   const stocks = { ...ps };
+  const weekday = isWeekday(et.weekday);
+  const neverFetchedStocks = !ps.asOf || !ps.quotes || !Object.keys(ps.quotes).some(k => ps.quotes[k].px);
+  const neverFetchedIndexes = !ps.quotes || !INDEXES.some(ix => ps.quotes[ix.key]?.px);
+  const inSession = weekday && et.mins >= 570 && et.mins <= 960;
+  const closeWindow = weekday && et.mins >= 964 && ps.closeFetchedFor !== et.dateKey;
+  let reason = null, market = ps.market || null;
   if (!key) {
     stocks.status = 'key-pending';
     stocks.lastError = 'No Finnhub key configured (FINNHUB_KEY secret)';
+    if (inSession && ageMin(ps.asOf, now) >= 12) reason = 'session';
+    else if (closeWindow) reason = 'close';
+    else if (neverFetchedIndexes || force) reason = 'initial';
   } else {
-    let reason = null, market = ps.market || null;
-    const weekday = isWeekday(et.weekday);
-    const neverFetched = !ps.asOf || !ps.quotes || !Object.keys(ps.quotes).some(k => ps.quotes[k].px);
-    const inSession = weekday && et.mins >= 570 && et.mins <= 960;
-    const closeWindow = weekday && et.mins >= 964 && ps.closeFetchedFor !== et.dateKey;
-    if (inSession || closeWindow || neverFetched || force) {
+    if (inSession || closeWindow || neverFetchedStocks || force) {
       try { const m = await finnhub('stock/market-status?exchange=US', key); market = { isOpen: !!m.isOpen, session: m.session || null, holiday: m.holiday || null, checkedAt: nowIso }; }
       catch (e) { stocks.lastError = `market-status: ${clean(e.message)}`; }
       if (market?.checkedAt === nowIso) {
         if (inSession && market.isOpen && ageMin(ps.asOf, now) >= 12) reason = 'session';
         else if (closeWindow && !market.holiday) reason = 'close';
-        else if (neverFetched || force) reason = 'initial';
-      } else if (neverFetched || force) reason = 'initial';
+        else if (neverFetchedStocks || force) reason = 'initial';
+      } else if (neverFetchedStocks || force) reason = 'initial';
     }
     stocks.market = market;
-    if (reason) {
-      ran.push(`stocks:${reason}`);
-      const r = await fetchStocks(ps, key, et, now);
-      stocks.quotes = r.quotes; stocks.history = r.history; stocks.lastAttempt = nowIso;
-      if (r.errors.length) stocks.symbolErrors = r.errors; else delete stocks.symbolErrors;
-      const anyOk = r.errors.length < STOCKS.length + INDEXES.length;
-      if (anyOk) { stocks.asOf = nowIso; stocks.lastError = null; stocks.status = 'live'; }
-      else stocks.lastError = 'All quotes failed: ' + r.errors.join('; ');
-      if (reason === 'close') stocks.closeFetchedFor = et.dateKey;
-    } else if (stocks.quotes) stocks.status = 'live';
-    if (!stocks.quotes) stocks.quotes = { ANT: { s: 'ANT', n: 'Anthropic', upcoming: true, note: 'IPO Nov 19 · $70–78 range' } };
   }
+  if (reason) {
+    ran.push(`stocks:${reason}`);
+    const r = await fetchStocks(ps, key, et, now);
+    stocks.quotes = r.quotes; stocks.history = r.history; stocks.lastAttempt = nowIso;
+    if (r.errors.length) stocks.symbolErrors = r.errors; else delete stocks.symbolErrors;
+    if (r.indexSource) stocks.indexSource = r.indexSource;
+    const attempted = (key ? STOCKS.length : 0) + INDEXES.length;
+    const anyOk = r.errors.length < attempted;
+    if (anyOk) { stocks.asOf = nowIso; stocks.lastError = null; if (key) stocks.status = 'live'; }
+    else stocks.lastError = (key ? 'All quotes failed: ' : 'All index quotes failed: ') + r.errors.join('; ');
+    if (reason === 'close') stocks.closeFetchedFor = et.dateKey;
+  } else if (key && stocks.quotes) stocks.status = 'live';
+  if (!stocks.quotes) stocks.quotes = { ANT: { s: 'ANT', n: 'Anthropic', upcoming: true, note: 'IPO Nov 19 · $70–78 range' } };
   out.stocks = { provider: 'Finnhub', ...stocks };
   if (ran.length) out.generatedAt = nowIso;
   out.lastRun = { at: nowIso, ran };

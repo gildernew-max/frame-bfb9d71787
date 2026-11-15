@@ -679,11 +679,11 @@ function applyStocks(st){
     const hist=(st.history?.[key]||[]).map(p=>p.c);
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
-    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,isIdx?0:2),ch:q.ch??0,sp,dollar:!isIdx,hint,
+    return {n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,
       chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
   const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
-    card('DOW',{n:'Dow Jones',s:'DIA'}),card('SPX',{n:'S&P 500',s:'SPY'}),card('NASDAQ',{n:'Nasdaq',s:'QQQ'})];
+    card('DOW',{n:'Dow Jones',s:'DJIA'}),card('SPX',{n:'S&P 500',s:'SPX'}),card('NASDAQ',{n:'Composite',s:'Composite'})];
   if(changed('mk',quotes)){DATA.quotes=quotes;renderMarkets();renderTape();
     document.querySelector('.markets-panel').setAttribute('aria-label','Markets');
     document.querySelector('.ticker-footer').setAttribute('aria-label','Scrolling market ticker');}
@@ -699,6 +699,8 @@ function applyLive(d){
   const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
+  const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
+  if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
   $('credit-label').textContent=credits.join(' · ');
 }
 async function refreshAll(){
