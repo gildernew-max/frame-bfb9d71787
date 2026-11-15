@@ -863,6 +863,42 @@ function sectionDue(sec, now, et, rule) {
 }
 const ok = (data, extra) => ({ ...data, ...extra, lastError: null });
 
+
+async function fetchUsTempGrid() {
+  const lat0 = 24.5, lat1 = 49.5, dlat = 1.5;
+  const lon0 = -125, lon1 = -66.5, dlon = 1.5;
+  const nlat = Math.round((lat1 - lat0) / dlat) + 1;
+  const nlon = Math.round((lon1 - lon0) / dlon) + 1;
+  const lats = [], lons = [];
+  for (let i = 0; i < nlat; i++) {
+    for (let j = 0; j < nlon; j++) {
+      lats.push(+(lat0 + i * dlat).toFixed(2));
+      lons.push(+(lon0 + j * dlon).toFixed(2));
+    }
+  }
+  const temps = new Array(lats.length).fill(null);
+  const chunk = 80;
+  for (let i = 0; i < lats.length; i += chunk) {
+    const url = 'https://api.open-meteo.com/v1/forecast?' + new URLSearchParams({
+      latitude: lats.slice(i, i + chunk).join(','),
+      longitude: lons.slice(i, i + chunk).join(','),
+      current: 'temperature_2m',
+      temperature_unit: 'fahrenheit'
+    });
+    const r = await fetch(url, { cache: 'no-store' });
+    if (!r.ok) throw new Error(`Open-Meteo grid ${r.status}`);
+    const body = await r.json();
+    const rows = Array.isArray(body) ? body : [body];
+    rows.forEach((row, k) => {
+      const t = row && row.current ? row.current.temperature_2m : null;
+      temps[i + k] = Number.isFinite(t) ? Math.round(t * 10) / 10 : null;
+    });
+  }
+  const got = temps.filter((t) => t != null).length;
+  if (got < nlat * nlon * 0.5) throw new Error(`Open-Meteo grid too sparse (${got}/${temps.length})`);
+  return { provider: 'Open-Meteo', credit: 'Temperatures: Open-Meteo', lat0, lon0, dlat, dlon, nlat, nlon, temps };
+}
+
 export async function runFetch(prevData = {}, env = {}, opts = {}) {
   const now = opts.now || new Date();
   const force = opts.force || false;
@@ -992,6 +1028,12 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       out.futures = { provider: 'Yahoo Finance', asOf: nowIso, lastAttempt: nowIso, items, tradingNow: futTrading,
         ...(symbolErrors.length ? { symbolErrors } : {}) };
     }
+  }
+  // US temperature grid for the Radar & Map field: every 30 minutes.
+  if (force || !prev.usTempGrid?.asOf || ageMin(prev.usTempGrid.asOf, now) >= 30) {
+    ran.push('usTempGrid');
+    try { out.usTempGrid = ok(await fetchUsTempGrid(), { asOf: nowIso, lastAttempt: nowIso }); }
+    catch (e) { out.usTempGrid = { ...(prev.usTempGrid || {}), lastAttempt: nowIso, lastError: `Open-Meteo: ${why(e)}` }; }
   }
   if (ran.length) out.generatedAt = nowIso;
   out.lastRun = { at: nowIso, ran };
