@@ -592,11 +592,13 @@ function tick(){
   updateSun(now);
 }
 function fit(){
-  const scale=Math.min(window.innerWidth/3840,window.innerHeight/2160);
+  const w=window.innerWidth||document.documentElement.clientWidth||screen.width,h=window.innerHeight||document.documentElement.clientHeight||screen.height;
+  const scale=Math.min(w/3840,h/2160);
+  if(!(scale>0))return setTimeout(fit,500);
   $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
-tick();fit();window.addEventListener('resize',fit);
+tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
 /* ------------------------------------------------------------------
    LIVE: polls data.json (written by scripts/update.mjs; no keys in this page)
    and swaps sample values for real ones. A section with no live data keeps its
