@@ -357,7 +357,7 @@
   .business-feature{height:329px;position:relative;overflow:hidden;border-bottom:1px solid var(--hair)}
   .business-feature .src{font-size:30px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .business-feature .hd{font:400 57px/1.18 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.023em;margin-top:19px;
-    white-space:pre-line;overflow:hidden;max-height:calc(2 * 1.18em);
+    white-space:pre-line;overflow:hidden;max-height:calc(3 * 1.18em);padding-bottom:8px;
     transition:opacity .85s ease,transform .85s ease}
   .business-feature .src{transition:opacity .85s ease,transform .85s ease}
   .business-feature.fade .src,.business-feature.fade .hd{opacity:0;transform:translateY(12px)}
@@ -473,7 +473,8 @@
   .league-toggle button.on{color:var(--ink);border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.28)}
   .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
   #weather-overlay .nfl-overlay-head{margin-bottom:48px}
-  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;gap:40px;padding-top:0}
+  #weather-overlay .nfl-overlay-sheet{padding-bottom:64px}
+  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;gap:40px;padding-top:0;padding-bottom:0}
   .wx7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px;flex:none}
   .wx7-day{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;min-width:0;
     height:300px;box-sizing:border-box;padding:20px 12px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
@@ -493,7 +494,7 @@
   .wx12-hour .temp{font:300 64px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
   .wx12-hour .pop{font-size:32px;letter-spacing:.04em;color:var(--blue);font-weight:500}
   .wx12-hour .pop.empty{color:var(--soft)}
-  .wx12-chart{flex:none;height:220px;position:relative;width:100%}
+  .wx12-chart{flex:1;min-height:220px;height:auto;position:relative;width:100%}
   .wx12-chart svg{width:100%;height:100%;display:block;overflow:visible}
   .news-full{flex:1;min-height:0;display:flex;flex-direction:column;gap:0;overflow:auto}
   .news-full-item{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px 48px;padding:18px 8px;
@@ -840,6 +841,9 @@ function rotateSpotlight(){
     $('spotlight').classList.remove('is-changing');$('market-grid').classList.remove('is-changing');},550);
 }
 let newsIndex=0;
+function stripCutPunct(text){
+  return String(text||'').replace(/[\s,;:\-–—]+$/,'');
+}
 function clampWordsToLines(text,font,width,maxLines){
   text=String(text||'').replace(/\s+/g,' ').trim();
   if(!text||!(width>0))return text;
@@ -860,7 +864,9 @@ function clampWordsToLines(text,font,width,maxLines){
     lines.push(line);
     i=j;
   }
-  return lines.join('\n');
+  var out=lines.join('\n');
+  if(i<words.length)out=stripCutPunct(out);
+  return out;
 }
 function clampHeadlineEls(){
   var els=document.querySelectorAll('.news-li span[data-full], .business-feature .hd[data-full], .stock-news-item .hd[data-full]');
@@ -870,7 +876,8 @@ function clampHeadlineEls(){
     var font=(st.fontStyle||'normal')+' '+(st.fontWeight||'400')+' '+(st.fontSize||'44px')+' '+(st.fontFamily||'Inter,sans-serif');
     var w=el.clientWidth;
     if(w<=0)continue;
-    el.textContent=clampWordsToLines(full,font,w,2);
+    var lead=el.id==='f-hd'||(el.classList.contains('hd')&&el.closest('.business-feature'));
+    el.textContent=clampWordsToLines(full,font,w,lead?3:2);
   }
 }
 function scheduleHeadlineClamp(){
@@ -959,6 +966,7 @@ function fit(){
   $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
   if(typeof layoutWeatherMaps==='function')requestAnimationFrame(layoutWeatherMaps);
   if(typeof scheduleHeadlineClamp==='function')scheduleHeadlineClamp();
+  if(typeof relayoutHourlyChart==='function')requestAnimationFrame(relayoutHourlyChart);
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
 tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
@@ -1016,14 +1024,125 @@ function applyWeather(w){
   const nowStamp=(w.asOf?fmtTime(w.asOf):'')+(ao.stale?' · stale':'');
   $('wx-now-note').textContent=nowStamp; $('sp-note').textContent=nowStamp;
 }
+function findFeaturedSbGame(games,code){
+  if(!games||!code)return null;
+  for(var i=0;i<games.length;i++){
+    var g=games[i], away=g.away||{}, home=g.home||{};
+    if(away.abbrev===code)return {game:g,me:away,opp:home,homeAway:'away'};
+    if(home.abbrev===code)return {game:g,me:home,opp:away,homeAway:'home'};
+  }
+  return null;
+}
+function sameNflMatchup(next,game,code){
+  if(!next||!game)return false;
+  var opp=next.oppCode||'';
+  var sbOpp=(game.home&&game.home.abbrev===code)?(game.away&&game.away.abbrev):(game.home&&game.home.abbrev);
+  if(opp&&sbOpp&&String(opp).toUpperCase()===String(sbOpp).toUpperCase())return true;
+  var a=Date.parse(next.date||''), b=Date.parse(game.start||'');
+  return !!(a&&b&&Math.abs(a-b)<2*60*60*1000);
+}
+function bumpNflStreak(streak,won){
+  var s=String(streak||'').trim();
+  var m=/^(W|L)\s*(\d+)/i.exec(s);
+  if(won)return (m&&/W/i.test(m[1]))?('W'+(Number(m[2])+1)):'W1';
+  return (m&&/L/i.test(m[1]))?('L'+(Number(m[2])+1)):'L1';
+}
+function parseEspnNextEvent(raw,code){
+  if(!raw)return null;
+  var ev=null;
+  if(raw.team&&raw.team.nextEvent&&raw.team.nextEvent.length)ev=raw.team.nextEvent[0];
+  if(!ev&&raw.events&&raw.events.length){
+    var now=Date.now();
+    for(var i=0;i<raw.events.length;i++){
+      var e=raw.events[i];
+      var comp=(e.competitions&&e.competitions[0])||{};
+      var st=(comp.status&&comp.status.type&&comp.status.type.state)||(e.status&&e.status.type&&e.status.type.state)||'';
+      var when=Date.parse(e.date||comp.date||'');
+      if(st==='post')continue;
+      if(st==='pre'&&when&&when<now-3*60*60*1000)continue;
+      ev=e;break;
+    }
+  }
+  if(!ev)return null;
+  var comp=(ev.competitions&&ev.competitions[0])||{};
+  var competitors=comp.competitors||[];
+  var me=null,opp=null;
+  for(var j=0;j<competitors.length;j++){
+    var c=competitors[j], ab=c.team&&c.team.abbreviation;
+    if(ab===code)me=c; else opp=c;
+  }
+  var st=(comp.status&&comp.status.type&&comp.status.type.state)||'';
+  if(!opp||st==='post')return null;
+  var ot=(opp.team)||{};
+  return {
+    date:ev.date||comp.date,
+    homeAway:(me&&me.homeAway)||'home',
+    opponent:ot.shortDisplayName||ot.displayName||'',
+    oppCode:ot.abbreviation||'',
+    state:st||'pre'
+  };
+}
+async function lookupNflNextGame(teamId,code){
+  if(!teamId||!code)return null;
+  var urls=[
+    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/'+teamId+'?t='+Date.now(),
+    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/'+teamId+'/schedule?t='+Date.now()
+  ];
+  for(var i=0;i<urls.length;i++){
+    try{
+      var r=await fetch(urls[i],{cache:'no-store'});
+      if(!r.ok)continue;
+      var nxt=parseEspnNextEvent(await r.json(),code);
+      if(nxt)return nxt;
+    }catch(e){console.warn('next game',code,e);}
+  }
+  return null;
+}
+var nflPanelSyncing=false;
+async function syncNflPanelFromScoreboard(board){
+  if(nflPanelSyncing)return;
+  var games=(board&&board.games)||(LIVE_DATA&&LIVE_DATA.nflScoreboard&&LIVE_DATA.nflScoreboard.games)||[];
+  var src=LIVE_DATA&&LIVE_DATA.nfl;
+  if(!src||!src.teams||!src.teams.length||!games.length)return;
+  nflPanelSyncing=true;
+  var dirty=false;
+  var lookups=[];
+  try{
+    for(var i=0;i<src.teams.length;i++){
+      var t=src.teams[i];
+      var hit=findFeaturedSbGame(games,t.code);
+      if(!hit)continue;
+      var rec=hit.me&&hit.me.record?String(hit.me.record).replace(/-/g,'–'):'';
+      if(rec&&rec!==t.record){t.record=rec;dirty=true;}
+      if(hit.game.state==='post'){
+        if(hit.me.winner||hit.opp.winner){
+          var streak=bumpNflStreak(t.streak,!!hit.me.winner);
+          if(streak!==t.streak){t.streak=streak;dirty=true;}
+        }
+        if(!t.next||t.next.state==='in'||t.next.state==='post'||sameNflMatchup(t.next,hit.game,t.code)){
+          lookups.push(t);
+        }
+      }
+    }
+    if(lookups.length){
+      await Promise.all(lookups.map(function(t){
+        return lookupNflNextGame(t.id,t.code).then(function(nxt){
+          t.next=nxt;
+          dirty=true;
+        });
+      }));
+    }
+    if(dirty)paintNflPanel(src);
+  }finally{nflPanelSyncing=false;}
+}
 function nextGame(n){
   if(!n)return 'No game scheduled';
   const when=new Date(n.date), now=new Date();
   const day=when-now<6*864e5?fmtDay(n.date):new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'short',day:'numeric'}).format(when);
   return `${n.homeAway==='away'?'at':'vs'} ${n.opponent} · ${day} ${fmtTime(n.date)} ET`;
 }
-function applyNFL(f){
-  if(!f?.asOf||!f.teams?.length)return;
+function paintNflPanel(f){
+  if(!f||!f.teams||!f.teams.length)return;
   const ao=asOf(f,30);
   const rows=f.teams.map(t=>({team:t.team,code:t.code,color:t.color,gold:t.gold,record:t.record,rank:t.rank||'—',streak:t.streak,next:nextGame(t.next)}));
   if(changed('nfl',rows)){DATA.nfl=rows;renderNFL(rows);
@@ -1031,6 +1150,11 @@ function applyNFL(f){
     $('nfl').setAttribute('aria-label','NFL team records, division ranks, streaks and next games');}
   $('nfl-deck').textContent=`Three teams · ESPN${ao.stale?' · stale':''}`;
   $('nfl-foot').textContent=`Standings via ESPN · ${ao.text}`;
+}
+function applyNFL(f){
+  if(!f||!f.asOf||!f.teams||!f.teams.length)return;
+  paintNflPanel(f);
+  syncNflPanelFromScoreboard();
 }
 function applyNews(n){
   if(!n?.asOf||!n.items?.length)return;
@@ -1199,6 +1323,8 @@ async function refreshAll(){
   catch(e){console.warn('data.json unavailable; keeping last good data',e);}
   applyLive(LIVE_DATA);
   updateRefreshAsOf();
+  // Keep the main NFL panel in lockstep with the live scoreboard, even if the overlay is closed.
+  if(typeof loadScoreboard==='function')loadScoreboard('nfl').catch(function(){});
 }
 let refreshInFlight=false;
 async function fetchLiveWeather(){
@@ -1562,7 +1688,9 @@ async function loadScoreboard(league){
       LIVE_DATA[fbKey]=parsed;
       writeSbCache(league,parsed,parsed.asOf||new Date().toISOString());
     }
-    return {source:'espn',data:parsed,asOf:new Date().toISOString(),fallback:false};
+    var liveRes={source:'espn',data:parsed,asOf:new Date().toISOString(),fallback:false};
+    if(!cfb&&typeof syncNflPanelFromScoreboard==='function')syncNflPanelFromScoreboard(parsed);
+    return liveRes;
   }catch(e){liveErr=e;}
 
   var cached=readSbCache(league);
@@ -1582,6 +1710,7 @@ async function loadScoreboard(league){
   var chosen=pickFresherBoard(cached,fromData);
   if(chosen&&chosen.board&&chosen.board.games&&chosen.board.games.length){
     writeSbCache(league,chosen.board,chosen.asOf||chosen.board.asOf);
+    if(!cfb&&typeof syncNflPanelFromScoreboard==='function')syncNflPanelFromScoreboard(chosen.board);
     return {source:'cache',data:chosen.board,asOf:chosen.asOf||chosen.board.asOf,fallback:true,error:liveErr};
   }
   throw liveErr||new Error('no scoreboard');
@@ -1702,6 +1831,7 @@ function renderWeatherOverlay(model,meta){
     ? `<div class="wx-hourly-label">Next 12 hours</div><div class="wx12">${hourHtml}</div><div class="wx12-chart" id="wx12-chart" aria-label="Hourly temperature"></div>`
     : `<div class="nfl-scoreboard sb-msg">Hourly forecast unavailable</div>`;
   body.innerHTML=`<div class="wx7">${dayHtml}</div>${hourly}`;
+  lastHourlyHours=hourSlice;
   requestAnimationFrame(()=>paintHourlyChart(hourSlice));
 }
 function smoothTempPath(xs,ys){
@@ -1717,6 +1847,13 @@ function smoothTempPath(xs,ys){
     d+=`C${c1x.toFixed(1)},${c1y.toFixed(1)} ${c2x.toFixed(1)},${c2y.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
   }
   return d;
+}
+let lastHourlyHours=null;
+function relayoutHourlyChart(){
+  if(typeof openOverlay==='undefined'||openOverlay!=='weather')return;
+  if(typeof weatherPage!=='undefined'&&weatherPage==='radar')return;
+  if(!lastHourlyHours||!lastHourlyHours.length)return;
+  paintHourlyChart(lastHourlyHours);
 }
 function paintHourlyChart(hours){
   const host=$('wx12-chart');
@@ -1838,7 +1975,7 @@ const US_CITIES=[
   ['Miami',25.76,-80.19],['DC',38.91,-77.04],
   ['NYC',40.71,-74.01],['Boston',42.36,-71.06],['Detroit',42.33,-83.05]
 ];
-const CITY_PRIORITY={'Atlanta':0,'NYC':1,'Chicago':2,'LA':3,'SF':4,'DC':5,'Dallas':6};
+const CITY_PRIORITY={'Atlanta':0,'Miami':1,'Boston':2,'Seattle':3,'NYC':4,'SF':5,'LA':6,'Chicago':7,'DC':8,'Dallas':9};
 
 let weatherPage='forecast',radarMap=null,tempMap=null,radarTimer=null,radarLayer=null,radarHost='',radarFrames=[],radarIdx=0;
 let radarCatalogTimer=null,radarNewest=0,tempMarkers=[];
@@ -1954,11 +2091,23 @@ function fitAtlantaRadar(map){
   // Nudge in a little so the north tile edge / road fringe is cropped off the frame.
   if(map && map.getZoom) map.setView(ATL_CENTER, map.getZoom()+0.2, {animate:false});
 }
-function fitLower48(map){fitMapCover(map,US_CENTER,US_BOUNDS);}
+function fitMapWidthFill(map,center,bounds){
+  if(!map)return;
+  const size=fillMapEl(map);
+  if(!size.x||!size.y)return;
+  const b=L.latLngBounds(bounds);
+  // Fit the full lower-48 *width* in the panel (with 48px inset). The panel is
+  // taller than that aspect, so Leaflet loads extra dark basemap tiles north
+  // and south — no letterbox bands. Do not clamp maxBounds to the US outline.
+  const z=map.getBoundsZoom(b,false,[48,48]);
+  if(map.setMaxBounds)map.setMaxBounds(null);
+  map.setView(center,z,{animate:false});
+}
+function fitLower48(map){fitMapWidthFill(map,US_CENTER,US_BOUNDS);}
 function layoutWeatherMaps(){
   if(weatherPage!=='radar')return;
   if(radarMap)fitAtlantaRadar(radarMap);
-  if(tempMap){fitLower48(tempMap);insetTempLabels();resolveTempLabelOverlaps();insetTempLabels();}
+  if(tempMap){fitLower48(tempMap);placeTempLabels();}
   setRadarDeck();
 }
 async function initWeatherMaps(){
@@ -2059,64 +2208,70 @@ async function loadUsTemps(){
       m.addTo(tempMap);
       tempMarkers.push(m);
     });
-    insetTempLabels();
-    resolveTempLabelOverlaps();
-    insetTempLabels();
+    requestAnimationFrame(()=>{
+      placeTempLabels();
+      requestAnimationFrame(placeTempLabels);
+    });
+    setTimeout(placeTempLabels,400);
+    setTimeout(placeTempLabels,1000);
   }catch(e){console.warn('temps',e);}
 }
 const LABEL_INSET=48;
-function tempLabelSize(el){
+function labelBoxInMap(el,map){
+  const mapEl=map.getContainer();
+  const mr=mapEl.getBoundingClientRect();
+  const scale=mapEl.clientWidth/(mr.width||1);
   const parts=[...el.querySelectorAll('span,i')].filter(n=>{
     const st=getComputedStyle(n);
     return st.display!=='none'&&st.visibility!=='hidden';
   });
-  if(!parts.length)return {w:0,h:0};
-  let w=0,h=0;
-  if(!tempLabelSize._ctx){
-    const c=document.createElement('canvas');
-    tempLabelSize._ctx=c.getContext('2d');
-  }
-  const ctx=tempLabelSize._ctx;
-  parts.forEach((n,i)=>{
-    let nw=n.offsetWidth||n.scrollWidth||0;
-    if(!nw){
-      const st=getComputedStyle(n);
-      ctx.font=(st.fontWeight||'500')+' '+(st.fontSize||'40px')+' '+(st.fontFamily||'Inter,sans-serif');
-      nw=ctx.measureText((n.textContent||'').trim()).width;
-    }
-    w=Math.max(w,nw);
-    h+=(n.offsetHeight||parseFloat(getComputedStyle(n).fontSize)||0)+(i?4:0);
+  if(!parts.length)return null;
+  const rs=parts.map(n=>n.getBoundingClientRect());
+  return {
+    left:(Math.min(...rs.map(r=>r.left))-mr.left)*scale,
+    right:(Math.max(...rs.map(r=>r.right))-mr.left)*scale,
+    top:(Math.min(...rs.map(r=>r.top))-mr.top)*scale,
+    bottom:(Math.max(...rs.map(r=>r.bottom))-mr.top)*scale
+  };
+}
+function resetTempLabelGeo(){
+  tempMarkers.forEach(m=>{if(m._geoLatLng)m.setLatLng(m._geoLatLng);});
+}
+function placeTempLabels(){
+  if(!tempMap)return;
+  resetTempLabelGeo();
+  requestAnimationFrame(()=>{
+    insetTempLabels();
+    resolveTempLabelOverlaps();
+    insetTempLabels();
   });
-  return {w,h};
 }
 function insetTempLabels(){
   if(!tempMap)return;
   const size=tempMap.getSize();
   if(!size.x||!size.y)return;
-  const geo=m=>tempMap.latLngToContainerPoint(m._geoLatLng||m.getLatLng());
   tempMarkers.forEach(m=>{
     if(!m._geoLatLng)m._geoLatLng=m.getLatLng();
     const el=m.getElement(); if(!el)return;
     el.classList.remove('is-hidden');
-    const {w,h}=tempLabelSize(el);
-    if(!w||!h)return;
-    const origin=geo(m);
-    // City itself is off the panel (cover crop): don't drag the label onto the map.
+    const origin=tempMap.latLngToContainerPoint(m._geoLatLng);
     if(origin.x<-8||origin.x>size.x+8||origin.y<-8||origin.y>size.y+8){
       el.classList.add('is-hidden');
       return;
     }
-    // .wx-temp-label uses transform:translate(-50%,-20px)
-    let pt={x:origin.x,y:origin.y};
-    let left=pt.x-w/2,right=pt.x+w/2,top=pt.y-20,bottom=pt.y-20+h;
+    const box=labelBoxInMap(el,tempMap);
+    if(!box)return;
     let dx=0,dy=0;
-    if(left<LABEL_INSET)dx=LABEL_INSET-left;
-    if(right+dx>size.x-LABEL_INSET)dx=(size.x-LABEL_INSET)-right;
-    if(left+dx<LABEL_INSET)dx=LABEL_INSET-left;
-    if(top<LABEL_INSET)dy=LABEL_INSET-top;
-    if(bottom+dy>size.y-LABEL_INSET)dy=(size.y-LABEL_INSET)-bottom;
-    if(top+dy<LABEL_INSET)dy=LABEL_INSET-top;
-    if(dx||dy)m.setLatLng(tempMap.containerPointToLatLng(L.point(pt.x+dx,pt.y+dy)));
+    if(box.left<LABEL_INSET)dx=LABEL_INSET-box.left;
+    if(box.right+dx>size.x-LABEL_INSET)dx=(size.x-LABEL_INSET)-box.right;
+    if(box.left+dx<LABEL_INSET)dx=LABEL_INSET-box.left;
+    if(box.top<LABEL_INSET)dy=LABEL_INSET-box.top;
+    if(box.bottom+dy>size.y-LABEL_INSET)dy=(size.y-LABEL_INSET)-box.bottom;
+    if(box.top+dy<LABEL_INSET)dy=LABEL_INSET-box.top;
+    if(dx||dy){
+      const now=tempMap.latLngToContainerPoint(m.getLatLng());
+      m.setLatLng(tempMap.containerPointToLatLng(L.point(now.x+dx,now.y+dy)));
+    }
   });
 }
 function labelUnionBox(el){
@@ -2153,10 +2308,29 @@ function resolveTempLabelOverlaps(){
     }
     return hits;
   };
+  const markerOf=el=>tempMarkers.find(m=>m.getElement()===el);
+  const nudge=el=>{
+    const m=markerOf(el); if(!m||!tempMap)return false;
+    const size=tempMap.getSize();
+    const now=tempMap.latLngToContainerPoint(m.getLatLng());
+    const tries=[56,-56,80,-80];
+    for(const dy of tries){
+      const np=L.point(now.x,now.y+dy);
+      if(np.y<LABEL_INSET||np.y>size.y-LABEL_INSET)continue;
+      m.setLatLng(tempMap.containerPointToLatLng(np));
+      const box=labelBoxInMap(el,tempMap);
+      if(box&&box.top>=LABEL_INSET&&box.bottom<=size.y-LABEL_INSET&&box.left>=LABEL_INSET&&box.right<=size.x-LABEL_INSET){
+        // Keep the nudge only if it actually cleared the overlap; caller re-checks.
+        return true;
+      }
+      m.setLatLng(tempMap.containerPointToLatLng(now));
+    }
+    return false;
+  };
   let hits=collide();
   for(const [a,b] of hits){
     const drop=rank(a)>=rank(b)?a:b;
-    drop.classList.add('no-name');
+    if(!nudge(drop))drop.classList.add('no-name');
   }
   hits=collide();
   for(const [a,b] of hits){
@@ -2576,7 +2750,13 @@ async function pollLiveNflScores(){
     const r=await fetch(ESPN_NFL_SB+'?t='+Date.now(),{cache:'no-store'});
     if(r.ok)games=parseEspnScoreboard(await r.json()).games;
   }catch(e){console.warn('nfl watch',e);}
-  if(!games&&LIVE_DATA?.nflScoreboard?.games)games=LIVE_DATA.nflScoreboard.games;
+  if(!games&&LIVE_DATA&&LIVE_DATA.nflScoreboard&&LIVE_DATA.nflScoreboard.games)games=LIVE_DATA.nflScoreboard.games;
+  if(games&&games.length){
+    if(!LIVE_DATA)LIVE_DATA={};
+    if(!LIVE_DATA.nflScoreboard)LIVE_DATA.nflScoreboard={provider:'ESPN',games:games};
+    else LIVE_DATA.nflScoreboard.games=games;
+    if(typeof syncNflPanelFromScoreboard==='function')syncNflPanelFromScoreboard(LIVE_DATA.nflScoreboard);
+  }
   const live=(games||[]).some(g=>g.state==='in');
   const cur=flattenScores(games);
   if(Object.keys(nflPrevScores).length){
