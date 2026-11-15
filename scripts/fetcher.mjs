@@ -91,24 +91,38 @@ export async function weatherOpenMeteo() {
   const url = 'https://api.open-meteo.com/v1/forecast?' + new URLSearchParams({
     latitude: keys.map(k => CITIES[k].lat).join(','), longitude: keys.map(k => CITIES[k].lon).join(','),
     current: 'temperature_2m,weather_code,wind_speed_10m,wind_direction_10m',
-    daily: 'weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset',
-    temperature_unit: 'fahrenheit', wind_speed_unit: 'mph', timezone: 'auto', forecast_days: '4'
+    daily: 'weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max',
+    hourly: 'temperature_2m,weather_code,precipitation_probability',
+    temperature_unit: 'fahrenheit', wind_speed_unit: 'mph', timezone: 'auto', forecast_days: '8'
   });
   const arr = await getJSON(url);
   const out = {};
   keys.forEach((k, i) => {
     const d = arr[i]; const [icon, cond] = wmo(d.current.weather_code);
+    const popAt = (arr, j) => { const v = arr?.[j]; return Number.isFinite(v) ? Math.round(v) : null; };
     const days = d.daily.time.map((t, j) => {
       const [ic, tx] = wmo(d.daily.weather_code[j]);
-      return { date: t, d: dayLabel(t), i: ic, text: tx, h: Math.round(d.daily.temperature_2m_max[j]), l: Math.round(d.daily.temperature_2m_min[j]) };
+      return { date: t, d: dayLabel(t), i: ic, text: tx, h: Math.round(d.daily.temperature_2m_max[j]), l: Math.round(d.daily.temperature_2m_min[j]),
+        pop: popAt(d.daily.precipitation_probability_max, j) };
     });
     if (!days.length || d.current.temperature_2m == null) throw new Error('Open-Meteo returned empty data');
+    const observed = d.current.time;
+    const hours = [];
+    for (let j = 0; j < (d.hourly?.time || []).length; j++) {
+      const t = d.hourly.time[j];
+      if (observed && t < observed) continue;
+      const [ic, tx] = wmo(d.hourly.weather_code[j]);
+      hours.push({ t, i: ic, text: tx, temp: Math.round(d.hourly.temperature_2m[j]), pop: popAt(d.hourly.precipitation_probability, j) });
+      if (hours.length >= 12) break;
+    }
     out[k] = {
       name: CITIES[k].name, tz: d.timezone,
       now: { temp: Math.round(d.current.temperature_2m), i: icon, cond,
         windMph: Math.round(d.current.wind_speed_10m), windDir: compass(d.current.wind_direction_10m), observed: d.current.time },
       today: { h: days[0].h, l: days[0].l, sunrise: hhmm(d.daily.sunrise[0]), sunset: hhmm(d.daily.sunset[0]) },
-      forecast: days.slice(1, 4)
+      forecast: days.slice(1, 4),
+      days7: days.slice(0, 7),
+      hourly: hours
     };
   });
   return { provider: 'Open-Meteo', credit: 'Weather: Open-Meteo', cities: out };
@@ -221,7 +235,8 @@ function scoreboardTeam(c) {
     logo,
     record: rec?.summary || '',
     winner: !!c.winner,
-    color
+    color,
+    rank: (() => { const n = Number(c.curatedRank?.current); return Number.isFinite(n) && n >= 1 && n <= 25 ? n : null; })()
   };
 }
 function scoreboardStatus(ev, comp, etFmt) {
@@ -307,6 +322,34 @@ function scoreboardDue(sec, now, et) {
   if (liveOrSoon || window) return ageMin(sec.asOf, now) >= 12;
   return ageMin(sec.asOf, now) >= 6 * 60;
 }
+async function fetchCFBScoreboard() {
+  const raw = await getJSON('https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard');
+  const parsed = parseNflScoreboard(raw);
+  if (!parsed.games.length && !parsed.week) throw new Error('ESPN college scoreboard empty');
+  const ranked = g => (g.away?.rank >= 1 && g.away.rank <= 25) || (g.home?.rank >= 1 && g.home.rank <= 25);
+  if (parsed.games.length > 24) {
+    const keep = parsed.games.filter(g => g.state === 'in' || ranked(g));
+    if (keep.length >= 8) parsed.games = keep;
+    else parsed.games = parsed.games.slice(0, 24);
+  }
+  return parsed;
+}
+function cfbScoreboardDue(sec, now, et) {
+  if (!sec || !sec.asOf) return true;
+  if (sec.lastError && ageMin(sec.lastAttempt, now) < 50) return false;
+  const games = sec.games || [];
+  const liveOrSoon = games.some(g => {
+    if (g.state === 'in') return true;
+    if (g.state !== 'pre') return false;
+    const start = new Date(g.start).getTime();
+    return Number.isFinite(start) && start - now <= 30 * MIN && start + 4 * 60 * MIN >= +now;
+  });
+  const window = (['Thu', 'Fri'].includes(et.weekday) && et.mins >= 18 * 60)
+    || (et.weekday === 'Sat' && et.mins >= 9 * 60)
+    || (et.weekday === 'Sun' && et.mins < 3 * 60);
+  if (liveOrSoon || window) return ageMin(sec.asOf, now) >= 12;
+  return ageMin(sec.asOf, now) >= 6 * 60;
+}
 
 // ---------- headlines (BBC News + NPR RSS) ----------
 const FEEDS = [
@@ -323,7 +366,9 @@ function parseRSS(xml, src) {
   return [...xml.matchAll(/<item\b[\s\S]*?<\/item>/g)].map(m => {
     const tag = n => (m[0].match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`)) || [])[1];
     const hd = decode(tag('title') || ''); const pub = tag('pubDate');
-    return { src, hd, pub: pub ? new Date(decode(pub)).toISOString() : null };
+    const rawSum = decode(tag('description') || tag('summary') || '');
+    const sum = rawSum && rawSum !== hd ? rawSum.replace(/\s+/g, ' ').trim().slice(0, 280) : '';
+    return { src, hd, sum, pub: pub ? new Date(decode(pub)).toISOString() : null };
   }).filter(x => x.hd);
 }
 async function fetchNews() {
@@ -334,7 +379,7 @@ async function fetchNews() {
   const seen = new Set();
   const items = all.sort((a, b) => (b.pub || '').localeCompare(a.pub || ''))
     .filter(x => { const k = x.hd.toLowerCase().replace(/[^a-z0-9]/g, ''); if (seen.has(k)) return false; seen.add(k); return true; })
-    .slice(0, 6); // lead story + 5 in the list
+    .slice(0, 12);
   return { items, feedErrors: failed };
 }
 
@@ -660,6 +705,11 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     ran.push('nflScoreboard');
     try { out.nflScoreboard = ok(await fetchNFLScoreboard(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e) { out.nflScoreboard = { ...(prev.nflScoreboard || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
+  }
+  if (force || cfbScoreboardDue(prev.cfbScoreboard, now, et)) {
+    ran.push('cfbScoreboard');
+    try { out.cfbScoreboard = ok(await fetchCFBScoreboard(), { asOf: nowIso, lastAttempt: nowIso }); }
+    catch (e) { out.cfbScoreboard = { ...(prev.cfbScoreboard || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
   }
   if (force || sectionDue(prev.news, now, et, 'hourly')) {
     ran.push('news');

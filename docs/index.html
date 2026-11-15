@@ -323,10 +323,12 @@
   .date em{font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic;font-weight:400!important}
   .panel-title,.date,.spot-name,.business-feature .hd,.nfl-name,.secondary-title{letter-spacing:-.01em!important;font-weight:300!important}
 
-  /* NFL card is tappable / remote-focusable; opens the live scores overlay. */
-  .nfl-panel{cursor:pointer}
-  .nfl-panel:focus{outline:none}
-  .nfl-panel:focus-visible,.nfl-panel:focus{
+  /* Tappable / remote-focusable cards open a full-stage overlay. */
+  .nfl-panel,.weather-panel,.business-panel{cursor:pointer}
+  .nfl-panel:focus,.weather-panel:focus,.business-panel:focus{outline:none}
+  .nfl-panel:focus-visible,.nfl-panel:focus,
+  .weather-panel:focus-visible,.weather-panel:focus,
+  .business-panel:focus-visible,.business-panel:focus{
     box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
   }
   .nfl-overlay{position:absolute;inset:0;z-index:30;display:flex;align-items:stretch;justify-content:center;
@@ -369,6 +371,42 @@
     font-size:24px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;padding-left:90px}
   .sb-meta .live-tag{color:var(--gold)}
   .sb-status{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .overlay-actions{display:flex;align-items:center;gap:18px;flex:none}
+  .league-toggle{display:flex;gap:8px}
+  .league-toggle button{appearance:none;-webkit-appearance:none;margin:8px 0 0;padding:16px 26px;border-radius:12px;
+    border:1px solid var(--hair);background:rgba(255,255,255,.04);color:var(--muted);cursor:pointer;
+    font:500 24px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+  .league-toggle button.on{color:var(--ink);border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.28)}
+  .league-toggle button:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
+  .wx-overlay-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:28px}
+  .wx7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:18px;flex:none}
+  .wx7-day{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;min-width:0;
+    padding:28px 16px 24px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+  .wx7-day .weekday{font-size:28px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .wx7-day .wx{width:96px;height:96px;margin:8px 0}
+  .wx7-day .cond{font-size:26px;color:var(--ink);font-weight:300;min-height:1.2em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+  .wx7-day .temps{font:300 48px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
+  .wx7-day .temps span{color:var(--soft);margin-left:14px}
+  .wx7-day .pop{font-size:24px;letter-spacing:.06em;color:var(--blue);font-weight:500}
+  .wx7-day .pop.empty{color:var(--soft)}
+  .wx-hourly-label{font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .wx12{flex:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+  .wx12-hour{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-width:0;
+    padding:22px 8px;border:1px solid var(--hair);border-radius:16px;background:var(--panel)}
+  .wx12-hour .when{font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .wx12-hour .wx{width:72px;height:72px}
+  .wx12-hour .temp{font:300 42px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em}
+  .wx12-hour .pop{font-size:22px;letter-spacing:.04em;color:var(--blue);font-weight:500}
+  .wx12-hour .pop.empty{color:var(--soft)}
+  .news-full{flex:1;min-height:0;display:flex;flex-direction:column;gap:0;overflow:auto}
+  .news-full-item{display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px 48px;padding:18px 8px;
+    border-bottom:1px solid var(--hair)}
+  .news-full-item:last-child{border-bottom:0}
+  .news-full-meta{display:flex;flex-direction:column;gap:8px;padding-top:6px}
+  .news-full-src{font-size:26px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .news-full-time{font-size:24px;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+  .news-full-hd{font:300 36px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em}
+  .news-full-sum{margin-top:8px;font-size:26px;line-height:1.35;color:var(--muted);font-weight:300}
 </style>
 </head>
 <body>
@@ -404,7 +442,7 @@
       </div>
       <div class="clock-accent"></div>
     </section>
-    <section class="panel weather-panel" aria-label="Atlanta, Georgia weather, with Saint Paul, Minnesota secondary weather, all sample data">
+    <section class="panel weather-panel" id="weather-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="weather-overlay" aria-expanded="false" title="Open 7-day forecast" aria-label="Atlanta, Georgia weather, with Saint Paul, Minnesota secondary weather, all sample data">
       <div class="panel-head"><div><div class="panel-title">Atlanta, GA <span style="color:var(--gold)">/</span> Today</div><div class="panel-deck" id="wx-deck">Main location · sample conditions</div></div><span class="panel-number">02 / WEATHER</span></div>
       <div class="atlanta-cards" aria-label="Atlanta current conditions and Monday through Wednesday sample forecast">
         <div class="atlanta-now" aria-label="Atlanta now: 58 degrees, partly cloudy, high 63, low 43">
@@ -451,7 +489,7 @@
       <div class="spotlight" id="spotlight"><div class="spot-inner" id="spot-inner"></div><div class="spot-folio" id="spot-folio">SPOTLIGHT 01 / 03</div></div>
       <div id="market-grid" aria-label="Other quotes and indexes"></div>
     </section>
-    <section class="panel business-panel" aria-label="Business sample headlines">
+    <section class="panel business-panel" id="news-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="news-overlay" aria-expanded="false" title="Open headlines" aria-label="Business sample headlines">
       <div class="panel-head"><div><div class="panel-title">Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
       <div class="business-feature" id="feature"><div class="src" id="f-src"></div><div class="hd" id="f-hd"></div><div class="feature-bottom"><span>Today's reading <span class="feature-index" id="f-count">01 / 05</span></span><span>Rotates every 12s</span></div></div>
       <div id="list"></div>
@@ -471,9 +509,43 @@
           <div class="panel-title" id="nfl-overlay-title">NFL <span style="color:var(--gold)">·</span> Scores</div>
           <div class="panel-deck" id="nfl-overlay-deck">This week · ESPN</div>
         </div>
-        <button type="button" class="nfl-overlay-close" id="nfl-overlay-close" aria-label="Close scores">Close</button>
+        <div class="overlay-actions">
+          <div class="league-toggle" id="league-toggle" role="tablist" aria-label="Football league">
+            <button type="button" id="league-nfl" class="on" aria-selected="true">NFL</button>
+            <button type="button" id="league-cfb" aria-selected="false">College</button>
+          </div>
+          <button type="button" class="nfl-overlay-close" id="nfl-overlay-close" aria-label="Close scores">Close</button>
+        </div>
       </div>
       <div id="nfl-scoreboard" class="nfl-scoreboard sb-msg">Loading scores…</div>
+    </div>
+  </div>
+
+  <div id="weather-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="weather-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="weather-overlay-title">Atlanta <span style="color:var(--gold)">·</span> Forecast</div>
+          <div class="panel-deck" id="weather-overlay-deck">7-day · Open-Meteo</div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="weather-overlay-close" aria-label="Close forecast">Close</button>
+      </div>
+      <div class="wx-overlay-body" id="weather-overlay-body"></div>
+    </div>
+  </div>
+
+  <div id="news-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="news-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="news-overlay-title">Business <span style="color:var(--gold)">·</span> Headlines</div>
+          <div class="panel-deck" id="news-overlay-deck">BBC News · NPR</div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="news-overlay-close" aria-label="Close headlines">Close</button>
+      </div>
+      <div id="news-overlay-list" class="news-full"></div>
     </div>
   </div>
 </div>
@@ -750,7 +822,7 @@ function applyNFL(f){
 function applyNews(n){
   if(!n?.asOf||!n.items?.length)return;
   const ao=asOf(n,3);
-  const items=n.items.map(x=>({src:x.src,hd:x.hd}));
+  const items=n.items.slice(0,6).map(x=>({src:x.src,hd:x.hd}));
   if(changed('news',items)){DATA.news=items;newsIndex=0;renderNews(items);
     document.querySelector('.business-panel').setAttribute('aria-label','Business headlines from BBC News and NPR');}
   const srcs=[...new Set(items.map(x=>x.src))].join(' · ');
@@ -915,13 +987,35 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape
 window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
 
 const ESPN_NFL_SB='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
-let nflOverlayOpen=false,nflSbTimer=null;
+const ESPN_CFB_SB='https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard';
+const WX_CITY={name:'Atlanta, GA',lat:33.749,lon:-84.388,tz:'America/New_York'};
+let openOverlay=null,nflSbTimer=null,scoreboardLeague='nfl';
+function closeOpenOverlay(){
+  if(openOverlay==='nfl')closeNflOverlay();
+  else if(openOverlay==='weather')closeWeatherOverlay();
+  else if(openOverlay==='news')closeNewsOverlay();
+}
+function wmoIcon(code){
+  const c=Number(code);
+  if(c===0||c===1)return ['sun',c===0?'Clear':'Mostly clear'];
+  if(c===2)return ['partly','Partly cloudy'];
+  if(c===3||c===45||c===48)return ['cloud',c===3?'Overcast':'Fog'];
+  if(c>=51&&c<=57)return ['rain','Drizzle'];
+  if(c>=61&&c<=67)return ['rain',c===61?'Light rain':c===65?'Heavy rain':'Rain'];
+  if(c>=71&&c<=77)return ['snow',c===71?'Light snow':c===75?'Heavy snow':'Snow'];
+  if(c>=80&&c<=82)return ['rain','Showers'];
+  if(c===85||c===86)return ['snow','Snow showers'];
+  if(c>=95)return ['rain','Thunderstorms'];
+  return ['cloud','Cloudy'];
+}
 function scoreboardTeam(c){
   const t=c.team||{};
   const rec=(c.records||[]).find(r=>r.type==='total'||r.name==='overall');
+  const rankN=Number(c.curatedRank?.current);
   return {name:t.displayName||t.name||'',short:t.shortDisplayName||t.name||'',abbrev:t.abbreviation||'',
     score:c.score==null||c.score===''?null:String(c.score),logo:t.logo||t.logos?.[0]?.href||'',
-    record:rec?.summary||'',winner:!!c.winner,color:t.color?('#'+String(t.color).replace(/^#/,'')):''};
+    record:rec?.summary||'',winner:!!c.winner,color:t.color?('#'+String(t.color).replace(/^#/,'')):'',
+    rank:Number.isFinite(rankN)&&rankN>=1&&rankN<=25?rankN:null};
 }
 function scoreboardStatus(ev,comp){
   const st=comp?.status||ev.status||{};
@@ -943,7 +1037,7 @@ function scoreboardStatus(ev,comp){
   const day=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(when);
   return day+' '+new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit'}).format(when)+' ET';
 }
-function parseNflScoreboard(raw){
+function parseEspnScoreboard(raw){
   const games=(raw.events||[]).map(ev=>{
     const comp=ev.competitions?.[0]||{};
     const st=comp.status||ev.status||{};
@@ -956,34 +1050,54 @@ function parseNflScoreboard(raw){
   }).filter(Boolean);
   const order={in:0,pre:1,post:2};
   games.sort((a,b)=>(order[a.state]??9)-(order[b.state]??9)||new Date(a.start)-new Date(b.start)||String(a.id).localeCompare(String(b.id)));
+  const ranked=g=>(g.away?.rank>=1&&g.away.rank<=25)||(g.home?.rank>=1&&g.home.rank<=25);
+  let list=games;
+  if(list.length>24){
+    const keep=list.filter(g=>g.state==='in'||ranked(g));
+    list=keep.length>=8?keep:list.slice(0,24);
+  }
   return {provider:'ESPN',week:raw.week?.number??null,season:raw.season?.year??null,
-    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games};
+    byes:(raw.week?.teamsOnBye||[]).map(t=>t.abbreviation).filter(Boolean),games:list};
 }
-async function loadNflScoreboard(){
+async function loadScoreboard(league){
+  const cfb=league==='cfb';
+  const url=(cfb?ESPN_CFB_SB:ESPN_NFL_SB)+'?t='+Date.now();
+  const fbKey=cfb?'cfbScoreboard':'nflScoreboard';
   try{
-    const r=await fetch(ESPN_NFL_SB+'?t='+Date.now(),{cache:'no-store'});
+    const r=await fetch(url,{cache:'no-store'});
     if(!r.ok)throw new Error(r.status);
-    const parsed=parseNflScoreboard(await r.json());
+    const parsed=parseEspnScoreboard(await r.json());
     if(!parsed.games.length&&parsed.week==null)throw new Error('empty scoreboard');
     return {source:'espn',data:parsed,asOf:new Date().toISOString()};
   }catch(e){
-    let fb=LIVE_DATA?.nflScoreboard;
+    let fb=LIVE_DATA?.[fbKey];
     try{
       const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
-      if(r.ok){const d=await r.json();if(d.nflScoreboard?.games){fb=d.nflScoreboard;if(LIVE_DATA)LIVE_DATA.nflScoreboard=fb;}}
+      if(r.ok){const d=await r.json();if(d[fbKey]?.games){fb=d[fbKey];if(LIVE_DATA)LIVE_DATA[fbKey]=fb;}}
     }catch(_){}
     if(fb?.games)return {source:'data.json',data:fb,asOf:fb.asOf,fallback:true,error:e};
     throw e;
   }
 }
+function setLeagueToggle(){
+  const nfl=$('league-nfl'),cfb=$('league-cfb');
+  if(!nfl||!cfb)return;
+  const on=scoreboardLeague==='cfb'?'cfb':'nfl';
+  nfl.classList.toggle('on',on==='nfl');cfb.classList.toggle('on',on==='cfb');
+  nfl.setAttribute('aria-selected',on==='nfl'?'true':'false');
+  cfb.setAttribute('aria-selected',on==='cfb'?'true':'false');
+  $('nfl-overlay-title').innerHTML=on==='cfb'?'College <span style="color:var(--gold)">·</span> Scores':'NFL <span style="color:var(--gold)">·</span> Scores';
+}
 function renderNflScoreboard(board,meta){
   const box=$('nfl-scoreboard');
   const games=board?.games||[];
+  const cfb=scoreboardLeague==='cfb';
   const week=board?.week!=null?`Week ${board.week}`:'This week';
   const src=meta?.source==='data.json'?'ESPN via saved data':'ESPN';
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
-  const bye=board?.byes?.length?` · Bye ${board.byes.join(', ')}`:'';
-  $('nfl-overlay-deck').textContent=`${week} · ${src}${as}${bye}`;
+  const bye=!cfb&&board?.byes?.length?` · Bye ${board.byes.join(', ')}`:'';
+  const group=cfb?' · Top 25':'';
+  $('nfl-overlay-deck').textContent=`${week}${group} · ${src}${as}${bye}`;
   if(!games.length){box.className='nfl-scoreboard sb-msg';box.textContent='No games this week';return;}
   box.className='nfl-scoreboard';
   const fmtRecord=r=>{const s=String(r||'').trim().replace(/-/g,'–');return s?(s.startsWith('(')?s:`(${s})`):'';};
@@ -994,32 +1108,45 @@ function renderNflScoreboard(board,meta){
     const empty=hide?' empty':'';
     const rec=fmtRecord(t.record);
     const recHtml=rec?` <span class="sb-rec">${esc(rec)}</span>`:'';
+    const rank=t.rank?`<span class="sb-rec">#${t.rank}</span> `:'';
     const logo=t.logo?`<img class="sb-logo" src="${esc(t.logo)}" alt="" onerror="this.parentNode.classList.add('no-logo')">`:'';
-    return `<div class="sb-team${loser?' loser':''}${t.logo?'':' no-logo'}">${logo}<span class="sb-logo-fallback">${esc(t.abbrev||'')}</span><span class="sb-name">${esc(t.name||t.short||'')}${recHtml}</span><span class="sb-abbr">${esc(t.abbrev||'')}</span><span class="sb-score${empty}">${score}</span></div>`;
+    return `<div class="sb-team${loser?' loser':''}${t.logo?'':' no-logo'}">${logo}<span class="sb-logo-fallback">${esc(t.abbrev||'')}</span><span class="sb-name">${rank}${esc(t.name||t.short||'')}${recHtml}</span><span class="sb-abbr">${esc(t.abbrev||'')}</span><span class="sb-score${empty}">${score}</span></div>`;
   };
   box.innerHTML=games.map(g=>{
     const live=g.state==='in';
-    const done=g.state==='post'||g.completed;
     const tag=live?`<span class="live-tag">Live</span>`:'';
     return `<article class="sb-game${live?' live':''}" aria-label="${esc((g.away?.abbrev||'')+' at '+(g.home?.abbrev||'')+', '+(g.status||''))}">${teamRow(g.away,g)}${teamRow(g.home,g)}<div class="sb-meta">${tag}<span class="sb-status">${esc(g.status||'')}</span></div></article>`;
   }).join('');
 }
 async function refreshNflOverlay(){
-  if(!nflOverlayOpen)return;
-  try{const res=await loadNflScoreboard();renderNflScoreboard(res.data,res);}
+  if(openOverlay!=='nfl')return;
+  try{const res=await loadScoreboard(scoreboardLeague);renderNflScoreboard(res.data,res);}
   catch(e){
-    console.warn('nfl scoreboard',e);
+    console.warn('scoreboard',e);
     const box=$('nfl-scoreboard');
     if(!box.querySelector('.sb-game')){box.className='nfl-scoreboard sb-msg';box.textContent='Scores unavailable right now';}
     $('nfl-overlay-deck').textContent='This week · ESPN · unavailable';
   }
 }
+function setScoreboardLeague(league){
+  if(league!=='cfb'&&league!=='nfl')return;
+  if(scoreboardLeague===league&&$('nfl-scoreboard').querySelector('.sb-game'))return;
+  scoreboardLeague=league;
+  setLeagueToggle();
+  if(openOverlay==='nfl'){
+    $('nfl-scoreboard').className='nfl-scoreboard sb-msg';
+    $('nfl-scoreboard').textContent='Loading scores…';
+    refreshNflOverlay();
+  }
+}
 function openNflOverlay(){
-  if(nflOverlayOpen)return;
-  nflOverlayOpen=true;
+  if(openOverlay==='nfl')return;
+  closeOpenOverlay();
+  openOverlay='nfl';
   const ov=$('nfl-overlay');
   ov.hidden=false;ov.setAttribute('aria-hidden','false');
   $('nfl-card').setAttribute('aria-expanded','true');
+  setLeagueToggle();
   $('nfl-scoreboard').className='nfl-scoreboard sb-msg';
   $('nfl-scoreboard').textContent='Loading scores…';
   $('nfl-overlay-deck').textContent='This week · ESPN';
@@ -1030,22 +1157,198 @@ function openNflOverlay(){
   if(close)close.focus();
 }
 function closeNflOverlay(){
-  if(!nflOverlayOpen)return;
-  nflOverlayOpen=false;
+  if(openOverlay!=='nfl')return;
+  openOverlay=null;
   clearInterval(nflSbTimer);nflSbTimer=null;
   const ov=$('nfl-overlay');
   ov.hidden=true;ov.setAttribute('aria-hidden','true');
   $('nfl-card').setAttribute('aria-expanded','false');
   $('nfl-card').focus();
 }
+function popLabel(v){return v==null||v===''?'':`${v}% rain`;}
+function cityHourKey(tz){const p=new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return `${g('year')}-${g('month')}-${g('day')}T${g('hour')}`;}
+function renderWeatherOverlay(model,meta){
+  const body=$('weather-overlay-body');
+  const days=model.days7||[], hours=model.hourly||[];
+  const src=meta?.source==='data.json'?'Open-Meteo via saved data':'Open-Meteo';
+  const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
+  $('weather-overlay-deck').textContent=`7-day · next 12 hours · ${src}${as}`;
+  if(!days.length){body.innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';return;}
+  const dayHtml=days.map(d=>`<div class="wx7-day"><div class="weekday">${esc(d.d)}</div>${icon(d.i)}<div class="cond">${esc(d.text||'')}</div><div class="temps">${d.h}°<span>${d.l}°</span></div><div class="pop${d.pop==null?' empty':''}">${d.pop==null?'—':esc(popLabel(d.pop))}</div></div>`).join('');
+  const hourHtml=hours.slice(0,12).map(h=>{
+    const when=h.hour||h.t;
+    return `<div class="wx12-hour"><div class="when">${esc(when)}</div>${icon(h.i)}<div class="temp">${h.temp}°</div><div class="pop${h.pop==null?' empty':''}">${h.pop==null?'—':esc(popLabel(h.pop))}</div></div>`;
+  }).join('');
+  body.innerHTML=`<div class="wx7">${dayHtml}</div><div class="wx-hourly-label">Next 12 hours</div><div class="wx12">${hourHtml||'<div class="nfl-scoreboard sb-msg">Hourly forecast unavailable</div>'}</div>`;
+}
+function hourLabel(iso,tz){
+  const s=iso.length<=16?iso+':00':iso;
+  const d=new Date(/Z$|[+-]\d\d:\d\d$/.test(s)?s:s);
+  // Open-Meteo local times have no zone; format the clock numbers directly when possible
+  const m=iso.match(/T(\d{2})/);
+  if(m){
+    let h=+m[1]; const ap=h>=12?'PM':'AM'; h=h%12||12;
+    return `${h} ${ap}`;
+  }
+  return new Intl.DateTimeFormat('en-US',{timeZone:tz||TZ,hour:'numeric',hour12:true}).format(d);
+}
+function parseOpenMeteo(d){
+  const popAt=(arr,j)=>{const v=arr?.[j];return Number.isFinite(v)?Math.round(v):null;};
+  const days=(d.daily?.time||[]).map((t,j)=>{
+    const [ic,tx]=wmoIcon(d.daily.weather_code[j]);
+    return {date:t,d:new Date(t+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'}),
+      i:ic,text:tx,h:Math.round(d.daily.temperature_2m_max[j]),l:Math.round(d.daily.temperature_2m_min[j]),
+      pop:popAt(d.daily.precipitation_probability_max,j)};
+  }).slice(0,7);
+  const observed=d.current?.time;
+  const hours=[];
+  for(let j=0;j<(d.hourly?.time||[]).length;j++){
+    const t=d.hourly.time[j];
+    if(t.slice(0,13)<cityHourKey(d.timezone||WX_CITY.tz))continue;
+    const [ic,tx]=wmoIcon(d.hourly.weather_code[j]);
+    hours.push({t,hour:hourLabel(t,d.timezone||WX_CITY.tz),i:ic,text:tx,temp:Math.round(d.hourly.temperature_2m[j]),pop:popAt(d.hourly.precipitation_probability,j)});
+    if(hours.length>=12)break;
+  }
+  return {days7:days,hourly:hours};
+}
+function weatherFromData(city){
+  if(!city)return null;
+  const days7=city.days7?.length?city.days7.map(d=>({...d})):null;
+  const hourly=(city.hourly||[]).map(h=>({...h,hour:h.hour||hourLabel(h.t,city.tz||WX_CITY.tz)}));
+  if(days7?.length)return {days7,hourly};
+  return null;
+}
+async function loadWeatherOverlay(){
+  const params=new URLSearchParams({
+    latitude:WX_CITY.lat,longitude:WX_CITY.lon,
+    current:'temperature_2m,weather_code',
+    daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max',
+    hourly:'temperature_2m,weather_code,precipitation_probability',
+    temperature_unit:'fahrenheit',timezone:WX_CITY.tz,forecast_days:'8'
+  });
+  try{
+    const r=await fetch('https://api.open-meteo.com/v1/forecast?'+params+'&t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error(r.status);
+    return {source:'open-meteo',data:parseOpenMeteo(await r.json()),asOf:new Date().toISOString()};
+  }catch(e){
+    let city=LIVE_DATA?.weather?.cities?.atlanta;
+    try{
+      const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+      if(r.ok){const d=await r.json();city=d.weather?.cities?.atlanta||city;}
+    }catch(_){}
+    const fb=weatherFromData(city);
+    if(fb)return {source:'data.json',data:fb,asOf:LIVE_DATA?.weather?.asOf||city?.now?.observed,fallback:true,error:e};
+    throw e;
+  }
+}
+async function refreshWeatherOverlay(){
+  if(openOverlay!=='weather')return;
+  try{const res=await loadWeatherOverlay();renderWeatherOverlay(res.data,res);}
+  catch(e){
+    console.warn('weather overlay',e);
+    $('weather-overlay-body').innerHTML='<div class="nfl-scoreboard sb-msg">Forecast unavailable right now</div>';
+    $('weather-overlay-deck').textContent='7-day · Open-Meteo · unavailable';
+  }
+}
+function openWeatherOverlay(){
+  if(openOverlay==='weather')return;
+  closeOpenOverlay();
+  openOverlay='weather';
+  const ov=$('weather-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  $('weather-card').setAttribute('aria-expanded','true');
+  $('weather-overlay-body').innerHTML='<div class="nfl-scoreboard sb-msg">Loading forecast…</div>';
+  refreshWeatherOverlay();
+  const close=$('weather-overlay-close');
+  if(close)close.focus();
+}
+function closeWeatherOverlay(){
+  if(openOverlay!=='weather')return;
+  openOverlay=null;
+  const ov=$('weather-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+  $('weather-card').setAttribute('aria-expanded','false');
+  $('weather-card').focus();
+}
+function newsTime(iso){
+  if(!iso)return '';
+  const d=new Date(iso);
+  if(isNaN(+d))return '';
+  const day=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(d);
+  return `${day} ${fmtTime(iso)}`;
+}
+function newsItems(){
+  const all=LIVE_DATA?.news?.items||[];
+  if(all.length)return all;
+  return (DATA.news||[]).map(x=>({src:x.src,hd:x.hd,sum:x.sum,pub:x.pub}));
+}
+function renderNewsOverlay(items,meta){
+  const list=$('news-overlay-list');
+  const srcs=[...new Set((items||[]).map(x=>x.src).filter(Boolean))].join(' · ')||'Headlines';
+  const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
+  $('news-overlay-deck').textContent=srcs+as;
+  if(!items?.length){list.innerHTML='<div class="nfl-scoreboard sb-msg">Headlines unavailable right now</div>';return;}
+  list.innerHTML=items.map(x=>`<article class="news-full-item"><div class="news-full-meta"><div class="news-full-src">${esc(x.src||'')}</div><div class="news-full-time">${esc(newsTime(x.pub)||'')}</div></div><div><div class="news-full-hd">${esc(x.hd||'')}</div>${x.sum?`<div class="news-full-sum">${esc(x.sum)}</div>`:''}</div></article>`).join('');
+}
+async function loadNewsOverlay(){
+  let items=newsItems();
+  let asOf=LIVE_DATA?.news?.asOf;
+  if(!items.length||!items.some(x=>x.sum)){
+    try{
+      const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
+      if(r.ok){const d=await r.json();if(d.news?.items?.length){items=d.news.items;asOf=d.news.asOf;if(LIVE_DATA)LIVE_DATA.news=d.news;}}
+    }catch(_){}
+  }
+  if(!items.length)throw new Error('no headlines');
+  return {data:items,asOf};
+}
+async function refreshNewsOverlay(){
+  if(openOverlay!=='news')return;
+  try{const res=await loadNewsOverlay();renderNewsOverlay(res.data,res);}
+  catch(e){
+    console.warn('news overlay',e);
+    $('news-overlay-list').innerHTML='<div class="nfl-scoreboard sb-msg">Headlines unavailable right now</div>';
+  }
+}
+function openNewsOverlay(){
+  if(openOverlay==='news')return;
+  closeOpenOverlay();
+  openOverlay='news';
+  const ov=$('news-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  $('news-card').setAttribute('aria-expanded','true');
+  $('news-overlay-list').innerHTML='<div class="nfl-scoreboard sb-msg">Loading headlines…</div>';
+  refreshNewsOverlay();
+  const close=$('news-overlay-close');
+  if(close)close.focus();
+}
+function closeNewsOverlay(){
+  if(openOverlay!=='news')return;
+  openOverlay=null;
+  const ov=$('news-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+  $('news-card').setAttribute('aria-expanded','false');
+  $('news-card').focus();
+}
 $('nfl-card').addEventListener('click',openNflOverlay);
-$('nfl-overlay').addEventListener('click',closeNflOverlay);
+$('weather-card').addEventListener('click',openWeatherOverlay);
+$('news-card').addEventListener('click',openNewsOverlay);
+$('nfl-overlay').addEventListener('click',e=>{if(e.target.closest('.league-toggle'))return;closeNflOverlay();});
+$('weather-overlay').addEventListener('click',closeWeatherOverlay);
+$('news-overlay').addEventListener('click',closeNewsOverlay);
+$('league-nfl').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('nfl');});
+$('league-cfb').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('cfb');});
 document.addEventListener('keydown',e=>{
   const code=e.keyCode||e.which;
   const isEsc=code===27||code===10009||e.key==='Escape'||e.key==='XF86Back';
   const isEnter=code===13||e.key==='Enter';
-  if(nflOverlayOpen&&(isEsc||isEnter)){e.preventDefault();closeNflOverlay();return;}
-  if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();}
+  const isLeft=code===37||e.key==='ArrowLeft';
+  const isRight=code===39||e.key==='ArrowRight';
+  if(openOverlay==='nfl'&&(isLeft||isRight)){e.preventDefault();setScoreboardLeague(isRight?'cfb':'nfl');return;}
+  if(openOverlay&&(isEsc||isEnter)){e.preventDefault();closeOpenOverlay();return;}
+  if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();return;}
+  if(isEnter&&document.activeElement===$('weather-card')){e.preventDefault();openWeatherOverlay();return;}
+  if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();}
 });
 
 window.setInterval(tick,1000);
