@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-15T21:19:36.322Z",
+ "generatedAt": "2026-11-15T21:38:42.551Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -4588,9 +4588,11 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-15T21:19:36.322Z",
+  "at": "2026-11-15T21:38:42.551Z",
   "ran": [
-   "news"
+   "alerts",
+   "nflScoreboard",
+   "cfbScoreboard"
   ]
  },
  "rates": {
@@ -10999,184 +11001,19 @@
   ],
   "games": [
    {
-    "id": "401873055",
-    "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 0:02",
-    "period": 4,
-    "clock": "0:02",
-    "completed": false,
-    "away": {
-     "name": "Carolina Panthers",
-     "short": "Panthers",
-     "id": "29",
-     "abbrev": "CAR",
-     "score": "17",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
-     "record": "3-5",
-     "winner": false,
-     "color": "#0085ca",
-     "rank": null
-    },
-    "home": {
-     "name": "New Orleans Saints",
-     "short": "Saints",
-     "id": "18",
-     "abbrev": "NO",
-     "score": "17",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
-     "record": "3-5",
-     "winner": false,
-     "color": "#d3bc8d",
-     "rank": null
-    }
-   },
-   {
-    "id": "401873056",
-    "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 0:17",
-    "period": 4,
-    "clock": "0:17",
-    "completed": false,
-    "away": {
-     "name": "Houston Texans",
-     "short": "Texans",
-     "id": "34",
-     "abbrev": "HOU",
-     "score": "24",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
-     "record": "3-5",
-     "winner": false,
-     "color": "#021018",
-     "rank": null
-    },
-    "home": {
-     "name": "Cleveland Browns",
-     "short": "Browns",
-     "id": "5",
-     "abbrev": "CLE",
-     "score": "27",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
-     "record": "5-4",
-     "winner": false,
-     "color": "#472a08",
-     "rank": null
-    }
-   },
-   {
-    "id": "401873057",
-    "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 0:27",
-    "period": 4,
-    "clock": "0:27",
-    "completed": false,
-    "away": {
-     "name": "Jacksonville Jaguars",
-     "short": "Jaguars",
-     "id": "30",
-     "abbrev": "JAX",
-     "score": "40",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
-     "record": "6-2",
-     "winner": false,
-     "color": "#007487",
-     "rank": null
-    },
-    "home": {
-     "name": "Tennessee Titans",
-     "short": "Titans",
-     "id": "10",
-     "abbrev": "TEN",
-     "score": "23",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
-     "record": "1-7",
-     "winner": false,
-     "color": "#4495d2",
-     "rank": null
-    }
-   },
-   {
-    "id": "401873058",
-    "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 0:04",
-    "period": 4,
-    "clock": "0:04",
-    "completed": false,
-    "away": {
-     "name": "Kansas City Chiefs",
-     "short": "Chiefs",
-     "id": "12",
-     "abbrev": "KC",
-     "score": "35",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
-     "record": "6-2",
-     "winner": false,
-     "color": "#e31837",
-     "rank": null
-    },
-    "home": {
-     "name": "Atlanta Falcons",
-     "short": "Falcons",
-     "id": "1",
-     "abbrev": "ATL",
-     "score": "13",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
-     "record": "3-6",
-     "winner": false,
-     "color": "#a71930",
-     "rank": null
-    }
-   },
-   {
-    "id": "401873059",
-    "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 1:41",
-    "period": 4,
-    "clock": "1:41",
-    "completed": false,
-    "away": {
-     "name": "Miami Dolphins",
-     "short": "Dolphins",
-     "id": "15",
-     "abbrev": "MIA",
-     "score": "22",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
-     "record": "1-7",
-     "winner": false,
-     "color": "#008e97",
-     "rank": null
-    },
-    "home": {
-     "name": "Indianapolis Colts",
-     "short": "Colts",
-     "id": "11",
-     "abbrev": "IND",
-     "score": "24",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
-     "record": "2-7",
-     "winner": false,
-     "color": "#003b75",
-     "rank": null
-    }
-   },
-   {
     "id": "401873061",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Q1 11:35",
+    "status": "Q1 2:11",
     "period": 1,
-    "clock": "11:35",
+    "clock": "2:11",
     "completed": false,
     "away": {
      "name": "Los Angeles Rams",
      "short": "Rams",
      "id": "14",
      "abbrev": "LAR",
-     "score": "0",
+     "score": "3",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
      "record": "5-4",
      "winner": false,
@@ -11188,7 +11025,7 @@
      "short": "Cardinals",
      "id": "22",
      "abbrev": "ARI",
-     "score": "0",
+     "score": "6",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ari.png",
      "record": "3-6",
      "winner": false,
@@ -11200,16 +11037,16 @@
     "id": "401873062",
     "start": "2026-11-15T21:05Z",
     "state": "in",
-    "status": "Q1 11:20",
-    "period": 1,
-    "clock": "11:20",
+    "status": "Q2 15:00",
+    "period": 2,
+    "clock": "15:00",
     "completed": false,
     "away": {
      "name": "Seattle Seahawks",
      "short": "Seahawks",
      "id": "26",
      "abbrev": "SEA",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sea.png",
      "record": "5-4",
      "winner": false,
@@ -11221,7 +11058,7 @@
      "short": "Raiders",
      "id": "13",
      "abbrev": "LV",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
      "record": "4-5",
      "winner": false,
@@ -11232,10 +11069,10 @@
    {
     "id": "401873063",
     "start": "2026-11-15T21:25Z",
-    "state": "pre",
-    "status": "Sun 4:25 PM ET",
-    "period": 0,
-    "clock": "0:00",
+    "state": "in",
+    "status": "Q1 11:31",
+    "period": 1,
+    "clock": "11:31",
     "completed": false,
     "away": {
      "name": "San Francisco 49ers",
@@ -11254,7 +11091,7 @@
      "short": "Cowboys",
      "id": "6",
      "abbrev": "DAL",
-     "score": "0",
+     "score": "3",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
      "record": "4-5",
      "winner": false,
@@ -11428,6 +11265,171 @@
     }
    },
    {
+    "id": "401873055",
+    "start": "2026-11-15T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Carolina Panthers",
+     "short": "Panthers",
+     "id": "29",
+     "abbrev": "CAR",
+     "score": "20",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+     "record": "4-5",
+     "winner": true,
+     "color": "#0085ca",
+     "rank": null
+    },
+    "home": {
+     "name": "New Orleans Saints",
+     "short": "Saints",
+     "id": "18",
+     "abbrev": "NO",
+     "score": "17",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/no.png",
+     "record": "3-6",
+     "winner": false,
+     "color": "#d3bc8d",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873056",
+    "start": "2026-11-15T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Houston Texans",
+     "short": "Texans",
+     "id": "34",
+     "abbrev": "HOU",
+     "score": "24",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/hou.png",
+     "record": "3-6",
+     "winner": false,
+     "color": "#021018",
+     "rank": null
+    },
+    "home": {
+     "name": "Cleveland Browns",
+     "short": "Browns",
+     "id": "5",
+     "abbrev": "CLE",
+     "score": "27",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cle.png",
+     "record": "6-4",
+     "winner": true,
+     "color": "#472a08",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873057",
+    "start": "2026-11-15T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Jacksonville Jaguars",
+     "short": "Jaguars",
+     "id": "30",
+     "abbrev": "JAX",
+     "score": "40",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+     "record": "7-2",
+     "winner": true,
+     "color": "#007487",
+     "rank": null
+    },
+    "home": {
+     "name": "Tennessee Titans",
+     "short": "Titans",
+     "id": "10",
+     "abbrev": "TEN",
+     "score": "23",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ten.png",
+     "record": "1-8",
+     "winner": false,
+     "color": "#4495d2",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873058",
+    "start": "2026-11-15T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Kansas City Chiefs",
+     "short": "Chiefs",
+     "id": "12",
+     "abbrev": "KC",
+     "score": "35",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+     "record": "7-2",
+     "winner": true,
+     "color": "#e31837",
+     "rank": null
+    },
+    "home": {
+     "name": "Atlanta Falcons",
+     "short": "Falcons",
+     "id": "1",
+     "abbrev": "ATL",
+     "score": "13",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/atl.png",
+     "record": "3-7",
+     "winner": false,
+     "color": "#a71930",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873059",
+    "start": "2026-11-15T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Miami Dolphins",
+     "short": "Dolphins",
+     "id": "15",
+     "abbrev": "MIA",
+     "score": "22",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/mia.png",
+     "record": "1-8",
+     "winner": false,
+     "color": "#008e97",
+     "rank": null
+    },
+    "home": {
+     "name": "Indianapolis Colts",
+     "short": "Colts",
+     "id": "11",
+     "abbrev": "IND",
+     "score": "24",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/ind.png",
+     "record": "3-7",
+     "winner": true,
+     "color": "#003b75",
+     "rank": null
+    }
+   },
+   {
     "id": "401873060",
     "start": "2026-11-15T18:00Z",
     "state": "post",
@@ -11461,8 +11463,8 @@
     }
    }
   ],
-  "asOf": "2026-11-15T21:12:16.816Z",
-  "lastAttempt": "2026-11-15T21:12:16.816Z",
+  "asOf": "2026-11-15T21:38:42.551Z",
+  "lastAttempt": "2026-11-15T21:38:42.551Z",
   "lastError": null
  },
  "alerts": {
@@ -11473,8 +11475,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-15T21:12:16.816Z",
-  "lastAttempt": "2026-11-15T21:12:16.816Z",
+  "asOf": "2026-11-15T21:38:42.551Z",
+  "lastAttempt": "2026-11-15T21:38:42.551Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12047,11 +12049,11 @@
    {
     "id": "401856887",
     "start": "2026-11-15T18:00Z",
-    "state": "in",
-    "status": "Q4 0:07",
+    "state": "post",
+    "status": "Final",
     "period": 4,
-    "clock": "0:07",
-    "completed": false,
+    "clock": "0:00",
+    "completed": true,
     "away": {
      "name": "Ole Miss Rebels",
      "short": "Ole Miss",
@@ -12059,7 +12061,7 @@
      "abbrev": "MISS",
      "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/145.png",
-     "record": "6-3",
+     "record": "6-4",
      "winner": false,
      "color": "#13294b",
      "rank": 19
@@ -12071,8 +12073,8 @@
      "abbrev": "OU",
      "score": "24",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/201.png",
-     "record": "5-4",
-     "winner": false,
+     "record": "6-4",
+     "winner": true,
      "color": "#990000",
      "rank": null
     }
@@ -12112,8 +12114,8 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-15T21:12:16.816Z",
-  "lastAttempt": "2026-11-15T21:12:16.816Z",
+  "asOf": "2026-11-15T21:38:42.551Z",
+  "lastAttempt": "2026-11-15T21:38:42.551Z",
   "lastError": null
  }
 }
