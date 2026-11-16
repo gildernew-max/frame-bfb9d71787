@@ -1116,8 +1116,19 @@ function tick(){
   updateSun(now);
   updateWorldClockTimes();
 }
+// Tizen web apps report innerWidth/innerHeight larger than the visible area
+// (3360x1890 on a 1920x1080 view), so take the smallest sane candidate.
+function viewportSize(){
+  var vv=window.visualViewport,de=document.documentElement,ws=[],hs=[];
+  function add(w,h){if(w>0&&h>0){ws.push(w);hs.push(h);}}
+  if(vv)add(vv.width*(vv.scale||1),vv.height*(vv.scale||1));
+  if(de)add(de.clientWidth,de.clientHeight);
+  add(window.innerWidth,window.innerHeight);
+  if(!ws.length)add(screen.width,screen.height);
+  return {w:Math.min.apply(null,ws),h:Math.min.apply(null,hs)};
+}
 function fit(){
-  const w=window.innerWidth||document.documentElement.clientWidth||screen.width,h=window.innerHeight||document.documentElement.clientHeight||screen.height;
+  const vp=viewportSize(),w=vp.w,h=vp.h;
   const scale=Math.min(w/3840,h/2160);
   if(!(scale>0))return setTimeout(fit,500);
   $('stage').style.transform=`translate(-50%,-50%) scale(${scale})`;
@@ -1127,7 +1138,7 @@ function fit(){
   if(typeof layoutAllYearMarks==='function')requestAnimationFrame(layoutAllYearMarks);
 }
 renderForecast(DATA.forecast);renderSaintPaul(DATA.saintPaulForecast);renderNFL(DATA.nfl);renderMarkets();renderNews(DATA.news);renderTape();
-tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);setTimeout(fit,1500);setInterval(fit,30000);
+tick();fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);if(window.visualViewport)window.visualViewport.addEventListener('resize',fit);setTimeout(fit,1500);setInterval(fit,30000);
 /* ------------------------------------------------------------------
    LIVE: polls data.json (written by scripts/update.mjs; no keys in this page)
    and swaps sample values for real ones. A section with no live data keeps its
