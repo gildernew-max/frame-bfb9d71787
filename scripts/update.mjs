@@ -20,4 +20,4 @@ if (next.lastRun.ran.length || !prev.version) {
 } else console.log('nothing due; data.json left unchanged');
 const s = k => next[k]?.lastError ? `FAILED (${next[k].lastError})` : (next[k]?.asOf ? `ok as of ${next[k].asOf}` : 'none');
 console.log(`ran: ${next.lastRun.ran.join(', ') || 'nothing due'}`);
-for (const k of ['weather', 'alerts', 'nfl', 'nflScoreboard', 'cfbScoreboard', 'news', 'world', 'movers', 'stocks']) console.log(`${k}: ${s(k)}${next[k]?.status ? ' [' + next[k].status + ']' : ''}`);
+for (const k of ['weather', 'alerts', 'sectors', 'nfl', 'nflScoreboard', 'cfbScoreboard', 'news', 'world', 'movers', 'stocks']) console.log(`${k}: ${s(k)}${next[k]?.status ? ' [' + next[k].status + ']' : ''}`);

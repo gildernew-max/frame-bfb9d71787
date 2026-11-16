@@ -586,6 +586,33 @@ async function fetchMovers() {
     sessionTime: t ? new Date(t * 1000).toISOString() : null, sessionDate: t ? etParts(new Date(t * 1000)).dateKey : null, gainers, losers };
 }
 
+// ---------- S&P 500 sector heat map (Yahoo chart, SPDR sector ETFs) ----------
+export const SECTORS = [
+  ['XLK', 'Technology'], ['XLC', 'Communication'], ['XLY', 'Cons. Discretionary'], ['XLF', 'Financials'],
+  ['XLV', 'Health Care'], ['XLI', 'Industrials'], ['XLP', 'Cons. Staples'], ['XLE', 'Energy'],
+  ['XLU', 'Utilities'], ['XLRE', 'Real Estate'], ['XLB', 'Materials']
+];
+export async function fetchSectors(prevSec = {}) {
+  const items = [], symbolErrors = [];
+  for (const [s, n] of SECTORS) {
+    try {
+      const r = await yahooChartResult(s);
+      const px = r.meta.regularMarketPrice, pc = yahooPrevClose(r);
+      if (!(px > 0) || !(pc > 0)) throw new Error('no price/prev close');
+      items.push({ s, n, px: Math.round(px * 100) / 100, d: Math.round((px / pc - 1) * 10000) / 100, t: r.meta.regularMarketTime });
+    } catch (e) {
+      symbolErrors.push(`${s}: ${why(e)}`);
+      const old = (prevSec.items || []).find(i => i.s === s);
+      if (old) items.push(old);
+    }
+  }
+  if (symbolErrors.length === SECTORS.length) throw new Error('All sector ETFs failed: ' + symbolErrors.join('; '));
+  const t = Math.max(...items.map(i => i.t || 0));
+  return { provider: 'Yahoo Finance', credit: 'Sectors: Yahoo Finance (SPDR ETFs)', items,
+    sessionTime: t ? new Date(t * 1000).toISOString() : null, sessionDate: t ? etParts(new Date(t * 1000)).dateKey : null,
+    ...(symbolErrors.length ? { symbolErrors } : {}) };
+}
+
 // ---------- stocks (Finnhub) + indexes (Yahoo Finance / Stooq / Finnhub fund) ----------
 const STOCKS = [
   { s: 'NVDA', n: 'NVIDIA' }, { s: 'TSLA', n: 'Tesla' }, { s: 'SPCX', n: 'SpaceX' }
@@ -1141,6 +1168,23 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       ran.push('movers');
       try { out.movers = ok(await fetchMovers(), { asOf: nowIso, lastAttempt: nowIso }); }
       catch (e) { out.movers = { ...pm, lastAttempt: nowIso, lastError: why(e) }; }
+    }
+  }
+  // Sector heat map: same cadence as movers (session ~12 min, once after the close, then hold).
+  {
+    const ps = prev.sectors || {};
+    const inSess = isWeekday(et.weekday) && et.mins >= 575 && et.mins <= 965;
+    const age = ageMin(ps.asOf, now), tried = ageMin(ps.lastAttempt, now);
+    const lastClose = lastCashCloseDateKey(et);
+    const behind = !ps.sessionDate || ps.sessionDate < lastClose;
+    const at = ps.asOf ? etParts(new Date(ps.asOf)) : null;
+    const fetchedSinceClose = at && (at.dateKey > lastClose || (at.dateKey === lastClose && at.mins >= 962));
+    const due = force || !ps.asOf || (ps.lastError ? tried >= 30 :
+      inSess ? age >= 12 : !fetchedSinceClose ? true : behind ? age >= 60 : age >= 12 * 60);
+    if (due) {
+      ran.push('sectors');
+      try { out.sectors = ok(await fetchSectors(ps), { asOf: nowIso, lastAttempt: nowIso }); }
+      catch (e) { out.sectors = { ...ps, lastAttempt: nowIso, lastError: why(e) }; }
     }
   }
   if (force || sectionDue(prev.rates, now, et, 'daily6')) {
