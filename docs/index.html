@@ -259,6 +259,16 @@
   .spot-caption{font-size:30px;color:var(--soft);letter-spacing:.12em;text-transform:uppercase;margin-top:13px}
   .spot-graphic{position:relative;display:flex;align-items:flex-end;min-width:0}
   .area-chart{width:100%;height:315px;margin-bottom:7px;overflow:visible}
+  .spot-plot{position:relative;width:100%;height:232px;margin-bottom:100px}
+  .spot-canvas{position:absolute;left:0;top:0;bottom:0;right:132px}
+  .spot-canvas .area-chart{position:absolute;left:0;top:0;width:100%;height:100%;margin:0}
+  .spot-yl{position:absolute;right:0;transform:translateY(-50%);font-size:28px;line-height:1;color:rgba(236,228,214,.62);
+    letter-spacing:.02em;font-feature-settings:"tnum" 1,"lnum" 1;white-space:nowrap}
+  .spot-ml{position:absolute;top:100%;margin-top:12px;transform:translateX(-50%);font-size:26px;line-height:1;
+    letter-spacing:.12em;text-transform:uppercase;color:rgba(236,228,214,.46);white-space:nowrap}
+  .spot-dot{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;border-radius:50%;background:var(--c);
+}
+  .spot-dot::before{content:"";position:absolute;left:-7px;top:-7px;right:-7px;bottom:-7px;border-radius:50%;background:inherit;opacity:.18}
   .chart-top{position:absolute;top:6px;right:3px;color:var(--soft);font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
   .spot-folio{position:absolute;right:39px;bottom:19px;font-size:30px;letter-spacing:.12em;color:var(--soft);font-weight:500}
   #market-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,223px);
@@ -997,61 +1007,67 @@ function areaChart(values,up,id){
     <circle cx="${last[0]}" cy="${last[1]}" r="12" fill="${color}" opacity=".16"/><circle cx="${last[0]}" cy="${last[1]}" r="5.5" fill="${color}"/>
     </svg>`;
 }
-// Spotlight price line from stocks.series (fetcher): today's 5-min bars against a dotted
-// prior-close baseline while the session is live, otherwise the last five sessions.
+// Spotlight price line from stocks.series (fetcher): ~90 days of daily closes, with the
+// quote as the last point so the line always ends at the price shown on the card.
 var SPOT_FMT=null;
 function spotFmt(){
   if(!SPOT_FMT)SPOT_FMT={day:new Intl.DateTimeFormat('en-CA',{timeZone:TZ}),
-    wd:new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}),
-    hm:new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit',hourCycle:'h23'})};
+    mon:new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'short'})};
   return SPOT_FMT;
 }
-function spotEtMins(sec){
-  var p=spotFmt().hm.formatToParts(new Date(sec*1000)),h=0,m=0,i;
-  for(i=0;i<p.length;i++){if(p[i].type==='hour')h=+p[i].value;if(p[i].type==='minute')m=+p[i].value;}
-  return h*60+m;
-}
-function spotSeries(st,key,q,open){
-  var items=st&&st.series&&st.series.items, it=items&&items[key], i, n, xs=[], seps=[], pc, last, pct, day, todayKey, t0, f=spotFmt();
-  if(!it||!it.c||!it.t||it.c.length<2||it.c.length!==it.t.length)return null;
-  n=it.c.length; last=it.c[n-1];
-  if(it.mode==='day'){
-    t0=it.t[0]-(spotEtMins(it.t[0])-570)*60;
-    for(i=0;i<n;i++)xs.push(Math.max(0,Math.min(1,(it.t[i]-t0)/23400)));
-    pc=it.pc>0?it.pc:(q&&q.pc>0?q.pc:null);
-    todayKey=f.day.format(new Date());
-    day=f.wd.format(new Date(it.t[n-1]*1000));
-    return {c:it.c,xs:xs,seps:seps,pc:pc,up:pc==null?last>=it.c[0]:last>=pc,
-      label:open&&it.session===todayKey?'Today · vs prior close':day+' session'};
+function spotSeries(st,key,q){
+  var items=st&&st.series&&st.series.items, it=items&&items[key], i, n, c, t, xs=[], months=[], f=spotFmt(), lastKey, qKey, pct, m, pm;
+  if(!it||it.mode!=='90d'||!it.c||!it.t||it.c.length<2||it.c.length!==it.t.length)return null;
+  c=it.c.slice(); t=it.t.slice(); n=c.length;
+  if(q&&q.px>0&&q.t>0){
+    lastKey=f.day.format(new Date(t[n-1]*1000)); qKey=f.day.format(new Date(q.t*1000));
+    if(qKey===lastKey)c[n-1]=q.px;
+    else if(qKey>lastKey){c.push(q.px);t.push(q.t);n++;}
   }
   for(i=0;i<n;i++){
     xs.push(i/(n-1));
-    if(i&&f.day.format(new Date(it.t[i]*1000))!==f.day.format(new Date(it.t[i-1]*1000)))seps.push((i-.5)/(n-1));
+    m=f.mon.format(new Date(t[i]*1000));
+    if(i&&m!==pm)months.push({x:(i-.5)/(n-1),label:m});
+    pm=m;
   }
-  pc=it.pc>0?it.pc:it.c[0];
-  pct=(last-pc)/pc*100;
-  return {c:it.c,xs:xs,seps:seps,pc:pc,up:last>=pc,
-    label:'5 days · '+(pct>=0?'+':'−')+Math.abs(pct).toFixed(1)+'%'};
+  pct=(c[n-1]-c[0])/c[0]*100;
+  return {c:c,xs:xs,months:months,up:c[n-1]>=c[0],
+    label:'90 days · '+(pct>=0?'+':'−')+Math.abs(pct).toFixed(1)+'%'};
+}
+function spotGridStep(lo,hi){
+  var raw=(hi-lo)/3, mag=Math.pow(10,Math.floor(Math.log(raw)/Math.LN10)), cands=[], k, j, st, mults=[1,2,2.5,5];
+  for(k=-1;k<=1;k++)for(j=0;j<mults.length;j++){st=mults[j]*mag*Math.pow(10,k);if(st>=1||mults[j]!==2.5)cands.push(st);}
+  cands.sort(function(a,b){return a-b;});
+  for(j=0;j<cands.length;j++)if(Math.ceil(hi/cands[j])-Math.floor(lo/cands[j])-1<=4)return cands[j];
+  return cands[cands.length-1];
+}
+function spotMoney(v,step){
+  return '$'+(step>=1?Math.round(v).toLocaleString('en-US'):v.toFixed(step>=.1?1:2));
 }
 function priceChart(sr,id){
-  var w=860,h=312,left=18,right=20,top=25,bottom=25,iw=w-left-right,ih=h-top-bottom;
-  var mn=Infinity,mx=-Infinity,i,v,line='',pts=[],out,color=sr.up?'#99C7A6':'#E29A91',pad,yOf,baseY,last;
+  var w=1000,h=300,top=10,bottom=10,ih=h-top-bottom;
+  var mn=Infinity,mx=-Infinity,i,v,line='',pts=[],svg='',labels='',months='',color=sr.up?'#99C7A6':'#E29A91',pad,lo,hi,step,y,last,yPct;
   for(i=0;i<sr.c.length;i++){v=sr.c[i];if(v<mn)mn=v;if(v>mx)mx=v;}
-  if(sr.pc!=null){if(sr.pc<mn)mn=sr.pc;if(sr.pc>mx)mx=sr.pc;}
-  pad=(mx-mn||Math.abs(mx)*.01||1)*.12;
-  yOf=function(val){return top+ih*(1-(val-mn+pad)/(mx-mn+2*pad));};
-  for(i=0;i<sr.c.length;i++){pts.push([left+iw*sr.xs[i],yOf(sr.c[i])]);line+=(i?'L':'M')+pts[i][0].toFixed(1)+','+pts[i][1].toFixed(1)+' ';}
-  last=pts[pts.length-1];
-  out='<svg class="area-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-label="Price line">'+
+  pad=(mx-mn||Math.abs(mx)*.01||1)*.10; lo=mn-pad; hi=mx+pad;
+  function yOf(val){return top+ih*(1-(val-lo)/(hi-lo));}
+  step=spotGridStep(lo,hi);
+  for(v=Math.ceil(lo/step)*step;v<=hi+1e-9;v+=step){
+    y=yOf(v); if(y<4||y>h-4)continue;
+    svg+='<path d="M0 '+y.toFixed(1)+'H'+w+'" stroke="rgba(236,228,214,.13)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>';
+    labels+='<span class="spot-yl" style="top:'+(y/h*100).toFixed(2)+'%">'+spotMoney(v,step)+'</span>';
+  }
+  for(i=0;i<sr.months.length;i++){
+    svg+='<path d="M'+(w*sr.months[i].x).toFixed(1)+' '+top+'V'+h+'" stroke="rgba(236,228,214,.08)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>';
+    if(sr.months[i].x>.04&&sr.months[i].x<.96)months+='<span class="spot-ml" style="left:'+(sr.months[i].x*100).toFixed(2)+'%">'+sr.months[i].label+'</span>';
+  }
+  for(i=0;i<sr.c.length;i++){pts.push([w*sr.xs[i],yOf(sr.c[i])]);line+=(i?'L':'M')+pts[i][0].toFixed(1)+','+pts[i][1].toFixed(1)+' ';}
+  last=pts[pts.length-1]; yPct=(last[1]/h*100).toFixed(2);
+  return '<div class="spot-plot"><div class="spot-canvas">'+
+    '<svg class="area-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-label="90-day price line">'+
     '<defs><linearGradient id="spot-'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="'+color+'" stop-opacity=".22"/><stop offset="100%" stop-color="'+color+'" stop-opacity="0"/></linearGradient></defs>'+
-    '<g stroke="rgba(255,255,255,.09)" stroke-width="1"><path d="M18 72H840 M18 155H840 M18 238H840" stroke-dasharray="4 10"/></g>';
-  for(i=0;i<sr.seps.length;i++)out+='<path d="M'+(left+iw*sr.seps[i]).toFixed(1)+' '+top+'V'+(h-bottom)+'" stroke="rgba(255,255,255,.10)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>';
-  out+='<path d="'+line+'L'+last[0].toFixed(1)+','+h+' L'+pts[0][0].toFixed(1)+','+h+' Z" fill="url(#spot-'+id+')"/>';
-  if(sr.pc!=null){baseY=yOf(sr.pc).toFixed(1);
-    out+='<path d="M'+left+' '+baseY+'H'+(w-right)+'" stroke="rgba(236,228,214,.42)" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round"/>';}
-  out+='<path d="'+line+'" fill="none" stroke="'+color+'" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'+
-    '<circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="12" fill="'+color+'" opacity=".16"/><circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="5.5" fill="'+color+'"/></svg>';
-  return out;
+    svg+'<path d="'+line+'L'+last[0].toFixed(1)+','+h+' L0,'+h+' Z" fill="url(#spot-'+id+')"/>'+
+    '<path d="'+line+'" fill="none" stroke="'+color+'" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg>'+
+    '<span class="spot-dot" style="left:100%;top:'+yPct+'%;background:'+color+'"></span>'+months+'</div>'+labels+'</div>';
 }
 function quoteKey(q){return q.key||(q.s==='Composite'?'NASDAQ':q.s==='DJIA'?'DOW':q.s);}
 function quoteCard(q){
@@ -1502,7 +1518,7 @@ function applyStocks(st){
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
     return {key,n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
-      series:isIdx?null:spotSeries(st,key,q,open),
+      series:isIdx?null:spotSeries(st,key,q),
       chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
   const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{key:'ANT',n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
