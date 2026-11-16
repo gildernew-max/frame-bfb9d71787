@@ -24,8 +24,8 @@
   .serif{font-family:Inter,"SF Pro Display",system-ui,sans-serif;font-weight:300;letter-spacing:-0.01em}
   #stage{
     position:absolute;left:50%;top:50%;width:3840px;height:2160px;
-    transform-origin:center center;display:grid;grid-template-rows:735px minmax(0,1fr) 105px;
-    gap:32px;padding:74px 120px 54px;isolation:isolate;overflow:hidden;
+    transform-origin:center center;display:grid;grid-template-rows:735px minmax(0,1fr) 125px;
+    gap:32px;padding:74px 120px 34px;isolation:isolate;overflow:hidden;
     background:
       radial-gradient(1400px 800px at 17% 4%,rgba(201,168,106,.09),transparent 72%),
       radial-gradient(1300px 880px at 84% 100%,rgba(91,105,119,.075),transparent 76%),
@@ -445,27 +445,26 @@
   .news-li.on{color:var(--ink)}.news-li.on i{color:var(--gold)}
 
   /* Full-width, quiet market ribbon instead of a static footer */
-  .ticker-footer{height:105px;border-top:1px solid rgba(201,168,106,.24);position:relative;min-width:0}
-  .tape-viewport{position:absolute;inset:22px 0 0;overflow:hidden;
+  .ticker-footer{height:125px;border-top:1px solid rgba(201,168,106,.24);position:relative;min-width:0;
+    display:flex;align-items:stretch}
+  .tape-viewport{position:relative;flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;
     mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
-  .tape-track{width:max-content;display:flex;align-items:center;height:65px;animation:tape-move 74s linear infinite;will-change:transform}
-  .tape-group{display:flex;align-items:center;gap:96px;flex:none;padding-right:96px;white-space:nowrap}
-  .tape-item{display:inline-flex;align-items:baseline;gap:18px;font-size:36px;font-weight:400}
+  .tape-track{width:max-content;display:flex;align-items:center;height:86px;animation:tape-move 74s linear infinite;will-change:transform}
+  .tape-group{display:flex;align-items:center;gap:128px;flex:none;padding-right:128px;white-space:nowrap}
+  .tape-item{display:inline-flex;align-items:baseline;gap:24px;font-size:48px;font-weight:400}
   .tape-symbol{color:#E7DFD1;font-weight:500;letter-spacing:.035em}
   .tape-price{color:var(--muted)}
-  .tape-change{font-size:36px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
-  .tape-change.soon{color:var(--gold);font-size:36px}
-  .tape-sep{width:5px;height:5px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:15px}
-  .tape-seg{display:inline-flex;align-items:center;gap:64px;flex:none}
+  .tape-change{font-size:48px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
+  .tape-change.soon{color:var(--gold);font-size:48px}
+  .tape-sep{width:7px;height:7px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:20px}
+  .tape-seg{display:inline-flex;align-items:center;gap:84px;flex:none}
   .tape-seg .tape-item:last-child .tape-sep{display:none}
-  .tape-label{align-self:center;font-size:24px;line-height:1;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--gold);padding:7px 14px 6px;border:1px solid rgba(201,168,106,.42);border-radius:4px;margin-right:-22px}
-  .tape-label i{font-style:normal;letter-spacing:0;margin-left:6px}.tape-label .up{color:var(--up)}.tape-label .down{color:var(--down)}
+  .tape-label{align-self:center;font-size:32px;line-height:1;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);padding:9px 18px 8px;border:1px solid rgba(201,168,106,.42);border-radius:5px;margin-right:-29px}
+  .tape-label i{font-style:normal;letter-spacing:0;margin-left:8px}.tape-label .up{color:var(--up)}.tape-label .down{color:var(--down)}
   .tape-hd{color:#E7DFD1}
-  .tape-src{font-size:26px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
-  .source-line{position:absolute;right:0;top:0;z-index:2;transform:translateY(-15px);
-    display:flex;align-items:center;gap:14px;background:var(--bg);padding-left:22px}
-  .mock-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .tape-src{font-size:34px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+  .source-line{flex:none;display:flex;align-items:center;gap:14px;padding-left:28px}
   .refresh-asof{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);white-space:nowrap;font-weight:500}
   .refresh-asof[hidden]{display:none!important}
   .refresh-btn{appearance:none;-webkit-appearance:none;margin:0;padding:0;width:56px;height:56px;border:0;
@@ -767,6 +766,7 @@
   </section>
 
   <footer class="ticker-footer" aria-label="Scrolling market ticker, example data">
+    <div class="tape-viewport"><div class="tape-track" id="tape-track"></div></div>
     <div class="source-line">
       <button type="button" class="refresh-btn" id="refresh-btn" aria-label="Refresh board" title="Refresh">
         <svg class="refresh-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
@@ -774,10 +774,8 @@
           <polyline points="21 3 21 9 15 9"/>
         </svg>
       </button>
-      <span class="mock-label" id="credit-label">Sample data · mockup</span>
       <span class="refresh-asof" id="refresh-asof" hidden></span>
     </div>
-    <div class="tape-viewport"><div class="tape-track" id="tape-track"></div></div>
   </footer>
 
   <div id="nfl-overlay" class="nfl-overlay" hidden aria-hidden="true">
@@ -1234,7 +1232,7 @@ function renderTape(force){
   track.innerHTML=`<div class="tape-group">${copy}</div><div class="tape-group" aria-hidden="true">${copy}</div>`;
   const w=track.firstElementChild.offsetWidth;
   track.style.setProperty('--tape-w',w+'px');
-  track.style.animationDuration=`${(w/(3676/74)).toFixed(2)}s`; // same speed as the design: 3676px per 74s
+  track.style.animationDuration=`${(w/(3676/74*48/36)).toFixed(2)}s`; // design speed (3676px per 74s at 36px type), scaled with the 48px type so reading pace is unchanged
 }
 
 const TZ='America/New_York'; // Canonical Eastern Time IANA zone for Atlanta, GA
@@ -1775,14 +1773,6 @@ function applyLive(d){
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
   try{applyTickerExtras(d);renderTape();}catch(e){console.error('ticker',e);}
   try{checkMarketAlerts();scheduleScoreWatch();if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
-  const credits=['Weather: Open-Meteo','ESPN','AI news: RSS'];
-  if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
-  if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
-  const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
-  if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
-  if(TAPE_RATES||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
-  if(TAPE_MOVERS)credits.push('Movers: Yahoo');
-  $('credit-label').textContent=credits.join(' · ');
 }
 function updateRefreshAsOf(iso){
   const el=$('refresh-asof'); if(!el)return;
