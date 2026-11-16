@@ -335,8 +335,27 @@
   .wx-map .leaflet-container{width:100%;height:100%;background:#141518;font-family:Inter,"SF Pro Display",system-ui,sans-serif;
     outline:none;border:none;box-shadow:none}
   .wx-map .leaflet-control-attribution{display:none}
-  /* Basemap color comes from Esri World Dark Gray tiles only — no visual CSS filters.
-     Tizen's older Chromium washed out or inverted filtered tiles to light gray. */
+  /* The Frame's Chromium renders raster basemap tiles washed-out light gray, so the Atlanta
+     basemap is drawn as vectors on a solid background (Esri tiles only with ?basemap=esri).
+     No filter, backdrop-filter or mix-blend-mode on #radar-map or its ancestors; Leaflet's own
+     CSS puts mix-blend-mode:plus-lighter on every tile, so that is reset here too. */
+  #weather-overlay .nfl-overlay-sheet{-webkit-backdrop-filter:none;backdrop-filter:none}
+  #radar-map,#radar-map .leaflet-container,#radar-map .leaflet-pane,#radar-map .leaflet-layer,
+  #radar-map .leaflet-tile,#radar-map img.leaflet-tile{filter:none;-webkit-filter:none;mix-blend-mode:normal}
+  #radar-map,#radar-map.leaflet-container{background:#141518;forced-color-adjust:none}
+  .wx-city{position:relative;width:0;height:0;overflow:visible;pointer-events:none}
+  .wx-city b{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:#D8D4CC;
+    box-shadow:0 0 0 3px #0C0D10}
+  .wx-city i{position:absolute;top:-21px;display:block;white-space:nowrap;font:500 42px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    font-style:normal;letter-spacing:.02em;color:#E6E2DA;
+    text-shadow:-3px -3px 0 #0C0D10,3px -3px 0 #0C0D10,-3px 3px 0 #0C0D10,3px 3px 0 #0C0D10,-3px 0 0 #0C0D10,3px 0 0 #0C0D10,0 -3px 0 #0C0D10,0 3px 0 #0C0D10,0 0 10px #0C0D10}
+  .wx-city.r i{left:18px}
+  .wx-city.l i{right:18px}
+  .wx-city.b i{top:16px;left:0;transform:translateX(-50%)}
+  .wx-city.t i{top:-58px;left:0;transform:translateX(-50%)}
+  .wx-city.major i{top:-25px;font-size:50px;font-weight:600;color:#F0EDE6}
+  .wx-city.major.b i{top:18px}
+  .wx-city.major b{left:-9px;top:-9px;width:18px;height:18px}
   .wx-map .leaflet-baseDark-pane,
   .wx-map .leaflet-baseRef-pane{background:transparent}
   .wx-map .leaflet-tile,
@@ -785,7 +804,7 @@
             <div class="col"><div class="bar"></div><div class="ticks"><span>0°</span><span>32°</span><span>50°</span><span>70°</span><span>90°</span><span>110°</span></div></div>
           </div>
         </div>
-        <div class="wx-map-credit">Radar: RainViewer · Basemap: Esri · Temperatures: Open-Meteo · Boundaries: U.S. Census Bureau</div>
+        <div class="wx-map-credit" id="wx-map-credit">Radar: RainViewer · Temperatures: Open-Meteo · Boundaries &amp; roads: U.S. Census Bureau</div>
       </div>
     </div>
   </div>
@@ -2543,7 +2562,12 @@ function closeNflOverlay(){
 function popLabel(v){return v==null||v===''?'':`${v}% rain`;}
 function cityHourKey(tz){const p=new Intl.DateTimeFormat('en-CA',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return `${g('year')}-${g('month')}-${g('day')}T${g('hour')}`;}
 let lastForecastDeck='7-day · Open-Meteo';
-function setRadarDeck(){if($('weather-overlay-deck'))$('weather-overlay-deck').textContent='RainViewer · Open-Meteo · Esri · U.S. Census Bureau';}
+var RADAR_BASEMAP=/[?&]basemap=esri(?:&|$)/i.test(location.search||'')?'esri':'vector';
+function setRadarDeck(){
+  var esri=RADAR_BASEMAP==='esri';
+  if($('weather-overlay-deck'))$('weather-overlay-deck').textContent=esri?'RainViewer · Open-Meteo · Esri · U.S. Census Bureau':'RainViewer · Open-Meteo · U.S. Census Bureau';
+  if($('wx-map-credit'))$('wx-map-credit').textContent=esri?'Radar: RainViewer · Basemap: Esri · Temperatures: Open-Meteo · Boundaries: U.S. Census Bureau':'Radar: RainViewer · Temperatures: Open-Meteo · Boundaries & roads: U.S. Census Bureau';
+}
 function renderWeatherOverlay(model,meta){
   const body=$('weather-overlay-body');
   const days=model.days7||[], hours=model.hourly||[];
@@ -2729,7 +2753,7 @@ function teardownWeatherMaps(){
   radarLayer=null;radarLayerA=null;radarLayerB=null;radarFront=0;
   radarFrames=[];radarIdx=0;radarNewest=0;tempMarkers=[];cityTemps=[];
   ssMarker=null;tempFieldCanvas=null;tempLabelCanvas=null;tempFieldDrawnKey=null;
-  stateLineLayer=null;radarStateLayer=null;tempGrid=null;
+  stateLineLayer=null;radarStateLayer=null;tempGrid=null;atlVectorLayers=null;
 }
 function setWeatherPage(page){
   weatherPage=page==='radar'?'radar':'forecast';
@@ -2741,7 +2765,7 @@ function setWeatherPage(page){
   if($('weather-radar-page'))$('weather-radar-page').hidden=!onRadar;
   if(onRadar){
     $('weather-overlay-title').innerHTML='Atlanta <span style="color:var(--gold)">·</span> Radar &amp; Map';
-    $('weather-overlay-deck').textContent='RainViewer · Open-Meteo · OpenStreetMap';
+    setRadarDeck();
     initWeatherMaps();
     startRadarCatalogRefresh();
   }else{
@@ -2779,6 +2803,55 @@ function addEsriDarkBasemap(map){
 }
 function cartoLayer(map){
   addEsriDarkBasemap(map);
+}
+var ATL_BASE_FILES={counties:'geo/atl-counties.json',states:'geo/atl-states.json',interstates:'geo/atl-interstates.json'};
+var ATL_BASE_STYLE={
+  counties:{color:'#7D8189',weight:1.5,opacity:0.42,fill:false,interactive:false,lineJoin:'round'},
+  states:{color:'#C9CCD2',weight:3.2,opacity:0.7,fill:false,interactive:false,lineJoin:'round'},
+  interstates:{color:'#B0915A',weight:4,opacity:0.72,fill:false,interactive:false,lineJoin:'round',lineCap:'round'}
+};
+// [name, lat, lon, label side (r/l/t/b), major]; sides keep labels clear of the Sandy Springs pin.
+var ATL_BASE_CITIES=[
+  ['Atlanta',33.749,-84.388,'b',1],['Marietta',33.953,-84.550,'l'],['Alpharetta',34.075,-84.294,'r'],
+  ['Athens',33.961,-83.378,'r'],['Macon',32.841,-83.632,'r'],['Chattanooga',35.046,-85.309,'r'],
+  ['Rome',34.257,-85.165,'l'],['Gainesville',34.298,-83.824,'r']
+];
+var atlBaseGeo={},atlVectorLayers=null;
+function loadAtlBaseGeo(key){
+  if(atlBaseGeo[key])return Promise.resolve(atlBaseGeo[key]);
+  return fetch(ATL_BASE_FILES[key],{cache:'force-cache'}).then(function(r){
+    if(!r.ok)throw new Error(r.status);
+    return r.json();
+  }).then(function(j){atlBaseGeo[key]=j;return j;}).catch(function(e){console.warn('atl basemap',key,e);return null;});
+}
+function addAtlVectorBasemap(map){
+  if(!map||atlVectorLayers)return;
+  atlVectorLayers={};
+  if(!map.getPane('atlBase')){
+    map.createPane('atlBase');
+    map.getPane('atlBase').style.zIndex=200;
+    map.getPane('atlBase').style.pointerEvents='none';
+  }
+  var renderer=L.svg({pane:'atlBase',padding:0.2});
+  var layers=atlVectorLayers;
+  ['counties','states','interstates'].forEach(function(key){
+    loadAtlBaseGeo(key).then(function(geo){
+      if(!geo||map!==radarMap||layers!==atlVectorLayers)return;
+      layers[key]=L.geoJSON(geo,{style:ATL_BASE_STYLE[key],pane:'atlBase',renderer:renderer,interactive:false}).addTo(map);
+      // Keep z-order fixed no matter which file arrives first.
+      if(layers.states)layers.states.bringToFront();
+      if(layers.interstates)layers.interstates.bringToFront();
+    });
+  });
+  ATL_BASE_CITIES.forEach(function(c){
+    var icon=L.divIcon({className:'',iconSize:[0,0],iconAnchor:[0,0],
+      html:'<div class="wx-city '+c[3]+(c[4]?' major':'')+'"><b></b><i>'+c[0]+'</i></div>'});
+    L.marker([c[1],c[2]],{icon:icon,interactive:false,keyboard:false,zIndexOffset:c[4]?500:0}).addTo(map);
+  });
+}
+function addRadarBasemap(map){
+  if(RADAR_BASEMAP==='esri')addEsriDarkBasemap(map);
+  else addAtlVectorBasemap(map);
 }
 function tempColor(f){
   if(!Number.isFinite(f))return '#ADA8A0';
@@ -2840,7 +2913,13 @@ function fitMapCover(map,center,bounds){
   map.setMaxBounds(b.pad(0.2));
   map.setView(center,z,{animate:false});
 }
+var ATL_VECTOR_CENTER=[33.93,-84.40];
 function fitAtlantaRadar(map){
+  if(RADAR_BASEMAP!=='esri'){
+    // Centered on Sandy Springs; tall enough for Chattanooga (N) and Macon (S).
+    fitMapCover(map,ATL_VECTOR_CENTER,ATL_BOUNDS);
+    return;
+  }
   fitMapCover(map,ATL_CENTER,ATL_BOUNDS);
   // Nudge in a little so the north tile edge / road fringe is cropped off the frame.
   if(map && map.getZoom) map.setView(ATL_CENTER, map.getZoom()+0.2, {animate:false});
@@ -2873,7 +2952,7 @@ async function initWeatherMaps(){
     doubleClickZoom:false,boxZoom:false,keyboard:false,tap:false,zoomSnap:0,zoomDelta:0.25};
   if(!radarMap){
     radarMap=L.map('radar-map',mapOpts);
-    addEsriDarkBasemap(radarMap);
+    addRadarBasemap(radarMap);
     addSandySpringsPin(radarMap);
   }
   if(!tempMap){
@@ -2957,12 +3036,14 @@ function ensureRadarLayers(){
     radarMap.getPane('radarFx').style.zIndex=350;
     radarMap.getPane('radarFx').classList.add('leaflet-radar-pane');
   }
+  // RainViewer's public tiles stop at z7 (higher zooms return a "Zoom Level Not Supported" tile).
+  var radarOpts={opacity:0,maxZoom:12,maxNativeZoom:7,pane:'radarFx',className:'wx-radar-tiles'};
   if(!radarLayerA){
-    radarLayerA=L.tileLayer(radarTileUrl(radarFrames[0]),{opacity:0,maxZoom:12,pane:'radarFx',className:'wx-radar-tiles'});
+    radarLayerA=L.tileLayer(radarTileUrl(radarFrames[0]),radarOpts);
     radarLayerA.addTo(radarMap);
   }
   if(!radarLayerB){
-    radarLayerB=L.tileLayer(radarTileUrl(radarFrames[0]),{opacity:0,maxZoom:12,pane:'radarFx',className:'wx-radar-tiles'});
+    radarLayerB=L.tileLayer(radarTileUrl(radarFrames[0]),radarOpts);
     radarLayerB.addTo(radarMap);
   }
 }
@@ -2977,13 +3058,13 @@ function showRadarFrame(idx,crossfade){
   var url=radarTileUrl(f);
   incoming.setUrl(url);
   var reveal=function(){
-    incoming.setOpacity(0.88);
+    incoming.setOpacity(0.85);
     if(outgoing&&outgoing!==incoming)outgoing.setOpacity(0);
     radarFront=radarFront?0:1;
     updateRadarScrubber();
   };
   if(crossfade===false){
-    incoming.setOpacity(0.88);
+    incoming.setOpacity(0.85);
     if(outgoing&&outgoing!==incoming)outgoing.setOpacity(0);
     radarFront=radarFront?0:1;
     updateRadarScrubber();
@@ -3115,7 +3196,7 @@ function addStateLines(){
     stateLineLayer=L.geoJSON(usStatesGeo,{style:stateLineStyle,pane:'overlayPane'});
     stateLineLayer.addTo(tempMap);
   }
-  if(radarMap&&!radarStateLayer){
+  if(radarMap&&!radarStateLayer&&RADAR_BASEMAP==='esri'){
     radarStateLayer=L.geoJSON(usStatesGeo,{style:{color:'#F0EDE6',weight:1.4,opacity:0.4,fill:false,interactive:false},pane:'overlayPane'});
     radarStateLayer.addTo(radarMap);
   }
