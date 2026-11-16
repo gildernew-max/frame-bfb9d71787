@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T23:00:15.425Z",
+ "generatedAt": "2026-11-16T23:15:12.910Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -5658,10 +5658,12 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-16T23:00:15.425Z",
+  "at": "2026-11-16T23:15:12.910Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -12022,62 +12024,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T23:00:15.425Z",
-  "lastAttempt": "2026-11-16T23:00:15.425Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7438.5,
-    "lastTime": 1794866399,
+    "last": 7442,
+    "lastTime": 1794870322,
     "settle": 7441.75,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": -3.25,
-    "changePct": -0.0436725232640172,
-    "expectedOpen": 7413.350988006853,
+    "change": 0.25,
+    "changePct": 0.0033594248664628613,
+    "expectedOpen": 7416.839154768704,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27285.25,
-    "lastTime": 1794866399,
+    "last": 27288.75,
+    "lastTime": 1794870323,
     "settle": 27291.75,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": -6.5,
-    "changePct": -0.023816721170317037,
-    "expectedOpen": 24503.92057927762,
+    "change": -3,
+    "changePct": -0.010992332847838631,
+    "expectedOpen": 24507.063805820442,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51666,
-    "lastTime": 1794866398,
+    "last": 51695,
+    "lastTime": 1794870323,
     "settle": 51678,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -12,
-    "changePct": -0.02322071287588529,
-    "expectedOpen": 51596.1862150238,
+    "change": 17,
+    "changePct": 0.03289600990750416,
+    "expectedOpen": 51625.14702871628,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2748,
-    "lastTime": 1794866398,
+    "last": 2749.1,
+    "lastTime": 1794870321,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -3.60009765625,
-    "changePct": -0.13083651433638488,
+    "change": -2.500097656250091,
+    "changePct": -0.09085977494984161,
     "expectedOpen": null,
     "valid": true
    }
@@ -12558,8 +12560,8 @@
     }
    }
   ],
-  "asOf": "2026-11-16T23:00:15.425Z",
-  "lastAttempt": "2026-11-16T23:00:15.425Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "lastError": null
  },
  "alerts": {
@@ -12570,8 +12572,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T23:00:15.425Z",
-  "lastAttempt": "2026-11-16T23:00:15.425Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13247,7 +13249,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T23:00:15.425Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
@@ -13458,35 +13460,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T23:00:15.425Z",
-  "lastAttempt": "2026-11-16T23:00:15.425Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 155.77,
-    "time": 1794870015,
+    "price": 155.9036,
+    "time": 1794870924,
     "ref": 156.14,
     "refTime": 1794862801,
-    "change": -0.3699999999999761,
-    "changePct": -0.23696682464453447
+    "change": -0.23639999999997485,
+    "changePct": -0.15140258742152868
    },
    "TSLA": {
     "session": "post",
-    "price": 378.96,
-    "time": 1794869918,
+    "price": 379.2184,
+    "time": 1794870825,
     "ref": 379.74,
     "refTime": 1794862800,
-    "change": -0.7800000000000296,
-    "changePct": -0.20540369726655855
+    "change": -0.5216000000000349,
+    "changePct": -0.13735713909517958
    },
    "SPCX": {
     "session": "post",
-    "price": 137.707,
-    "time": 1794870011,
+    "price": 137.93,
+    "time": 1794870920,
     "ref": 137.36,
     "refTime": 1794862800,
-    "change": 0.34699999999998,
-    "changePct": 0.25262085032031156
+    "change": 0.5699999999999932,
+    "changePct": 0.41496796738496877
    }
   }
  },
@@ -13496,6 +13498,27 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Huang’s ‘trillion-dollar dinners’ with Taiwan chip bosses were Nvidia’s secret weapon. Now he’s out. Can he be replaced?",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/huang-trillion-dollar-dinners-taiwan-230000506.html?.tsrc=rss",
+      "pub": "2026-11-16T23:00:00.000Z",
+      "sum": "“With a new CEO, those relationships won’t be as close as they were with Jensen Huang.\""
+     },
+     {
+      "hd": "Trump backs campaign to reinstate Nvidia CEO despite allegations he had an affair with a Chinese spy",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUG5xR2UxLXNkQkhHXzNPQVliSkVQYnJSaDhia2VYdjZPeFBtU1VHN0ZHeVpuRE5Vd0hTNmpsYWtjaVh1ZFRvX2Fnd3JDQWhEQVJxNFY2RjVrLU5IcWhuSVZrZ3lFNDMzeWVwUTBYclE1RDFnUTdkR3NGUjFuaTFPd1hybm9DYzBSR1U2bDU4a19iWTA2YWc0eEdUazBGbXZ1VTc3WFAtSkEyZw?oc=5",
+      "pub": "2026-11-16T22:49:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Berkshire Hathaway Slashes This Top 5 Stock; Nvidia Boosts SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
+      "pub": "2026-11-16T22:39:00.000Z",
+      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
+     },
      {
       "hd": "Market positioning risks ahead of Nvidia earnings",
       "src": "Yahoo Finance",
@@ -13516,13 +13539,6 @@
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzZFZHJxQ1ZMaW5Ba1V4bm8taHd4bFBvYUZHWFY4SFpydml5YUVhLTRCaEFsNG9TbjY1dl9ac2tDek1DemJ0M3FwQTNtQm5aNV83RjFsZEZTNmJ2WHRJRWtHUVRDVEdnTUJtSzlaMWZfSEU2anpRSmVGcG9SUEgxN3c1WG5UcVBkdG02bmsyQkxvNlVqeEV2SDFORlA3VGNHZnpha2EyQ3V5aDVIS1E?oc=5",
       "pub": "2026-11-16T22:20:42.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Berkshire Hathaway Slashes This Big Bank Stock; Nvidia Boosts SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
-      "pub": "2026-11-16T22:20:35.000Z",
-      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
      },
      {
       "hd": "US Moves to Curb Remote Access to Nvidia’s Advanced AI Chips",
@@ -13560,11 +13576,18 @@
       "sum": "Nvidia shares fell four percent on Monday as the AI chip juggernaut began its first full week without Jensen Huang as CEO and investors awaited an earnings report for signs of whether the AI boom can withstand the widening scandal that toppled him.The decline extended a slide of more than 12 percent since the scandal erupted, while the stock has lost more than 25 percent over the past month amid growing doubts about the health of the AI investment boom."
      },
      {
-      "hd": "All the questions Nvidia should answer on Tuesday — but probably won’t",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/questions-nvidia-answer-tuesday-probably-220302340.html?.tsrc=rss",
-      "pub": "2026-11-16T22:03:02.000Z",
-      "sum": "Nvidia interim CEO and long-time CFO Colette Kress is about to have one of the biggest days of her career on Tuesday when the company reports its third quarter results. Given the turmoil Nvidia is in, there are a number of questions that Nvidia should answer."
+      "hd": "Nvidia Short Sellers Reap $24 Billion as Stock Extends Slide",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNFRoTFBqdU5sclR2R1c1TWZ2M3pzMjBIQmFnRVFGYkNzZmRfWWdMdXI5X2JhaUE3d1R3NHR4cE5NZjJFR0xHQjZrZFQwTVpUV1g4YjJqMTdNV0E0ay0xcml0THNJNDdEa3lkSjc0SkVYUEN2bjJZeFdldEUtTHZ6ODBTTmxJcDFYaXV4U3FMWU1OSzdkdElwMVVEMFVyNnRtR2F3M0VwaE8yVDVoZG1V?oc=5",
+      "pub": "2026-11-16T21:55:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5",
+      "pub": "2026-11-16T21:21:08.000Z",
+      "sum": ""
      },
      {
       "hd": "Nasdaq 100 Plunges as Nvidia Earnings, Anthropic IPO on Horizon",
@@ -13581,13 +13604,6 @@
       "sum": ""
      },
      {
-      "hd": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5",
-      "pub": "2026-11-16T21:01:11.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Tiger Global exits Chime, adds Ferrari, boosts Nvidia stake, among Q3 trades",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -13599,13 +13615,6 @@
       "src": "AP News",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYXdFLTA2eFh1c1k5N2ZnWnBXdkpYX3ZzMkNaUC03SjBXeDlVcHplSm1fUnRnVzJsaGhFb0I2eHp2Si1uaTNRaEotekFyYlZYRVlxdzNydUhEaXZaa0c5dW1ybEp5T2wyWUN2eVhGaTdpdVV5bkRuRDJxQVd0X2wySmFhQXNiaWROVmRJRXdIRDVtSC1CN3c?oc=5",
       "pub": "2026-11-16T20:08:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Trump backs campaign to reinstate Nvidia CEO despite allegations he had an affair with a Chinese spy",
-      "src": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUG5xR2UxLXNkQkhHXzNPQVliSkVQYnJSaDhia2VYdjZPeFBtU1VHN0ZHeVpuRE5Vd0hTNmpsYWtjaVh1ZFRvX2Fnd3JDQWhEQVJxNFY2RjVrLU5IcWhuSVZrZ3lFNDMzeWVwUTBYclE1RDFnUTdkR3NGUjFuaTFPd1hybm9DYzBSR1U2bDU4a19iWTA2YWc0eEdUazBGbXZ1VTc3WFAtSkEyZw?oc=5",
-      "pub": "2026-11-16T19:41:00.000Z",
       "sum": ""
      },
      {
@@ -13663,21 +13672,14 @@
       "url": "https://seekingalpha.com/article/4968672-the-market-fired-nvidias-multiple-along-with-its-ceo-rating-upgrade?source=feed_symbol_NVDA",
       "pub": "2026-11-16T17:42:23.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Huang’s Ouster Fuels Doubts About Nvidia’s Support for Neoclouds",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQOEdLX0NXbnFsWDh4TXNMaUFuMVRxX2FtcEVBR3hQa3R2a08yOEhBWXlMYm5xWnl5LWljT1RFVk85OFk5T3hMWWgwemVXNEZPYVBTLVpRZndkam9PSFdxSjM3OTlTUWVPdl95MVpyVUoyem55R2JYVGRuajZsU0JxeWRSclRJTS0xck9pc0xyUFl6Sk1tRVFhU19Ycm1MNU50bGEwSFpGUUZMQ3VrRFpCNm1pVVFPdw?oc=5",
-      "pub": "2026-11-16T17:40:37.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 11,
+     "Yahoo": 9,
      "Google News": 93,
-     "Nasdaq": 10,
-     "Seeking Alpha": 26
+     "Nasdaq": 9,
+     "Seeking Alpha": 25
     }
    },
    "TSLA": {
@@ -13688,6 +13690,13 @@
       "url": "https://finnhub.io/api/news?id=1ea6eb5c06002ff01c9bd2805d9002b02a6c96e47432d2bc31f45b8e34c3dc30",
       "pub": "2026-11-16T21:33:00.000Z",
       "sum": "Elon Musk is sacrificing his futuristic pickup to make room for a vehicle with a much bigger financial question."
+     },
+     {
+      "hd": "Tesla Will Invest $3.31 Billion to Expand German Factory for Cybercab Production",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdktrVUd5d0c1dVV0VG5ZSnJEZmstVjQzZFNFdzd6MEFrRmM2YnRSaF95cEljZ0FOR1VIenBEV0VCRzRWTUVxYXZQYVdEb0E1UDBucGZWQ2VjR2t1UlcxLXJNVGdwYnJKdmRPQWR4U1BNSGR0VXpEQUZRRXhVd0RVYnQ0aTRBYk56bjhpUGMxLWU4QldpRUV2RzNtWVlYc2tzOGMwdzNaOFRhYm9fLTZRTDFLdlh3QQ?oc=5",
+      "pub": "2026-11-16T21:33:00.000Z",
+      "sum": "US electric carmaker Tesla said Monday it will invest three billion euros ($3.4 billion) to expand its German factory, which will in future have capacity to produce one million driverless Cybercabs annually. - 'Enormous significance' - Under the investment plans announced Monday, a new facility will be constructed where up to one million Cybercabs a year will eventually be produced, according to Tesla."
      },
      {
       "hd": "Tesla Sells Cybercabs To The Public. It Might Be Because Of A Bet With A YouTuber.",
@@ -13716,6 +13725,13 @@
       "url": "https://washingtonpost.com/technology/2026/11/16/probably-biggest-fear-elon-has-why-huangs-exit-looms-over-musk/?.tsrc=rss",
       "pub": "2026-11-16T19:53:08.000Z",
       "sum": "In the wake of Jensen Huang’s resignation from Nvidia last week, Elon Musk stumbled upon an X post in which a user lamented: “one does not just simply replace the founder.” “True words,” Musk replied. Subscribe to The Post Most newsletter for the most important and interesting stories from The Washington Post. Inside Musk’s own companies, that message has reverberated for years. Tesla and SpaceX have long grappled with investors’ concerns about their lack of clear succession plans for Musk - who"
+     },
+     {
+      "hd": "Mercedes-Benz takes on Tesla FSD with new point-to-point city driving assist",
+      "src": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQS1BwLXUtczdLR0NtalA5LVJxektiUFBUbjVkc1pZRUFGd2g0Yl9KdzlWd21hdnVQaHFsSlVQLUVncERHYi1mZTZxenJVdkFfSGw2M1c1ZmVmYng2OXhJMTBmV1M2RE5NNmJ5Z2ZMTVptS1RoOGVkZ2VaSnJ2N00tRndfVFFBel9CM0FTRFF2M1g1c3g5Tmp4YUlucllYOU5CcUZZcWNBTGNpd3RjTnptb1pB?oc=5",
+      "pub": "2026-11-16T19:49:12.000Z",
+      "sum": ""
      },
      {
       "hd": "Lucid Sinks 8% in Tech Selloff as CEO Tempers EV Hopes: “Anything Positive, We’ll Take It”",
@@ -13842,34 +13858,39 @@
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVW9TQXZVWjF2c2FxVllYb2MwdjhVZ1ExOTNTRGpJTThYNWt6QVM4VWE0MWRwQ0VxU2ctdnB3UGtjTlY2d1NzT3JCQWZUUXlrbXhldG9PVzhyVERZNmJuVjhLbnp6MlpxRVJwbFpWTE15aW5NUmcxY3lpXzY1azdSSHFqODVDSEt5R0hyNTR5aTJXcDFvQW9ZbGJlNEd1VDZGN1hRMGdTcHlyOEdSY0tr?oc=5",
       "pub": "2026-11-14T01:22:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "SpaceX, Tesla Merger Could Hit Democratic Roadblock: Jay Woods Unsure if Elon Musk Can 'Work His Magic'",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=316d5c39a9522c0db4379cbac6121f39d20451e6790e959a82d1727154e0b05c",
-      "pub": "2026-11-13T13:39:39.000Z",
-      "sum": "Market expert Jay Woods said the Tesla, SpaceX merger is a story to watch, but might be tougher come January."
-     },
-     {
-      "hd": "GLJ Research Reiterates Sell on Tesla, Maintains $24.86 Price Target",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=680916bb3006bf8cf7468fe2f5b0b5942388d8613310cb9654687fa0557f3d69",
-      "pub": "2026-11-13T08:30:50.000Z",
-      "sum": "GLJ Research analyst Gordon L. Johnson reiterates Tesla (NASDAQ:TSLA) with a Sell and maintains $24.86 price target."
      }
     ],
     "fetched": {
      "Finnhub": 133,
      "Yahoo": 7,
+     "Google News": 14,
      "Nasdaq": 13,
      "Seeking Alpha": 12
-    },
-    "errors": [
-     "Google News: HTTP 429 from news.google.com"
-    ]
+    }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SpaceX: The Profit Headline Hides Significant Downside (Rating Downgrade)",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4968780-spacex-the-profit-headline-hides-significant-downside?source=feed_symbol_SPCX",
+      "pub": "2026-11-16T22:58:41.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Dan Loeb's Third Point adds Meta, exits WBD, boosts SpaceX among Q3 trades",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
+      "pub": "2026-11-16T22:56:33.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Berkshire Hathaway Slashes This Top 5 Stock; Nvidia Boosts SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
+      "pub": "2026-11-16T22:39:00.000Z",
+      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
+     },
      {
       "hd": "How Phone Companies Kill Global Service",
       "src": "Yahoo Finance",
@@ -13883,13 +13904,6 @@
       "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
       "pub": "2026-11-16T22:26:45.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Berkshire Hathaway Slashes This Big Bank Stock; Nvidia Boosts SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
-      "pub": "2026-11-16T22:20:35.000Z",
-      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
      },
      {
       "hd": "This Is a Huge Week for the Stock Market: Nvidia Earnings, Fed Minutes, and Anthropic’s IPO",
@@ -14030,32 +14044,39 @@
       "url": "https://finnhub.io/api/news?id=d498378daa7100efcedc2c69b3903b6bd99ce5b775c26e635b293e9c41345e13",
       "pub": "2026-11-16T03:11:50.000Z",
       "sum": "Cathie Wood praised SpaceX’s historic orbital Starship catch, calling it inspiring, while ARK funds maintain major SpaceX stakes."
-     },
-     {
-      "hd": "SpaceX outlines land purchase proposal near Boca Chica Beach",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-15T18:40:41.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Ukraine Says Starshield, Its Military Starlink, Is Disrupted Again, Hurting Defenses",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxON21HTW5paGs5bGJjV0FNQVEwNDY2Q2hWaWJ2QmZaVW1zZGdWOGNWN2Vfdi11bWNNZUY2RFVMLXpoSHkzejBUMEpKcjlXSVVlWmd4Zm5iZjNtMWJDa0lPZFphU2NyOFdsZHFVVHZ4TG55alIwZlFTV0thOFdKTWx6clotUldJdlVxdWFQM2JVT29ZbVE0ajd4aldmTHppeVZiMWVnVThvdC0?oc=5",
-      "pub": "2026-11-15T17:41:59.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 9,
+     "Yahoo": 8,
      "Google News": 33,
      "Nasdaq": 0,
-     "Seeking Alpha": 20
+     "Seeking Alpha": 22
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5",
+      "pub": "2026-11-16T21:21:08.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nasdaq 100 Plunges as Nvidia Earnings, Anthropic IPO on Horizon",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUWtEOGtHd0VyaHpJRnEzcDYtRklURlFfcFByaFNfQ2dhLVJTbkFoSklXeDd3X1dwdVRRR2JVYVRxazF4NGFzd1o5TVZsR0xWbWFuYnd3eU1fRzNBMWNUY1FzeFZLcWQzWFRPT0Y4SmRCUUVleTVIZzFkRmhCQ1pKMjNlSTVjMGI4aTZnd3k5d3lPUG1XTFpnSHlHN2Zoa3BKUk1hUFdKdUczX20xNFEwNDU1Yw?oc=5",
+      "pub": "2026-11-16T21:19:10.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Stocks Fall Before Nvidia Earnings, Anthropic IPO: Markets Wrap",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOU3BQd2lUam5YX1RGekdqV203U1BmRzNUQnlhem10ajRycVpfTUYzRWtOM2h1ZDd5M2tvUnNXeG1VOHRGTEl4VkJsSUhuQk41UlcyNU1EZDJaSTNTd2NvM3lDUDV5NU95SUtxSHZaZEpjSnMxRGgtamUtb0lYWUtHMTFZZDBLblVaeXhVTEhSa2ZPeF9y?oc=5",
+      "pub": "2026-11-16T21:05:18.000Z",
+      "sum": ""
+     },
      {
       "hd": "Altimeter's Brad Gerstner to invest $5B in Anthropic IPO - CNBC",
       "src": "Seeking Alpha",
@@ -14064,17 +14085,10 @@
       "sum": ""
      },
      {
-      "hd": "Stocks Fall Before Nvidia Earnings, Anthropic IPO: Markets Wrap",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOU3BQd2lUam5YX1RGekdqV203U1BmRzNUQnlhem10ajRycVpfTUYzRWtOM2h1ZDd5M2tvUnNXeG1VOHRGTEl4VkJsSUhuQk41UlcyNU1EZDJaSTNTd2NvM3lDUDV5NU95SUtxSHZaZEpjSnMxRGgtamUtb0lYWUtHMTFZZDBLblVaeXhVTEhSa2ZPeF9y?oc=5",
-      "pub": "2026-11-16T19:04:21.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nasdaq 100 Plunges as Nvidia Earnings, Anthropic IPO on Horizon",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUWtEOGtHd0VyaHpJRnEzcDYtRklURlFfcFByaFNfQ2dhLVJTbkFoSklXeDd3X1dwdVRRR2JVYVRxazF4NGFzd1o5TVZsR0xWbWFuYnd3eU1fRzNBMWNUY1FzeFZLcWQzWFRPT0Y4SmRCUUVleTVIZzFkRmhCQ1pKMjNlSTVjMGI4aTZnd3k5d3lPUG1XTFpnSHlHN2Zoa3BKUk1hUFdKdUczX20xNFEwNDU1Yw?oc=5",
-      "pub": "2026-11-16T18:51:04.000Z",
+      "hd": "This Anthropic proxy play is getting traders' attention – here's where they see it going",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9PWHljLVlQOE40YnVQZnN6STRfUFRvX1Bvck1Ca2pnVUFLd2NrdklBV29VQkQ2S3I2MWJwZHNUMnJ6UmlJdjJvZ2JUcFZRVUVfeTBXTFBadjAxblhWT185aUNrQ21Wc1FzUFpQbTVGOGNZaEVZaHZBQTl4ZTJoZ9IBgwFBVV95cUxPOVUyTExtT3dOZFdMaDhSVXJVSEl2Zmsxb2Z3Qk51dFhvY2E1VTBPLVNwS2FpYVRaUEF5aXZZUHQyVEhHcFYxSUlzZk43Y1NmVFQyU0xSNFRZQlI4UUFDSXdCNWMydkp0aGw4emJiVFR4RFVyRWh4RTFMak5SdGRzcXRfRQ?oc=5",
+      "pub": "2026-11-16T19:06:11.000Z",
       "sum": ""
      },
      {
@@ -14129,7 +14143,7 @@
      {
       "hd": "Anthropic IPO guide: Everything you need to know",
       "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLU0lVTlg1SkFpbXFSd2FtWk9CUndzSjNqV0U3TUNMazRUV0hySTJNQTl1WlB5czJXZHF0a3BGZnVzTW1vN1d2U1Zuem9sdjBvRHJDOHIyTXhYQ3hTOWlrdjI2ZmE5LXZyNTFsa3VPNW9lUTlKT1HSAXtBVV95cUxOYUstYWlKeDI0VkVkV1hRZnIyTm5UOGdfV2NMandlaTFpV2NDakFMNDJjR0RYX0pFZEtSY0dmdEJKUjRjN1JmOVFBSy1jazNBeVJ4ZUxzd3VhSHZKT0ZjZngwaHRRaDZpZTlfVGNOS3JrRkU0bEZfYW45ZFE?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBLU0lVTlg1SkFpbXFSd2FtWk9CUndzSjNqV0U3TUNMazRUV0hySTJNQTl1WlB5czJXZHF0a3BGZnVzTW1vN1d2U1Zuem9sdjBvRHJDOHIyTXhYQ3hTOWlrdjI2ZmE5LXZyNTFsa3VPNW9lUTlKT1E?oc=5",
       "pub": "2026-11-16T14:22:24.000Z",
       "sum": ""
      },
@@ -14166,6 +14180,13 @@
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbjM3c3k5Q2otRklJTDllbEJZR1N1VUMwQ3NoajUtV1k0bWkyZmg1eDJZbkxZRmlWdzBCSko1d0laWnVQaFhYN2RYNFAyUjN1R0VxaU1GbjcteC0tQ252bkRZWFhSb3ZjWEhNd2JMdVRwR0hXVmM5SzliNmtiWU5IN3Y2Y3ZHSmdURWZnY1doTzA2cmdVLXExYUNrMXU3VGw5WXNUblBR?oc=5",
       "pub": "2026-11-16T12:33:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Retail Traders Chase Anthropic IPO With Tactics Honed Since SpaceX",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMk1aUi0tZHJkU2ZiQTFqbGlKQUhyMTFxTGxLdVhxYU5zbEpTRVlIQVhiWDBaRXUxRVhIdno4RU1hcDVuQV94cU5wbFIyd20zQjFXUFhpakpfaDZiWGt5QW9wMnRCTmdGUHJJdGltcUtEWXU5LWZJUFFPQ1lqYjdBQ1o3UUtyN2w0SXFpVm16d2pHQkdYdWJ0WHNxVmpnX1BsakJhYWxMLUJQajZwSU1ObjlIaWlpUC1t?oc=5",
+      "pub": "2026-11-16T11:00:11.000Z",
       "sum": ""
      },
      {
@@ -14209,46 +14230,44 @@
       "url": "https://seekingalpha.com/article/4968352-nvidia-earnings-anthropic-ipo-could-trigger-market-reckoning?source=feed_symbol_ANT",
       "pub": "2026-11-15T15:05:00.000Z",
       "sum": "Analyst sees Anthropic growing rapidly despite recent slowdown, with revenue up over 12x year-on-year and strong enterprise customer expansion."
-     },
-     {
-      "hd": "Will the Anthropic IPO create a disturbance in the broader U.S. equity market, like SpaceX did?",
-      "src": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZEhmQUdXRVh3Z3JUcGtnTXZGNVlZbnhWYUFwWlUxa19QelNaek1yM3UyV0g5WUxydGoyREFYdUlyYV9wRk96ZGdpd2FVaTNZNWQ2NElZR3hQVTAzcVFvSnVvOS1CLWpUYzUzRzNUU2JkUnZhS1otaVBieUR2TzV0UExqbENqMkxGTmlSd3h0WE1fUldkTHBLMjJoX1dOUWJISFhLcXg2cThDZlZUOWVlRnFMc3U2M1RzelJOMG5JeS1wMGYxWDV0QnNya2RSMkxW?oc=5",
-      "pub": "2026-11-15T14:00:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Anthropic’s IPO lands as the embattled AI trade looks for a much-needed bright spot",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOOFFaaTFOMmRsSmNwRlBQZTNqWUJhZXlDbzRYQk5TRWpoLVQ5R0trbFZySzNhQU9pa1JZRXE5Q2VhVTNBUVhxOFB2b0JiUVNLZHpWQkxsYW5EeHY5YW9jU09hNzFhbnMxMnctaVFaUTdyYnhGS1g2Z2pNU0pWdmlYUUtuR0pWR2ZnMVhMWHhjd3VweXMyd0h2X2ZRc9IBoAFBVV95cUxObFlSaHJnalF6bnZ6eDUwbTlYZGlPNjlFN2xxZ3Q1blZNREx3YTlQaWx4NEtXeHlEbmZqc0doTExsM1RXSXMzM05TaVEzTjIxd1N6OGVWYkFhZUZLaXZKZWkyLW5EaW85eHQtMk5FMUcxMmVkNmJwSHZOWWZpVUZVd1FROVJKYjBlWUxERUpxZTNYdUZ0aldWX3RIa0ZrUXR3?oc=5",
-      "pub": "2026-11-15T12:00:01.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Meet the seven co-founders of Anthropic",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUmx5a0M0RE5jMXUzRE16VFRaY2xZMjBoQ19hRGhaSkEtNzRKaGk1eWFidXhhTmY5S1d2U0lMbHJNZUxsb3V1eHlOTXhKalp1OFgyQmNmMU5FLU5Cd044QnNhdEpUekxQa05jeEwybWtwVXZEQTJrbzZNZk80cGNJRUJ30gGHAUFVX3lxTE1ubHplaC1vS3hRNFpxQTZYcGhKQjBXMlJoNHFqbkhxRmlVZ2hoQW9rSXVMdTBRU19EZUpRdHFrS241ekdFYVhZS0txeU9wYmhZemVkOVhrU01EbU9QMnJkc1dqNDZMSFExRWJobnhTU2xQUG5aa29EeUp6RG1TaDlWTHc4a1NMdw?oc=5",
-      "pub": "2026-11-14T12:00:01.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 15,
      "Yahoo": 0,
+     "Google News": 55,
      "Nasdaq": 1,
      "Seeking Alpha": 27
-    },
-    "errors": [
-     "Google News: HTTP 429 from news.google.com"
-    ]
+    }
    }
   },
-  "asOf": "2026-11-16T22:45:11.395Z",
-  "lastAttempt": "2026-11-16T22:45:11.395Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Trump’s Asia trip: Deals in Manila and Shenzhen, nuclear summit with Xi and Putin, maybe Kim meeting",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcGw5a2lMb1B2bEtyYWotSkJYcWhXNHN2R3lwQlNuSUxfSHB5VzJ4Y25wNjZvcnVMLWhlN01rNnM3LXo2OHVScndJZm5VRWhjVFNrNnJZZDRhdEpoSThDelpzbDJlMTB0QXZ2al9FLWFkS3JTU1FfaFpBVkp1X2lrMU93bU5FbzlIQl9qbzFQLXE?oc=5",
+    "pub": "2026-11-16T23:10:00.000Z",
+    "sum": "President Trump is setting off on a multi-day swing in Asia, where he's scheduled to meet with Russian President Vladimir Putin and China's President Xi Jinping for a highly anticipated summit."
+   },
+   {
+    "hd": "Iran rules out nuclear site inspections until war ends",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-oil-strait-of-hormuz/",
+    "pub": "2026-11-16T22:59:46.000Z",
+    "sum": "Iran says it will not let U.N. inspectors return to assess damaged nuclear sites until the war with the U.S. is \"permanently ended.\""
+   },
+   {
+    "hd": "After claiming election stolen, Netanyahu allies face their own meddling allegations",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdktHdXhWbTM3UkltdmYzS3UtR1IydUwtRi1jWXFYRkJsekx0aC1vbWJXT19yczROcDdqZWRtNExQeGo4UGI4eFllOHA2SmpRd052TFBRMmZFZTJ6UjBfcmt4VmxfTnFud09EaFZNUlR6T3c0ZXVqWmpjNTluR3YzbGNuSnQtcHNYeVlfT1dPT19PX3c1eGhWQkJOc25Sai1YaFE2c2prZjZUc1NjZG40VE5fUHFDcC00eWxVQmNlYkd4a0NwdFk3ZjROdHU?oc=5",
+    "pub": "2026-11-16T22:25:21.000Z",
+    "sum": "Prime Minister Benjamin Netanyahu's camp is being accused of orchestrating the arrests of opponents on election day. His office acknowledged calling police officials but denied wrongdoing."
+   },
    {
     "hd": "Hungary PM Magyar urges Fidesz lawmakers to quit over cash haul in graft probe",
     "src": "Reuters",
@@ -14271,25 +14290,11 @@
     "sum": "The Iran-backed Houthis are gaining ground and their advance could have dangerous consequences, writes the BBC's security correspondent."
    },
    {
-    "hd": "Iran rules out nuclear site inspections until war ends",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-nuclear-oil-strait-of-hormuz/",
-    "pub": "2026-11-16T21:14:17.000Z",
-    "sum": "Iran says it will not let U.N. inspectors return to assess damaged nuclear sites until the war with the U.S. is \"permanently ended.\""
-   },
-   {
     "hd": "Russia says its defenses intercepted over 1,300 Ukrainian drones in a major attack",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUXpCaVl5U1lEam5kVm5CWUVHUURUV19EcDVHMUZ3ckRXVTBBQUVodVJJeWMwNmxTbTlEZC10T0ZkMEZUZ1JaakFtY0szajhqSkh1UmRLRHFCWHFsdlJ6TFFMNk9pMGNaRzFlSzh5dU1iNXZzbUdJWERveEx6NGE3YVdSWndvWVo2eDNDMTRoZnFyb0l3eGQ5Y3dZQUlMbjN6VFBDZUZCQnFhSEU?oc=5",
     "pub": "2026-11-16T21:10:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "After claiming election stolen, Netanyahu allies face their own meddling allegations",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdktHdXhWbTM3UkltdmYzS3UtR1IydUwtRi1jWXFYRkJsekx0aC1vbWJXT19yczROcDdqZWRtNExQeGo4UGI4eFllOHA2SmpRd052TFBRMmZFZTJ6UjBfcmt4VmxfTnFud09EaFZNUlR6T3c0ZXVqWmpjNTluR3YzbGNuSnQtcHNYeVlfT1dPT19PX3c1eGhWQkJOc25Sai1YaFE2c2prZjZUc1NjZG40VE5fUHFDcC00eWxVQmNlYkd4a0NwdFk3ZjROdHU?oc=5",
-    "pub": "2026-11-16T20:55:21.000Z",
-    "sum": "Prime Minister Benjamin Netanyahu's camp is being accused of orchestrating the arrests of opponents on election day. His office acknowledged calling police officials but denied wrongdoing."
    },
    {
     "hd": "U.S. Figures Iran Still Has up to 2,500 Missiles, Countering Trump Assertions",
@@ -14325,13 +14330,6 @@
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNYmZiWEcxLU9Xck9JR2h3VDIwa1VETmRCam5zQm1BWmhNcGhZS0pBdi1BZGRZLXhZT3VmUG5wYld2N1gydV8teDVFc0UtNVljakJ5Q1JNRkRUb0dqRDRfX0p4QVBGdkZRaWd3Y1J6aFdZWlZhVGt5LWxzcG9mRHVPYnBXZFFrSXVqYXkxd081YzdlNTN1T05yVTgwZUIzSUhQQWc?oc=5",
     "pub": "2026-11-16T19:32:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump’s Asia trip: Deals in Manila and Shenzhen, nuclear summit with Xi and Putin, maybe Kim meeting",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOcGw5a2lMb1B2bEtyYWotSkJYcWhXNHN2R3lwQlNuSUxfSHB5VzJ4Y25wNjZvcnVMLWhlN01rNnM3LXo2OHVScndJZm5VRWhjVFNrNnJZZDRhdEpoSThDelpzbDJlMTB0QXZ2al9FLWFkS3JTU1FfaFpBVkp1X2lrMU93bU5FbzlIQl9qbzFQLXE?oc=5",
-    "pub": "2026-11-16T19:26:00.000Z",
-    "sum": "President Trump is setting off on a multi-day swing in Asia, where he's scheduled to meet with Russian President Vladimir Putin and China's President Xi Jinping for a highly anticipated summit."
    },
    {
     "hd": "Zelenskiy says Ukraine held new talks with US, European officials on peace prospects",
@@ -14439,6 +14437,13 @@
     "sum": "President Trump said he may meet with North Korean leader Kim Jong Un on his China trip this week."
    },
    {
+    "hd": "Russia’s richest woman hit by EU sanctions",
+    "src": "Financial Times",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxONW4wMEE5cnhoc2pmTGRNR0JteHNSNUwtUkJrMzRtV3ZCYjR4SEpuOHJvU2lLT3E3alRVMC1JckJEZDhsTlBzb09oQktOdi1MU3dnaWlPNHQ3cEZfWnJKMzBTaE1ETmU0OHE5YndBOEw2SU9GN1pIX0liNTJQUXZKb0lDT00?oc=5",
+    "pub": "2026-11-16T17:11:52.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Macron leaves summit of French-speaking nations with leadership dispute on hold",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/macron-leaves-summit-french-speaking-nations-leadership-dispute-138172198",
@@ -14451,18 +14456,12 @@
     "url": "https://abcnews.com/International/wireStory/eu-accuses-russia-stalling-ukraine-peace-talks-target-138172402",
     "pub": "2026-11-16T17:02:04.000Z",
     "sum": "The bloc imposed sanctions on nearly 50 Russian banks, financial institutions."
-   },
-   {
-    "hd": "Critics blame U.S.-Iran war for crackdown on clerics in Bahrain",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/16/critics-blame-us-iran-war-crackdown-clerics-bahrain/",
-    "pub": "2026-11-16T16:57:08.000Z",
-    "sum": "Dozens of Shiite clerics were sentenced to life in prison for allegedly working with Iran to undermine Bahrain. Their supporters say they are being punished for their faith."
    }
   ],
   "feeds": [
+   "Google News",
+   "AP",
    "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -14474,11 +14473,10 @@
    "ABC News"
   ],
   "feedErrors": [
-   "Google News: HTTP 429 from news.google.com",
-   "AP (Google News): HTTP 429 from news.google.com"
+   "WSJ (Google News): HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-16T22:45:11.395Z",
-  "lastAttempt": "2026-11-16T22:45:11.395Z",
+  "asOf": "2026-11-16T23:15:12.910Z",
+  "lastAttempt": "2026-11-16T23:15:12.910Z",
   "lastError": null
  }
 }
