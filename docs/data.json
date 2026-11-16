@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T00:53:58.809Z",
+ "generatedAt": "2026-11-16T01:19:16.442Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -4588,8 +4588,11 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T00:53:58.809Z",
+  "at": "2026-11-16T01:19:16.442Z",
   "ran": [
+   "alerts",
+   "nflScoreboard",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -10948,40 +10951,40 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T00:51:19.689Z",
-  "lastAttempt": "2026-11-16T00:51:19.689Z",
+  "asOf": "2026-11-16T01:19:16.442Z",
+  "lastAttempt": "2026-11-16T01:19:16.442Z",
   "items": {
    "DOW": {
     "symbol": "YM=F",
-    "last": 52438,
-    "lastTime": 1794789663,
+    "last": 52435,
+    "lastTime": 1794791352,
     "settle": 52430,
     "settleDate": "2026-11-13",
     "indexClose": 52347.55,
-    "changePct": 0.015258439824527943,
-    "expectedOpen": 52355.53741941637,
+    "changePct": 0.009536524890329964,
+    "expectedOpen": 52352.54213713523,
     "valid": true
    },
    "SPX": {
     "symbol": "ES=F",
-    "last": 7596.75,
-    "lastTime": 1794789675,
+    "last": 7584.25,
+    "lastTime": 1794791355,
     "settle": 7584.75,
     "settleDate": "2026-11-13",
     "indexClose": 7561.67,
-    "changePct": 0.15821220211608822,
-    "expectedOpen": 7573.633484623752,
+    "changePct": -0.006592175088170342,
+    "expectedOpen": 7561.171521474011,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
-    "last": 28151.25,
-    "lastTime": 1794789672,
+    "last": 28017.75,
+    "lastTime": 1794791355,
     "settle": 28038.25,
     "settleDate": "2026-11-13",
     "indexClose": 25136.273,
-    "changePct": 0.4030208732713347,
-    "expectedOpen": 25237.577426952466,
+    "changePct": -0.07311440621294125,
+    "expectedOpen": 25117.89476325199,
     "valid": true
    }
   },
@@ -11461,8 +11464,8 @@
     }
    }
   ],
-  "asOf": "2026-11-16T00:51:19.689Z",
-  "lastAttempt": "2026-11-16T00:51:19.689Z",
+  "asOf": "2026-11-16T01:19:16.442Z",
+  "lastAttempt": "2026-11-16T01:19:16.442Z",
   "lastError": null
  },
  "alerts": {
@@ -11473,8 +11476,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T00:51:19.689Z",
-  "lastAttempt": "2026-11-16T00:51:19.689Z",
+  "asOf": "2026-11-16T01:19:16.442Z",
+  "lastAttempt": "2026-11-16T01:19:16.442Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12117,7 +12120,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T00:53:58.809Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-16T01:19:16.442Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  }
 }
