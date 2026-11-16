@@ -440,6 +440,13 @@
   .tape-change{font-size:36px}.tape-change.up{color:var(--up)}.tape-change.down{color:var(--down)}
   .tape-change.soon{color:var(--gold);font-size:36px}
   .tape-sep{width:5px;height:5px;border-radius:50%;background:rgba(201,168,106,.5);align-self:center;margin-left:15px}
+  .tape-seg{display:inline-flex;align-items:center;gap:64px;flex:none}
+  .tape-seg .tape-item:last-child .tape-sep{display:none}
+  .tape-label{align-self:center;font-size:24px;line-height:1;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);padding:7px 14px 6px;border:1px solid rgba(201,168,106,.42);border-radius:4px;margin-right:-22px}
+  .tape-label i{font-style:normal;letter-spacing:0;margin-left:6px}.tape-label .up{color:var(--up)}.tape-label .down{color:var(--down)}
+  .tape-hd{color:#E7DFD1}
+  .tape-src{font-size:26px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
   .source-line{position:absolute;right:0;top:0;z-index:2;transform:translateY(-15px);
     display:flex;align-items:center;gap:14px;background:var(--bg);padding-left:22px}
   .mock-label{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
@@ -932,6 +939,7 @@ const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let SUN={rise:7*60+8,set:17*60+35};
 let TAPE_RATES='';
+var TAPE_MOVERS=null, TAPE_WORLD=null;
 const icon=i=>`<svg class="wx" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-${i}"/></svg>`;
 const tradable=()=>DATA.quotes.filter(q=>!q.gap);
 const fmtPrice=q=>q.dollar||q.s==="NVDA"||q.s==="TSLA"||q.s==="SPCX" ? "$"+q.px:q.px;
@@ -1093,12 +1101,55 @@ function showNews(k,instant=false){
   if(instant){apply();return;}
   $('feature').classList.add('fade');window.setTimeout(apply,850);
 }
-function renderTape(){
-  const tape=tradable().map(q=>{
-    const sym=q.s==='Composite'?'NASDAQ':q.s;
-    if(q.upcoming)return `<span class="tape-item"><b class="tape-symbol">ANT</b><span class="tape-change soon">IPO NOV 19 · $70–78</span><span class="tape-sep"></span></span>`;
-    return `<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${fmtPrice(q)}</span><span class="tape-change ${q.ch>=0?'up':'down'}">${q.ch>=0?'+':''}${q.ch.toFixed(2)}%</span><span class="tape-sep"></span></span>`;
-  }).join('')+(TAPE_RATES||'');
+function tapeQuoteItem(q){
+  var sym=q.s==='Composite'?'NASDAQ':q.s;
+  if(q.upcoming)return '<span class="tape-item"><b class="tape-symbol">ANT</b><span class="tape-change soon">IPO NOV 19 · $70–78</span><span class="tape-sep"></span></span>';
+  if(q.pending||q.ch==null||q.px==null)return '';
+  return '<span class="tape-item"><b class="tape-symbol">'+sym+'</b><span class="tape-price">'+fmtPrice(q)+'</span><span class="tape-change '+(q.ch>=0?'up':'down')+'">'+(q.ch>=0?'+':'')+q.ch.toFixed(2)+'%</span><span class="tape-sep"></span></span>';
+}
+function tapeSeg(label,items){
+  return items?'<span class="tape-seg"><span class="tape-label">'+label+'</span>'+items+'</span>':'';
+}
+function tapeShort(s,n){
+  s=String(s||'');
+  if(s.length<=n)return s;
+  var cut=s.slice(0,n+1), i=cut.lastIndexOf(' ');
+  return (i>n*0.6?cut.slice(0,i):s.slice(0,n)).replace(/[\s,;:.\-–—]+$/,'')+'…';
+}
+function tapeMoverItems(list){
+  return list.map(function(m){
+    var up=m.ch>=0;
+    return '<span class="tape-item"><b class="tape-symbol">'+esc(m.s)+'</b><span class="tape-change '+(up?'up':'down')+'">'+(up?'+':'')+Number(m.ch).toFixed(2)+'%</span><span class="tape-sep"></span></span>';
+  }).join('');
+}
+function tapeWorldItem(x){
+  return '<span class="tape-item"><span class="tape-hd">'+esc(tapeShort(x.hd,90))+'</span><span class="tape-src">'+esc(x.src)+'</span><span class="tape-sep"></span></span>';
+}
+// Ticker order mixes segments so the loop doesn't read as one long quote list:
+// INDEXES · MOVERS ▲ · WORLD · WATCHLIST · MOVERS ▼ · WORLD · RATES · WORLD
+function tapeHtml(){
+  var gapAt=-1, watch=[], idx=[], i;
+  for(i=0;i<DATA.quotes.length;i++)if(DATA.quotes[i].gap){gapAt=i;break;}
+  for(i=0;i<DATA.quotes.length;i++){
+    if(DATA.quotes[i].gap)continue;
+    (gapAt>=0&&i>gapAt?idx:watch).push(DATA.quotes[i]);
+  }
+  var mv=TAPE_MOVERS, wd=TAPE_WORLD||[];
+  var segs=[tapeSeg('Indexes',idx.map(tapeQuoteItem).join(''))];
+  if(mv&&mv.gainers.length)segs.push(tapeSeg(esc(mv.label)+'<i class="up">▲</i>',tapeMoverItems(mv.gainers)));
+  if(wd[0])segs.push(tapeSeg('World',tapeWorldItem(wd[0])));
+  segs.push(tapeSeg('Watchlist',watch.map(tapeQuoteItem).join('')));
+  if(mv&&mv.losers.length)segs.push(tapeSeg(esc(mv.label)+'<i class="down">▼</i>',tapeMoverItems(mv.losers)));
+  if(wd[1])segs.push(tapeSeg('World',tapeWorldItem(wd[1])));
+  if(TAPE_RATES)segs.push(tapeSeg('Rates',TAPE_RATES));
+  if(wd[2])segs.push(tapeSeg('World',tapeWorldItem(wd[2])));
+  return segs.join('');
+}
+let tapeLast='';
+function renderTape(force){
+  const tape=tapeHtml();
+  if(force!==true&&tape===tapeLast&&$('tape-track').firstElementChild)return;
+  tapeLast=tape;
   const track=$('tape-track');
   // Seamless loop: each copy must be at least as wide as the viewport, so repeat the
   // item set inside one copy as needed, then render two identical copies and slide by
@@ -1586,6 +1637,22 @@ function applyRates(r){
   const item=(sym,v)=>`<span class="tape-item"><b class="tape-symbol">${sym}</b><span class="tape-price">${pct(v)}</span><span class="tape-sep"></span></span>`;
   TAPE_RATES=item('10Y',ten.latest.v)+(ff?.latest?item('FED FUNDS',ff.latest.v):'')+(mo?.latest?item('30Y MORTGAGE',mo.latest.v):'');
 }
+// Movers label: "MOVERS" during the session they describe, else the session's weekday ("FRI MOVERS").
+function moversLabel(m){
+  var e=etNow();
+  if(m.sessionDate===e.key&&marketOpenNow(LIVE_DATA))return 'Movers';
+  var wd=new Date(m.sessionDate+'T12:00:00Z').toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'});
+  return wd.toUpperCase()+' movers';
+}
+function applyTickerExtras(d){
+  var m=d&&d.movers, w=d&&d.world;
+  TAPE_MOVERS=null;TAPE_WORLD=null;
+  if(m&&m.asOf&&m.sessionDate&&((m.gainers&&m.gainers.length)||(m.losers&&m.losers.length))){
+    var days=(Date.now()-Date.parse(m.sessionDate+'T21:00:00Z'))/864e5;
+    if(days<5)TAPE_MOVERS={label:moversLabel(m),gainers:(m.gainers||[]).slice(0,5),losers:(m.losers||[]).slice(0,5)};
+  }
+  if(w&&w.asOf&&w.items&&w.items.length&&ageH(w.asOf)<24)TAPE_WORLD=w.items.slice(0,3);
+}
 function applyLive(d){
   if(!d)return;
   if(typeof writeSbCache==='function'){
@@ -1599,6 +1666,7 @@ function applyLive(d){
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
   try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
+  try{applyTickerExtras(d);renderTape();}catch(e){console.error('ticker',e);}
   try{checkMarketAlerts();scheduleScoreWatch();if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
   const credits=['Weather: Open-Meteo','ESPN','AI news: RSS'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
@@ -1606,6 +1674,7 @@ function applyLive(d){
   const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
   if(idxQuote)credits.splice(credits.indexOf('Quotes: Finnhub')+1,0,`Indexes: ${idxQuote.source||'Yahoo Finance'}`);
   if(TAPE_RATES||($('treasury')&&!$('treasury').hidden))credits.push('Rates: FRED');
+  if(TAPE_MOVERS)credits.push('Movers: Yahoo');
   $('credit-label').textContent=credits.join(' · ');
 }
 function updateRefreshAsOf(iso){
@@ -1711,7 +1780,7 @@ refreshAll();
 window.setInterval(refreshAll,POLL_MS);
 refreshNwsAlerts();
 window.setInterval(refreshNwsAlerts,ALERTS.nwsPollMs);
-if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape()); // re-measure the tape with final fonts
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>renderTape(true)); // re-measure the tape with final fonts
 window.setInterval(()=>{if(LIVE_DATA)applyStocks(LIVE_DATA.stocks);},60000);
 
 const ESPN_NFL_SB='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';

@@ -499,6 +499,93 @@ async function fetchNews(now = new Date()) {
   return { kind: NEWS_KIND, items, feeds, feedErrors: failed };
 }
 
+// ---------- world / geopolitics headlines (ticker) ----------
+const WORLD_FEEDS = [
+  { src: 'Google News', url: 'https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en' },
+  { src: 'Reuters', url: 'https://news.google.com/rss/search?q=site:reuters.com/world+when:1d&hl=en-US&gl=US&ceid=US:en' },
+  { src: 'BBC News', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
+  { src: 'NPR', url: 'https://feeds.npr.org/1004/rss.xml' }
+];
+const GEO_RE = /\b(war|wars|ceasefire|truce|peace|troops?|military|army|missiles?|drones?|strikes?|airstrikes?|attacks?|invasion|offensive|shelling|bomb\w*|hostages?|rebels?|militants?|coup|sanction\w*|tariffs?|embargo|diplomat\w*|summit|peace talks|trade talks|treaty|negotiat\w*|envoy|ambassador|minister|president|premier|pm|parliament|election\w*|vote|referendum|opposition|protests?|nato|un|u\.n\.|eu|g7|g20|kremlin|pentagon|nuclear|border|refugees?|humanitarian|ukraine|ukrainian|russia|russian|putin|zelensky\w*|gaza|israel\w*|hamas|hezbollah|iran\w*|houthis?|yemen|syria\w*|china|chinese|xi|taiwan|korea\w*|venezuela\w*|sudan\w*|crimea|beijing|moscow|kyiv|tehran)\b/i;
+const NOT_GEO_RE = /^(commentary|opinion|analysis|breakingviews|explainer|quiz|watch|live:|in pictures)\b|\b(dies at|dies aged|age \d+|obituary|recipe|celebrity|football|soccer|tennis|golf|cricket|nba|nfl|ceo|startups?|acquisitions?|shares|stocks?|earnings|ipo|investors?|ai)\b/i;
+function worldItems(xml, feed) {
+  return [...xml.matchAll(/<item\b[\s\S]*?<\/item>/g)].map(m => {
+    const tag = n => (m[0].match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`)) || [])[1];
+    let hd = decode(tag('title') || '');
+    let src = feed.src;
+    const gsrc = decode(tag('source') || '');
+    if (feed.url.includes('news.google.com')) {
+      if (gsrc) { src = gsrc.replace(/\.com$/i, ''); hd = hd.replace(new RegExp(`\\s+[-–—]\\s+${gsrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), ''); }
+      else hd = hd.replace(/\s+[-–—]\s+[^-–—]{2,40}$/, '');
+    }
+    const pub = tag('pubDate');
+    const t = pub ? Date.parse(decode(pub)) : NaN;
+    return { src, hd: hd.trim(), pub: Number.isFinite(t) ? new Date(t).toISOString() : null };
+  }).filter(x => x.hd && x.pub);
+}
+const wordSet = s => new Set(s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter(w => w.length > 3));
+function similar(a, b) {
+  const A = wordSet(a), B = wordSet(b); if (!A.size || !B.size) return false;
+  let n = 0; for (const w of A) if (B.has(w)) n++;
+  return n / Math.min(A.size, B.size) >= 0.5;
+}
+export function pickWorld(all, now = new Date(), count = 3) {
+  const fresh = all.filter(x => now - new Date(x.pub) < 20 * 60 * MIN && new Date(x.pub) - now < 10 * MIN)
+    .sort((a, b) => b.pub.localeCompare(a.pub));
+  const geo = fresh.filter(x => GEO_RE.test(x.hd) && !NOT_GEO_RE.test(x.hd));
+  const picked = [], srcCount = {};
+  const take = (pool, maxPerSrc) => {
+    for (const x of pool) {
+      if (picked.length >= count) return;
+      if (picked.some(p => p.hd === x.hd || similar(p.hd, x.hd))) continue;
+      if ((srcCount[x.src] || 0) >= maxPerSrc) continue;
+      picked.push(x); srcCount[x.src] = (srcCount[x.src] || 0) + 1;
+    }
+  };
+  take(geo, 1); take(geo, count); take(fresh.filter(x => !NOT_GEO_RE.test(x.hd)), count);
+  return picked;
+}
+async function fetchWorld(now) {
+  const results = await Promise.allSettled(WORLD_FEEDS.map(async f => worldItems(await getText(f.url, { accept: 'application/rss+xml', headers: { 'User-Agent': YAHOO_UA } }), f)));
+  const failed = [], all = [];
+  results.forEach((r, i) => r.status === 'fulfilled' && r.value.length ? all.push(...r.value) : failed.push(`${WORLD_FEEDS[i].src}: ${clean(r.reason?.message || 'no items')}`));
+  const items = pickWorld(all, now);
+  if (!items.length) throw new Error(failed.join('; ') || 'no recent world headlines');
+  return { items, feedErrors: failed };
+}
+
+// ---------- top movers (Yahoo Finance predefined screeners) ----------
+const MOVER_MIN_CAP = 2e9;
+async function yahooScreener(scrId) {
+  let lastErr;
+  for (const host of ['query1.finance.yahoo.com', 'query2.finance.yahoo.com']) {
+    try {
+      const j = await getJSON(`https://${host}/v1/finance/screener/predefined/saved?scrIds=${scrId}&count=25`, { headers: { 'User-Agent': YAHOO_UA } });
+      const quotes = j?.finance?.result?.[0]?.quotes;
+      if (!Array.isArray(quotes)) throw new Error(`Yahoo ${scrId}: no quotes`);
+      return quotes;
+    } catch (e) { lastErr = e; }
+  }
+  throw lastErr;
+}
+export function pickMovers(quotes, dir, n = 5) {
+  return quotes.filter(q => q && q.symbol && q.quoteType === 'EQUITY' && q.marketCap >= MOVER_MIN_CAP &&
+      Number.isFinite(q.regularMarketChangePercent) && (dir > 0 ? q.regularMarketChangePercent > 0 : q.regularMarketChangePercent < 0))
+    .sort((a, b) => dir > 0 ? b.regularMarketChangePercent - a.regularMarketChangePercent : a.regularMarketChangePercent - b.regularMarketChangePercent)
+    .slice(0, n)
+    .map(q => ({ s: q.symbol, n: q.shortName || q.longName || q.symbol, ch: +q.regularMarketChangePercent.toFixed(2),
+      px: Number.isFinite(q.regularMarketPrice) ? q.regularMarketPrice : null, cap: q.marketCap, t: q.regularMarketTime || null }));
+}
+async function fetchMovers() {
+  const [g, l] = await Promise.all([yahooScreener('day_gainers'), yahooScreener('day_losers')]);
+  const gainers = pickMovers(g, 1), losers = pickMovers(l, -1);
+  if (!gainers.length && !losers.length) throw new Error('Yahoo screeners: no movers above $2B');
+  const t = Math.max(...gainers.concat(losers).map(q => q.t || 0));
+  const state = (g.concat(l).find(q => q.marketState) || {}).marketState || null;
+  return { provider: 'Yahoo Finance', credit: 'Movers: Yahoo Finance', minCap: MOVER_MIN_CAP, marketState: state,
+    sessionTime: t ? new Date(t * 1000).toISOString() : null, sessionDate: t ? etParts(new Date(t * 1000)).dateKey : null, gainers, losers };
+}
+
 // ---------- stocks (Finnhub) + indexes (Yahoo Finance / Stooq / Finnhub fund) ----------
 const STOCKS = [
   { s: 'NVDA', n: 'NVIDIA' }, { s: 'TSLA', n: 'Tesla' }, { s: 'SPCX', n: 'SpaceX' }
@@ -981,6 +1068,29 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       // Last good AI items survive a failed fetch; older non-AI (BBC/NPR) items never do.
       out.news = prevNewsAI ? { ...prev.news, lastAttempt: nowIso, lastError: clean(e.message) }
         : { kind: NEWS_KIND, items: [], asOf: null, lastAttempt: nowIso, lastError: clean(e.message) };
+    }
+  }
+  if (force || sectionDue(prev.world, now, et, 'hourly')) {
+    ran.push('world');
+    try { out.world = ok(await fetchWorld(now), { asOf: nowIso, lastAttempt: nowIso }); }
+    catch (e) { out.world = { ...(prev.world || {}), lastAttempt: nowIso, lastError: why(e) }; }
+  }
+  // Movers: every ~15 min in the cash session; after the close once the new session's
+  // numbers exist (retry hourly, e.g. holidays); otherwise hold the last session.
+  {
+    const pm = prev.movers || {};
+    const inSess = isWeekday(et.weekday) && et.mins >= 575 && et.mins <= 965;
+    const age = ageMin(pm.asOf, now), tried = ageMin(pm.lastAttempt, now);
+    const lastClose = lastCashCloseDateKey(et);
+    const behind = !pm.sessionDate || pm.sessionDate < lastClose;
+    const at = pm.asOf ? etParts(new Date(pm.asOf)) : null;
+    const fetchedSinceClose = at && (at.dateKey > lastClose || (at.dateKey === lastClose && at.mins >= 962));
+    const due = force || !pm.asOf || (pm.lastError ? tried >= 30 :
+      inSess ? age >= 12 : !fetchedSinceClose ? true : behind ? age >= 60 : age >= 12 * 60);
+    if (due) {
+      ran.push('movers');
+      try { out.movers = ok(await fetchMovers(), { asOf: nowIso, lastAttempt: nowIso }); }
+      catch (e) { out.movers = { ...pm, lastAttempt: nowIso, lastError: why(e) }; }
     }
   }
   if (force || sectionDue(prev.rates, now, et, 'daily6')) {
