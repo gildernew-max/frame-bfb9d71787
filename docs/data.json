@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T12:15:40.105Z",
+ "generatedAt": "2026-11-16T12:23:58.324Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -4842,9 +4842,12 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T12:15:40.105Z",
+  "at": "2026-11-16T12:23:58.324Z",
   "ran": [
-   "worldNews",
+   "alerts",
+   "world",
+   "extended",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -11203,62 +11206,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T12:05:55.140Z",
-  "lastAttempt": "2026-11-16T12:05:55.140Z",
+  "asOf": "2026-11-16T12:23:58.324Z",
+  "lastAttempt": "2026-11-16T12:23:58.324Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7558,
-    "lastTime": 1794830155,
+    "last": 7537,
+    "lastTime": 1794831236,
     "settle": 7585,
     "settleDate": "2026-11-13",
     "indexClose": 7561.67,
-    "change": -27,
-    "changePct": -0.35596572181938035,
-    "expectedOpen": 7534.7530468029,
+    "change": -48,
+    "changePct": -0.6328279499011207,
+    "expectedOpen": 7513.817638760713,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27779,
-    "lastTime": 1794830157,
+    "last": 27660,
+    "lastTime": 1794831237,
     "settle": 28038.25,
     "settleDate": "2026-11-13",
     "indexClose": 25136.273,
-    "change": -259.25,
-    "changePct": -0.9246297468636595,
-    "expectedOpen": 24903.855542589143,
+    "change": -378.25,
+    "changePct": -1.3490499585387818,
+    "expectedOpen": 24797.172119515304,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 52491,
-    "lastTime": 1794830144,
+    "last": 52389,
+    "lastTime": 1794831221,
     "settle": 52432,
     "settleDate": "2026-11-13",
     "indexClose": 52347.55,
-    "change": 59,
-    "changePct": 0.11252670125114433,
-    "expectedOpen": 52406.4549712008,
+    "change": -43,
+    "changePct": -0.08201098565761367,
+    "expectedOpen": 52304.619258277395,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2788.6,
-    "lastTime": 1794830143,
+    "last": 2784,
+    "lastTime": 1794831238,
     "settle": 2797.800048828125,
     "settleDate": "2026-11-13",
     "indexClose": null,
-    "change": -9.200048828125091,
-    "changePct": -0.32883153433279066,
+    "change": -13.800048828125,
+    "changePct": -0.49324642888276565,
     "expectedOpen": null,
     "valid": true
    }
@@ -11751,8 +11754,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T12:05:55.140Z",
-  "lastAttempt": "2026-11-16T12:05:55.140Z",
+  "asOf": "2026-11-16T12:23:58.324Z",
+  "lastAttempt": "2026-11-16T12:23:58.324Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12395,30 +12398,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T12:15:40.105Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-16T12:23:58.324Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
    {
-    "src": "BBC News",
-    "hd": "Five EU countries expected to announce migrant deportation centre in Rwanda",
-    "pub": "2026-11-16T11:17:34.000Z"
+    "src": "NPR",
+    "hd": "FAA ground stop still affecting thousands of flights. And, Trump meets Xi, Putin in Asia",
+    "pub": "2026-11-16T12:08:14.000Z"
    },
    {
     "src": "Reuters",
-    "hd": "Scores of Bahraini Shi'ite clerics get life in prison for plotting with Iran",
-    "pub": "2026-11-16T10:57:29.000Z"
+    "hd": "Lithuanian president says US troop rotations will continue beyond latest deployment",
+    "pub": "2026-11-16T12:05:43.000Z"
    },
    {
-    "src": "The New York Times",
-    "hd": "Relentless Attacks on Ukraine’s Power Grid Threaten to Make Cities Unlivable",
-    "pub": "2026-11-16T10:03:00.000Z"
+    "src": "BBC News",
+    "hd": "Five EU countries expected to announce migrant deportation centre in Rwanda",
+    "pub": "2026-11-16T11:55:57.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-16T11:27:39.879Z",
-  "lastAttempt": "2026-11-16T11:27:39.879Z",
+  "asOf": "2026-11-16T12:23:58.324Z",
+  "lastAttempt": "2026-11-16T12:23:58.324Z",
   "lastError": null
  },
  "movers": {
@@ -12606,35 +12609,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T12:05:55.140Z",
-  "lastAttempt": "2026-11-16T12:05:55.140Z",
+  "asOf": "2026-11-16T12:23:58.324Z",
+  "lastAttempt": "2026-11-16T12:23:58.324Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 156.86,
-    "time": 1794830758,
+    "price": 156.59,
+    "time": 1794831835,
     "ref": 162.85,
     "refTime": 1794603601,
-    "change": -5.989999999999981,
-    "changePct": -3.6782315013816276
+    "change": -6.259999999999991,
+    "changePct": -3.844028246852927
    },
    "TSLA": {
     "session": "pre",
-    "price": 386.32,
-    "time": 1794830752,
+    "price": 385.5933,
+    "time": 1794831833,
     "ref": 390.22,
     "refTime": 1794603600,
-    "change": -3.900000000000034,
-    "changePct": -0.999436215468206
+    "change": -4.626700000000028,
+    "changePct": -1.1856644969504453
    },
    "SPCX": {
     "session": "pre",
-    "price": 139.83,
-    "time": 1794830754,
+    "price": 139,
+    "time": 1794831828,
     "ref": 139.11,
     "refTime": 1794603601,
-    "change": 0.7199999999999989,
-    "changePct": 0.5175760189777865
+    "change": -0.11000000000001364,
+    "changePct": -0.07907411401050508
    }
   }
  },
