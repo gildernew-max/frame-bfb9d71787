@@ -978,10 +978,13 @@ async function fetchRates(prevRates, et) {
 }
 
 // ---------- futures (Yahoo chart API, 5-minute bars) ----------
+// `index` is the cash-index card the contract maps to; RTY has no card, so it settles
+// against the S&P quote's session and gets no expected-open figure.
 const FUTURES = [
-  { sym: 'YM=F', key: 'DOW' },
-  { sym: 'ES=F', key: 'SPX' },
-  { sym: 'NQ=F', key: 'NASDAQ' }
+  { sym: 'ES=F', key: 'SPX', index: 'SPX', label: 'ES', name: 'S&P 500' },
+  { sym: 'NQ=F', key: 'NASDAQ', index: 'NASDAQ', label: 'NQ', name: 'Nasdaq 100' },
+  { sym: 'YM=F', key: 'DOW', index: 'DOW', label: 'YM', name: 'Dow' },
+  { sym: 'RTY=F', key: 'RUT', index: null, label: 'RTY', name: 'Russell 2000' }
 ];
 // Close of the 5-minute bar ending at/just before 16:00 ET (starts 15:55) on dateKey;
 // falls back to the latest non-null bar starting in [15:45, 16:00) if that bar is missing.
@@ -1006,11 +1009,11 @@ async function fetchFuturesItem(f, settleDate, indexClose) {
   if (!(last > 0) || !Number.isFinite(last) || !(lastTime > 0)) throw new Error('Yahoo: invalid futures quote');
   const settle = yahooSettleBar(result, settleDate);
   if (!(settle > 0) || !Number.isFinite(settle)) throw new Error(`Yahoo: no settle bar for ${settleDate}`);
-  const base = { symbol: f.sym, last, lastTime, settle, settleDate, indexClose };
+  const base = { symbol: f.sym, label: f.label, name: f.name, last, lastTime, settle, settleDate, indexClose };
   const settleMoment = Date.parse(settleDate + 'T16:00:00-05:00'); // approx ET, DST not modeled (matches Stooq above)
-  if (!(lastTime * 1000 > settleMoment)) return { ...base, changePct: null, expectedOpen: null, valid: false };
+  if (!(lastTime * 1000 > settleMoment)) return { ...base, change: null, changePct: null, expectedOpen: null, valid: false };
   const changePct = (last - settle) / settle * 100;
-  return { ...base, changePct, expectedOpen: indexClose * (1 + changePct / 100), valid: true };
+  return { ...base, change: last - settle, changePct, expectedOpen: indexClose > 0 ? indexClose * (1 + changePct / 100) : null, valid: true };
 }
 // Most recent weekday (Mon-Fri) whose 16:00 ET cash close has already happened, as a dateKey.
 function lastCashCloseDateKey(et) {
@@ -1227,11 +1230,11 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       const items = {};
       const symbolErrors = [];
       for (const f of FUTURES) {
-        const quote = out.stocks.quotes?.[f.key];
+        const quote = out.stocks.quotes?.[f.index || 'SPX'];
         const settleDate = quote?.kind === 'index' && quote.t ? etParts(new Date(quote.t * 1000)).dateKey : null;
         try {
           if (!settleDate) throw new Error(`${f.key}: no index quote`);
-          items[f.key] = await fetchFuturesItem(f, settleDate, quote.px);
+          items[f.key] = await fetchFuturesItem(f, settleDate, f.index ? quote.px : null);
         } catch (e) {
           symbolErrors.push(`${f.key}: ${why(e)}`);
           const prevItem = prevFut.items?.[f.key];
