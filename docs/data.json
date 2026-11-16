@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T21:45:25.386Z",
+ "generatedAt": "2026-11-16T22:00:11.182Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -5351,16 +5351,10 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-16T21:45:25.386Z",
+  "at": "2026-11-16T22:00:11.182Z",
   "ran": [
-   "weather",
    "alerts",
-   "nflScoreboard",
-   "cfbScoreboard",
-   "stockNews",
-   "worldNews",
    "extended",
-   "futures",
    "usTempGrid"
   ]
  },
@@ -12267,8 +12261,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T21:45:25.386Z",
-  "lastAttempt": "2026-11-16T21:45:25.386Z",
+  "asOf": "2026-11-16T22:00:11.182Z",
+  "lastAttempt": "2026-11-16T22:00:11.182Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12944,7 +12938,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T21:45:25.386Z",
+  "lastAttempt": "2026-11-16T22:00:11.182Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -13157,35 +13151,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T21:45:25.386Z",
-  "lastAttempt": "2026-11-16T21:45:25.386Z",
+  "asOf": "2026-11-16T22:00:11.182Z",
+  "lastAttempt": "2026-11-16T22:00:11.182Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 156.64,
-    "time": 1794865584,
+    "price": 156.1771,
+    "time": 1794866407,
     "ref": 156.14,
     "refTime": 1794862801,
-    "change": 0.5,
-    "changePct": 0.32022543870885106
+    "change": 0.03710000000000946,
+    "changePct": 0.023760727552202807
    },
    "TSLA": {
     "session": "post",
-    "price": 378.6,
-    "time": 1794865470,
+    "price": 378.9,
+    "time": 1794866348,
     "ref": 379.74,
     "refTime": 1794862800,
-    "change": -1.1399999999999864,
-    "changePct": -0.30020540369726295
+    "change": -0.8400000000000318,
+    "changePct": -0.22120398167167848
    },
    "SPCX": {
     "session": "post",
-    "price": 137.6507,
-    "time": 1794865580,
+    "price": 137.85,
+    "time": 1794866401,
     "ref": 137.36,
     "refTime": 1794862800,
-    "change": 0.29069999999998686,
-    "changePct": 0.21163366336632705
+    "change": 0.4899999999999807,
+    "changePct": 0.3567268491554897
    }
   }
  },
