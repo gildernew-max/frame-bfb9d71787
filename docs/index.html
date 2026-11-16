@@ -842,7 +842,7 @@
       <div class="spotlight" id="spotlight"><div class="spot-inner" id="spot-inner"></div><div class="spot-folio" id="spot-folio">SPOTLIGHT 01 / 03</div></div>
       <div id="market-grid" aria-label="Other quotes and indexes"></div>    </section>
     <section class="panel business-panel" id="news-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="news-overlay" aria-expanded="false" title="Open headlines" aria-label="AI business sample headlines">
-      <div class="panel-head"><div><div class="panel-title">AI Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
+      <div class="panel-head"><div><div class="panel-title" id="news-title">AI Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><div class="slot-num"><span class="panel-number" id="news-number">05 / EDITION</span><span class="slot-ind" id="news-ind"></span></div></div>
       <div class="business-feature" id="feature"><div class="src" id="f-src"></div><div class="hd" id="f-hd"></div><div class="feature-bottom"><span>Today's reading <span class="feature-index" id="f-count">01 / 05</span></span><span>Rotates every 12s</span></div></div>
       <div id="list"></div>
     </section>
@@ -944,7 +944,7 @@
           <div class="panel-title" id="news-overlay-title">AI Business <span style="color:var(--gold)">·</span> Headlines</div>
           <div class="panel-deck" id="news-overlay-deck">AI headlines</div>
         </div>
-        <button type="button" class="nfl-overlay-close" id="news-overlay-close" aria-label="Close headlines">Close</button>
+        <div class="overlay-actions"><span class="slot-ind" id="news-ov-ind"></span><button type="button" class="nfl-overlay-close" id="news-overlay-close" aria-label="Close headlines">Close</button></div>
       </div>
       <div id="news-overlay-list" class="news-full"></div>
     </div>
@@ -1582,12 +1582,12 @@ function applyNFL(f){
   syncNflPanelFromScoreboard();
 }
 function applyNews(n){
-  if(!n?.asOf||!n.items?.length)return;
-  const ao=asOf(n,3);
-  const items=n.items.slice(0,6).map(x=>({src:x.src,hd:x.hd,pub:x.pub}));
-  if(changed('news',items)){DATA.news=items;newsIndex=0;renderNews(items);
-    document.querySelector('.business-panel').setAttribute('aria-label','AI business and technology headlines');}
-  $('news-deck').textContent=newsSrcSummary(items)+' · '+ao.text;
+  if(n&&n.asOf&&n.items&&n.items.length)NEWS_FEEDS.ai=n;
+  paintNewsCard();
+}
+function applyWorldNews(n){
+  if(n&&n.asOf&&n.items&&n.items.length)NEWS_FEEDS.world=n;
+  paintNewsCard();
 }
 const money=(v,dp=2)=>v.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});
 function applyStocks(st){
@@ -1850,6 +1850,7 @@ function applyLive(d){
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
   try{applySectors(d.sectors);}catch(e){console.error('sectors',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
+  try{applyWorldNews(d.worldNews);}catch(e){console.error('worldNews',e);}
   try{applyRates(d.rates);}catch(e){console.error('rates',e);TAPE_RATES='';}
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
   try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
@@ -3933,26 +3934,28 @@ function newsTime(iso){
   const day=new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(d);
   return `${day} ${fmtTime(iso)}`;
 }
+function newsFeedKey(){return newsSlot==='world'?'worldNews':'news';}
 function newsItems(){
-  const all=LIVE_DATA?.news?.items||[];
-  if(all.length)return all;
-  return (DATA.news||[]).map(x=>({src:x.src,hd:x.hd,sum:x.sum,pub:x.pub}));
+  var f=LIVE_DATA&&LIVE_DATA[newsFeedKey()], all=(f&&f.items)||[];
+  if(all.length||newsSlot==='world')return all;
+  return (DATA.news||[]).map(function(x){return {src:x.src,hd:x.hd,sum:x.sum,pub:x.pub};});
 }
 function renderNewsOverlay(items,meta){
-  const list=$('news-overlay-list');
-  var srcs=(items&&items.length?'AI business & tech · ':'')+newsSrcSummary(items);
-  const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
+  var list=$('news-overlay-list'), m=NEWS_META[newsSlot];
+  $('news-overlay-title').innerHTML=m.ovTitle;
+  var srcs=(items&&items.length?m.deck+' \u00b7 ':'')+newsSrcSummary(items);
+  var as=meta&&meta.asOf?' \u00b7 as of '+fmtTime(meta.asOf):'';
   $('news-overlay-deck').textContent=srcs+as;
-  if(!items?.length){list.innerHTML='<div class="nfl-scoreboard sb-msg">Headlines unavailable right now</div>';return;}
-  renderStories('news',list,items,{wide:true,label:'AI stories · newest first'});
+  if(!items||!items.length){list.innerHTML='<div class="nfl-scoreboard sb-msg">Headlines unavailable right now</div>';return;}
+  renderStories('news',list,items,{wide:true,label:m.label});
 }
 async function loadNewsOverlay(){
-  let items=newsItems();
-  let asOf=LIVE_DATA?.news?.asOf;
-  if(!items.length||!items.some(x=>x.sum)){
+  var key=newsFeedKey(), f=LIVE_DATA&&LIVE_DATA[key];
+  var items=newsItems(), asOf=f&&f.asOf;
+  if(!items.length||!items.some(function(x){return x.sum;})){
     try{
       const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});
-      if(r.ok){const d=await r.json();if(d.news?.items?.length){items=d.news.items;asOf=d.news.asOf;if(LIVE_DATA)LIVE_DATA.news=d.news;}}
+      if(r.ok){const d=await r.json();var g=d[key];if(g&&g.items&&g.items.length){items=g.items;asOf=g.asOf;if(LIVE_DATA)LIVE_DATA[key]=g;}}
     }catch(_){}
   }
   if(!items.length)throw new Error('no headlines');
@@ -4525,10 +4528,69 @@ document.addEventListener('keydown',function(e){
   var isPlayPause=code===10252||code===415||code===19||code===179||k==='MediaPlayPause'||k==='MediaPlay'||k==='MediaPause';
   var isKeyboard=(k==='s'||k==='S')&&!e.ctrlKey&&!e.metaKey&&!e.altKey;
   if(!isPlayPause&&!isKeyboard)return;
+  if(openOverlay==='news'){e.preventDefault();toggleNewsSlot();return;}
   if(openOverlay&&openOverlay!=='nfl'&&openOverlay!=='sectors')return;
   e.preventDefault();
+  if(!openOverlay&&navShown&&navKey==='news-card'){toggleNewsSlot();return;}
   toggleCardSlot();
 });
+// The AI card slot shows AI Business or Top US News (geopolitical only). Play/Pause toggles it
+// while the ring is on the card or its overlay is open; the choice survives reloads, and
+// ?news=ai|world previews one.
+var NEWS_VIEWS=['ai','world'];
+var newsSlot=(function(){
+  var m=/[?&]news=(ai|world)(?:&|$)/.exec(location.search||''),saved=null;
+  try{saved=localStorage.getItem('frame.newsSlot');}catch(_){}
+  return m?m[1]:(NEWS_VIEWS.indexOf(saved)>=0?saved:'ai');
+})();
+var NEWS_FEEDS={ai:null,world:null};
+var GOLD_DOT=' <span style="color:var(--gold)">\u00b7</span> ';
+var NEWS_META={
+  ai:{title:'AI Business',num:'05 / EDITION',aria:'AI business and technology headlines',ovTitle:'AI Business'+GOLD_DOT+'Headlines',
+    label:'AI stories \u00b7 newest first',deck:'AI business & tech'},
+  world:{title:'Top US News'+GOLD_DOT+'World',num:'05 / WORLD',aria:'Top US world and geopolitical headlines',ovTitle:'Top US News'+GOLD_DOT+'World',
+    label:'World stories \u00b7 newest first',deck:'Geopolitics & foreign policy'}
+};
+function slotIndHtml(idx,count){
+  var h='';
+  for(var i=0;i<count;i++)h+='<i class="'+(i===idx?'on':'')+'"></i>';
+  return h+'<b>'+(idx+1)+' / '+count+'</b>'+PLAYPAUSE_SVG;
+}
+function paintNewsCard(){
+  var m=NEWS_META[newsSlot], n=NEWS_FEEDS[newsSlot], idx=NEWS_VIEWS.indexOf(newsSlot);
+  $('news-title').innerHTML=m.title;
+  $('news-number').textContent=m.num;
+  var ind=slotIndHtml(idx,NEWS_VIEWS.length);
+  $('news-ind').innerHTML=ind;$('news-ind').title='Play/Pause switches between AI and world news';
+  $('news-ov-ind').innerHTML=ind;
+  var card=$('news-card');
+  card.setAttribute('aria-label',m.aria);
+  if(!n){
+    if(newsSlot==='world'){
+      var wait=[{src:'Top US News',hd:'World headlines are on their way',pub:null}];
+      if(changed('news',wait)){DATA.news=wait;newsIndex=0;renderNews(wait);}
+      $('news-deck').textContent='Waiting for world headlines';
+    }
+    return;
+  }
+  var items=n.items.slice(0,6).map(function(x){return {src:x.src,hd:x.hd,pub:x.pub};});
+  if(changed('news',items)){DATA.news=items;newsIndex=0;renderNews(items);}
+  $('news-deck').textContent=newsSrcSummary(items)+' \u00b7 '+asOf(n,3).text;
+}
+function toggleNewsSlot(){
+  newsSlot=NEWS_VIEWS[(NEWS_VIEWS.indexOf(newsSlot)+1)%NEWS_VIEWS.length];
+  try{localStorage.setItem('frame.newsSlot',newsSlot);}catch(_){}
+  paintNewsCard();
+  if(openOverlay==='news'){
+    storyReset();
+    $('news-overlay-list').innerHTML='<div class="nfl-scoreboard sb-msg">Loading headlines\u2026</div>';
+    refreshNewsOverlay();
+    $('news-overlay-close').focus();
+  }
+  if(navShown)navShow();
+}
+if(LIVE_DATA){applyNews(LIVE_DATA.news);applyWorldNews(LIVE_DATA.worldNews);}
+else paintNewsCard();
 if(LIVE_DATA)SECTOR_DATA=LIVE_DATA.sectors||null;
 renderSectors();
 renderSlotChrome();
