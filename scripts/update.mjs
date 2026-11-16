@@ -20,4 +20,11 @@ if (next.lastRun.ran.length || !prev.version) {
 } else console.log('nothing due; data.json left unchanged');
 const s = k => next[k]?.lastError ? `FAILED (${next[k].lastError})` : (next[k]?.asOf ? `ok as of ${next[k].asOf}` : 'none');
 console.log(`ran: ${next.lastRun.ran.join(', ') || 'nothing due'}`);
-for (const k of ['weather', 'alerts', 'sectors', 'nfl', 'nflScoreboard', 'cfbScoreboard', 'news', 'world', 'movers', 'stocks']) console.log(`${k}: ${s(k)}${next[k]?.status ? ' [' + next[k].status + ']' : ''}`);
+for (const k of ['weather', 'alerts', 'sectors', 'nfl', 'nflScoreboard', 'cfbScoreboard', 'news', 'stockNews', 'world', 'movers', 'stocks']) console.log(`${k}: ${s(k)}${next[k]?.status ? ' [' + next[k].status + ']' : ''}`);
+if (next.lastRun.ran.includes('news')) console.log(`news stories: ${next.news?.items?.length || 0} (feeds: ${(next.news?.feeds || []).join(', ')}${next.news?.feedErrors?.length ? '; failed: ' + next.news.feedErrors.join('; ') : ''})`);
+if (next.lastRun.ran.includes('stockNews')) {
+  for (const [k, t] of Object.entries(next.stockNews?.tickers || {})) {
+    const per = Object.entries(t.fetched || {}).map(([src, n]) => `${src} ${n}`).join(', ');
+    console.log(`stock stories ${k}: ${t.items?.length || 0} kept (relevant fetched: ${per || 'none'})${t.errors?.length ? ' errors: ' + t.errors.join('; ') : ''}`);
+  }
+}
