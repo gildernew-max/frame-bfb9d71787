@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T22:30:14.516Z",
+ "generatedAt": "2026-11-16T22:45:11.395Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 58,
-     "i": "partly",
-     "cond": "Partly Cloudy",
-     "windMph": 9,
+     "temp": 53,
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": 5,
      "windDir": "E",
-     "observed": "2026-11-16T20:52:00+00:00"
+     "observed": "2026-11-16T17:45"
     },
     "today": {
-     "h": 62,
-     "l": 40,
+     "h": 59,
+     "l": 36,
      "sunrise": "07:10",
-     "sunset": "17:35"
+     "sunset": "17:33"
     },
     "forecast": [
      {
       "date": "2026-11-17",
       "d": "Tue",
       "i": "sun",
-      "text": "Sunny",
-      "h": 62,
-      "l": 43
+      "text": "Clear",
+      "h": 61,
+      "l": 37,
+      "pop": 0
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "sun",
-      "text": "Sunny",
+      "i": "partly",
+      "text": "Partly cloudy",
       "h": 65,
-      "l": 48
+      "l": 40,
+      "pop": 1
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 59,
+      "l": 51,
+      "pop": 19
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 59,
+      "l": 36,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
+      "i": "sun",
+      "text": "Clear",
+      "h": 61,
+      "l": 37,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
       "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 67,
-      "l": 51
+      "text": "Partly cloudy",
+      "h": 65,
+      "l": 40,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 59,
+      "l": 51,
+      "pop": 19
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 63,
+      "l": 56,
+      "pop": 9
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 58,
+      "pop": 14
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 73,
+      "l": 58,
+      "pop": 9
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-16T18:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 52,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T19:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T20:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T21:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T22:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 44,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T23:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 44,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T00:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 43,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T01:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T02:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 41,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T03:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 41,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T04:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 40,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T05:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 39,
+      "pop": 0
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 55,
+     "temp": 51,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 13,
+     "windMph": 8,
      "windDir": "S",
-     "observed": "2026-11-16T21:30:00+00:00"
+     "observed": "2026-11-16T16:45"
     },
     "today": {
      "h": 57,
-     "l": 42,
-     "sunrise": "07:10",
-     "sunset": "16:44"
+     "l": 32,
+     "sunrise": "07:11",
+     "sunset": "16:42"
     },
     "forecast": [
      {
       "date": "2026-11-17",
       "d": "Tue",
       "i": "cloud",
-      "text": "Mostly Cloudy",
-      "h": 57,
-      "l": 44
+      "text": "Overcast",
+      "h": 50,
+      "l": 41,
+      "pop": 0
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 58,
-      "l": 47
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 59,
+      "l": 43,
+      "pop": 3
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 55,
+      "l": 47,
+      "pop": 3
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 57,
+      "l": 32,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 50,
+      "l": 41,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 59,
+      "l": 43,
+      "pop": 3
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 55,
+      "l": 47,
+      "pop": 3
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 61,
+      "l": 44,
+      "pop": 34
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 61,
+      "l": 40,
+      "pop": 69
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 30,
+      "pop": 18
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-16T17:00",
       "i": "sun",
-      "text": "Sunny",
-      "h": 56,
-      "l": 40
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T18:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T19:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T20:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 45,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T21:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 44,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T22:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 43,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T23:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T00:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T01:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T02:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T03:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T04:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 41,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-16T21:45:25.386Z",
-  "lastAttempt": "2026-11-16T21:45:25.386Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-16T22:45:11.395Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "lastError": null
  },
  "nfl": {
@@ -5351,11 +5658,12 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-16T22:30:14.516Z",
+  "at": "2026-11-16T22:45:11.395Z",
   "ran": [
+   "weather",
    "alerts",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -12263,8 +12571,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T22:30:14.516Z",
-  "lastAttempt": "2026-11-16T22:30:14.516Z",
+  "asOf": "2026-11-16T22:45:11.395Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -12940,7 +13248,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T22:30:14.516Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
@@ -13151,35 +13459,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T22:30:14.516Z",
-  "lastAttempt": "2026-11-16T22:30:14.516Z",
+  "asOf": "2026-11-16T22:45:11.395Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 156.3978,
-    "time": 1794868204,
+    "price": 156.11,
+    "time": 1794869123,
     "ref": 156.14,
     "refTime": 1794862801,
-    "change": 0.25780000000000314,
-    "changePct": 0.1651082361982856
+    "change": -0.029999999999972715,
+    "changePct": -0.019213526322513587
    },
    "TSLA": {
     "session": "post",
-    "price": 378.78,
-    "time": 1794868197,
+    "price": 378.95,
+    "time": 1794869074,
     "ref": 379.74,
     "refTime": 1794862800,
-    "change": -0.9600000000000364,
-    "changePct": -0.25280455048191824
+    "change": -0.7900000000000205,
+    "changePct": -0.20803707800074273
    },
    "SPCX": {
     "session": "post",
-    "price": 137.96,
-    "time": 1794868212,
+    "price": 137.8077,
+    "time": 1794869110,
     "ref": 137.36,
     "refTime": 1794862800,
-    "change": 0.5999999999999943,
-    "changePct": 0.43680838672102085
+    "change": 0.44769999999999754,
+    "changePct": 0.3259318578916697
    }
   }
  },
@@ -13190,6 +13498,48 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Market positioning risks ahead of Nvidia earnings",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/options/articles/market-positioning-risks-ahead-nvidia-222619248.html?.tsrc=rss",
+      "pub": "2026-11-16T22:26:19.000Z",
+      "sum": "Investing.com -- Volatility jumped as the tech retreat spread to financials. The S&P 500 (US500) closed at 7,417.12 (-1.91%), and the S&P 500 VIX (VIX) closed at 22.88 (+18.55%), as of 3:59 PM EST and 4:14 PM EST on Nov 16. Bloomberg notes the VVIX, which measures volatility of the VIX itself, rose to about 110. The PHLX Semiconductor (SOX) index fell 5.28% to 9,610.7."
+     },
+     {
+      "hd": "Why Nvidia Stock Fell Again",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/16/why-nvidia-stock-fell-again/?.tsrc=rss",
+      "pub": "2026-11-16T22:22:02.000Z",
+      "sum": "Tuesday's earnings report now has to do more than hit big numbers, because the company also has to reassure investors that the Huang story isn't about to get worse."
+     },
+     {
+      "hd": "Trump Backs Calls for Huang to Be Reinstated as Nvidia CEO",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzZFZHJxQ1ZMaW5Ba1V4bm8taHd4bFBvYUZHWFY4SFpydml5YUVhLTRCaEFsNG9TbjY1dl9ac2tDek1DemJ0M3FwQTNtQm5aNV83RjFsZEZTNmJ2WHRJRWtHUVRDVEdnTUJtSzlaMWZfSEU2anpRSmVGcG9SUEgxN3c1WG5UcVBkdG02bmsyQkxvNlVqeEV2SDFORlA3VGNHZnpha2EyQ3V5aDVIS1E?oc=5",
+      "pub": "2026-11-16T22:20:42.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Berkshire Hathaway Slashes This Big Bank Stock; Nvidia Boosts SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
+      "pub": "2026-11-16T22:20:35.000Z",
+      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
+     },
+     {
+      "hd": "US Moves to Curb Remote Access to Nvidia’s Advanced AI Chips",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQU3diZGZDaW14MTdtajJNSTFnMXF3MWtpODZRZDN3UVVRZXBwQllnQXFRRUFYbTAzQmJkLW1qTDAzZDhyYW54UjdBVjFrZVRzV3JiTVRTdmlybkVtRnZVSWlMTnFvYVp3dkFGeWhUVFdrUE1Na3E0WTVuekRuSm5jN1A2aDBnb1NjYXRhYmJfdjlBQWY1X093Q1hHTDM4ZzNhdlYwNVRn?oc=5",
+      "pub": "2026-11-16T22:17:40.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "This Is a Huge Week for the Stock Market: Nvidia Earnings, Fed Minutes, and Anthropic’s IPO",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/16/this-is-a-huge-week-for-the-stock-market-nvidia-earnings-fed-minutes-and-anthropics-ipo/?.tsrc=rss",
+      "pub": "2026-11-16T22:16:02.000Z",
+      "sum": "Elon Musk wants Jensen Huang back at Nvidia and has real money on the line, since SpaceX builds its AI data centers on Nvidia chips and Nvidia owns a multibillion-dollar stake in SpaceX."
+     },
+     {
       "hd": "Nvidia is not considering rehiring Jensen Huang, and Amazon's data center gets bought",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/video/nvidia-is-not-considering-rehiring-jensen-huang-and-amazons-data-center-gets-bought-221405344.html?.tsrc=rss",
@@ -13197,53 +13547,25 @@
       "sum": "Deirdre Bosa discusses Nvidia (NVDA), claiming they are not considering bringing back Jensen Huang, Amazon's (AMZN) data centers being bought by Blackstone (BX), and Apple (AAPL) launching a study on how people use AI for health. Deirdre Bosa then sits down with Niles Investment Management Founder Dan Niles to talk about the AI trade proving itself beyond Jensen Huang, Neoclouds could be the biggest loser post-Jensen, and the Anthropic (ANTH.PVT) IPO. 'Deirdre Bosa Live' airs every day at 4 p.m. Tune in daily to hear how the latest developments in AI and technology are reshaping companies…"
      },
      {
-      "hd": "Nvidia stock valuation looks 'draconian,' even without Jensen Huang: Analyst",
+      "hd": "Jenny Harrington Says Jensen Huang ‘Incinerated Over $1 Trillion.’ Why She Thinks Nvidia’s Recovery Will Take Longer",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/article/nvidia-stock-valuation-looks-draconian-even-without-jensen-huang-analyst-220000337.html?.tsrc=rss",
-      "pub": "2026-11-16T22:00:00.000Z",
-      "sum": "Nvidia's valuation is making some interesting assumptions."
+      "url": "https://247wallst.com/investing/2026/11/16/jenny-harrington-says-jensen-huang-incinerated-over-1-trillion-why-she-thinks-nvidias-recovery-will-take-longer/?.tsrc=rss",
+      "pub": "2026-11-16T22:07:57.000Z",
+      "sum": "Nvidia reports earnings tomorrow with a strong quarter expected, yet one CNBC panelist says the real damage has nothing to do with revenue. Her case turns on trust, a financing model, and who was vouching for it."
      },
      {
-      "hd": "SNL joked Jensen Huang ‘had a midlife crisis so bad you might lose your house in his divorce’ — could this be true?",
+      "hd": "Nvidia faces earnings test amid calls for Huang comeback",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/snl-joked-jensen-huang-had-220000197.html?.tsrc=rss",
-      "pub": "2026-11-16T22:00:00.000Z",
-      "sum": "Saturday Night Live didn't pull any punches with the Jensen Huang controversy."
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-braces-first-earnings-without-173610594.html?.tsrc=rss",
+      "pub": "2026-11-16T22:04:52.000Z",
+      "sum": "Nvidia shares fell four percent on Monday as the AI chip juggernaut began its first full week without Jensen Huang as CEO and investors awaited an earnings report for signs of whether the AI boom can withstand the widening scandal that toppled him.The decline extended a slide of more than 12 percent since the scandal erupted, while the stock has lost more than 25 percent over the past month amid growing doubts about the health of the AI investment boom."
      },
      {
-      "hd": "Tech shares slump ahead of Nvidia earnings, Anthropic IPO",
+      "hd": "All the questions Nvidia should answer on Tuesday — but probably won’t",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-extend-losses-traders-digest-030006305.html?.tsrc=rss",
-      "pub": "2026-11-16T21:55:17.000Z",
-      "sum": "Technology stocks fell Monday as the crisis engulfing Nvidia deepened on the eve of the AI chip giant's latest earnings, and traders cautiously awaited Anthropic's huge market debut later in the week.Nvidia shares fell 4.12 percent ahead of its quarterly earnings which will be released after the Wall Street close on Tuesday and which will offer a fresh chance to assess the bellwether AI company whose value has plunged since CEO Jensen Huang's resignation last week."
-     },
-     {
-      "hd": "Nvidia Earnings Preview: Can Data Center Growth Sustain Its Profit Boom?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=2edf526c53fffb489b4fd932383622e04c631b5767a07e7b220bcac87dfa74ad",
-      "pub": "2026-11-16T21:54:00.000Z",
-      "sum": "Nvidia (NVDA) is set to report its fiscal third-quarter 2027 results on November 17, after the market closes. Investors will be closely watching its Data Center business, which accounts for the bulk of the company’s revenue and remains central to its AI growth story. Meanwhile, NVDA stock has been under pressure, following reports about CEO Jensen Huang’s alleged affairs and his subsequent resignation. CFO Colette Kress has taken over as interim CEO, adding to leadership uncertainty. Wall Street"
-     },
-     {
-      "hd": "Update: Nasdaq, S&P 500 Fall For Third Day as Nvidia Sell-Off Continues",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9a5d663c0841a474a9d06c1cb3a2d3a640322fa8a9246b7e99320ae21dad28c2",
-      "pub": "2026-11-16T21:52:27.000Z",
-      "sum": "(Updates with market moves at the end of the day, and other changes, if any.) The Nasdaq Composit"
-     },
-     {
-      "hd": "How major US stock indexes fared Monday 11/16/2026",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=26af44d2617751cf523a4a6334721db87aa5b5b695db3dbb1cab8d0bc9fdf367",
-      "pub": "2026-11-16T21:49:11.000Z",
-      "sum": "Nvidia led another sell-off in technology stocks and helped drag the U. The weakness for tech stocks pulled the Nasdaq composite down 2."
-     },
-     {
-      "hd": "The cost of ousting a founder: Is the 'bank of Nvidia' at risk?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=6efbcfd3ef79aa754c5377906727bca8e3d8b534fb19688829cd30eb2af4ba06",
-      "pub": "2026-11-16T21:46:10.000Z",
-      "sum": "Benchmark Company general partner Bill Gurley sits down with Deirdre Bosa to share his thoughts on circular financing concerns surrounding Nvidia (NVDA), especially in the absence of Jensen Huang as chief executive."
+      "url": "https://finance.yahoo.com/technology/articles/questions-nvidia-answer-tuesday-probably-220302340.html?.tsrc=rss",
+      "pub": "2026-11-16T22:03:02.000Z",
+      "sum": "Nvidia interim CEO and long-time CFO Colette Kress is about to have one of the biggest days of her career on Tuesday when the company reports its third quarter results. Given the turmoil Nvidia is in, there are a number of questions that Nvidia should answer."
      },
      {
       "hd": "Nasdaq 100 Plunges as Nvidia Earnings, Anthropic IPO on Horizon",
@@ -13251,6 +13573,13 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUWtEOGtHd0VyaHpJRnEzcDYtRklURlFfcFByaFNfQ2dhLVJTbkFoSklXeDd3X1dwdVRRR2JVYVRxazF4NGFzd1o5TVZsR0xWbWFuYnd3eU1fRzNBMWNUY1FzeFZLcWQzWFRPT0Y4SmRCUUVleTVIZzFkRmhCQ1pKMjNlSTVjMGI4aTZnd3k5d3lPUG1XTFpnSHlHN2Zoa3BKUk1hUFdKdUczX20xNFEwNDU1Yw?oc=5",
       "pub": "2026-11-16T21:19:10.000Z",
       "sum": "Nvidia remains on track to post its third-quarter results under interim CEO Colette Kress on Nov. 17."
+     },
+     {
+      "hd": "Stocks Fall Before Nvidia Earnings, Anthropic IPO: Markets Wrap",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOU3BQd2lUam5YX1RGekdqV203U1BmRzNUQnlhem10ajRycVpfTUYzRWtOM2h1ZDd5M2tvUnNXeG1VOHRGTEl4VkJsSUhuQk41UlcyNU1EZDJaSTNTd2NvM3lDUDV5NU95SUtxSHZaZEpjSnMxRGgtamUtb0lYWUtHMTFZZDBLblVaeXhVTEhSa2ZPeF9y?oc=5",
+      "pub": "2026-11-16T21:05:18.000Z",
+      "sum": ""
      },
      {
       "hd": "Wall Street ends sharply lower on AI jitters ahead of Nvidia results, Anthropic IPO",
@@ -13274,13 +13603,6 @@
       "sum": ""
      },
      {
-      "hd": "Stocks Fall Before Nvidia Earnings, Anthropic IPO: Markets Wrap",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOU3BQd2lUam5YX1RGekdqV203U1BmRzNUQnlhem10ajRycVpfTUYzRWtOM2h1ZDd5M2tvUnNXeG1VOHRGTEl4VkJsSUhuQk41UlcyNU1EZDJaSTNTd2NvM3lDUDV5NU95SUtxSHZaZEpjSnMxRGgtamUtb0lYWUtHMTFZZDBLblVaeXhVTEhSa2ZPeF9y?oc=5",
-      "pub": "2026-11-16T20:03:49.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Trump backs campaign to reinstate Nvidia CEO despite allegations he had an affair with a Chinese spy",
       "src": "AP News",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQUG5xR2UxLXNkQkhHXzNPQVliSkVQYnJSaDhia2VYdjZPeFBtU1VHN0ZHeVpuRE5Vd0hTNmpsYWtjaVh1ZFRvX2Fnd3JDQWhEQVJxNFY2RjVrLU5IcWhuSVZrZ3lFNDMzeWVwUTBYclE1RDFnUTdkR3NGUjFuaTFPd1hybm9DYzBSR1U2bDU4a19iWTA2YWc0eEdUazBGbXZ1VTc3WFAtSkEyZw?oc=5",
@@ -13292,13 +13614,6 @@
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQS3A1WU5FMDNEb25jYnVfMTBuRzhnejRnNnllR2pISG9xZGMwdjlYZ2FSdlJoV1hqTHREa2EwcGIwaVEyQW92dGp1eFpCQjUzSUlDbFlOVnlSMko2Y3lmN3NOQzZiTHJaZm95Nng1U1ZaTHlRVWN3U1hlYkhnZ2hRV2NGMHVnSk9Zd3VXcjZKTGRld2M?oc=5",
       "pub": "2026-11-16T19:37:39.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "US Moves to Curb Remote Access to Nvidia’s Advanced AI Chips",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQU3diZGZDaW14MTdtajJNSTFnMXF3MWtpODZRZDN3UVVRZXBwQllnQXFRRUFYbTAzQmJkLW1qTDAzZDhyYW54UjdBVjFrZVRzV3JiTVRTdmlybkVtRnZVSWlMTnFvYVp3dkFGeWhUVFdrUE1Na3E0WTVuekRuSm5jN1A2aDBnb1NjYXRhYmJfdjlBQWY1X093Q1hHTDM4ZzNhdlYwNVRn?oc=5",
-      "pub": "2026-11-16T19:33:04.000Z",
       "sum": ""
      },
      {
@@ -13316,11 +13631,11 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia Stock Falls Again. It Doesn’t Need a Jensen Huang Comeback to Thrive.",
-      "src": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQcVZqLW05Y1FaS0xnVEM2T3EwUGlwZ21LSHJUQVdYWnMwcVczbDFYWE91MlQtcHNhdWhlbVdVUnE5a1JqeUE4aEpOSUtlTEdBMnJnMFl0UVdXOUNodGJCNDRSbzlLbXpZVXljR3QwVGdYWTVDNldJRHRPUXRqZFV6RWxHZlV2RWFsZGc?oc=5",
-      "pub": "2026-11-16T18:51:00.000Z",
-      "sum": "Elon Musk says Nvidia's biggest supply deals rested on a handshake, not a contract. With a Treasury Secretary demanding outsiders and a probe underway, can a comeback even happen, and what would it mean for shareholders?"
+      "hd": "Nvidia’s board is reportedly ‘not considering’ hiring Jensen Huang back",
+      "src": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQSjU4ZlFCTXVTQjFneUZ2Mi0yUy01X29QU2dCV3VTVkFBOWhkNXZiQ2JfaXpkTVhfdFBsOFdEdFZobjVzWVluY2RSN0JXc19TQy1MTE9IR3FQUDRRTzlyaVg5d2dYbVpvamFOVzdsbURqNy0tSVVRX01OVFNYS2RLRWNIUjQ4eHJH?oc=5",
+      "pub": "2026-11-16T18:43:35.000Z",
+      "sum": "Jensen Huang reportedly is mulling a return to the chip giant he founded, days after resigning as Nvidia CEO in scandal. Nvidia stock was indicated fractionally higher."
      },
      {
       "hd": "Nvidia: Founders Leave, Great Businesses Stay",
@@ -13344,13 +13659,6 @@
       "sum": ""
      },
      {
-      "hd": "Trump Backs Calls for Huang to Be Reinstated as Nvidia CEO",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzZFZHJxQ1ZMaW5Ba1V4bm8taHd4bFBvYUZHWFY4SFpydml5YUVhLTRCaEFsNG9TbjY1dl9ac2tDek1DemJ0M3FwQTNtQm5aNV83RjFsZEZTNmJ2WHRJRWtHUVRDVEdnTUJtSzlaMWZfSEU2anpRSmVGcG9SUEgxN3c1WG5UcVBkdG02bmsyQkxvNlVqeEV2SDFORlA3VGNHZnpha2EyQ3V5aDVIS1E?oc=5",
-      "pub": "2026-11-16T17:52:30.000Z",
-      "sum": ""
-     },
-     {
       "hd": "The Market Fired Nvidia's Multiple Along With Its CEO (Rating Upgrade)",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4968672-the-market-fired-nvidias-multiple-along-with-its-ceo-rating-upgrade?source=feed_symbol_NVDA",
@@ -13367,9 +13675,9 @@
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 7,
-     "Google News": 91,
-     "Nasdaq": 9,
+     "Yahoo": 11,
+     "Google News": 93,
+     "Nasdaq": 10,
      "Seeking Alpha": 26
     }
    },
@@ -13378,7 +13686,7 @@
      {
       "hd": "Tesla's Cybertruck exit reveals an expensive gamble",
       "src": "Yahoo Finance",
-      "url": "https://www.thestreet.com/automotive/teslas-cybertruck-exit-reveals-an-expensive-gamble?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1ea6eb5c06002ff01c9bd2805d9002b02a6c96e47432d2bc31f45b8e34c3dc30",
       "pub": "2026-11-16T21:33:00.000Z",
       "sum": "Elon Musk is sacrificing his futuristic pickup to make room for a vehicle with a much bigger financial question."
      },
@@ -13427,7 +13735,7 @@
      {
       "hd": "Elon Musk Warns Against Pushing Founders Out — Steve Jobs and Travis Kalanick Lessons Resurface as Jensen Huang Exits Nvidia",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/small-business/articles/elon-musk-warns-against-pushing-193008615.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=f3f8302a12ad6df501c360f51336e957ac940974ee880799c198e63fca167661",
       "pub": "2026-11-16T19:30:08.000Z",
       "sum": "As NVIDIA Corp. co-founder Jensen Huang resigned from his role as the chipmaker’s CEO, Tesla Inc. CEO Elon Musk warned against the removal of founders, pointing to Apple Inc.‘s Steve Jobs and Uber Technologies Inc.‘s Travis Kalanick. Musk Warns Against..."
      },
@@ -13564,6 +13872,34 @@
    "SPCX": {
     "items": [
      {
+      "hd": "How Phone Companies Kill Global Service",
+      "src": "Yahoo Finance",
+      "url": "https://thehustle.videonest.co/videos/1786804/how-phone-companies-kill-global-service-zfQR3bMbPq?.tsrc=rss",
+      "pub": "2026-11-16T22:36:21.000Z",
+      "sum": "Every time you cross a border, you’re stuck paying roaming fees or swapping SIMs just to stay connected. But here’s the strange part: the technology already exists to make that seamless. So why hasn’t global mobile service been solved? And who benefits from keeping it fragmented? A new rollout from Starlink and T-Mobile might change everything. But the real question is—why did it take this long?Subscribe to The Hustle:🔗 https://clickhubspot.com/vu3lGet the 5-minute newsletter keeping 2M+ innovators in the loop🔗 https://clickhubspot.com/3klnAbout HubSpot: HubSpot is a customer platform that…"
+     },
+     {
+      "hd": "SpaceX, Blue Origin secure $985M national security launch contract boost",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
+      "pub": "2026-11-16T22:26:45.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Berkshire Hathaway Slashes This Big Bank Stock; Nvidia Boosts SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/481d5163-b671-396e-a2dc-5c0e57fb9c0b/berkshire-hathaway-slashes.html?.tsrc=rss",
+      "pub": "2026-11-16T22:20:35.000Z",
+      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
+     },
+     {
+      "hd": "This Is a Huge Week for the Stock Market: Nvidia Earnings, Fed Minutes, and Anthropic’s IPO",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/16/this-is-a-huge-week-for-the-stock-market-nvidia-earnings-fed-minutes-and-anthropics-ipo/?.tsrc=rss",
+      "pub": "2026-11-16T22:16:02.000Z",
+      "sum": "Elon Musk wants Jensen Huang back at Nvidia and has real money on the line, since SpaceX builds its AI data centers on Nvidia chips and Nvidia owns a multibillion-dollar stake in SpaceX."
+     },
+     {
       "hd": "Musk Plans Next Starship After Flight 15 Catch. ULA Loses Amazon Payload.",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/2d356bcc-b5bf-3399-abcb-35876bae2f1a/musk-plans-next-starship.html?.tsrc=rss",
@@ -13611,27 +13947,6 @@
       "url": "https://finnhub.io/api/news?id=aee93adb35210e9cda9958c04647dc2f4c6ff71b23fc6f9b21f7868f056d2ce9",
       "pub": "2026-11-16T19:17:47.000Z",
       "sum": "Sinch (OM:SINCH) has moved into the spotlight after announcing partnerships that plug its communications network into SpaceX Super Intelligence tools and voice AI provider Bland, aiming at secure, large scale customer interactions. These AI partnerships land after a busy spell for Sinch, with the stock posting a 43% year to date share price return to SEK43.86 and a 61% one year total shareholder return, even as the 30 day share price return declined 6%, suggesting that recent momentum may..."
-     },
-     {
-      "hd": "China ‘full stop, is ahead of us’: SpaceX alum building a $13 billion defense startup warns of Beijing’s hypersonic weapons",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/china-full-stop-ahead-us-185543581.html?.tsrc=rss",
-      "pub": "2026-11-16T18:55:43.000Z",
-      "sum": "The Pentagon admits China “has the world’s leading hypersonic missile arsenal,” and $13 billion defense tech startup Castelion is racing to close the gap."
-     },
-     {
-      "hd": "Elon Musk calls out Jeff Bezos over SpaceX rivals",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=3a5f1dbf74dc9d69ddafc7d3609eadc62909924f2f13f565bba9ac79e3673ce5",
-      "pub": "2026-11-16T18:07:00.000Z",
-      "sum": "The gap is getting harder to ignore."
-     },
-     {
-      "hd": "SpaceX advances Starship reusability with successful upper-stage catch, says Bank of America",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1fefc05db532f4c9f96b9bf8d0f2b5f640b45c0461467b8bdb5cf12447994a30",
-      "pub": "2026-11-16T17:59:00.000Z",
-      "sum": "SpaceX Corp (NASDAQ:SPCX) has taken a major step toward developing a fully reusable orbital rocket after Starship Flight 15 successfully demonstrated the recovery and catch of its upper stage, according to Bank of America (BoA), which maintained its 'buy' rating. The Starship vehicle, Ship 42,..."
      },
      {
       "hd": "SpaceX Flight 15 makes history as Starship lands upper stage for the first time",
@@ -13730,21 +14045,14 @@
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxON21HTW5paGs5bGJjV0FNQVEwNDY2Q2hWaWJ2QmZaVW1zZGdWOGNWN2Vfdi11bWNNZUY2RFVMLXpoSHkzejBUMEpKcjlXSVVlWmd4Zm5iZjNtMWJDa0lPZFphU2NyOFdsZHFVVHZ4TG55alIwZlFTV0thOFdKTWx6clotUldJdlVxdWFQM2JVT29ZbVE0ajd4aldmTHppeVZiMWVnVThvdC0?oc=5",
       "pub": "2026-11-15T17:41:59.000Z",
       "sum": ""
-     },
-     {
-      "hd": "The US Needs Musk and SpaceX — for Better and Worse",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdXRET1RjR2M1Z0pLWEdZWXNNNDgxNS1qenY4U0VhZWxOSWt3SVZKMmloRnpVWDVHdW95RndnT3dnZFNTZnNKaklwS2NrcTVJR2wwSzJwbEo5dm1jdzIxSm9QZmZocFlodVQ4UmRiUUhNOGhJVjNuTWt1NDlFSjB1Nm9wLWI5RGVvM0lrZDQwcXNQajVFaUt5UjdHVFhNUVVZakVN?oc=5",
-      "pub": "2026-11-15T16:17:27.000Z",
-      "sum": "Technology analyst Dan Ives says Elon Musk must seek a political compromise with Texas officials to protect Space Exploration Technologies Corp.’s artificial intelligence data-center ambitions following Democrats’ midterm election victories. Texas Election Raises Stakes For Musk Speaking with Anthony Pompliano..."
      }
     ],
     "fetched": {
-     "Finnhub": 146,
-     "Yahoo": 7,
-     "Google News": 34,
+     "Finnhub": 143,
+     "Yahoo": 9,
+     "Google News": 33,
      "Nasdaq": 0,
-     "Seeking Alpha": 19
+     "Seeking Alpha": 20
     }
    },
    "ANT": {
@@ -13936,12 +14244,19 @@
     ]
    }
   },
-  "asOf": "2026-11-16T22:15:13.557Z",
-  "lastAttempt": "2026-11-16T22:15:13.557Z",
+  "asOf": "2026-11-16T22:45:11.395Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Hungary PM Magyar urges Fidesz lawmakers to quit over cash haul in graft probe",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTWYtR2ZRc1RDTm1IX3Q2eGZMRVBaMGZyT2Y4b0pobEUxR2ZvS083aFhtNXF0ZGNvcEtfUVlzM19iZlFaTXhwTElHTExvS3d2cG83NUkyUWE4SlNuRC1TbVhhcmJsblNNZG42UmxZS2ZyT0hSME5yRHZHdTdxZlNBelJkWXBnTzFFUGU3U1RwNWMyZDc0Q0ZsbXdhYXFUbEFhU0ZkUlJjVjlKbG1nMXhIZnRTY2g?oc=5",
+    "pub": "2026-11-16T22:06:51.000Z",
+    "sum": ""
+   },
    {
     "hd": "Trump’s Asia Trip Will Bring Him to the Table With Xi and Putin: What to Know",
     "src": "The New York Times",
@@ -14038,13 +14353,6 @@
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVmhPQUFLblhESV9CWnFmX2ZONzdHOTFMQkhHMW9hUzNoYlp6ZU5BUnE5b1pJZ05TbjFOODNDa2VKTW9UMzRETE5hdVBhSzVmLTJjalRFUjA2RERZdW5GS0lXOUdMM0RLRmIyWndqWUFrUjA3VFZISUMtTHdVMjQzYUJreWdKaGFnSV8xbkR5NWs4b2VBTE1BMVJlZlNvdGl3?oc=5",
     "pub": "2026-11-16T19:21:53.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Hungary PM Magyar urges Fidesz lawmakers to quit over cash haul in graft probe",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTWYtR2ZRc1RDTm1IX3Q2eGZMRVBaMGZyT2Y4b0pobEUxR2ZvS083aFhtNXF0ZGNvcEtfUVlzM19iZlFaTXhwTElHTExvS3d2cG83NUkyUWE4SlNuRC1TbVhhcmJsblNNZG42UmxZS2ZyT0hSME5yRHZHdTdxZlNBelJkWXBnTzFFUGU3U1RwNWMyZDc0Q0ZsbXdhYXFUbEFhU0ZkUlJjVjlKbG1nMXhIZnRTY2g?oc=5",
-    "pub": "2026-11-16T19:13:18.000Z",
     "sum": ""
    },
    {
@@ -14154,8 +14462,8 @@
    }
   ],
   "feeds": [
-   "AP",
    "Reuters",
+   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -14168,10 +14476,10 @@
   ],
   "feedErrors": [
    "Google News: HTTP 429 from news.google.com",
-   "WSJ (Google News): HTTP 429 from news.google.com"
+   "AP (Google News): HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-16T22:15:13.557Z",
-  "lastAttempt": "2026-11-16T22:15:13.557Z",
+  "asOf": "2026-11-16T22:45:11.395Z",
+  "lastAttempt": "2026-11-16T22:45:11.395Z",
   "lastError": null
  }
 }
