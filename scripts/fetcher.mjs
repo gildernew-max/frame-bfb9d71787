@@ -707,6 +707,55 @@ async function fetchStocks(prev, key, et, now) {
   return { quotes, history, errors, indexSource };
 }
 
+// Spotlight price line (Yahoo chart API, regular hours only). 'day' = today's 5-minute
+// bars vs prior close; '5d' = last five sessions in 30-minute bars vs the close before them.
+const SPOT_SERIES = ['NVDA', 'TSLA', 'SPCX'];
+const SERIES_MAX_POINTS = 80;
+function downsample(arr, max) {
+  if (arr.length <= max) return arr;
+  const out = [];
+  for (let i = 0; i < max; i++) out.push(arr[Math.round(i * (arr.length - 1) / (max - 1))]);
+  return out;
+}
+async function fetchSeriesItem(symbol, mode) {
+  const result = await yahooChartResult(symbol, mode === 'day' ? 'interval=5m&range=1d' : 'interval=30m&range=5d');
+  const ts = result.timestamp || [];
+  const closes = result.indicators?.quote?.[0]?.close || [];
+  let pts = [];
+  for (let i = 0; i < ts.length; i++) if (closes[i] != null && Number.isFinite(closes[i])) pts.push([ts[i], closes[i]]);
+  if (mode === 'day' && pts.length) {
+    const lastDay = etParts(new Date(pts[pts.length - 1][0] * 1000)).dateKey;
+    pts = pts.filter(p => etParts(new Date(p[0] * 1000)).dateKey === lastDay);
+  }
+  const px = result.meta?.regularMarketPrice, pxT = result.meta?.regularMarketTime;
+  if (pts.length && px > 0 && pxT >= pts[pts.length - 1][0] + 60 &&
+      etParts(new Date(pxT * 1000)).dateKey === etParts(new Date(pts[pts.length - 1][0] * 1000)).dateKey) pts.push([pxT, px]);
+  if (pts.length < 2) throw new Error('Yahoo: too few bars');
+  pts = downsample(pts, SERIES_MAX_POINTS);
+  const pc = result.meta?.chartPreviousClose;
+  const dp = Math.abs(pts[pts.length - 1][1]) >= 1000 ? 1 : 2;
+  return {
+    mode, interval: mode === 'day' ? '5m' : '30m',
+    session: etParts(new Date(pts[pts.length - 1][0] * 1000)).dateKey,
+    pc: pc > 0 ? Number(pc.toFixed(dp)) : null,
+    t: pts.map(p => p[0]), c: pts.map(p => Number(p[1].toFixed(dp)))
+  };
+}
+async function fetchSpotSeries(prevSeries, mode, nowIso) {
+  const items = { ...(prevSeries?.items || {}) };
+  const errors = [];
+  for (const s of SPOT_SERIES) {
+    try { items[s] = await fetchSeriesItem(s, mode); }
+    catch (e) { errors.push(`${s}: ${why(e)}`); }
+  }
+  const okAny = errors.length < SPOT_SERIES.length;
+  return {
+    provider: 'Yahoo Finance', mode: okAny ? mode : (prevSeries?.mode || mode),
+    asOf: okAny ? nowIso : (prevSeries?.asOf || null), lastAttempt: nowIso, items,
+    ...(errors.length ? { symbolErrors: errors } : {})
+  };
+}
+
 const OVERLAY_SYMS = [
   { key: 'NVDA', yahoo: 'NVDA', fh: 'NVDA', name: 'NVIDIA' },
   { key: 'TSLA', yahoo: 'TSLA', fh: 'TSLA', name: 'Tesla' },
@@ -1142,6 +1191,21 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     else stocks.lastError = (key ? 'All quotes failed: ' : 'All index quotes failed: ') + r.errors.join('; ');
     if (reason === 'close') stocks.closeFetchedFor = et.dateKey;
   } else if (key && stocks.quotes) stocks.status = 'live';
+  // Spotlight series: refreshed with the quotes, plus once after each close (switch to 5 days)
+  // and whenever it is missing; a failed symbol keeps its last-good series.
+  {
+    const seriesMode = inSession && (!market || market.checkedAt == null || market.isOpen) ? 'day' : '5d';
+    const ss = ps.series;
+    const closeInstant = Date.parse(lastCashCloseDateKey(et) + 'T16:05:00-05:00');
+    const missing = !ss || !ss.asOf || !SPOT_SERIES.every(s => ss.items?.[s]?.c?.length >= 2);
+    const seriesDue = force || reason || (missing && ageMin(ss?.lastAttempt, now) >= 12) ||
+      (!missing && !inSession && ss.mode === 'day' && ageMin(ss.lastAttempt, now) >= 12) ||
+      (!missing && !inSession && new Date(ss.asOf).getTime() < closeInstant && ageMin(ss.asOf, now) >= 60);
+    if (seriesDue) {
+      ran.push(`series:${seriesMode}`);
+      stocks.series = await fetchSpotSeries(ss, seriesMode, nowIso);
+    }
+  }
   if (!stocks.quotes) stocks.quotes = { ANT: { s: 'ANT', n: 'Anthropic', upcoming: true, note: 'IPO Nov 19 · $70–78 range' } };
   const hasHist = k => (stocks.details?.[k]?.history6mo || []).length >= 2 || stocks.details?.[k]?.upcoming;
   const needDetails = force || !stocks.details || !['NVDA', 'TSLA', 'SPCX', 'DOW', 'SPX', 'NASDAQ'].every(hasHist);

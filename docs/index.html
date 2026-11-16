@@ -982,6 +982,62 @@ function areaChart(values,up,id){
     <circle cx="${last[0]}" cy="${last[1]}" r="12" fill="${color}" opacity=".16"/><circle cx="${last[0]}" cy="${last[1]}" r="5.5" fill="${color}"/>
     </svg>`;
 }
+// Spotlight price line from stocks.series (fetcher): today's 5-min bars against a dotted
+// prior-close baseline while the session is live, otherwise the last five sessions.
+var SPOT_FMT=null;
+function spotFmt(){
+  if(!SPOT_FMT)SPOT_FMT={day:new Intl.DateTimeFormat('en-CA',{timeZone:TZ}),
+    wd:new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}),
+    hm:new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',minute:'2-digit',hourCycle:'h23'})};
+  return SPOT_FMT;
+}
+function spotEtMins(sec){
+  var p=spotFmt().hm.formatToParts(new Date(sec*1000)),h=0,m=0,i;
+  for(i=0;i<p.length;i++){if(p[i].type==='hour')h=+p[i].value;if(p[i].type==='minute')m=+p[i].value;}
+  return h*60+m;
+}
+function spotSeries(st,key,q,open){
+  var items=st&&st.series&&st.series.items, it=items&&items[key], i, n, xs=[], seps=[], pc, last, pct, day, todayKey, t0, f=spotFmt();
+  if(!it||!it.c||!it.t||it.c.length<2||it.c.length!==it.t.length)return null;
+  n=it.c.length; last=it.c[n-1];
+  if(it.mode==='day'){
+    t0=it.t[0]-(spotEtMins(it.t[0])-570)*60;
+    for(i=0;i<n;i++)xs.push(Math.max(0,Math.min(1,(it.t[i]-t0)/23400)));
+    pc=it.pc>0?it.pc:(q&&q.pc>0?q.pc:null);
+    todayKey=f.day.format(new Date());
+    day=f.wd.format(new Date(it.t[n-1]*1000));
+    return {c:it.c,xs:xs,seps:seps,pc:pc,up:pc==null?last>=it.c[0]:last>=pc,
+      label:open&&it.session===todayKey?'Today · vs prior close':day+' session'};
+  }
+  for(i=0;i<n;i++){
+    xs.push(i/(n-1));
+    if(i&&f.day.format(new Date(it.t[i]*1000))!==f.day.format(new Date(it.t[i-1]*1000)))seps.push((i-.5)/(n-1));
+  }
+  pc=it.pc>0?it.pc:it.c[0];
+  pct=(last-pc)/pc*100;
+  return {c:it.c,xs:xs,seps:seps,pc:pc,up:last>=pc,
+    label:'5 days · '+(pct>=0?'+':'−')+Math.abs(pct).toFixed(1)+'%'};
+}
+function priceChart(sr,id){
+  var w=860,h=312,left=18,right=20,top=25,bottom=25,iw=w-left-right,ih=h-top-bottom;
+  var mn=Infinity,mx=-Infinity,i,v,line='',pts=[],out,color=sr.up?'#99C7A6':'#E29A91',pad,yOf,baseY,last;
+  for(i=0;i<sr.c.length;i++){v=sr.c[i];if(v<mn)mn=v;if(v>mx)mx=v;}
+  if(sr.pc!=null){if(sr.pc<mn)mn=sr.pc;if(sr.pc>mx)mx=sr.pc;}
+  pad=(mx-mn||Math.abs(mx)*.01||1)*.12;
+  yOf=function(val){return top+ih*(1-(val-mn+pad)/(mx-mn+2*pad));};
+  for(i=0;i<sr.c.length;i++){pts.push([left+iw*sr.xs[i],yOf(sr.c[i])]);line+=(i?'L':'M')+pts[i][0].toFixed(1)+','+pts[i][1].toFixed(1)+' ';}
+  last=pts[pts.length-1];
+  out='<svg class="area-chart" viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" aria-label="Price line">'+
+    '<defs><linearGradient id="spot-'+id+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="'+color+'" stop-opacity=".22"/><stop offset="100%" stop-color="'+color+'" stop-opacity="0"/></linearGradient></defs>'+
+    '<g stroke="rgba(255,255,255,.09)" stroke-width="1"><path d="M18 72H840 M18 155H840 M18 238H840" stroke-dasharray="4 10"/></g>';
+  for(i=0;i<sr.seps.length;i++)out+='<path d="M'+(left+iw*sr.seps[i]).toFixed(1)+' '+top+'V'+(h-bottom)+'" stroke="rgba(255,255,255,.10)" stroke-width="1.5" vector-effect="non-scaling-stroke"/>';
+  out+='<path d="'+line+'L'+last[0].toFixed(1)+','+h+' L'+pts[0][0].toFixed(1)+','+h+' Z" fill="url(#spot-'+id+')"/>';
+  if(sr.pc!=null){baseY=yOf(sr.pc).toFixed(1);
+    out+='<path d="M'+left+' '+baseY+'H'+(w-right)+'" stroke="rgba(236,228,214,.42)" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round"/>';}
+  out+='<path d="'+line+'" fill="none" stroke="'+color+'" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>'+
+    '<circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="12" fill="'+color+'" opacity=".16"/><circle cx="'+last[0].toFixed(1)+'" cy="'+last[1].toFixed(1)+'" r="5.5" fill="'+color+'"/></svg>';
+  return out;
+}
 function quoteKey(q){return q.key||(q.s==='Composite'?'NASDAQ':q.s==='DJIA'?'DOW':q.s);}
 function quoteCard(q){
   const key=quoteKey(q);
@@ -1003,7 +1059,7 @@ function renderMarkets(){
   $('spotlight').setAttribute('aria-haspopup','dialog');
   $('spotlight').setAttribute('aria-controls','stock-overlay');
   $('spotlight').setAttribute('aria-label',`Open ${(s.n||s.s)} details`);
-  $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
+  $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.series?s.series.label:(s.chartLabel||'Illustrative trend')}</span>${s.series?priceChart(s.series,s.s):areaChart(s.sp,s.ch>=0,s.s)}</div>`;
   $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length}  ·  15s`;
   $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
   if(navShown)navApply();
@@ -1430,6 +1486,7 @@ function applyStocks(st){
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
     return {key,n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
+      series:isIdx?null:spotSeries(st,key,q,open),
       chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
   const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{key:'ANT',n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
