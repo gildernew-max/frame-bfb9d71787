@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T12:23:58.324Z",
+ "generatedAt": "2026-11-16T12:33:24.836Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -112,7 +112,13 @@
     "record": "6–3",
     "rank": "2nd AFC North",
     "streak": "L1",
-    "next": null,
+    "next": {
+     "date": "2026-11-22T18:00Z",
+     "homeAway": "away",
+     "opponent": "Eagles",
+     "oppCode": "PHI",
+     "state": "pre"
+    },
     "season": "2026"
    },
    {
@@ -124,7 +130,13 @@
     "record": "7–2",
     "rank": "1st NFC North",
     "streak": "W1",
-    "next": null,
+    "next": {
+     "date": "2026-11-23T01:20Z",
+     "homeAway": "away",
+     "opponent": "49ers",
+     "oppCode": "SF",
+     "state": "pre"
+    },
     "season": "2026"
    },
    {
@@ -136,12 +148,18 @@
     "record": "6–4",
     "rank": "4th NFC North",
     "streak": "L1",
-    "next": null,
+    "next": {
+     "date": "2026-11-26T01:00Z",
+     "homeAway": "away",
+     "opponent": "Rams",
+     "oppCode": "LAR",
+     "state": "pre"
+    },
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-16T11:03:46.712Z",
-  "lastAttempt": "2026-11-16T11:03:46.712Z",
+  "asOf": "2026-11-16T12:33:24.836Z",
+  "lastAttempt": "2026-11-16T12:33:24.836Z",
   "lastError": null
  },
  "news": {
@@ -4842,12 +4860,10 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T12:23:58.324Z",
+  "at": "2026-11-16T12:33:24.836Z",
   "ran": [
-   "alerts",
-   "world",
-   "extended",
-   "futures",
+   "nfl",
+   "stockNews",
    "usTempGrid"
   ]
  },
@@ -12398,7 +12414,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T12:23:58.324Z",
+  "lastAttempt": "2026-11-16T12:33:24.836Z",
   "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
@@ -12648,6 +12664,41 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Jensen Huang Reportedly Considers Returning To Nvidia: FT",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/694d3941-721c-31d4-aff5-d306f1116454/jensen-huang-reportedly.html?.tsrc=rss",
+      "pub": "2026-11-16T12:22:03.000Z",
+      "sum": "Jensen Huang reportedly is mulling a return to the chip giant he founded, days after resigning as Nvidia CEO in scandal. Nvidia stock was indicated little changed."
+     },
+     {
+      "hd": "“Jensen’s Back Within 12 Months,” Bets Jason Calacanis as Big Holders Pressure Nvidia’s Board",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/jensens-back-within-12-months-bets-jason-calacanis-as-big-holders-pressure-nvidias-board?ref=yahoofinance&tlnk=yf-261116-pjhwc767&.tsrc=rss",
+      "pub": "2026-11-16T12:09:13.000Z",
+      "sum": "Key TakeawaysNVIDIA’s board accepted Jensen Huang’s resignation as CEO on Nov. 11, and two days later Altimeter Capital and Atreides Management asked it to keep his return on the table."
+     },
+     {
+      "hd": "Only Elon Musk Can Get Jensen Huang His Job Back",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/16/only-elon-musk-can-get-jensen-huang-his-job-back/?.tsrc=rss",
+      "pub": "2026-11-16T12:05:18.000Z",
+      "sum": "A war room of CEOs, a 100,000-signature petition, and a Treasury Secretary pushing the other way: the fight over Nvidia's top job is getting messy. One billionaire holds leverage over every side of it."
+     },
+     {
+      "hd": "Nvidia Earnings, Fed Minutes, Anthropic’s IPO Put AI Rally To The Test: 3 Charts To Watch This Week",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-earnings-fed-minutes-anthropic-ipo-put-ai-rally-to-the-test/cNb7nGoR9XM?.tsrc=rss",
+      "pub": "2026-11-16T12:00:06.000Z",
+      "sum": "The post-IPO performance of SpaceX and Cerebras shows that strong initial demand does not guarantee that newly listed popular stocks will sustain their offering prices."
+     },
+     {
+      "hd": "Nvidia's Colette Kress confronts key questions in first earnings report since Jensen Huang’s exit",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNT1ZrNHQ3dXpLdzdBTG10bUcxOGNIaXV0YU41NUVqaFc0bi1QZG1XQ3Q5NXhoRlZmdllqMldrWlNJN3NNQTgtTVlrckVxMWxtNWM3SGEwa2pBTFBLVFF0OFdhQk4zeEwyY1ZrVDZHWklZZTFONWt4WHVRQXNaRkZNMnJkSdIBiAFBVV95cUxNNHJmdU9GR3hKX2dOVWdNRFhhX25aUHJOUDctN0FJOExOMkN3bzNKbWhIbmpPLXdWbFlVOEZFMk5pWkVrb2JKQjBDa1phZVVKZ2xSS3VtdktZX1VFWnM1UE1IZVQ1OHR0OUg4WXo4dEdReHI4UFFIQjZudFh2S09VQVVsVzR4bktD?oc=5",
+      "pub": "2026-11-16T12:00:01.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Nobody can replace Jensen Huang. What that means for AI",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/video/nobody-replace-jensen-huang-means-120000902.html?.tsrc=rss",
@@ -12655,39 +12706,32 @@
       "sum": "Jensen Huang is out at Nvidia after a week of alleged spy ties, reported affairs and a resignation, with about $2 trillion gone from Nvidia's value. Host Ejaaz Ahamadeen breaks down why he was a one-of-one founder, who might replace him, the rivals circling Nvidia and why a China chip ban could backfire."
      },
      {
+      "hd": "Nvidia Faces Bessent’s Question on Whether China Sales “goose” Earnings. Here’s What Tuesday’s Report Has to Show",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/nvidia-faces-bessents-question-on-whether-china-sales-goose-earnings-heres-what-tuesdays-report-has-to-show?ref=yahoofinance&tlnk=yf-261116-w759vg8p&.tsrc=rss",
+      "pub": "2026-11-16T11:56:52.000Z",
+      "sum": "Key TakeawaysTreasury Secretary Scott Bessent asked whether NVIDIA pushed suspect China sales to “goose” earnings, two days before its Nov. 17 report."
+     },
+     {
+      "hd": "Nvidia set to deliver first life-after-Huang briefing",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSUUza3ZRN2NNQUpGVUY5X09sVHVOSFVBamhPQklHQ1dFbjV1X1hKaWVPQTBjSmxyM0c3QUtqcmlaSndRaW5OdkJ2WW80WHhQcVJ1YWhpdFVxVzRiTmFBZENZS3AtS3hfeW1pYkRtWW81TXlzT0E4d2FQU3FDQ2Q3U08yYXVJNlFFdEoySTZGeC0wWUdqd0xlMlRFOA?oc=5",
+      "pub": "2026-11-16T11:54:49.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Tech shares slide ahead of Nvidia results, Anthropic IPO",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/stocks-extend-losses-traders-digest-030006305.html?.tsrc=rss",
       "pub": "2026-11-16T11:51:33.000Z",
-      "sum": "Technology stocks struggled to recover on Monday from the crisis engulfing Nvidia after its chief Jensen Huang quit, with the latest earnings from the AI chip giant as well as Anthropic's huge market debut dominating the agenda.Nvidia reports its quarterly earnings Tuesday after the Wall Street close, offering a fresh chance to assess the outlook for a bellwether AI company whose value has…"
+      "sum": "Technology stocks struggled to recover on Monday from the crisis engulfing Nvidia after its chief Jensen Huang quit, with the latest earnings from the AI chip giant as well as Anthropic's huge market debut dominating the agenda.Nvidia reports its quarterly earnings Tuesday after the Wall Street close, offering a fresh chance to assess the outlook for a bellwether AI company whose value has plunged since Huang's shock resignation last week."
      },
      {
-      "hd": "AMD, Intel and Nvidia Fall as AI Chip Selloff Continues",
+      "hd": "“You Can’t Sell a Gigawatt of Compute as Inference.” That’s a Problem for CoreWeave and Nebius",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/amd-intel-nvidia-fall-ai-114519979.html?.tsrc=rss",
-      "pub": "2026-11-16T11:45:19.000Z",
-      "sum": "Semiconductor shares face pressure from concerns about AI spending, Nvidia's leadership uncertainty and a new lawsuit against Intel."
-     },
-     {
-      "hd": "Why Micron and SanDisk Stocks Are Falling Before Nvidia Earnings",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-micron-sandisk-stocks-falling-114157514.html?.tsrc=rss",
-      "pub": "2026-11-16T11:41:57.000Z",
-      "sum": "Investors are reassessing AI infrastructure spending following Nvidia's leadership changes."
-     },
-     {
-      "hd": "Jensen Huang Reportedly Considers Returning To Nvidia: FT",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/694d3941-721c-31d4-aff5-d306f1116454/jensen-huang-reportedly.html?.tsrc=rss",
-      "pub": "2026-11-16T11:36:56.000Z",
-      "sum": "Jensen Huang reportedly is mulling a return to the chip giant he founded, days after resigning as Nvidia CEO in scandal. Nvidia stock was indicated little changed."
-     },
-     {
-      "hd": "Good News May Be Coming for Nvidia Stock Investors",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/huge-news-nvidia-stock-fans-113458916.html?.tsrc=rss",
-      "pub": "2026-11-16T11:34:58.000Z",
-      "sum": "Nvidia's board has a Jensen Huang problem, and the clock is ticking ahead of earnings"
+      "url": "https://www.tikr.com/blog/you-cant-sell-a-gigawatt-of-compute-as-inference-thats-a-problem-for-coreweave-and-nebius?ref=yahoofinance&tlnk=yf-261116-r7c2hjcr&.tsrc=rss",
+      "pub": "2026-11-16T11:50:33.000Z",
+      "sum": "Key TakeawaysNick Khami said on a Nov. 14 podcast that there isn’t enough inference demand to fill a gigawatt of compute, since all of OpenRouter probably fits in 16 racks of NVIDIA’s GB300."
      },
      {
       "hd": "Nvidia shares slip as succession talk builds",
@@ -12697,25 +12741,18 @@
       "sum": ""
      },
      {
-      "hd": "‘Success and fame’ undermines tech leaders, warns Nvidia and Tesla investor",
+      "hd": "US tech stocks set to open lower amid Nvidia fallout",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNdHpWSGthNWNZV0Rxbm9EQTNpV0xXM3loSEJZaU5leHJjYklEMC00N29LVmFSNmc0SjlDYXI4SDhuaG9yLUt5bmJSeUY0dXdIS2M4Q3pHOUd1ZWc2OE9BM2ZyVnFjZHhBandlQUhITkV0ZXUwcTd6OGluY0dBYmhRY2lIbFU?oc=5",
+      "pub": "2026-11-16T11:07:54.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "‘Success and fame’ undermine tech leaders, warns Nvidia and Tesla investor",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeGJOZlRMYXlpNDZmeFNoVW1NNWZwY0hQYmZEcVFQZUV3YmdTeURDX3R5NGlTWThEOGdGOFBNUEpGMUZaZnI5QkxXN2tFQmo5SGR1MlBsaG1BNVgyTjluMnNZd1NldG5ZSGNXYkwzOWFqVTFWT1pEQW1yZ0xia0tHNXZpczE?oc=5",
       "pub": "2026-11-16T11:00:03.000Z",
       "sum": ""
-     },
-     {
-      "hd": "“Behold the Bull-Trap”: Michael Burry Doubles His Nasdaq 100 Puts, Compares October High to March 2000",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=3d2893200e7c0898f301e67a545dcdb5116e95eb75853325195e9221656e4763",
-      "pub": "2026-11-16T09:44:05.000Z",
-      "sum": "Michael Burry just used a market bounce to bet bigger against tech, and he is pointing to a very specific moment in dot-com history. Nvidia's latest numbers may show whether his warning holds up or arrives too early."
-     },
-     {
-      "hd": "Nvidia Earnings Could Set The Tone For Bitcoin, MSTR: Here’s What Retail Traders Are Watching",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=485f47181853c908009a3905c3da0898664e62194cf9a0109180c386bcbb50cb",
-      "pub": "2026-11-16T09:40:53.000Z",
-      "sum": "Retail sentiment around MSTR improved to 'neutral' from 'bearish,' while sentiment around Nvidia stayed 'extremely bullish' on Stocktwits."
      },
      {
       "hd": "Huang’s Return to Nvidia Would Ruin a Very Good Thing",
@@ -12800,32 +12837,11 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeHhXSW15UzdmSS1ETFZINkNpcWttWUVOTEo2bDd2WHdpX2pmSUZoS1hIaVRYdzRFdmtsX2Q5dGxBal8tdHdtanhpZGYzZ3A2VGZVT1BfazA1d0twa1VtcEUzeFhJWnk0TEZQUHBPNThtYWFNT3lJZ1RkY09DM3c2QzE2clNiVmZXMHhzR2tNMUZRemJYS3otSQ?oc=5",
       "pub": "2026-11-16T00:04:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia is gearing up for one of Wall Street’s most anticipated earnings calls in years",
-      "src": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPU0FLQ0NMYkFoSENpZEJTOHNiZUFzcFlnXzhfY19VakFuR0dHS3lpcmJLY2h2ZjQzWHo5ZVVzU2VOTHdCWWV2R1NGcEU3dVV4Y3o0Um1yR1VuVkZ2NE4wQ01NRnhFanAxR242dXVVYWxLeW52enAxalYwVHhwaVJTODU4VjZqMTZyckZQR1pNbWRXWFkxeXIxVkstc05STzR3M0FfWXJvczZJVV9PRWhWNzA0Z0wzU0pydzJva1NSVWw1TXNzLVA0?oc=5",
-      "pub": "2026-11-15T21:32:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Senators demand Lutnick testimony over alleged Nvidia chip diversions to China",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-15T21:31:52.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Huang weighs Nvidia return as investors urge board to keep options open",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-15T21:20:58.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 134,
-     "Yahoo": 6,
+     "Finnhub": 128,
+     "Yahoo": 8,
      "Google News": 92,
      "Nasdaq": 13,
      "Seeking Alpha": 24
@@ -12834,7 +12850,14 @@
    "TSLA": {
     "items": [
      {
-      "hd": "‘Success and fame’ undermines tech leaders, warns Nvidia and Tesla investor",
+      "hd": "Tesla takes an early step for bringing the Cybercab to the masses",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/TSLA/news?source=feed_symbol_TSLA",
+      "pub": "2026-11-16T12:26:52.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "‘Success and fame’ undermine tech leaders, warns Nvidia and Tesla investor",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQeGJOZlRMYXlpNDZmeFNoVW1NNWZwY0hQYmZEcVFQZUV3YmdTeURDX3R5NGlTWThEOGdGOFBNUEpGMUZaZnI5QkxXN2tFQmo5SGR1MlBsaG1BNVgyTjluMnNZd1NldG5ZSGNXYkwzOWFqVTFWT1pEQW1yZ0xia0tHNXZpczE?oc=5",
       "pub": "2026-11-16T11:00:03.000Z",
@@ -12843,7 +12866,7 @@
      {
       "hd": "A Tesla Merger Could Fast-Track SpaceX Into the S&P 500. Index Funds Would Have to Buy",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/a-tesla-merger-could-fast-track-spacex-into-the-sp-500-index-funds-would-have-to-buy?ref=yahoofinance&tlnk=yf-261116-xxrmg2jp&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=707bf57b9f6fe03f3f1a7e818f16a4f039225c5b27dba255411cbaae832906c2",
       "pub": "2026-11-16T10:44:50.000Z",
       "sum": "Key TakeawaysTesla and SpaceX are reportedly moving toward a merger that could put the combined company in Tesla’s S&P 500 slot, which TD Securities says would bring about $100 billion of buying from index funds. A merger would get around S&P’s rule that a new listing must trade for a year first, but it may only get SpaceX in a few months sooner."
      },
@@ -13000,29 +13023,29 @@
       "url": "https://finnhub.io/api/news?id=ca38f1553cb5b00b40229644c2fa6a881810c68f50f9d82030f1ad67abe7a9b0",
       "pub": "2026-11-12T17:02:07.000Z",
       "sum": "Elon Musk's SpaceX and Tesla are moving toward a record merger as soon as December. TSLA is up 16% in five sessions, its best run since September 2025."
-     },
-     {
-      "hd": "Musk says Tesla to extend Cybertruck production through summer 2027",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/TSLA/news?source=feed_symbol_TSLA",
-      "pub": "2026-11-11T17:30:15.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 134,
+     "Finnhub": 133,
      "Yahoo": 6,
      "Google News": 16,
      "Nasdaq": 12,
-     "Seeking Alpha": 8
+     "Seeking Alpha": 9
     }
    },
    "SPCX": {
     "items": [
      {
+      "hd": "Billionaire Ron Baron Says SpaceX Will Be Worth $30 Trillion by 2040. At $141 a Share, Here’s the Annual Return That Requires.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/16/billionaire-ron-baron-says-spacex-will-be-worth-30-trillion-by-2040-at-141-a-share-heres-the-annual-return-that-requires/?.tsrc=rss",
+      "pub": "2026-11-16T12:00:02.000Z",
+      "sum": "Hitting this market cap milestone will be no small feat, given how the space and AI company is starting off in the trillion-dollar club."
+     },
+     {
       "hd": "Elon Musk's Starship victory exposes a major Boeing setback",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/elon-musks-starship-victory-exposes-114015220.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=158afcf133802245732ef3e41c84fb8b0ad9dcd1f39985bce66af06bc8c55226",
       "pub": "2026-11-16T11:40:15.000Z",
       "sum": "SpaceX successfully caught Starship's upper stage on Nov. 14 after a 22.5-hour mission that included 14 orbits around Earth."
      },
@@ -13043,7 +13066,7 @@
      {
       "hd": "A Tesla Merger Could Fast-Track SpaceX Into the S&P 500. Index Funds Would Have to Buy",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/a-tesla-merger-could-fast-track-spacex-into-the-sp-500-index-funds-would-have-to-buy?ref=yahoofinance&tlnk=yf-261116-xxrmg2jp&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=707bf57b9f6fe03f3f1a7e818f16a4f039225c5b27dba255411cbaae832906c2",
       "pub": "2026-11-16T10:44:50.000Z",
       "sum": "Key TakeawaysTesla and SpaceX are reportedly moving toward a merger that could put the combined company in Tesla’s S&P 500 slot, which TD Securities says would bring about $100 billion of buying from index funds. A merger would get around S&P’s rule that a new listing must trade for a year first, but it may only get SpaceX in a few months sooner."
      },
@@ -13067,13 +13090,6 @@
       "url": "https://finnhub.io/api/news?id=e79b10928d4d06e86ac7b8438824573bcf9b8ab08d528c643627c587e4e413ef",
       "pub": "2026-11-16T09:08:48.000Z",
       "sum": "Bitcoin news takes a new turn on Monday, November 16, as BTC trades near $64,700 with just three days to go before Anthropic’s highly anticipated Nasdaq debut under the ticker ANT. The slide looks a lot like the one before SpaceX’s record listing in June. Anthropic plans to price its..."
-     },
-     {
-      "hd": "TSLA, SPCX Diverge Overnight As Retail Traders Split On Merger Winner — Could SpaceX Get Tesla’s S&P 500 Seat?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ad9fec0fda604a72bd206a235a078844601da8fe6393e4215ecc55461679d391",
-      "pub": "2026-11-16T08:31:47.000Z",
-      "sum": "TD Securities estimated that S&P 500 inclusion could generate about $100 billion in buying from index funds."
      },
      {
       "hd": "SpaceX outlines land purchase proposal near Boca Chica Beach",
@@ -13197,7 +13213,7 @@
     ],
     "fetched": {
      "Finnhub": 148,
-     "Yahoo": 10,
+     "Yahoo": 11,
      "Google News": 29,
      "Nasdaq": 0,
      "Seeking Alpha": 16
@@ -13216,7 +13232,7 @@
       "hd": "S&P 500, Nasdaq futures slide as Nvidia earnings, Anthropic debut loom",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZEJobHpHMl90WUdVbnpzSGxLb1l3bi1BczhrN29iVW9rUzBtQWE4aFNuM2ZGS1RIQThLdEZPWmZjeExVaHhRaXBubkdqR3R3TXJYTlRqUmRYcXZxYS1pV1lyRlExUDdEUWJ3cTg4aktJVWcxbkg5UW9oeVRXLXhCZjdRQmFNeFJlLXhpWTRMM1lEUVlodGwxVHNCSE9ONTlnem0yekw1dDNraElYZGc?oc=5",
-      "pub": "2026-11-16T10:44:08.000Z",
+      "pub": "2026-11-16T10:58:31.000Z",
       "sum": ""
      },
      {
@@ -13384,14 +13400,14 @@
     "fetched": {
      "Finnhub": 15,
      "Yahoo": 0,
-     "Google News": 72,
+     "Google News": 71,
      "Nasdaq": 1,
      "Seeking Alpha": 28
     }
    }
   },
-  "asOf": "2026-11-16T12:05:55.140Z",
-  "lastAttempt": "2026-11-16T12:05:55.140Z",
+  "asOf": "2026-11-16T12:33:24.836Z",
+  "lastAttempt": "2026-11-16T12:33:24.836Z",
   "lastError": null
  },
  "worldNews": {
