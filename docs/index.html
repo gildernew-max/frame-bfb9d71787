@@ -283,9 +283,6 @@
   .quote-card.upcoming .ipo-note{font-size:30px;color:#DBC9A5;white-space:nowrap;letter-spacing:-.01em}
   .quote-card,.spotlight{cursor:pointer}
   .quote-card:focus,.spotlight:focus{outline:none}
-  .quote-card:focus-visible,.quote-card:focus,.spotlight:focus-visible,.spotlight:focus{
-    box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
-  }
   .stock-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,0.9fr);gap:48px}
   .stock-main{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
   .stock-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
@@ -470,12 +467,15 @@
   /* Tappable / remote-focusable cards open a full-stage overlay. */
   .nfl-panel,.weather-panel,.business-panel,.clock-panel{cursor:pointer}
   .nfl-panel:focus,.weather-panel:focus,.business-panel:focus,.clock-panel:focus{outline:none}
-  .nfl-panel:focus-visible,.nfl-panel:focus,
-  .weather-panel:focus-visible,.weather-panel:focus,
-  .business-panel:focus-visible,.business-panel:focus,
-  .clock-panel:focus-visible,.clock-panel:focus{
-    box-shadow:inset 0 0 0 2px rgba(201,168,106,.55),0 0 0 3px rgba(201,168,106,.22);
+  /* Remote (D-pad) focus ring. Inset so it survives the panels' overflow clipping; sized for a
+     3840px stage that is usually scaled to 1920, so 8px here is 4 screen px plus the glow. */
+  .nav-on .nav-focus{
+    box-shadow:inset 0 0 0 8px rgba(201,168,106,.95),inset 0 0 70px rgba(201,168,106,.20),
+      0 0 0 4px rgba(201,168,106,.35),0 0 60px 10px rgba(201,168,106,.30)!important;
+    background-color:rgba(201,168,106,.06);
   }
+  .nav-on .quote-card.nav-focus,.nav-on .spotlight.nav-focus{
+    box-shadow:inset 0 0 0 8px rgba(201,168,106,.95),inset 0 0 50px rgba(201,168,106,.22)!important}
   .nfl-overlay{position:absolute;inset:0;z-index:30;display:flex;align-items:stretch;justify-content:center;
     padding:74px 120px 54px}
   .nfl-overlay[hidden]{display:none!important}
@@ -990,6 +990,7 @@ function renderMarkets(){
   $('spot-inner').innerHTML=`<div class="spot-copy"><div class="spot-eyebrow">Equity spotlight</div><div class="spot-name">${s.n}</div><div class="spot-symbol">NASDAQ / ${s.s}</div><div class="spot-price">${fmtPrice(s)}</div><div class="spot-price-row">${changePill(s)}</div><div class="spot-caption">${s.hint||'Sample close'}</div></div><div class="spot-graphic"><span class="chart-top">${s.chartLabel||'Illustrative trend'}</span>${areaChart(s.sp,s.ch>=0,s.s)}</div>`;
   $('spot-folio').textContent=`SPOTLIGHT 0${spotIndex+1} / 0${spotSymbols.length}  ·  15s`;
   $('market-grid').innerHTML=q.filter(x=>x!==s).map(quoteCard).join('');
+  if(navShown)navApply();
 }
 function rotateSpotlight(){
   $('spotlight').classList.add('is-changing');$('market-grid').classList.add('is-changing');
@@ -3953,28 +3954,153 @@ $('news-overlay').addEventListener('click',closeNewsOverlay);
 $('sb-page').addEventListener('click',e=>{e.stopPropagation();shiftSbPage(1);});
 $('league-nfl').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('nfl');});
 $('league-cfb').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('cfb');});
+// Remote (D-pad) navigation over the cards that open an overlay. Quote tiles are tracked by
+// grid slot, not symbol, because rotateSpotlight rebuilds the grid every 15 s.
+var NAV_IDS=['clock-card','weather-card','nfl-card','spotlight','news-card'];
+var NAV_IDLE_MS=10000;
+var navKey='clock-card',navShown=false,navTimer=null;
+function navKeyOf(el){
+  if(!el)return null;
+  if(NAV_IDS.indexOf(el.id)>=0)return el.id;
+  if(el.classList&&el.classList.contains('quote-card')){
+    const tiles=$('market-grid').querySelectorAll('.quote-card');
+    for(let i=0;i<tiles.length;i++)if(tiles[i]===el)return 'grid:'+i;
+  }
+  return null;
+}
+function navVisible(el){
+  if(!el)return false;
+  const r=el.getBoundingClientRect();
+  return r.width>0&&r.height>0;
+}
+function navCards(){
+  const out=[];
+  NAV_IDS.forEach(id=>{const el=$(id);if(navVisible(el))out.push(el);});
+  const tiles=$('market-grid').querySelectorAll('.quote-card');
+  for(let i=0;i<tiles.length;i++)if(navVisible(tiles[i]))out.push(tiles[i]);
+  return out;
+}
+function navEl(){
+  let el=null;
+  if(navKey&&navKey.indexOf('grid:')===0){
+    const tiles=$('market-grid').querySelectorAll('.quote-card');
+    const i=+navKey.slice(5);
+    el=tiles[Math.min(i,tiles.length-1)]||null;
+  }else if(navKey)el=$(navKey);
+  if(!navVisible(el)){el=navCards()[0]||null;navKey=navKeyOf(el);}
+  return el;
+}
+function navApply(){
+  const old=document.querySelectorAll('.nav-focus');
+  for(let i=0;i<old.length;i++)old[i].classList.remove('nav-focus');
+  const on=navShown&&!openOverlay;
+  document.body.classList.toggle('nav-on',on);
+  if(!on)return;
+  const el=navEl();
+  if(!el)return;
+  el.classList.add('nav-focus');
+  if(document.activeElement!==el)el.focus({preventScroll:true});
+}
+function navHide(){
+  clearTimeout(navTimer);navTimer=null;
+  navShown=false;navApply();
+}
+function navShow(){
+  navShown=true;navApply();
+  clearTimeout(navTimer);
+  navTimer=setTimeout(navHide,NAV_IDLE_MS);
+}
+// Nearest card in the pressed direction: edge gap along the axis plus a weighted offset across
+// it (zero when the two cards overlap on that axis), so wide panels still pick the card below.
+function navNeighbor(from,dir){
+  const a=from.getBoundingClientRect();
+  const acx=(a.left+a.right)/2,acy=(a.top+a.bottom)/2;
+  let best=null,bestScore=Infinity;
+  navCards().forEach(el=>{
+    if(el===from)return;
+    const b=el.getBoundingClientRect();
+    let gap,cross;
+    if(dir==='left'||dir==='right'){
+      gap=dir==='right'?b.left-a.right:a.left-b.right;
+      if(gap<-4)return;
+      const overlap=Math.min(a.bottom,b.bottom)-Math.max(a.top,b.top);
+      cross=overlap>0?0:Math.abs((b.top+b.bottom)/2-acy);
+    }else{
+      gap=dir==='down'?b.top-a.bottom:a.top-b.bottom;
+      if(gap<-4)return;
+      const overlap=Math.min(a.right,b.right)-Math.max(a.left,b.left);
+      cross=overlap>0?0:Math.abs((b.left+b.right)/2-acx);
+    }
+    const centre=dir==='left'||dir==='right'?Math.abs((b.top+b.bottom)/2-acy):Math.abs((b.left+b.right)/2-acx);
+    const score=Math.max(0,gap)+2*cross+0.05*centre;
+    if(score<bestScore){bestScore=score;best=el;}
+  });
+  return best;
+}
+var NAV_OPPOSITE={left:'right',right:'left',up:'down',down:'up'};
+var navBack=null;
+function navMove(dir){
+  const from=navEl();
+  if(!from)return;
+  let to=null;
+  if(navBack&&navBack.dir===NAV_OPPOSITE[dir]&&navBack.to===navKey){
+    const k=navKey;navKey=navBack.from;to=navEl();navKey=k;
+    if(!navVisible(to))to=null;
+  }
+  if(!to)to=navNeighbor(from,dir);
+  if(to){
+    const fromKey=navKey;
+    navKey=navKeyOf(to);
+    navBack={from:fromKey,to:navKey,dir:dir};
+  }
+  navShow();
+}
+function navOpen(){
+  const el=navEl();
+  if(!el)return;
+  navKey=navKeyOf(el);
+  el.click();
+  navShown=false;navApply();
+}
+document.addEventListener('focusin',e=>{
+  const k=navKeyOf(e.target);
+  if(k)navKey=k;
+});
+try{
+  if(window.tizen&&tizen.tvinputdevice){
+    ['ChannelUp','ChannelDown','MediaFastForward','MediaRewind'].forEach(k=>{
+      try{tizen.tvinputdevice.registerKey(k);}catch(_){}
+    });
+  }
+}catch(_){}
+
 document.addEventListener('keydown',e=>{
+  if(navShown){clearTimeout(navTimer);navTimer=setTimeout(navHide,NAV_IDLE_MS);}
   const code=e.keyCode||e.which;
   const isEsc=code===27||code===10009||e.key==='Escape'||e.key==='XF86Back';
   const isEnter=code===13||e.key==='Enter';
   const isLeft=code===37||e.key==='ArrowLeft';
   const isRight=code===39||e.key==='ArrowRight';
-  if(openOverlay==='nfl'&&(isLeft||isRight)){e.preventDefault();setScoreboardLeague(isRight?'cfb':'nfl');return;}
-  if(openOverlay==='weather'&&(isLeft||isRight)){e.preventDefault();setWeatherPage(isRight?'radar':'forecast');return;}
+  const isNext=code===427||code===417||e.key==='ChannelUp'||e.key==='MediaFastForward';
+  const isPrev=code===428||code===412||e.key==='ChannelDown'||e.key==='MediaRewind';
+  if(openOverlay==='nfl'&&(isLeft||isRight||isNext||isPrev)){e.preventDefault();setScoreboardLeague(isRight||isNext?'cfb':'nfl');return;}
+  if(openOverlay==='weather'&&(isLeft||isRight||isNext||isPrev)){e.preventDefault();setWeatherPage(isRight||isNext?'radar':'forecast');return;}
 
   const isUp=code===38||e.key==='ArrowUp';
   const isDown=code===40||e.key==='ArrowDown';
   if(openOverlay==='nfl'&&(isUp||isDown)&&sbPageCount>1){e.preventDefault();shiftSbPage(isDown?1:-1);return;}
-  if(openOverlay&&(isEsc||isEnter)){e.preventDefault();closeOpenOverlay();return;}
+  if(openOverlay&&(isEsc||isEnter)){e.preventDefault();closeOpenOverlay();navShow();return;}
   const isRefreshKey=e.key==='r'||e.key==='R'||code===403||e.key==='ColorF0Red'||e.key==='Red';
   if(!openOverlay&&isRefreshKey){e.preventDefault();manualRefresh();return;}
   if(isEnter&&document.activeElement===$('refresh-btn')){e.preventDefault();manualRefresh();return;}
-  const stockFocus=document.activeElement?.closest?.('.quote-card')||(document.activeElement===$('spotlight')?document.activeElement:null);
-  if(isEnter&&stockFocus&&!openOverlay){e.preventDefault();openStockOverlay(stockFocus.dataset.symbol||spotSymbols[spotIndex]);return;}
-  if(isEnter&&document.activeElement===$('nfl-card')){e.preventDefault();openNflOverlay();return;}
-  if(isEnter&&document.activeElement===$('weather-card')){e.preventDefault();openWeatherOverlay();return;}
-  if(isEnter&&document.activeElement===$('news-card')){e.preventDefault();openNewsOverlay();return;}
-  if(isEnter&&document.activeElement===$('clock-card')){e.preventDefault();openWorldClockOverlay();}
+  if(openOverlay)return;
+  if(code===9){setTimeout(()=>{if(navKeyOf(document.activeElement))navShow();else navHide();},0);return;}
+  if(isEsc&&navShown){e.preventDefault();navHide();return;}
+  if(!(isEnter||isLeft||isRight||isUp||isDown))return;
+  e.preventDefault();
+  if(!navShown){navShow();return;}
+  if(isEnter){navOpen();return;}
+  navMove(isLeft?'left':isRight?'right':isUp?'up':'down');
 });
 
 const ALERT_PRI={nws:3,market:2,score:1};
