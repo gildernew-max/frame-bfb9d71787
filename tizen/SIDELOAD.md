@@ -1,19 +1,18 @@
 # Morning Board kiosk app for The Frame Pro (Tizen web app)
 
-The app is a full-screen Tizen TV web app that loads
-https://gildernew-max.github.io/frame-bfb9d71787/ in an iframe and keeps it on screen.
+The app is a full-screen Tizen TV web app. It shows a local start card, then opens
+https://gildernew-max.github.io/frame-bfb9d71787/ as the main page (no iframe).
 
 - **App ID:** `FrameDash1.MorningBoard` (package `FrameDash1`). Use this for `tizen run` and Home Assistant.
 - **Source:** `app/` contains `config.xml`, `index.html` and `icon.png`.
-- **Unsigned package (reference only):** `dist/MorningBoard-unsigned.wgt`. The TV will refuse it. Sign it on the Mac with Dave's Samsung certificate (steps below).
+- **Test app:** `hello/` is a plain red page, App ID `FrameHelo1.HelloRed`. Use it to prove the TV draws a sideloaded web app at all.
 - The TV in these steps is at **192.168.68.53**.
 
 What the app does:
-- Kiosk iframe, landscape, no context menu, `background-support` on, screensaver turned off through `webapis.appcommon`.
-- Every minute it checks `data.json`. If the network drops, the last frame stays on screen. After about 5 failed checks it shows a quiet "Waiting for the network…" card, then reloads by itself when the connection is back. It also does a full reload every 3 hours.
-- Return/Back is ignored, so the kiosk stays up. Enter or Play forces a reload. Home and Exit still leave the app, as Samsung requires.
-
-The samsung-kiosk repo (safaia.net/alozdev/samsung-kiosk) could not be fetched on 15 Nov 2026 (TLS failure / HTTP 500). This is a minimal equivalent of its iframe mode.
+- Draws a blue "Morning Board" card at once, with screen size, browser version and any JavaScript error printed on it. A black screen therefore means the app page never loaded, not a dashboard problem.
+- Turns the screensaver off (`webapis.appcommon`), checks `data.json`, and after 3 seconds replaces itself with the live dashboard (a cache-busting `?t=` is added). Enter or Play goes straight away. If the network is down it shows "Waiting for the network…" and retries every 30 seconds.
+- The dashboard is loaded as the top-level page, not in an iframe. Cross-origin iframes inside a Tizen widget hit third-party storage limits on newer TVs.
+- Back is ignored on the start card. Once the dashboard is showing, the remote's keys behave as they do for any web page; Home and Exit leave the app.
 
 ---
 
@@ -75,6 +74,52 @@ The app then appears under **Apps** on the TV as "Morning Board".
 **Optional (makes it come back after power-on):** on the TV, turn on Settings › General › Smart Features › **Autorun Last App**. Leave the Morning Board app open when the TV is turned off. Also turn off Auto Protection Time and Auto Power Off, as in PLAN.md.
 
 To update later, run the same `tizen package` / `tizen install` with the same profile. Uninstall with `tizen uninstall -p FrameDash1.MorningBoard -t <device>`.
+
+## 4b. If the screen stays black
+
+Retail Samsung TVs have logging switched off, so `sdb dlog` normally prints nothing. The Web Inspector is the way to see errors.
+
+```bash
+export TV=192.168.68.53:26101
+cd ~/frame-tizen-kiosk
+sdb connect $TV
+sdb -s $TV capability | egrep 'platform_version|log_enable|can_launch'
+
+# 1. See what is really installed. Remove every old "Morning Board" / MorningBoard* package.
+sdb -s $TV shell 0 vd_applist | grep -i -B3 -A3 -E 'morning|framedash|framehelo'
+sdb -s $TV shell 0 applist   | grep -i -E 'morning|framedash|framehelo'
+tizen uninstall -s $TV -p FrameDash1.MorningBoard      # repeat with any other package ID found above
+
+# 2. Package OUTSIDE the source folder, so an old .wgt never ends up inside the new one.
+rm -rf build && mkdir -p build/hello build/app
+tizen package -t wgt -s FrameTV -o build/hello -- hello
+tizen package -t wgt -s FrameTV -o build/app   -- app
+unzip -l build/hello/*.wgt    # config.xml, index.html, icon.png, author-signature.xml, signature1.xml, all at the top level
+unzip -l build/app/*.wgt
+
+# 3. Hello Red first. On the TV press Home first, so it is out of Art Mode.
+cp build/hello/*.wgt build/HelloRed.wgt
+tizen install -s $TV -n HelloRed.wgt -- build
+tizen run -s $TV -p FrameHelo1.HelloRed
+
+# 4. Then the real app.
+cp build/app/*.wgt build/MorningBoard.wgt
+tizen install -s $TV -n MorningBoard.wgt -- build
+tizen run -s $TV -p FrameDash1.MorningBoard
+
+# 5. Web Inspector (the real error)
+sdb -s $TV shell 0 was_kill FrameDash1.MorningBoard
+sdb -s $TV shell 0 debug FrameDash1.MorningBoard       # prints "... port: NNNNN"
+PORT=NNNNN                                             # the number printed above
+sdb -s $TV forward tcp:$PORT tcp:$PORT
+curl -s http://127.0.0.1:$PORT/json                    # shows url, title and devtoolsFrontendUrl
+open "http://127.0.0.1:$PORT$(curl -s http://127.0.0.1:$PORT/json | python3 -c 'import sys,json;print(json.load(sys.stdin)[0]["devtoolsFrontendUrl"])')"
+# Console tab = errors. Press F5 in the inspector to watch start-up again.
+# If `debug` answers "closed", try:  sdb -s $TV shell 0 debug FrameDash1.MorningBoard 0
+
+# 6. Logs, in case this TV has them switched on (most retail sets print nothing)
+sdb -s $TV dlog -c; sdb -s $TV dlog -v time | tee tv-dlog.txt | egrep -i 'wrt|chromium|console|framedash|framehelo'
+```
 
 ---
 
