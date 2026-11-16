@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T11:36:21.291Z",
+ "generatedAt": "2026-11-16T11:40:29.709Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -4694,8 +4694,9 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T11:36:21.291Z",
+  "at": "2026-11-16T11:40:29.709Z",
   "ran": [
+   "sectors",
    "usTempGrid"
   ]
  },
@@ -12246,8 +12247,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T11:36:21.291Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-16T11:40:29.709Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -12365,6 +12366,94 @@
   ],
   "asOf": "2026-11-16T11:27:39.879Z",
   "lastAttempt": "2026-11-16T11:27:39.879Z",
+  "lastError": null
+ },
+ "sectors": {
+  "provider": "Yahoo Finance",
+  "credit": "Sectors: Yahoo Finance (SPDR ETFs)",
+  "items": [
+   {
+    "s": "XLK",
+    "n": "Technology",
+    "px": 170.28,
+    "d": -2.01,
+    "t": 1794603600
+   },
+   {
+    "s": "XLC",
+    "n": "Communication",
+    "px": 108.69,
+    "d": 1.05,
+    "t": 1794603600
+   },
+   {
+    "s": "XLY",
+    "n": "Cons. Discretionary",
+    "px": 119.98,
+    "d": -0.4,
+    "t": 1794603600
+   },
+   {
+    "s": "XLF",
+    "n": "Financials",
+    "px": 58.68,
+    "d": 0.81,
+    "t": 1794603600
+   },
+   {
+    "s": "XLV",
+    "n": "Health Care",
+    "px": 188.85,
+    "d": 0.54,
+    "t": 1794603600
+   },
+   {
+    "s": "XLI",
+    "n": "Industrials",
+    "px": 168.78,
+    "d": -0.39,
+    "t": 1794603600
+   },
+   {
+    "s": "XLP",
+    "n": "Cons. Staples",
+    "px": 92.35,
+    "d": 1.42,
+    "t": 1794603600
+   },
+   {
+    "s": "XLE",
+    "n": "Energy",
+    "px": 64.96,
+    "d": 0.98,
+    "t": 1794603600
+   },
+   {
+    "s": "XLU",
+    "n": "Utilities",
+    "px": 44.04,
+    "d": 0.52,
+    "t": 1794603600
+   },
+   {
+    "s": "XLRE",
+    "n": "Real Estate",
+    "px": 44.37,
+    "d": 0.02,
+    "t": 1794603600
+   },
+   {
+    "s": "XLB",
+    "n": "Materials",
+    "px": 52.23,
+    "d": -0.21,
+    "t": 1794603600
+   }
+  ],
+  "sessionTime": "2026-11-13T21:00:00.000Z",
+  "sessionDate": "2026-11-13",
+  "asOf": "2026-11-16T11:40:29.709Z",
+  "lastAttempt": "2026-11-16T11:40:29.709Z",
   "lastError": null
  }
 }
