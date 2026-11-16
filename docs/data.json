@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T20:45:12.247Z",
+ "generatedAt": "2026-11-16T21:00:12.105Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -709,10 +709,10 @@
   "status": "live",
   "lastError": null,
   "market": {
-   "isOpen": true,
-   "session": "regular",
+   "isOpen": false,
+   "session": "post-market",
    "holiday": null,
-   "checkedAt": "2026-11-16T20:45:12.247Z"
+   "checkedAt": "2026-11-16T21:00:12.105Z"
   },
   "quotes": {
    "NVDA": {
@@ -5633,16 +5633,12 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T20:45:12.247Z",
+  "at": "2026-11-16T21:00:12.105Z",
   "ran": [
-   "weather",
    "alerts",
-   "stockNews",
-   "worldNews",
    "movers",
    "sectors",
-   "stocks:session",
-   "series",
+   "extended",
    "usTempGrid"
   ]
  },
@@ -12549,8 +12545,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-16T20:45:12.247Z",
-  "lastAttempt": "2026-11-16T20:45:12.247Z",
+  "asOf": "2026-11-16T21:00:12.105Z",
+  "lastAttempt": "2026-11-16T21:00:12.105Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13193,8 +13189,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T20:45:12.247Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-16T21:00:12.105Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -13226,95 +13222,95 @@
   "provider": "Yahoo Finance",
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
-  "marketState": "REGULAR",
-  "sessionTime": "2026-11-16T20:45:22.000Z",
+  "marketState": "POST",
+  "sessionTime": "2026-11-16T20:59:54.000Z",
   "sessionDate": "2026-11-16",
   "gainers": [
    {
     "s": "CGON",
     "n": "CG Oncology, Inc.",
-    "ch": 12.61,
-    "px": 83.78,
-    "cap": 7483138560,
-    "t": 1794861885
+    "ch": 14.01,
+    "px": 84.82,
+    "cap": 7576030208,
+    "t": 1794862794
    },
    {
     "s": "TU",
     "n": "Telus Corporation",
-    "ch": 11.87,
-    "px": 9.5426,
-    "cap": 15172733952,
-    "t": 1794861886
+    "ch": 12.3,
+    "px": 9.5801,
+    "cap": 15232359424,
+    "t": 1794862783
    },
    {
     "s": "MOH",
     "n": "Molina Healthcare Inc",
-    "ch": 10.84,
-    "px": 232.19,
-    "cap": 12120317952,
-    "t": 1794861887
+    "ch": 11.22,
+    "px": 233,
+    "cap": 12162599936,
+    "t": 1794862780
    },
    {
     "s": "HTHT",
     "n": "H World Group Limited",
-    "ch": 8.51,
-    "px": 54.68,
-    "cap": 17246398464,
-    "t": 1794861887
+    "ch": 8.99,
+    "px": 54.92,
+    "cap": 17322096640,
+    "t": 1794862794
    },
    {
     "s": "TSN",
     "n": "Tyson Foods, Inc.",
-    "ch": 8.04,
-    "px": 63.55,
-    "cap": 22356985856,
-    "t": 1794861888
+    "ch": 8.53,
+    "px": 63.84,
+    "cap": 22459009024,
+    "t": 1794862783
    }
   ],
   "losers": [
    {
     "s": "SMMT",
     "n": "Summit Therapeutics Inc.",
-    "ch": -17.49,
-    "px": 11.675,
-    "cap": 9337243648,
-    "t": 1794861918
+    "ch": -16.36,
+    "px": 11.835,
+    "cap": 9465205760,
+    "t": 1794862794
    },
    {
     "s": "GDS",
     "n": "GDS Holdings Limited",
-    "ch": -15.14,
-    "px": 16.81,
-    "cap": 3368347648,
-    "t": 1794861921
+    "ch": -14.69,
+    "px": 16.9,
+    "cap": 3386381568,
+    "t": 1794862793
    },
    {
-    "s": "RUM",
-    "n": "RUM Group Inc.",
-    "ch": -12.9,
-    "px": 5.025,
-    "cap": 2010909696,
-    "t": 1794861921
+    "s": "USAR",
+    "n": "USA Rare Earth, Inc.",
+    "ch": -12.8,
+    "px": 7.115,
+    "cap": 2670401280,
+    "t": 1794862794
    },
    {
     "s": "ASTS",
     "n": "AST SpaceMobile, Inc.",
-    "ch": -12.68,
-    "px": 28.465,
-    "cap": 11104472064,
-    "t": 1794861921
+    "ch": -12.34,
+    "px": 28.58,
+    "cap": 11149334528,
+    "t": 1794862794
    },
    {
     "s": "NVTS",
     "n": "Navitas Semiconductor Corporati",
-    "ch": -12.4,
-    "px": 7.84,
-    "cap": 2112939008,
-    "t": 1794861922
+    "ch": -12.12,
+    "px": 7.865,
+    "cap": 2119676544,
+    "t": 1794862794
    }
   ],
-  "asOf": "2026-11-16T20:45:12.247Z",
-  "lastAttempt": "2026-11-16T20:45:12.247Z",
+  "asOf": "2026-11-16T21:00:12.105Z",
+  "lastAttempt": "2026-11-16T21:00:12.105Z",
   "lastError": null
  },
  "sectors": {
@@ -13324,91 +13320,91 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 164.39,
-    "d": -3.46,
-    "t": 1794861920
+    "px": 164.57,
+    "d": -3.35,
+    "t": 1794862783
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 106.8,
-    "d": -1.74,
-    "t": 1794861913
+    "px": 106.79,
+    "d": -1.75,
+    "t": 1794862783
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 117.91,
-    "d": -1.73,
-    "t": 1794861920
+    "px": 118.09,
+    "d": -1.58,
+    "t": 1794862782
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 58.07,
-    "d": -1.04,
-    "t": 1794861921
+    "px": 58.17,
+    "d": -0.88,
+    "t": 1794862783
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 187.81,
-    "d": -0.55,
-    "t": 1794861921
+    "px": 187.83,
+    "d": -0.54,
+    "t": 1794862783
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 165.4,
-    "d": -2.01,
-    "t": 1794861921
+    "px": 165.61,
+    "d": -1.88,
+    "t": 1794862782
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 92.6,
-    "d": 0.27,
-    "t": 1794861921
+    "px": 92.62,
+    "d": 0.29,
+    "t": 1794862783
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 63.67,
-    "d": -1.99,
-    "t": 1794861921
+    "px": 63.69,
+    "d": -1.96,
+    "t": 1794862783
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 44.05,
-    "d": 0.02,
-    "t": 1794861919
+    "px": 44.12,
+    "d": 0.18,
+    "t": 1794862783
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 44.18,
-    "d": -0.44,
-    "t": 1794861920
+    "px": 44.25,
+    "d": -0.28,
+    "t": 1794862783
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 51.4,
-    "d": -1.6,
-    "t": 1794861922
+    "px": 51.47,
+    "d": -1.46,
+    "t": 1794862783
    }
   ],
-  "sessionTime": "2026-11-16T20:45:22.000Z",
+  "sessionTime": "2026-11-16T20:59:43.000Z",
   "sessionDate": "2026-11-16",
-  "asOf": "2026-11-16T20:45:12.247Z",
-  "lastAttempt": "2026-11-16T20:45:12.247Z",
+  "asOf": "2026-11-16T21:00:12.105Z",
+  "lastAttempt": "2026-11-16T21:00:12.105Z",
   "lastError": null
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-16T14:20:25.486Z",
-  "lastAttempt": "2026-11-16T14:20:25.486Z",
+  "asOf": "2026-11-16T21:00:12.105Z",
+  "lastAttempt": "2026-11-16T21:00:12.105Z",
   "items": {
    "NVDA": {
     "session": "pre",
