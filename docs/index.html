@@ -490,6 +490,14 @@
     border:1px solid var(--hair);background:rgba(255,255,255,.04);color:var(--ink);cursor:pointer;
     font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}
   .nfl-overlay-close:focus{outline:none;box-shadow:0 0 0 2px rgba(201,168,106,.55)}
+  .nfl-overlay-close{transition:transform .15s ease,box-shadow .15s ease}
+  /* Overlay buttons aren't clipped, so the ring sits outside them. The passive :focus-visible ring
+     is off while the remote drives the page, so it can't outlive the 10 s idle hide. */
+  .nfl-overlay-close:hover,body:not(.nav-remote) .nfl-overlay-close:focus-visible,
+  .nav-on .nfl-overlay-sheet button.nav-focus{
+    color:var(--ink);border-color:rgba(201,168,106,.95);background-color:rgba(201,168,106,.10);
+    box-shadow:0 0 0 6px rgba(201,168,106,.95),0 0 0 10px rgba(201,168,106,.35),0 0 50px 10px rgba(201,168,106,.30)!important;
+    transform:scale(1.06)}
   .nfl-scoreboard{flex:1;min-height:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
     grid-template-rows:repeat(6,minmax(0,1fr));gap:24px 36px;align-content:stretch}
   .nfl-scoreboard.sb-msg{display:flex;align-items:center;justify-content:center;color:var(--muted);
@@ -4010,10 +4018,11 @@ function navEl(){
 function navApply(){
   const old=document.querySelectorAll('.nav-focus');
   for(let i=0;i<old.length;i++)old[i].classList.remove('nav-focus');
-  const on=navShown&&!openOverlay;
+  const ovEl=openOverlay?navOvEl():null;
+  const on=navShown&&(!openOverlay||!!ovEl);
   document.body.classList.toggle('nav-on',on);
   if(!on)return;
-  const el=navEl();
+  const el=ovEl||navEl();
   if(!el)return;
   el.classList.add('nav-focus');
   if(document.activeElement!==el)el.focus({preventScroll:true});
@@ -4079,6 +4088,31 @@ function navOpen(){
   el.click();
   navShown=false;navApply();
 }
+// Inside an overlay the ring steps through its header buttons (tabs, page, Close) in DOM order;
+// landing on a tab selects it, so Left/Right still switch league / forecast-radar.
+function navOvBtns(){
+  const ov=openOverlay&&$(openOverlay+'-overlay');
+  if(!ov)return [];
+  return Array.prototype.filter.call(ov.querySelectorAll('.overlay-actions button,.nfl-overlay-close'),navVisible);
+}
+function navOvEl(){
+  const b=navOvBtns(),a=document.activeElement;
+  if(b.indexOf(a)>=0)return a;
+  return b.find(x=>x.classList.contains('nfl-overlay-close'))||b[0]||null;
+}
+function navOvKey(k){
+  const el=navOvEl();
+  if(k==='enter'&&(!el||el.classList.contains('nfl-overlay-close'))){closeOpenOverlay();navShow();return;}
+  if(navShown&&el){
+    if(k==='enter')el.click();
+    else if(k==='left'||k==='right'){
+      const b=navOvBtns(),to=b[b.indexOf(el)+(k==='left'?-1:1)];
+      if(to){to.focus({preventScroll:true});if(to.closest('.league-toggle'))to.click();}
+    }
+  }
+  navShow();
+}
+document.addEventListener('mousedown',()=>document.body.classList.remove('nav-remote'),true);
 document.addEventListener('focusin',e=>{
   const k=navKeyOf(e.target);
   if(k)navKey=k;
@@ -4094,19 +4128,21 @@ try{
 document.addEventListener('keydown',e=>{
   if(navShown){clearTimeout(navTimer);navTimer=setTimeout(navHide,NAV_IDLE_MS);}
   const code=e.keyCode||e.which;
+  document.body.classList.toggle('nav-remote',code!==9);
   const isEsc=code===27||code===10009||e.key==='Escape'||e.key==='XF86Back';
   const isEnter=code===13||e.key==='Enter';
   const isLeft=code===37||e.key==='ArrowLeft';
   const isRight=code===39||e.key==='ArrowRight';
   const isNext=code===427||code===417||e.key==='ChannelUp'||e.key==='MediaFastForward';
   const isPrev=code===428||code===412||e.key==='ChannelDown'||e.key==='MediaRewind';
-  if(openOverlay==='nfl'&&(isLeft||isRight||isNext||isPrev)){e.preventDefault();setScoreboardLeague(isRight||isNext?'cfb':'nfl');return;}
-  if(openOverlay==='weather'&&(isLeft||isRight||isNext||isPrev)){e.preventDefault();setWeatherPage(isRight||isNext?'radar':'forecast');return;}
+  if(openOverlay==='nfl'&&(isNext||isPrev)){e.preventDefault();setScoreboardLeague(isNext?'cfb':'nfl');return;}
+  if(openOverlay==='weather'&&(isNext||isPrev)){e.preventDefault();setWeatherPage(isNext?'radar':'forecast');return;}
 
   const isUp=code===38||e.key==='ArrowUp';
   const isDown=code===40||e.key==='ArrowDown';
-  if(openOverlay==='nfl'&&(isUp||isDown)&&sbPageCount>1){e.preventDefault();shiftSbPage(isDown?1:-1);return;}
-  if(openOverlay&&(isEsc||isEnter)){e.preventDefault();closeOpenOverlay();navShow();return;}
+  if(openOverlay==='nfl'&&(isUp||isDown)&&sbPageCount>1){e.preventDefault();shiftSbPage(isDown?1:-1);navShow();return;}
+  if(openOverlay&&isEsc){e.preventDefault();closeOpenOverlay();navShow();return;}
+  if(openOverlay&&(isEnter||isLeft||isRight||isUp||isDown)){e.preventDefault();navOvKey(isEnter?'enter':isLeft?'left':isRight?'right':'other');return;}
   const isRefreshKey=e.key==='r'||e.key==='R'||code===403||e.key==='ColorF0Red'||e.key==='Red';
   if(!openOverlay&&isRefreshKey){e.preventDefault();manualRefresh();return;}
   if(isEnter&&document.activeElement===$('refresh-btn')){e.preventDefault();manualRefresh();return;}
