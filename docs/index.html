@@ -727,8 +727,8 @@
       <div class="spotlight" id="spotlight"><div class="spot-inner" id="spot-inner"></div><div class="spot-folio" id="spot-folio">SPOTLIGHT 01 / 03</div></div>
       <div id="market-grid" aria-label="Other quotes and indexes"></div>
     </section>
-    <section class="panel business-panel" id="news-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="news-overlay" aria-expanded="false" title="Open headlines" aria-label="Business sample headlines">
-      <div class="panel-head"><div><div class="panel-title">Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
+    <section class="panel business-panel" id="news-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="news-overlay" aria-expanded="false" title="Open headlines" aria-label="AI business sample headlines">
+      <div class="panel-head"><div><div class="panel-title">AI Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
       <div class="business-feature" id="feature"><div class="src" id="f-src"></div><div class="hd" id="f-hd"></div><div class="feature-bottom"><span>Today's reading <span class="feature-index" id="f-count">01 / 05</span></span><span>Rotates every 12s</span></div></div>
       <div id="list"></div>
     </section>
@@ -814,8 +814,8 @@
     <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="news-overlay-title">
       <div class="nfl-overlay-head">
         <div>
-          <div class="panel-title" id="news-overlay-title">Business <span style="color:var(--gold)">·</span> Headlines</div>
-          <div class="panel-deck" id="news-overlay-deck">BBC News · NPR</div>
+          <div class="panel-title" id="news-overlay-title">AI Business <span style="color:var(--gold)">·</span> Headlines</div>
+          <div class="panel-deck" id="news-overlay-deck">AI headlines</div>
         </div>
         <button type="button" class="nfl-overlay-close" id="news-overlay-close" aria-label="Close headlines">Close</button>
       </div>
@@ -876,7 +876,7 @@ const ALERTS={
      nfl: { provider: "<NFL standings/schedule API>", teams: ["PIT","MIN","GB"],
        fields: ["wins","losses","divisionRank","streak","nextOpponent","nextGameTime"],
        timezone: "America/New_York", refreshMin: 30 },
-     news:    { provider: "<RSS/news API>", feeds: ["<business RSS>"], count: 5, rotateSec: 12 },
+     news:    { provider: "RSS via scripts/fetcher.mjs", feeds: ["<AI business/tech RSS>"], count: 6, rotateSec: 12 },
      spotlight: { symbols: ["NVDA","TSLA","SPCX"], rotateSec: 15 }
    };
    async function refreshAll(){ ... fetch each, then call render*(data) below ... }
@@ -913,11 +913,11 @@ const DATA = {
     {n:"Nasdaq", s:"Composite", px:"23,146", ch:-0.22, sp:[23230,23210,23240,23200,23190,23205,23170,23160,23175,23146]}
   ],
   news: [
-    {src:"Markets",   hd:"Investors weigh a slower path for rate cuts as inflation cools unevenly"},
-    {src:"Technology",hd:"Chipmakers extend rally as data-center spending plans grow for next year"},
-    {src:"Energy",    hd:"Oil steadies after a volatile week as winter demand outlook improves"},
-    {src:"Real estate",hd:"Commercial lenders see refinancing pressure ease in the office sector"},
-    {src:"Economy",   hd:"Holiday retail forecasts point to modest gains in consumer spending"}
+    {src:"Chips",      hd:"AI chipmakers extend rally as data-center spending plans grow for next year"},
+    {src:"Models",     hd:"AI labs race to ship faster, cheaper models for enterprise customers"},
+    {src:"Infrastructure",hd:"Power demand from AI data centers reshapes utility investment plans"},
+    {src:"Funding",    hd:"Venture investors pour more money into AI startups despite valuation worries"},
+    {src:"Policy",     hd:"Regulators weigh new disclosure rules for companies deploying AI"}
   ]
 };
 const $=id=>document.getElementById(id);
@@ -1050,13 +1050,31 @@ function renderNewsList(k){
   $('list').innerHTML=rest.map(i=>`<div class="news-li" data-k="${i}"><i>0${i+1}</i><span data-full="${esc(DATA.news[i].hd)}">${esc(DATA.news[i].hd)}</span></div>`).join('');
   scheduleHeadlineClamp();
 }
+function newsAgo(iso){
+  if(!iso)return '';
+  var m=(Date.now()-new Date(iso).getTime())/60000;
+  if(isNaN(m))return '';
+  if(m<1)return 'just now';
+  if(m<60)return Math.floor(m)+'m ago';
+  if(m<48*60)return Math.floor(m/60)+'h ago';
+  return Math.floor(m/1440)+'d ago';
+}
+function newsSrcSummary(items){
+  var seen={},n=0,first='';
+  (items||[]).forEach(function(x){if(x.src&&!seen[x.src]){seen[x.src]=1;n++;if(!first)first=x.src;}});
+  return n>1?n+' sources':(first||'Headlines');
+}
+function newsSrcLabel(x){
+  var ago=newsAgo(x&&x.pub);
+  return (x&&x.src||'')+(ago?' \u00b7 '+ago:'');
+}
 function renderNews(items){
   renderNewsList(0);
   showNews(0,true);
 }
 function showNews(k,instant=false){
   const apply=()=>{
-    $('f-src').textContent=DATA.news[k].src;
+    $('f-src').textContent=newsSrcLabel(DATA.news[k]);
     $('f-hd').setAttribute('data-full',DATA.news[k].hd||'');
     $('f-hd').textContent=DATA.news[k].hd;
     $('f-count').textContent=`0${k+1} / ${String(DATA.news.length).padStart(2,'0')}`;
@@ -1329,11 +1347,10 @@ function applyNFL(f){
 function applyNews(n){
   if(!n?.asOf||!n.items?.length)return;
   const ao=asOf(n,3);
-  const items=n.items.slice(0,6).map(x=>({src:x.src,hd:x.hd}));
+  const items=n.items.slice(0,6).map(x=>({src:x.src,hd:x.hd,pub:x.pub}));
   if(changed('news',items)){DATA.news=items;newsIndex=0;renderNews(items);
-    document.querySelector('.business-panel').setAttribute('aria-label','Business headlines from BBC News and NPR');}
-  const srcs=[...new Set(items.map(x=>x.src))].join(' · ');
-  $('news-deck').textContent=`${srcs} · ${ao.text}`;
+    document.querySelector('.business-panel').setAttribute('aria-label','AI business and technology headlines');}
+  $('news-deck').textContent=newsSrcSummary(items)+' · '+ao.text;
 }
 const money=(v,dp=2)=>v.toLocaleString('en-US',{minimumFractionDigits:dp,maximumFractionDigits:dp});
 function applyStocks(st){
@@ -1575,7 +1592,7 @@ function applyLive(d){
   try{if(changed('rates',TAPE_RATES)){lastSig.mk=null;}}catch(e){}
   try{applyStocks(d.stocks);}catch(e){console.error('stocks',e);}
   try{checkMarketAlerts();scheduleScoreWatch();if(LIVE_DATA?.alerts)checkNwsBanner();}catch(e){console.error('alerts',e);}
-  const credits=['Weather: Open-Meteo','ESPN','BBC News','NPR'];
+  const credits=['Weather: Open-Meteo','ESPN','AI news: RSS'];
   if(d.weather?.credit&&d.weather.credit!=='Weather: Open-Meteo')credits[0]=d.weather.credit;
   if(d.stocks?.quotes?.NVDA?.px)credits.unshift('Quotes: Finnhub');
   const idxQuote=Object.values(d.stocks?.quotes||{}).find(q=>q.kind==='index');
@@ -3665,11 +3682,11 @@ function newsItems(){
 }
 function renderNewsOverlay(items,meta){
   const list=$('news-overlay-list');
-  const srcs=[...new Set((items||[]).map(x=>x.src).filter(Boolean))].join(' · ')||'Headlines';
+  var srcs=(items&&items.length?'AI business & tech · ':'')+newsSrcSummary(items);
   const as=meta?.asOf?` · as of ${fmtTime(meta.asOf)}`:'';
   $('news-overlay-deck').textContent=srcs+as;
   if(!items?.length){list.innerHTML='<div class="nfl-scoreboard sb-msg">Headlines unavailable right now</div>';return;}
-  list.innerHTML=items.map(x=>`<article class="news-full-item"><div class="news-full-meta"><div class="news-full-src">${esc(x.src||'')}</div><div class="news-full-time">${esc(newsTime(x.pub)||'')}</div></div><div><div class="news-full-hd">${esc(x.hd||'')}</div>${x.sum?`<div class="news-full-sum">${esc(x.sum)}</div>`:''}</div></article>`).join('');
+  list.innerHTML=items.map(x=>`<article class="news-full-item"><div class="news-full-meta"><div class="news-full-src">${esc(x.src||'')}</div><div class="news-full-time">${esc(newsAgo(x.pub)||'')}</div><div class="news-full-time">${esc(newsTime(x.pub)||'')}</div></div><div><div class="news-full-hd">${esc(x.hd||'')}</div>${x.sum?`<div class="news-full-sum">${esc(x.sum)}</div>`:''}</div></article>`).join('');
 }
 async function loadNewsOverlay(){
   let items=newsItems();

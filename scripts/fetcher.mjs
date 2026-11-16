@@ -435,36 +435,68 @@ function cfbScoreboardDue(sec, now, et) {
   return ageMin(sec.asOf, now) >= 6 * 60;
 }
 
-// ---------- headlines (BBC News + NPR RSS) ----------
+// ---------- headlines (AI business/tech: free RSS/Atom feeds) ----------
+// Google News items carry the real publisher in <source>; that name is shown instead.
 const FEEDS = [
-  { src: 'BBC News', url: 'https://feeds.bbci.co.uk/news/business/rss.xml' },
-  { src: 'NPR', url: 'https://feeds.npr.org/1006/rss.xml' }
+  { src: 'TechCrunch', url: 'https://techcrunch.com/category/artificial-intelligence/feed/' },
+  { src: 'The Verge', url: 'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml' },
+  { src: 'MIT Tech Review', url: 'https://www.technologyreview.com/topic/artificial-intelligence/feed' },
+  { src: 'Ars Technica', url: 'https://arstechnica.com/ai/feed/' },
+  { src: 'CNBC', url: 'https://www.cnbc.com/id/19854910/device/rss/rss.html' },
+  { src: 'Google News', gnews: true, url: 'https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q=' + encodeURIComponent(
+    '(AI OR "artificial intelligence" OR OpenAI OR Anthropic OR Nvidia) (site:reuters.com OR site:bloomberg.com OR site:wsj.com OR site:ft.com OR site:axios.com OR site:businessinsider.com OR site:fortune.com) when:2d') }
 ];
+const GNEWS_MAX = 4;
+export const NEWS_KIND = 'ai';
+// Case-sensitive acronyms are matched separately so "AI" doesn't hit "said"/"Thailand".
+const AI_ACRONYM = /\b(AI|A\.I\.|AGI|LLMs?|GPUs?|xAI)\b/;
+const AI_WORDS = /\b(artificial intelligence|machine learning|deep learning|generative|genai|openai|anthropic|chatgpt|gpt-?\d|claude|gemini|copilot|deepmind|mistral|perplexity|hugging ?face|grok|llama|nvidia|chatbots?|neural|large language models?|data ?cent(er|re)s?|hyperscalers?|superintelligence|agentic|ai agents?|sam altman|altman|dario amodei|jensen huang|tsmc|blackwell|coreweave|stargate|midjourney)\b/i;
+export const isAI = x => AI_ACRONYM.test(`${x.hd} ${x.sum}`) || AI_WORDS.test(`${x.hd} ${x.sum}`);
+const newsKey = hd => hd.toLowerCase().replace(/[^a-z0-9]/g, '');
 function decode(s) {
   return s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
     .replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
     .replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
-function parseRSS(xml, src) {
-  return [...xml.matchAll(/<item\b[\s\S]*?<\/item>/g)].map(m => {
-    const tag = n => (m[0].match(new RegExp(`<${n}[^>]*>([\\s\\S]*?)</${n}>`)) || [])[1];
-    const hd = decode(tag('title') || ''); const pub = tag('pubDate');
-    const rawSum = decode(tag('description') || tag('summary') || '');
-    const sum = rawSum && rawSum !== hd ? rawSum.replace(/\s+/g, ' ').trim().slice(0, 280) : '';
-    return { src, hd, sum, pub: pub ? new Date(decode(pub)).toISOString() : null };
+// Handles RSS <item> and Atom <entry> (The Verge).
+export function parseRSS(xml, src, gnews = false) {
+  return [...xml.matchAll(/<(item|entry)\b[\s\S]*?<\/\1>/g)].map(m => {
+    const tag = n => (m[0].match(new RegExp(`<${n}\\b[^>]*>([\\s\\S]*?)</${n}>`)) || [])[1];
+    let hd = decode(tag('title') || ''); const pub = tag('pubDate') || tag('published') || tag('updated') || tag('dc:date');
+    let itemSrc = src, sum = '';
+    if (gnews) {
+      const pubName = decode(tag('source') || '');
+      if (pubName) { itemSrc = pubName.replace(/\.com$/i, ''); if (hd.endsWith(' - ' + pubName)) hd = hd.slice(0, -(pubName.length + 3)).trim(); }
+    } else {
+      const rawSum = decode(tag('description') || tag('summary') || '').replace(/\s*(\[(…|&#8230;|\.\.\.)\]|Read More|The post .* appeared first on .*)$/i, '').trim();
+      sum = rawSum && rawSum !== hd ? rawSum.slice(0, 280) : '';
+    }
+    const d = pub ? new Date(decode(pub)) : null;
+    return { src: itemSrc, hd, sum, pub: d && !isNaN(d) ? d.toISOString() : null };
   }).filter(x => x.hd);
 }
-async function fetchNews() {
-  const results = await Promise.allSettled(FEEDS.map(async f => parseRSS(await getText(f.url, { accept: 'application/rss+xml' }), f.src)));
-  const failed = [], all = [];
-  results.forEach((r, i) => r.status === 'fulfilled' && r.value.length ? all.push(...r.value) : failed.push(`${FEEDS[i].src}: ${clean(r.reason?.message || 'no items')}`));
+async function fetchNews(now = new Date()) {
+  const results = await Promise.allSettled(FEEDS.map(async f => parseRSS(await getText(f.url, { accept: 'application/rss+xml, application/atom+xml, application/xml' }), f.src, f.gnews)));
+  const failed = [], all = [], feeds = [];
+  results.forEach((r, i) => {
+    if (r.status === 'fulfilled' && r.value.length) { all.push(...r.value.map(x => ({ ...x, gnews: !!FEEDS[i].gnews }))); feeds.push(FEEDS[i].src); }
+    else failed.push(`${FEEDS[i].src}: ${clean(r.reason?.message || 'no items')}`);
+  });
   if (!all.length) throw new Error(failed.join('; '));
-  const seen = new Set();
-  const items = all.sort((a, b) => (b.pub || '').localeCompare(a.pub || ''))
-    .filter(x => { const k = x.hd.toLowerCase().replace(/[^a-z0-9]/g, ''); if (seen.has(k)) return false; seen.add(k); return true; })
-    .slice(0, 12);
-  return { items, feedErrors: failed };
+  // Drop undated or future-dated (>1h) items and anything older than a week.
+  const fresh = x => x.pub && ageMin(x.pub, now) > -60 && ageMin(x.pub, now) < 7 * 24 * 60;
+  // Max 3 per outlet and GNEWS_MAX from Google News so one busy feed can't fill the whole card.
+  const seen = new Set(), perSrc = {};
+  let gn = 0;
+  const items = all.filter(x => fresh(x) && isAI(x))
+    .sort((a, b) => b.pub.localeCompare(a.pub))
+    .filter(x => { const k = newsKey(x.hd); if (seen.has(k)) return false; seen.add(k); return true; })
+    .filter(x => (perSrc[x.src] = (perSrc[x.src] || 0) + 1) <= 3 && (!x.gnews || ++gn <= GNEWS_MAX))
+    .slice(0, 10)
+    .map(({ gnews, ...x }) => x);
+  if (!items.length) throw new Error(`no AI headlines in ${all.length} items${failed.length ? '; ' + failed.join('; ') : ''}`);
+  return { kind: NEWS_KIND, items, feeds, feedErrors: failed };
 }
 
 // ---------- stocks (Finnhub) + indexes (Yahoo Finance / Stooq / Finnhub fund) ----------
@@ -939,10 +971,17 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     try { out.cfbScoreboard = ok(await fetchCFBScoreboard(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e) { out.cfbScoreboard = { ...(prev.cfbScoreboard || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
   }
-  if (force || sectionDue(prev.news, now, et, 'hourly')) {
+  const prevNewsAI = prev.news?.kind === NEWS_KIND;
+  if (force || !prevNewsAI || sectionDue(prev.news, now, et, 'hourly')) {
     ran.push('news');
-    try { out.news = ok(await fetchNews(), { asOf: nowIso, lastAttempt: nowIso, credit: 'BBC News · NPR' }); }
-    catch (e) { out.news = { ...(prev.news || {}), lastAttempt: nowIso, lastError: clean(e.message) }; }
+    try {
+      const n = await fetchNews(now);
+      out.news = ok(n, { asOf: nowIso, lastAttempt: nowIso, credit: n.feeds.join(' · ') });
+    } catch (e) {
+      // Last good AI items survive a failed fetch; older non-AI (BBC/NPR) items never do.
+      out.news = prevNewsAI ? { ...prev.news, lastAttempt: nowIso, lastError: clean(e.message) }
+        : { kind: NEWS_KIND, items: [], asOf: null, lastAttempt: nowIso, lastError: clean(e.message) };
+    }
   }
   if (force || sectionDue(prev.rates, now, et, 'daily6')) {
     ran.push('rates');
