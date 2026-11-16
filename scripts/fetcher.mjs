@@ -226,7 +226,11 @@ async function fetchNFL() {
     const record = st.overall || sched.team?.recordSummary;
     if (!record) throw new Error(`No record for ${t.code}`);
     let next = null;
-    const ev = (info.team?.nextEvent || [])[0];
+    // ESPN keeps last Sunday's final as nextEvent until midweek; fall back to the schedule's first unplayed game.
+    const evState = e => e?.competitions?.[0]?.status?.type?.state;
+    let ev = (info.team?.nextEvent || [])[0];
+    if (!ev || evState(ev) === 'post')
+      ev = (sched.events || []).find(e => evState(e) !== 'post' && Date.parse(e.date) > Date.now() - 4 * 3600e3);
     if (ev) {
       const comp = ev.competitions?.[0];
       const me = comp?.competitors?.find(c => c.team?.abbreviation === t.code);
@@ -1303,7 +1307,8 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     try { out.alerts = ok(await fetchNwsAlerts(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e) { out.alerts = { ...(prev.alerts || {}), lastAttempt: nowIso, lastError: `NWS: ${why(e)}` }; }
   }
-  if (force || sectionDue(prev.nfl, now, et, 'daily6')) {
+  const nflMissingNext = (prev.nfl?.teams || []).some(t => !t.next) && ageMin(prev.nfl.lastAttempt || prev.nfl.asOf, now) >= 60;
+  if (force || nflMissingNext || sectionDue(prev.nfl, now, et, 'daily6')) {
     ran.push('nfl');
     try { out.nfl = ok(await fetchNFL(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e) { out.nfl = { ...(prev.nfl || {}), lastAttempt: nowIso, lastError: `ESPN: ${clean(e.message)}` }; }
