@@ -1242,6 +1242,8 @@ function sectionDue(sec, now, et, rule) {
   if (failedRecently) return false;
   if (rule === 'daily6') return et.mins >= 360 && etParts(new Date(sec.asOf)).dateKey !== et.dateKey || ageMin(sec.asOf, now) > 26 * 60;
   if (rule === 'hourly') return ageMin(sec.asOf, now) >= 50;
+  // Hourly by age of the last success; the workflow is dispatched every 15 min.
+  if (rule === 'weather55') return ageMin(sec.asOf, now) >= 55;
   return false;
 }
 const ok = (data, extra) => ({ ...data, ...extra, lastError: null });
@@ -1294,7 +1296,7 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
   SECRET = key;
 
   // Weather: daily at 6 a.m. ET, retry hourly on failure; Open-Meteo then NWS.
-  if (force || sectionDue(prev.weather, now, et, 'daily6')) {
+  if (force || sectionDue(prev.weather, now, et, 'weather55')) {
     ran.push('weather');
     try { out.weather = ok(await weatherOpenMeteo(), { asOf: nowIso, lastAttempt: nowIso }); }
     catch (e1) {
