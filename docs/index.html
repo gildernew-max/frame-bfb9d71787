@@ -293,22 +293,9 @@
   .quote-card.upcoming .ipo-note{font-size:30px;color:#DBC9A5;white-space:nowrap;letter-spacing:-.01em}
   .quote-card,.spotlight{cursor:pointer}
   .quote-card:focus,.spotlight:focus{outline:none}
-  /* Futures strip: the grid tightens only while it is shown, so the panel height never changes. */
-  .markets-panel.has-futures #market-grid{grid-template-rows:repeat(2,178px);margin-top:16px}
-  .markets-panel.has-futures .quote-card{padding:19px 24px 12px}
-  .futures-row{display:grid;grid-template-columns:auto repeat(4,minmax(0,1fr));align-items:center;
-    height:84px;margin-top:10px;padding-top:8px;border-top:1px solid var(--hair)}
-  .futures-row[hidden]{display:none}
-  .fut-head{padding-right:28px;line-height:1.1;white-space:nowrap}
-  .fut-head .kicker{font-size:30px}
-  .fut-head .fut-asof{font-size:30px;color:var(--soft);letter-spacing:.06em;margin-top:3px}
-  .fut-item{min-width:0;padding-left:24px;border-left:1px solid var(--hair);overflow:hidden;white-space:nowrap}
-  .fut-top{display:flex;align-items:baseline;gap:14px}
-  .fut-sym{font-size:30px;letter-spacing:.12em;color:var(--gold);font-weight:500}
-  .fut-px{font:300 40px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
-    font-feature-settings:"tnum" 1,"lnum" 1}
-  .fut-chg{font-size:30px;font-weight:500;line-height:1.1;margin-top:3px;font-feature-settings:"tnum" 1,"lnum" 1}
-  .fut-chg.up{color:var(--up)}.fut-chg.down{color:var(--down)}
+  .quote-futures .fwd-kind{color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-right:10px}
+  .quote-card .quote-bottom .fwd-pts{font-size:30px;font-weight:500;white-space:nowrap;font-feature-settings:"tnum" 1,"lnum" 1}
+  .fwd-pts.up{color:var(--up)}.fwd-pts.down{color:var(--down)}
   .stock-body{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,0.9fr);gap:48px}
   .stock-main{min-width:0;min-height:0;display:flex;flex-direction:column;gap:28px}
   .stock-hero{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
@@ -802,9 +789,7 @@
     <section class="panel markets-panel" aria-label="Markets, example data">
       <div class="panel-head"><div><div class="panel-title">Markets</div><div class="panel-deck" id="mk-deck">Friday close · example data</div></div><span class="panel-number">04 / WATCHLIST</span></div>
       <div class="spotlight" id="spotlight"><div class="spot-inner" id="spot-inner"></div><div class="spot-folio" id="spot-folio">SPOTLIGHT 01 / 03</div></div>
-      <div id="market-grid" aria-label="Other quotes and indexes"></div>
-      <div class="futures-row" id="futures-row" hidden aria-label="Equity index futures"></div>
-    </section>
+      <div id="market-grid" aria-label="Other quotes and indexes"></div>    </section>
     <section class="panel business-panel" id="news-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="news-overlay" aria-expanded="false" title="Open headlines" aria-label="AI business sample headlines">
       <div class="panel-head"><div><div class="panel-title">AI Business</div><div class="panel-deck" id="news-deck">Sample headlines</div></div><span class="panel-number">05 / EDITION</span></div>
       <div class="business-feature" id="feature"><div class="src" id="f-src"></div><div class="hd" id="f-hd"></div><div class="feature-bottom"><span>Today's reading <span class="feature-index" id="f-count">01 / 05</span></span><span>Rotates every 12s</span></div></div>
@@ -1127,7 +1112,7 @@ function quoteCard(q){
   if(q.pending)return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s}</span><span class="name">${q.n}</span></div><div class="quote-value">—</div><div class="quote-bottom"><span class="hint">${q.hint}</span></div></div>`;
   if(q.upcoming)return `<div ${attrs}><div class="quote-top"><span class="symbol">ANT</span><span class="upcoming-pill">Upcoming</span></div><div class="quote-value">Anthropic</div><div class="ipo-note">${q.note}</div></div>`;
   const fut=q.hintHtml?`<div class="quote-futures">${q.hintHtml}</div>`:'';
-  const hint=fut?'':`<span class="hint">${q.hint||'Sample close'}</span>`;
+  const hint=fut?(q.ptsHtml||''):`<span class="hint">${q.hint||'Sample close'}</span>`;
   return `<div ${attrs}><div class="quote-top"><span class="symbol">${q.s==='Composite'?'NASDAQ':q.s}</span><span class="name">${q.s==='Composite'?'Composite':q.n}</span></div><div class="quote-value">${fmtPrice(q)}</div>${fut}<div class="quote-bottom">${changePill(q)}${hint}</div></div>`;
 }
 const spotSymbols=['NVDA','TSLA','SPCX']; let spotIndex=0;
@@ -1553,84 +1538,59 @@ const money=(v,dp=2)=>v.toLocaleString('en-US',{minimumFractionDigits:dp,maximum
 function applyStocks(st){
   const open=marketOpenNow(LIVE_DATA);
   $('ms-text').textContent=open?'Markets open · closes 4:00':`Markets closed · ${nextOpenText()}`;
-  const futRow=renderFuturesRow(open);
-  const qs=st?.quotes||{}, hasQuotes=['NVDA','TSLA','SPCX'].every(k=>qs[k]?.px);
+  const qs=(st&&st.quotes)||{}, hasQuotes=['NVDA','TSLA','SPCX'].every(k=>qs[k]&&qs[k].px);
   if(!hasQuotes){
-    if(st?.status==='key-pending'){$('ms-note').textContent='quotes pending';$('mk-deck').textContent='Finnhub key pending · example data';}
+    if(st&&st.status==='key-pending'){$('ms-note').textContent='quotes pending';$('mk-deck').textContent='Finnhub key pending · example data';}
     return;
   }
   const maxH=open?0.75:96, ao=asOf(st,maxH);
   const lastT=Math.max(...Object.values(qs).filter(q=>q.t).map(q=>q.t))*1000;
   const closeLabel=`${new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'long'}).format(new Date(lastT))} close`;
   const hint=open?`as of ${fmtTime(st.asOf)}`:'Last close';
+  const fwdKinds=[];
   const card=(key,base)=>{const q=qs[key];if(!q||!q.px)return {...base,pending:true,hint:'Quote pending'};
-    const fn=!open&&!futRow&&q.kind==='index'?futuresNote(key,q):null;
-    const hist=(st.history?.[key]||[]).map(p=>p.c);
+    const hist=((st.history&&st.history[key])||[]).map(p=>p.c);
     const sp=hist.length>=2?hist:[q.pc||q.px,q.px];
     const isIdx=q.kind==='index';
-    return {key,n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch??0,sp,dollar:!isIdx,hint,hintHtml:fn,
+    const c={key,n:q.n,s:isIdx&&key==='NASDAQ'?'Composite':q.s,px:money(q.px,2),ch:q.ch==null?0:q.ch,sp,dollar:!isIdx,hint,
       series:isIdx?null:spotSeries(st,key,q),
-      chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};};
+      chartLabel:hist.length>=2?`Trend · ${hist.length} quotes`:'Prior close → last'};
+    const fw=open?null:forwardQuote(key,q);
+    if(fw){
+      if(fwdKinds.indexOf(fw.kind)<0)fwdKinds.push(fw.kind);
+      const up=fw.d>=0;
+      c.px=money(fw.px,2);c.ch=fw.pct;c.hint=`${fw.kind} ${fw.when}`;
+      c.hintHtml=`<span class="fwd-kind">${fw.kind}</span>${fw.when}`;
+      c.ptsHtml=`<span class="fwd-pts ${up?'up':'down'}">${up?'+':'−'}${money(Math.abs(fw.d),2)}</span>`;
+    }
+    return c;};
   const ant=qs.ANT&&qs.ANT.upcoming===false&&qs.ANT.px?card('ANT',{n:'Anthropic',s:'ANT'}):{key:'ANT',n:'Anthropic',s:'ANT',upcoming:true,note:'IPO Nov 19 · $70–78 range'};
   const quotes=[card('NVDA',{n:'NVIDIA',s:'NVDA'}),card('TSLA',{n:'Tesla',s:'TSLA'}),card('SPCX',{n:'SpaceX',s:'SPCX'}),ant,{gap:true},
     card('DOW',{n:'Dow Jones',s:'DJIA'}),card('SPX',{n:'S&P 500',s:'SPX'}),card('NASDAQ',{n:'Composite',s:'Composite'})];
   if(changed('mk',quotes)){DATA.quotes=quotes;renderMarkets();renderTape();
     document.querySelector('.markets-panel').setAttribute('aria-label','Markets');
     document.querySelector('.ticker-footer').setAttribute('aria-label','Scrolling market ticker');}
-  $('ms-note').textContent=open?ao.text:'last close';
-  $('mk-deck').textContent=`${open?'Live · 15-min quotes':closeLabel}${ao.stale?' · '+ao.text:''}`;
+  $('ms-note').textContent=open?ao.text:(fwdKinds.length?fwdKinds[0]:'last close');
+  $('mk-deck').textContent=open?`Live · 15-min quotes${ao.stale?' · '+ao.text:''}`:
+    (fwdKinds.length?fwdKinds.join(' · '):`${closeLabel}${ao.stale?' · '+ao.text:''}`);
 }
-// Futures-implied open for index cards while the cash market is closed. Hidden when
-// missing, invalid, from another session, or stale while futures are trading.
-function futuresTradingNow(){
-  const e=etNow(); const wd=e.wd, m=e.mins;
-  if(wd==='Sat')return false;
-  if(wd==='Sun')return m>=1080;
-  if(wd==='Fri')return m<1020;
-  return m<1020||m>=1080;
-}
-function futuresNote(key,q){
-  const f=LIVE_DATA?.futures, it=f?.items?.[key];
-  if(!f||!it||it.valid===false||!Number.isFinite(it.changePct)||!Number.isFinite(it.expectedOpen))return null;
-  if(it.indexClose&&Math.abs(it.indexClose-q.px)>0.01)return null;           // futures computed against a different close
-  if(q.t&&it.settleDate&&new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(q.t*1000))!==it.settleDate)return null;
-  const trading=futuresTradingNow(), lastAgeMin=(Date.now()-it.lastTime*1000)/6e4;
-  if(trading&&(lastAgeMin>40||ageH(f.asOf)>0.75))return null;              // stale while trading: hide
-  const pct=`${it.changePct>=0?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%`;
-  const label='Futures';
-  return `Futures ${pct}`;
-}
-// Pre-open futures strip at the bottom of the Markets panel: change vs the prior 4:00 pm ET
-// settle. Hidden during the cash session, when stale while futures trade, or when no contract
-// has valid data from the current index session. Returns whether the strip is shown.
-const FUTURES_ROW=[['SPX','ES'],['NASDAQ','NQ'],['DOW','YM'],['RUT','RTY']];
-function renderFuturesRow(open){
-  const row=$('futures-row'), panel=document.querySelector('.markets-panel');
-  const f=LIVE_DATA?.futures, qs=LIVE_DATA?.stocks?.quotes||{}, trading=futuresTradingNow();
-  const etKey=t=>new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(t));
-  const items=open||!f?.items||(trading&&ageH(f.asOf)>1.5)?[]:FUTURES_ROW.map(([key,label])=>{
-    const it=f.items[key], q=qs[key==='RUT'?'SPX':key];
+// While the regular session is closed, cards show the newest forward-looking price instead of the
+// last close: index futures (change vs the prior 4:00 pm ET settle) or a stock's pre-market /
+// after-hours price (change vs the prior regular close). Null means fall back to the last close.
+const etDayKey=ms=>new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date(ms));
+const fwdWhen=ms=>`${etDayKey(ms)===etNow().key?'':fmtDay(ms)+' '}${fmtTime(ms)}`;
+function forwardQuote(key,q){
+  const L=LIVE_DATA||{};
+  if(q.kind==='index'){
+    const it=L.futures&&L.futures.items&&L.futures.items[key];
     if(!it||it.valid===false||![it.last,it.settle,it.changePct,it.lastTime].every(Number.isFinite))return null;
-    if(q?.t&&it.settleDate&&etKey(q.t*1000)!==it.settleDate)return null;
-    if(trading&&(Date.now()-it.lastTime*1000)/6e4>90)return null;
-    return {...it,label};
-  }).filter(Boolean);
-  if(!items.length){
-    if(!row.hidden){row.hidden=true;row.innerHTML='';panel.classList.remove('has-futures');lastSig.fut=null;}
-    return false;
+    if(q.t&&it.settleDate&&etDayKey(q.t*1000)!==it.settleDate)return null;   // settle from another session
+    return {kind:'Futures',px:it.last,d:Number.isFinite(it.change)?it.change:it.last-it.settle,pct:it.changePct,when:fwdWhen(it.lastTime*1000)};
   }
-  const lastT=Math.max(...items.map(it=>it.lastTime))*1000;
-  const asof=`${etKey(lastT)===etNow().key?'':fmtDay(lastT)+' '}${fmtTime(lastT)} ET`;
-  const cells=items.map(it=>{
-    const dp=it.last>=10000?0:2, ch=Number.isFinite(it.change)?it.change:it.last-it.settle, up=ch>=0;
-    const chDp=dp===0&&Math.abs(ch%1)<1e-6?0:2;
-    return `<div class="fut-item" aria-label="${esc(it.name||it.label)} futures"><div class="fut-top"><span class="fut-sym">${it.label}</span><span class="fut-px">${money(it.last,dp)}</span></div>`+
-      `<div class="fut-chg ${up?'up':'down'}">${up?'▲':'▼'} ${money(Math.abs(ch),chDp)}&nbsp; ${up?'+':'−'}${Math.abs(it.changePct).toFixed(2)}%</div></div>`;
-  });
-  const html=`<div class="fut-head"><div class="kicker">Futures</div><div class="fut-asof">${asof}</div></div>${cells.join('')}`;
-  if(changed('fut',html))row.innerHTML=html;
-  row.hidden=false;panel.classList.add('has-futures');
-  return true;
+  const it=L.extended&&L.extended.items&&L.extended.items[key];
+  if(!it||![it.price,it.ref,it.time].every(Number.isFinite)||!(it.ref>0))return null;
+  if(q.t&&it.time<q.t-60)return null;                                        // older than the last regular close
+  return {kind:it.session==='pre'?'Pre-market':'After hours',px:it.price,d:it.price-it.ref,pct:(it.price-it.ref)/it.ref*100,when:fwdWhen(it.time*1000)};
 }
 // Clock-panel Treasury chart. Switch the displayed series by changing `id` and labels
 // (fetcher already stores DGS7 history alongside DGS10).

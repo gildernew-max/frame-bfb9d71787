@@ -1048,6 +1048,30 @@ function lastCashCloseDateKey(et) {
   return dk;
 }
 
+// ---------- extended hours (Yahoo chart API with includePrePost, no key) ----------
+// Pre-market 4:00-9:30 ET, after hours 16:00-20:00 ET. The newest bar is used only when it
+// falls in one of those windows; the reference is the regular close that precedes it.
+const EXT_SYMS = ['NVDA', 'TSLA', 'SPCX', 'ANT'];
+export function extSession(tSec) {
+  const { weekday, mins } = etParts(new Date(tSec * 1000));
+  if (!isWeekday(weekday)) return null;
+  if (mins >= 240 && mins < 570) return 'pre';
+  if (mins >= 960 && mins < 1200) return 'post';
+  return null;
+}
+async function fetchExtendedItem(sym) {
+  const result = await yahooChartResult(sym, 'interval=5m&range=5d&includePrePost=true');
+  const ts = result.timestamp || [];
+  const closes = result.indicators?.quote?.[0]?.close || [];
+  let i = ts.length - 1;
+  while (i >= 0 && !(closes[i] > 0)) i--;
+  if (i < 0) throw new Error('Yahoo: no bars');
+  const time = ts[i], price = closes[i], session = extSession(time);
+  const ref = result.meta?.regularMarketPrice, refTime = result.meta?.regularMarketTime;
+  if (!session || !(ref > 0) || !(refTime > 0) || refTime >= time) return null;
+  return { session, price, time, ref, refTime, change: price - ref, changePct: (price - ref) / ref * 100 };
+}
+
 // ---------- orchestration ----------
 function sectionDue(sec, now, et, rule) {
   if (!sec || !sec.asOf) return true;
@@ -1257,6 +1281,21 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
     catch (e) { stocks.details = ps.details || stocks.details || {}; }
   }
   out.stocks = { provider: 'Finnhub', ...stocks };
+
+  // Extended-hours stock prices: every run (15-min cron) during pre-market and after hours,
+  // plus one catch-up shortly after each window so the last bar is captured.
+  const prevExt = prev.extended || {};
+  const extWindow = weekday && ((et.mins >= 240 && et.mins < 575) || (et.mins >= 960 && et.mins < 1215));
+  if (force || !prevExt.asOf || (extWindow && ageMin(prevExt.asOf, now) >= 12)) {
+    ran.push('extended');
+    const items = {}, symbolErrors = [];
+    for (const sym of EXT_SYMS) {
+      if (sym === 'ANT' && out.stocks.quotes?.ANT?.upcoming !== false) continue;
+      try { const it = await fetchExtendedItem(sym); if (it) items[sym] = it; else if (prevExt.items?.[sym]) items[sym] = prevExt.items[sym]; }
+      catch (e) { symbolErrors.push(`${sym}: ${why(e)}`); if (prevExt.items?.[sym]) items[sym] = prevExt.items[sym]; }
+    }
+    out.extended = { provider: 'Yahoo Finance', asOf: nowIso, lastAttempt: nowIso, items, ...(symbolErrors.length ? { symbolErrors } : {}) };
+  }
 
   // Futures ("expected open" note): only while the cash market is closed; never during the session.
   const prevFut = prev.futures || {};
