@@ -1,0 +1,101 @@
+(function () {
+  var DASHBOARD = 'https://gildernew-max.github.io/frame-bfb9d71787/';
+  var CHECK_URL = DASHBOARD + 'data.json';
+  var HANDOFF_DELAY_MS = 3000;
+  var RETRY_MS = 30000;
+
+  var statusEl = document.getElementById('status');
+  var logEl = document.getElementById('log');
+  var leaving = false;
+
+  function log(msg) {
+    logEl.appendChild(document.createTextNode(msg + '\n'));
+  }
+  function setStatus(msg) {
+    statusEl.textContent = msg;
+  }
+
+  window.onerror = function (msg, src, line) {
+    log('JS error: ' + msg + ' (' + (src || '?') + ':' + (line || '?') + ')');
+  };
+
+  log('Screen ' + window.innerWidth + ' x ' + window.innerHeight +
+      ' (device ' + screen.width + ' x ' + screen.height + ')');
+  log('Browser ' + navigator.userAgent);
+
+  try {
+    if (window.webapis && webapis.appcommon && webapis.appcommon.setScreenSaver) {
+      webapis.appcommon.setScreenSaver(webapis.appcommon.AppCommonScreenSaverState.SCREEN_SAVER_OFF);
+      log('Screensaver: off');
+    } else {
+      log('Screensaver: webapis not available');
+    }
+  } catch (e) {
+    log('Screensaver: ' + e.message);
+  }
+
+  try {
+    if (window.tizen && tizen.tvinputdevice) {
+      var keys = ['MediaPlayPause', 'MediaPlay'];
+      for (var i = 0; i < keys.length; i++) {
+        try { tizen.tvinputdevice.registerKey(keys[i]); } catch (e1) {}
+      }
+    }
+  } catch (e2) {}
+
+  document.addEventListener('keydown', function (ev) {
+    var k = ev.keyCode;
+    if (k === 10009) {
+      ev.preventDefault();
+    } else if (k === 13 || k === 415 || k === 10252) {
+      goToDashboard();
+    }
+  });
+
+  function goToDashboard() {
+    if (leaving) { return; }
+    leaving = true;
+    setStatus('Opening dashboard\u2026');
+    window.location.replace(DASHBOARD + '?t=' + new Date().getTime());
+  }
+
+  function checkNetwork() {
+    setStatus('Checking internet\u2026');
+    var done = false;
+    var xhr = new XMLHttpRequest();
+    var timer = setTimeout(function () {
+      if (done) { return; }
+      done = true;
+      try { xhr.abort(); } catch (e) {}
+      waitAndRetry('timed out');
+    }, 15000);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState !== 4 || done) { return; }
+      done = true;
+      clearTimeout(timer);
+      if (xhr.status >= 200 && xhr.status < 400) {
+        log('Internet check: OK (' + xhr.status + ')');
+        setStatus('Opening dashboard in ' + (HANDOFF_DELAY_MS / 1000) + ' s (press Enter to go now)');
+        setTimeout(goToDashboard, HANDOFF_DELAY_MS);
+      } else {
+        waitAndRetry('HTTP ' + xhr.status);
+      }
+    };
+    try {
+      xhr.open('GET', CHECK_URL + '?t=' + new Date().getTime(), true);
+      xhr.send();
+    } catch (e) {
+      done = true;
+      clearTimeout(timer);
+      waitAndRetry(e.message);
+    }
+  }
+
+  function waitAndRetry(reason) {
+    log('Internet check failed: ' + reason);
+    setStatus('Waiting for the network\u2026 retrying in ' + (RETRY_MS / 1000) + ' s');
+    setTimeout(checkNetwork, RETRY_MS);
+  }
+
+  checkNetwork();
+})();

@@ -4,7 +4,8 @@ The app is a full-screen Tizen TV web app. It shows a local start card, then ope
 https://gildernew-max.github.io/frame-bfb9d71787/ as the main page (no iframe).
 
 - **App ID:** `FrameDash1.MorningBoard` (package `FrameDash1`). Use this for `tizen run` and Home Assistant.
-- **Source:** `app/` contains `config.xml`, `index.html` and `icon.png`.
+- **Source:** `app/` contains `config.xml`, `index.html`, `style.css`, `main.js` and `icon.png`.
+- **No inline CSS or JS in `app/`.** On Tizen 10 the TV enforces a `script-src 'self'; style-src 'self'` policy on this app, so inline `<style>`, `<script>`, `style=` and `onclick=` are silently blocked and the screen stays black. Put new code in `style.css` / `main.js`.
 - **Test app:** `hello/` is a plain red page, App ID `FrameHelo1.HelloRed`. Use it to prove the TV draws a sideloaded web app at all.
 - The TV in these steps is at **192.168.68.53**.
 
