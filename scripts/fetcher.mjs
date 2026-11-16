@@ -664,6 +664,55 @@ async function fetchWorld(now) {
   return { items, feedErrors: failed };
 }
 
+// ---------- Top US News: geopolitical stories (AI card's second view) ----------
+// 7 days of world / foreign-policy stories from US-facing world desks. The ticker's GEO_RE /
+// NOT_GEO_RE filter decides first; on top of that a headline must carry a hard geopolitical term,
+// or a foreign place together with a political one, so domestic politics, disasters, sports,
+// business and opinion stay out.
+const WORLD_NEWS_FEEDS = [
+  { src: 'Google News', gnews: true, url: 'https://news.google.com/rss/headlines/section/topic/WORLD?hl=en-US&gl=US&ceid=US:en' },
+  { src: 'AP (Google News)', gnews: true, url: GN('site:apnews.com/article (world OR war OR sanctions OR diplomacy OR election) when:7d') },
+  { src: 'Reuters (Google News)', gnews: true, url: GN('site:reuters.com/world when:7d') },
+  { src: 'WSJ (Google News)', gnews: true, url: GN('site:wsj.com/world when:7d') },
+  { src: 'The New York Times', url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml' },
+  { src: 'The Washington Post', url: 'https://feeds.washingtonpost.com/rss/world' },
+  { src: 'NPR', url: 'https://feeds.npr.org/1004/rss.xml' },
+  { src: 'BBC News', url: 'https://feeds.bbci.co.uk/news/world/rss.xml' },
+  { src: 'Politico', url: 'https://rss.politico.com/defense.xml' },
+  { src: 'Foreign Policy', url: 'https://foreignpolicy.com/feed/' },
+  { src: 'CBS News', url: 'https://www.cbsnews.com/latest/rss/world' },
+  { src: 'NBC News', url: 'https://feeds.nbcnews.com/nbcnews/public/world' },
+  { src: 'ABC News', url: 'https://abcnews.go.com/abcnews/internationalheadlines' }
+];
+const WORLD_CAP = 30, WORLD_PER_SRC = 6;
+const GEO_HARD = /\b(wars?|ceasefire|truce|troops|military|army|navy|missiles?|drones?|air ?strikes?|shelling|invasion|invade\w*|offensive|bomb(s|ing|ings|ed)?|hostages?|rebels?|militants?|insurgen\w*|coup|sanction\w*|tariffs?|trade (war|talks|deal|dispute|truce)|embargo|export controls|diplomat\w*|summit|peace (talks|deal|plan|process|agreement)|treaty|envoy|ambassadors?|foreign (minister|ministry|policy|secretary)|secretary of state|state department|pentagon|defen[cs]e (secretary|minister|ministry|department|pact|spending)|nato|united nations|u\.n\.|security council|g7|g20|kremlin|nuclear|refugees?|humanitarian|genocide|annex\w*|espionage|spy|spies)\b/i;
+const GEO_PLACE = /\b(ukrain\w*|russia\w*|putin|zelensk\w*|kyiv|moscow|crimea|gaza|israel\w*|netanyahu|hamas|hezbollah|lebanon|beirut|iran\w*|tehran|houthis?|yemen|syria\w*|iraq\w*|afghan\w*|taliban|pakistan\w*|india|indian|modi|china|chinese|beijing|xi|taiwan\w*|north korea\w*|south korea\w*|pyongyang|seoul|japan\w*|tokyo|philippine\w*|vietnam\w*|myanmar|venezuela\w*|maduro|cuba\w*|mexic\w*|canad\w*|brazil\w*|argentin\w*|colombia\w*|haiti\w*|panama|sudan\w*|ethiopia\w*|somalia|congo\w*|nigeria\w*|sahel|libya\w*|egypt\w*|saudi\w*|qatar\w*|emirates|turkey|turkish|erdogan|europe\w*|eu|brussels|britain|british|uk|london|france|french|macron|paris|german\w*|berlin|poland|polish|hungar\w*|serbia\w*|kosovo|baltic|greenland|denmark|armenia\w*|azerbaijan\w*|belarus\w*|west bank|middle east|africa\w*|latin america|asia\w*|pacific)\b/i;
+const GEO_POLITICAL = /\b(president|prime minister|premier|minister|government|parliament|elections?|votes?|voters|referendum|protests?|protesters|opposition|crackdown|regime|leaders?|talks|deal|visit|meets|meeting|aid|deport\w*|migra\w*|asylum|border|arrest\w*|jail\w*|sentenced|court|trial|rights|dissidents?|unrest|clashes|killed|attacks?|violence|security|intelligence|alliance|allies|trade|tariff|trump|white house|rubio|hegseth|vance|administration|congress|senate|lawmakers)\b/i;
+const NOT_WORLD = /\b(opinion|editorial|op-ed|letters to|recipe|travel|films?|movies?|tv|music|album|concert|celebrit\w*|fashion|olympic\w*|world cup|premier league|grand prix|tournament|box office|royal (wedding|baby|family)|prince harry|meghan|princess|horoscope|crossword|wordle|weather|forecast|earthquake|quake|volcano|hurricane|typhoon|wildfire)\b/i;
+const NOT_WORLD_URL = /\/(opinion|opinions|sport|sports|entertainment|culture|arts|business|markets|tech|technology|science|health|travel|food|style|lifestyle|video|videos|podcasts?|interactive)\//i;
+export function isGeopolitical(x) {
+  const hd = x.hd || '';
+  if (!GEO_RE.test(hd) || NOT_GEO_RE.test(hd) || NOT_WORLD.test(hd) || NOT_WORLD_URL.test(x.url || '')) return false;
+  return GEO_HARD.test(hd) || (GEO_PLACE.test(hd) && GEO_POLITICAL.test(hd));
+}
+async function fetchWorldNews(now, prevItems = []) {
+  const results = await Promise.allSettled(WORLD_NEWS_FEEDS.map(async f => parseRSS(await getText(f.url, browserRss()), f.src, f.gnews)));
+  const failed = [], all = [], feeds = [];
+  results.forEach((r, i) => {
+    const f = WORLD_NEWS_FEEDS[i];
+    if (r.status === 'fulfilled' && r.value.length) { all.push(...r.value); feeds.push(f.src.replace(/ \(Google News\)$/, '')); }
+    else failed.push(`${f.src}: ${clean(r.reason?.message || 'no items')}`);
+  });
+  if (!all.length) throw new Error(failed.join('; '));
+  const perSrc = {};
+  const items = dedupeStories([...all, ...prevItems.filter(x => x && x.hd)].filter(x => freshStory(x, now) && isGeopolitical(x) && !isJunk(x)))
+    .filter(x => (perSrc[x.src] = (perSrc[x.src] || 0) + 1) <= WORLD_PER_SRC)
+    .slice(0, WORLD_CAP)
+    .map(compact);
+  if (!items.length) throw new Error(`no geopolitical stories in ${all.length} items${failed.length ? '; ' + failed.join('; ') : ''}`);
+  return { items, feeds: [...new Set(feeds)], feedErrors: failed };
+}
+
 // ---------- top movers (Yahoo Finance predefined screeners) ----------
 const MOVER_MIN_CAP = 2e9;
 async function yahooScreener(scrId) {
@@ -1291,6 +1340,17 @@ export async function runFetch(prevData = {}, env = {}, opts = {}) {
       ran.push('stockNews');
       try { out.stockNews = ok(await fetchStockNews(psn, key, now), { asOf: nowIso, lastAttempt: nowIso }); }
       catch (e) { out.stockNews = { ...psn, lastAttempt: nowIso, lastError: why(e) }; }
+    }
+  }
+  // Top US News (geopolitical): every ~25 min from 6 a.m. to 11 p.m. ET, hourly overnight.
+  {
+    const pw = prev.worldNews || {};
+    const day = et.mins >= 360 && et.mins < 1380;
+    const due = force || !pw.asOf || (pw.lastError ? ageMin(pw.lastAttempt, now) >= 30 : ageMin(pw.asOf, now) >= (day ? 25 : 55));
+    if (due) {
+      ran.push('worldNews');
+      try { out.worldNews = ok(await fetchWorldNews(now, pw.items || []), { asOf: nowIso, lastAttempt: nowIso }); }
+      catch (e) { out.worldNews = { ...pw, lastAttempt: nowIso, lastError: why(e) }; }
     }
   }
   if (force || sectionDue(prev.world, now, et, 'hourly')) {
