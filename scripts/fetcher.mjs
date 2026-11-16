@@ -456,7 +456,7 @@ const FEEDS = [
   { src: 'Bloomberg (Google News)', gnews: true, url: GN(`${AI_Q} site:bloomberg.com when:7d`) },
   { src: 'Axios (Google News)', gnews: true, url: GN(`${AI_Q} site:axios.com when:7d`) }
 ];
-const STORY_DAYS = 7, AI_CAP = 30, AI_PER_SRC = 6, GNEWS_MAX = 12, SUM_MAX = 400;
+const STORY_DAYS = 7, AI_CAP = 30, AI_PER_SRC = 6, GNEWS_MAX = 12, SUM_MAX = 600;
 const RSS_ACCEPT = 'application/rss+xml, application/atom+xml, application/xml';
 export const NEWS_KIND = 'ai';
 // Case-sensitive acronyms are matched separately so "AI" doesn't hit "said"/"Thailand".

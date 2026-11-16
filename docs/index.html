@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <meta name="theme-color" content="#101114">
-<title>Frame · Morning Board</title>
+<title>Frame · Daybreak</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
@@ -302,6 +302,12 @@
   .stock-px{font:300 120px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;
     font-feature-settings:"tnum" 1,"lnum" 1}
   .stock-hero .change-pill{font-size:36px;padding:12px 18px}
+  .stock-hero-l{min-width:0}
+  .stock-hero-r{display:flex;align-items:center;gap:24px;flex:none;padding-bottom:6px}
+  .stock-hero-r .fwd-pts{font-size:36px;font-weight:500;white-space:nowrap;font-feature-settings:"tnum" 1,"lnum" 1}
+  .stock-kind{font-size:30px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:14px;white-space:nowrap}
+  .stock-kind .fwd-kind{color:var(--gold);margin-right:14px}
+  .stock-prior{margin-top:14px;font-size:32px;color:var(--muted);font-weight:400;white-space:nowrap;font-feature-settings:"tnum" 1,"lnum" 1}
   .stock-chart-wrap{flex:1;min-height:0;position:relative;border:1px solid var(--hair);border-radius:18px;
     background:var(--panel);padding:28px 28px 12px}
   .stock-chart-inner{position:absolute;inset:28px 28px 12px;display:grid;
@@ -595,7 +601,7 @@
   .story-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:16px 20px 10px;flex:none;
     font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--soft)}
   .story-head .lbl{color:var(--gold)}
-  .story-list{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:none;padding:4px 4px 8px}
+  .story-list{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;position:relative;scrollbar-width:none;padding:0}
   .story-list::-webkit-scrollbar{display:none}
   .story-item{position:relative;padding:18px 22px 20px;border-top:1px solid var(--hair);border-radius:14px;cursor:pointer;outline:none}
   .story-item:first-child{border-top-color:transparent}
@@ -612,33 +618,23 @@
   .story-list.wide .story-meta .sep{display:none}
   .story-list.wide .story-item .hd{margin-top:0;font-size:44px;line-height:1.2;max-height:calc(2 * 1.2em)}
   .story-empty{padding:28px 22px;font-size:36px;color:var(--muted);font-weight:300}
-  .story-detail{flex:1;min-height:0;display:flex;gap:48px;padding:30px 34px 28px;margin:4px;border-radius:16px;
-    border:1px solid rgba(201,168,106,.35);background:rgba(201,168,106,.035);outline:none;overflow:hidden}
+  .story-detail{flex:none;align-self:stretch;display:flex;flex-direction:column;gap:26px;padding:34px 40px 30px;margin:4px;border-radius:16px;
+    border:1px solid rgba(201,168,106,.35);background:#16171A;outline:none;overflow:hidden;max-height:100%}
   .story-detail[hidden],.story-list[hidden]{display:none!important}
-  .story-detail-text{flex:1;min-width:0;min-height:0;display:flex;flex-direction:column;gap:22px;overflow:hidden}
+  .story-detail-text{display:flex;flex-direction:column;gap:24px;min-width:0;max-width:2600px}
   .story-detail .story-meta{white-space:normal;line-height:1.4}
-  .story-detail-hd{font:300 60px/1.16 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink)}
-  .story-detail-sum{font-size:42px;line-height:1.45;color:#DCD6CC;font-weight:300}
+  .story-detail-hd{font:300 64px/1.15 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink)}
+  .story-detail-sum{font-size:44px;line-height:1.42;color:#DCD6CC;font-weight:300;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:6;overflow:hidden;max-height:calc(6 * 1.42em)}
   .story-detail-sum.none{color:var(--soft);font-size:36px}
-  .story-detail-foot{margin-top:auto;font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
-  .story-qr{flex:none;display:flex;flex-direction:column;align-items:center;gap:16px;align-self:flex-start}
-  .story-qr .code{width:340px;height:340px;padding:20px;border-radius:14px;background:var(--ink)}
+  .story-detail-foot{font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .story-qr{flex:none;display:flex;flex-direction:row;align-items:center;gap:28px}
+  .story-qr .code{width:280px;height:280px;padding:18px;border-radius:14px;background:var(--ink);flex:none}
   .story-qr svg{display:block;width:100%;height:100%}
-  .story-qr .lbl{font-size:28px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500;text-align:center}
-  #news-overlay .story-detail{padding:56px 64px 44px;gap:80px}
-  #news-overlay .story-detail-text{max-width:2500px;gap:34px}
-  #news-overlay .story-detail .story-meta{font-size:34px}
-  #news-overlay .story-detail-hd{font-size:88px;line-height:1.12}
-  #news-overlay .story-detail-sum{font-size:54px;line-height:1.45}
-  #news-overlay .story-detail-sum.none{font-size:44px}
-  #news-overlay .story-qr .code{width:500px;height:500px;padding:28px}
-  #news-overlay .story-qr .lbl{font-size:32px}
-  .stock-side .story-detail{flex-direction:column;gap:28px}
-  .stock-side .story-detail-hd{font-size:58px}
-  .stock-side .story-detail-sum{font-size:42px}
-  .stock-side .story-qr{flex-direction:row;align-self:stretch;gap:24px}
-  .stock-side .story-qr .code{width:260px;height:260px;padding:16px}
-  .stock-side .story-qr .lbl{text-align:left}
+  .story-qr .lbl{font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:500;line-height:1.5}
+  /* Headline overlays sit on a fully opaque sheet so no board digits ghost through. */
+  #stock-overlay .nfl-overlay-backdrop,#news-overlay .nfl-overlay-backdrop{background:#08090B}
+  #stock-overlay .nfl-overlay-sheet,#news-overlay .nfl-overlay-sheet{background:#101114;backdrop-filter:none}
   .stock-ipo-wrap{flex:1;min-height:0;display:flex}
   #alert-banner{position:absolute;left:0;right:0;top:0;z-index:40;display:flex;align-items:center;justify-content:center;
     gap:22px;height:88px;min-height:88px;padding:0 120px;border-bottom:2px solid var(--gold);
@@ -743,7 +739,7 @@
   .sec-tile .px{font-size:30px;color:rgba(240,237,230,.6);font-weight:300}
   .sec-legend{border:1px dashed var(--hair);background:none;justify-content:center;gap:12px}
   .sec-legend .bar{height:14px;border-radius:7px;background:linear-gradient(90deg,#B04840,#3A3B3F 50%,#3F8C5C)}
-  .sec-legend .lab{display:flex;justify-content:space-between;font-size:24px;color:var(--soft)}
+  .sec-legend .lab{display:flex;justify-content:space-between;font-size:30px;color:var(--soft)}
   .sec-big{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:28px;margin-top:0}
   .sec-big .sec-tile{padding:30px 34px 28px;border-radius:20px}
   .sec-big .sec-tile .n{font-size:46px}
@@ -777,7 +773,7 @@
 <div id="stage">
   <main class="top" aria-label="Time and weather">
     <section class="panel clock-panel" id="clock-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="world-overlay" aria-expanded="false" title="Open world clock" aria-label="Clock, opens world clock">
-      <div class="clock-top"><span class="kicker" id="greeting">Good morning</span><span class="folio">The morning board <span style="color:var(--gold);margin:0 10px">/</span> 01</span></div>
+      <div class="clock-top"><span class="kicker" id="greeting">Good morning</span><span class="folio">Daybreak <span style="color:var(--gold);margin:0 10px">/</span> 01</span></div>
       <div class="clock-body">
         <div class="clock-main">
           <div class="time" id="time">9<span class="colon">:</span>16<span class="ampm">AM</span></div>
@@ -1688,16 +1684,22 @@ function xAtTimeIndex(times,target,left,innerW){
   }
   return null;
 }
-function yearMarkHtml(times,left,w,right){
+// pick: keep only that many evenly spaced year boundaries, all on one label row.
+function yearMarkHtml(times,left,w,right,pick){
   if(!times||times.length<2)return '';
   var inner=w-left-right;
   var marks=yearBoundaryTimes(times[0],times[times.length-1]);
+  if(pick&&marks.length>pick){
+    var sub=[],k,last=-1;
+    for(k=0;k<pick;k++){var ix=Math.round(k*(marks.length-1)/(pick-1));if(ix!==last)sub.push(marks[ix]);last=ix;}
+    marks=sub;
+  }
   var html='',i,x,pct,stagger;
   for(i=0;i<marks.length;i++){
     x=xAtTimeIndex(times,marks[i].t,left,inner);
     if(x==null)continue;
     pct=(x/w*100).toFixed(2);
-    stagger=i%2===1;
+    stagger=!pick&&i%2===1;
     html+='<div class="year-mark'+(stagger?' alt':'')+'" style="left:'+pct+'%"><span>'+marks[i].year+'</span></div>';
   }
   return html;
@@ -1803,7 +1805,7 @@ function applyTreasury(r){
   const plot=treasuryLineSVG(rows,720,260,{l:4,r:6,t:72,b:10});
   const dates=rows.map(row=>Array.isArray(row)?row[0]:row.date);
   const times=dates.map(parseChartTime).filter(function(t){return t!=null;});
-  const yearHtml=yearMarkHtml(times,plot.pad.left,plot.w,plot.pad.right);
+  const yearHtml=yearMarkHtml(times,plot.pad.left,plot.w,plot.pad.right,4);
   const d=new Date(last.date+'T12:00:00Z').toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
   let chg='';
   if(yearAgo&&Number.isFinite(yearAgo.v)){
@@ -3994,7 +3996,7 @@ function closeNewsOverlay(){
 // Shared story list + detail for the stock and AI headline overlays. One overlay is open at a
 // time, so a single state object is enough; `focus` is true while the ring is on a story (false
 // = on the header's Close button). Selection survives re-renders by story identity.
-var STORY={ov:null,host:null,items:[],sel:-1,open:false,focus:false,wide:false,label:''};
+var STORY={ov:null,host:null,items:[],sel:-1,open:false,focus:false,wide:false,label:'',first:0};
 function storyAge(iso){
   var t=new Date(iso).getTime();
   if(!iso||isNaN(t))return '';
@@ -4015,7 +4017,7 @@ function storyMetaHtml(x,full){
 }
 function storyReset(){
   var ov=STORY.ov;
-  STORY={ov:null,host:null,items:[],sel:-1,open:false,focus:false,wide:false,label:''};
+  STORY={ov:null,host:null,items:[],sel:-1,open:false,focus:false,wide:false,label:'',first:0};
   if(ov)storyCloseLabel(ov,false);
 }
 function storyActive(){
@@ -4035,6 +4037,7 @@ function renderStories(ov,host,items,opts){
   STORY.ov=ov;STORY.host=host;STORY.items=items||[];STORY.wide=!!opts.wide;STORY.label=opts.label||'Headlines';
   STORY.sel=-1;
   for(var i=0;i<STORY.items.length&&keep;i++)if(storyId(STORY.items[i])===keep){STORY.sel=i;break;}
+  if(STORY.sel<0)STORY.first=0;
   STORY.open=STORY.sel>=0&&wasOpen;
   STORY.focus=STORY.sel>=0&&wasFocus;
   var n=STORY.items.length;
@@ -4076,14 +4079,30 @@ function storyDetailHtml(x){
   return '<div class="story-detail-text"><div class="story-meta">'+storyMetaHtml(x,true)+'</div>'+
     '<div class="story-detail-hd">'+esc(x.hd||'')+'</div>'+
     (x.sum?'<div class="story-detail-sum">'+esc(x.sum)+'</div>':'<div class="story-detail-sum none">No summary in the feed'+(x.url?' \u2014 scan the code to read the full story.':'.')+'</div>')+
-    '<div class="story-detail-foot">'+String(STORY.sel+1).padStart(2,'0')+' / '+String(n).padStart(2,'0')+' \u00b7 \u25b2\u25bc stories \u00b7 Back for list</div></div>'+
-    storyQrHtml(x.url);
+    '</div>'+storyQrHtml(x.url)+
+    '<div class="story-detail-foot">'+String(STORY.sel+1).padStart(2,'0')+' / '+String(n).padStart(2,'0')+' \u00b7 \u25b2\u25bc stories \u00b7 Back for list</div>';
 }
-function storyScroll(list,el){
-  if(!list||!el)return;
-  var pad=24,top=el.offsetTop,bottom=top+el.offsetHeight;
-  if(top-pad<list.scrollTop)list.scrollTop=Math.max(0,top-pad);
-  else if(bottom+pad>list.scrollTop+list.clientHeight)list.scrollTop=bottom+pad-list.clientHeight;
+// Shows whole rows only: the list is cut to the rows that fit from STORY.first, scrolled to that
+// row's top, and STORY.first moves just enough to keep the selected row inside the window.
+function storyScroll(list){
+  if(!list)return;
+  var rows=list.querySelectorAll('.story-item');
+  if(!rows.length)return;
+  list.style.flex='';list.style.height='';
+  var avail=list.clientHeight;
+  if(!(avail>0))return;
+  var first=Math.max(0,Math.min(STORY.first||0,rows.length-1)), sel=STORY.sel;
+  function fit(from){
+    var h=0,c=0;
+    for(var i=from;i<rows.length;i++){if(h+rows[i].offsetHeight>avail&&c)break;h+=rows[i].offsetHeight;c++;}
+    return {n:c,h:h};
+  }
+  if(sel>=0&&sel<first)first=sel;
+  while(sel>=0&&sel>=first+fit(first).n&&first<sel)first++;
+  STORY.first=first;
+  var f=fit(first);
+  list.style.flex='none';list.style.height=f.h+'px';
+  list.scrollTop=rows[first].offsetTop;
 }
 function storyPaint(){
   var e=storyEls();
@@ -4098,7 +4117,7 @@ function storyPaint(){
     e.detail.hidden=false;e.list.hidden=true;
   }else{
     e.detail.hidden=true;e.detail.innerHTML='';e.list.hidden=false;
-    storyScroll(e.list,e.item);
+    storyScroll(e.list);
   }
   storyCloseLabel(STORY.ov,STORY.open);
   var target=STORY.focus?(STORY.open?e.detail:e.item):$(STORY.ov+'-overlay-close');
@@ -4311,8 +4330,7 @@ function renderStockOverlay(key,extra={}){
   const exch=(s=>{if(!s)return (key==='DOW'||key==='SPX'||key==='NASDAQ'?'Index':'');
     if(/NASDAQ/i.test(s))return 'NASDAQ';if(/NYSE|NEW YORK/i.test(s))return 'NYSE';if(/AMEX/i.test(s))return 'AMEX';return s;})(d.exchange);
   $('stock-overlay-title').innerHTML=`${esc(name)} <span style="color:var(--gold)">·</span> ${esc(key==='NASDAQ'?'NASDAQ':key==='DOW'?'DJIA':key==='SPX'?'SPX':key)}`;
-  const as=d.asOf||q?.quoteTime||LIVE_DATA?.stocks?.asOf;
-  $('stock-overlay-deck').textContent=`${exch?exch+' · ':''}${as?'as of '+fmtTime(as):'Six-month daily'}`.trim();
+  $('stock-overlay-deck').textContent=(exch?exch+' \u00b7 ':'')+'Six-month daily';
   if(upcoming){
     body.className='stock-body';
     body.innerHTML=`<div class="stock-main"><div class="stock-ipo-wrap"><div class="stock-ipo"><div class="kicker">Upcoming IPO</div><div class="title">Anthropic</div><div class="note">${esc(d.note||(q&&q.note)||'IPO Nov 19 · $70–78 range')}</div></div></div></div>
@@ -4327,11 +4345,32 @@ function renderStockOverlay(key,extra={}){
   const hi=d.week52High, lo=d.week52Low;
   const range=(hi!=null&&lo!=null)?((dollar?'$':'')+fmtPxNum(lo,2)+' – '+(dollar?'$':'')+fmtPxNum(hi,2)):'—';
   body.className='stock-body';
-  body.innerHTML=`<div class="stock-main"><div class="stock-hero"><div class="stock-px">${pxStr}</div>${ch==null?'':changePill({ch})}</div><div class="stock-chart-wrap">${stockHistoryChart(pts,up,dollar)}</div></div>
+  body.innerHTML=`<div class="stock-main">${stockHeroHtml(key,q,pxStr,ch,dollar)}<div class="stock-chart-wrap">${stockHistoryChart(pts,up,dollar)}</div></div>
     <div class="stock-side"><div class="stock-metrics">${stockMetric('P/E (TTM)',esc(fmtPe(d.peTTM)))}${stockMetric('Market cap',esc(fmtCap(d.marketCap)))}${stockMetric('52-week range',esc(range))}${stockMetric('Volume',esc(fmtVol(d.volume??q?.vol)))}</div>
     <div class="stock-news" id="stock-stories"></div></div>`;
   renderStories('stock',$('stock-stories'),stockStories(key,d,name),{label:'Headlines'});
   layoutAllYearMarks();
+}
+// Same price the board card leads with: live in the session, else pre-market / after-hours
+// (stocks) or futures (indexes), falling back to the last close; the prior close sits below.
+function stockHeroHtml(key,q,pxStr,ch,dollar){
+  var cur=dollar?'$':'', isIdx=!dollar;
+  var open=marketOpenNow(LIVE_DATA), fw=(!open&&q&&q.px!=null)?forwardQuote(key,q):null;
+  var lead=pxStr, pct=ch, diff=q?q.d:null, kind='', when='', prior='';
+  var closeWhen=q&&q.t?fwdWhen(q.t*1000):'';
+  if(fw){
+    lead=cur+fmtPxNum(fw.px,2);pct=fw.pct;diff=fw.d;kind=fw.kind;when=fw.when;
+    prior=(isIdx?'Index close ':'Prior close ')+cur+fmtPxNum(q.px,2)+(closeWhen?' \u00b7 '+closeWhen:'');
+  }else if(q&&q.px!=null){
+    kind=open?'Live':'Close';when=closeWhen;
+    if(q.pc!=null)prior='Prior close '+cur+fmtPxNum(q.pc,2);
+  }
+  var pts='';
+  if(diff!=null&&isFinite(diff))pts='<span class="fwd-pts '+(diff>=0?'up':'down')+'">'+(diff>=0?'+':'\u2212')+money(Math.abs(diff),2)+'</span>';
+  return '<div class="stock-hero"><div class="stock-hero-l">'+
+    (kind?'<div class="stock-kind"><span class="fwd-kind">'+esc(kind)+'</span>'+esc(when)+'</div>':'')+
+    '<div class="stock-px">'+lead+'</div>'+(prior?'<div class="stock-prior">'+esc(prior)+'</div>':'')+
+    '</div><div class="stock-hero-r">'+(pct==null?'':changePill({ch:pct}))+pts+'</div></div>';
 }
 // Per-ticker 7-day stories from data.json (stockNews); older data.json only has details.news.
 function stockStories(key,d,name){
@@ -4448,8 +4487,9 @@ function secWhen(){
   if(SECTOR_DATA.sessionDate===today&&h<16)return 'as of '+fmtTime(st);
   return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(new Date(st))+' close';
 }
+var SEC_SHORT={'Cons. Discretionary':'Cons. Disc.','Consumer Discretionary':'Cons. Disc.'};
 function secTile(r,big){
-  var head='<div><div class="n">'+esc(r.n)+'</div><div class="s">'+esc(r.s)+'</div></div>';
+  var head='<div><div class="n">'+esc(big?r.n:(SEC_SHORT[r.n]||r.n))+'</div><div class="s">'+esc(r.s)+'</div></div>';
   var px=r.px>0?'$'+r.px.toFixed(2):'';
   var foot=big?'<div class="sec-bottom"><div class="p">'+secPct(r.d)+'</div><div class="px">'+px+'</div></div>':'<div class="p">'+secPct(r.d)+'</div>';
   return '<div class="sec-tile" style="background:'+secColor(r.d)+'">'+head+foot+'</div>';
