@@ -1,0 +1,15 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Morning Board</title>
+<style>html,body{margin:0;width:100%;height:100%;background:#203040;color:#FFFFFF;font:48px sans-serif}#m{padding:80px;line-height:1.5}</style>
+</head><body><div id="m">MORNING BOARD TEST</div>
+<script>
+var m=document.getElementById('m'),n=20;
+function add(t){m.innerHTML+='<br>'+t;}
+add('Screen '+window.innerWidth+' x '+window.innerHeight+' (device '+screen.width+' x '+screen.height+')');
+add('Browser '+navigator.userAgent.slice(0,90));
+var x=new XMLHttpRequest();x.open('GET','https://gildernew-max.github.io/frame-bfb9d71787/data.json?t='+Date.now());
+x.onload=function(){add('Internet check: OK '+x.status+', '+x.responseText.length+' bytes');};
+x.onerror=function(){add('Internet check: FAILED');};x.send();
+var c=document.createElement('div');m.parentNode.appendChild(c);c.style.cssText='padding:0 80px';
+var t=setInterval(function(){c.textContent='Opening dashboard in '+(n--)+'s';if(n<0){clearInterval(t);window.location.href='https://gildernew-max.github.io/frame-bfb9d71787/?kiosk=1&t='+Date.now();}},1000);
+</script></body></html>
