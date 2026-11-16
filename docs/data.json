@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T15:45:20.148Z",
+ "generatedAt": "2026-11-16T15:46:56.348Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 39,
+     "temp": 50,
      "i": "sun",
-     "cond": "Patchy Frost",
-     "windMph": 10,
-     "windDir": "ENE",
-     "observed": "2026-11-16T10:20:00+00:00"
+     "cond": "Clear",
+     "windMph": 8,
+     "windDir": "E",
+     "observed": "2026-11-16T10:45"
     },
     "today": {
-     "h": 62,
-     "l": 37,
+     "h": 57,
+     "l": 36,
      "sunrise": "07:10",
-     "sunset": "17:35"
+     "sunset": "17:33"
     },
     "forecast": [
      {
       "date": "2026-11-17",
       "d": "Tue",
       "i": "sun",
-      "text": "Sunny",
-      "h": 64,
-      "l": 42
+      "text": "Clear",
+      "h": 61,
+      "l": 38,
+      "pop": 0
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
       "i": "sun",
-      "text": "Sunny",
-      "h": 67,
-      "l": 45
+      "text": "Clear",
+      "h": 65,
+      "l": 42,
+      "pop": 1
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 66,
+      "l": 50,
+      "pop": 6
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 57,
+      "l": 36,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
       "i": "sun",
-      "text": "Sunny",
-      "h": 70,
-      "l": 48
+      "text": "Clear",
+      "h": 61,
+      "l": 38,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "sun",
+      "text": "Clear",
+      "h": 65,
+      "l": 42,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 66,
+      "l": 50,
+      "pop": 6
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 62,
+      "l": 56,
+      "pop": 9
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 67,
+      "l": 55,
+      "pop": 10
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 72,
+      "l": 56,
+      "pop": 4
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-16T11:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T12:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 54,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T13:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 56,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T14:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 57,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T15:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 57,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T16:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 57,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T17:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 55,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T18:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T19:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 48,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T20:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 48,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T21:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T22:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 45,
+      "pop": 0
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 32,
+     "temp": 43,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 6,
-     "windDir": "SSE",
-     "observed": "2026-11-16T10:20:00+00:00"
+     "windMph": 10,
+     "windDir": "SSW",
+     "observed": "2026-11-16T09:45"
     },
     "today": {
      "h": 55,
-     "l": 28,
-     "sunrise": "07:10",
-     "sunset": "16:44"
+     "l": 32,
+     "sunrise": "07:11",
+     "sunset": "16:42"
     },
     "forecast": [
      {
       "date": "2026-11-17",
       "d": "Tue",
-      "i": "partly",
-      "text": "Partly Sunny",
-      "h": 57,
-      "l": 45
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 50,
+      "l": 45,
+      "pop": 1
      },
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 58,
-      "l": 47
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 59,
+      "l": 46,
+      "pop": 2
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 56,
+      "l": 47,
+      "pop": 4
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-16",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 55,
+      "l": 32,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-17",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 50,
+      "l": 45,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 59,
+      "l": 46,
+      "pop": 2
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 56,
+      "l": 47,
+      "pop": 4
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 60,
+      "l": 45,
+      "pop": 53
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "snow",
+      "text": "Light snow",
+      "h": 60,
+      "l": 37,
+      "pop": 66
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 40,
+      "l": 30,
+      "pop": 18
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-16T10:00",
       "i": "sun",
-      "text": "Sunny",
-      "h": 54,
-      "l": 38
+      "text": "Clear",
+      "temp": 45,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T11:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 50,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T12:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 52,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-16T13:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T14:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 54,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T15:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 55,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T16:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T17:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T18:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T19:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T20:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 44,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-16T21:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 43,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-16T11:03:46.712Z",
-  "lastAttempt": "2026-11-16T11:03:46.712Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-16T15:46:56.348Z",
+  "lastAttempt": "2026-11-16T15:46:56.348Z",
   "lastError": null
  },
  "nfl": {
@@ -405,7 +712,7 @@
    "isOpen": true,
    "session": "regular",
    "holiday": null,
-   "checkedAt": "2026-11-16T15:45:20.148Z"
+   "checkedAt": "2026-11-16T15:46:56.348Z"
   },
   "quotes": {
    "NVDA": {
@@ -4870,8 +5177,9 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T15:45:20.148Z",
+  "at": "2026-11-16T15:46:56.348Z",
   "ran": [
+   "weather",
    "usTempGrid"
   ]
  },
@@ -12422,7 +12730,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T15:45:20.148Z",
+  "lastAttempt": "2026-11-16T15:46:56.348Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
