@@ -685,6 +685,36 @@
   .wc-day .hl span{color:var(--soft);margin-left:8px}
   .wc-msg{flex:1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:44px;font-weight:300}
 
+  /* NFL card slot: NFL standings or the S&P sector heat map (remote Play/Pause toggles). */
+  .slot-view[hidden]{display:none!important}
+  #sectors-view{display:flex;flex-direction:column;height:100%}
+  .slot-num{display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex:none}
+  .slot-ind{display:flex;align-items:center;gap:9px;font-size:26px;font-weight:500;letter-spacing:.12em;color:var(--soft);white-space:nowrap}
+  .slot-ind i{display:block;width:10px;height:10px;border-radius:5px;background:rgba(255,255,255,.2)}
+  .slot-ind i.on{width:24px;background:var(--gold)}
+  .slot-ind b{font-weight:500;color:var(--muted);margin-left:6px}
+  .slot-ind svg{width:24px;height:24px;margin-left:6px;fill:var(--soft)}
+  .sec-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);
+    gap:12px;margin-top:8px;padding-top:20px;border-top:1px solid var(--hair)}
+  .sec-grid.sec-msg{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:36px}
+  .sec-tile{border-radius:14px;padding:16px 18px 14px;display:flex;flex-direction:column;justify-content:space-between;
+    min-width:0;border:1px solid rgba(255,255,255,.06)}
+  .sec-tile .n{font-size:28px;line-height:1.1;color:rgba(240,237,230,.88);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sec-tile .s{font-size:22px;letter-spacing:.12em;color:rgba(240,237,230,.55);font-weight:500}
+  .sec-tile .p{font:300 52px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:#F6F2EA}
+  .sec-tile .px{font-size:30px;color:rgba(240,237,230,.6);font-weight:300}
+  .sec-legend{border:1px dashed var(--hair);background:none;justify-content:center;gap:12px}
+  .sec-legend .bar{height:14px;border-radius:7px;background:linear-gradient(90deg,#B04840,#3A3B3F 50%,#3F8C5C)}
+  .sec-legend .lab{display:flex;justify-content:space-between;font-size:24px;color:var(--soft)}
+  .sec-big{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding-top:28px;margin-top:0}
+  .sec-big .sec-tile{padding:30px 34px 28px;border-radius:20px}
+  .sec-big .sec-tile .n{font-size:46px}
+  .sec-big .sec-tile .s{font-size:28px;margin-top:8px}
+  .sec-big .sec-tile .p{font-size:104px}
+  .sec-big .sec-bottom{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
+  .sec-big .sec-tile .px{font-size:40px}
+  .sec-big .sec-legend .bar{height:20px;border-radius:10px}
+  .sec-big .sec-legend .lab{font-size:32px}
 </style>
 </head>
 <body>
@@ -758,9 +788,16 @@
 
   <section class="lower" aria-label="News and market board">
     <section class="panel nfl-panel" id="nfl-card" tabindex="0" role="button" aria-haspopup="dialog" aria-controls="nfl-overlay" aria-expanded="false" title="Open live scores" aria-label="NFL standings for Pittsburgh Steelers, Minnesota Vikings, and Green Bay Packers, sample data">
-      <div class="panel-head"><div><div class="panel-title">NFL <span style="color:var(--gold)">·</span> Standings</div><div class="panel-deck" id="nfl-deck">Three teams · sample data</div></div><span class="panel-number">03 / NFL</span></div>
-      <div id="nfl" aria-label="Sample NFL team records, division ranks, streaks and next games"></div>
-      <div class="nfl-foot"><span id="nfl-foot">Records &amp; fixtures are illustrative</span><span class="line"></span></div>
+      <div class="slot-view" id="nfl-view">
+        <div class="panel-head"><div><div class="panel-title">NFL <span style="color:var(--gold)">·</span> Standings</div><div class="panel-deck" id="nfl-deck">Three teams · sample data</div></div><div class="slot-num"><span class="panel-number">03 / NFL</span><span class="slot-ind"></span></div></div>
+        <div id="nfl" aria-label="Sample NFL team records, division ranks, streaks and next games"></div>
+        <div class="nfl-foot"><span id="nfl-foot">Records &amp; fixtures are illustrative</span><span class="line"></span></div>
+      </div>
+      <div class="slot-view" id="sectors-view" hidden>
+        <div class="panel-head"><div><div class="panel-title">Sectors <span style="color:var(--gold)">·</span> Heat Map</div><div class="panel-deck" id="sec-deck">S&amp;P 500 sectors</div></div><div class="slot-num"><span class="panel-number">03 / SECTORS</span><span class="slot-ind"></span></div></div>
+        <div class="sec-grid" id="sec-grid"></div>
+        <div class="nfl-foot"><span id="sec-foot">Yahoo Finance · SPDR sector ETFs</span><span class="line"></span></div>
+      </div>
     </section>
     <section class="panel markets-panel" aria-label="Markets, example data">
       <div class="panel-head"><div><div class="panel-title">Markets</div><div class="panel-deck" id="mk-deck">Friday close · example data</div></div><span class="panel-number">04 / WATCHLIST</span></div>
@@ -846,6 +883,20 @@
         </div>
         <div class="wx-map-credit" id="wx-map-credit">Radar: RainViewer · Temperatures: Open-Meteo · Boundaries &amp; roads: U.S. Census Bureau</div>
       </div>
+    </div>
+  </div>
+
+  <div id="sectors-overlay" class="nfl-overlay" hidden aria-hidden="true">
+    <div class="nfl-overlay-backdrop"></div>
+    <div class="nfl-overlay-sheet" role="dialog" aria-modal="true" aria-labelledby="sectors-overlay-title">
+      <div class="nfl-overlay-head">
+        <div>
+          <div class="panel-title" id="sectors-overlay-title">S&amp;P 500 <span style="color:var(--gold)">·</span> Sectors</div>
+          <div class="panel-deck" id="sectors-overlay-deck">SPDR sector ETFs · Yahoo Finance</div>
+        </div>
+        <button type="button" class="nfl-overlay-close" id="sectors-overlay-close" aria-label="Close sectors">Close</button>
+      </div>
+      <div id="sectors-big" class="sec-grid sec-big"></div>
     </div>
   </div>
 
@@ -1782,6 +1833,7 @@ function applyLive(d){
   }
   try{applyWeather(d.weather);}catch(e){console.error('weather',e);}
   try{applyNFL(d.nfl);}catch(e){console.error('nfl',e);}
+  try{applySectors(d.sectors);}catch(e){console.error('sectors',e);}
   try{applyNews(d.news);}catch(e){console.error('news',e);}
   try{applyRates(d.rates);}catch(e){console.error('rates',e);TAPE_RATES='';}
   try{applyTreasury(d.rates);}catch(e){console.error('treasury',e);}
@@ -2471,6 +2523,7 @@ function closeOpenOverlay(){
   else if(openOverlay==='news')closeNewsOverlay();
   else if(openOverlay==='stock')closeStockOverlay();
   else if(openOverlay==='world')closeWorldClockOverlay();
+  else if(openOverlay==='sectors')closeSectorsOverlay();
 }
 function wmoIcon(code){
   const c=Number(code);
@@ -4149,7 +4202,6 @@ $('stock-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeS
 $('clock-card').addEventListener('click',openWorldClockOverlay);
 $('world-overlay').addEventListener('click',closeWorldClockOverlay);
 $('world-overlay-close').addEventListener('click',e=>{e.stopPropagation();closeWorldClockOverlay();});
-$('nfl-card').addEventListener('click',openNflOverlay);
 $('weather-card').addEventListener('click',openWeatherOverlay);
 $('news-card').addEventListener('click',openNewsOverlay);
 $('nfl-overlay').addEventListener('click',e=>{if(e.target.closest('.league-toggle,.sb-page'))return;closeNflOverlay();});
@@ -4161,6 +4213,142 @@ $('news-overlay').addEventListener('click',closeNewsOverlay);
 $('sb-page').addEventListener('click',e=>{e.stopPropagation();shiftSbPage(1);});
 $('league-nfl').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('nfl');});
 $('league-cfb').addEventListener('click',e=>{e.stopPropagation();setScoreboardLeague('cfb');});
+// The NFL card slot shows NFL standings or the S&P 500 sector heat map. Remote Play/Pause
+// toggles it ("s" on a keyboard); the choice survives reloads, ?slot=nfl|sectors previews one.
+// The card stays the same element so D-pad focus and OK keep working; OK opens the overlay
+// for whichever view is showing.
+var SLOT_VIEWS=['nfl','sectors'];
+var cardSlot='nfl';
+(function(){
+  var m=/[?&]slot=(nfl|sectors)(?:&|$)/.exec(location.search||'');
+  var saved=null;
+  try{saved=localStorage.getItem('frame.cardSlot');}catch(_){}
+  if(m)cardSlot=m[1];
+  else if(SLOT_VIEWS.indexOf(saved)>=0)cardSlot=saved;
+})();
+var SECTOR_DATA=null;
+var SECTORS_ARIA='S&P 500 sector heat map, opens full view';
+var nflCardAria=$('nfl-card').getAttribute('aria-label');
+var PLAYPAUSE_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5v14l9-7z"/><rect x="14" y="5" width="3" height="14" rx="1"/><rect x="19" y="5" width="3" height="14" rx="1"/></svg>';
+function renderSlotChrome(){
+  var isSec=cardSlot==='sectors',idx=SLOT_VIEWS.indexOf(cardSlot),card=$('nfl-card');
+  $('nfl-view').hidden=isSec;
+  $('sectors-view').hidden=!isSec;
+  var html='';
+  for(var i=0;i<SLOT_VIEWS.length;i++)html+='<i class="'+(i===idx?'on':'')+'"></i>';
+  html+='<b>'+(idx+1)+' / '+SLOT_VIEWS.length+'</b>'+PLAYPAUSE_SVG;
+  var inds=card.querySelectorAll('.slot-ind');
+  for(var j=0;j<inds.length;j++){inds[j].innerHTML=html;inds[j].title='Play/Pause switches between NFL and sectors';}
+  var cur=card.getAttribute('aria-label');
+  if(cur!==SECTORS_ARIA)nflCardAria=cur;
+  card.setAttribute('aria-label',isSec?SECTORS_ARIA:nflCardAria);
+  card.setAttribute('aria-controls',isSec?'sectors-overlay':'nfl-overlay');
+  card.title=isSec?'Open sector heat map':'Open live scores';
+}
+function secPct(d){return (d>0?'+':d<0?'\u2212':'')+Math.abs(d).toFixed(2)+'%';}
+function secColor(d){
+  var a=(0.22+Math.min(Math.abs(d)/2.5,1)*0.62).toFixed(2);
+  return d>=0?'rgba(63,140,92,'+a+')':'rgba(176,72,64,'+a+')';
+}
+function secItems(){
+  if(!SECTOR_DATA||!SECTOR_DATA.items||!SECTOR_DATA.items.length)return null;
+  return SECTOR_DATA.items.slice().sort(function(a,b){return b.d-a.d;});
+}
+function secWhen(){
+  var st=SECTOR_DATA&&SECTOR_DATA.sessionTime;
+  if(!st)return '';
+  var today=new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date());
+  var h=Number(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hourCycle:'h23'}).format(new Date()));
+  if(SECTOR_DATA.sessionDate===today&&h<16)return 'as of '+fmtTime(st);
+  return new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(new Date(st))+' close';
+}
+function secTile(r,big){
+  var head='<div><div class="n">'+esc(r.n)+'</div><div class="s">'+esc(r.s)+'</div></div>';
+  var px=r.px>0?'$'+r.px.toFixed(2):'';
+  var foot=big?'<div class="sec-bottom"><div class="p">'+secPct(r.d)+'</div><div class="px">'+px+'</div></div>':'<div class="p">'+secPct(r.d)+'</div>';
+  return '<div class="sec-tile" style="background:'+secColor(r.d)+'">'+head+foot+'</div>';
+}
+var SEC_LEGEND='<div class="sec-tile sec-legend"><div class="bar"></div><div class="lab"><span>\u22122.5%</span><span>0</span><span>+2.5%</span></div></div>';
+function fillSectorGrid(el,big){
+  var items=secItems();
+  if(!items){
+    el.className='sec-grid sec-msg'+(big?' sec-big':'');
+    el.textContent=SECTOR_DATA&&SECTOR_DATA.lastError?'Sector data unavailable':'Waiting for sector data';
+    return;
+  }
+  el.className='sec-grid'+(big?' sec-big':'');
+  el.innerHTML=items.map(function(r){return secTile(r,big);}).join('')+SEC_LEGEND;
+}
+function renderSectors(){
+  fillSectorGrid($('sec-grid'),false);
+  var when=secWhen();
+  $('sec-deck').textContent='S&P 500 sectors'+(when?' \u00b7 '+when:'');
+  var stale=SECTOR_DATA&&SECTOR_DATA.lastError&&secItems();
+  $('sec-foot').textContent='Yahoo Finance \u00b7 SPDR sector ETFs'+(stale?' \u00b7 stale':'');
+  if(openOverlay==='sectors')renderSectorsOverlay();
+}
+function renderSectorsOverlay(){
+  fillSectorGrid($('sectors-big'),true);
+  var when=secWhen();
+  $('sectors-overlay-deck').textContent='SPDR sector ETFs \u00b7 Yahoo Finance'+(when?' \u00b7 '+when:'');
+}
+function applySectors(sec){
+  SECTOR_DATA=sec||null;
+  renderSectors();
+  renderSlotChrome();
+}
+function openSectorsOverlay(){
+  if(openOverlay==='sectors')return;
+  closeOpenOverlay();
+  openOverlay='sectors';
+  var ov=$('sectors-overlay');
+  ov.hidden=false;ov.setAttribute('aria-hidden','false');
+  $('nfl-card').setAttribute('aria-expanded','true');
+  renderSectorsOverlay();
+  $('sectors-overlay-close').focus();
+}
+function closeSectorsOverlay(){
+  if(openOverlay!=='sectors')return;
+  openOverlay=null;
+  var ov=$('sectors-overlay');
+  ov.hidden=true;ov.setAttribute('aria-hidden','true');
+  $('nfl-card').setAttribute('aria-expanded','false');
+  $('nfl-card').focus();
+}
+function openCardSlot(){
+  if(cardSlot==='sectors')openSectorsOverlay();
+  else openNflOverlay();
+}
+function toggleCardSlot(){
+  cardSlot=SLOT_VIEWS[(SLOT_VIEWS.indexOf(cardSlot)+1)%SLOT_VIEWS.length];
+  try{localStorage.setItem('frame.cardSlot',cardSlot);}catch(_){}
+  var expanded=openOverlay==='nfl'||openOverlay==='sectors';
+  renderSlotChrome();
+  if(expanded)openCardSlot();
+  if(navShown)navShow();
+}
+$('nfl-card').addEventListener('click',openCardSlot);
+$('sectors-overlay').addEventListener('click',closeSectorsOverlay);
+$('sectors-overlay-close').addEventListener('click',function(e){e.stopPropagation();closeSectorsOverlay();});
+try{
+  if(window.tizen&&tizen.tvinputdevice){
+    ['MediaPlayPause','MediaPlay','MediaPause'].forEach(function(k){try{tizen.tvinputdevice.registerKey(k);}catch(_){}});
+  }
+}catch(_){}
+// Play/Pause: Tizen 10252, webOS Play 415 / Pause 19, Android TV and keyboards MediaPlayPause 179.
+// Only the D-pad, OK, Back, Red and Channel/FF/Rew keys drive navigation, so these never collide.
+document.addEventListener('keydown',function(e){
+  var code=e.keyCode||e.which,k=e.key;
+  var isPlayPause=code===10252||code===415||code===19||code===179||k==='MediaPlayPause'||k==='MediaPlay'||k==='MediaPause';
+  var isKeyboard=(k==='s'||k==='S')&&!e.ctrlKey&&!e.metaKey&&!e.altKey;
+  if(!isPlayPause&&!isKeyboard)return;
+  if(openOverlay&&openOverlay!=='nfl'&&openOverlay!=='sectors')return;
+  e.preventDefault();
+  toggleCardSlot();
+});
+if(LIVE_DATA)SECTOR_DATA=LIVE_DATA.sectors||null;
+renderSectors();
+renderSlotChrome();
 // Remote (D-pad) navigation over the cards that open an overlay. Quote tiles are tracked by
 // grid slot, not symbol, because rotateSpotlight rebuilds the grid every 15 s.
 var NAV_IDS=['clock-card','weather-card','nfl-card','spotlight','news-card'];
