@@ -1,0 +1,343 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-16T11:26:50.882Z",
+ "earnings": {
+  "provider": "Nasdaq",
+  "week": [
+   "2026-11-16",
+   "2026-11-20"
+  ],
+  "items": [
+   {
+    "date": "2026-11-17",
+    "s": "DIS",
+    "n": "Walt Disney",
+    "when": "BMO",
+    "eps": 1.67,
+    "watch": false
+   },
+   {
+    "date": "2026-11-17",
+    "s": "HD",
+    "n": "Home Depot",
+    "when": "BMO",
+    "eps": 3.87,
+    "watch": false
+   },
+   {
+    "date": "2026-11-17",
+    "s": "NVDA",
+    "n": "NVIDIA",
+    "when": "AMC",
+    "eps": 2.49,
+    "watch": true
+   },
+   {
+    "date": "2026-11-17",
+    "s": "BHP",
+    "n": "BHP Group",
+    "when": "TBD",
+    "eps": null,
+    "watch": false
+   },
+   {
+    "date": "2026-11-18",
+    "s": "PANW",
+    "n": "Palo Alto Networks",
+    "when": "AMC",
+    "eps": 0.52,
+    "watch": false
+   },
+   {
+    "date": "2026-11-19",
+    "s": "BABA",
+    "n": "Alibaba Group",
+    "when": "BMO",
+    "eps": 1.56,
+    "watch": false
+   },
+   {
+    "date": "2026-11-19",
+    "s": "WMT",
+    "n": "Walmart",
+    "when": "BMO",
+    "eps": 0.64,
+    "watch": false
+   }
+  ],
+  "asOf": "2026-11-16T11:27:00.563Z"
+ },
+ "movers": {
+  "provider": "Nasdaq",
+  "universe": "Nasdaq-100",
+  "dataAsOf": "Data as of Nov 13, 2026 4:00 PM ET",
+  "gainers": [
+   {
+    "s": "ALNY",
+    "n": "Alnylam Pharmaceuticals",
+    "px": 165.04,
+    "d": 5.36
+   },
+   {
+    "s": "ABNB",
+    "n": "Airbnb",
+    "px": 186.78,
+    "d": 3.12
+   },
+   {
+    "s": "ADBE",
+    "n": "Adobe",
+    "px": 243.08,
+    "d": 1.9
+   }
+  ],
+  "losers": [
+   {
+    "s": "AMD",
+    "n": "Advanced Micro Devices",
+    "px": 534.06,
+    "d": -8.75
+   },
+   {
+    "s": "GOOGL",
+    "n": "Alphabet",
+    "px": 295.77,
+    "d": -0.98
+   },
+   {
+    "s": "AMGN",
+    "n": "Amgen",
+    "px": 465.67,
+    "d": -0.3
+   }
+  ],
+  "asOf": "2026-11-16T11:27:02.596Z"
+ },
+ "econ": {
+  "provider": "Nasdaq + Federal Reserve",
+  "items": [
+   {
+    "date": "2026-11-17",
+    "time": "08:30",
+    "label": "Retail sales",
+    "tag": "RETAIL",
+    "cons": "0.2%",
+    "prev": "0.8%"
+   },
+   {
+    "date": "2026-12-04",
+    "time": "08:30",
+    "label": "Jobs report",
+    "tag": "NFP",
+    "cons": null,
+    "prev": "165K"
+   },
+   {
+    "date": "2026-12-09",
+    "time": "14:00",
+    "label": "Fed rate decision",
+    "tag": "FOMC",
+    "cons": null,
+    "prev": "4.00%",
+    "range": "December 8–9",
+    "sep": true
+   },
+   {
+    "date": "2027-01-27",
+    "time": "14:00",
+    "label": "Fed rate decision",
+    "tag": "FOMC",
+    "range": "January 26–27",
+    "sep": false,
+    "cons": null,
+    "prev": null
+   },
+   {
+    "date": "2027-03-17",
+    "time": "14:00",
+    "label": "Fed rate decision",
+    "tag": "FOMC",
+    "range": "March 16–17",
+    "sep": false,
+    "cons": null,
+    "prev": null
+   }
+  ],
+  "asOf": "2026-11-16T11:28:06.538Z"
+ },
+ "sectors": {
+  "provider": "Yahoo Finance (SPDR sector ETFs)",
+  "items": [
+   {
+    "s": "XLK",
+    "n": "Technology",
+    "px": 170.28,
+    "d": -2.0084043198783763,
+    "t": 1794603600
+   },
+   {
+    "s": "XLC",
+    "n": "Communication",
+    "px": 108.69,
+    "d": 1.0505787161167124,
+    "t": 1794603600
+   },
+   {
+    "s": "XLY",
+    "n": "Cons. Discretionary",
+    "px": 119.98,
+    "d": -0.3984717650014735,
+    "t": 1794603600
+   },
+   {
+    "s": "XLF",
+    "n": "Financials",
+    "px": 58.68,
+    "d": 0.8074229907567787,
+    "t": 1794603600
+   },
+   {
+    "s": "XLV",
+    "n": "Health Care",
+    "px": 188.85,
+    "d": 0.5430432619932368,
+    "t": 1794603600
+   },
+   {
+    "s": "XLI",
+    "n": "Industrials",
+    "px": 168.78,
+    "d": -0.38951984885298163,
+    "t": 1794603600
+   },
+   {
+    "s": "XLP",
+    "n": "Cons. Staples",
+    "px": 92.35,
+    "d": 1.4166510827942513,
+    "t": 1794603600
+   },
+   {
+    "s": "XLE",
+    "n": "Energy",
+    "px": 64.96,
+    "d": 0.979322479423872,
+    "t": 1794603600
+   },
+   {
+    "s": "XLU",
+    "n": "Utilities",
+    "px": 44.04,
+    "d": 0.5249911424316966,
+    "t": 1794603600
+   },
+   {
+    "s": "XLRE",
+    "n": "Real Estate",
+    "px": 44.37,
+    "d": 0.022541455164226676,
+    "t": 1794603600
+   },
+   {
+    "s": "XLB",
+    "n": "Materials",
+    "px": 52.23,
+    "d": -0.21016460119833713,
+    "t": 1794603600
+   }
+  ],
+  "asOf": "2026-11-16T11:28:09.521Z"
+ },
+ "ipos": {
+  "provider": "Nasdaq",
+  "items": [
+   {
+    "s": "ANT",
+    "n": "Anthropic",
+    "date": "2026-11-19",
+    "range": "70.00-78.00",
+    "raise": 74002500000,
+    "ex": "NASDAQ"
+   },
+   {
+    "s": "ABGC",
+    "n": "American Barrick Gold",
+    "date": null,
+    "filed": "2026-11-10",
+    "range": null,
+    "raise": 100000000
+   },
+   {
+    "s": null,
+    "n": "Guitar Group",
+    "date": null,
+    "filed": "2026-11-05",
+    "range": null,
+    "raise": 31050000
+   },
+   {
+    "s": null,
+    "n": "UC Automotive",
+    "date": null,
+    "filed": "2026-11-06",
+    "range": null,
+    "raise": 28750000
+   },
+   {
+    "s": "BENE",
+    "n": "BEHNEH",
+    "date": null,
+    "filed": "2026-11-06",
+    "range": null,
+    "raise": 28750000
+   }
+  ],
+  "asOf": "2026-11-16T11:28:16.156Z"
+ },
+ "commods": {
+  "provider": "Yahoo Finance",
+  "items": [
+   {
+    "s": "BTC",
+    "n": "Bitcoin",
+    "y": "BTC-USD",
+    "px": 64573.46,
+    "d": -1.1202845108677417,
+    "t": 1794828486
+   },
+   {
+    "s": "ETH",
+    "n": "Ether",
+    "y": "ETH-USD",
+    "px": 1807.18,
+    "d": -1.5426484717694922,
+    "t": 1794828493
+   },
+   {
+    "s": "WTI",
+    "n": "WTI crude",
+    "y": "CL=F",
+    "px": 88.18,
+    "d": -0.4290848792563806,
+    "t": 1794827895
+   },
+   {
+    "s": "BRENT",
+    "n": "Brent crude",
+    "y": "BZ=F",
+    "px": 95.17,
+    "d": -0.6990780086515325,
+    "t": 1794827882
+   },
+   {
+    "s": "GOLD",
+    "n": "Gold",
+    "y": "GC=F",
+    "px": 3878,
+    "d": -0.21357200226029827,
+    "t": 1794827896
+   }
+  ],
+  "asOf": "2026-11-16T11:28:17.542Z"
+ }
+}

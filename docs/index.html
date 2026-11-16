@@ -645,6 +645,71 @@
   .wc-day .hl span{color:var(--soft);margin-left:8px}
   .wc-msg{flex:1;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:44px;font-weight:300}
 
+  /* BUSINESS SLOT: the NFL cell rotates through business views (remote Play/Pause cycles). */
+  .slot-panel{display:flex;flex-direction:column}
+  .slot-panel[hidden],.nfl-panel[hidden]{display:none!important}
+  .slot-panel .panel-title{font-size:59px;white-space:nowrap}
+  #slot-body{flex:1;min-height:0;margin-top:8px;border-top:1px solid var(--hair);display:flex;flex-direction:column}
+  .slot-foot{margin-top:22px;display:flex;align-items:center;gap:18px;color:var(--soft);
+    font-size:30px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;white-space:nowrap}
+  .slot-foot .line{height:1px;flex:1;background:var(--hair);min-width:20px}
+  .slot-foot #slot-src{min-width:0;overflow:hidden;text-overflow:ellipsis}
+  .slot-ind{display:inline-flex;align-items:center;gap:10px;color:var(--muted);flex:none;white-space:nowrap}
+  .slot-ind i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.18)}
+  .slot-ind i.on{background:var(--gold);width:26px;border-radius:6px}
+  .slot-ind b{font-weight:500;color:var(--gold);margin-left:8px}
+  .slot-ind .key{display:inline-flex;align-items:center;gap:8px;margin-left:10px;padding:4px 12px 4px 10px;
+    border:1px solid var(--hair);border-radius:8px;color:var(--soft);font-size:26px}
+  .slot-ind .key svg{width:26px;height:26px}
+  .nfl-foot .slot-ind i{display:none}
+  .nfl-foot .slot-ind b{margin-left:0}
+  .nfl-foot #nfl-foot{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mock-tag{display:inline-block;vertical-align:middle;margin-left:12px;padding:3px 10px 2px;border-radius:6px;
+    border:1px solid rgba(201,168,106,.55);color:var(--gold);font:500 22px/1.2 Inter,sans-serif;letter-spacing:.14em}
+  .s-row{flex:1;min-height:0;display:grid;align-items:center;gap:22px;padding:0 6px 0 4px;
+    border-bottom:1px solid var(--hair);position:relative}
+  .s-row:last-child{border-bottom:0}
+  .s-date{display:flex;flex-direction:column;line-height:1.05}
+  .s-date .wd{font-size:28px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+  .s-date .md{font:300 40px/1.1 Inter,sans-serif;color:var(--ink);white-space:nowrap}
+  .s-main{min-width:0}
+  .s-main .t{font:400 44px/1.1 Inter,sans-serif;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .s-main .t b{font-weight:500;color:#E7DFD1;letter-spacing:.02em;margin-right:14px}
+  .s-main .sub{font-size:28px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:6px}
+  .s-right{text-align:right;white-space:nowrap}
+  .s-right .v{font:300 46px/1.05 Inter,sans-serif;letter-spacing:-.02em}
+  .s-right .sub{font-size:26px;color:var(--soft);letter-spacing:.1em;text-transform:uppercase;font-weight:500;margin-top:6px}
+  .chip{display:inline-block;padding:5px 12px 4px;border-radius:8px;font:500 26px/1.1 Inter,sans-serif;letter-spacing:.1em;
+    border:1px solid var(--hair);color:var(--muted)}
+  .chip.bmo{color:#E8C98F;border-color:rgba(232,201,143,.35);background:rgba(232,201,143,.06)}
+  .chip.amc{color:#9DB8D9;border-color:rgba(157,184,217,.35);background:rgba(157,184,217,.06)}
+  .s-row.watch::before{content:"";position:absolute;left:-14px;top:24%;bottom:24%;width:5px;border-radius:4px;background:var(--gold)}
+  .slot-panel .up{color:var(--up)}.slot-panel .down{color:var(--down)}
+  .earn-row{grid-template-columns:118px minmax(0,1fr) auto 150px}
+  .econ-row{grid-template-columns:118px minmax(0,1fr) auto}
+  .ipo-row{grid-template-columns:118px minmax(0,1fr) auto}
+  .mv-head{display:flex;align-items:center;justify-content:space-between;padding:20px 4px 6px;
+    font-size:28px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--soft)}
+  .mv-head .k{color:var(--gold)}
+  .mv-group{flex:1;display:flex;flex-direction:column;min-height:0}
+  .mv-group+.mv-group{border-top:1px solid var(--hair)}
+  .mv-row{grid-template-columns:minmax(0,1fr) auto 200px}
+  .mv-row .pct{font:300 56px/1 Inter,sans-serif;letter-spacing:-.02em;text-align:right}
+  .mv-row .px{font-size:34px;color:var(--muted);font-weight:300}
+  .sec-grid{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:12px;padding-top:20px}
+  .sec-tile{border-radius:14px;padding:16px 18px 14px;display:flex;flex-direction:column;justify-content:space-between;min-width:0;
+    border:1px solid rgba(255,255,255,.06)}
+  .sec-tile .n{font-size:28px;line-height:1.1;color:rgba(240,237,230,.86);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sec-tile .s{font-size:22px;letter-spacing:.12em;color:rgba(240,237,230,.55);font-weight:500}
+  .sec-tile .p{font:300 52px/1 Inter,sans-serif;letter-spacing:-.02em;color:#F6F2EA}
+  .sec-legend{border:1px dashed var(--hair);background:none;justify-content:center;gap:12px}
+  .sec-legend .bar{height:14px;border-radius:7px;background:linear-gradient(90deg,#9A4A44,#3A3B3F 50%,#3F7A55)}
+  .sec-legend .lab{display:flex;justify-content:space-between;font-size:24px;color:var(--soft)}
+  .cm-row{grid-template-columns:150px minmax(0,1fr) 250px}
+  .cm-row .sym{font:500 34px/1 Inter,sans-serif;letter-spacing:.06em;color:var(--gold)}
+  .cm-row .px{font:300 58px/1 Inter,sans-serif;letter-spacing:-.02em}
+  .cm-bar{height:6px;border-radius:4px;background:rgba(255,255,255,.07);margin-top:14px;position:relative;overflow:hidden}
+  .cm-bar span{position:absolute;top:0;bottom:0;left:50%}
 </style>
 </head>
 <body>
@@ -721,6 +786,11 @@
       <div class="panel-head"><div><div class="panel-title">NFL <span style="color:var(--gold)">·</span> Standings</div><div class="panel-deck" id="nfl-deck">Three teams · sample data</div></div><span class="panel-number">03 / NFL</span></div>
       <div id="nfl" aria-label="Sample NFL team records, division ranks, streaks and next games"></div>
       <div class="nfl-foot"><span id="nfl-foot">Records &amp; fixtures are illustrative</span><span class="line"></span></div>
+    </section>
+    <section class="panel nfl-panel slot-panel" id="biz-slot" hidden aria-live="polite">
+      <div class="panel-head"><div><div class="panel-title" id="slot-title">Earnings</div><div class="panel-deck" id="slot-deck"></div></div><span class="panel-number" id="slot-number">03 / EARNINGS</span></div>
+      <div id="slot-body"></div>
+      <div class="slot-foot"><span id="slot-src"></span><span class="line"></span><span class="slot-ind" id="slot-ind"></span></div>
     </section>
     <section class="panel markets-panel" aria-label="Markets, example data">
       <div class="panel-head"><div><div class="panel-title">Markets</div><div class="panel-deck" id="mk-deck">Friday close · example data</div></div><span class="panel-number">04 / WATCHLIST</span></div>
@@ -4134,6 +4204,175 @@ window.setInterval(tick,1000);
 window.setInterval(expireBanner,1000);
 window.setInterval(rotateSpotlight,15000);
 window.setInterval(()=>{newsIndex=(newsIndex+1)%DATA.news.length;showNews(newsIndex);},12000);
+
+/* ------------------------------------------------------------------
+   BUSINESS SLOT (mockup): the NFL cell rotates through business views.
+   ?slot=earnings|movers|econ|sectors|ipos|commods|nfl previews one view.
+   Remote Play/Pause (or Green, or "s" on a keyboard) cycles forward.
+   Real values come from slots.json (scripts/slots.mjs); anything not in it
+   is drawn from SLOT_EXAMPLE and carries a MOCK tag.
+------------------------------------------------------------------- */
+const SLOT_ORDER=['earnings','movers','econ','sectors','ipos','commods','nfl'];
+const SLOT_META={
+  earnings:{title:'Earnings <span style="color:var(--gold)">·</span> This Week',num:'EARNINGS'},
+  movers:{title:'Top <span style="color:var(--gold)">·</span> Movers',num:'MOVERS'},
+  econ:{title:'Economic <span style="color:var(--gold)">·</span> Calendar',num:'ECON'},
+  sectors:{title:'Sectors <span style="color:var(--gold)">·</span> Heat Map',num:'SECTORS'},
+  ipos:{title:'IPO <span style="color:var(--gold)">·</span> Pipeline',num:'IPOS'},
+  commods:{title:'Crypto, Oil <span style="color:var(--gold)">&amp;</span> Gold',num:'COMMODITIES'},
+  nfl:{num:'NFL'}
+};
+const SLOT_EXAMPLE={
+  earnings:{provider:'Example',items:[
+    {date:'2026-11-17',s:'NVDA',n:'NVIDIA',when:'AMC',eps:2.49,watch:true},{date:'2026-11-17',s:'HD',n:'Home Depot',when:'BMO',eps:3.87},
+    {date:'2026-11-18',s:'PANW',n:'Palo Alto Networks',when:'AMC',eps:.52},{date:'2026-11-19',s:'WMT',n:'Walmart',when:'BMO',eps:.64},
+    {date:'2026-11-19',s:'BABA',n:'Alibaba',when:'BMO',eps:1.56},{date:'2026-11-20',s:'INTU',n:'Intuit',when:'AMC',eps:3.12}]},
+  movers:{provider:'Example',universe:'Nasdaq-100',gainers:[{s:'ALNY',n:'Alnylam',px:165.04,d:5.36},{s:'ABNB',n:'Airbnb',px:186.78,d:3.12},{s:'ADBE',n:'Adobe',px:243.08,d:1.9}],
+    losers:[{s:'AMD',n:'AMD',px:534.06,d:-8.75},{s:'MU',n:'Micron',px:778.31,d:-2.52},{s:'NVDA',n:'NVIDIA',px:162.85,d:-2.01}]},
+  econ:{provider:'Example',items:[{date:'2026-12-04',time:'08:30',label:'Jobs report',tag:'NFP'},{date:'2026-12-09',time:'14:00',label:'Fed rate decision',tag:'FOMC',range:'December 8–9',sep:true},{date:'2026-12-10',time:'08:30',label:'Consumer prices',tag:'CPI'}]},
+  sectors:{provider:'Example',items:[['XLK','Technology',-2.0],['XLC','Communication',1.05],['XLY','Cons. Discretionary',-.4],['XLF','Financials',.81],['XLV','Health Care',.54],['XLI','Industrials',-.39],['XLP','Cons. Staples',1.42],['XLE','Energy',.98],['XLU','Utilities',.52],['XLRE','Real Estate',.3],['XLB','Materials',-.2]].map(([s,n,d])=>({s,n,d}))},
+  ipos:{provider:'Example',items:[{s:'ANT',n:'Anthropic',date:'2026-11-19',range:'70.00-78.00',raise:74e9,ex:'NASDAQ'}]},
+  commods:{provider:'Example',items:[{s:'BTC',n:'Bitcoin',px:64707,d:-.92},{s:'ETH',n:'Ether',px:1811.5,d:-1.31},{s:'WTI',n:'WTI crude',px:88.44,d:-.14},{s:'BRENT',n:'Brent crude',px:95.49,d:-.37},{s:'GOLD',n:'Gold',px:3875.4,d:-.28}]}
+};
+// Not in any free feed the fetcher reaches yet: shown only as labelled examples.
+const SLOT_EXTRA={
+  econ:[{date:'2026-12-10',time:'08:30',label:'Consumer prices',tag:'CPI',mock:true}],
+  ipos:[{s:'—',n:'Databricks',date:'2026-12-08',range:'TBA',raise:null,ex:'NASDAQ',mock:true},
+        {s:'—',n:'Stripe',date:'2027-01-14',range:'TBA',raise:null,ex:'NYSE',mock:true},
+        {s:'—',n:'Revolut',date:'2027-02-10',range:'TBA',raise:null,ex:'NASDAQ',mock:true}]
+};
+let SLOT_DATA={}, slotIndex=SLOT_ORDER.indexOf('nfl');
+(function(){
+  const q=new URLSearchParams(location.search).get('slot');
+  let pick=q&&SLOT_ORDER.includes(q)?q:null;
+  if(!pick){try{const s=localStorage.getItem('frame.slot');if(SLOT_ORDER.includes(s))pick=s;}catch(_){}}
+  if(pick)slotIndex=SLOT_ORDER.indexOf(pick);
+})();
+const MOCK_TAG='<span class="mock-tag">MOCK</span>';
+const pct=d=>`${d>0?'+':d<0?'−':''}${Math.abs(d).toFixed(2)}%`;
+const upDown=d=>d>0?'up':d<0?'down':'';
+const keyDate=k=>new Date(k+'T12:00:00Z');
+const wdShort=k=>keyDate(k).toLocaleDateString('en-US',{weekday:'short',timeZone:'UTC'});
+const mdShort=k=>keyDate(k).toLocaleDateString('en-US',{month:'short',day:'numeric',timeZone:'UTC'});
+const dateCell=k=>k?`<div class="s-date"><span class="wd">${wdShort(k)}</span><span class="md">${mdShort(k)}</span></div>`:`<div class="s-date"><span class="wd">Date</span><span class="md">TBA</span></div>`;
+const etTime=t=>{if(!t)return '';const [h,m]=t.split(':').map(Number);return `${(h%12)||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'} ET`;};
+const todayKeyET=()=>new Intl.DateTimeFormat('en-CA',{timeZone:TZ}).format(new Date());
+const daysUntil=k=>Math.round((keyDate(k)-keyDate(todayKeyET()))/864e5);
+const raiseFmt=v=>v>=1e9?`$${(v/1e9).toFixed(1)}B`:v>=1e6?`$${Math.round(v/1e6)}M`:'';
+function slotSection(key){
+  const live=SLOT_DATA[key];
+  const ok=live&&!live.lastError||(live&&(live.items||live.gainers));
+  return ok?{...live,real:true}:{...SLOT_EXAMPLE[key],real:false};
+}
+function slotDeck(text,real,anyMock){return esc(text)+(real&&!anyMock?'':' '+MOCK_TAG);}
+function asOfShort(iso){try{return new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}).format(new Date(iso));}catch(_){return '';}}
+
+const SLOT_RENDER={
+  earnings(){
+    const d=slotSection('earnings');
+    const wk=d.week?`Week of ${mdShort(d.week[0])}`:'This week';
+    return {deck:slotDeck(wk,d.real),src:d.real?'Nasdaq':'Example data',
+      html:d.items.map(r=>`<div class="s-row earn-row${r.watch?' watch':''}">${dateCell(r.date)}
+        <div class="s-main"><div class="t"><b>${esc(r.s)}</b>${esc(r.n)}</div><div class="sub">${r.watch?'<span style="color:var(--gold)">Watchlist</span> · ':''}${r.when==='BMO'?'Before the open':r.when==='AMC'?'After the close':'Time not confirmed'}</div></div>
+        <span class="chip ${r.when.toLowerCase()}">${r.when}</span>
+        <div class="s-right"><div class="v">${r.eps!=null?'$'+r.eps.toFixed(2):'—'}</div><div class="sub">EPS est.</div></div></div>`).join('')};
+  },
+  movers(){
+    const d=slotSection('movers');
+    const asD=d.dataAsOf?new Date(d.dataAsOf.replace(/^Data as of\s*/i,'').replace(/ ET$/,'')):null;
+    const as=asD&&!isNaN(asD)?asD.toLocaleDateString('en-US',{weekday:'short'})+' close':'Last session';
+    const row=r=>`<div class="s-row mv-row"><div class="s-main"><div class="t"><b>${esc(r.s)}</b></div><div class="sub">${esc(r.n)}</div></div>
+      <div class="px">$${r.px!=null?r.px.toFixed(2):'—'}</div><div class="pct ${upDown(r.d)}">${pct(r.d)}</div></div>`;
+    return {deck:slotDeck(`${d.universe||'Nasdaq-100'} · ${as}`,d.real),src:d.real?'Nasdaq':'Example data',
+      html:`<div class="mv-group"><div class="mv-head"><span class="k">Gainers</span><span>% change</span></div>${d.gainers.map(row).join('')}</div>
+            <div class="mv-group"><div class="mv-head"><span class="k">Losers</span><span></span></div>${d.losers.map(row).join('')}</div>`};
+  },
+  econ(){
+    const d=slotSection('econ');
+    const items=[...d.items];
+    for(const x of SLOT_EXTRA.econ)if(!items.some(i=>i.tag===x.tag))items.push(x);
+    items.sort((a,b)=>a.date.localeCompare(b.date));
+    const show=items.slice(0,6);
+    const anyMock=show.some(i=>i.mock);
+    return {deck:slotDeck('Jobs, inflation & the Fed',d.real,anyMock),src:d.real?'Nasdaq · Fed':'Example data',
+      html:show.map(r=>{const n=daysUntil(r.date);const when=n<=0?'Today':n===1?'Tomorrow':`In ${n} days`;
+        const sub=r.tag==='FOMC'?`${esc(r.range||'FOMC meeting')}${r.sep?' · projections':''}`:[etTime(r.time),r.cons?`Est ${esc(r.cons)}`:'',r.prev?`Prev ${esc(r.prev)}`:''].filter(Boolean).join(' · ');
+        return `<div class="s-row econ-row${r.tag==='FOMC'?' watch':''}">${dateCell(r.date)}
+          <div class="s-main"><div class="t">${esc(r.label)}${r.mock?MOCK_TAG:''}</div><div class="sub">${sub}</div></div>
+          <div class="s-right"><div class="v" style="font-size:38px">${when}</div><div class="sub">${esc(r.tag)}</div></div></div>`;}).join('')};
+  },
+  sectors(){
+    const d=slotSection('sectors');
+    const items=[...d.items].sort((a,b)=>b.d-a.d);
+    const tile=r=>{const a=.22+Math.min(Math.abs(r.d)/2.5,1)*.62;const bg=r.d>=0?`rgba(63,140,92,${a})`:`rgba(176,72,64,${a})`;
+      return `<div class="sec-tile" style="background:${bg}"><div><div class="n">${esc(r.n)}</div><div class="s">${esc(r.s)}</div></div><div class="p">${pct(r.d)}</div></div>`;};
+    const when=d.real&&d.items[0]?.t?new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short'}).format(new Date(d.items[0].t*1000))+' close':'Last session';
+    return {deck:slotDeck(`S&P 500 sectors · ${when}`,d.real),src:d.real?'Yahoo · SPDR ETFs':'Example data',
+      html:`<div class="sec-grid">${items.map(tile).join('')}<div class="sec-tile sec-legend"><div class="bar"></div><div class="lab"><span>−2.5%</span><span>0</span><span>+2.5%</span></div></div></div>`};
+  },
+  ipos(){
+    const d=slotSection('ipos');
+    const real=d.items.filter(i=>i.date), filed=d.items.filter(i=>!i.date);
+    const items=[...real,...SLOT_EXTRA.ipos,...filed].slice(0,6);
+    const anyMock=items.some(i=>i.mock);
+    return {deck:slotDeck('Expected pricing dates',d.real,anyMock),src:d.real?'Nasdaq':'Example data',
+      html:items.map(r=>{const rng=r.range&&r.range!=='TBA'?'$'+r.range.replace(/\.00/g,'').replace('-','–'):(r.date?'TBA':'—');
+        const sub=[r.s&&r.s!=='—'?esc(r.s):'',r.ex?(r.ex==='NASDAQ'?'Nasdaq':esc(r.ex)):'',!r.date&&r.filed?`Filed ${mdShort(r.filed)}`:'',r.raise?`${r.date?'Raising ':''}${raiseFmt(r.raise)}`:''].filter(Boolean).join(' · ');
+        return `<div class="s-row ipo-row${r.s==='ANT'?' watch':''}">${dateCell(r.date)}
+          <div class="s-main"><div class="t">${esc(r.n)}${r.mock?MOCK_TAG:''}</div><div class="sub">${sub||'Date and terms not set'}</div></div>
+          <div class="s-right"><div class="v">${rng}</div><div class="sub">${r.date?'Price range':'No date yet'}</div></div></div>`;}).join('')};
+  },
+  commods(){
+    const d=slotSection('commods');
+    const fmt=r=>r.px>=1000?'$'+Math.round(r.px).toLocaleString('en-US'):'$'+r.px.toFixed(2);
+    const unit={WTI:'per barrel · front month',BRENT:'per barrel · front month',GOLD:'per ounce · front month',BTC:'24/7 spot',ETH:'24/7 spot'};
+    return {deck:slotDeck(`${d.real?"As of "+asOfShort(d.asOf).replace(/^\w+ \d+, /,''):'example'}`,d.real),src:d.real?'Yahoo Finance':'Example data',
+      html:d.items.map(r=>{const w=Math.min(Math.abs(r.d)/4,1)*50;
+        return `<div class="s-row cm-row"><div class="sym">${esc(r.s)}</div>
+          <div class="s-main"><div class="t">${esc(r.n)}</div><div class="sub">${unit[r.s]||''}</div>
+            <div class="cm-bar"><span style="${r.d>=0?`left:50%;width:${w}%;background:var(--up)`:`left:${50-w}%;width:${w}%;background:var(--down)`}"></span></div></div>
+          <div class="s-right"><div class="px">${fmt(r)}</div><div class="sub ${upDown(r.d)}" style="font-size:34px;letter-spacing:0;text-transform:none;font-weight:400">${pct(r.d)}</div></div></div>`;}).join('')};
+  }
+};
+const PLAYPAUSE_ICON='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5v14l9-7z"/><rect x="14" y="5" width="3" height="14" rx="1"/><rect x="19" y="5" width="3" height="14" rx="1"/></svg>';
+function slotIndicatorHtml(){
+  return SLOT_ORDER.map((_,i)=>`<i class="${i===slotIndex?'on':''}"></i>`).join('')+`<b>${slotIndex+1} / ${SLOT_ORDER.length}</b><span class="key" title="Remote Play/Pause cycles this card">${PLAYPAUSE_ICON}Next</span>`;
+}
+function renderSlot(){
+  const key=SLOT_ORDER[slotIndex], isNfl=key==='nfl';
+  $('nfl-card').hidden=!isNfl; $('biz-slot').hidden=isNfl;
+  let ind=document.querySelector('#nfl-card .nfl-foot .slot-ind');
+  if(!ind){ind=document.createElement('span');ind.className='slot-ind';document.querySelector('#nfl-card .nfl-foot').appendChild(ind);}
+  ind.innerHTML=slotIndicatorHtml();
+  $('slot-ind').innerHTML=slotIndicatorHtml();
+  if(isNfl)return;
+  let v;try{v=SLOT_RENDER[key]();}catch(e){console.error('slot',key,e);v={deck:'Unavailable',src:'',html:''};}
+  $('slot-title').innerHTML=SLOT_META[key].title;
+  $('slot-number').textContent='03 / '+SLOT_META[key].num;
+  $('slot-deck').innerHTML=v.deck;
+  $('slot-src').textContent=v.src;
+  $('slot-body').innerHTML=v.html;
+}
+function cycleSlot(step=1){
+  slotIndex=(slotIndex+step+SLOT_ORDER.length)%SLOT_ORDER.length;
+  try{localStorage.setItem('frame.slot',SLOT_ORDER[slotIndex]);}catch(_){}
+  renderSlot();
+}
+async function loadSlotData(){
+  try{const r=await fetch('slots.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error(r.status);SLOT_DATA=await r.json();}
+  catch(e){console.warn('slots.json unavailable; slot shows example data',e);}
+  renderSlot();
+}
+// Play/Pause: Tizen 10252, webOS Play 415 / Pause 19, Android/Fire TV & keyboards MediaPlayPause 179.
+// Green (404) is the fallback; Red (403) is already Refresh. Next/Prev track step forward/back.
+document.addEventListener('keydown',e=>{
+  if(openOverlay)return;
+  const code=e.keyCode||e.which;
+  const fwd=[10252,415,19,179,404,176].includes(code)||['MediaPlayPause','MediaPlay','MediaPause','ColorF1Green','Green','MediaTrackNext'].includes(e.key)||(e.key==='s'&&!e.metaKey&&!e.ctrlKey);
+  const back=code===177||e.key==='MediaTrackPrevious'||e.key==='S';
+  if(fwd||back){e.preventDefault();cycleSlot(back?-1:1);}
+});
+renderSlot();loadSlotData();setInterval(loadSlotData,10*60*1000);
 </script>
 </body>
 </html>
