@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-16T11:26:20.320Z",
+ "generatedAt": "2026-11-16T11:27:39.879Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -4260,8 +4260,10 @@
   }
  },
  "lastRun": {
-  "at": "2026-11-16T11:26:20.320Z",
+  "at": "2026-11-16T11:27:39.879Z",
   "ran": [
+   "world",
+   "movers",
    "usTempGrid"
   ]
  },
@@ -11789,7 +11791,125 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-16T11:26:20.320Z",
+  "lastAttempt": "2026-11-16T11:27:39.879Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
+ },
+ "world": {
+  "items": [
+   {
+    "src": "BBC News",
+    "hd": "Five EU countries expected to announce migrant deportation centre in Rwanda",
+    "pub": "2026-11-16T11:17:34.000Z"
+   },
+   {
+    "src": "Reuters",
+    "hd": "Scores of Bahraini Shi'ite clerics get life in prison for plotting with Iran",
+    "pub": "2026-11-16T10:57:29.000Z"
+   },
+   {
+    "src": "The New York Times",
+    "hd": "Relentless Attacks on Ukraine’s Power Grid Threaten to Make Cities Unlivable",
+    "pub": "2026-11-16T10:03:00.000Z"
+   }
+  ],
+  "feedErrors": [],
+  "asOf": "2026-11-16T11:27:39.879Z",
+  "lastAttempt": "2026-11-16T11:27:39.879Z",
+  "lastError": null
+ },
+ "movers": {
+  "provider": "Yahoo Finance",
+  "credit": "Movers: Yahoo Finance",
+  "minCap": 2000000000,
+  "marketState": "PRE",
+  "sessionTime": "2026-11-13T21:01:24.000Z",
+  "sessionDate": "2026-11-13",
+  "gainers": [
+   {
+    "s": "LFTO",
+    "n": "Liftoff Mobile, Inc.",
+    "ch": 30.63,
+    "px": 24.44,
+    "cap": 4141218048,
+    "t": 1794603601
+   },
+   {
+    "s": "MOD",
+    "n": "Modine Manufacturing Company",
+    "ch": 27.86,
+    "px": 135.66,
+    "cap": 7216694272,
+    "t": 1794603684
+   },
+   {
+    "s": "STN",
+    "n": "Stantec Inc",
+    "ch": 14.06,
+    "px": 85.69,
+    "cap": 9483867136,
+    "t": 1794603602
+   },
+   {
+    "s": "NU",
+    "n": "Nu Holdings Ltd.",
+    "ch": 11.75,
+    "px": 13.22,
+    "cap": 63965421568,
+    "t": 1794603602
+   },
+   {
+    "s": "CBRS",
+    "n": "Cerebras Systems Inc.",
+    "ch": 11.22,
+    "px": 108.72,
+    "cap": 26419324928,
+    "t": 1794603601
+   }
+  ],
+  "losers": [
+   {
+    "s": "HTFL",
+    "n": "Heartflow, Inc.",
+    "ch": -19.13,
+    "px": 48.46,
+    "cap": 4259031040,
+    "t": 1794603601
+   },
+   {
+    "s": "NBIS",
+    "n": "Nebius Group N.V.",
+    "ch": -9.92,
+    "px": 115.88,
+    "cap": 33941528576,
+    "t": 1794603601
+   },
+   {
+    "s": "AMD",
+    "n": "Advanced Micro Devices, Inc.",
+    "ch": -8.75,
+    "px": 534.06,
+    "cap": 875905024000,
+    "t": 1794603601
+   },
+   {
+    "s": "KEP",
+    "n": "Korea Electric Power Corporatio",
+    "ch": -8.72,
+    "px": 10.16,
+    "cap": 13044710400,
+    "t": 1794603603
+   },
+   {
+    "s": "OUST",
+    "n": "Ouster, Inc.",
+    "ch": -8.52,
+    "px": 33.48,
+    "cap": 2443945216,
+    "t": 1794603600
+   }
+  ],
+  "asOf": "2026-11-16T11:27:39.879Z",
+  "lastAttempt": "2026-11-16T11:27:39.879Z",
+  "lastError": null
  }
 }
