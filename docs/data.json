@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T22:45:13.175Z",
+ "generatedAt": "2026-11-17T23:00:12.489Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6029,12 +6029,12 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-17T22:45:13.175Z",
+  "at": "2026-11-17T23:00:12.489Z",
   "ran": [
    "alerts",
-   "stockNews",
-   "worldNews",
+   "nflScoreboard",
    "extended",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -12385,62 +12385,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T21:45:14.750Z",
-  "lastAttempt": "2026-11-17T21:45:14.750Z",
+  "asOf": "2026-11-17T23:00:12.489Z",
+  "lastAttempt": "2026-11-17T23:00:12.489Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7377.25,
-    "lastTime": 1794951325,
+    "last": 7366.5,
+    "lastTime": 1794952799,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 13.75,
-    "changePct": 0.18673185305900727,
-    "expectedOpen": 7354.237107693351,
+    "change": 3,
+    "changePct": 0.04074149521287431,
+    "expectedOpen": 7343.5206416785495,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27205.75,
-    "lastTime": 1794951327,
+    "last": 27126,
+    "lastTime": 1794952799,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 119.5,
-    "changePct": 0.44118325718768747,
-    "expectedOpen": 24435.7157525405,
+    "change": 39.75,
+    "changePct": 0.14675342655406343,
+    "expectedOpen": 24364.085735677698,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50850,
-    "lastTime": 1794951325,
+    "last": 50827,
+    "lastTime": 1794952799,
     "settle": 50841,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": 9,
-    "changePct": 0.01770224818551956,
-    "expectedOpen": 50768.405558505925,
+    "change": -14,
+    "changePct": -0.027536830510808203,
+    "expectedOpen": 50745.44246454633,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2713.6,
-    "lastTime": 1794951326,
+    "last": 2711.7,
+    "lastTime": 1794952797,
     "settle": 2711.60009765625,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": 1.999902343749909,
-    "changePct": 0.07375358724461284,
+    "change": 0.0999023437498181,
+    "changePct": 0.003684258008257482,
     "expectedOpen": null,
     "valid": true
    }
@@ -12921,8 +12921,8 @@
     }
    }
   ],
-  "asOf": "2026-11-17T17:00:12.226Z",
-  "lastAttempt": "2026-11-17T17:00:12.226Z",
+  "asOf": "2026-11-17T23:00:12.489Z",
+  "lastAttempt": "2026-11-17T23:00:12.489Z",
   "lastError": null
  },
  "alerts": {
@@ -12933,8 +12933,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T22:45:13.175Z",
-  "lastAttempt": "2026-11-17T22:45:13.175Z",
+  "asOf": "2026-11-17T23:00:12.489Z",
+  "lastAttempt": "2026-11-17T23:00:12.489Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13610,7 +13610,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T22:45:13.175Z",
+  "lastAttempt": "2026-11-17T23:00:12.489Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -13821,35 +13821,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T22:45:13.175Z",
-  "lastAttempt": "2026-11-17T22:45:13.175Z",
+  "asOf": "2026-11-17T23:00:12.489Z",
+  "lastAttempt": "2026-11-17T23:00:12.489Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 161.8,
-    "time": 1794955525,
+    "price": 162.3245,
+    "time": 1794956413,
     "ref": 155.46,
     "refTime": 1794949200,
-    "change": 6.340000000000003,
-    "changePct": 4.078219477679148
+    "change": 6.8644999999999925,
+    "changePct": 4.415605300398812
    },
    "TSLA": {
     "session": "post",
-    "price": 384,
-    "time": 1794955513,
+    "price": 383.81,
+    "time": 1794956407,
     "ref": 380.11,
     "refTime": 1794949201,
-    "change": 3.8899999999999864,
-    "changePct": 1.0233879666412318
+    "change": 3.6999999999999886,
+    "changePct": 0.9734024361369047
    },
    "SPCX": {
     "session": "post",
-    "price": 142.94,
-    "time": 1794955525,
+    "price": 142.69,
+    "time": 1794956409,
     "ref": 141.7,
     "refTime": 1794949200,
-    "change": 1.240000000000009,
-    "changePct": 0.8750882145377623
+    "change": 0.9900000000000091,
+    "changePct": 0.698659139026118
    }
   }
  },
