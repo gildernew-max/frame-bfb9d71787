@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T02:23:09.841Z",
+ "generatedAt": "2026-11-17T02:45:14.831Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -5658,8 +5658,12 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T02:23:09.841Z",
+  "at": "2026-11-17T02:45:14.831Z",
   "ran": [
+   "alerts",
+   "nflScoreboard",
+   "worldNews",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -12018,62 +12022,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T02:15:16.862Z",
-  "lastAttempt": "2026-11-17T02:15:16.862Z",
+  "asOf": "2026-11-17T02:45:14.831Z",
+  "lastAttempt": "2026-11-17T02:45:14.831Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7448,
-    "lastTime": 1794881129,
+    "last": 7440.5,
+    "lastTime": 1794882922,
     "settle": 7441.5,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": 6.5,
-    "changePct": 0.08734798091782571,
-    "expectedOpen": 7423.068241617953,
+    "change": -1,
+    "changePct": -0.013438150910434724,
+    "expectedOpen": 7415.593347443391,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27393.75,
-    "lastTime": 1794881130,
+    "last": 27361.25,
+    "lastTime": 1794882923,
     "settle": 27291.25,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": 102.5,
-    "changePct": 0.37557825310310083,
-    "expectedOpen": 24601.811320936198,
+    "change": 70,
+    "changePct": 0.25649246553382493,
+    "expectedOpen": 24572.623682590576,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51631,
-    "lastTime": 1794881119,
+    "last": 51579,
+    "lastTime": 1794882917,
     "settle": 51677,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -46,
-    "changePct": -0.08901445517348143,
-    "expectedOpen": 51562.23126864949,
+    "change": -98,
+    "changePct": -0.1896394914565474,
+    "expectedOpen": 51510.30052886197,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2747.6,
-    "lastTime": 1794881106,
+    "last": 2743.6,
+    "lastTime": 1794882909,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -4.000097656250091,
-    "changePct": -0.14537351047695057,
+    "change": -8.000097656250091,
+    "changePct": -0.29074347188257443,
     "expectedOpen": null,
     "valid": true
    }
@@ -12095,16 +12099,16 @@
     "id": "401873065",
     "start": "2026-11-17T01:15Z",
     "state": "in",
-    "status": "Q2 10:16",
+    "status": "Q2 0:03",
     "period": 2,
-    "clock": "10:16",
+    "clock": "0:03",
     "completed": false,
     "away": {
      "name": "Los Angeles Chargers",
      "short": "Chargers",
      "id": "24",
      "abbrev": "LAC",
-     "score": "10",
+     "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
      "record": "0-8",
      "winner": false,
@@ -12554,8 +12558,8 @@
     }
    }
   ],
-  "asOf": "2026-11-17T02:15:16.862Z",
-  "lastAttempt": "2026-11-17T02:15:16.862Z",
+  "asOf": "2026-11-17T02:45:14.831Z",
+  "lastAttempt": "2026-11-17T02:45:14.831Z",
   "lastError": null
  },
  "alerts": {
@@ -12566,8 +12570,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T02:15:16.862Z",
-  "lastAttempt": "2026-11-17T02:15:16.862Z",
+  "asOf": "2026-11-17T02:45:14.831Z",
+  "lastAttempt": "2026-11-17T02:45:14.831Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13243,7 +13247,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T02:23:09.841Z",
+  "lastAttempt": "2026-11-17T02:45:14.831Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14260,11 +14264,39 @@
     "sum": "President Trump set off on a multi-day swing in Asia, where he's scheduled to meet with Russian President Vladimir Putin and China's President Xi Jinping for a highly anticipated summit."
    },
    {
+    "hd": "Trump’s Advisers Are at War Over China Ahead of Xi Summit",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNZFJvYjNhcXVuMWNTSWZCS3M3eDMyOGVmVHVtLUZDckRsSkZobWdBUUxielFrSEVNUVBLM05qLTlWb09ESHVUaXRjQmRPN1VsdmI1LV9uRTFmMTJrNHdQTzNQQWJ2RG9Lc204ODEwSTJGWmJpNTZoZV9nTk9XUGhaVXZULVM0Q1NYYjdENWUwc1ZNb1FoYnJteFB0ZG9LUQ?oc=5",
+    "pub": "2026-11-17T02:00:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Mozambique's Mondlane is the latest opposition leader to go on trial in Africa",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/mozambiques-venancio-mondlane-latest-opposition-leader-trial-africa-138196123",
     "pub": "2026-11-17T01:49:37.000Z",
     "sum": "Mozambique’s opposition leader will go on trial charged with instigating terrorism and inciting civil disobedience in relation to monthslong anti-government protests that broke out following a disputed 2024 election"
+   },
+   {
+    "hd": "Trump to kick off Asia trip with Quad talks in Manila ahead of China visit",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNY0l1bEVvMnNwMHJqM01iVWVDR2JJQmRvaU51TmJQdGRLVnVKUENDTWlLTW5wVEdSVG5uTFEtYktLMUlDWjU4ZXJ3U0ROcjZtMEZNVlZCZFBiMTNGTldnMVBEX09UMkhLS0pQSlVqMmlXMTllMGdxZ3BsU2xrM1lvU0JDWHdSYzh3QjJhRVFUc3N2YW5xLUpXOGNWdG10cTM5R3BYNWtjLTNFN01oaGo2UzVvRQ?oc=5",
+    "pub": "2026-11-17T01:26:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Kremlin dismisses comparisons between trilateral meeting and Yalta conference",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQa3BfaElNRVdDbTZzUm9TZFpjV0NjYmtjRHF1NzlkWTltQnVCSzBtU0lHdVdGN2ZUcjRreWFacERVZTBzS3dJNF9SbllXcXpFSTViSUdrUm83bzdVOWduLXNhZ3I2WktMMHFYaF9fMnBTcDhfT3FicjA4aFRTNTJmRnV6WGJSX0ZxLUhRVHd2QXlweDNZNHVneDRjU3dvUFpSZWs4VF9VbWFrTl9aczBEZzh4VjVpMDYwWFczTlFB?oc=5",
+    "pub": "2026-11-17T00:42:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Zelenskiy says Ukraine held new talks with US, European officials on peace prospects",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5",
+    "pub": "2026-11-16T23:49:25.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump says he might meet with North Korea's Kim Jong Un in China",
@@ -14288,6 +14320,13 @@
     "sum": ""
    },
    {
+    "hd": "IMF says it is near deal with Ukraine on $1.6 billion, once financing assurances secured",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQajFKUXkyRjZWNTJUa04xM1l0R2thMzV6ZGZqOGdqOF9OQ2Y0TlNBdWdON3FJQlFJelJ5bm5PRTB0WVpvS0FjTUVLelhqRi1oZDFia1pkOWlqWkZ6TDBWTDYyUjJxaXF3RUlaSVk4S29fNWt6dThBMFFNQzg2TERFUjhFb1lhZnp2YmttSE8wc1duV0pqWGQ1eUMtRXdhTWpKaXc3Qm5IRmtqY2xsY2ZrUTIwNG5yZWs?oc=5",
+    "pub": "2026-11-16T23:07:38.000Z",
+    "sum": ""
+   },
+   {
     "hd": "After claiming election stolen, Netanyahu allies face their own meddling allegations",
     "src": "The Washington Post",
     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdktHdXhWbTM3UkltdmYzS3UtR1IydUwtRi1jWXFYRkJsekx0aC1vbWJXT19yczROcDdqZWRtNExQeGo4UGI4eFllOHA2SmpRd052TFBRMmZFZTJ6UjBfcmt4VmxfTnFud09EaFZNUlR6T3c0ZXVqWmpjNTluR3YzbGNuSnQtcHNYeVlfT1dPT19PX3c1eGhWQkJOc25Sai1YaFE2c2prZjZUc1NjZG40VE5fUHFDcC00eWxVQmNlYkd4a0NwdFk3ZjROdHU?oc=5",
@@ -14303,8 +14342,8 @@
    },
    {
     "hd": "Houthi rebel advance in Yemen may further destabilise global economy",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1GeDBBRFlLQUp6OXNQVFdENGYzSGFrTUR3d01KTV91VlJVVXJURjl2Y0tfV2ZpcTlnTm55YWNMazI3WnFHZ29kS0pyUEdWbExQZGY3MGdiWUU2SU0?oc=5",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cmy97qperq9eo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-16T21:40:07.000Z",
     "sum": "The Iran-backed Houthis are gaining ground and their advance could have dangerous consequences, writes the BBC's security correspondent."
    },
@@ -14327,13 +14366,6 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUXpCaVl5U1lEam5kVm5CWUVHUURUV19EcDVHMUZ3ckRXVTBBQUVodVJJeWMwNmxTbTlEZC10T0ZkMEZUZ1JaakFtY0szajhqSkh1UmRLRHFCWHFsdlJ6TFFMNk9pMGNaRzFlSzh5dU1iNXZzbUdJWERveEx6NGE3YVdSWndvWVo2eDNDMTRoZnFyb0l3eGQ5Y3dZQUlMbjN6VFBDZUZCQnFhSEU?oc=5",
     "pub": "2026-11-16T21:10:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Haiti praises Salvadoran troop deployment ahead of Bukele talks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWVlQWmJFX2YzcXdxVVRVN0xnNk81eVllbUxaVm1Za1Nvc1dBWFRUZUJkNm5peExWcG5odVBxaDM4eVlORVkzelgtckRrSTIwMEFKSnJCR2N4ZDhIS1hST0tob0VTWlNIX2dTeVZVbWxzaFBlZkdvUGFsVHg4a2duZXJNTWZGbmRxQjZZa1pGdDc0aHNOalZXcm41OXVnd2stS1VSSC1PdDFSRWlZeGhaYg?oc=5",
-    "pub": "2026-11-16T20:39:44.000Z",
     "sum": ""
    },
    {
@@ -14372,25 +14404,11 @@
     "sum": ""
    },
    {
-    "hd": "Zelenskiy says Ukraine held new talks with US, European officials on peace prospects",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQR2U4T3ZBY2hQRnZGS2NTMFVZM3FwRVFJSUtIUjNWSG5URWlXNUNac3ZoQ0pla3BIRFNOTF94Mm5NNmZUekEzQjV2dUhtSWNtZ3gwcURrRWxQLXJIejBjXzNvTmNuZUVwVFY3YjdDLVZkSlctbnFxVy1HVDJneW43QVpVb29hdXZVSGVON29aRTRpS2JabDh4bS1MMEh4bUcwaW5NYWhYX3NTVEE1bHY3N09yMXEzaTFuWHliSW1BZnZFU0k4?oc=5",
-    "pub": "2026-11-16T19:24:11.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Paraguay’s ousted president moved to military prison after reports of gym and suite in custody",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/paraguays-ousted-president-moved-military-prison-after-reports-138186878",
     "pub": "2026-11-16T19:22:15.000Z",
     "sum": "Former Paraguayan President Santiago Pe&ntilde;a is being moved to a military prison as he awaits trial over the collapse of Ueno Bank"
-   },
-   {
-    "hd": "US envoy Kushner says progress made in Ukraine talks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVmhPQUFLblhESV9CWnFmX2ZONzdHOTFMQkhHMW9hUzNoYlp6ZU5BUnE5b1pJZ05TbjFOODNDa2VKTW9UMzRETE5hdVBhSzVmLTJjalRFUjA2RERZdW5GS0lXOUdMM0RLRmIyWndqWUFrUjA3VFZISUMtTHdVMjQzYUJreWdKaGFnSV8xbkR5NWs4b2VBTE1BMVJlZlNvdGl3?oc=5",
-    "pub": "2026-11-16T19:21:53.000Z",
-    "sum": ""
    },
    {
     "hd": "Army airstrike kills at least 13 in West Kordofan, says rights group",
@@ -14407,17 +14425,10 @@
     "sum": "The skies from the Black Sea to Moscow buzzed overnight with hundreds of Ukrainian drones, keeping Russia’s air defenses busy for hours"
    },
    {
-    "hd": "Le Pen says France will keep giving Ukraine aid if she is elected",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbnY1dHJyUUt2WXptNzV2UFR5WXNVVWF5alZUcVdJLTFIOVcyLUcwNUpVQy0ySzA4cWd1QnBmYzJkaUw5SENRRGpzR3BlQ3B1VFJtU1JvdmdoSmotYTMyVmlwUmhsenIwY21SeXVsTF9yRUoxdV9jVmx6UTk2SDgwYTNNa2IycS1ZV0tveTJReUI2VEhVZUhxMVlaOXVvRi1MZzc2dWhFUnhPanZx?oc=5",
-    "pub": "2026-11-16T18:06:41.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Nvidia Scandal Threatens China’s Charm Offensive Ahead of Trump Summit",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPU2RLaV81cTBkUU40YTFFVGN0ZDFyR3gtRUhHYmk2VjZtMmdKdG52VmRCOTNIeVlrR2RkY0pQWkplMy1aT29EYkptMFdwZmNtY1B0Nlc4T3NZeEVWVDd2QnlQOE1aU3FEWmtucUZJVEM0eHY1Y3NHcDFTRjZLSW9hOGJYMDZNWnBQVFcyR2Y2a2NhVktsMmNtZXNKaHE2ZWlkREJCUEttZm1iUXpkMVlN?oc=5",
-    "pub": "2026-11-16T17:43:00.000Z",
+    "hd": "France’s Diallo enters race to challenge Infantino in FIFA presidential election",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZUlsN3ZLcGVua1JkYWFyR0xYQ25xcDkxTFItbENSSWNhNkRGUWk5X0JyNmhaeDkyTWhPSVBjOUU4UEFYQ0s2UU1JZm9zdVVnVnI2ZnNfNzczVWVpekhhLVZINVlvYnhRU2lLU1NhSzNDTjNkdkVYakh5SjFSUWs1WFZMM3NhVnR0bURwSk5tVQ?oc=5",
+    "pub": "2026-11-16T17:46:00.000Z",
     "sum": ""
    },
    {
@@ -14444,21 +14455,15 @@
    {
     "hd": "Airstrikes on Iran Missile Sites May Shed Light on Justification for Dams",
     "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQM3RSb255WmtXVzRseHpHdk5tT1ZLTlYzRzJudFZKZHVaR2taQzdOcmQzWGF1b3hwTmZodTV6TWRvM1pyX2JtVVNlMVI3NUtyQlRVQXhQS3FJR2lhN1ZZcFZ4WU5fRHlsLXZEXzN2aDItSUppYmt0YzdVMXg4dHRHYUZrVzhRejZYcGZxRVlSMVJxN1paNGV6MzhfaS1sNTg?oc=5",
+    "url": "https://www.nytimes.com/2026/11/16/world/middleeast/iran-dams-missile-sites-environmentalists.html",
     "pub": "2026-11-16T17:24:04.000Z",
     "sum": "Environmentalists have long puzzled over a wide network of water projects lacking any obvious justification. Then their areas were targeted in airstrikes."
-   },
-   {
-    "hd": "War May Answer Longtime Riddle of Iranian Dams Built for No Clear Reason",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQM3RSb255WmtXVzRseHpHdk5tT1ZLTlYzRzJudFZKZHVaR2taQzdOcmQzWGF1b3hwTmZodTV6TWRvM1pyX2JtVVNlMVI3NUtyQlRVQXhQS3FJR2lhN1ZZcFZ4WU5fRHlsLXZEXzN2aDItSUppYmt0YzdVMXg4dHRHYUZrVzhRejZYcGZxRVlSMVJxN1paNGV6MzhfaS1sNTg?oc=5",
-    "pub": "2026-11-16T17:24:04.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
    "AP",
+   "Reuters",
+   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -14470,11 +14475,10 @@
    "ABC News"
   ],
   "feedErrors": [
-   "Reuters (Google News): HTTP 429 from news.google.com",
-   "WSJ (Google News): HTTP 429 from news.google.com"
+   "Google News: HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-17T02:15:16.862Z",
-  "lastAttempt": "2026-11-17T02:15:16.862Z",
+  "asOf": "2026-11-17T02:45:14.831Z",
+  "lastAttempt": "2026-11-17T02:45:14.831Z",
   "lastError": null
  }
 }
