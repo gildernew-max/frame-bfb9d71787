@@ -1,206 +1,52 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T15:15:18.135Z",
+ "generatedAt": "2026-11-17T15:30:13.480Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "Open-Meteo",
-  "credit": "Weather: Open-Meteo",
+  "provider": "National Weather Service",
+  "credit": "Weather: NWS",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 47,
+     "temp": 52,
      "i": "sun",
-     "cond": "Clear",
-     "windMph": 10,
-     "windDir": "E",
-     "observed": "2026-11-17T09:30"
+     "cond": "Sunny",
+     "windMph": null,
+     "windDir": "",
+     "observed": "2026-11-17T15:10:00+00:00"
     },
     "today": {
-     "h": 61,
-     "l": 37,
+     "h": 62,
+     "l": 44,
      "sunrise": "07:11",
-     "sunset": "17:33"
+     "sunset": "17:34"
     },
     "forecast": [
      {
       "date": "2026-11-18",
       "d": "Wed",
       "i": "sun",
-      "text": "Clear",
-      "h": 66,
-      "l": 40,
-      "pop": 0
+      "text": "Sunny",
+      "h": 65,
+      "l": 50
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 59,
-      "l": 50,
-      "pop": 8
-     },
-     {
-      "date": "2026-11-20",
-      "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 61,
-      "l": 57,
-      "pop": 16
-     }
-    ],
-    "days7": [
-     {
-      "date": "2026-11-17",
-      "d": "Tue",
-      "i": "sun",
-      "text": "Mostly clear",
-      "h": 61,
-      "l": 37,
-      "pop": 0
-     },
-     {
-      "date": "2026-11-18",
-      "d": "Wed",
-      "i": "sun",
-      "text": "Clear",
+      "i": "partly",
+      "text": "Partly Sunny",
       "h": 66,
-      "l": 40,
-      "pop": 0
-     },
-     {
-      "date": "2026-11-19",
-      "d": "Thu",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 59,
-      "l": 50,
-      "pop": 8
+      "l": 53
      },
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 61,
-      "l": 57,
-      "pop": 16
-     },
-     {
-      "date": "2026-11-21",
-      "d": "Sat",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 60,
-      "l": 55,
-      "pop": 24
-     },
-     {
-      "date": "2026-11-22",
-      "d": "Sun",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 58,
-      "l": 55,
-      "pop": 12
-     },
-     {
-      "date": "2026-11-23",
-      "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 63,
-      "l": 50,
-      "pop": 1
-     }
-    ],
-    "hourly": [
-     {
-      "t": "2026-11-17T10:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 49,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T11:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 53,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T12:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 57,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T13:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 59,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T14:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 61,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T15:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 61,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T16:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 61,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T17:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 59,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T18:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 54,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T19:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 51,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T20:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 49,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T21:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 48,
-      "pop": 0
+      "i": "partly",
+      "text": "Partly Sunny",
+      "h": 68,
+      "l": 54
      }
     ]
    },
@@ -208,203 +54,50 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 47,
-     "i": "partly",
-     "cond": "Partly cloudy",
-     "windMph": 9,
-     "windDir": "S",
-     "observed": "2026-11-17T08:30"
+     "temp": 45,
+     "i": "cloud",
+     "cond": "Cloudy",
+     "windMph": 11,
+     "windDir": "SSE",
+     "observed": "2026-11-17T15:15:00+00:00"
     },
     "today": {
-     "h": 53,
-     "l": 43,
-     "sunrise": "07:12",
-     "sunset": "16:41"
+     "h": 54,
+     "l": 44,
+     "sunrise": "07:11",
+     "sunset": "16:43"
     },
     "forecast": [
      {
       "date": "2026-11-18",
       "d": "Wed",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 54,
-      "l": 43,
-      "pop": 1
+      "i": "partly",
+      "text": "Mostly Sunny",
+      "h": 59,
+      "l": 46
      },
      {
       "date": "2026-11-19",
       "d": "Thu",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 57,
-      "l": 46,
-      "pop": 0
+      "i": "sun",
+      "text": "Sunny",
+      "h": 55,
+      "l": 39
      },
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 63,
-      "l": 45,
-      "pop": 27
-     }
-    ],
-    "days7": [
-     {
-      "date": "2026-11-17",
-      "d": "Tue",
-      "i": "cloud",
-      "text": "Fog",
-      "h": 53,
-      "l": 43,
-      "pop": 0
-     },
-     {
-      "date": "2026-11-18",
-      "d": "Wed",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 54,
-      "l": 43,
-      "pop": 1
-     },
-     {
-      "date": "2026-11-19",
-      "d": "Thu",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 57,
-      "l": 46,
-      "pop": 0
-     },
-     {
-      "date": "2026-11-20",
-      "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 63,
-      "l": 45,
-      "pop": 27
-     },
-     {
-      "date": "2026-11-21",
-      "d": "Sat",
-      "i": "rain",
-      "text": "Showers",
+      "i": "partly",
+      "text": "Partly Sunny",
       "h": 60,
-      "l": 44,
-      "pop": 60
-     },
-     {
-      "date": "2026-11-22",
-      "d": "Sun",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 44,
-      "l": 33,
-      "pop": 31
-     },
-     {
-      "date": "2026-11-23",
-      "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 40,
-      "l": 32,
-      "pop": 3
-     }
-    ],
-    "hourly": [
-     {
-      "t": "2026-11-17T09:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 48,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T10:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 50,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T11:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 51,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T12:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 51,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T13:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 52,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T14:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 52,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T15:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 53,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T16:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 53,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T17:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 51,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T18:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 49,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T19:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 47,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-17T20:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 47,
-      "pop": 0
+      "l": 52
      }
     ]
    }
   },
-  "asOf": "2026-11-17T14:30:18.959Z",
-  "lastAttempt": "2026-11-17T14:30:18.959Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
+  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
   "lastError": null
  },
  "nfl": {
@@ -473,11 +166,67 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "Ars Live: What do drone strikes on data centers mean for the future? Talk at 1 pm EST today",
+    "src": "Ars Technica",
+    "url": "https://arstechnica.com/gadgets/2026/11/ars-live-can-the-cloud-survive-drone-strikes-on-data-centers/",
+    "pub": "2026-11-17T15:28:59.000Z",
+    "sum": "Ars Live discussion is happening today, November 17, at 1 pm Eastern Time."
+   },
+   {
     "hd": "Nvidia’s Earnings Come at a Time of Mounting Tech Turmoil",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOV1BiamNlNHlQNm1aVi1iQzJuVF9rS190WGU4QWRPOF8zLVN0aDhhc2JWVVBvNXRFTGRuOTZGVW0wUFhjZWVyMHBXYXhwSm02OGJNNlVZbnpvcWtuSzAwMHVIV0E1Q2kxTG15VU1tNUxRRlhXU0UzVWRLUnYzVHlpTUdLbzdRaE5hUzVQLWJsNVNLTjJkcmItbTZSLWlfWTdQd2tXNHBSRllfM2owU2hyMw?oc=5",
-    "pub": "2026-11-17T14:27:03.000Z",
+    "pub": "2026-11-17T15:20:15.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Nvidia shares try to rebound ahead of earnings as company reels from Huang resignation",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/17/nvidia-stock-earnings-jensen-huang-resignation.html",
+    "pub": "2026-11-17T15:17:16.000Z",
+    "sum": "Investors have been weighing the fallout from former CEO Jensen Huang's resignation."
+   },
+   {
+    "hd": "A Startup Emerges From Stealth With Highly Personalized AI",
+    "src": "The Information",
+    "url": "https://www.theinformation.com/articles/startup-emerges-stealth-highly-personalized-ai",
+    "pub": "2026-11-17T15:01:15.000Z",
+    "sum": "OpenAI’s ChatGPT remembers details of its users and what they look up, while Anthropic’s Claude Code uses its “auto memory” to take notes on users’ preferences and feedback. A new startup thinks AI models can get even more personalized. First Person Labs, founded seven months ago by two PhD students in the Stanford Artificial Intelligence Laboratory, a research institute at the university, is developing tech to make “user models,” the term for more personalized AI models and agents trained on an individual’s data. The startup is coming out of stealth Tuesday and has raised around $10 million…"
+   },
+   {
+    "hd": "Voyage Labs raises $12 million for a specialized AI travel assistant",
+    "src": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/17/voyage-labs-raises-12-million-for-a-specialized-ai-travel-assistant/",
+    "pub": "2026-11-17T15:00:00.000Z",
+    "sum": "Planning a trip is a favorite demo for personal AI assistants: you can try it with Muse, or with Gemini or half a dozen other choices. But while most pitches use travel-planning as part of a general-purpose agent pitch, a new startup from a Google Maps alum is betting that a specialized travel-planning agent can"
+   },
+   {
+    "hd": "Isomorphic Labs raises $5B as it looks to take drug candidates to clinical trials",
+    "src": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/17/isomorphic-labs-raises-5b-as-it-looks-to-take-drug-candidates-to-clinical-trials/",
+    "pub": "2026-11-17T14:50:58.000Z",
+    "sum": "Isomorphic Labs, the AI drug-discovery platform that was spun out of Google’s DeepMind in 2021, has raised $5 Billion in a Series C funding round."
+   },
+   {
+    "hd": "Why the Road to an IPO Is Getting Longer",
+    "src": "The Information",
+    "url": "https://www.theinformation.com/articles/road-ipo-getting-longer",
+    "pub": "2026-11-17T14:49:07.000Z",
+    "sum": "Trillion-dollar-plus IPOs may be stealing the headlines, but for companies hoping to launch that aren’t Anthropic or SpaceX, the path to public markets looks less certain. Companies that have spent years getting IPO-ready may have to wait longer to launch as market conditions shift yet again. To explore how companies can prepare for an IPO in an unpredictable climate, The Information reporter Dakin Campbell spoke to three investment experts about the long road to going public. Kiran Choudary, chief financial officer, Rubrik Crystal Shen, head of West Coast capital markets, NYSE Kate…"
+   },
+   {
+    "hd": "Nvidia forms export-control panel as Huang affair puts China ties in focus",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTTFHVE42V3FIZzBXbWhKLVR3bWRrZ3dRWGpCRm45dlktYkpveDBveW1IRFc1aDltUERHLURBUFdSUW5KMVVaZ2w2NGRuQVhmZmtyb2ZpUGZuZncyVXR3cFYxX2FUcmFyQVRBSHVnbWFsVFFTQ1lPS0lTdmZUMDktbTBUbndQdzhxc2JnWVctSF96QXdVb2JUeUpqYURha25FMEZhU3VqbWFTZDA0Q3lqanRUaGdMQ2M?oc=5",
+    "pub": "2026-11-17T14:36:17.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Anthropic likely to price IPO above the current range of $70 to $78, sources tell CNBC",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/17/anthropic-ipo-price.html",
+    "pub": "2026-11-17T14:34:48.000Z",
+    "sum": "Anthropic is slated to list on the Nasdaq under the ticker symbol \"ANT\" and start trading on Nov. 19."
    },
    {
     "hd": "Nvidia’s Days as an Open Checkbook for the AI Economy Are Numbered",
@@ -491,6 +240,13 @@
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPNGE1NWg5RXYzeVZBS3VzUGptS2I4ODBKd1FaUjF1R0hpVHpXeEpkcFF2U1lpWU42QmZGYzZYZ2NZV05QRVVfXy04T1dpeGpKM0lXNmVnMHhOc05abFZ6NEZUYjIxTTFybk5zcFRUVWdmeHM4TGp5QV83OVZVVjE0cmtjY1RYbHJERVJLeDV2ZXdhTWR2SkRGYVVHQjFxLXkwalJMNGk0YnVwd1RIcnI3VDJwSDg1Q1VQRmM0RA?oc=5",
     "pub": "2026-11-17T14:07:40.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Nasdaq set for higher open as tech steadies ahead of Nvidia results, Anthropic IPO",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemNySVhGbms1VkxVYXFsTFdtdVh1MjNQQk16Y1ZfNGFHMFhDRWUtZldZRzJzSWxpNlBLWVpTenJnU2FHZndaVUlEclFtQVNvTzJBWTNpM1p0N3dmWjlyMEFKbkowZkpSanhVcEVLUjZfOWxNcW5OZVFuLTNFNF93ZDd4b0wxX1VzNlJPODdqc0xob1ZrR0xuQkJ6bExvNDdQMk5saFVSdkVBZw?oc=5",
+    "pub": "2026-11-17T14:05:55.000Z",
     "sum": ""
    },
    {
@@ -564,6 +320,20 @@
     "sum": ""
    },
    {
+    "hd": "US data centers slash electric bills with brief demand cuts, raising questions over who pays",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNOWNQR2NtWXhrdGVscW14OVhXNTdfd243QWJXV3VEZVp1N3laZEdwS0VPS3o4MTU3XzM0WmsxMDhQLTNkVGNNcm5NUDhXdnZva1R0Sm1NblJCQUZZcGJ6SjJCUnhHU2FLTS1wdE02T0tNU0htbkxBX3ZtU1o5M19OTVFERTdnaktMSlQtazJsbUg1dzVwU2ZUbU1VUGVPeUFsNko0TnRxVVFtQkdaamFpcE5XbldXc1p5NGJ4a3kxS0owOWlCX2FnVE53?oc=5",
+    "pub": "2026-11-17T13:03:26.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Amazon, Google to Have About 28% of Anthropic Stock After IPO",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV2pZZmdyc0t4VzZKQ21zUWRjVENMam14ZG1qQ2ludXhhSmxGbUF5NVNmX1h0a1B2SlBMNEVZWmRZRDZSbFQyTWZKMHZuZzJrNk13Z21iaV9nbGxBaVlwTmJ4cVVMdnVYSUZrRHJNcF9ObGVyZ19MbzEzeElOcmtNTmRfSGtEOUlkNGRWZENESVliWUtfd3lyQ1ZmY0FYWTNiRzduZW02QjhyOWx6UUFN?oc=5",
+    "pub": "2026-11-17T13:03:17.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Nvidia's earnings mark start of post-Jensen era",
     "src": "Axios",
     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE01LUtYRnhMT2I3S19kbEVaU1Vvcy1VTmh2bWk1NjZtaVl2TzZiM0dFZGxKdGdwbk04eVBfVXYzLW9WcGVTZkpSNGY2QTFHdUUzSzlINFhjbUwtOC14NnhKUlRLYzNJZjFZQU9SWWo2V292cERuQmF6eGd3?oc=5",
@@ -571,21 +341,14 @@
     "sum": ""
    },
    {
-    "hd": "Nasdaq futures rise as tech stocks firm up ahead of Nvidia results, Anthropic IPO",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemNySVhGbms1VkxVYXFsTFdtdVh1MjNQQk16Y1ZfNGFHMFhDRWUtZldZRzJzSWxpNlBLWVpTenJnU2FHZndaVUlEclFtQVNvTzJBWTNpM1p0N3dmWjlyMEFKbkowZkpSanhVcEVLUjZfOWxNcW5OZVFuLTNFNF93ZDd4b0wxX1VzNlJPODdqc0xob1ZrR0xuQkJ6bExvNDdQMk5saFVSdkVBZw?oc=5",
-    "pub": "2026-11-17T12:36:25.000Z",
+    "hd": "Emerging Stocks Drop As Nvidia Jitters Weigh on Asian Tech",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOOUhUTFdrYUdBNWdCakZmSzJoQTVza3FxVjFGTTdMcDlzeThLQ2xmak5UU1doZjlacUFZb3JpVlNvQjhfR3VEaTZYMzVHQ25EWjFUUVk3SGVaTW9zcDdiR2NsRU9DQUtPdUg2SWN2TTVNcHVIS1hKdFhNREpraGVKWVZWOGRpQ09hdWE5QmZFcDJiY2dScHNoWGthSktSRFhQbEk0eUtWVHlwZ3I0OHc?oc=5",
+    "pub": "2026-11-17T12:20:44.000Z",
     "sum": ""
    },
    {
-    "hd": "US stock futures slip ahead of Nvidia results; Fed speakers in focus",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemNySVhGbms1VkxVYXFsTFdtdVh1MjNQQk16Y1ZfNGFHMFhDRWUtZldZRzJzSWxpNlBLWVpTenJnU2FHZndaVUlEclFtQVNvTzJBWTNpM1p0N3dmWjlyMEFKbkowZkpSanhVcEVLUjZfOWxNcW5OZVFuLTNFNF93ZDd4b0wxX1VzNlJPODdqc0xob1ZrR0xuQkJ6bExvNDdQMk5saFVSdkVBZw?oc=5",
-    "pub": "2026-11-17T12:24:16.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "AI grapples with the return of the Antichrist",
+    "hd": "AI grapples with the return of the ‘Antichrist’",
     "src": "Financial Times",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOZUcyMVZGNVRBQ1lQVlIydjNDdjF5cnVrNGRmdE9lTy14UXBmYUNuQ01GQnpYZUZPR1RQYWxFUjNyM0pUMngyZ09qbjhHTmNiNzdVTXVzXzJ4S1FyNmRmSFluV1NXdkp5VUg3ZW9EMjhvX25MYVBTQ055UnlxTkduc3JaOWE?oc=5",
     "pub": "2026-11-17T12:20:22.000Z",
@@ -599,13 +362,6 @@
     "sum": ""
    },
    {
-    "hd": "Lidar and AI are making traffic lights smarter",
-    "src": "Axios",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOYzFRWmt1dHdLRk42SnJIMWxvbmNRUHg1YlNsd0xuLU5ySk5RS1YtU3RvV1lmd3BWajZwQXBVdU1uU3FkY01CQ3YxcTY2dVVzSXJQR0dENEhZcG5VSDhIMjJzYWVQbzJOcDBLenhSNEtNWWtvdDIwNV83dURxTXBlUS0tc2FwZw?oc=5",
-    "pub": "2026-11-17T12:02:20.000Z",
-    "sum": ""
-   },
-   {
     "hd": "European Stocks Fall as US Chip Curbs Ignite Fresh AI Selloff",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOa3B2Vm51YVUtX3hHRW1FX21JUXdGUWk1OGVtSlR5c2NmNjd2Z0VnOThOall1bGExUEh3UHhWWVFJQjhxNEVNcFJKMER2VDZfbEJja0ZhVktZLTljdS1nQlJ5Yk5sQ0lhSThMbEJKTXJsNDdtcUZIMTNMZEpPX1ZZZlYySkU1Vmw0WGFVcC1TdWo0UDdTZXgwZ1FYMndWUlo4QXduc3RkNU9FVGY5Y1EwZEZn?oc=5",
@@ -613,74 +369,11 @@
     "sum": ""
    },
    {
-    "hd": "Push to reinstate Jensen Huang tests superstar tech CEO accountability",
-    "src": "Axios",
-    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQYU5zbnBpbW9QZ1IxRzM2cWNSYmVFcnlyeUkzdE9YcWtwWXBFNTZNblpXZWRyYjVMNnZEX04tSUFLLU9mdm1fTTVQSWFDY2tRY1dXQms4WHhlUDdPU1oxeU5obDNOVnlsSVh1VkZYM2tPTzNkUHljVTFoMVdrb1R0QWhETQ?oc=5",
-    "pub": "2026-11-17T11:50:32.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Tech Stocks Extend Selloff as Nvidia Results Near: Markets Wrap",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQSHFoREFNUWJRYTJxR0pTRnpHM2Q1NlhjQ1pjN0w3U1FWM09sclNuMlVNLWx4YXF0TURpOEdtSk9sc3BXTEpBakhLd21neWhod2pvZ1hRNVAtZWxNTlZmUXl4TXNJQ0MyTTFqa0tpRGVmOVpQZlRidlZzYkFLYnlNSXduLUtPSXo3QUJ0aVhlM0xWVFNh?oc=5",
-    "pub": "2026-11-17T11:16:53.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Nvidia's Kress faces earnings test after stock drags Wall Street into the red",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/17/nvidias-kress-faces-earnings-test-after-stock-drags-wall-street-into-the-red.html",
-    "pub": "2026-11-17T11:04:17.000Z",
-    "sum": "Futures hold the flatline as investors await key results from Nvidia and Disney"
-   },
-   {
     "hd": "U.S. Has Been Probing Megaspeed Since 2024 for Export Control Violations",
     "src": "The Information",
     "url": "https://www.theinformation.com/briefings/u-s-probing-megaspeed-since-2024-export-control-violations",
     "pub": "2026-11-17T11:01:42.000Z",
     "sum": "U.S. authorities have been investigating Singapore-based Megaspeed since 2024 for potential violations of restrictions on the sale of advanced chips to China, the Justice and Commerce Departments said Monday. The probe into Megaspeed, an Nvidia cloud partner once led by Alice Huang, an alleged..."
-   },
-   {
-    "hd": "Jensen Huang’s Views On China Chips Market Stretch Back Years",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNbC01NXNuNjZhRUlOejZxUUlhM0tmMTRHTUZqWG5aRHk3RWxaQzAta2gtYkxtTmMwc3k2NF93cng2ZzBmM3VSYXFPQzQyTXU0bTM5N01USWpyZDFEMHNQcFdxMk82dHJYVklkN2F5MHBJYnUxTkZlUXhUY2swNzFvWF9nQW5aMldyMno1cXRBXy1zSkNackpKQWNSN0EtRVBRQjRfTTkwYmc3eUVJ?oc=5",
-    "pub": "2026-11-17T11:01:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Rogue Agents Hacked His Company. Why Is Clément Delangue So Optimistic About AI?",
-    "src": "Wired",
-    "url": "https://www.wired.com/story/wired-yearbook-2026-clement-delangue/",
-    "pub": "2026-11-17T11:00:00.000Z",
-    "sum": "The French CEO of Hugging Face, a mega-hub of open-source AI software, says the attack by OpenAI models earlier this year proved one thing: Humanity can’t let AI be controlled by the few."
-   },
-   {
-    "hd": "AI Told These Ex-Google Guys How to Build a Billion-Dollar Weapons Business",
-    "src": "Wired",
-    "url": "https://www.wired.com/story/ai-told-these-ex-google-guys-how-to-build-a-billion-dollar-weapons-business/",
-    "pub": "2026-11-17T10:47:45.000Z",
-    "sum": "Google and Apple alumni Chad Steelberg and Andy Baynes are applying what they learned running software companies and designing iPhones to manufacturing lethal munitions."
-   },
-   {
-    "hd": "Why I’m Not Losing Sleep Over the AI Apocalypse",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5QSF9ScGtCUzFUclIwaF96NkYxc0w0SkkwTndabmcwdzA4cUlKQVJreUNMNWRvU1BZeGNVSU9iaG9TZWk3LVV1Z0lzSEhERFdIcVFDa01qV0laLTBfcE1QRmROWWY1UQ?oc=5",
-    "pub": "2026-11-17T10:45:13.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Tech sell-off deepens as Nvidia results loom",
-    "src": "Financial Times",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNaGpqcXpGcmwtSWNzX2FvRDFXejF5TktMbktSemlOZ3pRc0FYNmRiUk1qM0dCdXphenJFWnU0bTZNc1NZWEdVVUV4N1F1YzRNOUtvdUE4UVoxWUxJUWt1Zk9kVklyam9JZlFKeU9yWXJfS1pBQ2lNRjFYUUY0WkV3MWx2aG0?oc=5",
-    "pub": "2026-11-17T08:15:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "U.S. agencies say they initiated investigation into Nvidia partner Megaspeed in 2024",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/17/megaspeed-investigation-nvidia-jensen-huang.html",
-    "pub": "2026-11-17T06:59:42.000Z",
-    "sum": "The Commerce and Justice departments said in a joint statement that U.S. investigations into Megaspeed began in 2024."
    }
   ],
   "feeds": [
@@ -693,15 +386,15 @@
    "Wired",
    "Google News",
    "Reuters",
+   "Bloomberg",
    "Axios"
   ],
   "feedErrors": [
-   "VentureBeat: HTTP 429 from venturebeat.com",
-   "Bloomberg (Google News): HTTP 429 from news.google.com"
+   "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-17T14:30:18.959Z",
-  "lastAttempt": "2026-11-17T14:30:18.959Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Axios",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
  "stocks": {
@@ -712,44 +405,44 @@
    "isOpen": true,
    "session": "regular",
    "holiday": null,
-   "checkedAt": "2026-11-17T15:15:18.135Z"
+   "checkedAt": "2026-11-17T15:30:13.480Z"
   },
   "quotes": {
    "NVDA": {
     "s": "NVDA",
     "n": "NVIDIA",
     "kind": "stock",
-    "px": 154.38,
-    "ch": -1.1272,
-    "d": -1.76,
+    "px": 153.64,
+    "ch": -1.6011,
+    "d": -2.5,
     "pc": 156.14,
-    "t": 1794928501,
+    "t": 1794929418,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:01.000Z"
+    "quoteTime": "2026-11-17T15:30:18.000Z"
    },
    "TSLA": {
     "s": "TSLA",
     "n": "Tesla",
     "kind": "stock",
-    "px": 381.65,
-    "ch": 0.503,
-    "d": 1.91,
+    "px": 380.95,
+    "ch": 0.3186,
+    "d": 1.21,
     "pc": 379.74,
-    "t": 1794928500,
+    "t": 1794929417,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:00.000Z"
+    "quoteTime": "2026-11-17T15:30:17.000Z"
    },
    "SPCX": {
     "s": "SPCX",
     "n": "SpaceX",
     "kind": "stock",
-    "px": 140.74,
-    "ch": 2.4607,
-    "d": 3.38,
+    "px": 141.01,
+    "ch": 2.6573,
+    "d": 3.65,
     "pc": 137.36,
-    "t": 1794928500,
+    "t": 1794929418,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:00.000Z"
+    "quoteTime": "2026-11-17T15:30:18.000Z"
    },
    "ANT": {
     "s": "ANT",
@@ -766,13 +459,13 @@
     "kind": "index",
     "symbol": "^DJI",
     "source": "Yahoo Finance",
-    "px": 51281.61,
-    "ch": -0.6327716389392052,
-    "d": -326.5618749999994,
+    "px": 51252.33,
+    "ch": -0.689506839850638,
+    "d": -355.84187499999825,
     "pc": 51608.171875,
-    "t": 1794928531,
+    "t": 1794929444,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:31.000Z"
+    "quoteTime": "2026-11-17T15:30:44.000Z"
    },
    "SPX": {
     "s": "SPX",
@@ -780,13 +473,13 @@
     "kind": "index",
     "symbol": "^GSPC",
     "source": "Yahoo Finance",
-    "px": 7393.05,
-    "ch": -0.3173944393033541,
-    "d": -23.539843749999818,
+    "px": 7379.86,
+    "ch": -0.4952389780722843,
+    "d": -36.72984375000033,
     "pc": 7416.58984375,
-    "t": 1794928530,
+    "t": 1794929439,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:30.000Z"
+    "quoteTime": "2026-11-17T15:30:39.000Z"
    },
    "NASDAQ": {
     "s": "NASDAQ",
@@ -794,13 +487,13 @@
     "kind": "index",
     "symbol": "^IXIC",
     "source": "Yahoo Finance",
-    "px": 24443.32,
-    "ch": -0.27107473210807326,
-    "d": -66.43976562500029,
+    "px": 24366.482,
+    "ch": -0.584574336897204,
+    "d": -143.27776562500003,
     "pc": 24509.759765625,
-    "t": 1794928528,
+    "t": 1794929441,
     "vol": null,
-    "quoteTime": "2026-11-17T15:15:28.000Z"
+    "quoteTime": "2026-11-17T15:30:41.000Z"
    }
   },
   "history": {
@@ -908,6 +601,10 @@
     {
      "t": 1794928501,
      "c": 154.38
+    },
+    {
+     "t": 1794929418,
+     "c": 153.64
     }
    ],
    "TSLA": [
@@ -1014,6 +711,10 @@
     {
      "t": 1794928500,
      "c": 381.65
+    },
+    {
+     "t": 1794929417,
+     "c": 380.95
     }
    ],
    "SPCX": [
@@ -1120,6 +821,10 @@
     {
      "t": 1794928500,
      "c": 140.74
+    },
+    {
+     "t": 1794929418,
+     "c": 141.01
     }
    ],
    "DOW": [
@@ -1226,6 +931,10 @@
     {
      "t": 1794928531,
      "c": 51281.61
+    },
+    {
+     "t": 1794929444,
+     "c": 51252.33
     }
    ],
    "SPX": [
@@ -1332,6 +1041,10 @@
     {
      "t": 1794928530,
      "c": 7393.05
+    },
+    {
+     "t": 1794929439,
+     "c": 7379.86
     }
    ],
    "NASDAQ": [
@@ -1438,11 +1151,15 @@
     {
      "t": 1794928528,
      "c": 24443.32
+    },
+    {
+     "t": 1794929441,
+     "c": 24366.482
     }
    ]
   },
-  "lastAttempt": "2026-11-17T15:15:18.135Z",
-  "asOf": "2026-11-17T15:15:18.135Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
   "indexSource": "Yahoo Finance",
   "details": {
    "NVDA": {
@@ -2087,11 +1804,11 @@
      },
      {
       "t": 1794925800,
-      "c": 154.3300018310547,
-      "v": 66193381
+      "c": 153.35000610351562,
+      "v": 78499456
      }
     ],
-    "volume": 66193381,
+    "volume": 78499456,
     "week52High": 243.37,
     "week52Low": 148.8,
     "peTTM": 20.3479,
@@ -2768,11 +2485,11 @@
      },
      {
       "t": 1794925800,
-      "c": 381.8699951171875,
-      "v": 4282990
+      "c": 380.05999755859375,
+      "v": 5047670
      }
     ],
-    "volume": 4282990,
+    "volume": 5047670,
     "week52High": 498.83,
     "week52Low": 297.38,
     "peTTM": 458.6313,
@@ -3359,11 +3076,11 @@
      },
      {
       "t": 1794925800,
-      "c": 140.44500732421875,
-      "v": 24461384
+      "c": 140.6699981689453,
+      "v": 28043067
      }
     ],
-    "volume": 24461384,
+    "volume": 28043067,
     "week52High": 225.64,
     "week52Low": 104.83,
     "peTTM": 0,
@@ -4047,11 +3764,11 @@
      },
      {
       "t": 1794925800,
-      "c": 51281.609375,
-      "v": 129639353
+      "c": 51252.8203125,
+      "v": 152333800
      }
     ],
-    "volume": 129639353,
+    "volume": 152333800,
     "week52High": 54744.33,
     "week52Low": 45057.28
    },
@@ -4697,11 +4414,11 @@
      },
      {
       "t": 1794925800,
-      "c": 7392.66015625,
-      "v": 422614142
+      "c": 7379.75,
+      "v": 510962287
      }
     ],
-    "volume": 422614142,
+    "volume": 510962287,
     "week52High": 7844.52,
     "week52Low": 6316.91
    },
@@ -5347,11 +5064,11 @@
      },
      {
       "t": 1794925800,
-      "c": 24443.3203125,
-      "v": 2689911000
+      "c": 24366.482421875,
+      "v": 2986630000
      }
     ],
-    "volume": 2689911000,
+    "volume": 2986630000,
     "week52High": 27722.75,
     "week52Low": 20690.25
    }
@@ -5359,8 +5076,8 @@
   "series": {
    "provider": "Yahoo Finance",
    "mode": "90d",
-   "asOf": "2026-11-17T15:15:18.135Z",
-   "lastAttempt": "2026-11-17T15:15:18.135Z",
+   "asOf": "2026-11-17T15:30:13.480Z",
+   "lastAttempt": "2026-11-17T15:30:13.480Z",
    "items": {
     "NVDA": {
      "mode": "90d",
@@ -5500,7 +5217,7 @@
       166.19,
       162.85,
       156.14,
-      154.33
+      153.35
      ]
     },
     "TSLA": {
@@ -5641,7 +5358,7 @@
       397.45,
       390.22,
       379.74,
-      381.91
+      380.01
      ]
     },
     "SPCX": {
@@ -5782,7 +5499,7 @@
       139.94,
       139.11,
       137.36,
-      140.45
+      140.67
      ]
     }
    }
@@ -5790,11 +5507,12 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T15:15:18.135Z",
+  "at": "2026-11-17T15:30:13.480Z",
   "ran": [
+   "weather",
    "alerts",
-   "stockNews",
-   "worldNews",
+   "news",
+   "world",
    "movers",
    "sectors",
    "stocks:session",
@@ -12697,8 +12415,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T15:15:18.135Z",
-  "lastAttempt": "2026-11-17T15:15:18.135Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13374,32 +13092,32 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T15:15:18.135Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
    {
     "src": "BBC News",
-    "hd": "How new US chip restrictions on South East Asia will hit China",
-    "pub": "2026-11-17T14:25:45.000Z"
+    "hd": "Mozambique opposition leader goes on trial for terrorism over deadly election protests",
+    "pub": "2026-11-17T15:19:19.000Z"
+   },
+   {
+    "src": "The Washington Post",
+    "hd": "Trump arrives just as Southeast Asian summit is ending, but still looms over talks",
+    "pub": "2026-11-17T14:40:38.000Z"
    },
    {
     "src": "BBC",
     "hd": "Putin's Crimea bridge partly collapses as Zelensky hails 'unprecedented' attack by Ukraine",
     "pub": "2026-11-17T13:01:11.000Z"
-   },
-   {
-    "src": "AP News",
-    "hd": "Mongolia’s president says he will step down after facing accusations of corruption",
-    "pub": "2026-11-17T12:42:00.000Z"
    }
   ],
   "feedErrors": [
-   "Reuters: HTTP 429 from news.google.com"
+   "Reuters: no items"
   ],
-  "asOf": "2026-11-17T14:30:18.959Z",
-  "lastAttempt": "2026-11-17T14:30:18.959Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
   "lastError": null
  },
  "movers": {
@@ -13407,94 +13125,94 @@
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
   "marketState": "REGULAR",
-  "sessionTime": "2026-11-17T15:15:29.000Z",
+  "sessionTime": "2026-11-17T15:30:44.000Z",
   "sessionDate": "2026-11-17",
   "gainers": [
    {
     "s": "SLS",
     "n": "SELLAS Life Sciences Group, Inc",
-    "ch": 157.3,
-    "px": 19.22,
-    "cap": 3918172672,
-    "t": 1794928529
-   },
-   {
-    "s": "ACM",
-    "n": "AECOM",
-    "ch": 10.47,
-    "px": 80.09,
-    "cap": 10307296256,
-    "t": 1794928526
-   },
-   {
-    "s": "AS",
-    "n": "Amer Sports, Inc.",
-    "ch": 9.45,
-    "px": 31.85,
-    "cap": 18531031040,
-    "t": 1794928527
+    "ch": 157.99,
+    "px": 19.24,
+    "cap": 3922249984,
+    "t": 1794929443
    },
    {
     "s": "UNFI",
     "n": "United Natural Foods, Inc.",
-    "ch": 9.22,
-    "px": 52.85,
-    "cap": 3173808896,
-    "t": 1794928515
+    "ch": 9.39,
+    "px": 52.935,
+    "cap": 3178913792,
+    "t": 1794929418
    },
    {
-    "s": "SNAP",
-    "n": "Snap Inc.",
-    "ch": 7.56,
-    "px": 5.475,
-    "cap": 9453007872,
-    "t": 1794928528
+    "s": "ACM",
+    "n": "AECOM",
+    "ch": 9.34,
+    "px": 79.27,
+    "cap": 10201764864,
+    "t": 1794929432
+   },
+   {
+    "s": "AS",
+    "n": "Amer Sports, Inc.",
+    "ch": 8.25,
+    "px": 31.5,
+    "cap": 18327394304,
+    "t": 1794929443
+   },
+   {
+    "s": "ESLT",
+    "n": "Elbit Systems Ltd.",
+    "ch": 8.19,
+    "px": 736.49,
+    "cap": 34527338496,
+    "t": 1794929444
    }
   ],
   "losers": [
    {
-    "s": "CGON",
-    "n": "CG Oncology, Inc.",
-    "ch": -9.91,
-    "px": 76.38,
-    "cap": 6822178304,
-    "t": 1794928525
-   },
-   {
     "s": "IDYA",
     "n": "IDEAYA Biosciences, Inc.",
-    "ch": -7.95,
-    "px": 27.945,
-    "cap": 2702129920,
-    "t": 1794928508
-   },
-   {
-    "s": "SMMT",
-    "n": "Summit Therapeutics Inc.",
-    "ch": -7.49,
-    "px": 10.935,
-    "cap": 8745418752,
-    "t": 1794928528
+    "ch": -9.16,
+    "px": 27.58,
+    "cap": 2666836480,
+    "t": 1794929438
    },
    {
     "s": "CRM",
     "n": "Salesforce, Inc.",
-    "ch": -6.97,
-    "px": 199.85,
-    "cap": 164476551168,
-    "t": 1794928525
+    "ch": -8.2,
+    "px": 197.22,
+    "cap": 162312060928,
+    "t": 1794929443
    },
    {
-    "s": "JD",
-    "n": "JD.com, Inc.",
-    "ch": -6.34,
-    "px": 25.795,
-    "cap": 34836148224,
-    "t": 1794928529
+    "s": "CGON",
+    "n": "CG Oncology, Inc.",
+    "ch": -7.34,
+    "px": 78.555,
+    "cap": 7016446976,
+    "t": 1794929443
+   },
+   {
+    "s": "NTSK",
+    "n": "Netskope, Inc.",
+    "ch": -7,
+    "px": 20.33,
+    "cap": 8306588672,
+    "t": 1794929439
+   },
+   {
+    "s": "TENB",
+    "n": "Tenable Holdings, Inc.",
+    "ch": -6.92,
+    "px": 38.19,
+    "cap": 3991145984,
+    "t": 1794929443
    }
   ],
-  "asOf": "2026-11-17T15:15:18.135Z",
-  "lastAttempt": "2026-11-17T15:15:18.135Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
   "lastError": null
  },
  "sectors": {
@@ -13504,85 +13222,85 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 163.53,
-    "d": -0.75,
-    "t": 1794928527
+    "px": 162.68,
+    "d": -1.26,
+    "t": 1794929442
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 106.92,
-    "d": 0.09,
-    "t": 1794928529
+    "px": 106.67,
+    "d": -0.14,
+    "t": 1794929444
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 118.61,
-    "d": 0.39,
-    "t": 1794928522
+    "px": 118.26,
+    "d": 0.09,
+    "t": 1794929441
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 57.74,
-    "d": -0.76,
-    "t": 1794928528
+    "px": 57.77,
+    "d": -0.71,
+    "t": 1794929443
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 186.32,
-    "d": -0.83,
-    "t": 1794928526
+    "px": 187.12,
+    "d": -0.4,
+    "t": 1794929443
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 165.88,
-    "d": 0.13,
-    "t": 1794928529
+    "px": 165.86,
+    "d": 0.12,
+    "t": 1794929441
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 92.5,
-    "d": -0.11,
-    "t": 1794928528
+    "px": 92.53,
+    "d": -0.08,
+    "t": 1794929444
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 63.97,
-    "d": 0.44,
-    "t": 1794928530
+    "px": 64.03,
+    "d": 0.53,
+    "t": 1794929442
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 43.93,
-    "d": -0.43,
-    "t": 1794928527
+    "px": 44,
+    "d": -0.27,
+    "t": 1794929440
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 44.1,
-    "d": -0.34,
-    "t": 1794928518
+    "px": 44.06,
+    "d": -0.43,
+    "t": 1794929439
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 51.78,
-    "d": 0.59,
-    "t": 1794928528
+    "px": 51.85,
+    "d": 0.74,
+    "t": 1794929435
    }
   ],
-  "sessionTime": "2026-11-17T15:15:30.000Z",
+  "sessionTime": "2026-11-17T15:30:44.000Z",
   "sessionDate": "2026-11-17",
-  "asOf": "2026-11-17T15:15:18.135Z",
-  "lastAttempt": "2026-11-17T15:15:18.135Z",
+  "asOf": "2026-11-17T15:30:13.480Z",
+  "lastAttempt": "2026-11-17T15:30:13.480Z",
   "lastError": null
  },
  "extended": {
