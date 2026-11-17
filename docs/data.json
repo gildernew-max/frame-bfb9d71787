@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T22:30:12.494Z",
+ "generatedAt": "2026-11-17T22:45:13.175Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6029,12 +6029,11 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-17T22:30:12.494Z",
+  "at": "2026-11-17T22:45:13.175Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -12934,8 +12933,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T22:30:12.494Z",
-  "lastAttempt": "2026-11-17T22:30:12.494Z",
+  "asOf": "2026-11-17T22:45:13.175Z",
+  "lastAttempt": "2026-11-17T22:45:13.175Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13611,8 +13610,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T22:30:12.494Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-17T22:45:13.175Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -13822,35 +13821,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T22:30:12.494Z",
-  "lastAttempt": "2026-11-17T22:30:12.494Z",
+  "asOf": "2026-11-17T22:45:13.175Z",
+  "lastAttempt": "2026-11-17T22:45:13.175Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 160.2979,
-    "time": 1794954638,
+    "price": 161.8,
+    "time": 1794955525,
     "ref": 155.46,
     "refTime": 1794949200,
-    "change": 4.8378999999999905,
-    "changePct": 3.111990222565284
+    "change": 6.340000000000003,
+    "changePct": 4.078219477679148
    },
    "TSLA": {
     "session": "post",
-    "price": 381.2387,
-    "time": 1794954629,
+    "price": 384,
+    "time": 1794955513,
     "ref": 380.11,
     "refTime": 1794949201,
-    "change": 1.1286999999999807,
-    "changePct": 0.2969403593696511
+    "change": 3.8899999999999864,
+    "changePct": 1.0233879666412318
    },
    "SPCX": {
     "session": "post",
-    "price": 142.17,
-    "time": 1794954629,
+    "price": 142.94,
+    "time": 1794955525,
     "ref": 141.7,
     "refTime": 1794949200,
-    "change": 0.46999999999999886,
-    "changePct": 0.33168666196189056
+    "change": 1.240000000000009,
+    "changePct": 0.8750882145377623
    }
   }
  },
@@ -13861,39 +13860,81 @@
    "NVDA": {
     "items": [
      {
-      "hd": "Nvidia earnings: Why Jensen turmoil won't have a near-term impact on the numbers",
+      "hd": "Nvidia Board Shuts Down Jensen Huang Comeback, Launches Search for New CEO",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/nvidia-earnings-why-jensen-turmoil-wont-have-a-near-term-impact-on-the-numbers-220936057.html?.tsrc=rss",
-      "pub": "2026-11-17T22:09:36.000Z",
-      "sum": "Uniphore CEO Umesh Sachdev and Morningstar equity strategist Brian Colello sit down with Deirdre Bosa to share their thoughts on Nvidia's (NVDA) latest earnings results in the wake of Jensen Huang's departure from the company."
+      "url": "https://decrypt.co/383513/nvidia-board-shuts-down-jensen-huang-comeback?.tsrc=rss",
+      "pub": "2026-11-17T22:39:53.000Z",
+      "sum": "Nvidia's board rejected a comeback for its ousted co-founder as it hired a search firm, backed interim CEO Colette Kress, and tightened oversight of chip exports to China."
      },
      {
-      "hd": "Dow Jones Futures Waver, Nvidia Earnings Beat After Market Breaks Lower; Target, Anthropic IPO Ahead",
+      "hd": "Nvidia interim-CEO Colette Kress speaks on quarterly revenue hitting $116B",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-waver%2C.html?.tsrc=rss",
-      "pub": "2026-11-17T22:09:05.000Z",
-      "sum": "Nvidia earnings beat after the stock market broke below recent lows. Target earnings are on tap, with the Anthropic IPO set to price Wednesday night."
+      "url": "https://finance.yahoo.com/video/nvidia-interim-ceo-colette-kress-speaks-on-quarterly-revenue-hitting-116b-224125904.html?.tsrc=rss",
+      "pub": "2026-11-17T22:38:46.000Z",
+      "sum": "Nvidia (NVDA) interim CEO Colette Kress spoke about the company's third quarter earnings report, which recorded revenue of $116 billion, more than doubling year over year, and raised its fiscal 2028 revenue growth outlook."
+     },
+     {
+      "hd": "Jensen Huang says he \"would be honored\" to return as Nvidia CEO",
+      "src": "Yahoo Finance",
+      "url": "https://www.cbsnews.com/news/jensen-huang-nvidia-ceo-return-statement/?.tsrc=rss",
+      "pub": "2026-11-17T22:36:22.000Z",
+      "sum": "Huang addressed a petition, signed by 190,000 people, including thousands of Nvidia employees, calling for his reinstatement."
+     },
+     {
+      "hd": "Nvidia sees strong growth in first earnings report without Huang",
+      "src": "Yahoo Finance",
+      "url": "https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/?.tsrc=rss",
+      "pub": "2026-11-17T22:34:55.000Z",
+      "sum": "Nvidia's latest earnings are the first time the chipmaker has reported financial results without founder and former CEO Jensen Huang at the helm."
+     },
+     {
+      "hd": "Nvidia with a positive Q3 despite SEC probing Nvidia amid Huang Scandal",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/nvidia-with-a-positive-q3-despite-sec-probing-nvidia-amid-huang-scandal-223224298.html?.tsrc=rss",
+      "pub": "2026-11-17T22:32:24.000Z",
+      "sum": "Deirdre Bosa discusses Jensen Huang's statement that he would be willing to return, the SEC's post-scandal probe into Nvidia (NVDA), and Nvidia's positive earnings report. Deirdre Bosa then sits down with Mustafa Suleyman, Microsoft's AI chief, to discuss Microsoft's 6 new AI models, the AI competition, and the 'handoverism' worldview. 'Deirdre Bosa Live' airs every day at 4 p.m. Tune in daily to hear how the latest developments in AI and technology are reshaping companies, industries, and the global economy."
+     },
+     {
+      "hd": "Nvidia results beat expectations as ousted CEO told no way back",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
+      "pub": "2026-11-17T22:30:03.000Z",
+      "sum": "US chip giant Nvidia doubled revenue in the third quarter to more than $115 billion, the company reported Tuesday while ruling out any return for ousted CEO Jensen Huang after a Chinese spy scandal.\"If the Board of Directors decides that my return is in the best interest of our shareholders, our employees, the company, and America, I would be honored to answer these calls and return as CEO.\" But Harvey Jones, the chair of the company's board, slapped down the move, saying in an earnings call tha"
      },
      {
       "hd": "Stock Indexes Fall as Tech Stocks Retreat Ahead of Nvidia’s Earnings",
       "src": "Nasdaq",
       "url": "https://www.nasdaq.com/articles/stock-indexes-fall-tech-stocks-retreat-ahead-nvidias-earnings",
-      "pub": "2026-11-17T22:08:46.000Z",
+      "pub": "2026-11-17T22:29:58.000Z",
       "sum": "The S&P 500 Index ($SPX ) (SPY ) is down -1.09% today, the Dow Jones Industrial Average ($DOWI ) (DIA ) is down -1.37%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) is down -1.11%. December E-mini S&P futures (ESZ26 ) are down -1.04%, and December E-mini Nasdaq futures..."
      },
      {
-      "hd": "Nvidia Stock Rises On Fiscal Q3 Beat-And-Raise Report (Live Coverage)",
+      "hd": "Nvidia chair says board 'does not intend to reinstate Jensen as CEO'",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/ef40b1a2-2bff-390f-b0d5-c281b4d503ef/nvidia-stock-rises-on-fiscal.html?.tsrc=rss",
-      "pub": "2026-11-17T22:08:37.000Z",
-      "sum": "Nvidia beat Wall Street’s targets for its fiscal third quarter and guided above views for the current quarter."
+      "url": "https://finance.yahoo.com/video/nvidia-chair-says-board-does-222900177.html?.tsrc=rss",
+      "pub": "2026-11-17T22:29:00.000Z",
+      "sum": "Nvidia (NVDA) board Chairman Harvey Jones said on the company's third quarter earnings call that it does not intend to reinstate Jensen Huang as CEO, a week after he resigned from the post following \"personal behavior inconsistent with the company's code of conduct.\""
      },
      {
-      "hd": "Nvidia doubles revenue in first earnings since Jensen Huang’s resignation",
+      "hd": "NVDA in charts: Data center revenue rises 110% Y/Y",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-17T22:28:33.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Huang pitches Nvidia comeback, WSJ reports SEC probing the chipmaker",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQTTFHVE42V3FIZzBXbWhKLVR3bWRrZ3dRWGpCRm45dlktYkpveDBveW1IRFc1aDltUERHLURBUFdSUW5KMVVaZ2w2NGRuQVhmZmtyb2ZpUGZuZncyVXR3cFYxX2FUcmFyQVRBSHVnbWFsVFFTQ1lPS0lTdmZUMDktbTBUbndQdzhxc2JnWVctSF96QXdVb2JUeUpqYURha25FMEZhU3VqbWFTZDA0Q3lqanRUaGdMQ2M?oc=5",
+      "pub": "2026-11-17T22:23:43.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Beats Wall Street With $115.8 Billion Revenue. Its $130 Billion Forecast Excludes China Chip Sales.",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-doubles-quarterly-revenue-first-215151401.html?.tsrc=rss",
-      "pub": "2026-11-17T22:06:44.000Z",
-      "sum": "Report comes just days after company saw ouster of its CEO over allegations of affair with suspected Chinese spy"
+      "url": "https://www.ibtimes.com/nvidia-record-revenue-130-billion-outlook-china-3809889?.tsrc=rss",
+      "pub": "2026-11-17T22:23:28.000Z",
+      "sum": "Interim CEO Colette Kress is navigating leadership uncertainty while the company pushes ahead with its Vera Rubin AI computing platform."
      },
      {
       "hd": "NVIDIA Q3 Profit More Than Doubles",
@@ -13917,39 +13958,11 @@
       "sum": ""
      },
      {
-      "hd": "‘How Could You Not?’ Says Investor About Sandisk Stock",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/could-not-says-investor-sandisk-215607193.html?.tsrc=rss",
-      "pub": "2026-11-17T21:56:07.000Z",
-      "sum": "Sandisk (NASDAQ:SNDK) is selling flash memory to AI data centers about as fast as it can make it, but that has done little for investors’ morale recently. The stock keeps falling anyway, with shares drifting lower since their late-June peak. The past couple of weeks have made things worse. AI stocks dropped after the Democrats’ midterm sweep raised fears that tighter rules could slow data center construction, and then fell again when Jensen Huang resigned as Nvidia’s CEO on Nov. 12. Monday was t"
-     },
-     {
       "hd": "Huang Open To Returning As Nvidia CEO During Board Review",
       "src": "Nasdaq",
       "url": "https://www.nasdaq.com/articles/huang-open-returning-nvidia-ceo-during-board-review",
       "pub": "2026-11-17T21:55:53.000Z",
       "sum": "(RTTNews) - Jensen Huang has said he would be honored to return as Nvidia (NVDA) CEO if the board believes his reinstatement is in the best interests of shareholders, employees, and the company. This is his first public statement since stepping down after 33 years leading the AI"
-     },
-     {
-      "hd": "Nvidia sees strong growth in first earnings report without Huang",
-      "src": "Yahoo Finance",
-      "url": "https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/?.tsrc=rss",
-      "pub": "2026-11-17T21:55:02.000Z",
-      "sum": "Nvidia's latest earnings are the first time the chipmaker has reported financial results without founder and former CEO Jensen Huang at the helm."
-     },
-     {
-      "hd": "Nvidia’s Q3 earnings show its advantage as the bank of the AI boom",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=52105c2cd32f02dd910d74eec8cf577b21b0ed4a49a4335bedd27c326dd029ce",
-      "pub": "2026-11-17T21:51:00.000Z",
-      "sum": "Yahoo Finance's Deirdre Bosa explains that Nvidia's (NVDA) role as a quasi-lender to smaller neo cloud customers means that part of its sales depends on customers it helps finance, which shows up in receivables and free cash flow."
-     },
-     {
-      "hd": "Nvidia Beats Estimates in First Earnings Report After Jensen Huang’s Ouster",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOERUMkVEZEttRVd6TG92RVVFUzc4RU10anVtbFoxeV9RN1VneDJiUkc5NXpVWWNhM09PUWhGMHNHcmJNeTU0WTltdjA1TE5BbUtvOWx1QU4ySmJJc2lPWmoydVJld09sOER4Rk4xRE9QbXpKSVMzNE9ldENzQWZWVGZGRlY?oc=5",
-      "pub": "2026-11-17T21:48:00.000Z",
-      "sum": ""
      },
      {
       "hd": "Ex-Nvidia CEO Jensen Huang signals interest in returning to the company following scandal",
@@ -13959,11 +13972,11 @@
       "sum": ""
      },
      {
-      "hd": "Why a Jensen Huang comeback could become a major battle in Washington",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=618ba74c08cf6558e2cd0ecd79334be8959e4ba7abfb996b6591391f2a9e4869",
-      "pub": "2026-11-17T21:44:02.000Z",
-      "sum": "Semafor's editor in chief, Ben Smith, sits down with Deirdre Bosa to explain why Jensen Huang's return to Nvidia (NVDA) would be so contentious among politicians in Washington."
+      "hd": "Nvidia’s Q3 earnings hit the mark, without mentioning the whole Jensen Huang thing",
+      "src": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9tNlZYUmY4Nlg5cXNiN0E3UHZSZHUtd0dxd1ppWldTNUlxc1VycUpvOWUxbmpQQnpPVXlnT2FSb3dObzFGLWdwT09fVmhvbm82RHJXYjlIN1JtUGVtQjFySUw4RDJFeEtPMjd1QlI3MGhmM00?oc=5",
+      "pub": "2026-11-17T21:40:59.000Z",
+      "sum": ""
      },
      {
       "hd": "Earnings Snapshot: NVDA tops expectations and gives better-than-expected guidance",
@@ -13980,6 +13993,13 @@
       "sum": "(RTTNews) - NVIDIA Corporation (NVDA) released earnings for its third quarter that Increases, from the same period last year"
      },
      {
+      "hd": "Nvidia facing SEC probe after Huang's resignation, WSJ reports",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcWVwUXVkcFBaZ3VKNW82dWk3eU9VcDctS0Nsd0wzRHlTV3kxLW9ZbkpnNzFBbTllQ2Z6VVh1ZnpqNGZJNmtRVW9CNWNweXBOcGdFWFBOVDhOVVduRkRRZGc5Um9xVnlxOGZQTzRtYS1QWERzYTg1QWR2OFR4WnF4LWdWblJCcXJxMmR1Smp1aTgzN3dTY09jcGpfSTU5cjFuZXIzUnEyX0pMczQ?oc=5",
+      "pub": "2026-11-17T21:28:31.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Nvidia perks up as Q3 results, guidance top estimates; adds $150B to buyback",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -13987,11 +14007,11 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia Non-GAAP EPS of $2.68 beats by $0.21, revenue of $115.84B beats by $7.13B",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-17T21:22:27.000Z",
-      "sum": ""
+      "hd": "Nvidia Delivers Solid Outlook in First Post-Huang Earnings",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOQUp2Z1haU0NNQkJ2ekdiQnZFRjJ2cWN4ckVMdnNJY05BOFNCUlNqbzl2RkNoblhlRTFuU1djbWdoenZmdGZYZ1VjNlhnS0E2YXJLLUQ3c21UZGZCNzZrQWhaa3RGVnlBX2phdUVkTTlIc3U5VDBkenFQUXpmQnVqRDg0bFNOODZsdTJMeDgxQWE0Z1NZMEd2cVZPUVRyT2xPYWUyZnZQanRQQnhFZmc?oc=5",
+      "pub": "2026-11-17T21:24:23.000Z",
+      "sum": "Investing.com - As Nvidia prepares to unveil its third-quarter results after the closing bell on Tuesday, one of the key words analysts are using in their previews for the earnings is \"risk.\""
      },
      {
       "hd": "Nvidia being probed by SEC after Huang's resignation: report",
@@ -14013,34 +14033,13 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-17T21:01:50.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Exclusive | SEC Is Probing Nvidia Amid Departure of CEO Jensen Huang",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbjl2b0tzT1ROT2plV1p5RHhQd3hXOEJKRFhOZ1ItZExOQV9oVGkzTU9tcEEyTXhjNHRKQVExRTNRdEtlY24zUFhmS0h0c21FUVVrVVh0NGF2SXFmdm1wcmVRLUlCcG5CMGRIZklSdVBkVElkS3lwRF9LaGg4YzU5b0dsZXlveWxSNzhGYzJlZmRSRkhvUWZRTHB3?oc=5",
-      "pub": "2026-11-17T20:56:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia a new short call at Muddy Waters",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-17T20:22:01.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia's insurance protects board but not company coffers from litigation",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdU9PZWl4NWx6T0xLbFo5OHV4THh2STNtRWpkeE16alJLSWpkOF9FM045cl9CallmaVRfQzVtRWYyeE4tUUlXb1hxRmpVR2JoR2VBYU9zLVJSdTdkMWFBYllRQUVrbFRUNXFfVm5CNnVjTm5OcUFEcVo0VDNMLWpkTkhHcmdvTWlSWThVTzFNWU1pNFo1MU9pdEdwRzdWUTM0WTdjZVc3d3RJUW5V?oc=5",
-      "pub": "2026-11-17T19:47:07.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 155,
-     "Yahoo": 8,
-     "Google News": 93,
-     "Nasdaq": 14,
+     "Finnhub": 154,
+     "Yahoo": 15,
+     "Google News": 92,
+     "Nasdaq": 13,
      "Seeking Alpha": 26
     }
    },
@@ -14063,7 +14062,7 @@
      {
       "hd": "Tesla (TSLA) Is Spending €3 Billion To Expand Berlin Cybercab Production",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-spending-3-billion-201132630.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=cf9a07b17bf9a444df0a4e92733dc911b52be9b03c6f6ab1d73b9e727576974f",
       "pub": "2026-11-17T20:11:32.000Z",
       "sum": "Tesla (NasdaqGS:TSLA) plans a €3b expansion of its Berlin Gigafactory to build fully autonomous Cybercabs at scale. The enlarged German plant is targeted to support output of up to 1 million driverless Cybercabs annually from 2029. Management expects the project to create thousands of additional roles at the Grünheide site as the facility shifts toward autonomy focused production. Tesla's €3b Berlin Cybercab expansion and pivot to driverless production is important to weigh alongside the..."
      },
@@ -14225,7 +14224,7 @@
     "fetched": {
      "Finnhub": 139,
      "Yahoo": 13,
-     "Google News": 15,
+     "Google News": 0,
      "Nasdaq": 12,
      "Seeking Alpha": 14
     }
@@ -14256,14 +14255,14 @@
      {
       "hd": "Billionaire David Tepper Grew His SpaceX Stake 17-Fold While Dumping AMD and Broadcom",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/17/billionaire-david-tepper-grew-his-spacex-stake-17-fold-while-dumping-amd-and-broadcom/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=96b28296df10427d3891f3ffca116e460b1be77aa5b1c77081fe638bb797d466",
       "pub": "2026-11-17T21:10:51.000Z",
       "sum": "David Tepper's latest 13F shows a rocket-fueled bet on one hot stock and two quiet exits from AI chip winners that were still posting blowout numbers. The filing leaves out the one thing investors most want to know."
      },
      {
       "hd": "SpaceX Stock (SPCX) Could Crush Wall Street’s Estimates. Here’s Why",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-spcx-could-crush-210700242.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=74bb68df5d353e4a8eb8fc7f32bddd5cd7b0e9369dc7e18e5bab5cab7da7346e",
       "pub": "2026-11-17T21:07:00.000Z",
       "sum": "SpaceX (SPCX) could crush Wall Street’s estimates if its latest progress continues. The space and artificial intelligence (AI) company grew Q3 revenue by 161% to $14.6 billion. Management described “a clear inflection in our Super Intelligence business,” and that description seems fair. Super Intelligence is already its largest revenue segment. Meanwhile, Starship’s most recent flight has brought cheaper orbital launches another step closer. Expectations are enormous, but the business keeps open"
      },
@@ -14277,7 +14276,7 @@
      {
       "hd": "SpaceX “Off Balance Sheet” Debt for AI Chips Hits the Market This Week. Here’s Where Things Get Interesting",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/spacex-off-balance-sheet-debt-for-ai-chips-hits-the-market-this-week-heres-where-things-get-interesting?ref=yahoofinance&tlnk=yf-261117-gxghfqfw&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d8c596df6c704b026099d73385f1c71c20d38a1a41ceadb89435134bc5427acd",
       "pub": "2026-11-17T20:35:43.000Z",
       "sum": "Key TakeawaysSome of a $40 billion debt package to buy Nvidia chips for SpaceX could go on sale as soon as this week, Bloomberg reported. The debt sits in a separate vehicle off SpaceX’s balance sheet, and critics like Ed Zitron want that kind of deal regulated away."
      },
@@ -14410,8 +14409,8 @@
     ],
     "fetched": {
      "Finnhub": 142,
-     "Yahoo": 13,
-     "Google News": 35,
+     "Yahoo": 12,
+     "Google News": 0,
      "Nasdaq": 0,
      "Seeking Alpha": 24
     }
@@ -14548,7 +14547,7 @@
       "hd": "Anthropic Profit Is Hurt by $45 Billion of Rewards to Staff",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNVBrY2JxWlNZWHNZTVJZdElxdUhpc0dtUEp2amhER2VTdTFwTWc5SEYwdjNWYzNPRXBSalh6UVZJVnpLX19PNl9tNm1kdl9mNEstOV8xcVRFTUdCVnNVRnVpQUYwNVh6eXRBQmFzc3JScXpEczg4alZFeURnQ2pXalh4NVNEbjMzWHJuUDNmOHkyMFBEbnJ6S1kxRzlYN3JTSUlTSFJjcTRqOWlUdzFqaU9VNGViQnBCSUtF?oc=5",
-      "pub": "2026-11-17T06:00:00.000Z",
+      "pub": "2026-11-17T06:00:17.000Z",
       "sum": ""
      },
      {
@@ -14603,18 +14602,39 @@
     }
    }
   },
-  "asOf": "2026-11-17T22:15:13.215Z",
-  "lastAttempt": "2026-11-17T22:15:13.215Z",
+  "asOf": "2026-11-17T22:45:13.175Z",
+  "lastAttempt": "2026-11-17T22:45:13.175Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Trump arrives just as Southeast Asian summit is ending, but still looms over talks",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZzNpMHl4YWlFZVFsYW1qNFZmcEVyV2p5QnNiRzczWlhBa1QxZ2lYV1p2c1gwRUp2VzNaNjl6WkU3Y2tENnJ3N0hRMlhkRHd0cGNGc21vU3hiRlVyZFNBV2JzYUU1UV9lUVJkWWhfVEZRVmJrQWRMY3h5NHhqZDJRYW1aa3otdEhXT25XOHg3M2cwRmt5SzdCNXRrcXVreGJHZF8tRVQ3Ul96dE5GY1k5Mw?oc=5",
+    "pub": "2026-11-17T22:10:38.000Z",
+    "sum": "President Donald Trump's brief visit gave the appearance to some that the trip was little more than a stopover on his way to meet Chinese leader Xi Jinping and Russian President Vladimir Putin."
+   },
    {
     "hd": "Matan Kahana Elected Speaker of Israel’s Parliament",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/17/world/middleeast/israel-opposition-selects-parliamentary-speaker.html",
     "pub": "2026-11-17T21:54:22.000Z",
     "sum": "Matan Kahana, a lawmaker from Gadi Eisenkot’s party, will take control of the legislative process as the opposition looks to press Prime Minister Benjamin Netanyahu on multiple fronts."
+   },
+   {
+    "hd": "Xi Makes the Most of Trump’s Asia-Pacific Trip",
+    "src": "Foreign Policy",
+    "url": "https://foreignpolicy.com/2026/11/17/china-xi-trade-canada-tariffs-peru-trump-asean-apec/",
+    "pub": "2026-11-17T21:52:41.000Z",
+    "sum": "The Chinese president is currying favor with some of the region’s most powerful leaders."
+   },
+   {
+    "hd": "Claims by Netanyahu’s party of a ‘stolen’ Israeli election unravel",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUlpSYlg0NUhRa3JSazdObFNTNVFIMFlaRG9DUndvS2gzbmJzNEV6ZGhZeDRsR2NEWU1jMDJMMGNnam0waFpDdVA1bHA5WjBnMS1OSlQtZVRJTWE5b3QyV0doMXg4eWhuYW5TbTBHSHJ2a2t4YVNMUVQwaWl4Uk0yUmRyUzFBb1hiY0kxbFdlN0wxaDRLVnluZzNR?oc=5",
+    "pub": "2026-11-17T21:41:00.000Z",
+    "sum": ""
    },
    {
     "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
@@ -14629,6 +14649,13 @@
     "url": "https://www.bbc.co.uk/news/articles/cw772jk4rvmxo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-17T21:24:35.000Z",
     "sum": "Ukraine says the missile and drone attack on the strategic bridge in the Russian-annexed Crimea took weeks to plan."
+   },
+   {
+    "hd": "Russian military transport aircraft crashes in Siberia, 19 dead, defence ministry says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdXdUMzJNWXItalNlM2xFWFlCdUM3X1lqTllNY0htY2lQZl8tYUYybkE4bFlwRWlaUFBJZ3NBcnVfSUY0cmtyeS1ZSHpNN2dKdHU2S19RVF9nbTBnY3VkaWpRMFdCSzFWbDdReFV0RzJaRXprS1ZaZmNFLVNiWTRZb0JlUzE5MGtMbWF5eUJwM0pwY2FQcEpBTFBzRW9HVXdTRUpQYi03Nk9uOXpUUTFMYUxLM05UR3VCY2c?oc=5",
+    "pub": "2026-11-17T21:15:32.000Z",
+    "sum": ""
    },
    {
     "hd": "Canada and China Draw Closer with Expanded Trade Pact",
@@ -14659,13 +14686,6 @@
     "sum": "The Metropolitan Police say he has been taken into custody by the US Military over suspected national security and espionage allegations."
    },
    {
-    "hd": "Trump arrives just as Southeast Asian summit is ending, but still looms over talks",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNZzNpMHl4YWlFZVFsYW1qNFZmcEVyV2p5QnNiRzczWlhBa1QxZ2lYV1p2c1gwRUp2VzNaNjl6WkU3Y2tENnJ3N0hRMlhkRHd0cGNGc21vU3hiRlVyZFNBV2JzYUU1UV9lUVJkWWhfVEZRVmJrQWRMY3h5NHhqZDJRYW1aa3otdEhXT25XOHg3M2cwRmt5SzdCNXRrcXVreGJHZF8tRVQ3Ul96dE5GY1k5Mw?oc=5",
-    "pub": "2026-11-17T20:40:38.000Z",
-    "sum": "President Donald Trump's brief visit gave the appearance to some that the trip was little more than a stopover on his way to meet Chinese leader Xi Jinping and Russian President Vladimir Putin."
-   },
-   {
     "hd": "Trump in Asia ahead of talks with Russian and Chinese presidents",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/crq5vlxxx32no?at_medium=RSS&at_campaign=rss",
@@ -14684,13 +14704,6 @@
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPaEg3anV0Q2ZiXzRhYjVfZkhyTlM2Q3RnX3ZFUExIQ0xQWjZqbkRmXy1mSVY5N1E2dXI0Q2s5WE5oQmNnLXZia24zNU5nUF9FNnZQMENHcFhYMUlhVklwT1RBczRnWFRiXzl3MHRoTWpPRlZJQUNlSjBHeGl5akprVmlNNnFYNmRiNEFqZUlzbUxnRU9FWGRxRGdUTU93QTQ3S3prbktDSUxQbHM2MjFsWWtpLXNOWWFC?oc=5",
     "pub": "2026-11-17T20:23:05.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Russian military transport aircraft crashes in Siberia, 19 dead, defence ministry says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNdXdUMzJNWXItalNlM2xFWFlCdUM3X1lqTllNY0htY2lQZl8tYUYybkE4bFlwRWlaUFBJZ3NBcnVfSUY0cmtyeS1ZSHpNN2dKdHU2S19RVF9nbTBnY3VkaWpRMFdCSzFWbDdReFV0RzJaRXprS1ZaZmNFLVNiWTRZb0JlUzE5MGtMbWF5eUJwM0pwY2FQcEpBTFBzRW9HVXdTRUpQYi03Nk9uOXpUUTFMYUxLM05UR3VCY2c?oc=5",
-    "pub": "2026-11-17T20:12:17.000Z",
     "sum": ""
    },
    {
@@ -14778,13 +14791,6 @@
     "sum": "It marks the first sanctions since the UK announced a tougher approach to Israeli actions in the territory."
    },
    {
-    "hd": "Claims by Netanyahu’s party of a ‘stolen’ Israeli election unravel",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUlpSYlg0NUhRa3JSazdObFNTNVFIMFlaRG9DUndvS2gzbmJzNEV6ZGhZeDRsR2NEWU1jMDJMMGNnam0waFpDdVA1bHA5WjBnMS1OSlQtZVRJTWE5b3QyV0doMXg4eWhuYW5TbTBHSHJ2a2t4YVNMUVQwaWl4Uk0yUmRyUzFBb1hiY0kxbFdlN0wxaDRLVnluZzNR?oc=5",
-    "pub": "2026-11-17T18:25:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Moldovan president says Russian drone flew over capital",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM1JtVWdlY250V3J1bVk1T2dSWGhpaTBmbXZWU3gweEVhUkVGMXFBN0hzRUhlVFNBWHVFZWs2M0lTLTV4MFNmdTA3NEJpdzlLb0NNaGxhaDVRWFN3aVoyV1RKOVlXZElnQUFWbUVhcVlwTjFZRHdYY21VRzFZcUdmQ2ZuZmNZYmdqbURoTWF1cGNsUjBvTW1lTDdWeFFNUQ?oc=5",
@@ -14811,13 +14817,6 @@
     "url": "https://www.nytimes.com/2026/11/17/world/asia/trump-manila-asean-late.html",
     "pub": "2026-11-17T17:51:27.000Z",
     "sum": "President Trump arrived in Manila as the meeting was wrapping up, a sign of how U.S. policy has left the region balancing between Washington and Beijing."
-   },
-   {
-    "hd": "President Trump Starts Asia Trip in Manila by Shrugging Off U.S. Concerns",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/17/world/asia/17trump-summit-manila-asean-marcos.html",
-    "pub": "2026-11-17T17:46:55.000Z",
-    "sum": "Even for a president who prizes photo opportunities, Mr. Trump’s appearance in Manila suggested a lack of interest in diplomatic wins or issues at home. “It’s life,” he said."
    }
   ],
   "feeds": [
@@ -14836,8 +14835,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-17T22:15:13.215Z",
-  "lastAttempt": "2026-11-17T22:15:13.215Z",
+  "asOf": "2026-11-17T22:45:13.175Z",
+  "lastAttempt": "2026-11-17T22:45:13.175Z",
   "lastError": null
  }
 }
