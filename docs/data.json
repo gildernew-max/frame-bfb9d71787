@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T22:00:12.183Z",
+ "generatedAt": "2026-11-17T22:15:13.215Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6336,9 +6336,12 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-17T22:00:12.183Z",
+  "at": "2026-11-17T22:15:13.215Z",
   "ran": [
    "alerts",
+   "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -13238,8 +13241,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T22:00:12.183Z",
-  "lastAttempt": "2026-11-17T22:00:12.183Z",
+  "asOf": "2026-11-17T22:15:13.215Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13910,12 +13913,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-17T16:00:15.029Z",
-  "lastAttempt": "2026-11-17T16:00:15.029Z",
+  "asOf": "2026-11-17T22:15:13.215Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T22:00:12.183Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14126,22 +14129,22 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T22:00:12.183Z",
-  "lastAttempt": "2026-11-17T22:00:12.183Z",
+  "asOf": "2026-11-17T22:15:13.215Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 158.3507,
-    "time": 1794952815,
+    "price": 157.4418,
+    "time": 1794953723,
     "ref": 155.46,
     "refTime": 1794949200,
-    "change": 2.890699999999981,
-    "changePct": 1.8594493760452728
+    "change": 1.9817999999999927,
+    "changePct": 1.2747973755306783
    },
    "TSLA": {
     "session": "post",
     "price": 380.75,
-    "time": 1794952770,
+    "time": 1794953712,
     "ref": 380.11,
     "refTime": 1794949201,
     "change": 0.6399999999999864,
@@ -14149,12 +14152,12 @@
    },
    "SPCX": {
     "session": "post",
-    "price": 142.2,
-    "time": 1794952810,
+    "price": 142.1577,
+    "time": 1794953723,
     "ref": 141.7,
     "refTime": 1794949200,
-    "change": 0.5,
-    "changePct": 0.35285815102328866
+    "change": 0.45770000000001687,
+    "changePct": 0.32300635144673034
    }
   }
  },
@@ -14165,46 +14168,109 @@
    "NVDA": {
     "items": [
      {
-      "hd": "How major US stock indexes fared Tuesday 11/17/2026",
+      "hd": "Nvidia earnings: Why Jensen turmoil won't have a near-term impact on the numbers",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-214025410.html?.tsrc=rss",
-      "pub": "2026-11-17T21:40:25.000Z",
-      "sum": "stock market shook again as Nvidia and other jittery AI stocks led widespread losses on Wall Street. The S&P 500 sank 1% Tuesday after swinging between nearly no change and a loss of 1."
+      "url": "https://finance.yahoo.com/video/nvidia-earnings-why-jensen-turmoil-wont-have-a-near-term-impact-on-the-numbers-220936057.html?.tsrc=rss",
+      "pub": "2026-11-17T22:09:36.000Z",
+      "sum": "Uniphore CEO Umesh Sachdev and Morningstar equity strategist Brian Colello sit down with Deirdre Bosa to share their thoughts on Nvidia's (NVDA) latest earnings results in the wake of Jensen Huang's departure from the company."
      },
      {
-      "hd": "Nvidia: Fiscal Q3 Earnings Snapshot",
+      "hd": "Dow Jones Futures Waver, Nvidia Earnings Beat After Market Breaks Lower; Target, Anthropic IPO Ahead",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-fiscal-q3-earnings-snapshot-213806281.html?.tsrc=rss",
-      "pub": "2026-11-17T21:38:06.000Z",
-      "sum": "(NVDA) on Tuesday reported fiscal third-quarter earnings of $65.On a per-share basis, the Santa Clara, California-based company said it had profit of $2."
+      "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-waver%2C.html?.tsrc=rss",
+      "pub": "2026-11-17T22:09:05.000Z",
+      "sum": "Nvidia earnings beat after the stock market broke below recent lows. Target earnings are on tap, with the Anthropic IPO set to price Wednesday night."
      },
      {
       "hd": "Stock Indexes Fall as Tech Stocks Retreat Ahead of Nvidia’s Earnings",
       "src": "Nasdaq",
       "url": "https://www.nasdaq.com/articles/stock-indexes-fall-tech-stocks-retreat-ahead-nvidias-earnings",
-      "pub": "2026-11-17T21:37:45.000Z",
+      "pub": "2026-11-17T22:08:46.000Z",
       "sum": "The S&P 500 Index ($SPX ) (SPY ) is down -1.09% today, the Dow Jones Industrial Average ($DOWI ) (DIA ) is down -1.37%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) is down -1.11%. December E-mini S&P futures (ESZ26 ) are down -1.04%, and December E-mini Nasdaq futures..."
-     },
-     {
-      "hd": "What to make of Jensen Huang's apology letter",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/what-to-make-of-jensen-huangs-apology-letter-213601392.html?.tsrc=rss",
-      "pub": "2026-11-17T21:36:01.000Z",
-      "sum": "Deirdre Bosa outlines what former Jensen Huang had to say in his apology letter posted on X, just hours before Nvidia's (NVDA) third quarter earnings results."
      },
      {
       "hd": "Nvidia Stock Rises On Fiscal Q3 Beat-And-Raise Report (Live Coverage)",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/ef40b1a2-2bff-390f-b0d5-c281b4d503ef/nvidia-stock-rises-on-fiscal.html?.tsrc=rss",
-      "pub": "2026-11-17T21:35:40.000Z",
+      "pub": "2026-11-17T22:08:37.000Z",
       "sum": "Nvidia beat Wall Street’s targets for its fiscal third quarter and guided above views for the current quarter."
      },
      {
-      "hd": "Nvidia faces SEC investigation as crisis deepens following Huang resignation",
+      "hd": "Nvidia doubles revenue in first earnings since Jensen Huang’s resignation",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-faces-sec-investigation-crisis-213516541.html?.tsrc=rss",
-      "pub": "2026-11-17T21:35:16.000Z",
-      "sum": "Investing.com -- Nvidia (NASDAQ: NVDA) is facing a Securities and Exchange Commission investigation into whether the company misled investors through its disclosures, adding to mounting scrutiny following the resignation of CEO Jensen Huang, The Wall Street Journal reported Tuesday, citing people familiar with the matter."
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-doubles-quarterly-revenue-first-215151401.html?.tsrc=rss",
+      "pub": "2026-11-17T22:06:44.000Z",
+      "sum": "Report comes just days after company saw ouster of its CEO over allegations of affair with suspected Chinese spy"
+     },
+     {
+      "hd": "NVIDIA Q3 Profit More Than Doubles",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/nvidia-q3-profit-more-doubles",
+      "pub": "2026-11-17T22:04:33.000Z",
+      "sum": "(RTTNews) - NVIDIA Corporation (NVDA) on Tuesday reported a record profit for the third quarter results, with revenue more than doubling from a year earlier on strong demand for its data center products."
+     },
+     {
+      "hd": "Nvidia's neocloud commitments total $32B through 2032",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-17T22:02:36.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia’s Earnings Come at a Time of Mounting Tech Turmoil",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOV1BiamNlNHlQNm1aVi1iQzJuVF9rS190WGU4QWRPOF8zLVN0aDhhc2JWVVBvNXRFTGRuOTZGVW0wUFhjZWVyMHBXYXhwSm02OGJNNlVZbnpvcWtuSzAwMHVIV0E1Q2kxTG15VU1tNUxRRlhXU0UzVWRLUnYzVHlpTUdLbzdRaE5hUzVQLWJsNVNLTjJkcmItbTZSLWlfWTdQd2tXNHBSRllfM2owU2hyMw?oc=5",
+      "pub": "2026-11-17T21:57:05.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "‘How Could You Not?’ Says Investor About Sandisk Stock",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/could-not-says-investor-sandisk-215607193.html?.tsrc=rss",
+      "pub": "2026-11-17T21:56:07.000Z",
+      "sum": "Sandisk (NASDAQ:SNDK) is selling flash memory to AI data centers about as fast as it can make it, but that has done little for investors’ morale recently. The stock keeps falling anyway, with shares drifting lower since their late-June peak. The past couple of weeks have made things worse. AI stocks dropped after the Democrats’ midterm sweep raised fears that tighter rules could slow data center construction, and then fell again when Jensen Huang resigned as Nvidia’s CEO on Nov. 12. Monday was t"
+     },
+     {
+      "hd": "Huang Open To Returning As Nvidia CEO During Board Review",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/huang-open-returning-nvidia-ceo-during-board-review",
+      "pub": "2026-11-17T21:55:53.000Z",
+      "sum": "(RTTNews) - Jensen Huang has said he would be honored to return as Nvidia (NVDA) CEO if the board believes his reinstatement is in the best interests of shareholders, employees, and the company. This is his first public statement since stepping down after 33 years leading the AI"
+     },
+     {
+      "hd": "Nvidia sees strong growth in first earnings report without Huang",
+      "src": "Yahoo Finance",
+      "url": "https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/?.tsrc=rss",
+      "pub": "2026-11-17T21:55:02.000Z",
+      "sum": "Nvidia's latest earnings are the first time the chipmaker has reported financial results without founder and former CEO Jensen Huang at the helm."
+     },
+     {
+      "hd": "Nvidia’s Q3 earnings show its advantage as the bank of the AI boom",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=52105c2cd32f02dd910d74eec8cf577b21b0ed4a49a4335bedd27c326dd029ce",
+      "pub": "2026-11-17T21:51:00.000Z",
+      "sum": "Yahoo Finance's Deirdre Bosa explains that Nvidia's (NVDA) role as a quasi-lender to smaller neo cloud customers means that part of its sales depends on customers it helps finance, which shows up in receivables and free cash flow."
+     },
+     {
+      "hd": "Nvidia Beats Estimates in First Earnings Report After Jensen Huang’s Ouster",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQOERUMkVEZEttRVd6TG92RVVFUzc4RU10anVtbFoxeV9RN1VneDJiUkc5NXpVWWNhM09PUWhGMHNHcmJNeTU0WTltdjA1TE5BbUtvOWx1QU4ySmJJc2lPWmoydVJld09sOER4Rk4xRE9QbXpKSVMzNE9ldENzQWZWVGZGRlY?oc=5",
+      "pub": "2026-11-17T21:48:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Ex-Nvidia CEO Jensen Huang signals interest in returning to the company following scandal",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObnhLd21OYlROQnV3Z2ZRc29BZlRubWM4T2tVN3d3ektLVUdiMXNSS1dhclFQNVZrUEVrdG5rUHFUY0ozQWJJRjFFVlFvVjJ0SC15eEdoUm1JUEdwY2FZdTgyNmNDQnozOWRXSGJBRlVHaC13M09mZ0U3em9hYkp2V1BFWHJvR2ViRFZGcEk5RE8yTWNwUmM5dlhBMC1oMGYzYzE3TXl5akNYTGlOb2c?oc=5",
+      "pub": "2026-11-17T21:46:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Why a Jensen Huang comeback could become a major battle in Washington",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=618ba74c08cf6558e2cd0ecd79334be8959e4ba7abfb996b6591391f2a9e4869",
+      "pub": "2026-11-17T21:44:02.000Z",
+      "sum": "Semafor's editor in chief, Ben Smith, sits down with Deirdre Bosa to explain why Jensen Huang's return to Nvidia (NVDA) would be so contentious among politicians in Washington."
      },
      {
       "hd": "Earnings Snapshot: NVDA tops expectations and gives better-than-expected guidance",
@@ -14214,13 +14280,6 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia beats Q3 earnings expectations in first report without Jensen Huang",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/nvidia-beats-q3-earnings-expectations-in-first-report-without-jensen-huang-213316995.html?.tsrc=rss",
-      "pub": "2026-11-17T21:33:16.000Z",
-      "sum": "AI chipmaker Nvidia (NVDA) beats on Q3 revenue and earnings, its first report since founder and CEO Jensen Huang stepped down after reports of extramarital affairs. Revenue came in at $115.8 billion vs. $109.1 billion expected. Nvidia also showed net profit of $65.3 billion and forecast Q4 revenue above Wall Street estimates."
-     },
-     {
       "hd": "NVIDIA Corporation Q3 Profit Rises",
       "src": "Nasdaq",
       "url": "https://www.nasdaq.com/articles/nvidia-corporation-q3-profit-rises",
@@ -14228,25 +14287,11 @@
       "sum": "(RTTNews) - NVIDIA Corporation (NVDA) released earnings for its third quarter that Increases, from the same period last year"
      },
      {
-      "hd": "The Numbers Are Out",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/94f4811f-5db4-331c-9a81-87cebf79352a/the-numbers-are-out.html?.tsrc=rss",
-      "pub": "2026-11-17T21:28:49.000Z",
-      "sum": "Nvidia reported solid third-quarter earnings results on Tuesday afternoon."
-     },
-     {
       "hd": "Nvidia perks up as Q3 results, guidance top estimates; adds $150B to buyback",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-17T21:28:15.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Dow Drops Nearly 860 Points as Stock Market Selloff Deepens Ahead of Nvidia Earnings",
-      "src": "Yahoo Finance",
-      "url": "https://www.ibtimes.com/us-stocks-fall-ahead-nvidia-earnings-higher-rates-3809883?.tsrc=rss",
-      "pub": "2026-11-17T21:26:41.000Z",
-      "sum": "The Dow dropped nearly 860 points, while the S&P 500 and Nasdaq extended their losing streaks as investors reassessed AI valuations and the interest-rate outlook."
      },
      {
       "hd": "Nvidia Non-GAAP EPS of $2.68 beats by $0.21, revenue of $115.84B beats by $7.13B",
@@ -14284,10 +14329,10 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia’s Earnings Come at a Time of Mounting Tech Turmoil",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOV1BiamNlNHlQNm1aVi1iQzJuVF9rS190WGU4QWRPOF8zLVN0aDhhc2JWVVBvNXRFTGRuOTZGVW0wUFhjZWVyMHBXYXhwSm02OGJNNlVZbnpvcWtuSzAwMHVIV0E1Q2kxTG15VU1tNUxRRlhXU0UzVWRLUnYzVHlpTUdLbzdRaE5hUzVQLWJsNVNLTjJkcmItbTZSLWlfWTdQd2tXNHBSRllfM2owU2hyMw?oc=5",
-      "pub": "2026-11-17T20:27:04.000Z",
+      "hd": "Nvidia a new short call at Muddy Waters",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-17T20:22:01.000Z",
       "sum": ""
      },
      {
@@ -14296,60 +14341,25 @@
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPdU9PZWl4NWx6T0xLbFo5OHV4THh2STNtRWpkeE16alJLSWpkOF9FM045cl9CallmaVRfQzVtRWYyeE4tUUlXb1hxRmpVR2JoR2VBYU9zLVJSdTdkMWFBYllRQUVrbFRUNXFfVm5CNnVjTm5OcUFEcVo0VDNMLWpkTkhHcmdvTWlSWThVTzFNWU1pNFo1MU9pdEdwRzdWUTM0WTdjZVc3d3RJUW5V?oc=5",
       "pub": "2026-11-17T19:47:07.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Wall Street falters ahead of Nvidia earnings, Anthropic debut",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOemNySVhGbms1VkxVYXFsTFdtdVh1MjNQQk16Y1ZfNGFHMFhDRWUtZldZRzJzSWxpNlBLWVpTenJnU2FHZndaVUlEclFtQVNvTzJBWTNpM1p0N3dmWjlyMEFKbkowZkpSanhVcEVLUjZfOWxNcW5OZVFuLTNFNF93ZDd4b0wxX1VzNlJPODdqc0xob1ZrR0xuQkJ6bExvNDdQMk5saFVSdkVBZw?oc=5",
-      "pub": "2026-11-17T19:29:30.000Z",
-      "sum": "Wall Street stocks traded lower Tuesday as investors exercised caution ahead of chip giant Nvidia's first earnings report since an alleged espionage scandal brought down chief executive Jensen Huang.But that has intensified since its leather-jacket-clad chief executive resigned Thursday following revelations of an affair with Chinese businesswoman Alice Huang, who is suspected of helping Chinese AI companies obtain US chips despite an embargo."
-     },
-     {
-      "hd": "Nvidia Earnings Are Sideshow as Huang’s Ouster Looms Over Market",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORlNRWmc0N3Uyc21OQ3RMb2x2U3VDbkxlLWk0SGdyd0xncEpzYTk4SDZKZzEzWWlNcHU2Snl6UXpiYXV4MzJ0aWl6SmdrVzVyb1B3XzVIYko0UGhGTVFtUml3SlpxTnE5MWZZVzl4VTN1WjQ4bDBUYmJvdVFTYkhISnNneENiNG1VMllvNGJqMDR2cHZNS0xWanY4VVV3aVlwLWRlU2ZRUUJvRDVxbEptcmNoazdZUQ?oc=5",
-      "pub": "2026-11-17T19:11:04.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Quant ratings on Bridgewater Associates' top holdings: SPY, IVV, NVDA, AVGO",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-17T19:08:08.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Ex-Nvidia CEO Jensen Huang signals interest in returning to the company following scandal",
-      "src": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObnhLd21OYlROQnV3Z2ZRc29BZlRubWM4T2tVN3d3ektLVUdiMXNSS1dhclFQNVZrUEVrdG5rUHFUY0ozQWJJRjFFVlFvVjJ0SC15eEdoUm1JUEdwY2FZdTgyNmNDQnozOWRXSGJBRlVHaC13M09mZ0U3em9hYkp2V1BFWHJvR2ViRFZGcEk5RE8yTWNwUmM5dlhBMC1oMGYzYzE3TXl5akNYTGlOb2c?oc=5",
-      "pub": "2026-11-17T18:07:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia’s soap opera could be AMD’s big opportunity. Here’s why I’m buying",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPVE5KOHVIeDZjZ0k0ZEtSYkk2SUNFOGdZNldnNG1mZDFZZmViVDRyY3loZG8yeDREUmpTelByT3NYeXdTOEV0eEZCaVFPOEMtdklVd2Q0RS1rNERIbl92V2xCVExqaXNkYTNUakMxSDVmTWctb0tyMFRwZy1iaTJ4Ti10ZDBEN1pwZGlN?oc=5",
-      "pub": "2026-11-17T17:57:02.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "New foreign data center chip rule might affect Nvidia's 2027 revenue: analysts",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-17T17:48:18.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 150,
-     "Yahoo": 10,
-     "Google News": 94,
+     "Finnhub": 155,
+     "Yahoo": 8,
+     "Google News": 93,
      "Nasdaq": 14,
      "Seeking Alpha": 26
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "Fund Manager Lists Three Reasons He Still Won’t Buy Tesla Stock",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/fund-manager-lists-three-reasons-he-still-won-t-buy-tesla-stock/cNbOJB3R9hQ?.tsrc=rss",
+      "pub": "2026-11-17T22:03:49.000Z",
+      "sum": "Gary Black, managing partner of The Future Fund LLC, sold his firm’s Tesla position in May 2025 at $356."
+     },
      {
       "hd": "SpaceX-Tesla Merger: A $3.4 Trillion Bet On Breakthroughs That Haven't Happened",
       "src": "Seeking Alpha",
@@ -14412,13 +14422,6 @@
       "url": "https://finnhub.io/api/news?id=1027d7f7ec2a1804e696b0c7742fcbd3749112aac998e5aaf0b11a7a8df737d9",
       "pub": "2026-11-17T16:30:05.000Z",
       "sum": "Space Exploration Technologies Corp. CEO Elon Musk said solar power will ultimately provide all energy used by civilization, pointing to mathematics and rapid deployment trends. Musk took to X on Monday and stated that \"The amount of energy we harness..."
-     },
-     {
-      "hd": "Inside Cathie Wood’s Portfolio: Every Move She Made in the Third Quarter",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f7323f24aa44d99300700378c03e837ccb97273814e0c6551d6c117947938fce",
-      "pub": "2026-11-17T15:59:45.000Z",
-      "sum": "Key TakeawaysCathie Wood’s ARK Invest opened or added to 11 positions in the third quarter and sold out of none, including bigger stakes in three of its five largest holdings: Tesla, SpaceX and NVIDIA. Tesla and SpaceX are ARK’s two biggest holdings."
      },
      {
       "hd": "Here are Tuesday's biggest analyst calls: Nvidia, Anthropic, SpaceX, Amazon, Tesla, Alphabet, BlackRock & more",
@@ -14528,7 +14531,7 @@
     ],
     "fetched": {
      "Finnhub": 139,
-     "Yahoo": 12,
+     "Yahoo": 13,
      "Google News": 15,
      "Nasdaq": 12,
      "Seeking Alpha": 14
@@ -14536,6 +14539,13 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
+      "src": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1odzFsZEloUVctYWFCU0FXdE9zRnlWdkNjZUs4aTgzYlBsQzh2bXF6MF92RkVETGV4M0MzR0dxQTQ2clJ2cWhKaEhGUkpkNHpOVlR5Zk5tRHFaZUxLNkNVTDJvaWs?oc=5",
+      "pub": "2026-11-17T21:46:00.000Z",
+      "sum": "Nvidia falls ahead of third-quarter earnings scheduled for after the closing bell."
+     },
      {
       "hd": "SpaceX, Rivals Win $985 Million In Launch Awards. Cathie Wood, David Tepper Shift Space Holdings.",
       "src": "Yahoo Finance",
@@ -14703,25 +14713,25 @@
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNcWl5bk1QQmFtOGJoU0JMYkx3Njlsa1JzUE45T0JwVUlGejl3blJYeEF1QWpxV3NSMk1palYzZzIzMVBJUk02RDZpcy1xdnFlTzRvdFhKQlJWUFIxd3k4X0JCVUpoLURETTVnbmhGS2tteG5iU2pFOVdGcG1tdUx5YnVoZzFzSG1LWC1QUmRrWEI?oc=5",
       "pub": "2026-11-16T21:11:00.000Z",
       "sum": "Starship’s upper stage came back to Earth and was caught by the launch tower’s mechanical arms. It was an amazing feat of engineering."
-     },
-     {
-      "hd": "Musk challenges SpaceX critic as Starship milestone sharpens focus on rivals’ execution",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-16T20:24:57.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 142,
      "Yahoo": 13,
-     "Google News": 37,
+     "Google News": 35,
      "Nasdaq": 0,
      "Seeking Alpha": 24
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
+      "src": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1odzFsZEloUVctYWFCU0FXdE9zRnlWdkNjZUs4aTgzYlBsQzh2bXF6MF92RkVETGV4M0MzR0dxQTQ2clJ2cWhKaEhGUkpkNHpOVlR5Zk5tRHFaZUxLNkNVTDJvaWs?oc=5",
+      "pub": "2026-11-17T21:46:00.000Z",
+      "sum": "Analyst sees Anthropic growing rapidly despite recent slowdown, with revenue up over 12x year-on-year and strong enterprise customer expansion."
+     },
      {
       "hd": "Salesforce leads enterprise software stocks lower ahead of Anthropic's IPO",
       "src": "Seeking Alpha",
@@ -14742,13 +14752,6 @@
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPQ05INXRWaGd0ZFhsSkZWMjBZeFNJYU1JOEhkRG9PT1V5SUl6YTNNMzFWblJXZVdjVHJzZW5raFlUbzlHMTNHemFUVWZab28xS0M3RzkyN2c2Ukl6VUR4SUF6RFRpVjRieGRFUWJGZUNsMzkyR1B0bnlxSFFQMHpFT2JCQ09KM0FMcUZWXzlZaEVmanRiMmtuOGxGQnNKbDZkM0hJVGpwNURRN0daX29GX2tHZ0pIU3NrRk5JbVVpZ1d1WGN0cHc?oc=5",
       "pub": "2026-11-17T18:18:54.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia, Intel, Salesforce, SpaceX, Anthropic, Sandisk, Home Depot, and More That Explain Today’s Market",
-      "src": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1odzFsZEloUVctYWFCU0FXdE9zRnlWdkNjZUs4aTgzYlBsQzh2bXF6MF92RkVETGV4M0MzR0dxQTQ2clJ2cWhKaEhGUkpkNHpOVlR5Zk5tRHFaZUxLNkNVTDJvaWs?oc=5",
-      "pub": "2026-11-17T16:29:00.000Z",
-      "sum": "Analyst sees Anthropic growing rapidly despite recent slowdown, with revenue up over 12x year-on-year and strong enterprise customer expansion."
      },
      {
       "hd": "New Street starts Anthropic coverage with 'buy' rating, estimates revenue above $500 billion by 2030",
@@ -14901,18 +14904,25 @@
     "fetched": {
      "Finnhub": 14,
      "Yahoo": 0,
-     "Google News": 56,
+     "Google News": 55,
      "Nasdaq": 1,
      "Seeking Alpha": 26
     }
    }
   },
-  "asOf": "2026-11-17T21:45:14.750Z",
-  "lastAttempt": "2026-11-17T21:45:14.750Z",
+  "asOf": "2026-11-17T22:15:13.215Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Matan Kahana Elected Speaker of Israel’s Parliament",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/17/world/middleeast/israel-opposition-selects-parliamentary-speaker.html",
+    "pub": "2026-11-17T21:54:22.000Z",
+    "sum": "Matan Kahana, a lawmaker from Gadi Eisenkot’s party, will take control of the legislative process as the opposition looks to press Prime Minister Benjamin Netanyahu on multiple fronts."
+   },
    {
     "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
     "src": "WSJ",
@@ -15115,13 +15125,6 @@
     "url": "https://www.nytimes.com/2026/11/17/world/asia/17trump-summit-manila-asean-marcos.html",
     "pub": "2026-11-17T17:46:55.000Z",
     "sum": "Even for a president who prizes photo opportunities, Mr. Trump’s appearance in Manila suggested a lack of interest in diplomatic wins or issues at home. “It’s life,” he said."
-   },
-   {
-    "hd": "U.S. identifies remains of 6 soldiers killed in Korean War, including teens",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/korean-war-us-soldiers-remains-identified/",
-    "pub": "2026-11-17T17:41:53.000Z",
-    "sum": "The identifications are part of an ongoing effort to locate and identify the remains of U.S. soldiers killed in the Korean War."
    }
   ],
   "feeds": [
@@ -15140,8 +15143,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-17T21:45:14.750Z",
-  "lastAttempt": "2026-11-17T21:45:14.750Z",
+  "asOf": "2026-11-17T22:15:13.215Z",
+  "lastAttempt": "2026-11-17T22:15:13.215Z",
   "lastError": null
  }
 }
