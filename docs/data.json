@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T02:45:14.831Z",
+ "generatedAt": "2026-11-17T03:00:13.033Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -5658,11 +5658,10 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T02:45:14.831Z",
+  "at": "2026-11-17T03:00:13.033Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -12022,62 +12021,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T02:45:14.831Z",
-  "lastAttempt": "2026-11-17T02:45:14.831Z",
+  "asOf": "2026-11-17T03:00:13.033Z",
+  "lastAttempt": "2026-11-17T03:00:13.033Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7440.5,
-    "lastTime": 1794882922,
-    "settle": 7441.5,
+    "last": 7442.5,
+    "lastTime": 1794883812,
+    "settle": 7441.75,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": -1,
-    "changePct": -0.013438150910434724,
-    "expectedOpen": 7415.593347443391,
+    "change": 0.75,
+    "changePct": 0.010078274599388584,
+    "expectedOpen": 7417.337464306111,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27361.25,
-    "lastTime": 1794882923,
-    "settle": 27291.25,
+    "last": 27402.5,
+    "lastTime": 1794883804,
+    "settle": 27291.75,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": 70,
-    "changePct": 0.25649246553382493,
-    "expectedOpen": 24572.623682590576,
+    "change": 110.75,
+    "changePct": 0.4058002876327095,
+    "expectedOpen": 24609.218668462083,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51579,
-    "lastTime": 1794882917,
-    "settle": 51677,
+    "last": 51561,
+    "lastTime": 1794883810,
+    "settle": 51678,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -98,
-    "changePct": -0.1896394914565474,
-    "expectedOpen": 51510.30052886197,
+    "change": -117,
+    "changePct": -0.22640195053988155,
+    "expectedOpen": 51491.32809648206,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2743.6,
-    "lastTime": 1794882909,
+    "last": 2744.3,
+    "lastTime": 1794883800,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -8.000097656250091,
-    "changePct": -0.29074347188257443,
+    "change": -7.300097656249818,
+    "changePct": -0.2653037286365804,
     "expectedOpen": null,
     "valid": true
    }
@@ -12099,9 +12098,9 @@
     "id": "401873065",
     "start": "2026-11-17T01:15Z",
     "state": "in",
-    "status": "Q2 0:03",
-    "period": 2,
-    "clock": "0:03",
+    "status": "Q3 14:55",
+    "period": 3,
+    "clock": "14:55",
     "completed": false,
     "away": {
      "name": "Los Angeles Chargers",
@@ -12120,7 +12119,7 @@
      "short": "Ravens",
      "id": "33",
      "abbrev": "BAL",
-     "score": "7",
+     "score": "10",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
      "record": "4-5",
      "winner": false,
@@ -12558,8 +12557,8 @@
     }
    }
   ],
-  "asOf": "2026-11-17T02:45:14.831Z",
-  "lastAttempt": "2026-11-17T02:45:14.831Z",
+  "asOf": "2026-11-17T03:00:13.033Z",
+  "lastAttempt": "2026-11-17T03:00:13.033Z",
   "lastError": null
  },
  "alerts": {
@@ -12570,8 +12569,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T02:45:14.831Z",
-  "lastAttempt": "2026-11-17T02:45:14.831Z",
+  "asOf": "2026-11-17T03:00:13.033Z",
+  "lastAttempt": "2026-11-17T03:00:13.033Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13247,8 +13246,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T02:45:14.831Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-17T03:00:13.033Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
