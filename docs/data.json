@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T03:45:12.627Z",
+ "generatedAt": "2026-11-17T04:00:10.829Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -5658,10 +5658,11 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T03:45:12.627Z",
+  "at": "2026-11-17T04:00:10.829Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "cfbScoreboard",
    "futures",
    "usTempGrid"
   ]
@@ -12021,62 +12022,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T03:45:12.627Z",
-  "lastAttempt": "2026-11-17T03:45:12.627Z",
+  "asOf": "2026-11-17T04:00:10.829Z",
+  "lastAttempt": "2026-11-17T04:00:10.829Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7450.5,
-    "lastTime": 1794886510,
+    "last": 7438,
+    "lastTime": 1794887406,
     "settle": 7441.5,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": 9,
-    "changePct": 0.12094335819391251,
-    "expectedOpen": 7425.559873009473,
+    "change": -3.5,
+    "changePct": -0.04703352818652154,
+    "expectedOpen": 7413.101716051871,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27480.5,
-    "lastTime": 1794886511,
+    "last": 27406.5,
+    "lastTime": 1794887405,
     "settle": 27291.25,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": 189.25,
-    "changePct": 0.6934457014610911,
-    "expectedOpen": 24679.719863289516,
+    "change": 115.25,
+    "changePct": 0.4222965236110475,
+    "expectedOpen": 24613.261855979483,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51542,
-    "lastTime": 1794886510,
+    "last": 51494,
+    "lastTime": 1794887409,
     "settle": 51677,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -135,
-    "changePct": -0.261238074965652,
-    "expectedOpen": 51473.349810167,
+    "change": -183,
+    "changePct": -0.3541227238423283,
+    "expectedOpen": 51425.41374267082,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2744.9,
-    "lastTime": 1794886511,
+    "last": 2742.1,
+    "lastTime": 1794887402,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -6.700097656249909,
-    "changePct": -0.2434982344257401,
+    "change": -9.500097656250091,
+    "changePct": -0.3452572074096834,
     "expectedOpen": null,
     "valid": true
    }
@@ -12098,9 +12099,9 @@
     "id": "401873065",
     "start": "2026-11-17T01:15Z",
     "state": "in",
-    "status": "Q4 12:59",
+    "status": "Q4 8:39",
     "period": 4,
-    "clock": "12:59",
+    "clock": "8:39",
     "completed": false,
     "away": {
      "name": "Los Angeles Chargers",
@@ -12119,7 +12120,7 @@
      "short": "Ravens",
      "id": "33",
      "abbrev": "BAL",
-     "score": "13",
+     "score": "20",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
      "record": "4-5",
      "winner": false,
@@ -12557,8 +12558,8 @@
     }
    }
   ],
-  "asOf": "2026-11-17T03:45:12.627Z",
-  "lastAttempt": "2026-11-17T03:45:12.627Z",
+  "asOf": "2026-11-17T04:00:10.829Z",
+  "lastAttempt": "2026-11-17T04:00:10.829Z",
   "lastError": null
  },
  "alerts": {
@@ -12569,8 +12570,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T03:45:12.627Z",
-  "lastAttempt": "2026-11-17T03:45:12.627Z",
+  "asOf": "2026-11-17T04:00:10.829Z",
+  "lastAttempt": "2026-11-17T04:00:10.829Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13241,12 +13242,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-16T21:45:25.386Z",
-  "lastAttempt": "2026-11-16T21:45:25.386Z",
+  "asOf": "2026-11-17T04:00:10.829Z",
+  "lastAttempt": "2026-11-17T04:00:10.829Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T03:45:12.627Z",
+  "lastAttempt": "2026-11-17T04:00:10.829Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
