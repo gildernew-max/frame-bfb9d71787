@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T07:15:11.374Z",
+ "generatedAt": "2026-11-17T07:30:15.210Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -14,11 +14,11 @@
      "i": "sun",
      "cond": "Clear",
      "windMph": 6,
-     "windDir": "E",
-     "observed": "2026-11-17T01:30"
+     "windDir": "ENE",
+     "observed": "2026-11-17T02:30"
     },
     "today": {
-     "h": 61,
+     "h": 60,
      "l": 36,
      "sunrise": "07:11",
      "sunset": "17:33"
@@ -58,7 +58,7 @@
       "d": "Tue",
       "i": "sun",
       "text": "Clear",
-      "h": 61,
+      "h": 60,
       "l": 36,
       "pop": 0
      },
@@ -119,13 +119,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-17T02:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 40,
-      "pop": 0
-     },
-     {
       "t": "2026-11-17T03:00",
       "i": "sun",
       "text": "Clear",
@@ -136,7 +129,7 @@
       "t": "2026-11-17T04:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 38,
+      "temp": 39,
       "pop": 0
      },
      {
@@ -199,7 +192,14 @@
       "t": "2026-11-17T13:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 58,
+      "temp": 57,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-17T14:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 59,
       "pop": 0
      }
     ]
@@ -208,16 +208,16 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 47,
+     "temp": 48,
      "i": "cloud",
      "cond": "Overcast",
      "windMph": 6,
      "windDir": "S",
-     "observed": "2026-11-17T00:30"
+     "observed": "2026-11-17T01:30"
     },
     "today": {
-     "h": 53,
-     "l": 44,
+     "h": 54,
+     "l": 42,
      "sunrise": "07:12",
      "sunset": "16:41"
     },
@@ -256,8 +256,8 @@
       "d": "Tue",
       "i": "cloud",
       "text": "Overcast",
-      "h": 53,
-      "l": 44,
+      "h": 54,
+      "l": 42,
       "pop": 0
      },
      {
@@ -317,52 +317,45 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-17T01:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 48,
-      "pop": 0
-     },
-     {
       "t": "2026-11-17T02:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 49,
+      "temp": 48,
       "pop": 0
      },
      {
       "t": "2026-11-17T03:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 49,
+      "i": "sun",
+      "text": "Clear",
+      "temp": 46,
       "pop": 0
      },
      {
       "t": "2026-11-17T04:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 48,
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 43,
       "pop": 0
      },
      {
       "t": "2026-11-17T05:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 47,
+      "temp": 43,
       "pop": 0
      },
      {
       "t": "2026-11-17T06:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 47,
+      "temp": 45,
       "pop": 0
      },
      {
       "t": "2026-11-17T07:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 48,
+      "temp": 47,
       "pop": 0
      },
      {
@@ -376,21 +369,21 @@
       "t": "2026-11-17T09:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 49,
+      "temp": 50,
       "pop": 0
      },
      {
       "t": "2026-11-17T10:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 50,
+      "temp": 51,
       "pop": 0
      },
      {
       "t": "2026-11-17T11:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 50,
+      "temp": 51,
       "pop": 0
      },
      {
@@ -399,12 +392,19 @@
       "text": "Overcast",
       "temp": 51,
       "pop": 0
+     },
+     {
+      "t": "2026-11-17T13:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 51,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-17T06:30:20.349Z",
-  "lastAttempt": "2026-11-17T06:30:20.349Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": null
  },
  "nfl": {
@@ -472,6 +472,20 @@
  "news": {
   "kind": "ai",
   "items": [
+   {
+    "hd": "Nvidia warns chip buyers of legal risks tied to China AI access, sources tell CNBC",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/17/nvidia-china-cloud-ai-chip-access.html",
+    "pub": "2026-11-17T07:07:35.000Z",
+    "sum": "The U.S. Commerce Department is making moves to tighten export controls."
+   },
+   {
+    "hd": "U.S. agencies say they initiated investigation into Nvidia partner Megaspeed in 2024",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/17/megaspeed-investigation-nvidia-jensen-huang.html",
+    "pub": "2026-11-17T06:59:42.000Z",
+    "sum": "The Commerce and Justice departments said in a joint statement that U.S. investigations into Megaspeed began in 2024."
+   },
    {
     "hd": "Tech sell-off deepens as Nvidia results loom",
     "src": "Financial Times",
@@ -667,20 +681,6 @@
     "url": "https://www.cnbc.com/2026/11/16/nvidia-stock-price-jensen-huang.html",
     "pub": "2026-11-16T21:12:10.000Z",
     "sum": "Nvidia's stock continued to slide on Monday following the resignation of CEO Jensen Huang."
-   },
-   {
-    "hd": "Anthropic’s Wall Street whisperer: Meet CFO Krishna Rao",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/16/anthropic-cfo-krishna-rao-ipo.html",
-    "pub": "2026-11-16T20:44:24.000Z",
-    "sum": "Anthropic's upcoming IPO is putting finance chief Krishna Rao into the limelight."
-   },
-   {
-    "hd": "Sam Altman says he wants everyone ‘to have a lot of RAM’",
-    "src": "The Verge",
-    "url": "https://www.theverge.com/ai-artificial-intelligence/1034787/sam-altman-ram-shortage-semafor",
-    "pub": "2026-11-16T20:41:28.000Z",
-    "sum": "OpenAI CEO Sam Altman is once again addressing his controversial comments on PC RAM purchases. \"I want to be clear, I want people to have a lot of RAM, I think everybody should be able to buy a lot of RAM for their own computer,\" Altman said today. \"I think the home tinkering is great.\""
    }
   ],
   "feeds": [
@@ -691,17 +691,17 @@
    "CNBC",
    "The Information",
    "Wired",
-   "Google News",
-   "Reuters",
    "Bloomberg"
   ],
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com",
+   "Google News: HTTP 429 from news.google.com",
+   "Reuters (Google News): HTTP 429 from news.google.com",
    "Axios (Google News): HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-17T06:30:20.349Z",
-  "lastAttempt": "2026-11-17T06:30:20.349Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Bloomberg",
   "lastError": null
  },
  "stocks": {
@@ -5658,9 +5658,14 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T07:15:11.374Z",
+  "at": "2026-11-17T07:30:15.210Z",
   "ran": [
+   "weather",
    "alerts",
+   "news",
+   "stockNews",
+   "worldNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -12020,62 +12025,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T07:15:11.374Z",
-  "lastAttempt": "2026-11-17T07:15:11.374Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7426.75,
-    "lastTime": 1794899106,
+    "last": 7423.5,
+    "lastTime": 1794900031,
     "settle": 7441.5,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": -14.75,
-    "changePct": -0.19821272592891215,
-    "expectedOpen": 7401.889374790029,
+    "change": -18,
+    "changePct": -0.24188671638782502,
+    "expectedOpen": 7398.650253981052,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27316.75,
-    "lastTime": 1794899109,
+    "last": 27305.5,
+    "lastTime": 1794900033,
     "settle": 27291.25,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": 25.5,
-    "changePct": 0.09343654101589338,
-    "expectedOpen": 24532.65907008657,
+    "change": 14.25,
+    "changePct": 0.052214537626528654,
+    "expectedOpen": 24522.555656813085,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51501,
-    "lastTime": 1794899106,
+    "last": 51474,
+    "lastTime": 1794900027,
     "settle": 51677,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -176,
-    "changePct": -0.34057704588114635,
-    "expectedOpen": 51432.404419180675,
+    "change": -203,
+    "changePct": -0.3928246608742768,
+    "expectedOpen": 51405.44038121407,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2740.3,
-    "lastTime": 1794899100,
+    "last": 2739.4,
+    "lastTime": 1794900015,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -11.300097656249818,
-    "changePct": -0.41067369004220433,
+    "change": -12.200097656249909,
+    "changePct": -0.443381931358473,
     "expectedOpen": null,
     "valid": true
    }
@@ -12568,8 +12573,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T07:15:11.374Z",
-  "lastAttempt": "2026-11-17T07:15:11.374Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13245,30 +13250,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T07:15:11.374Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
     "src": "BBC News",
-    "hd": "Ukraine accuses Russia of targeting rescue operation after 'double-tap' strike kills 72",
-    "pub": "2026-11-17T05:59:01.000Z"
+    "hd": "Ukraine and Russia trade strikes on key bridges",
+    "pub": "2026-11-17T07:30:07.000Z"
    },
    {
     "src": "Reuters",
-    "hd": "Oman, Iran foreign ministers discuss safeguarding maritime corridors",
-    "pub": "2026-11-17T05:45:00.000Z"
+    "hd": "Russia says Ukraine struck its bridge to Crimea for second day in biggest drone attack of war",
+    "pub": "2026-11-17T06:52:00.000Z"
    },
    {
-    "src": "CNN",
-    "hd": "Trump heads to Asia ahead of historic talks with Xi and Putin",
-    "pub": "2026-11-17T05:18:00.000Z"
+    "src": "The New York Times",
+    "hd": "Trump Won’t Just Be Late to a Southeast Asia Summit. He’ll Be Really Late.",
+    "pub": "2026-11-17T05:00:14.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-17T06:30:20.349Z",
-  "lastAttempt": "2026-11-17T06:30:20.349Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": null
  },
  "movers": {
@@ -13495,6 +13500,48 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Asian stocks sink as scandal-hit Nvidia's earnings loom",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-sink-scandal-hit-023848163.html?.tsrc=rss",
+      "pub": "2026-11-17T07:14:16.000Z",
+      "sum": "Tech firms dragged Asian stock markets down again Tuesday as the fallout from the Nvidia crisis continued to rattle trading floors, with US moves to tighten restrictions on Chinese access to chips adding to uncertainty.Adding to the downbeat mood was news that the US Commerce Department moved on Monday to close a loophole that allowed Chinese companies to access Nvidia's powerful AI chips remotely."
+     },
+     {
+      "hd": "Nvidia boosts SpaceX stake, cuts Intel holding by 25% in Q3",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-17T07:09:48.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia warns chip buyers of legal risks tied to China AI access, sources tell CNBC",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBvLUltN01zNnhQWHVEUWlEbWJoUXcyVjFlRUF0SU90cXZwU2FoT1J2NnNZTGthUjZOX1ozbHBaUnB3QVc2bl9LNHFEMDRiUXZJVEktNjRBUG81M0dpSzRKbFl5cjdNaXhGeHVIVDNDV2dITFVhZlBpME1n0gF_QVVfeXFMT3ZEaUU4Z1VBUm44S2Y3MmwyRlpsUjYyejJRTFlyMnU5aklRa3pGQW41MkRHb3RqTzh5a0l0dE9MbzdSeFpTRWlBajFvRllpa0VnX3RXUDJIR0tjUE1NOGsyazJRbEc1RGcyZmt5cGdwUUxjZXFYb252N2dUU1VWRQ?oc=5",
+      "pub": "2026-11-17T07:07:35.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "“What Would It Take” for Investors to Finally Admit that Micron Is Poised to Win for the Long Term?",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/what-would-it-take-for-investors-to-finally-admit-that-micron-is-poised-to-win-for-the-long-term?ref=yahoofinance&tlnk=yf-261117-rprf3fh3&.tsrc=rss",
+      "pub": "2026-11-17T06:49:38.000Z",
+      "sum": "Key TakeawaysMicron and SK hynix fell on Nov. 16 ahead of Nvidia’s earnings, even after Micron earned a record $74."
+     },
+     {
+      "hd": "Breaking Down the US Move to Curb Remote Access to Chips",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/breaking-down-us-move-curb-064058022.html?.tsrc=rss",
+      "pub": "2026-11-17T06:40:58.000Z",
+      "sum": "Bloomberg Intelligence Senior Analyst Rob Lea discusses US concerns about the Chinese AI sector as the Trump administration moves to limit several countries from providing Chinese companies remote access to advanced artificial intelligence chips and servers. Several Southeast Asian nations, along with Brazil, will need a US government license to purchase advanced AI chips from Nvidia Corp. and other American manufacturers, according to an interim rule released by the US Commerce Department."
+     },
+     {
+      "hd": "Lies, spies and sex are just one part of the Nvidia story. The real stakes are much bigger",
+      "src": "Yahoo Finance",
+      "url": "https://www.cnn.com/2026/11/16/tech/nvidia-sex-spies-serious-problems?.tsrc=rss",
+      "pub": "2026-11-17T06:38:46.000Z",
+      "sum": "Nvidia CEO Jensen Huang resigned from the company he founded this week after reports of multiple affairs, including one with a subordinate and one with a woman whom US officials feared could be working with Chinese intelligence."
+     },
+     {
       "hd": "ASUS Ramps Up NVIDIA Vera Rubin NVL72 Shipments in Q4 Amid Strong Demand, Showcasing AI Factory Reference Architecture at SC26",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/ai/articles/asus-ramps-nvidia-vera-rubin-062100096.html?.tsrc=rss",
@@ -13507,6 +13554,34 @@
       "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63330216/stock-market-will-sp-500-open-up-or-down-today-79?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
       "pub": "2026-11-17T06:14:40.000Z",
       "sum": "U.S. stock futures are mixed early Tuesday as Wall Street anticipates a historic earnings report from Nvidia Corp. (NASDAQ:NVDA), closely monitors geopolitical shifts involving North Korea, and digests the latest economic data. The Polymarket traders, a Polygon (CRYPTO: POL) based..."
+     },
+     {
+      "hd": "Tech sell-off deepens as Nvidia results loom",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNaGpqcXpGcmwtSWNzX2FvRDFXejF5TktMbktSemlOZ3pRc0FYNmRiUk1qM0dCdXphenJFWnU0bTZNc1NZWEdVVUV4N1F1YzRNOUtvdUE4UVoxWUxJUWt1Zk9kVklyam9JZlFKeU9yWXJfS1pBQ2lNRjFYUUY0WkV3MWx2aG0?oc=5",
+      "pub": "2026-11-17T06:11:15.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "IBM, NVIDIA, Fermilab To Develop Modular Architectures For Scalable Quantum Computers",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/ibm-nvidia-fermilab-develop-modular-architectures-scalable-quantum-computers",
+      "pub": "2026-11-17T06:09:20.000Z",
+      "sum": "(RTTNews) - NVIDIA (NVDA) announced plans for new collaborations with IBM and the U.S. Department of Energy's Fermi National Accelerator Laboratory that will span research into next-generation modular architectures for quantum computers. IBM and NVIDIA are colocating NVIDIA DGX B"
+     },
+     {
+      "hd": "Trump Backs Huang Comeback While Nvidia Board Seeks New CEO",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzZFZHJxQ1ZMaW5Ba1V4bm8taHd4bFBvYUZHWFY4SFpydml5YUVhLTRCaEFsNG9TbjY1dl9ac2tDek1DemJ0M3FwQTNtQm5aNV83RjFsZEZTNmJ2WHRJRWtHUVRDVEdnTUJtSzlaMWZfSEU2anpRSmVGcG9SUEgxN3c1WG5UcVBkdG02bmsyQkxvNlVqeEV2SDFORlA3VGNHZnpha2EyQ3V5aDVIS1E?oc=5",
+      "pub": "2026-11-17T06:09:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Director Reportedly Warns of ‘Irreplaceable Talent’ Loss: Board Urged to Bring Back Jensen Huang as NVDA Stock Slips",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-director-reportedly-warns-irreplaceable-060446835.html?.tsrc=rss",
+      "pub": "2026-11-17T06:04:46.000Z",
+      "sum": "A senior executive at Nvidia Corp. (NASDAQ:NVDA) has warned that the company risks losing \"irreplaceable talent\" unless it reinstates former CEO Jensen Huang, as an employee-led campaign demanding his return intensifies following his resignation last week. Nvidia Executive Warns Board Of Talent Exodus Nader Khalil, Nvidia’s director of developer technology, sent a letter to the company’s board and senior executives urging them to reconsider Huang’s departure, the Wall Street Journal reported on"
      },
      {
       "hd": "Watch these Chinese chip stocks as U.S. tightens access to Nvidia hardware",
@@ -13523,32 +13598,11 @@
       "sum": "Nvidia will report its third quarter earnings after the bell Tuesday."
      },
      {
-      "hd": "U.S. Commerce Dept, DOJ say they investigated Nvidia partner Megaspeed in 2024",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=73ff80c7732feaad7569d06b159d8d38ffb0970eb0f29da115071d2c9078f740",
-      "pub": "2026-11-17T05:18:34.000Z",
-      "sum": "Investing.com-- The U.S. Department of Commerce said on Monday it had investigated Singapore-based Nvidia cloud partner Megaspeed for potential export violations in 2024."
-     },
-     {
-      "hd": "Tech elite lament Jensen Huang's fall, celebrate his AI leadership",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f60246f9bdedbc44807dd2071d0c0c18a9461e4985b9165880009bca28db1cf1",
-      "pub": "2026-11-17T05:16:50.000Z",
-      "sum": "As finger-pointing unfolds in Washington, tech industry elites who gathered at an exclusive conference in Silicon Valley on Monday lamented the swift downfall of chips titan Jensen Huang, who resigned from Nvidia last week amid multiple scandals.Despite Huang's absence from Semafor's inaugural Silicon Valley and the World summit -– a mini Davos-like event which he was originally scheduled to attend -– questions about the scandal permeated the on-stage discussions."
-     },
-     {
-      "hd": "Nvidia faces alarming revenue questions before earnings",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a7fc32a9f8f506ae68aea03a8414b05c1395f75e6added532e728bb3e43906c5",
-      "pub": "2026-11-17T05:03:00.000Z",
-      "sum": "A warning from the Treasury secretary puts the AI chipmaker’s extraordinary growth under fresh scrutiny."
-     },
-     {
-      "hd": "Nvidia set for first earnings call since Jensen Huang's resignation",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a2de43d6ac67f225afb542be855a0e156c22d8d06a2706be6683fdfe6e396537",
-      "pub": "2026-11-17T05:02:34.000Z",
-      "sum": "Nvidia is set to hold its first earnings call since former CEO Jensen Huang resigned. Here's how to watch."
+      "hd": "Nvidia’s interim CEO Colette Kress to make her debut at first earnings",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOb01HdHRlQnp2WjRyYjFnLWhPbmFrdkp3NE0yTkRCYmJJTTFwM2djOUp6T0ktb3VEdkNFaXVDT2pTWElHOVI2b2YzX1UtWUdnYkZQXzM0U3NyZjVBWXVESGtMcDV2cnJmSmpDVTFkaE5nQVc4VkIzQ1J1NG1kUm5vY2RTWXA?oc=5",
+      "pub": "2026-11-17T05:00:14.000Z",
+      "sum": ""
      },
      {
       "hd": "Asian Stocks to Fall Ahead of Nvidia, Anthropic: Markets Wrap",
@@ -13558,24 +13612,10 @@
       "sum": ""
      },
      {
-      "hd": "US to close AI chip loophole after Nvidia scandal",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-earnings-test-ai-boom-014359078.html?.tsrc=rss",
-      "pub": "2026-11-17T04:56:26.000Z",
-      "sum": "The United States announced tougher export control measures on AI chips Monday, after a scandal ensnaring Nvidia co-founder Jensen Huang exposed a loophole allegedly exploited by Chinese companies.The woman, Alice Huang, is a former executive of Megaspeed -- a Singapore-based cloud computing firm under US criminal investigation for allegedly helping Chinese companies procure advanced Nvidia AI chips in violation of export controls."
-     },
-     {
       "hd": "Exclusive | Nvidia Board Warned of ‘Irreplaceable’ Talent Loss in Employee Letter",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOc1RjRmxvVUthZE15S3BCbmNjeVBXWmdseGhMbUFuaGtfZUN4d1BOX1lwZ2Z2RDhUQ0duODR5eXdHWk9KSmM5QjY2d0pmcE5raXVyUVlmdFVVM1hsM1pLMmNNYU9adXp6dTBGVWRDWncwTkJTY1FNTEhnUTdLZ3pMdjBJYnhxSFRMc1B2anlDOXNGUzlKdTVfYVk5NV9fT3BUdy1vSmlHYTE?oc=5",
       "pub": "2026-11-17T02:38:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Trump Backs Huang Comeback While Nvidia Board Seeks New CEO",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzZFZHJxQ1ZMaW5Ba1V4bm8taHd4bFBvYUZHWFY4SFpydml5YUVhLTRCaEFsNG9TbjY1dl9ac2tDek1DemJ0M3FwQTNtQm5aNV83RjFsZEZTNmJ2WHRJRWtHUVRDVEdnTUJtSzlaMWZfSEU2anpRSmVGcG9SUEgxN3c1WG5UcVBkdG02bmsyQkxvNlVqeEV2SDFORlA3VGNHZnpha2EyQ3V5aDVIS1E?oc=5",
-      "pub": "2026-11-17T00:36:00.000Z",
       "sum": ""
      },
      {
@@ -13621,64 +13661,27 @@
       "sum": ""
      },
      {
+      "hd": "Soros Joined Family Offices Selling Nvidia Before CEO Exit",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdFdvSGNrN0NhN3lvQ3N1c004b0NmeXhqa1JPYkVpUDZpVzdZd3RPQ3BTQVA0bXRVYk84UHNfQ2o3M0pOTEU4X0J5UHB1U190VzB2X3JEOUtyXzlfV1ZPYmxuNmNNaXVvb0ZNamkwZFdqLUNKVE9kYnZEX1IzWF9uTjhDSEFWNzFvLVRQeDFscUtTaEV6TWxuOXhmcHdQQWc4aHRiT3NCLVFJZTFlTHI3R3pyUHE?oc=5",
+      "pub": "2026-11-16T21:53:50.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Nvidia Earnings Are Sideshow as Huang’s Ouster Looms Over Market",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxORlNRWmc0N3Uyc21OQ3RMb2x2U3VDbkxlLWk0SGdyd0xncEpzYTk4SDZKZzEzWWlNcHU2Snl6UXpiYXV4MzJ0aWl6SmdrVzVyb1B3XzVIYko0UGhGTVFtUml3SlpxTnE5MWZZVzl4VTN1WjQ4bDBUYmJvdVFTYkhISnNneENiNG1VMllvNGJqMDR2cHZNS0xWanY4VVV3aVlwLWRlU2ZRUUJvRDVxbEptcmNoazdZUQ?oc=5",
       "pub": "2026-11-16T21:31:41.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Tiger Global exits Chime, adds Ferrari, boosts Nvidia stake, among Q3 trades",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-16T20:36:04.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Dow Jones Decliners in Today's U.S. Session: CAT, NVDA, GOOGL, BA, GS, JPM",
-      "src": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=4df57dc2ec1ecaed4efe14d84c0e4ec661bb3618d40b87c41eecb631fb20b139",
-      "pub": "2026-11-16T20:10:50.000Z",
-      "sum": "Dow Jones components Caterpillar, NVIDIA, Alphabet, Boeing, Goldman Sachs, and JPMorgan posted notable declines in today's U.S. session, among the index's largest losers."
-     },
-     {
-      "hd": "More drops for Nvidia and other AI stocks drag the US market lower, pulling the S&P 500 down 2%",
-      "src": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOYXdFLTA2eFh1c1k5N2ZnWnBXdkpYX3ZzMkNaUC03SjBXeDlVcHplSm1fUnRnVzJsaGhFb0I2eHp2Si1uaTNRaEotekFyYlZYRVlxdzNydUhEaXZaa0c5dW1ybEp5T2wyWUN2eVhGaTdpdVV5bkRuRDJxQVd0X2wySmFhQXNiaWROVmRJRXdIRDVtSC1CN3c?oc=5",
-      "pub": "2026-11-16T20:08:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "People Miss Jensen Huang Already",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQS3A1WU5FMDNEb25jYnVfMTBuRzhnejRnNnllR2pISG9xZGMwdjlYZ2FSdlJoV1hqTHREa2EwcGIwaVEyQW92dGp1eFpCQjUzSUlDbFlOVnlSMko2Y3lmN3NOQzZiTHJaZm95Nng1U1ZaTHlRVWN3U1hlYkhnZ2hRV2NGMHVnSk9Zd3VXcjZKTGRld2M?oc=5",
-      "pub": "2026-11-16T19:37:39.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia: Buying Before The Dust Settles And Selling After (Rating Upgrade)",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4968710-nvidia-buying-before-the-dust-settles-and-selling-after?source=feed_symbol_NVDA",
-      "pub": "2026-11-16T19:03:05.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Most Active Stocks: CYAB, NVDA, GDHG Lead Latest Session",
-      "src": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=0367dc60e301ed00d075ea5bfdd8c39362cb8137b59b04b49cbc32fd9b8d1dda",
-      "pub": "2026-11-16T19:00:29.000Z",
-      "sum": "Most active US-listed stocks included CYAB, NVDA, SHFS, GDHG and AKAN, with sharp low-priced gains and declines in large-cap technology shares."
      }
     ],
     "fetched": {
      "Finnhub": 161,
-     "Yahoo": 12,
+     "Yahoo": 10,
+     "Google News": 93,
      "Nasdaq": 11,
      "Seeking Alpha": 24
-    },
-    "errors": [
-     "Google News: HTTP 429 from news.google.com"
-    ]
+    }
    },
    "TSLA": {
     "items": [
@@ -13869,6 +13872,27 @@
    "SPCX": {
     "items": [
      {
+      "hd": "Anthropic IPO Puts SpaceX In Spotlight — Why Cathie Wood’s ARK Thinks The AI Lab Could Pay Musk ‘Obscene’ Prices For Compute",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-ipo-spacex-cathie-wood-ark-musk-obscene-prices-compute/cNbaVj4R9Wc?.tsrc=rss",
+      "pub": "2026-11-17T07:14:27.000Z",
+      "sum": "ARK’s model puts SpaceX ahead of Anthropic and OpenAI combined by 2035, with 55% of the three companies’ gross profit."
+     },
+     {
+      "hd": "Nvidia boosts SpaceX stake, cuts Intel holding by 25% in Q3",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
+      "pub": "2026-11-17T07:09:48.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "“Striking” Parallels Between Anthropic and SpaceX IPOs as Crypto Slides Again",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/striking-parallels-between-anthropic-and-spacex-ipos-as-crypto-slides-again?ref=yahoofinance&tlnk=yf-261117-f5ggp59c&.tsrc=rss",
+      "pub": "2026-11-17T07:08:37.000Z",
+      "sum": "Key TakeawaysBitcoin is down nearly 16% so far in November, and Coinbase, Strategy and Robinhood slid again on Nov. 16."
+     },
+     {
       "hd": "SPCX Stock Dethrones Intel As Nvidia’s Biggest Holding — Druckenmiller Buys In And Tepper Ups His Stake Over 1,600%",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=54f0eca7f0b233ecce6eb5b77ad85e7786d73be63302269f6a6e5c6cab043650",
@@ -13918,13 +13942,6 @@
       "sum": ""
      },
      {
-      "hd": "David Tepper’s Appaloosa Goes Big on SpaceX, While Slashing Alphabet Stake",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0de404b2bafd13f96cbdefd9ca9180f568a642bcafd0e82cdcad092a64dfdb37",
-      "pub": "2026-11-16T23:09:00.000Z",
-      "sum": "It was a busy quarter, marked by several exits and a few new holdings."
-     },
-     {
       "hd": "Anthropic Faces a Longer Wait Than SpaceX to Join Stock Indexes",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPTVhxVzJmTGluQ2c1ZF9WS1hEUDhRcUpOazlVTnd1eDJoWW0xV291ejdCQ1pWdndCQ0wyRjAtS3lQY3g4SlNUUUpBWXNISmhva1l4Yjk5dU0wRDFDTi00YTBBYThzaWxrY1A3cHphLXlTVUk5azJCa0h5UXB4V1NsX21GZndDcUxNeTFtNHRpSjVaTEJfaEIyV1JtRmlyM2dJRjJTWUQtbFR0U004cnUxbnBhUVk?oc=5",
@@ -13944,13 +13961,6 @@
       "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
       "pub": "2026-11-16T22:56:33.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Berkshire Hathaway Slashes This Top 5 Stock; Nvidia Boosts SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ccf100224929f783a6ae1a915c32f95799f47104f52b202942c1b8c8c1b8a4fb",
-      "pub": "2026-11-16T22:39:00.000Z",
-      "sum": "Details of Berkshire Hathaway's Q3 buys and sells came in a 13F filing after Monday's close."
      },
      {
       "hd": "SpaceX, Blue Origin secure $985M national security launch contract boost",
@@ -14016,13 +14026,6 @@
       "sum": ""
      },
      {
-      "hd": "Musk outlines bigger, 9-engine Starship V4 after SpaceX catch milestone",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-16T13:56:55.000Z",
-      "sum": ""
-     },
-     {
       "hd": "SpaceX Rival's Rocket Failure Destroys 40 Amazon Satellites",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQYjFiUTduZWFLVmlUemd4SmlPYUpnSG9QLWpycTFfbmxpMEwtd1MxbnJpVU1vYnNoMlYtSG8xOEJjOThHQnI3NWQ0NVlybzAtbG5XbnJfR1o0d3M5ZjJaMTA4RVNrdVlmR2duc0ljd2VYTl80ajAyME1HMjU5VWRrb2hkSGdPdzNHc0JHRnktMG5tc29aTjAwN09OSUpSLU1KNTM3ZlllUFZJOHNrRkE?oc=5",
@@ -14046,10 +14049,10 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 11,
+     "Yahoo": 12,
      "Google News": 32,
      "Nasdaq": 0,
-     "Seeking Alpha": 22
+     "Seeking Alpha": 23
     }
    },
    "ANT": {
@@ -14241,12 +14244,26 @@
     ]
    }
   },
-  "asOf": "2026-11-17T06:30:20.349Z",
-  "lastAttempt": "2026-11-17T06:30:20.349Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Ukraine and Russia trade strikes on key bridges",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cw772jk4rvmxo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-17T07:30:07.000Z",
+    "sum": "A bridge linking Crimea and Russia has reportedly been damaged, while two major routes through Kyiv are closed."
+   },
+   {
+    "hd": "Tokyo protests after two suspected Russian aircraft violate Japanese airspace",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/tokyo-protests-after-suspected-russian-aircraft-violate-japanese-138201049",
+    "pub": "2026-11-17T06:57:20.000Z",
+    "sum": "Japan said it has protested to Moscow after two suspected Russian warplanes temporarily entered Japanese airspace off the country’s southwestern coast on Tuesday as tensions escalate between the two sides"
+   },
    {
     "hd": "Two major Kyiv bridges hit in Russian attack, mayor says",
     "src": "BBC News",
@@ -14442,24 +14459,9 @@
     "url": "https://abcnews.com/International/wireStory/russia-fends-off-swarms-ukrainian-drones-day-vast-138186480",
     "pub": "2026-11-16T19:07:08.000Z",
     "sum": "The skies from the Black Sea to Moscow buzzed overnight with hundreds of Ukrainian drones, keeping Russia’s air defenses busy for hours"
-   },
-   {
-    "hd": "France’s Diallo enters race to challenge Infantino in FIFA presidential election",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZUlsN3ZLcGVua1JkYWFyR0xYQ25xcDkxTFItbENSSWNhNkRGUWk5X0JyNmhaeDkyTWhPSVBjOUU4UEFYQ0s2UU1JZm9zdVVnVnI2ZnNfNzczVWVpekhhLVZINVlvYnhRU2lLU1NhSzNDTjNkdkVYakh5SjFSUWs1WFZMM3NhVnR0bURwSk5tVQ?oc=5",
-    "pub": "2026-11-16T17:46:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "'No money left': French far-right leader Le Pen vows to cut off Ukraine aid if elected president",
-    "src": "The Times of India",
-    "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNaU10d3h0Ul9IU1NJek1MdDRISjdSNjZDMVRyRmRlUDBHbzBncjBnajdQZ2RPS3BMVXdjblJuQTZoXzd6WkJnbEdaei0tZXlFV2lTaTVrZ0g4c28xaHc4anR3QjBvMVRfVHkxckRBRU1ETzVpTFo4SVV1NFY0VWlaYm0tN1ZWcDVkWXVvankzWmFSZVNkVFZZdEdHM2lUU19GSk9QcFZmS1M3V3dFRms0c3F1VExoM0ZBX2I4dHMtV2ptQnFzQW5lc0pmU2tiTEpXSmNsbWZtQnVCcnRPX3VQZnVfNi12UjZPcWtZaVAyazY1djBIZlBYLUtpQ1DSAYICQVVfeXFMTjdrTEdlNExQWldyWm9MUm03MGhIblVpTkRLNTF5eTI1Y0FGYllkQ1ZJTXBWWDVEM3Q2V3hMT1lvcl9oQk4tbXh4UlNSYUUwOWdvZkFIcWR2WWg3S25xN1F5a2w2R3hmVFRLdGlkT2ZtblNxVFY4TzBVUmxlTXZia1lCQzRFSkFPeVVuWXlURDJfU3Qtb21sWEYxanhCSjUzM05VUkE2RzQxR2xHaHRQQXdVbjQ3cDJmUVdrcC05dEZVck95OWt1U3dobTJScXJYcHVRQWlkZlBTTG9LeWxfeFBXcVVFY2FxZGRrNFZRN0piTGprR3NOVDFiTGs5Sl92LUxR?oc=5",
-    "pub": "2026-11-16T17:43:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Reuters",
    "WSJ",
    "The New York Times",
    "The Washington Post",
@@ -14473,10 +14475,11 @@
   ],
   "feedErrors": [
    "Google News: HTTP 429 from news.google.com",
-   "AP (Google News): HTTP 429 from news.google.com"
+   "AP (Google News): HTTP 429 from news.google.com",
+   "Reuters (Google News): HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-17T06:30:20.349Z",
-  "lastAttempt": "2026-11-17T06:30:20.349Z",
+  "asOf": "2026-11-17T07:30:15.210Z",
+  "lastAttempt": "2026-11-17T07:30:15.210Z",
   "lastError": null
  }
 }
