@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T20:45:11.836Z",
+ "generatedAt": "2026-11-17T21:00:15.038Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -709,10 +709,10 @@
   "status": "live",
   "lastError": null,
   "market": {
-   "isOpen": true,
-   "session": "regular",
+   "isOpen": false,
+   "session": "post-market",
    "holiday": null,
-   "checkedAt": "2026-11-17T20:45:11.836Z"
+   "checkedAt": "2026-11-17T21:00:15.038Z"
   },
   "quotes": {
    "NVDA": {
@@ -6318,15 +6318,12 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T20:45:11.836Z",
+  "at": "2026-11-17T21:00:15.038Z",
   "ran": [
    "alerts",
-   "stockNews",
-   "worldNews",
    "movers",
    "sectors",
-   "stocks:session",
-   "series",
+   "extended",
    "usTempGrid"
   ]
  },
@@ -13225,8 +13222,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T20:45:11.836Z",
-  "lastAttempt": "2026-11-17T20:45:11.836Z",
+  "asOf": "2026-11-17T21:00:15.038Z",
+  "lastAttempt": "2026-11-17T21:00:15.038Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13902,7 +13899,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T20:45:11.836Z",
+  "lastAttempt": "2026-11-17T21:00:15.038Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -13932,95 +13929,95 @@
   "provider": "Yahoo Finance",
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
-  "marketState": "REGULAR",
-  "sessionTime": "2026-11-17T20:45:21.000Z",
+  "marketState": "POST",
+  "sessionTime": "2026-11-17T21:00:01.000Z",
   "sessionDate": "2026-11-17",
   "gainers": [
    {
     "s": "SLS",
     "n": "SELLAS Life Sciences Group, Inc",
-    "ch": 155.96,
-    "px": 19.12,
-    "cap": 3897787136,
-    "t": 1794948321
-   },
-   {
-    "s": "ACM",
-    "n": "AECOM",
-    "ch": 12.75,
-    "px": 81.745,
-    "cap": 10520289280,
-    "t": 1794948316
+    "ch": 156.36,
+    "px": 19.15,
+    "cap": 3903902720,
+    "t": 1794949200
    },
    {
     "s": "BILL",
     "n": "BILL Holdings, Inc.",
-    "ch": 12.22,
-    "px": 64.67,
-    "cap": 5554056192,
-    "t": 1794948321
+    "ch": 12.74,
+    "px": 64.97,
+    "cap": 5579821056,
+    "t": 1794949199
+   },
+   {
+    "s": "ACM",
+    "n": "AECOM",
+    "ch": 11.12,
+    "px": 80.56,
+    "cap": 10367783936,
+    "t": 1794949198
+   },
+   {
+    "s": "RYTM",
+    "n": "Rhythm Pharmaceuticals, Inc.",
+    "ch": 8.49,
+    "px": 116.61,
+    "cap": 8084676608,
+    "t": 1794949200
    },
    {
     "s": "MNSO",
     "n": "MINISO Group Holding Limited",
-    "ch": 8.5,
-    "px": 12.195,
-    "cap": 3557611264,
-    "t": 1794948317
-   },
-   {
-    "s": "UNFI",
-    "n": "United Natural Foods, Inc.",
-    "ch": 8.48,
-    "px": 52.495,
-    "cap": 3152490240,
-    "t": 1794948300
+    "ch": 8.41,
+    "px": 12.185,
+    "cap": 3554694144,
+    "t": 1794949197
    }
   ],
   "losers": [
    {
     "s": "NXT",
     "n": "Nextpower Inc.",
-    "ch": -10.76,
-    "px": 79.7,
-    "cap": 12153004032,
-    "t": 1794948320
-   },
-   {
-    "s": "SMMT",
-    "n": "Summit Therapeutics Inc.",
-    "ch": -10.36,
-    "px": 10.595,
-    "cap": 8473498624,
-    "t": 1794948316
+    "ch": -12.13,
+    "px": 78.48,
+    "cap": 11966973952,
+    "t": 1794949200
    },
    {
     "s": "IDYA",
     "n": "IDEAYA Biosciences, Inc.",
-    "ch": -10.33,
-    "px": 27.225,
-    "cap": 2632509952,
-    "t": 1794948317
+    "ch": -9.75,
+    "px": 27.4,
+    "cap": 2649431296,
+    "t": 1794949201
+   },
+   {
+    "s": "SMMT",
+    "n": "Summit Therapeutics Inc.",
+    "ch": -9.73,
+    "px": 10.67,
+    "cap": 8533480960,
+    "t": 1794949201
    },
    {
     "s": "CRM",
     "n": "Salesforce, Inc.",
-    "ch": -9.5,
-    "px": 194.415,
-    "cap": 160003538944,
-    "t": 1794948321
+    "ch": -9.41,
+    "px": 194.62,
+    "cap": 160172261376,
+    "t": 1794949201
    },
    {
-    "s": "ERAS",
-    "n": "Erasca, Inc.",
-    "ch": -8.8,
-    "px": 13.78,
-    "cap": 4836179456,
-    "t": 1794948318
+    "s": "FRHC",
+    "n": "Freedom Holding Corp.",
+    "ch": -8.6,
+    "px": 145.82,
+    "cap": 9301517312,
+    "t": 1794949201
    }
   ],
-  "asOf": "2026-11-17T20:45:11.836Z",
-  "lastAttempt": "2026-11-17T20:45:11.836Z",
+  "asOf": "2026-11-17T21:00:15.038Z",
+  "lastAttempt": "2026-11-17T21:00:15.038Z",
   "lastError": null
  },
  "sectors": {
@@ -14030,91 +14027,91 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 162.28,
-    "d": -1.51,
-    "t": 1794948317
+    "px": 163.29,
+    "d": -0.89,
+    "t": 1794949200
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 105.54,
-    "d": -1.2,
-    "t": 1794948320
+    "px": 105.27,
+    "d": -1.45,
+    "t": 1794949199
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 117.15,
-    "d": -0.85,
-    "t": 1794948319
+    "px": 117.13,
+    "d": -0.86,
+    "t": 1794949199
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 57.19,
-    "d": -1.71,
-    "t": 1794948319
+    "px": 57.08,
+    "d": -1.89,
+    "t": 1794949200
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 185.14,
-    "d": -1.46,
-    "t": 1794948320
+    "px": 185.28,
+    "d": -1.38,
+    "t": 1794949199
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 164.58,
-    "d": -0.65,
-    "t": 1794948320
+    "px": 164.75,
+    "d": -0.55,
+    "t": 1794949199
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 91.62,
-    "d": -1.06,
-    "t": 1794948321
+    "px": 91.47,
+    "d": -1.22,
+    "t": 1794949199
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 63.35,
-    "d": -0.54,
-    "t": 1794948319
+    "px": 63.36,
+    "d": -0.53,
+    "t": 1794949199
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 43.56,
-    "d": -1.28,
-    "t": 1794948322
+    "px": 43.43,
+    "d": -1.56,
+    "t": 1794949199
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 43.72,
-    "d": -1.2,
-    "t": 1794948322
+    "px": 43.59,
+    "d": -1.49,
+    "t": 1794949199
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 51.03,
-    "d": -0.86,
-    "t": 1794948305
+    "px": 50.84,
+    "d": -1.22,
+    "t": 1794949199
    }
   ],
-  "sessionTime": "2026-11-17T20:45:22.000Z",
+  "sessionTime": "2026-11-17T21:00:00.000Z",
   "sessionDate": "2026-11-17",
-  "asOf": "2026-11-17T20:45:11.836Z",
-  "lastAttempt": "2026-11-17T20:45:11.836Z",
+  "asOf": "2026-11-17T21:00:15.038Z",
+  "lastAttempt": "2026-11-17T21:00:15.038Z",
   "lastError": null
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T14:30:18.959Z",
-  "lastAttempt": "2026-11-17T14:30:18.959Z",
+  "asOf": "2026-11-17T21:00:15.038Z",
+  "lastAttempt": "2026-11-17T21:00:15.038Z",
   "items": {
    "NVDA": {
     "session": "pre",
