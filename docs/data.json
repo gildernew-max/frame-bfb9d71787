@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-17T07:00:11.264Z",
+ "generatedAt": "2026-11-17T07:15:11.374Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -5658,7 +5658,7 @@
   "closeFetchedFor": "2026-11-16"
  },
  "lastRun": {
-  "at": "2026-11-17T07:00:11.264Z",
+  "at": "2026-11-17T07:15:11.374Z",
   "ran": [
    "alerts",
    "futures",
@@ -12020,62 +12020,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-17T07:00:11.264Z",
-  "lastAttempt": "2026-11-17T07:00:11.264Z",
+  "asOf": "2026-11-17T07:15:11.374Z",
+  "lastAttempt": "2026-11-17T07:15:11.374Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7422.75,
-    "lastTime": 1794898210,
-    "settle": 7441.75,
+    "last": 7426.75,
+    "lastTime": 1794899106,
+    "settle": 7441.5,
     "settleDate": "2026-11-16",
     "indexClose": 7416.59,
-    "change": -19,
-    "changePct": -0.2553162898511775,
-    "expectedOpen": 7397.654237578527,
+    "change": -14.75,
+    "changePct": -0.19821272592891215,
+    "expectedOpen": 7401.889374790029,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27281.75,
-    "lastTime": 1794898213,
-    "settle": 27291.75,
+    "last": 27316.75,
+    "lastTime": 1794899109,
+    "settle": 27291.25,
     "settleDate": "2026-11-16",
     "indexClose": 24509.758,
-    "change": -10,
-    "changePct": -0.03664110949279544,
-    "expectedOpen": 24500.777352734804,
+    "change": 25.5,
+    "changePct": 0.09343654101589338,
+    "expectedOpen": 24532.65907008657,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 51480,
-    "lastTime": 1794898211,
-    "settle": 51678,
+    "last": 51501,
+    "lastTime": 1794899106,
+    "settle": 51677,
     "settleDate": "2026-11-16",
     "indexClose": 51608.17,
-    "change": -198,
-    "changePct": -0.38314176245210724,
-    "expectedOpen": 51410.43754789272,
+    "change": -176,
+    "changePct": -0.34057704588114635,
+    "expectedOpen": 51432.404419180675,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2738.6,
-    "lastTime": 1794898201,
+    "last": 2740.3,
+    "lastTime": 1794899100,
     "settle": 2751.60009765625,
     "settleDate": "2026-11-16",
     "indexClose": null,
-    "change": -13.000097656250091,
-    "changePct": -0.4724559236396043,
+    "change": -11.300097656249818,
+    "changePct": -0.41067369004220433,
     "expectedOpen": null,
     "valid": true
    }
@@ -12568,8 +12568,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-17T07:00:11.264Z",
-  "lastAttempt": "2026-11-17T07:00:11.264Z",
+  "asOf": "2026-11-17T07:15:11.374Z",
+  "lastAttempt": "2026-11-17T07:15:11.374Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13245,8 +13245,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-17T07:00:11.264Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-17T07:15:11.374Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
