@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T09:45:11.718Z",
+ "generatedAt": "2026-11-18T10:00:11.400Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6336,9 +6336,10 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T09:45:11.718Z",
+  "at": "2026-11-18T10:00:11.400Z",
   "ran": [
    "alerts",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -12691,62 +12692,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T09:45:11.718Z",
-  "lastAttempt": "2026-11-18T09:45:11.718Z",
+  "asOf": "2026-11-18T10:00:11.400Z",
+  "lastAttempt": "2026-11-18T10:00:11.400Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7407,
-    "lastTime": 1794994507,
+    "last": 7405,
+    "lastTime": 1794995418,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 43.5,
-    "changePct": 0.5907516805866775,
-    "expectedOpen": 7383.89430433897,
+    "change": 41.5,
+    "changePct": 0.5635906837780946,
+    "expectedOpen": 7381.900543219936,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27408.5,
-    "lastTime": 1794994509,
+    "last": 27390.75,
+    "lastTime": 1794995423,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 322.25,
-    "changePct": 1.1897180303659607,
-    "expectedOpen": 24617.82215904749,
+    "change": 304.5,
+    "changePct": 1.1241866260556554,
+    "expectedOpen": 24601.879428021595,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50960,
-    "lastTime": 1794994506,
+    "last": 50962,
+    "lastTime": 1794995418,
     "settle": 50841,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": 119,
-    "changePct": 0.23406305934186977,
-    "expectedOpen": 50878.22905135618,
+    "change": 121,
+    "changePct": 0.2379968922719852,
+    "expectedOpen": 50880.225842135274,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2715.9,
-    "lastTime": 1794994508,
+    "last": 2716.7,
+    "lastTime": 1794995423,
     "settle": 2711.60009765625,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": 4.299902343750091,
-    "changePct": 0.15857435421494037,
+    "change": 5.099902343749818,
+    "changePct": 0.188077229682868,
     "expectedOpen": null,
     "valid": true
    }
@@ -13208,8 +13209,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T09:45:11.718Z",
-  "lastAttempt": "2026-11-18T09:45:11.718Z",
+  "asOf": "2026-11-18T10:00:11.400Z",
+  "lastAttempt": "2026-11-18T10:00:11.400Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13885,7 +13886,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T09:45:11.718Z",
+  "lastAttempt": "2026-11-18T10:00:11.400Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14096,35 +14097,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T09:45:11.718Z",
-  "lastAttempt": "2026-11-18T09:45:11.718Z",
+  "asOf": "2026-11-18T10:00:11.400Z",
+  "lastAttempt": "2026-11-18T10:00:11.400Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 161.1,
-    "time": 1794995110,
+    "price": 161.35,
+    "time": 1794996007,
     "ref": 155.46,
     "refTime": 1794949200,
-    "change": 5.639999999999986,
-    "changePct": 3.6279428791972124
+    "change": 5.889999999999986,
+    "changePct": 3.7887559500836137
    },
    "TSLA": {
     "session": "pre",
-    "price": 385.33,
-    "time": 1794995100,
+    "price": 385.1,
+    "time": 1794996006,
     "ref": 380.11,
     "refTime": 1794949201,
-    "change": 5.21999999999997,
-    "changePct": 1.3732866801715216
+    "change": 4.990000000000009,
+    "changePct": 1.3127778800873453
    },
    "SPCX": {
     "session": "pre",
-    "price": 142.64,
-    "time": 1794995104,
+    "price": 142.85,
+    "time": 1794996019,
     "ref": 141.7,
     "refTime": 1794949200,
-    "change": 0.9399999999999977,
-    "changePct": 0.6633733239237811
+    "change": 1.1500000000000057,
+    "changePct": 0.8115737473535679
    }
   }
  },
@@ -14884,24 +14885,45 @@
  "worldNews": {
   "items": [
    {
-    "hd": "Trump in China for Putin, Xi summit; possible meeting with Kim Jong Un",
+    "hd": "Trump arrives in China ahead of summit with Putin and Xi",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-asia-trip-trilateral-summit-putin-xi/",
-    "pub": "2026-11-18T08:58:35.000Z",
-    "sum": "The president arrived in China after a stop in the Philippines. He's slated have a summit in China with Vladimir Putin and Xi Jinping, and may meet with Kim Jong Un."
+    "pub": "2026-11-18T09:53:57.000Z",
+    "sum": "President Trump is in China, where he may meet with Vladimir Putin before a trilateral summit with Putin and China's Xi Jinping, and a possible meeting with Kim Jong Un."
    },
    {
-    "hd": "In Choosing Shenzhen for Trump-Putin Summit, Xi Shows Off His Tech Ambitions",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMlVwaHVnajBHRVg0bWVmMEVSOUM5Q2VTZGFMSXcwNUlwTWhkczZFd1ZZc19hUldpbWtuc1ltdW10cGcySFdqSGVScUt1ZG95NWgyOWREeGsxal9zTzloMWJUa2JvQ2lLa2p1NGpsNkhzZ1hGdU1ZSHUzS3M3bFNoNG1TX2IyeTZZOTNJbE5TSjVPV2FxYU1Ba2Z1WXpWejhILWdpSjVtZGo0UXhwWXVBNU5jUkF3SXM?oc=5",
-    "pub": "2026-11-18T08:51:00.000Z",
+    "hd": "Trump seeks to show strength in China, but a series of technological snafus raises concerns at home",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
+    "pub": "2026-11-18T09:46:00.000Z",
     "sum": ""
    },
    {
     "hd": "Live Updates: Xi and Putin Meet Ahead of Trump’s Arrival in China",
     "src": "The New York Times",
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBYd3JNbjZTZWxKVk1aTDJWZnE0UEpPX21TZHp3LVBSTkRHMjVadHdfaV9qQUhHQkpGZDZkLTI3RExSSXNsMF9nSTJ0TzVIOFpGWE51SHdiZ1NBa0VoUm52cnYwNDAxLTNwWWNTUUs1ZzFKalhTNGc?oc=5",
-    "pub": "2026-11-18T08:50:27.000Z",
+    "pub": "2026-11-18T09:44:36.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Putin to meet with Trump and Xi after Ukrainian attack on Russian bridge",
+    "src": "NPR",
+    "url": "https://www.npr.org/2026/11/18/nx-s1-6044242/putin-to-meet-with-trump-and-xi-after-ukrainian-attack-on-russian-bridge",
+    "pub": "2026-11-18T09:43:28.000Z",
+    "sum": "Russian President Vladimir Putin will meet Wednesday with President Trump and Chinese President Xi, escaping the aftermath of a Ukrainian attack that partially collapsed a prized bridge."
+   },
+   {
+    "hd": "Xi says Asia-Pacific needs open trade and Putin condemns sanctions as Trump arrives in China",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaDAtWFFGbDFuZ1pfbzdfUHUyYmM5QktTRkR5WndiUXpoenF6cE9VbGQ4ZE84MzY0czJoZFE3cWJXYm81ZDZtUlJzZU5sS3lueWFVV2ZBT2NtVXlkTVJ4N0NUXzhkaXRxUWRVRldGRUFTMERMcXVYcGtaWFI2bnFfY3U0YUFlenRnajRaZ2hOc3h3OFcteFYySg?oc=5",
+    "pub": "2026-11-18T08:58:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "In Choosing Shenzhen for Trump-Putin Summit, Xi Shows Off His Tech Ambitions",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMlVwaHVnajBHRVg0bWVmMEVSOUM5Q2VTZGFMSXcwNUlwTWhkczZFd1ZZc19hUldpbWtuc1ltdW10cGcySFdqSGVScUt1ZG95NWgyOWREeGsxal9zTzloMWJUa2JvQ2lLa2p1NGpsNkhzZ1hGdU1ZSHUzS3M3bFNoNG1TX2IyeTZZOTNJbE5TSjVPV2FxYU1Ba2Z1WXpWejhILWdpSjVtZGo0UXhwWXVBNU5jUkF3SXM?oc=5",
+    "pub": "2026-11-18T08:51:00.000Z",
     "sum": ""
    },
    {
@@ -14926,10 +14948,10 @@
     "sum": "From lush landscaping to extensive surveillance, Shenzhen has made elaborate efforts to prepare for this week’s Asia-Pacific Economic Cooperation summit."
    },
    {
-    "hd": "Trump wants to show strength in China, but a series of technological snafus raises concerns at home",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
-    "pub": "2026-11-18T07:21:00.000Z",
+    "hd": "19 Killed in Military Transport Plane Crash in Siberia",
+    "src": "The Moscow Times",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeDNLSlFmZ3RMMXB3NGcyaHlpbFhqS0c4X21VS0tCbjZYa0lSNVVxRHdpZU8tSERHdjFYUnFjTzFscjBSdUZ1WGJuLU15SXVHSW1obm85RU04d2t0REpkdk9qWWV2VlNUeVUwemtGT0hEWjQ4YkhpWHhhWWd1LXFNQTdXUTZaNVR1WDVxR3hoTW0xa2xsSG1HdkxQZ1VhWU9RQXN2dGRseDVxZVo3M3pxWWRHWXBnTFBHWFdDSDVGZ0E2MDlfbkpF?oc=5",
+    "pub": "2026-11-18T07:12:00.000Z",
     "sum": ""
    },
    {
@@ -14952,6 +14974,13 @@
     "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
     "pub": "2026-11-18T06:00:22.000Z",
     "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
+   },
+   {
+    "hd": "Vladimir Putin pushes ‘Eurasian’ order ahead of meeting with Xi and Trump",
+    "src": "Financial Times",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdmlxdXREZlBlbWU3TTRjY25EU1BaOFV5Wk5iNnpDa2RicGwxSERlSVFMTzlhQXp2S2gyeEgtLUVFaTEySU1oNmw2NUlhRmFDMnFhOURCTzdYOG1XZGctMnlmaktWYWUxQ1FLNFFhVEtCRFFsX01rZ1VkR3pFekF0QzFtZTc?oc=5",
+    "pub": "2026-11-18T05:38:06.000Z",
+    "sum": ""
    },
    {
     "hd": "China’s Xi and other Asian leaders say Asia-Pacific must embrace open trade, fair growth",
@@ -14989,7 +15018,7 @@
     "sum": ""
    },
    {
-    "hd": "Xi and Putin blast sanctions before meeting Trump in China",
+    "hd": "Xi, Putin blast Western 'protectionism', sanctions as Trump lands in China",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
     "pub": "2026-11-18T03:21:00.000Z",
@@ -15000,6 +15029,13 @@
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
     "pub": "2026-11-18T03:21:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Taiwan in 'close contact' with US ahead of US-China-Russia talks at APEC",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNYm9mcVhlZGhhUVRyRkFSRS03NG5HcDdubEFDRFpHV0NzZTdUZHVCWHZDVS1EX3NIMGFlazZTelVwb1I0VWJXajNjdzRrdTRrakJWNU8xd1ZrVF8tWTBIWEtMeklldHhGYzhDbGtvQkpyQUN1a2kxY3RUNWtYaVVvTVdGVG94NEx0M0w1aS0wS2xBQVV2QUZBQ2xqMXVpcldrcG10ZFBmb2NQWnY3cEI2VXRRR09KemM0dXRlUlI4XzAtQQ?oc=5",
+    "pub": "2026-11-18T03:11:00.000Z",
     "sum": ""
    },
    {
@@ -15020,7 +15056,7 @@
     "hd": "The Pentagon Urgently Needs More Patriot Missiles. It’s Running Into a Rayon Problem.",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1BOEozME1HbXpIc2tEZ1RVNjE4d21GWGpVN3dZUXU0aEpDU09rS0oyN0FNRjVKU1lPbTN2NS1nQ2F3bGxHSlB4V1RBMkFOLWNKWGpoTm1TbXdNSzM5T3AzQkZmbXpXY2l5eHBtZTZhYUlBQU1ISzFVeHpabw?oc=5",
-    "pub": "2026-11-18T02:00:00.000Z",
+    "pub": "2026-11-18T02:00:21.000Z",
     "sum": ""
    },
    {
@@ -15057,41 +15093,6 @@
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRE5uQWVHVHVQV19VTmJrT29QT1lKV0xQQzhUZWp6Wk5aSWZCV3ZKbHNKZ3NBMmlhYzNsT1J6V1AxQjBxR2QzWWk2ODlfaTBEU1JCLXFVWE1adHFQU0M2Rk1fZXhYYzQ5bmczU1lyWHc5WjNFVi1SLXF0NkJSaWlMQUNGdmZfX1ZETWtxZ05UUER6VVpxRDZBaUkzUTZMSGRsWVRacEJkSTUxYkRyeVc2dGJvWUpSNVNPbGc?oc=5",
     "pub": "2026-11-18T00:51:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump heads to China, betting on unscripted diplomacy with Xi and Putin",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
-    "pub": "2026-11-18T00:46:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Top IRGC commander in Iraq for talks amid Kataib Hezbollah tensions",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOekh5RjRQeUxfVV9kUURpZEl6bGx4N29kMlloUy1wVmZvS1pkTFdLZ1FDUG5zdTdEbUY2NE0tTHZKSFpsbXZUbGl5UWU4NnZQRTRIM0dzN295Vm5qLU04aFJtZ1FLV1ZfdDNpVEpaSDVrbi1EeFQwemNKU0JuU0NLaXlrWnlhaVFIaVpmTWo0Qi1JamM0X21qYWlpX052b19Rc0FJUmh1UnJwaXRjR0HSAbMBQVVfeXFMUDFnRmhBdHFmTk0xZURxN1plZXV0Z09xakwxdFdUMXhZdDdWLUl3WDJ0QkNDdTNDUmNEWE16RHhJZUEtVnpsWVk1b3VFX3o4RFc5QV8zdXVMODd1NEE5WnY5NjlZdTZOV08wZm5NVnBkUGowb3BpYm83NlV0V2h0R2pSTzZsM3l4dTZTSVZDLVZVWjlRZ21Sb3kyY09fMjJUMkhyT1ExNzNFbXptUlVvSDlNLTg?oc=5",
-    "pub": "2026-11-18T00:43:05.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Le Pen pledges to lower France’s retirement age to 60 if she wins next year’s election",
-    "src": "The Independent",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSnlueXJGczN5XzNWa3VOb1QtUkEzVm5XbjluMVJFNXVjc0U5cUVaSFhVeHlyTWRuOVVPY3hOa1N3U2dNeE81MERvY01TMEJCc0t5eGJBejB5ZURnVk96WUtxcUM1UHQ2SlA4bUlrcmxNYlc1N3NxUmoxV1dWVTVCV0ZxamVaR2d4ekZNQ1ZKODdyVU1hUnpHaTJ3enlveXJjWHdXTEZKN2s?oc=5",
-    "pub": "2026-11-18T00:21:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Divided appeals court blocks Pentagon from expelling several transgender troops from US military",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSW9kWE1RTWNWVFd1b2wzODdfTE5PdFdicFNObHVJTi1YcU9Hb29LNlRmNVVRNTc0amZZQkx0clc3NFIzWktkeFg4YlNtR1Z0QWNrS2lQUnhDYW4yMTZGU0tRZ3c2VkZQaHdBN0o4YUtnTnJGc3VOLXdzRUx1Ni1aV3lPdkUySHVBanFYaTRwVlZBNWdmNUpNY2VNNnI2VGV4Qk1v?oc=5",
-    "pub": "2026-11-18T00:17:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "BHP, Rio Tinto executives to meet China leaders as iron ore pressure builds",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcEU4M19MQkc0T0ZzMFJvU29nQnBoLUNnbjBjbXc1UlNCaUhFOUpMTHhCTlNZODJBSGR0VUloelJ2b3hVWk9pZnpsYlQ0dk1uLTRCWFVVWGlwX1B0QUxxb00wdUVLYkpabmwzS1oyR1dmZklYdFZEM1BhYzZId1hNbGI5SFJOQnBDcWlTQk1qUlQ4aVBoemR4MjFWbVgyTm9hTG1yaUJqN0tUVTBQRl8ybnRTS3lhcmc?oc=5",
-    "pub": "2026-11-18T00:11:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15110,8 +15111,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T09:00:22.032Z",
-  "lastAttempt": "2026-11-18T09:00:22.032Z",
+  "asOf": "2026-11-18T10:00:11.400Z",
+  "lastAttempt": "2026-11-18T10:00:11.400Z",
   "lastError": null
  }
 }
