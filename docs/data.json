@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T02:30:19.365Z",
+ "generatedAt": "2026-11-18T03:15:13.454Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6029,14 +6029,10 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T02:30:19.365Z",
+  "at": "2026-11-18T03:15:13.454Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
    "worldNews",
-   "world",
    "futures",
    "usTempGrid"
   ]
@@ -12388,62 +12384,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T02:30:19.365Z",
-  "lastAttempt": "2026-11-18T02:30:19.365Z",
+  "asOf": "2026-11-18T03:15:13.454Z",
+  "lastAttempt": "2026-11-18T03:15:13.454Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7374,
-    "lastTime": 1794968448,
+    "last": 7378.75,
+    "lastTime": 1794971122,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 10.5,
-    "changePct": 0.1425952332450601,
-    "expectedOpen": 7350.997245874924,
+    "change": 15.25,
+    "changePct": 0.2071026006654444,
+    "expectedOpen": 7355.732428532628,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27165,
-    "lastTime": 1794968449,
+    "last": 27218.75,
+    "lastTime": 1794971122,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 78.75,
-    "changePct": 0.29073792053163505,
-    "expectedOpen": 24399.11483483317,
+    "change": 132.5,
+    "changePct": 0.48917808851354466,
+    "expectedOpen": 24447.392118925654,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50813,
-    "lastTime": 1794968431,
-    "settle": 50837,
+    "last": 50856,
+    "lastTime": 1794971118,
+    "settle": 50841,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": -24,
-    "changePct": -0.04720970946357968,
-    "expectedOpen": 50735.4566252926,
+    "change": 15,
+    "changePct": 0.029503746975865934,
+    "expectedOpen": 50774.39593084321,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2710.6,
-    "lastTime": 1794968447,
-    "settle": 2711.39990234375,
+    "last": 2711.5,
+    "lastTime": 1794971106,
+    "settle": 2711.60009765625,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": -0.799902343750091,
-    "changePct": -0.02950145211182794,
+    "change": -0.10009765625,
+    "changePct": -0.00369146085872023,
     "expectedOpen": null,
     "valid": true
    }
@@ -12936,8 +12932,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T02:30:19.365Z",
-  "lastAttempt": "2026-11-18T02:30:19.365Z",
+  "asOf": "2026-11-18T03:15:13.454Z",
+  "lastAttempt": "2026-11-18T03:15:13.454Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13613,8 +13609,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T02:30:19.365Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-18T03:15:13.454Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -14612,6 +14608,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Live Updates: Trump Meets Philippine Leader Before Flying to China",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
+    "pub": "2026-11-18T03:14:40.000Z",
+    "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
+   },
+   {
+    "hd": "U.S. Enters Unprecedented Three-Way Nuclear Rivalry With China and Russia",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUlBHZjJiSmNBeEJWWllmTEhCenFVbjRnS0JqS051VERpNkJOM1hLSC1LTm9GNVhsaVZDVUdSaW8yX2JqU0MxTG51U28yY0Y5dWdlVTIyclpHN3YydTV5VkpJMW1MRHhCTkNXYWNjY1g4Vk9DUXc0NDNkeVo3NHFtVTloekRoaGtHa2xCV0M1ZU9wZXozaVpzT0lsSzNua2xoZk41eE9WMlREdlE?oc=5",
+    "pub": "2026-11-18T03:00:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Will a Spy Scandal, Trade Friction and a Surprise Guest Ruin Xi’s Big Moment?",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/17/world/asia/xi-apec.html",
@@ -14806,20 +14816,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE01Q09tQnV4UW16SVdaanJvb3ZfNTBWTFhDYl9VdHowYXVoQjZSYTE3UDR4TmVpeXpBT21HMlNMZ2RSckhLaFlJNXh0RnBWdzNHODM4WGpUU004MWs?oc=5",
     "pub": "2026-11-17T21:06:11.000Z",
     "sum": "Russia's defence ministry says it preliminarily believes a technical malfunction was the cause of the crash in the Kemerovo region."
-   },
-   {
-    "hd": "Migrant arrivals from Africa to the Canary Islands spike as Spain’s general election nears",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSXFsMHl0NGdBOG0tTWI3b2NXTVVlM3FvOTB2NnhVdHYxRWtJVERXRW5NNE5vTERVNjhIUWw0eGdEcDJINDF3OGRyVW1FVDVpa3IzYzhmVVM3TzhoZ2lob0Y2ZE1qVWowblFTaVpwamZIVlJTV1JrbkpFR0xiR01CRGc1d2VxQ3p3VEF6SzNSZTd0bkZnSXVzU0tUVEFianNrT1lz?oc=5",
-    "pub": "2026-11-17T20:55:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Board of Peace delivers bleak report on Gaza, warning of ceasefire collapse without immediate action",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxORVU5dVFxWHFTT0U4QVpaRklhbXEtZTVZT0ZRQkMyX0hTal8tWGZ3enZMMmtuTTlzcGh4RmZMUmVQZlBFcEdkeF8tZnZxUXNZQnBfSXVGdkRsLUdXQ3dCSG9ILWZBaXZrbkNDTnR5Yy1xN0pHRkF5Z2JqY3FqaHJ1NVJ0NS1SUTRpclJVTk81cGpXWV9pTzQtSFNBcw?oc=5",
-    "pub": "2026-11-17T20:42:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -14838,8 +14834,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T02:30:19.365Z",
-  "lastAttempt": "2026-11-18T02:30:19.365Z",
+  "asOf": "2026-11-18T03:15:13.454Z",
+  "lastAttempt": "2026-11-18T03:15:13.454Z",
   "lastError": null
  }
 }
