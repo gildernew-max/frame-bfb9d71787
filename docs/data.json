@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T05:45:12.166Z",
+ "generatedAt": "2026-11-18T06:00:10.839Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6029,9 +6029,10 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T05:45:12.166Z",
+  "at": "2026-11-18T06:00:10.839Z",
   "ran": [
    "alerts",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -12383,62 +12384,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T05:45:12.166Z",
-  "lastAttempt": "2026-11-18T05:45:12.166Z",
+  "asOf": "2026-11-18T06:00:10.839Z",
+  "lastAttempt": "2026-11-18T06:00:10.839Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7374.75,
-    "lastTime": 1794980109,
+    "last": 7375.5,
+    "lastTime": 1794981012,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 11.25,
-    "changePct": 0.15278060704827867,
-    "expectedOpen": 7351.744906294562,
+    "change": 12,
+    "changePct": 0.16296598085149724,
+    "expectedOpen": 7352.492566714199,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27216.75,
-    "lastTime": 1794980111,
+    "last": 27227,
+    "lastTime": 1794981016,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 130.5,
-    "changePct": 0.4817942683095666,
-    "expectedOpen": 24445.5957548664,
+    "change": 140.75,
+    "changePct": 0.5196363468549541,
+    "expectedOpen": 24454.80212067008,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50853,
-    "lastTime": 1794980102,
+    "last": 50850,
+    "lastTime": 1794981017,
     "settle": 50841,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": 12,
-    "changePct": 0.023602997580692748,
-    "expectedOpen": 50771.40074467457,
+    "change": 9,
+    "changePct": 0.01770224818551956,
+    "expectedOpen": 50768.405558505925,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2710.4,
-    "lastTime": 1794980104,
+    "last": 2710.6,
+    "lastTime": 1794981006,
     "settle": 2711.60009765625,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": -1.200097656249909,
-    "changePct": -0.04425791462713119,
+    "change": -1.000097656250091,
+    "changePct": -0.036882195760153474,
     "expectedOpen": null,
     "valid": true
    }
@@ -12900,8 +12901,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T05:45:12.166Z",
-  "lastAttempt": "2026-11-18T05:45:12.166Z",
+  "asOf": "2026-11-18T06:00:10.839Z",
+  "lastAttempt": "2026-11-18T06:00:10.839Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13577,7 +13578,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T05:45:12.166Z",
+  "lastAttempt": "2026-11-18T06:00:10.839Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14576,6 +14577,34 @@
  "worldNews": {
   "items": [
    {
+    "hd": "A tropical Chinese city is half-empty and ready for the summit.",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/a-tropical-chinese-city-is-half-empty-and-ready-for-the-summit",
+    "pub": "2026-11-18T05:57:50.000Z",
+    "sum": "From lush landscaping to extensive surveillance, Shenzhen has made elaborate efforts to prepare for this week’s Asia-Pacific Economic Cooperation summit."
+   },
+   {
+    "hd": "Trump Meets Philippine Leader Before Flying to China",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
+    "pub": "2026-11-18T05:42:12.000Z",
+    "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
+   },
+   {
+    "hd": "Apec summit live: Xi and Putin start talks; Rubio says Trump serious about meeting Kim Jong-un",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOGlCUHJNQVF3R3BkMURkZ1E4TDNXWXhSYWZDc0lNUmlQUmpqSlBCTWNLaUp5V3BpVGJoSjMyalV5MlM5XzJ5YnZvai1iS0xVai1UNmlBUDkwX3NHVUgtZ3BJQ2FKOHNEZlpyUERMT3JrdHZJZXEtaHJfMmxybVJ3N0dOeExSZ0hTOFprZUxlVnFZdkxPa2hsNlNWMVluc1VrVEJhaUpDeWtncTRqVE5HWkYyUTRqQW1ZU2FwUQ?oc=5",
+    "pub": "2026-11-18T05:15:35.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "These Villagers Wonder if They’re on the Front Line of Russia’s Shadow War",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/18/world/europe/liepzig-airport-drone-attack-russia-ukraine-war.html",
+    "pub": "2026-11-18T05:01:06.000Z",
+    "sum": "Russia is accused of clandestine attacks on Ukraine’s allies in Europe, most notably at Leipzig/Halle airport in eastern Germany. That has changed life for villagers nearby."
+   },
+   {
     "hd": "Iran Attacks Kuwait and Bahrain, Further Escalating Fight Over Strait",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcGVKcXlHY1EycS1qaFBrcVduLWwzS1B4RmhJeDg5eFlxR0FIeVNFclFqZVczdXFBVGVLa0xpcHZXZkVWa3JEeHJxVXA5YWxVa3YtejhlaHd1T1JmWDd1NHp3V1E1SEdsS0tkOEc2bVpZNER2elNveGdNTk9xanNjSDZZM2NwSXhULUVPSk84TW1JRFJUbkRRZVBYN2JHd0NnQkYxN0hhVDhVaVYzUEtlTGUwUUpuZw?oc=5",
@@ -14583,11 +14612,11 @@
     "sum": ""
    },
    {
-    "hd": "Live Updates: Trump Meets Philippine Leader Before Flying to China",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
-    "pub": "2026-11-18T04:33:50.000Z",
-    "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
+    "hd": "Russia's Putin says he expects 'big potential benefit' from meeting with Trump and Xi",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOa1FfUS1OenA3M3Y5X29pUkxZUU1MbXdnaDlwNmtGd2RJaktuV2J6LTdVUTBwLW5OR0VEMUNKUlNRQjBDdkxMM2duWTlrQmNVdjFJalhHQUM4UVlUWGNnc2Y4dUJPa1FzSFN4QkxJREZqLVExdWFCOUNzWnllMVRTb3gzdE5XSUZBMlpjTzNiTzVvYUhyaUlENWlBdmlZUFNFWEI0dkM3Ql9ZWmVUR1FuRUtqYjFjdEREVVhqX2czWHdlNVk?oc=5",
+    "pub": "2026-11-18T04:21:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump in Philippines ahead of Putin, Xi summit; possible Kim meeting",
@@ -14709,6 +14738,13 @@
     "sum": ""
    },
    {
+    "hd": "Le Pen pledges to lower France’s retirement age to 60 if she wins next year’s election",
+    "src": "The Independent",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQSnlueXJGczN5XzNWa3VOb1QtUkEzVm5XbjluMVJFNXVjc0U5cUVaSFhVeHlyTWRuOVVPY3hOa1N3U2dNeE81MERvY01TMEJCc0t5eGJBejB5ZURnVk96WUtxcUM1UHQ2SlA4bUlrcmxNYlc1N3NxUmoxV1dWVTVCV0ZxamVaR2d4ekZNQ1ZKODdyVU1hUnpHaTJ3enlveXJjWHdXTEZKN2s?oc=5",
+    "pub": "2026-11-18T00:21:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Divided appeals court blocks Pentagon from expelling several transgender troops from US military",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSW9kWE1RTWNWVFd1b2wzODdfTE5PdFdicFNObHVJTi1YcU9Hb29LNlRmNVVRNTc0amZZQkx0clc3NFIzWktkeFg4YlNtR1Z0QWNrS2lQUnhDYW4yMTZGU0tRZ3c2VkZQaHdBN0o4YUtnTnJGc3VOLXdzRUx1Ni1aV3lPdkUySHVBanFYaTRwVlZBNWdmNUpNY2VNNnI2VGV4Qk1v?oc=5",
@@ -14749,41 +14785,6 @@
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPaEg3anV0Q2ZiXzRhYjVfZkhyTlM2Q3RnX3ZFUExIQ0xQWjZqbkRmXy1mSVY5N1E2dXI0Q2s5WE5oQmNnLXZia24zNU5nUF9FNnZQMENHcFhYMUlhVklwT1RBczRnWFRiXzl3MHRoTWpPRlZJQUNlSjBHeGl5akprVmlNNnFYNmRiNEFqZUlzbUxnRU9FWGRxRGdUTU93QTQ3S3prbktDSUxQbHM2MjFsWWtpLXNOWWFC?oc=5",
     "pub": "2026-11-17T23:36:43.000Z",
     "sum": ""
-   },
-   {
-    "hd": "German minister rejects US criticism of Kyiv's deep strikes as 'stupid'",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPRmdnNC1aejdXR1ZzZFEzSGVBNEJ5T2VRZTdHTU1mVGlrcnJkZTlacmJ2V3UteWNQZkNKTUpQa1gtRGxNaGV6ejVaM1JQZkszX2FZeWs0RXlQM09aYnBvdllESnktVEZMclBBcnZDNVdremViZjZmSlZHcGRLeHpCLWc3VnQ3M0psWXBReEg2SEZzSmQ0dkVBbU1ZOTVaVGI1Yld6cWNiaXBGeFB5OFZCTA?oc=5",
-    "pub": "2026-11-17T23:20:51.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Man with ax destroys $60M U.S. military plane, prosecutors say",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/us-military-plane-irish-airport/",
-    "pub": "2026-11-17T22:54:00.000Z",
-    "sum": "Daithi O'Corrain, 48, is charged in the U.S. with destruction of U.S. government property in connection with the April incident at Shannon Airport."
-   },
-   {
-    "hd": "American soldier arrested in UK taken into US military custody",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IYjVPU1Nqcm5SZnViV3BsdFhTaHZieGJvUUhvd25VbmNWTmFLdHgzYnFNQjMtN05QRzY4aGZ0LXY5NEplNExNeUQ2R0F4QjlYMTQ3dlpSSkI5eG8?oc=5",
-    "pub": "2026-11-17T22:46:30.000Z",
-    "sum": "The Metropolitan Police say he has been taken into custody by the US Military over suspected national security and espionage allegations."
-   },
-   {
-    "hd": "Matan Kahana Elected Speaker of Israel’s Parliament",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUVp5THlHSW81cERISEJwR2g5WHIyMmJ5ZFVla3UyY0t5aGZiSEFsdmxuNk41LTNDWnRvRFpBZGE3ZFA4WE9IRjhDaWZ2MjZhUjJQSDVYLWQxeW9fOWVZdlRhcGk1b2JodTF1T0NpNjBoUWcxWGU3Wm1haDZ5VGhybWoyRndicEdTZV9WdTFPTnJCdGc3ZGdHbjNDS2Y1NW5tU1EtUnItZw?oc=5",
-    "pub": "2026-11-17T21:54:22.000Z",
-    "sum": "Matan Kahana, a lawmaker from Gadi Eisenkot’s party, will take control of the legislative process as the opposition looks to press Prime Minister Benjamin Netanyahu on multiple fronts."
-   },
-   {
-    "hd": "Israeli parliament elects new Knesset speaker backed by Netanyahu’s opponents",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRFVSMFdDczNIa3JzX1ZTOWdyMm5mcDk0S3hXMW5DZHFKTks1c3BKSHBxWGFtN0FfMy1zOS1Cc1ZaQWF1SFJHVklqaDVwSm5WRk5aejR2VUFOb3daTHRZSTIwMmhrdGxRWEdyTkdoN0dBOEtEdWVsMURBN0ZjM0NlazYtWWpxdVp0ZDBvR3RIMEZtbGcyZk01TVdGZw?oc=5",
-    "pub": "2026-11-17T21:54:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -14802,8 +14803,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T05:00:10.963Z",
-  "lastAttempt": "2026-11-18T05:00:10.963Z",
+  "asOf": "2026-11-18T06:00:10.839Z",
+  "lastAttempt": "2026-11-18T06:00:10.839Z",
   "lastError": null
  }
 }
