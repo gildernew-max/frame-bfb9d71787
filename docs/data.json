@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T06:45:12.430Z",
+ "generatedAt": "2026-11-18T07:00:18.854Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6029,9 +6029,10 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T06:45:12.430Z",
+  "at": "2026-11-18T07:00:18.854Z",
   "ran": [
    "alerts",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -12383,62 +12384,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T06:45:12.430Z",
-  "lastAttempt": "2026-11-18T06:45:12.430Z",
+  "asOf": "2026-11-18T07:00:18.854Z",
+  "lastAttempt": "2026-11-18T07:00:18.854Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7377,
-    "lastTime": 1794983705,
+    "last": 7376,
+    "lastTime": 1794984610,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 13.5,
-    "changePct": 0.18333672845793442,
-    "expectedOpen": 7353.987887553473,
+    "change": 12.5,
+    "changePct": 0.16975623005364296,
+    "expectedOpen": 7352.991006993956,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27231.25,
-    "lastTime": 1794983704,
+    "last": 27223,
+    "lastTime": 1794984619,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 145,
-    "changePct": 0.5353269647884075,
-    "expectedOpen": 24458.619394296,
+    "change": 136.75,
+    "changePct": 0.504868706446998,
+    "expectedOpen": 24451.209392551573,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50839,
-    "lastTime": 1794983704,
+    "last": 50837,
+    "lastTime": 1794984616,
     "settle": 50837,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": 2,
-    "changePct": 0.003934142455298306,
-    "expectedOpen": 50761.41694789228,
+    "change": 0,
+    "changePct": 0,
+    "expectedOpen": 50759.42,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2710.6,
-    "lastTime": 1794983700,
+    "last": 2710.4,
+    "lastTime": 1794984614,
     "settle": 2711.39990234375,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": -0.799902343750091,
-    "changePct": -0.02950145211182794,
+    "change": -0.999902343749909,
+    "changePct": -0.03687771556256189,
     "expectedOpen": null,
     "valid": true
    }
@@ -12900,8 +12901,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T06:45:12.430Z",
-  "lastAttempt": "2026-11-18T06:45:12.430Z",
+  "asOf": "2026-11-18T07:00:18.854Z",
+  "lastAttempt": "2026-11-18T07:00:18.854Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13577,8 +13578,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T06:45:12.430Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-18T07:00:18.854Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -14576,25 +14577,39 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Trump wants to show strength in China, but a series of technological snafus raises concerns at home",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
+    "pub": "2026-11-18T06:49:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Apec summit live: Xi and Putin start talks; Rubio says Trump serious about meeting Kim Jong-un",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOGlCUHJNQVF3R3BkMURkZ1E4TDNXWXhSYWZDc0lNUmlQUmpqSlBCTWNLaUp5V3BpVGJoSjMyalV5MlM5XzJ5YnZvai1iS0xVai1UNmlBUDkwX3NHVUgtZ3BJQ2FKOHNEZlpyUERMT3JrdHZJZXEtaHJfMmxybVJ3N0dOeExSZ0hTOFprZUxlVnFZdkxPa2hsNlNWMVluc1VrVEJhaUpDeWtncTRqVE5HWkYyUTRqQW1ZU2FwUQ?oc=5",
+    "pub": "2026-11-18T06:43:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Iran war dents Middle East sports as events are canceled. F1 bucks the trend",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/iran-war-dents-middle-east-sports-model-events-138239007",
+    "pub": "2026-11-18T06:41:32.000Z",
+    "sum": "The season-ending Formula 1 races in the Middle East are going ahead despite the war in Iran and retaliatory attacks across the region that have canceled or postponed other large sports events"
+   },
+   {
     "hd": "A tropical Chinese city is half-empty and ready for the summit.",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/a-tropical-chinese-city-is-half-empty-and-ready-for-the-summit",
-    "pub": "2026-11-18T05:57:50.000Z",
+    "pub": "2026-11-18T06:08:26.000Z",
     "sum": "From lush landscaping to extensive surveillance, Shenzhen has made elaborate efforts to prepare for this week’s Asia-Pacific Economic Cooperation summit."
    },
    {
     "hd": "Trump Meets Philippine Leader Before Flying to China",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
-    "pub": "2026-11-18T05:42:12.000Z",
+    "pub": "2026-11-18T06:00:22.000Z",
     "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
-   },
-   {
-    "hd": "Apec summit live: Xi and Putin start talks; Rubio says Trump serious about meeting Kim Jong-un",
-    "src": "The Guardian",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPOGlCUHJNQVF3R3BkMURkZ1E4TDNXWXhSYWZDc0lNUmlQUmpqSlBCTWNLaUp5V3BpVGJoSjMyalV5MlM5XzJ5YnZvai1iS0xVai1UNmlBUDkwX3NHVUgtZ3BJQ2FKOHNEZlpyUERMT3JrdHZJZXEtaHJfMmxybVJ3N0dOeExSZ0hTOFprZUxlVnFZdkxPa2hsNlNWMVluc1VrVEJhaUpDeWtncTRqVE5HWkYyUTRqQW1ZU2FwUQ?oc=5",
-    "pub": "2026-11-18T05:15:35.000Z",
-    "sum": ""
    },
    {
     "hd": "These Villagers Wonder if They’re on the Front Line of Russia’s Shadow War",
@@ -14625,10 +14640,10 @@
     "sum": "The president arrived in Manila for the start of a multi-day swing in Asia, where he's scheduled to meet with Russia's Vladimir Putin and China's Xi Jinping in a highly anticipated summit."
    },
    {
-    "hd": "Trump wants to show strength in China, but a series of technological snafus raises concerns at home",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
-    "pub": "2026-11-18T03:50:00.000Z",
+    "hd": "Xi and Putin blast sanctions before meeting Trump in China",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+    "pub": "2026-11-18T03:21:00.000Z",
     "sum": ""
    },
    {
@@ -14770,20 +14785,6 @@
     "url": "https://www.washingtonpost.com/investigations/2026/11/17/ecuadorian-fishermen-sue-us-over-drone-attack-they-say-sank-boat/",
     "pub": "2026-11-17T23:44:29.000Z",
     "sum": "Crew members of La Negra Francisca Duarte II, which was attacked in March, filed the suit in federal court in the western district of Pennsylvania."
-   },
-   {
-    "hd": "Kuwait reports drone attacks as Iran, US trade attacks on Qeshm and Bahrain",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPU3NxaFU3RUpkTklaRUU5NkxhTjZ6aHhYOWl4WG9PQUh1dWp6ck9qdkJhc3FHMjN5cUhWSzF6OWFmZnE5MXQ3U0RKd2RmeXdvZUZ3Qjk4VzFEM0tka3dOai1IVWZFY0VaVlVHS3d2NkdyeDU3UHZEY2tMbV85ZEVldUhRSG1SS2VwZ1c1ck4wNE1HbU81WXluYU5KRUN0NmRFdVJRNWI5MFpreDR4eGNaQkgtMVg3SjjSAbwBQVVfeXFMUDFvNkpucUdWODBUZW5kV01tbDNjaGVlYWp6a2NtdktFQVJpVW9mTjJFWEhWWm1LQlIwcW5tVVozb0FpUWl5TEd1VkstTFh2S2VXRi1YLWdxcl9TaF9XcjFhLUNHb291ZkxHY210TENUclk4WjNlZml0Y1hDbnBBRURzTm1ORjl4a0hWUFVGWUVJbFNwUksyUDJ0ZmtBZWRiZV9pNTJ4QndvRGVMNzVtVW5VQ3J6azQ3c3lJcVc?oc=5",
-    "pub": "2026-11-17T23:41:52.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukraine cripples Crimean road bridge in blow to Putin before meeting with Xi and Trump",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPaEg3anV0Q2ZiXzRhYjVfZkhyTlM2Q3RnX3ZFUExIQ0xQWjZqbkRmXy1mSVY5N1E2dXI0Q2s5WE5oQmNnLXZia24zNU5nUF9FNnZQMENHcFhYMUlhVklwT1RBczRnWFRiXzl3MHRoTWpPRlZJQUNlSjBHeGl5akprVmlNNnFYNmRiNEFqZUlzbUxnRU9FWGRxRGdUTU93QTQ3S3prbktDSUxQbHM2MjFsWWtpLXNOWWFC?oc=5",
-    "pub": "2026-11-17T23:36:43.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -14802,8 +14803,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T06:00:10.839Z",
-  "lastAttempt": "2026-11-18T06:00:10.839Z",
+  "asOf": "2026-11-18T07:00:18.854Z",
+  "lastAttempt": "2026-11-18T07:00:18.854Z",
   "lastError": null
  }
 }
