@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T21:45:10.694Z",
+ "generatedAt": "2026-11-18T22:00:10.508Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6965,14 +6965,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-18T21:45:10.694Z",
+  "at": "2026-11-18T22:00:10.508Z",
   "ran": [
-   "weather",
    "alerts",
-   "stockNews",
-   "worldNews",
    "extended",
-   "futures",
    "usTempGrid"
   ]
  },
@@ -13856,8 +13852,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T21:45:10.694Z",
-  "lastAttempt": "2026-11-18T21:45:10.694Z",
+  "asOf": "2026-11-18T22:00:10.508Z",
+  "lastAttempt": "2026-11-18T22:00:10.508Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14533,8 +14529,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T21:45:10.694Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-18T22:00:10.508Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -14744,35 +14740,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T21:45:10.694Z",
-  "lastAttempt": "2026-11-18T21:45:10.694Z",
+  "asOf": "2026-11-18T22:00:10.508Z",
+  "lastAttempt": "2026-11-18T22:00:10.508Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 150.201,
-    "time": 1795038318,
+    "price": 150.58,
+    "time": 1795039209,
     "ref": 150.96,
     "refTime": 1795035600,
-    "change": -0.7590000000000146,
-    "changePct": -0.5027821939586742
+    "change": -0.37999999999999545,
+    "changePct": -0.25172231054583694
    },
    "TSLA": {
     "session": "post",
-    "price": 382.39,
-    "time": 1795038249,
+    "price": 382.06,
+    "time": 1795039207,
     "ref": 383.72,
     "refTime": 1795035600,
-    "change": -1.330000000000041,
-    "changePct": -0.3466069008652249
+    "change": -1.660000000000025,
+    "changePct": -0.43260710935057467
    },
    "SPCX": {
     "session": "post",
-    "price": 143.0021,
-    "time": 1795038321,
+    "price": 143.07,
+    "time": 1795039205,
     "ref": 143.5,
     "refTime": 1795035600,
-    "change": -0.49789999999998713,
-    "changePct": -0.3469686411149736
+    "change": -0.4300000000000068,
+    "changePct": -0.2996515679442556
    }
   }
  },
