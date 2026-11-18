@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T12:15:14.183Z",
+ "generatedAt": "2026-11-18T12:30:25.174Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 43,
+     "temp": 41,
      "i": "sun",
-     "cond": "Sunny",
-     "windMph": 10,
+     "cond": "Clear",
+     "windMph": 7,
      "windDir": "ENE",
-     "observed": "2026-11-18T11:05:00+00:00"
+     "observed": "2026-11-18T07:30"
     },
     "today": {
      "h": 66,
-     "l": 48,
+     "l": 41,
      "sunrise": "07:12",
-     "sunset": "17:33"
+     "sunset": "17:32"
     },
     "forecast": [
      {
       "date": "2026-11-19",
       "d": "Thu",
-      "i": "partly",
-      "text": "Mostly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 65,
-      "l": 52
+      "l": 48,
+      "pop": 8
      },
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "partly",
-      "text": "Partly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 67,
-      "l": 54
+      "l": 57,
+      "pop": 6
      },
      {
       "date": "2026-11-21",
       "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 69,
+      "l": 54,
+      "pop": 15
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
       "i": "partly",
-      "text": "Mostly Sunny",
+      "text": "Partly cloudy",
+      "h": 66,
+      "l": 41,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 65,
+      "l": 48,
+      "pop": 8
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 67,
-      "l": 52
+      "l": 57,
+      "pop": 6
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 69,
+      "l": 54,
+      "pop": 15
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 70,
+      "l": 51,
+      "pop": 15
+     },
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "h": 69,
+      "l": 52,
+      "pop": 4
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 47,
+      "pop": 5
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-18T08:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 43,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T09:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 48,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T10:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T11:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 57,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T12:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 60,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T13:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 63,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T14:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 64,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T15:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 65,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T16:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 65,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T17:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 63,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T18:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 58,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T19:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 56,
+      "pop": 0
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 45,
-     "i": "sun",
-     "cond": "Clear",
-     "windMph": 14,
+     "temp": 44,
+     "i": "cloud",
+     "cond": "Overcast",
+     "windMph": 11,
      "windDir": "SSE",
-     "observed": "2026-11-18T11:05:00+00:00"
+     "observed": "2026-11-18T06:30"
     },
     "today": {
-     "h": 59,
+     "h": 61,
      "l": 44,
-     "sunrise": "07:13",
-     "sunset": "16:42"
+     "sunrise": "07:14",
+     "sunset": "16:40"
     },
     "forecast": [
      {
       "date": "2026-11-19",
       "d": "Thu",
-      "i": "sun",
-      "text": "Sunny",
-      "h": 57,
-      "l": 39
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 53,
+      "l": 40,
+      "pop": 0
      },
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "partly",
-      "text": "Partly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 64,
-      "l": 51
+      "l": 46,
+      "pop": 10
      },
      {
       "date": "2026-11-21",
       "d": "Sat",
       "i": "rain",
-      "text": "Chance Light Rain",
-      "h": 56,
-      "l": 35
+      "text": "Drizzle",
+      "h": 61,
+      "l": 44,
+      "pop": 40
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-18",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 61,
+      "l": 44,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 53,
+      "l": 40,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 64,
+      "l": 46,
+      "pop": 10
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 61,
+      "l": 44,
+      "pop": 40
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 44,
+      "l": 31,
+      "pop": 29
+     },
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "sun",
+      "text": "Clear",
+      "h": 36,
+      "l": 28,
+      "pop": 5
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 35,
+      "l": 26,
+      "pop": 13
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-18T07:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 44,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T08:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T09:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T10:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 54,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T11:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 56,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T12:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 59,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T13:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 60,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T14:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 61,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T15:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 61,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T16:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 60,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-18T17:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 57,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-18T18:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 58,
+      "pop": 1
      }
     ]
    }
   },
-  "asOf": "2026-11-18T11:30:12.530Z",
-  "lastAttempt": "2026-11-18T11:30:12.530Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "lastError": null
  },
  "nfl": {
@@ -6029,11 +6336,12 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T12:15:14.183Z",
+  "at": "2026-11-18T12:30:25.174Z",
   "ran": [
+   "weather",
    "alerts",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -12402,62 +12710,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T12:15:14.183Z",
-  "lastAttempt": "2026-11-18T12:15:14.183Z",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7383.25,
-    "lastTime": 1795003512,
+    "last": 7389.25,
+    "lastTime": 1795004426,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 19.75,
-    "changePct": 0.2682148434847559,
-    "expectedOpen": 7360.218391050452,
+    "change": 25.75,
+    "changePct": 0.3496978339105045,
+    "expectedOpen": 7366.19967440755,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27297,
-    "lastTime": 1795003507,
+    "last": 27323.25,
+    "lastTime": 1795004427,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 210.75,
-    "changePct": 0.7780700539941853,
-    "expectedOpen": 24517.674862744017,
+    "change": 237,
+    "changePct": 0.874982694171397,
+    "expectedOpen": 24541.252141021734,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50808,
-    "lastTime": 1795003510,
+    "last": 50844,
+    "lastTime": 1795004416,
     "settle": 50837,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": -29,
-    "changePct": -0.057045065601825436,
-    "expectedOpen": 50730.46425556189,
+    "change": 7,
+    "changePct": 0.013769498593544071,
+    "expectedOpen": 50766.409317622994,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2708.5,
-    "lastTime": 1795003512,
+    "last": 2711,
+    "lastTime": 1795004423,
     "settle": 2711.39990234375,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": -2.89990234375,
-    "changePct": -0.10695221834460152,
+    "change": -0.39990234375,
+    "changePct": -0.014748925210343263,
     "expectedOpen": null,
     "valid": true
    }
@@ -12919,8 +13227,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T12:15:14.183Z",
-  "lastAttempt": "2026-11-18T12:15:14.183Z",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13596,7 +13904,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T12:15:14.183Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -13807,35 +14115,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T12:15:14.183Z",
-  "lastAttempt": "2026-11-18T12:15:14.183Z",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 160.18,
-    "time": 1795004114,
+    "price": 160.9,
+    "time": 1795005026,
     "ref": 155.46,
     "refTime": 1794949200,
-    "change": 4.719999999999999,
-    "changePct": 3.036150778335262
+    "change": 5.439999999999998,
+    "changePct": 3.4992924224880984
    },
    "TSLA": {
     "session": "pre",
-    "price": 382.84,
-    "time": 1795004014,
+    "price": 383.2889,
+    "time": 1795005013,
     "ref": 380.11,
     "refTime": 1794949201,
-    "change": 2.7299999999999613,
-    "changePct": 0.7182131488253298
+    "change": 3.1788999999999987,
+    "changePct": 0.8363105416853013
    },
    "SPCX": {
     "session": "pre",
-    "price": 142.0323,
-    "time": 1795004114,
+    "price": 142.66,
+    "time": 1795005025,
     "ref": 141.7,
     "refTime": 1794949200,
-    "change": 0.3323000000000036,
-    "changePct": 0.23450952717008017
+    "change": 0.960000000000008,
+    "changePct": 0.6774876499647199
    }
   }
  },
@@ -13846,9 +14154,58 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Wall Street Breakfast Podcast: Nvidia Beats, Affirms Jensen Era Over",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4969547-wall-street-breakfast-podcast-nvidia-beats-affirms-jensen-era-over?source=feed_symbol_NVDA",
+      "pub": "2026-11-18T12:27:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia’s Board Not Considering Reinstating Jensen Huang as CEO",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQzR4SU1LOU9KUHEzaDg2Ym4xQ3kzbWZ2TTUtUHo3RDJGNENGcjFuYzI3ZDVRY1UyOWdzekVrR3hSQ19uRV8tSmszd0FCeF93SThvcWdySzJGN3cwOWx5NktTS1kwQVBZaFRSWkxUMkFKR1RjNXdZTk5CcnAweGljbkxpNnVGcFRUX0hKQUp2Tnlibk5tb3h1REFiS3ctR0p0?oc=5",
+      "pub": "2026-11-18T12:25:48.000Z",
+      "sum": "Nvidia said it will file its 10-Q report “in the coming weeks,” raising suspicion."
+     },
+     {
+      "hd": "NVDA Premarket: Nvidia Leadership Decision Remains ‘In Limbo,’ Says Barclays, But Earnings Draw Wall Street Praise",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvda-premarket-nvidia-leadership-decision-remains-in-limbo/cNbgbVYR9Lg?.tsrc=rss",
+      "pub": "2026-11-18T12:12:43.000Z",
+      "sum": "On the leadership question, Barclays believes the board “did the right thing” by ending consideration of Huang’s return."
+     },
+     {
+      "hd": "'We've got this,' Nvidia Interim CEO Tells Investors; Analysts Say Execution is Key",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/apos-apos-ve-got-apos-121131682.html?.tsrc=rss",
+      "pub": "2026-11-18T12:11:31.000Z",
+      "sum": "Nvidia (NVDA) interim Chief Executive Colette Kress reassured investors about operational continuity"
+     },
+     {
+      "hd": "Jensen Huang Might Want to Update His LinkedIn",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWVlPeXZIRGwyOENTeVhmSVltUzRfYU4zaUY3TUlXRWV2UkpmM0RWNXJZM0J0WXJGZEFobnRiRWNWYzJrOFJ4NWQ4LU1BdUdKLXVZRlRTZVFseFNNeHU2ajktZ3NXa2t2MnZHUWZiTHBGUzk0OXllLVZvamVLM1MzUnktbnVxTFVCZldDNkQyZVhLNW9LWUxHUHMxdmtudmlGNmtnTHoyZ2FJOERsTlRwQVZvR2tZb1lnTngw?oc=5",
+      "pub": "2026-11-18T12:09:48.000Z",
+      "sum": "Nvidia Corporation offers a short-term tactical opportunity after its share-price decline, though Jensen Huangâs departure leaves a leadership gap."
+     },
+     {
+      "hd": "Nvidia delivered a monster quarter, then its new leaders stumbled on the earnings call",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/article/nvidia-delivered-a-monster-quarter-then-its-new-leaders-stumbled-on-the-earnings-call-120332810.html?.tsrc=rss",
+      "pub": "2026-11-18T12:03:32.000Z",
+      "sum": "Nvidia delivered the numbers, but there was another side to its earnings day."
+     },
+     {
+      "hd": "Jim Cramer Told Nvidia’s Interim CEO “the Cheapest Stock in the World Is Yours”",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/18/jim-cramer-told-nvidias-interim-ceo-the-cheapest-stock-in-the-world-is-yours/?.tsrc=rss",
+      "pub": "2026-11-18T12:02:22.000Z",
+      "sum": "Nvidia's interim CEO took a victory lap on Mad Money after earnings, but when Jim Cramer pressed her on buybacks and risky customer bets, her numbers and the company's own filings told two different stories."
+     },
+     {
       "hd": "Nvidia Q3 revenue rises 103% amid ex-CEO controversy",
       "src": "Yahoo Finance",
-      "url": "https://www.verdict.co.uk/nvidia-q3-revenue-rises-103/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=9bcee28782aff29d6ed61539571a5d23cee761cc8d6e79b84dfc04cdd8c1bd3e",
       "pub": "2026-11-18T11:47:02.000Z",
       "sum": "The results followed controversy involving ex-CEO Jensen Huang over an alleged affair with a Chinese spy, after his departure earlier this month."
      },
@@ -13862,30 +14219,16 @@
      {
       "hd": "Update: Market Chatter: House Democrats Probe Whether Howard Lutnick Helped Cantor Fitzgerald Avoid Nvidia Losses",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-house-democrats-probe-112227575.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d87964b8d9305d21e076060f055707875d106fe841f90805d30d50678d6a6a9e",
       "pub": "2026-11-18T11:22:27.000Z",
       "sum": "(Updates to add Cantor Fitzgerald's comment in the fifth paragraph.) Three House Democrats are in"
      },
      {
       "hd": "Nvidia Q3 Results Underpin Wall Street Pre-Bell; Asia Mixed, Europe Up",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-q3-results-underpin-wall-112023816.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=097377774ead3cc448017b5cd304491d297d679e6a373ca12722ade24934ae24",
       "pub": "2026-11-18T11:20:23.000Z",
       "sum": "Wall Street futures pointed higher pre-bell Wednesday, after bellwether chip-maker Nvidia (NVDA) ove"
-     },
-     {
-      "hd": "Nvidia Directors Clash Over Jensen Huang Comeback as Two Rival CEOs Emerge",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-directors-clash-over-jensen-111908834.html?.tsrc=rss",
-      "pub": "2026-11-18T11:19:08.000Z",
-      "sum": "Nvidia Board Faces Major Leadership Battle as Arm and Marvell CEOs Enter the Picture"
-     },
-     {
-      "hd": "Former Elon Musk Adviser: 'We've Given Tech CEOs A Free Pass'",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/former-elon-musk-adviser-weve-111838578.html?.tsrc=rss",
-      "pub": "2026-11-18T11:18:38.000Z",
-      "sum": "Nvidia's board has shot down Jensen Huang's offer to return to lead the company, as the saga over his affair with an alleged Chinese spy rumbles on. Dex Hunter-Torricke tells Bloomberg Radio \"we have been living for the last couple of decades with this whole mythos that a powerful founder CEO is essential to the success of these companies.\" He's the founder of The Center For Tomorrow and once worked for Elon Musk and Mark Zuckerberg and has been speaking to Bloomberg's Tiwa Adebayo and Ben Boulos about the state of Silicon Valley, and the oversight of tech companies in the AI era."
      },
      {
       "hd": "'Business as usual': Nvidia's Kress passes first test as board slams door on Huang",
@@ -13895,39 +14238,11 @@
       "sum": "Nvidia shares fell after CEO Jensen Huang resigned amid affair revelations, and data center revenue more than doubled and adjusted EPS beat estimates."
      },
      {
-      "hd": "SpaceX Makes Massive $40 Billion AI Bet as Nvidia Reports Record Earnings",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/spacex-makes-massive-40-billion-111603564.html?.tsrc=rss",
-      "pub": "2026-11-18T11:16:03.000Z",
-      "sum": "Goldman Sachs and Apollo are expected to support the financing as SpaceX expands its AI computing infrastructure."
-     },
-     {
-      "hd": "Dow Jones Futures Rise, Techs Jump On Nvidia Earnings; Target, Anthropic IPO Ahead",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/3b22ed8c-00c3-32f8-89f5-91bc21ccb366/dow-jones-futures-rise%2C-techs.html?.tsrc=rss",
-      "pub": "2026-11-18T11:15:27.000Z",
-      "sum": "Nvidia earnings beat after the stock market broke below recent lows. Target earnings are on tap, with the Anthropic IPO set to price Wednesday night."
-     },
-     {
-      "hd": "Nvidia’s Board Not Considering Reinstating Jensen Huang as CEO",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQzR4SU1LOU9KUHEzaDg2Ym4xQ3kzbWZ2TTUtUHo3RDJGNENGcjFuYzI3ZDVRY1UyOWdzekVrR3hSQ19uRV8tSmszd0FCeF93SThvcWdySzJGN3cwOWx5NktTS1kwQVBZaFRSWkxUMkFKR1RjNXdZTk5CcnAweGljbkxpNnVGcFRUX0hKQUp2Tnlibk5tb3h1REFiS3ctR0p0?oc=5",
-      "pub": "2026-11-18T10:55:47.000Z",
-      "sum": "Nvidia said it will file its 10-Q report “in the coming weeks,” raising suspicion."
-     },
-     {
       "hd": "Nvidia’s Days as an Open Checkbook for the AI Economy Are Numbered",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdXRsejdndmRqaEQtdlRCZE1mc19mWVdObHdta0hXcHBSbVo1N09pa3NHT1VpbVFoSjBjYnd4S1VaZDR5WVdnQVdOOGl3X2pFdHVOT01VQnBfVXVyLWV0dGFGbEtsYk1XaTNmMHdrTGhUM0pSTHhnTlhqVGVneUl2bnNDV1ZtdFFHZExBenBGa05DdWZRZTBPYzUtMXpORDU4M2dKVg?oc=5",
       "pub": "2026-11-18T09:52:49.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Jensen Huang Might Want to Update His LinkedIn",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWVlPeXZIRGwyOENTeVhmSVltUzRfYU4zaUY3TUlXRWV2UkpmM0RWNXJZM0J0WXJGZEFobnRiRWNWYzJrOFJ4NWQ4LU1BdUdKLXVZRlRTZVFseFNNeHU2ajktZ3NXa2t2MnZHUWZiTHBGUzk0OXllLVZvamVLM1MzUnktbnVxTFVCZldDNkQyZVhLNW9LWUxHUHMxdmtudmlGNmtnTHoyZ2FJOERsTlRwQVZvR2tZb1lnTngw?oc=5",
-      "pub": "2026-11-18T09:04:11.000Z",
-      "sum": "Nvidia Corporation offers a short-term tactical opportunity after its share-price decline, though Jensen Huangâs departure leaves a leadership gap."
      },
      {
       "hd": "Nvidia taps Heidrick & Struggles for CEO search, Arm chief Rene Haas among prospects - report",
@@ -14012,18 +14327,11 @@
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUXpyNGgxb1B4NDFaT1ZKS2JRSmxQeVRrMG5oaTlQRmNRV01zY05acGJNZU5BRTI4QURLWVA2cDhmZGNjRGppdWxxWjdXcm9Gd2dydFdPMDF6U2h1NVpzYzU5SGstSEZBbldNV0szMm9JblNDQkswd1pvWVJjOElHU2JHZ2RZUVFDU0JIZWlTT2NuR01jTEZvOFk2aklMeVRHVU55d00zLWfSAa4BQVVfeXFMUERzcUNtczNMNlFnbkVzZlc0aEtNT0VRUmVMdXJBejY0ZldiUlppUFh4QTRLUjlFeUk0cnd3STZUMjQtWVVjLXFtelI0S0FUUFhHMWdXWUpHY2xOOFprTWg4aXBOYlJOcU9nTG9nMjI0T2tBMkFOZ0dpVnBNcHpvQkNLZVhYSnpXVTQtd0VtZ1JMM3FaRUpMMVZSY0dkLUtrNFkxcmpnNGo4MzlvZjJn?oc=5",
       "pub": "2026-11-18T03:15:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "ARKK: Nvidia Is Not Cathie Wood's Biggest Bet",
-      "src": "Seeking Alpha",
-      "url": "https://finnhub.io/api/news?id=240725a7f37420a9dbc43678fbc14eca2ca69ccd56a377047d832e9f1a516386",
-      "pub": "2026-11-18T03:00:48.000Z",
-      "sum": "ARK Innovation ETF (ARKK) earns a hold: disruptive technology exposure is attractive, but uncertain profitability limits its margin of safety."
      }
     ],
     "fetched": {
-     "Finnhub": 154,
-     "Yahoo": 10,
+     "Finnhub": 159,
+     "Yahoo": 7,
      "Google News": 89,
      "Nasdaq": 13,
      "Seeking Alpha": 29
@@ -14034,14 +14342,14 @@
      {
       "hd": "Elon Musk Makes Major Tesla Production Shift After Cybertruck Sales Collapse",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-makes-major-tesla-112419925.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=6d11ce40938821709c48f27fc42545861d16dfc61f57586e3355d15d6bbf5010",
       "pub": "2026-11-18T11:24:19.000Z",
       "sum": "U.S. Cybertruck sales fell 48% to 20,237 vehicles in 2025, far below Musk's earlier annual target of 250,000."
      },
      {
       "hd": "State Street Consumer Discretionary (XLY) Sells Amazon and Tesla on Monday",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-consumer-discretionary-xly-110612298.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b94f953587abdcbea8b2d779eaecedef06ff9b90a5bc938b681f1b5eb9cd6d89",
       "pub": "2026-11-18T11:06:12.000Z",
       "sum": "The fund sold $96.4 million of stock, trimming all 47 of its positions and adding no new ones."
      },
@@ -14208,8 +14516,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 137,
-     "Yahoo": 13,
+     "Finnhub": 139,
+     "Yahoo": 11,
      "Google News": 14,
      "Nasdaq": 12,
      "Seeking Alpha": 13
@@ -14395,7 +14703,7 @@
     ],
     "fetched": {
      "Finnhub": 139,
-     "Yahoo": 14,
+     "Yahoo": 12,
      "Google News": 37,
      "Nasdaq": 0,
      "Seeking Alpha": 24
@@ -14437,6 +14745,13 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOVENXanJ2X0E1MEMwNUdRR1puU0pkbVUtUEtuVEhaeVB6Y1ptaUN5M1lleE5PcG5DbGl1YXBzd2dOaGU3aHpvSXhZVXZmdTNFQV9xLUlUVC1FOGhCMnZCVm0wRUVaZkFCQjFheGszY2tkYWhEdGU3N3RtNVN4U3ZseG5qckw?oc=5",
       "pub": "2026-11-18T07:57:55.000Z",
       "sum": ""
+     },
+     {
+      "hd": "Beyond Nvidia And Anthropic: 3 Important Stock Catalysts To Watch Into December",
+      "src": "Seeking Alpha",
+      "url": "https://finnhub.io/api/news?id=d3afb1723904348cd3b514225ddd4582f9c219530f124f09b934cb52adaddf6f",
+      "pub": "2026-11-18T07:05:00.000Z",
+      "sum": "FICO, Costco, and Ford have important interim updates ahead that could offer fresh clues about consumer credit, spending, and the auto industry."
      },
      {
       "hd": "Asia stocks cling to gains after Nvidia earnings as Anthropic pricing looms",
@@ -14570,30 +14885,51 @@
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOaExDNjNqb2lLejl2OUhoOExpMG5xR0ZfX19EQjBJTXJGcmNmeVhrQ25acXNQNk0tVlNudlN3YU5HSmhmTVpSN3UxMWxjSjJhX3NsZm1uQnctYU9qRW1rZElkN3UxNy1zM1NkMVB2ejhLRXh2Y3haMVFVVWF0amU3SQ?oc=5",
       "pub": "2026-11-17T14:50:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Anthropic Frenzy Sparks an Exotic Trade in Pre-IPO Markets",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSnF5SUM5VmE4MFl0WnZmdkxwRVI0bS1remRIcjJMdENCcjhTcUVIV0w1dGM2X0VNN3Itd25zakRIcUdrUTBNN1ZQV0tMSWFhUElZdmlVcGNTT2psTVlSWTdtaG5Ld3lVZ0luZUFRSUdSaFF6alExWlgtX2VUVHl0RnI5Mzh4eV9CNF9JejZ3ellwTUV6aEItSWlVeXlCaTRRaGpOVFJPVGE2TE0yVEE?oc=5",
-      "pub": "2026-11-17T14:17:31.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 14,
      "Yahoo": 0,
-     "Google News": 60,
+     "Google News": 58,
      "Nasdaq": 4,
      "Seeking Alpha": 24
     }
    }
   },
-  "asOf": "2026-11-18T12:00:19.831Z",
-  "lastAttempt": "2026-11-18T12:00:19.831Z",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
+    "pub": "2026-11-18T12:26:12.000Z",
+    "sum": "America's Persian Gulf allies and oil tankers are under fire as Iran appears to lash out following U.S. strikes on a key island in the Strait of Hormuz."
+   },
+   {
+    "hd": "Live Updates: In a Rare Gesture, Xi Greets Trump as He Lands in China",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec",
+    "pub": "2026-11-18T12:25:13.000Z",
+    "sum": "The Chinese leader hugged President Trump on the tarmac in Shenzhen. They are expected to hold a summit on Thursday with President Vladimir V. Putin of Russia."
+   },
+   {
+    "hd": "Xi greets Japan’s leader amid a diplomatic feud.",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec/xi-jinping-china-sanae-takaichi-japan",
+    "pub": "2026-11-18T12:24:21.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "In Choosing Shenzhen for Trump-Putin Summit, Xi Shows Off His Tech Ambitions",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMlVwaHVnajBHRVg0bWVmMEVSOUM5Q2VTZGFMSXcwNUlwTWhkczZFd1ZZc19hUldpbWtuc1ltdW10cGcySFdqSGVScUt1ZG95NWgyOWREeGsxal9zTzloMWJUa2JvQ2lLa2p1NGpsNkhzZ1hGdU1ZSHUzS3M3bFNoNG1TX2IyeTZZOTNJbE5TSjVPV2FxYU1Ba2Z1WXpWejhILWdpSjVtZGo0UXhwWXVBNU5jUkF3SXM?oc=5",
+    "pub": "2026-11-18T12:07:00.000Z",
+    "sum": ""
+   },
    {
     "hd": "Trump to meet with Russia's Putin and China's Xi for historic joint meeting",
     "src": "NPR",
@@ -14609,18 +14945,25 @@
     "sum": "NPR's Leila Fadel speaks to Nicholas Burns, former U.S. ambassador to China and NATO, about President Trump's planned meeting with the leaders of China and Russia."
    },
    {
-    "hd": "Live Updates: In a Rare Gesture, Xi Greets Trump as He Lands in China",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec",
-    "pub": "2026-11-18T11:56:49.000Z",
-    "sum": "The Chinese leader hugged President Trump on the tarmac in Shenzhen. They are expected to hold a summit on Thursday with President Vladimir V. Putin of Russia."
-   },
-   {
     "hd": "Boris Grebenshchikov, a Russian Rock Musician With a ‘Need to Rebel’",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/18/world/europe/russia-rock-music-boris-grebenshchikov.html",
-    "pub": "2026-11-18T11:51:04.000Z",
+    "pub": "2026-11-18T11:51:05.000Z",
     "sum": "In the 1980s, Boris Grebenshchikov led a revered Russian underground band. A rereleased documentary from that era is bringing new attention to his work."
+   },
+   {
+    "hd": "Saudi-backed forces launch a major attack on Houthi rebels in Yemen, and other Mideast news",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTGdKNEV2dGQxbWV0MUEzMUh5czNJQXBGSjZQUUlTbmJWYWQwMnB4bElQYWpOOC1LaGZkYUVZeUdYRFdrcVYtcWhFNDRLdzk2OUI5Rlh2T1k2cGI1T0lKdUprbzBnNG5SOGhvdnd4eFhFVE9KN1ZUdGJkY3MyWWZSVS1LWnUzUHpPN0tiYTdBQUZ3b0tIX24xWlNHNVZ4TUNHQWhubHFhT00?oc=5",
+    "pub": "2026-11-18T11:50:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump's Board of Peace faults Israel and Hamas for failure to end Gaza war",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOTUo2UWtYUkdWbUFwMVlzSHJwTVNrZlhyMzVuVnk3YVFXLW9mN1g5ZU44SmpMZG9kUUc1NFhacHEwbFJBN0lTQUdaMzFmNXNyd0RQaHNsaG9vY1lNRHRzV2pqV1dmT0Q0dXdWVDdORjZCVDczU2NueUdWaVZNd01GSXdBa05pQ0E1ZmkwRWFENXdlckFVLUdHVUFSNmhwa29oU1gyS0NJaTU1S2dJa3U5VmtKWQ?oc=5",
+    "pub": "2026-11-18T11:45:08.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump arrives in China ahead of summit with Putin and Xi",
@@ -14637,6 +14980,13 @@
     "sum": "The bilateral meeting between the neighbors follows trade gains for Canada’s prime minister this week with China and the Philippines."
    },
    {
+    "hd": "Iran widens Gulf attacks, targeting US air base in Kuwait and sites in Bahrain",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
+    "pub": "2026-11-18T11:33:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump seeks to show strength in China, but a series of technological snafus raises concerns at home",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
@@ -14651,6 +15001,13 @@
     "sum": "Turmoil reigns in the Strait of Hormuz as an emboldened Iran launches fresh attacks on Gulf states, following President Donald Trump’s midterm losses."
    },
    {
+    "hd": "Iran Attacks Kuwait and Bahrain, Further Escalating Fight Over Strait",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcGVKcXlHY1EycS1qaFBrcVduLWwzS1B4RmhJeDg5eFlxR0FIeVNFclFqZVczdXFBVGVLa0xpcHZXZkVWa3JEeHJxVXA5YWxVa3YtejhlaHd1T1JmWDd1NHp3V1E1SEdsS0tkOEc2bVpZNER2elNveGdNTk9xanNjSDZZM2NwSXhULUVPSk84TW1JRFJUbkRRZVBYN2JHd0NnQkYxN0hhVDhVaVYzUEtlTGUwUUpuZw?oc=5",
+    "pub": "2026-11-18T11:17:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Putin Arrives in Asia With a Show of Force: Nuclear Bombers",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/18/world/asia/putin-taiwan-japan-korea-vietnam-bombers.html",
@@ -14658,11 +15015,11 @@
     "sum": "Russian military planes flew through the region, prompting Japan and South Korea to scramble jets in response, and drawing complaints from Taiwan."
    },
    {
-    "hd": "Iran ramps back up attacks on Gulf countries after U.S. strikes",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
-    "pub": "2026-11-18T10:53:18.000Z",
-    "sum": "America's Persian Gulf allies and oil tankers are under fire as Iran appears to lash out following U.S. strikes on a key island in the Strait of Hormuz."
+    "hd": "Steve Rosenberg: Historic talks with Xi and Trump are a coup for Putin",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE91QlJQMlluVndDeG5aSHZoN25zMlVNY2lhUThxeklxaUdmQ1JtUGFUd1FlOWtYVmhuVmpEeU1OVUxMSGQzSHBNMFh0MUZSbVVTTHFBXy1Vd25ZNnM?oc=5",
+    "pub": "2026-11-18T10:53:21.000Z",
+    "sum": ""
    },
    {
     "hd": "Russia, China should ‘lead’ push to multipolar world, Xi tells APEC summit",
@@ -14693,13 +15050,6 @@
     "sum": "President Trump left the Philippines and headed to China, where he is expected to meet with leaders, including the presidents of Russia and China."
    },
    {
-    "hd": "Putin Will Continue Ukraine War Despite Plans to Meet Trump, Intelligence Says",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/us/politics/trump-putin-ukraine-war.html",
-    "pub": "2026-11-18T10:03:56.000Z",
-    "sum": "President Trump plans to discuss Ukraine with the leaders of Russia and China. He has halted some sanctions on Russia and announced that the United States will buy Russian diesel."
-   },
-   {
     "hd": "Putin to meet with Trump and Xi after Ukrainian attack on Russian bridge",
     "src": "NPR",
     "url": "https://www.npr.org/2026/11/18/nx-s1-6044242/putin-to-meet-with-trump-and-xi-after-ukrainian-attack-on-russian-bridge",
@@ -14714,13 +15064,6 @@
     "sum": ""
    },
    {
-    "hd": "Iran widens Gulf attacks, firing on a US air base in Kuwait and at targets in Bahrain",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
-    "pub": "2026-11-18T09:34:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Xi Jinping greets Donald Trump with hug ahead of historic trilateral summit",
     "src": "Financial Times",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNMDBFWUtRcU9fdVhpZS13SDZ0aGR1QnpBM00xVXlHeFQ5ZUQyNWhoV1BMcF82V0taOUhiYWZEWkVndlk0Z0tZU2IwMnh0UlI0aERSUU1OX3k1ODRneG1ib3l4aVBKXzY3ckdHS0N5MVpaX2tQV1k4bFpIWVMxcm14VUZkcmk?oc=5",
@@ -14732,13 +15075,6 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaDAtWFFGbDFuZ1pfbzdfUHUyYmM5QktTRkR5WndiUXpoenF6cE9VbGQ4ZE84MzY0czJoZFE3cWJXYm81ZDZtUlJzZU5sS3lueWFVV2ZBT2NtVXlkTVJ4N0NUXzhkaXRxUWRVRldGRUFTMERMcXVYcGtaWFI2bnFfY3U0YUFlenRnajRaZ2hOc3h3OFcteFYySg?oc=5",
     "pub": "2026-11-18T08:58:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "In Choosing Shenzhen for Trump-Putin Summit, Xi Shows Off His Tech Ambitions",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNMlVwaHVnajBHRVg0bWVmMEVSOUM5Q2VTZGFMSXcwNUlwTWhkczZFd1ZZc19hUldpbWtuc1ltdW10cGcySFdqSGVScUt1ZG95NWgyOWREeGsxal9zTzloMWJUa2JvQ2lLa2p1NGpsNkhzZ1hGdU1ZSHUzS3M3bFNoNG1TX2IyeTZZOTNJbE5TSjVPV2FxYU1Ba2Z1WXpWejhILWdpSjVtZGo0UXhwWXVBNU5jUkF3SXM?oc=5",
-    "pub": "2026-11-18T08:51:00.000Z",
     "sum": ""
    },
    {
@@ -14775,34 +15111,6 @@
     "url": "https://abcnews.com/International/wireStory/iran-war-dents-middle-east-sports-model-events-138239007",
     "pub": "2026-11-18T06:41:32.000Z",
     "sum": "The season-ending Formula 1 races in the Middle East are going ahead despite the war in Iran and retaliatory attacks across the region that have canceled or postponed other large sports events"
-   },
-   {
-    "hd": "Canada adjusts China ties, Carney says, aiming to clinch right deal with US",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVW9oY0laelZGSWNoN085TXVRME1WWTNCQ2JYWGhmRUc1Z2hWdnRXZ0kyTktXaDAwaklsSlF5WFhPRUZpVjMzdzMyWW1KX05uTzdVemdnNTNUN0dNc1kzaEhiTFBrdWJtWWE4ZFBqQ2JkaGprV1dGaXJiODVDZ1NQVVAtc2FYTldwUFF6OGE1ckV3bVJEVjdURGRPVUVuWDdEUmZKalhGUUEwem90VE9faEFQRUQ?oc=5",
-    "pub": "2026-11-18T06:41:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Vladimir Putin pushes ‘Eurasian’ order ahead of meeting with Xi and Trump",
-    "src": "Financial Times",
-    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPdmlxdXREZlBlbWU3TTRjY25EU1BaOFV5Wk5iNnpDa2RicGwxSERlSVFMTzlhQXp2S2gyeEgtLUVFaTEySU1oNmw2NUlhRmFDMnFhOURCTzdYOG1XZGctMnlmaktWYWUxQ1FLNFFhVEtCRFFsX01rZ1VkR3pFekF0QzFtZTc?oc=5",
-    "pub": "2026-11-18T05:38:06.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "After years on ice, Canada seeks trade-based reset with China, minister says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcXducGZ4U2x6Qk1QdGVXckdCZDNGbE84S0VtRXhFelZmVW1IZXpCRzFpc21JdEpqdzdvUjk4MzN1dnN5N3VpRXpWbjN6MmNVZjRvQ1Itck1nZ1J2bXBvR1FoMk5JY0QwX1dKNzY0THVza09xUWU4TVJzSS1NUVgxQW1KOE5mc1N1OVQyYVVISkxZRnJwbC1EbG5STy15VGg2TWVMZm1kWk5BWWtzaEUxVlFmRQ?oc=5",
-    "pub": "2026-11-18T05:21:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "China’s Xi and other Asian leaders say Asia-Pacific must embrace open trade, fair growth",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPaDAtWFFGbDFuZ1pfbzdfUHUyYmM5QktTRkR5WndiUXpoenF6cE9VbGQ4ZE84MzY0czJoZFE3cWJXYm81ZDZtUlJzZU5sS3lueWFVV2ZBT2NtVXlkTVJ4N0NUXzhkaXRxUWRVRldGRUFTMERMcXVYcGtaWFI2bnFfY3U0YUFlenRnajRaZ2hOc3h3OFcteFYySg?oc=5",
-    "pub": "2026-11-18T05:09:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -14821,8 +15129,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T12:00:19.831Z",
-  "lastAttempt": "2026-11-18T12:00:19.831Z",
+  "asOf": "2026-11-18T12:30:25.174Z",
+  "lastAttempt": "2026-11-18T12:30:25.174Z",
   "lastError": null
  }
 }
