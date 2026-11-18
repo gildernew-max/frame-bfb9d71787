@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-18T04:30:11.089Z",
+ "generatedAt": "2026-11-18T05:00:10.963Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6336,14 +6336,10 @@
   "closeFetchedFor": "2026-11-17"
  },
  "lastRun": {
-  "at": "2026-11-18T04:30:11.089Z",
+  "at": "2026-11-18T05:00:10.963Z",
   "ran": [
-   "weather",
    "alerts",
-   "cfbScoreboard",
-   "news",
-   "stockNews",
-   "world",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -12695,62 +12691,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-18T04:30:11.089Z",
-  "lastAttempt": "2026-11-18T04:30:11.089Z",
+  "asOf": "2026-11-18T05:00:10.963Z",
+  "lastAttempt": "2026-11-18T05:00:10.963Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7383.25,
-    "lastTime": 1794975612,
+    "last": 7374,
+    "lastTime": 1794977416,
     "settle": 7363.5,
     "settleDate": "2026-11-17",
     "indexClose": 7340.53,
-    "change": 19.75,
-    "changePct": 0.2682148434847559,
-    "expectedOpen": 7360.218391050452,
+    "change": 10.5,
+    "changePct": 0.1425952332450601,
+    "expectedOpen": 7350.997245874924,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27275.25,
-    "lastTime": 1794975612,
+    "last": 27192.25,
+    "lastTime": 1794977422,
     "settle": 27086.25,
     "settleDate": "2026-11-17",
     "indexClose": 24328.383,
-    "change": 189,
-    "changePct": 0.6977710092759241,
-    "expectedOpen": 24498.139403599616,
+    "change": 106,
+    "changePct": 0.3913424708108358,
+    "expectedOpen": 24423.590295140522,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50881,
-    "lastTime": 1794975610,
+    "last": 50861,
+    "lastTime": 1794977414,
     "settle": 50841,
     "settleDate": "2026-11-17",
     "indexClose": 50759.42,
-    "change": 40,
-    "changePct": 0.07867665860230917,
-    "expectedOpen": 50799.35581558191,
+    "change": 20,
+    "changePct": 0.039338329301154586,
+    "expectedOpen": 50779.38790779096,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2713.2,
-    "lastTime": 1794975615,
+    "last": 2710.7,
+    "lastTime": 1794977414,
     "settle": 2711.60009765625,
     "settleDate": "2026-11-17",
     "indexClose": null,
-    "change": 1.599902343749818,
-    "changePct": 0.05900214951064063,
+    "change": -0.9000976562501819,
+    "changePct": -0.033194336326664624,
     "expectedOpen": null,
     "valid": true
    }
@@ -13243,8 +13239,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-18T04:30:11.089Z",
-  "lastAttempt": "2026-11-18T04:30:11.089Z",
+  "asOf": "2026-11-18T05:00:10.963Z",
+  "lastAttempt": "2026-11-18T05:00:10.963Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -13920,7 +13916,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-18T04:30:11.089Z",
+  "lastAttempt": "2026-11-18T05:00:10.963Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14919,18 +14915,39 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Iran Attacks Kuwait and Bahrain, Further Escalating Fight Over Strait",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcGVKcXlHY1EycS1qaFBrcVduLWwzS1B4RmhJeDg5eFlxR0FIeVNFclFqZVczdXFBVGVLa0xpcHZXZkVWa3JEeHJxVXA5YWxVa3YtejhlaHd1T1JmWDd1NHp3V1E1SEdsS0tkOEc2bVpZNER2elNveGdNTk9xanNjSDZZM2NwSXhULUVPSk84TW1JRFJUbkRRZVBYN2JHd0NnQkYxN0hhVDhVaVYzUEtlTGUwUUpuZw?oc=5",
+    "pub": "2026-11-18T04:36:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Live Updates: Trump Meets Philippine Leader Before Flying to China",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/17/world/trump-asean-summit",
-    "pub": "2026-11-18T03:41:38.000Z",
+    "pub": "2026-11-18T04:33:50.000Z",
     "sum": "The next stop on President Trump’s whirlwind Asia trip is the city of Shenzhen, where he is expected to meet with Xi Jinping of China and President Vladimir V. Putin of Russia."
    },
    {
     "hd": "Trump in Philippines ahead of Putin, Xi summit; possible Kim meeting",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-asia-trip-trilateral-summit-putin-xi/",
-    "pub": "2026-11-18T03:22:40.000Z",
+    "pub": "2026-11-18T04:01:30.000Z",
     "sum": "The president arrived in Manila for the start of a multi-day swing in Asia, where he's scheduled to meet with Russia's Vladimir Putin and China's Xi Jinping in a highly anticipated summit."
+   },
+   {
+    "hd": "Trump wants to show strength in China, but a series of technological snafus raises concerns at home",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQMGlNb2Jsalc3eGpLNWFROHFOZjhyaWxjTi1LWTAxaUNzMVI2WUpXYVd1REVLaURWajJCMWVoUWxCekhtcTNMS2pxYmljMVZ5aXFHUWxwQk5NZ3JhSHpyYk5BdG5TVzZlUUp6bHVhaUJKRkx2MllHeWViQzhlcVJmRUpIekpNV052VENNZ3l2YlZUamJaNXNPYURsZnVmdEE?oc=5",
+    "pub": "2026-11-18T03:50:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "China's Xi calls for free and open trade at APEC summit",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPb21UOHp4X2E2V05LRUhhUjhnSzI5b1NmNDRVQWhCb2RTV3gwQng0N3lKQ2lnV3JrbjB2cTBpSkNObTdwbXowR2d0UEt5NFp5blJtallNRjdFSjNoVDdxNkNXWFI4bmpETEV5TUs2OE16WW1lLTR0NkZCbEdXZF9OVDVycUFYV2p2aklNS3dR?oc=5",
+    "pub": "2026-11-18T03:21:00.000Z",
+    "sum": ""
    },
    {
     "hd": "U.S. Enters Unprecedented Three-Way Nuclear Rivalry With China and Russia",
@@ -14940,10 +14957,24 @@
     "sum": ""
    },
    {
+    "hd": "He Runs One of the World’s Deadliest Military Forces. We Went Inside His Bunker.",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
+    "pub": "2026-11-18T03:00:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "China’s Xi calls for removing trade and investment barriers ahead of his meeting with Trump and Putin",
+    "src": "CNBC",
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9kN1VQeHRmSWJFQ2NzTW9IS1hUczJuM0Fqa01jMW1ZRkwxT2JVV2xLbllJRVBoc1gtQklCT2FRNVpNWElEeFpneDlaTDdHOVhsZGtHRXZJSEUyQjE1OUpFY2FvbDFKbk15OFdaZFI4ZjRSN3laTkFRQ3BLQdIBgAFBVV95cUxOeUtIeUtSU29VbDRRbWlQclJXOW5jVmNpbW8zYlFNbmRhem8yN1lDWU5adEhraFlXUjFCZlZDeEExUVJaRG9WZGl4bTlNUEw3Y2xvemg4V2RvZmsxREZFNWNGXzE4Z3VIUGNEeWducjZaSkpGYUxpbXNsekdIeW9jUw?oc=5",
+    "pub": "2026-11-18T02:23:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Will a Spy Scandal, Trade Friction and a Surprise Guest Ruin Xi’s Big Moment?",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/17/world/asia/xi-apec.html",
-    "pub": "2026-11-18T02:11:26.000Z",
+    "pub": "2026-11-18T02:11:27.000Z",
     "sum": "The leader wants the APEC summit to showcase China’s strengths, but he faces export worries and an unpredictable Trump, who has floated meeting Kim Jong-un."
    },
    {
@@ -14975,6 +15006,20 @@
     "sum": ""
    },
    {
+    "hd": "Ukrainian drones and missiles strike Kerch Bridge that links Russia with Crimea",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNN1lMdEV1WEtKYTVkZHVmeDh1cEhybHluUVd1eGRuVHdfMkt6ekpEbXFVWHpMN254eURaczMwUVg4RXBmay14U0l4R3l2bUxBQWl3alU4ajNLbGtSdlBha0JPY2ZBelkxMlJUU3RHNVBKNWpwWS0xOGlEbklYNHBhZHZ2T2lzako2TzlkMk9sQmZzMmF2V3pYYUpjdnVqZzU2ZFFORzUyNEpDYi14?oc=5",
+    "pub": "2026-11-18T01:32:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Three things to watch as Trump, Xi and Putin meet in China",
+    "src": "CNBC",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE00Q18wLUVabjdpN1h4eVpKcUZfM3ZMTDVER3p4Zm83ay1EbUg3b05wOWVZd0E4ZXVuaHFxOU5RaklJUFBrMXl6M21ZYmhMbUdHVnpBZEtXN0tWYXd0eFUxX0lMZHRYSXNRbjNqOW8yS1l5OFHSAXhBVV95cUxPY2dzTUVrU3E2czhSc0xjRm5tbzc2WjVjVFp0WWRJLTJxaVJTVklXdUlnOE1nbURvSUYyc0kyQ1ZZeVdMUHNyNmRtU2JfbmhoZjRNeWEzUzd4bjZVMFl4YldfOFI1eW81enZCRmR5ZktEbklHQVNNUFo?oc=5",
+    "pub": "2026-11-18T01:09:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Tracking China’s Intensifying War of Words Against Japan",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/17/world/asia/china-japan-propaganda-xi-takaichi.html",
@@ -15003,11 +15048,25 @@
     "sum": ""
    },
    {
+    "hd": "Divided appeals court blocks Pentagon from expelling several transgender troops from US military",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOSW9kWE1RTWNWVFd1b2wzODdfTE5PdFdicFNObHVJTi1YcU9Hb29LNlRmNVVRNTc0amZZQkx0clc3NFIzWktkeFg4YlNtR1Z0QWNrS2lQUnhDYW4yMTZGU0tRZ3c2VkZQaHdBN0o4YUtnTnJGc3VOLXdzRUx1Ni1aV3lPdkUySHVBanFYaTRwVlZBNWdmNUpNY2VNNnI2VGV4Qk1v?oc=5",
+    "pub": "2026-11-18T00:17:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "BHP, Rio Tinto executives to meet China leaders as iron ore pressure builds",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNcEU4M19MQkc0T0ZzMFJvU29nQnBoLUNnbjBjbXc1UlNCaUhFOUpMTHhCTlNZODJBSGR0VUloelJ2b3hVWk9pZnpsYlQ0dk1uLTRCWFVVWGlwX1B0QUxxb00wdUVLYkpabmwzS1oyR1dmZklYdFZEM1BhYzZId1hNbGI5SFJOQnBDcWlTQk1qUlQ4aVBoemR4MjFWbVgyTm9hTG1yaUJqN0tUVTBQRl8ybnRTS3lhcmc?oc=5",
     "pub": "2026-11-18T00:11:00.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Australia sanctions Israeli settlers, organisations over West Bank expansion",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQVlFrYWNBX1NLTHhNc00ycmhVV0dFNlRNX0xOcGFKcUhaYmNSU093YzlyTm9xOVlGRGlxblJhajk5ME5HMy0zeXFHc2FQUGFBd3lvUGtaNENWMTB2YVV6eHJ4NzZ1N3pHcjJqam9sQ2kxRk4wNUU4Z1NLbDA4bWQyUVpMakxVa0Q3S2UxeUE1Nm92RmhKUFVHMVl3UUVETHQxMVk4QlYwS0ZhNXRPSGVsUGRQX0F6OFJiZ1N5WGIyb1l5TkliTkhwT2NB?oc=5",
+    "pub": "2026-11-17T23:56:00.000Z",
+    "sum": "It marks the first sanctions since the UK announced a tougher approach to Israeli actions in the territory."
    },
    {
     "hd": "Ecuadorian fishermen sue U.S. over drone attack they say sank their boat",
@@ -15038,20 +15097,6 @@
     "sum": ""
    },
    {
-    "hd": "Moldovan president says Russian drone flew over capital",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM1JtVWdlY250V3J1bVk1T2dSWGhpaTBmbXZWU3gweEVhUkVGMXFBN0hzRUhlVFNBWHVFZWs2M0lTLTV4MFNmdTA3NEJpdzlLb0NNaGxhaDVRWFN3aVoyV1RKOVlXZElnQUFWbUVhcVlwTjFZRHdYY21VRzFZcUdmQ2ZuZmNZYmdqbURoTWF1cGNsUjBvTW1lTDdWeFFNUQ?oc=5",
-    "pub": "2026-11-17T23:18:33.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Bahrain says air defences intercepted Iranian attacks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMEJSYmJOTF9ISXdkYWVNd0Z3RnJvQnRjSlhEVWJ4bWo1UVVvblNOUnczc0FtOUlSODM5UzRNOUF5T3lIYTNrRVZKNEZTaVFQcnMwaG9JSWdnNkJmRVVtcTluWmFEU1k0dFVVVDJ4SWlEcUNpWEo1aktKYzFGblgxTldZSGVNRjV3N3VyMVNFelYxQ1d4Zlo3LXdQN2E4RUFuNjB4UWdYX1FxQ3pERUdCenJ3?oc=5",
-    "pub": "2026-11-17T23:15:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Man with ax destroys $60M U.S. military plane, prosecutors say",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/us-military-plane-irish-airport/",
@@ -15059,9 +15104,9 @@
     "sum": "Daithi O'Corrain, 48, is charged in the U.S. with destruction of U.S. government property in connection with the April incident at Shannon Airport."
    },
    {
-    "hd": "American soldier arrested by UK police on suspicion of spying taken into US military custody",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c6x284ez38vdo?at_medium=RSS&at_campaign=rss",
+    "hd": "American soldier arrested in UK taken into US military custody",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IYjVPU1Nqcm5SZnViV3BsdFhTaHZieGJvUUhvd25VbmNWTmFLdHgzYnFNQjMtN05QRzY4aGZ0LXY5NEplNExNeUQ2R0F4QjlYMTQ3dlpSSkI5eG8?oc=5",
     "pub": "2026-11-17T22:46:30.000Z",
     "sum": "The Metropolitan Police say he has been taken into custody by the US Military over suspected national security and espionage allegations."
    },
@@ -15078,55 +15123,6 @@
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRFVSMFdDczNIa3JzX1ZTOWdyMm5mcDk0S3hXMW5DZHFKTks1c3BKSHBxWGFtN0FfMy1zOS1Cc1ZaQWF1SFJHVklqaDVwSm5WRk5aejR2VUFOb3daTHRZSTIwMmhrdGxRWEdyTkdoN0dBOEtEdWVsMURBN0ZjM0NlazYtWWpxdVp0ZDBvR3RIMEZtbGcyZk01TVdGZw?oc=5",
     "pub": "2026-11-17T21:54:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Xi Makes the Most of Trump’s Asia-Pacific Trip",
-    "src": "Foreign Policy",
-    "url": "https://foreignpolicy.com/2026/11/17/china-xi-trade-canada-tariffs-peru-trump-asean-apec/",
-    "pub": "2026-11-17T21:52:41.000Z",
-    "sum": "The Chinese president is currying favor with some of the region’s most powerful leaders."
-   },
-   {
-    "hd": "UK hands NATO-assigned US soldier accused of Russia spying to US military",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNeG1nTVJCSWdrQ3ZnTVhwRTVwSnM4QmRpQkg3bnpLMC11ODR1c0hvQXl2c010MWlvekoxMWdkWGhyeDVNZTNteHJpalE1a1Qxdk1BTF9jeHMyNFNhRWJ1cm02RzFWSTV5Y1RtcEVncWFDTVJfRHJhTnJLYzNPaEk3ZElCZkZRbkF4YXE2dnNrak9WdzZha1BCRFlyaWVJYWIxMEg4YkM3eVdydFJkNzFCUl9UbXVJd9IBuwFBVV95cUxOM2c1Y3h6ckFMeEdkQm5Xd2J2X19lQ1VEWTZNVk1kX3E4QjVpV2VwMVloSnhtWjBnc3JTMlVFaGV3dFRJRU5WM2F0dER4bW9acFhSM3EtRjdpeVktRjA4T09LQjJLTjF1VTlVeGZ2RUdOcFVBOEZZMjUyRHZwQUZJVW5iaUFFOWVybVh5WG1lYzdTazZTS25BNkdLUV9TR2dMZWJnM2p6M0I3YVpSMl80eUN4QnNEWkwtY2NR?oc=5",
-    "pub": "2026-11-17T21:41:55.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Claims by Netanyahu’s party of a ‘stolen’ Israeli election unravel",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOUlpSYlg0NUhRa3JSazdObFNTNVFIMFlaRG9DUndvS2gzbmJzNEV6ZGhZeDRsR2NEWU1jMDJMMGNnam0waFpDdVA1bHA5WjBnMS1OSlQtZVRJTWE5b3QyV0doMXg4eWhuYW5TbTBHSHJ2a2t4YVNMUVQwaWl4Uk0yUmRyUzFBb1hiY0kxbFdlN0wxaDRLVnluZzNR?oc=5",
-    "pub": "2026-11-17T21:41:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
-    "pub": "2026-11-17T21:34:38.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "6-year-old girl dies in gene-editing trial, leading to scientist's firing, Chinese state media reports",
-    "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdEFWdlVNcHgxTmpwZTN6VGhWNUFrbzJPU2tUdWtydmpLampxVS1PTDYwREVPbndyMG4wc1FXQUxxdTRyR1MzX3pSUTh4U3pPUGtNNW5WRUNzZzNQVlFDeEg3SE1zbjdQU21FSFpUX0k0UU5fZzdfYjJzQ2V4aUNtdnBoUldjU1hDM09LenFBenFiLW9UdEhr?oc=5",
-    "pub": "2026-11-17T21:31:34.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Putin's Crimean Bridge partly collapses as Zelensky hails 'unprecedented' attack by Ukraine",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cw772jk4rvmxo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-17T21:24:35.000Z",
-    "sum": "Ukraine says the missile and drone attack on the strategic bridge in the Russian-annexed Crimea took weeks to plan."
-   },
-   {
-    "hd": "‘Do not build’: UK sanctions 8 Israeli construction companies for building West Bank settlements",
-    "src": "The Times of Israel",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxObEVDWHBSU1REbnl0MmstS0F0ejN5em05UkgxbjctNmVoWjZZZU1WbHhGbE02OXRWS3RVandocHQwTnpYQkxhRE1jNzFmUXpndF9uam5iYmRJLWVHZU4tajh6cmZnTV96OFJMWEhVbGVrZERJenJUaGhhMHhBVjZVYVJLTVRhVFJZbTc4NGcyb3k0NGladGxwX0FVd2xTdW41dTVhVU5tZ0lsX2RWdGxYMdIBtgFBVV95cUxOeHYya19iX3BIbGYyMUhUVzFwaXljdmxQNi1mQkxSeGk0bjFGZWlSQkV0NkZpR2ozXzJFZmtDZS02V3RaR1k4SVZYYkR2UUkwWmhTcFZ3VjcyMm5hR3dNb0lLZEFuVDI0ODBnOERQeGY0dE0yU0YwLTBmaTV6UXQ3eTFZbDc3NXN0UVlRVzZLR1pqdVl2czJfbnhoMzRGa2hiaVZrcUNld000NjhBdWQ1R1AyaFBtUQ?oc=5",
-    "pub": "2026-11-17T21:22:30.000Z",
-    "sum": "It marks the first sanctions since the UK announced a tougher approach to Israeli actions in the territory."
    }
   ],
   "feeds": [
@@ -15145,8 +15141,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-18T03:45:10.609Z",
-  "lastAttempt": "2026-11-18T03:45:10.609Z",
+  "asOf": "2026-11-18T05:00:10.963Z",
+  "lastAttempt": "2026-11-18T05:00:10.963Z",
   "lastError": null
  }
 }
