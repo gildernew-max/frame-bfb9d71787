@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T06:15:18.291Z",
+ "generatedAt": "2026-11-19T06:30:11.726Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6658,9 +6658,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T06:15:18.291Z",
+  "at": "2026-11-19T06:30:11.726Z",
   "ran": [
    "alerts",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13028,62 +13029,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T06:15:18.291Z",
-  "lastAttempt": "2026-11-19T06:15:18.291Z",
+  "asOf": "2026-11-19T06:30:11.726Z",
+  "lastAttempt": "2026-11-19T06:30:11.726Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7394.75,
-    "lastTime": 1795068315,
+    "last": 7400,
+    "lastTime": 1795069218,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 54.5,
-    "changePct": 0.7424815231088859,
-    "expectedOpen": 7378.00659957086,
+    "change": 59.75,
+    "changePct": 0.8140049725826777,
+    "expectedOpen": 7383.244712373557,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27529.75,
-    "lastTime": 1795068317,
-    "settle": 27191,
+    "last": 27571,
+    "lastTime": 1795069221,
+    "settle": 27191.5,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 338.75,
-    "changePct": 1.2458166305027398,
-    "expectedOpen": 24734.236570142693,
+    "change": 379.5,
+    "changePct": 1.3956567309637202,
+    "expectedOpen": 24770.842334369194,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50513,
-    "lastTime": 1795068307,
-    "settle": 50271,
+    "last": 50529,
+    "lastTime": 1795069218,
+    "settle": 50269,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 242,
-    "changePct": 0.4813908615305047,
-    "expectedOpen": 50439.819403035544,
+    "change": 260,
+    "changePct": 0.51721737054646,
+    "expectedOpen": 50457.80365493644,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2732.5,
-    "lastTime": 1795068301,
-    "settle": 2722.300048828125,
+    "last": 2733.3,
+    "lastTime": 1795069216,
+    "settle": 2722.199951171875,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 10.199951171875,
-    "changePct": 0.3746813719621317,
+    "change": 11.100048828125182,
+    "changePct": 0.4077602316959392,
     "expectedOpen": null,
     "valid": true
    }
@@ -13545,8 +13546,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T06:15:18.291Z",
-  "lastAttempt": "2026-11-19T06:15:18.291Z",
+  "asOf": "2026-11-19T06:30:11.726Z",
+  "lastAttempt": "2026-11-19T06:30:11.726Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14222,7 +14223,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T06:15:18.291Z",
+  "lastAttempt": "2026-11-19T06:30:11.726Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15224,8 +15225,22 @@
     "hd": "Trump praises Putin ahead of rare joint meeting with Xi in China",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
-    "pub": "2026-11-19T05:16:02.000Z",
+    "pub": "2026-11-19T06:26:20.000Z",
     "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are expected to hold a rare face-to-face meeting in China."
+   },
+   {
+    "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
+    "pub": "2026-11-19T05:53:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVV8xWGtoUVBFb0pZRXA2U05JRldkTXdGRUxBWHpBd0ZHd2o2U2ZiYjFELU5jTGdOZ1RfZnpTZk1MM0ZqSTNuRWdYcnAxUlIzdWZzV0p1a1JhS1BreXozOWdnNC1nclNZLU5SaUV0SVdTU0VCdlNNY2ZJOG1qM3E2aS11NzRnMERpVTV6RWNCUklGQ1BxT19tX0V0T25WTnVQNlE?oc=5",
+    "pub": "2026-11-19T05:48:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
@@ -15236,8 +15251,8 @@
    },
    {
     "hd": "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5JYzJOeVlUNDZnTGFKMnF4NW93ZThRSXRyTlpxWjdJNGpVMmFWOV9hNUdKbXlETUZtekRVclZIQkhDYzQ3S0FybXpIaE1CSThlREhNdzNmU21lQXc?oc=5",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cr9d75we51j1o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-19T04:42:52.000Z",
     "sum": "The meeting comes with challenges as there are things Xi does not appear keen to discuss with Putin and Trump."
    },
@@ -15256,10 +15271,10 @@
     "sum": "The welcome China’s leader, Xi Jinping, offered President Trump appeared to reflect a desire for a measure of stability at a time of growing disagreements."
    },
    {
-    "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
-    "pub": "2026-11-19T04:13:00.000Z",
+    "hd": "China gives Japan PM frosty welcome at Apec amid fanfare for other leaders",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSFRscUxFRFI2Uk5LclgzaXh3ZDhiQy1tUDU5X3Fudm9RT1VhSDM3OWxRajltcTNXVGxBVDBVOE43YWZVWlZoYXZ5WVZXX0lJeTlJOFZxZlZhSGJ4REpaMENYM2JlVm5LamxrT25wc2FDU2drT19lQldrZUhNZE9tUEtPNDM4RUJsLVRURzBNOA?oc=5",
+    "pub": "2026-11-19T04:20:00.000Z",
     "sum": ""
    },
    {
@@ -15298,6 +15313,13 @@
     "sum": "Beijing is running a concerted campaign to paint Japan as an aggressor and resurgent military threat, according to a Times analysis."
    },
    {
+    "hd": "Japan says PM Takaichi, Putin held talks at APEC summit in China",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOGFYWEJrZkpsMjh1dWNROWxsODdhQzUxYmR2WEhqNFIxRjNLM2l6QWlNZ2lHSlFIeGhQQnJBQTN4MGNpVXBIVkxSU1lLOVZkTk9LRXJfb0RDeXJKaFM5X245bFg5WnQ0WEtQQktxSzhGbjNPMVNFRmNLb25zM1JqcUE1Z1dFSXRjSjJUS1hzZXpEREFiejN4V1dWc05kbnA5Yi1sUjBUcjU?oc=5",
+    "pub": "2026-11-19T03:25:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Houthi missile threat towards Riyadh causes damage, Saudi-led coalition says",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUUVVMURmUjNxMHVQNThNQkRiUElQbkhnNVJNdkdVejBqLVVIRU1hUl9DWDhpYlFVWUtFZlo5dGNOSnFqTFU5VE93bXdGY3NaOEVmSERoWlJNOWhQN25NN3E1bGF1MEprczBsWFlkOHBDTUVLM21CSFJydjFzUFFaM2ozQU8wSTdnSENadVQ2UTNmSWhOMFBHNE1ZaDB5MURkMFM0cHZuU1BySDl0ZlQ2aDBEUEdmNUE5MnNzTnl2T2VBaV9sWUQ2Zg?oc=5",
@@ -15312,6 +15334,13 @@
     "sum": "President Trump is holding a high-stakes meeting with Chinese President Xi Jinping on Thursday against the backdrop of a widening scandal."
    },
    {
+    "hd": "'I'd rejoin the Army to fight Russia' and 'Boiling point'",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IeUxvZktUaG1yTDlET2xMY1pJVmxKNWxxVXQtZHg5UG44Z0tNMndYRnN1RnpxU0hrN0dib25oZE9DY3diZ2dTMXNEU2FsVEotZW10MzMwWlp2OXc?oc=5",
+    "pub": "2026-11-19T03:10:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
@@ -15322,7 +15351,7 @@
     "hd": "Trump weighs strikes on Iran as Israel warns of chemical weapons",
     "src": "Axios",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVhsMGFnUEhueFlmbkpjTEdvbU1LVkxiUk8wVzhQMUZ2QlNfYUo2Nmh4N3dVSzI5ZXByTHpmdU9FNE9HaTloeTBGQU51cHNEbkZ0VEZJZFgxVWdoMFJKdDJkQk00a0Q0VXJlRmQ0RlJKX2RBalV4cy1ZaVVkeFE3bQ?oc=5",
-    "pub": "2026-11-19T02:12:51.000Z",
+    "pub": "2026-11-19T02:26:29.000Z",
     "sum": ""
    },
    {
@@ -15401,34 +15430,6 @@
     "url": "https://www.bbc.co.uk/news/articles/cq20xg80ly47o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-18T23:28:03.000Z",
     "sum": "The suspect followed employees and was found with fake US IDs and two Russian passports, prosecutors say."
-   },
-   {
-    "hd": "Top UN court to rule on alleged genocide of Myanmar's Rohingya",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGtSVDRwdUtMc3lyTmxTN1FCam5Fai1UaTdDZ1E3YXM4M3lfZk5yQXduaF9Uc3VjSVJuSzRwOG0wVFY0LURKWnVlR1gtNWZHaHlWaXBmazZlVzh4TGZHb0VfM3NTSHFZS29QMTlZV3Y3dm1GVmJzcHRQaW5yaTJacmV0ZnQ2Z0JrYWxIT3l4UUdTSDlDTnlLaTNERlF0NVF2U3lHR29tdWdabGc?oc=5",
-    "pub": "2026-11-18T23:27:04.000Z",
-    "sum": "No state has ever been found guilty by an international court of committing genocide."
-   },
-   {
-    "hd": "Hegseth Cements New Military Deal in Visit to Venezuela",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTlQtc0ZobkZaYXZoanl5Y2pMODJndHlKVDh5amVsTGY4TzA3Wmd1VklyeG5WWEpPbnk4bEl1WUF2VGxTejNmSE1xRkZhTHJWZ2dZZE95d2pzMThXUTBuMFlUZ2R5X3o3bVpzeW1JaTNtZ0xLLWFqcWMyUlN5dWs1ZmVQaFladmh5SEpSTHpMT2Fxc0Zra0c5a0ZOcjdZSW5W?oc=5",
-    "pub": "2026-11-18T23:18:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Iran and US trade tit-for-tat strikes as wild video shows strike on UAE oil tanker",
-    "src": "New York Post",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZkhUSmRtQzRXeWN5V3RxdzJvMnAweVRQdDJtQkQxRGRubmV6T19VYnhVVzZXWDhxSF9Sd0FjUXI2Q3RFX3RqYzQ0eGxfOVhXVnlBSHZaZVYzYVBwRHBuam5TVHJkOVNhV0dOdDlQRHJsbV9IQUJPMGpJbjFmWk8zYkhWWWRxVnlOUEJ6MHRlV3N0anpTdkVuU2xTNDZSREZ0RFQ0dTZ1aw?oc=5",
-    "pub": "2026-11-18T23:11:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump says historic summit with Xi, Putin already a 'win' before event",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdzN3ZEpqNW0wZlBtajBvdU9pSzk1MG9RQ2NhVlBuaFMwaVZBWVhkLVNiMnZHTTBRS2J6Z2xkdWkxRERWakdCc0JBdGtUUlhVbHJlR2dMcVVTV0lCNWVGNi1XSG5zVTVrRW84V0JVZUhOVGhKT0FZMk1uRTd3anM1RFhPUWxWNFdQWFF2WjhhYVFCdnpPMGlLYThjMDExVC1fVFJfeFZ2ZXM?oc=5",
-    "pub": "2026-11-18T23:05:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15447,8 +15448,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T05:30:15.153Z",
-  "lastAttempt": "2026-11-19T05:30:15.153Z",
+  "asOf": "2026-11-19T06:30:11.726Z",
+  "lastAttempt": "2026-11-19T06:30:11.726Z",
   "lastError": null
  }
 }
