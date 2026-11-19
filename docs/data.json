@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T09:15:12.360Z",
+ "generatedAt": "2026-11-19T09:30:13.177Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6965,11 +6965,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T09:15:12.360Z",
+  "at": "2026-11-19T09:30:13.177Z",
   "ran": [
    "alerts",
-   "movers",
-   "sectors",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13338,62 +13337,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T09:15:12.360Z",
-  "lastAttempt": "2026-11-19T09:15:12.360Z",
+  "asOf": "2026-11-19T09:30:13.177Z",
+  "lastAttempt": "2026-11-19T09:30:13.177Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7422.25,
-    "lastTime": 1795079111,
+    "last": 7415.5,
+    "lastTime": 1795080017,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 82,
-    "changePct": 1.1171281632096999,
-    "expectedOpen": 7405.444333299275,
+    "change": 75.25,
+    "changePct": 1.025169442457682,
+    "expectedOpen": 7398.709616838663,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27704.75,
-    "lastTime": 1795079110,
+    "last": 27686.5,
+    "lastTime": 1795080020,
     "settle": 27191,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 513.75,
-    "changePct": 1.8894119377735281,
-    "expectedOpen": 24891.46616357434,
+    "change": 495.5,
+    "changePct": 1.82229414144386,
+    "expectedOpen": 24875.06936311647,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50612,
-    "lastTime": 1795079111,
+    "last": 50544,
+    "lastTime": 1795080006,
     "settle": 50271,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 341,
-    "changePct": 0.6783234867020748,
-    "expectedOpen": 50538.675977004634,
+    "change": 273,
+    "changePct": 0.5430566330488751,
+    "expectedOpen": 50470.77449185415,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2739.4,
-    "lastTime": 1795079113,
+    "last": 2733.8,
+    "lastTime": 1795080007,
     "settle": 2722.300048828125,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 17.09995117187509,
-    "changePct": 0.628143513395452,
+    "change": 11.499951171875182,
+    "changePct": 0.4224351087539227,
     "expectedOpen": null,
     "valid": true
    }
@@ -13855,8 +13854,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T09:15:12.360Z",
-  "lastAttempt": "2026-11-19T09:15:12.360Z",
+  "asOf": "2026-11-19T09:30:13.177Z",
+  "lastAttempt": "2026-11-19T09:30:13.177Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14532,8 +14531,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T09:15:12.360Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-19T09:30:13.177Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -14743,35 +14742,35 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T09:15:12.360Z",
-  "lastAttempt": "2026-11-19T09:15:12.360Z",
+  "asOf": "2026-11-19T09:30:13.177Z",
+  "lastAttempt": "2026-11-19T09:30:13.177Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 153.41,
-    "time": 1795079712,
+    "price": 152.9,
+    "time": 1795080618,
     "ref": 150.96,
     "refTime": 1795035600,
-    "change": 2.4499999999999886,
-    "changePct": 1.6229464758876446
+    "change": 1.9399999999999977,
+    "changePct": 1.285108638049813
    },
    "TSLA": {
     "session": "pre",
-    "price": 389.73,
-    "time": 1795079679,
+    "price": 388.7,
+    "time": 1795080606,
     "ref": 383.72,
     "refTime": 1795035600,
-    "change": 6.009999999999991,
-    "changePct": 1.566246221202958
+    "change": 4.979999999999961,
+    "changePct": 1.2978213280516941
    },
    "SPCX": {
     "session": "pre",
-    "price": 146.4,
-    "time": 1795079696,
+    "price": 146.41,
+    "time": 1795080613,
     "ref": 143.5,
     "refTime": 1795035600,
-    "change": 2.9000000000000057,
-    "changePct": 2.020905923344952
+    "change": 2.9099999999999966,
+    "changePct": 2.0278745644599283
    }
   }
  },
@@ -15531,11 +15530,81 @@
  "worldNews": {
   "items": [
    {
-    "hd": "Live Updates: Trump, Xi and Putin to Meet for Their First Summit",
+    "hd": "Live Updates: Trump Holds 1st Summit With Xi and Putin, Whom He Calls ‘Friend’",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/18/world/trump-xi-putin-apec",
-    "pub": "2026-11-19T08:21:09.000Z",
-    "sum": "It is the first three-way meeting of leaders from the United States, China and Russia. President Trump said he would push for an agreement to end the war in Ukraine."
+    "pub": "2026-11-19T09:29:22.000Z",
+    "sum": "President Trump said that he would bring up the Ukraine War at the first-ever meeting of leaders of Russia, China and the United States."
+   },
+   {
+    "hd": "After Crippling Crimea Bridge, Ukraine Attacks It Again",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/18/world/europe/russia-kerch-strait-crimean-bridge.html",
+    "pub": "2026-11-19T09:24:04.000Z",
+    "sum": "Russia has vowed to quickly restore the structure, but engineering specialists say the work could take years."
+   },
+   {
+    "hd": "President Trump Starts Asia Trip in Manila by Shrugging Off U.S. Concerns",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/17/world/asia/17trump-summit-manila-asean-marcos.html",
+    "pub": "2026-11-19T09:17:19.000Z",
+    "sum": "Even for a president who prizes photo opportunities, Mr. Trump’s appearance in Manila suggested a lack of interest in diplomatic wins or issues at home. “It’s life,” he said."
+   },
+   {
+    "hd": "Villa Where Trump, Xi and Putin Met Once Hosted Kim Jong-il",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin-kylin-villa.html",
+    "pub": "2026-11-19T09:15:23.000Z",
+    "sum": "The secluded Kylin Villa resort in the Chinese city of Shenzhen once hosted the North Korean dictator, Xi Jinping’s father and envoys of the Dalai Lama."
+   },
+   {
+    "hd": "Iran Attacks Kuwait and Bahrain, Further Escalating Fight Over Strait",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcGVKcXlHY1EycS1qaFBrcVduLWwzS1B4RmhJeDg5eFlxR0FIeVNFclFqZVczdXFBVGVLa0xpcHZXZkVWa3JEeHJxVXA5YWxVa3YtejhlaHd1T1JmWDd1NHp3V1E1SEdsS0tkOEc2bVpZNER2elNveGdNTk9xanNjSDZZM2NwSXhULUVPSk84TW1JRFJUbkRRZVBYN2JHd0NnQkYxN0hhVDhVaVYzUEtlTGUwUUpuZw?oc=5",
+    "pub": "2026-11-19T09:10:32.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVGh0bmJObHpuamE0THBab0FlVkplMFE2SmlzWGliRkZad2JIdVg0bkMxVUNPdi1TSDlic2J3R1JoTEtpTXlHVlNTcG5XeVZLRDY0eWpOOVpDYUU3M2hPOHBoSUNlWl9FY0NkOF9oNUgzR2VUdWtnaFlET1UwRnpnYXhmVFA0aHdmX0VXckVkdVJSU2xxNWpMZWlCaFRsWVdvWmJyN3ZscENTZ0E?oc=5",
+    "pub": "2026-11-19T09:10:29.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump, Xi, Putin begin rare joint meeting in China",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
+    "pub": "2026-11-19T08:55:35.000Z",
+    "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin have started a rare face-to-face meeting in China."
+   },
+   {
+    "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
+    "pub": "2026-11-19T08:41:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Half a world from The Hague, Rohingya refugees know nothing of a genocide trial.",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/19/world/myanmar-icj-ruling-genocide/myanmar-icj-genocide-case-rohingya-refugees",
+    "pub": "2026-11-19T08:39:44.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump, Xi and Putin Convene First-Ever Summit as World Order Shifts",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNY1dwclJaOTc1ZWhZMUlidTgyaWFWbU1MeE8xbEl6TzN4Y1U4UzA3dHo1SzJSYTFPd01ZMnV3azQyR1RiYVBNUnVaZjhxY0xwRXFBSGctLUtUcG1xMkRaWGlHWm42RUFLV3NVOWNUOGF0R0hMN1R5OUhDSjJBQnYzUjFrMzNqWm96NXFmbjBZUnFIeWpibFBvenFLSWZzdGx1TUVn?oc=5",
+    "pub": "2026-11-19T08:35:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "How to Decode the Xi-Trump Hug",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/18/world/asia/xi-trump-hug-shenzhen.html",
+    "pub": "2026-11-19T08:32:47.000Z",
+    "sum": "The welcome China’s leader, Xi Jinping, offered President Trump appeared to reflect a desire for a measure of stability at a time of growing disagreements."
    },
    {
     "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
@@ -15552,6 +15621,13 @@
     "sum": "The U.N. nuclear watchdog says that North Korea has been expanding its original uranium enrichment facility at its Yongbyon nuclear complex"
    },
    {
+    "hd": "South Korea's Lee says hopes reopening talks with North Korea could lead to lasting peace",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQa3p1X0tCV19neWFKZTZwc21Iaks0ZFFCZk9oMzBJakpGX3FzbmJqOWppOUN5Z3I1ZlI4QTMybDNjb0VsR1VoS1RCb0ZES2ctMU05ZWxHSzlWcEtpcnVyU19heTloa3R4SmY1NXQyUHlnNXZhbEFHdzZaR0ZGQzVCYkVfSVg5a0VTMXhwY2licDVoeUVzME5oWHlma25DcGtqQXhhV093VHVtZmdlWTJHLVY3enFCQnlXa0tjZ2FMNFlvcHNVWlE?oc=5",
+    "pub": "2026-11-19T07:28:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
@@ -15566,39 +15642,11 @@
     "sum": "Prime Minister Andy Burnham is meeting EU officials in Brussels on Friday to discuss closer ties between the UK and the bloc that it left in 2020"
    },
    {
-    "hd": "Trump, Xi and Putin Convene First-Ever Summit as World Order Shifts",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNY1dwclJaOTc1ZWhZMUlidTgyaWFWbU1MeE8xbEl6TzN4Y1U4UzA3dHo1SzJSYTFPd01ZMnV3azQyR1RiYVBNUnVaZjhxY0xwRXFBSGctLUtUcG1xMkRaWGlHWm42RUFLV3NVOWNUOGF0R0hMN1R5OUhDSjJBQnYzUjFrMzNqWm96NXFmbjBZUnFIeWpibFBvenFLSWZzdGx1TUVn?oc=5",
-    "pub": "2026-11-19T07:24:00.000Z",
+    "hd": "Ukraine strikes Crimean Bridge for third time in a week ahead of US-China-Russia summit",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUzRFcTV3RC1acloyenJ5UXlCQjNfZ0tieEg5NXpGX3NObnlVMzVTR1BDX3VsNWlhOEZKak1ja3JGU3hBMTI3cjJsRlpGWTNhRm1iSkc4U1JHeUdBYXFYdVpjWW9maWJ6MTdMOEw5ZG1YRUJyTkctVGxlTk1hT0VKY2lGNDdGS0w3ZnRJdUQxUzBHeU9KNHdUODBNMEllMDR5Y1NZaFhsd1ZNYzh6ZmZTS0p3S0pCckJ4REUwYnJIN3NsUQ?oc=5",
+    "pub": "2026-11-19T07:10:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump, Xi, Putin set for rare joint meeting in China",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
-    "pub": "2026-11-19T07:05:18.000Z",
-    "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are about to hold a rare face-to-face meeting in China."
-   },
-   {
-    "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
-    "pub": "2026-11-19T06:57:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Villa Where Trump, Xi and Putin Will Meet Once Hosted Kim Jong-il",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin-kylin-villa.html",
-    "pub": "2026-11-19T06:53:53.000Z",
-    "sum": "The secluded Kylin Villa resort in the Chinese city of Shenzhen once hosted the North Korean dictator, Xi Jinping’s father and envoys of the Dalai Lama."
-   },
-   {
-    "hd": "Putin Returns to APEC ‘Family Photo,’ Testing Western Leaders",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/19/world/asia/putin-xi-trump-apec-family-photo.html",
-    "pub": "2026-11-19T06:46:07.000Z",
-    "sum": "The leaders of Australia and Canada defended their decision to join the APEC group portrait as a courtesy to the host, China, despite criticism at home."
    },
    {
     "hd": "Trump, Xi and Putin set to hold historic meeting on Apec sidelines",
@@ -15615,13 +15663,6 @@
     "sum": ""
    },
    {
-    "hd": "A Visual Tour of President Trump’s Visits to Asia",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/17/world/asia/president-trump-visits-asia.html",
-    "pub": "2026-11-19T06:28:34.000Z",
-    "sum": "President Trump left the Philippines and headed to China, where he is expected to meet with leaders, including the presidents of Russia and China."
-   },
-   {
     "hd": "Trump Excitedly Greets Putin With 6 Truly Baffling Words",
     "src": "HuffPost",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYm5zMDh4d1Y4MVpmeXJDZXZYZ2pzV2J5TGJ4NEtwWDcxbWczX1oxYmJFMFo0eTJlaWJtVmp0YjlFa0pVTVFlZXhQejBlNjRBcS0ySkN3UVpLdE1qelRjRHF2bWM0a2g3QW4xV2tUM1dkV1M4YThyV2dxNmllaV9ZQks2clLSAYoBQVVfeXFMUHJLaDVtUWlJWG15SkN6bndpbFhiRDVXdXd4dzduTjk0TGV0dmJtTUxXLXVpOVN6cEN4bHlIQS1QWlZDRXBjSGhRNk9ZVHlHNVJJbVZIdWhqSk9pLXFrWVpCdXI5X1lCemMtbzZUVmFtNDd6dGdiTlRDWndIUnEyT0pSZ2FTYzhKYV9R?oc=5",
@@ -15636,13 +15677,6 @@
     "sum": ""
    },
    {
-    "hd": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/19/world/middleeast/netanyahu-arab-activists-arrests-israel-election.html",
-    "pub": "2026-11-19T05:01:06.000Z",
-    "sum": "Prime Minister Benjamin Netanyahu of Israel had claimed the detention of three opposition activists from an Arab-led party was evidence of vote rigging. His chief of staff has admitted being involved with the initial outreach to police."
-   },
-   {
     "hd": "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/cr9d75we51j1o?at_medium=RSS&at_campaign=rss",
@@ -15655,13 +15689,6 @@
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
     "pub": "2026-11-19T04:31:11.000Z",
     "sum": ""
-   },
-   {
-    "hd": "How to Decode the Xi-Trump Hug",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/asia/xi-trump-hug-shenzhen.html",
-    "pub": "2026-11-19T04:29:42.000Z",
-    "sum": "The welcome China’s leader, Xi Jinping, offered President Trump appeared to reflect a desire for a measure of stability at a time of growing disagreements."
    },
    {
     "hd": "China gives Japan PM frosty welcome at Apec amid fanfare for other leaders",
@@ -15711,34 +15738,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9IeUxvZktUaG1yTDlET2xMY1pJVmxKNWxxVXQtZHg5UG44Z0tNMndYRnN1RnpxU0hrN0dib25oZE9DY3diZ2dTMXNEU2FsVEotZW10MzMwWlp2OXc?oc=5",
     "pub": "2026-11-19T03:10:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump weighs strikes on Iran as Israel warns of chemical weapons",
-    "src": "Axios",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVhsMGFnUEhueFlmbkpjTEdvbU1LVkxiUk8wVzhQMUZ2QlNfYUo2Nmh4N3dVSzI5ZXByTHpmdU9FNE9HaTloeTBGQU51cHNEbkZ0VEZJZFgxVWdoMFJKdDJkQk00a0Q0VXJlRmQ0RlJKX2RBalV4cy1ZaVVkeFE3bQ?oc=5",
-    "pub": "2026-11-19T02:26:29.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump meets Xi and Putin in China with nuclear arms and two wars on the table",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
-    "pub": "2026-11-19T01:58:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Mideast nations ramp up efforts to avert all-out war as Israel urges Iran strikes, officials say",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
-    "pub": "2026-11-19T01:16:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Insurgents in Iran’s Borderlands Are Becoming a Bigger Challenge for the Regime",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQN3g1cTFKQjdZellkcnY0X2ExbFNsNVZya0xEaEJZMjNDYjZlX25YYnJrNi1vNjVEUUZqVlljM2xIUW9IMWtpbEhPTUk1QjBlTndjNE8zWHBYOWpMdWNDYk5xd040OG9Qd0lsV0R3cXZRejYzOVllMUJ5bzFLdDN0ZTBLbmQ3bVpMaF9QYUVrVkhUelZEM2ZsSmQ5TE5oSjN2Y3NsT1RhcXJuVlZRUjVXRm45YXF5c2stVUJqaXZFTGxPQkU?oc=5",
-    "pub": "2026-11-19T01:00:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15757,8 +15756,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T08:30:13.566Z",
-  "lastAttempt": "2026-11-19T08:30:13.566Z",
+  "asOf": "2026-11-19T09:30:13.177Z",
+  "lastAttempt": "2026-11-19T09:30:13.177Z",
   "lastError": null
  }
 }
