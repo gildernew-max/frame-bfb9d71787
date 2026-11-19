@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T08:15:12.971Z",
+ "generatedAt": "2026-11-19T08:30:13.566Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6965,9 +6965,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T08:15:12.971Z",
+  "at": "2026-11-19T08:30:13.566Z",
   "ran": [
    "alerts",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13335,62 +13336,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T08:15:12.971Z",
-  "lastAttempt": "2026-11-19T08:15:12.971Z",
+  "asOf": "2026-11-19T08:30:13.566Z",
+  "lastAttempt": "2026-11-19T08:30:13.566Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7417.25,
-    "lastTime": 1795075509,
+    "last": 7421.75,
+    "lastTime": 1795076418,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 77,
-    "changePct": 1.0490105922822792,
-    "expectedOpen": 7400.455654439563,
+    "change": 81.5,
+    "changePct": 1.110316406116958,
+    "expectedOpen": 7404.945465413304,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27672,
-    "lastTime": 1795075509,
+    "last": 27704.75,
+    "lastTime": 1795076418,
     "settle": 27191,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 481,
-    "changePct": 1.7689676731271378,
-    "expectedOpen": 24862.04176823213,
+    "change": 513.75,
+    "changePct": 1.8894119377735281,
+    "expectedOpen": 24891.46616357434,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50611,
-    "lastTime": 1795075509,
+    "last": 50607,
+    "lastTime": 1795076420,
     "settle": 50271,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 340,
-    "changePct": 0.6763342682659983,
-    "expectedOpen": 50537.677425752416,
+    "change": 336,
+    "changePct": 0.6683773945216924,
+    "expectedOpen": 50533.68322074357,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2739,
-    "lastTime": 1795075513,
+    "last": 2739.3,
+    "lastTime": 1795076412,
     "settle": 2722.300048828125,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 16.699951171875,
-    "changePct": 0.6134500559210535,
+    "change": 16.999951171875182,
+    "changePct": 0.6244701490268566,
     "expectedOpen": null,
     "valid": true
    }
@@ -13852,8 +13853,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T08:15:12.971Z",
-  "lastAttempt": "2026-11-19T08:15:12.971Z",
+  "asOf": "2026-11-19T08:30:13.566Z",
+  "lastAttempt": "2026-11-19T08:30:13.566Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14529,8 +14530,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T08:15:12.971Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-19T08:30:13.566Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15528,6 +15529,27 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Live Updates: Trump, Xi and Putin to Meet for Their First Summit",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-xi-putin-apec",
+    "pub": "2026-11-19T08:21:09.000Z",
+    "sum": "It is the first three-way meeting of leaders from the United States, China and Russia. President Trump said he would push for an agreement to end the war in Ukraine."
+   },
+   {
+    "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/putin-sharing-spotlight-trump-xi-boosts-profile-global-138265640",
+    "pub": "2026-11-19T07:29:39.000Z",
+    "sum": "For Russian President Vladimir Putin, the three-way meeting with Donald Trump and Xi Jinping offers a much-coveted chance for the Kremlin leader to demonstrate that he heads a superpower on a par with the United States and China"
+   },
+   {
+    "hd": "North Korea is expanding its original uranium enrichment facility, UN nuclear watchdog says",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/north-korea-expanding-original-uranium-enrichment-facility-nuclear-138276975",
+    "pub": "2026-11-19T07:29:33.000Z",
+    "sum": "The U.N. nuclear watchdog says that North Korea has been expanding its original uranium enrichment facility at its Yongbyon nuclear complex"
+   },
+   {
     "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
@@ -15584,6 +15606,20 @@
     "sum": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers."
    },
    {
+    "hd": "Ukraine was main topic at Trump-Putin meeting, Kremlin says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPNDJ3ZUp3ZjhsQ01rN3VaRGlJNkx3SVpycUdaVENpLUtwT01aQmJ0c01ielVrbW0zcUtjVHlMbjlXc1IxaFFCYnhyWHpoY19vY0N0MVk5dXplemZKM0hSaWpIMndSMzBoZ3lndFpyeEhhUE5pTWVlRWpjMDhDYXpmNEJqZVRiMXgzWVRtNHE4cE1LNE1sWTNSM0lRQ2w5cU00MDE5dmdn?oc=5",
+    "pub": "2026-11-19T06:38:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "A Visual Tour of President Trump’s Visits to Asia",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/17/world/asia/president-trump-visits-asia.html",
+    "pub": "2026-11-19T06:28:34.000Z",
+    "sum": "President Trump left the Philippines and headed to China, where he is expected to meet with leaders, including the presidents of Russia and China."
+   },
+   {
     "hd": "Trump Excitedly Greets Putin With 6 Truly Baffling Words",
     "src": "HuffPost",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYm5zMDh4d1Y4MVpmeXJDZXZYZ2pzV2J5TGJ4NEtwWDcxbWczX1oxYmJFMFo0eTJlaWJtVmp0YjlFa0pVTVFlZXhQejBlNjRBcS0ySkN3UVpLdE1qelRjRHF2bWM0a2g3QW4xV2tUM1dkV1M4YThyV2dxNmllaV9ZQks2clLSAYoBQVVfeXFMUHJLaDVtUWlJWG15SkN6bndpbFhiRDVXdXd4dzduTjk0TGV0dmJtTUxXLXVpOVN6cEN4bHlIQS1QWlZDRXBjSGhRNk9ZVHlHNVJJbVZIdWhqSk9pLXFrWVpCdXI5X1lCemMtbzZUVmFtNDd6dGdiTlRDWndIUnEyT0pSZ2FTYzhKYV9R?oc=5",
@@ -15591,10 +15627,10 @@
     "sum": ""
    },
    {
-    "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
+    "hd": "Iowa residents brace for a lead dust cloud as Army plans to detonate 5 tons of bomb-making chemicals",
     "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVV8xWGtoUVBFb0pZRXA2U05JRldkTXdGRUxBWHpBd0ZHd2o2U2ZiYjFELU5jTGdOZ1RfZnpTZk1MM0ZqSTNuRWdYcnAxUlIzdWZzV0p1a1JhS1BreXozOWdnNC1nclNZLU5SaUV0SVdTU0VCdlNNY2ZJOG1qM3E2aS11NzRnMERpVTV6RWNCUklGQ1BxT19tX0V0T25WTnVQNlE?oc=5",
-    "pub": "2026-11-19T05:48:00.000Z",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOWE1NdlJBdlZyMDMta2JjYVJ0TWViaFMyRWJ3TFV4Y3JOUG9kOHdhZGR0SVRteEJPTnJkbWcyWW5icVNua0JfaFZpRWRsdW93SEUwM3kxeWtiaXFWelhISUFBM1UwLWZUWEYyNUZKekRMNzJYZkV6TEs1X3RualBmbV9OWlNCWGtTbm9mTWw3NURmRmVFa1BncEVEZlI?oc=5",
+    "pub": "2026-11-19T05:11:00.000Z",
     "sum": ""
    },
    {
@@ -15612,6 +15648,13 @@
     "sum": "The meeting comes with challenges as there are things Xi does not appear keen to discuss with Putin and Trump."
    },
    {
+    "hd": "He Runs One of the World’s Deadliest Military Forces. We Went Inside His Bunker.",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
+    "pub": "2026-11-19T04:31:11.000Z",
+    "sum": ""
+   },
+   {
     "hd": "How to Decode the Xi-Trump Hug",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/18/world/asia/xi-trump-hug-shenzhen.html",
@@ -15626,25 +15669,18 @@
     "sum": ""
    },
    {
-    "hd": "Trump, Xi and Putin Shake Hands as Leaders Gather in China",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec",
-    "pub": "2026-11-19T03:58:59.000Z",
-    "sum": "China’s leader, Xi Jinping, earlier hugged President Trump on the tarmac as he arrived for a regional summit in Shenzhen. They are expected to hold a trilateral meeting on Thursday with President Vladimir V. Putin of Russia."
-   },
-   {
-    "hd": "Carney and Trump Hold Unscheduled Trade Meeting at Asia Summit",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/canada/trump-carney-meeting-asia-us-canada-trade.html",
-    "pub": "2026-11-19T03:58:57.000Z",
-    "sum": "The bilateral meeting between the neighbors follows trade gains for Canada’s prime minister this week with China and the Philippines."
-   },
-   {
     "hd": "Trump pushes for three-way nuclear deal as Russia and China show little interest",
     "src": "NBC News",
     "url": "https://www.nbcnews.com/world/asia/trump-pushes-three-way-nuclear-deal-russia-china-show-little-interest-rcna610145",
     "pub": "2026-11-19T03:46:42.000Z",
     "sum": "President Donald Trump has repeatedly placed nonproliferation near the top of the agenda for his unprecedented trilateral meeting Thursday with Chinese President Xi Jinping and Russian President Vladimir Putin, but his counterparts have expressed little interest in committing to new limitations on their nuclear arsenals."
+   },
+   {
+    "hd": "Russia is integral part of Asia-Pacific, Putin tells APEC leaders",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTzltQXdId2dDT1BuNko3akc0RFloTWFUdmtyX2kxQXZrdThHaGViaEt0Smh2NVg1NkljQWFDUTUyaGNXTGpsaVlONzVzREVXQ01rTnZJaTFhYkhTcVVIM0drN1FXamNTaFRJRXZycjVHQ0dqNEpqTFRNaWR6T2c2NUoxaHR1dnBNckZ4RXNjUVgzSkREMUtEZ0lKal8wMWR2Q2l1dUxVZjBkWjJCdlE?oc=5",
+    "pub": "2026-11-19T03:34:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Japan says PM Takaichi, Putin held talks at APEC summit in China",
@@ -15701,41 +15737,6 @@
     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQN3g1cTFKQjdZellkcnY0X2ExbFNsNVZya0xEaEJZMjNDYjZlX25YYnJrNi1vNjVEUUZqVlljM2xIUW9IMWtpbEhPTUk1QjBlTndjNE8zWHBYOWpMdWNDYk5xd040OG9Qd0lsV0R3cXZRejYzOVllMUJ5bzFLdDN0ZTBLbmQ3bVpMaF9QYUVrVkhUelZEM2ZsSmQ5TE5oSjN2Y3NsT1RhcXJuVlZRUjVXRm45YXF5c2stVUJqaXZFTGxPQkU?oc=5",
     "pub": "2026-11-19T01:00:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Kerch attack: Bridge connecting Russia to occupied Crimea has been hit again",
-    "src": "CNN",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQMzRmTXhmRm1jLWp1c2JoZGc4Z0VwR1lvMFNNUnVKTmZPbGZ6QVY5bS01Rl96M3Y4WWtQdEtOLUVKMTJ3Z1hLMVlLQllYWW5hbTVQV0hrb2trQ2dYZUZKSVNDUDNKNzgzVUliRDlqWHBaMER2R2VnT05UM2lPS0w5N3haenNObzNYc3VR?oc=5",
-    "pub": "2026-11-19T00:27:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "What the Crimean bridge attack means for Russia",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVWNJeU52cmNIWXVxYXloM1RVdm5SQWdTd3pFWUd6QzhXYmhNeWx4enlkSjNENHBLcnBDY240aV96SEdiTnFVOUtuTWJ4ZmVIUHYySmJaczR6NzJLXzQwc2p0Y1lfSnpNaUdfOEdHLUwyZDdGVkVFODZFZjRtVVVXUjNVdWl5REXSAYcBQVVfeXFMTWR5dF9IVHRBaVhOc2RKbGpGR193aDhrRHRwSFRDZzVLeV9EdnloLTFHRU9CRi01TU5VV09iSXJ0V2VBTGJndFo0R3BSdDhmcXpraFhlSllSREJLVEZYcDVfT3NDQXRLTVdyWEpRNEw3YUY1TVJQT09KWEowOHVWSkFMeHlRVVhB?oc=5",
-    "pub": "2026-11-19T00:14:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Xi Jinping rallies against protectionism as he welcomes Trump to Apec summit",
-    "src": "The Guardian",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeEczVjdhaDgxcUxoWTFaUnMyVGktWmRtMVFaUmJQNHNqRlZGUjFoelozRXFWeGhRVHZRUUtaTndCdGJERzR0eGtpT3hta3lzYjJPWnV0TXhVaDh2SG9JZnpsc05hTzlyT1ZtVVBxbDJIcTdqVkFJOUNnUnBPbkFOUkwxWWFmSWVua2VCTEVVT01YX09HTzNRc1VlODh6YXBaMzktOA?oc=5",
-    "pub": "2026-11-19T00:06:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukraine's European allies meet in Berlin in show of support",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWHBhRURfZmJHUzhfMW53YjcxYUNlVE1rbFZtTmV2S2Jfcm5hYXFweEJaQlZHbmE0U2Q5Y2IzM29LUExzUUx0UlIyVTNMamhzT3NPS25rbmp3bzZuZDhId1B4YzZXYWZXRkU0clRpUm9scVV5ZXRvMnBSTUlTZlVtTDJlSnFlREg3YTZpM0xVOXl2cV9xaWZpcnF2M01zdw?oc=5",
-    "pub": "2026-11-19T00:03:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Hegseth, in Caracas, announces US-Venezuela military partnership agreement",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZV9uT1R6QjFJeHlkYmhUeTdIQ0F0Ync2akZibV9hdmhtNEZMelUzSkk1WlFTNTJUd2NKdC1ILW9rWHZJb3JZemxwT2dwNlc5QjNIYzlNS1kwVkt6aDl5aVl0VFdvRUNPYzBMeXJtMnM4YVJPWjdvSzZ6eWlQNXVFdGdhNkw3YzhpQ0V4Yk11dlFKS21RREIxZVcwUFJxS0xKZ25TMDE1bGtDRUJ2aUp2VVFBVkUtSDU1VXBLNENB?oc=5",
-    "pub": "2026-11-18T23:55:36.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15754,8 +15755,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T07:30:11.757Z",
-  "lastAttempt": "2026-11-19T07:30:11.757Z",
+  "asOf": "2026-11-19T08:30:13.566Z",
+  "lastAttempt": "2026-11-19T08:30:13.566Z",
   "lastError": null
  }
 }
