@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T01:04:52.463Z",
+ "generatedAt": "2026-11-19T01:45:11.159Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6965,15 +6965,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T01:04:52.463Z",
+  "at": "2026-11-19T01:45:11.159Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
    "worldNews",
-   "world",
-   "extended",
    "futures",
    "usTempGrid"
   ]
@@ -13341,62 +13336,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T01:04:52.463Z",
-  "lastAttempt": "2026-11-19T01:04:52.463Z",
+  "asOf": "2026-11-19T01:45:11.159Z",
+  "lastAttempt": "2026-11-19T01:45:11.159Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7392.5,
-    "lastTime": 1795049703,
+    "last": 7364.75,
+    "lastTime": 1795052118,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 52.25,
-    "changePct": 0.7118286161915466,
-    "expectedOpen": 7375.761694083989,
+    "change": 24.5,
+    "changePct": 0.33377609754436155,
+    "expectedOpen": 7348.074526412589,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27564.5,
-    "lastTime": 1795049702,
+    "last": 27329,
+    "lastTime": 1795052119,
     "settle": 27191.5,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 373,
-    "changePct": 1.3717522019748818,
-    "expectedOpen": 24765.002485427427,
+    "change": 137.5,
+    "changePct": 0.5056727286100435,
+    "expectedOpen": 24553.420266075795,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50489,
-    "lastTime": 1795049704,
+    "last": 50399,
+    "lastTime": 1795052114,
     "settle": 50269,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 220,
-    "changePct": 0.4376454673854662,
-    "expectedOpen": 50417.86001571545,
+    "change": 130,
+    "changePct": 0.25860868527323,
+    "expectedOpen": 50327.98682746822,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2735,
-    "lastTime": 1795049703,
+    "last": 2725.8,
+    "lastTime": 1795052118,
     "settle": 2722.199951171875,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 12.800048828125,
-    "changePct": 0.4702097221996764,
+    "change": 3.600048828125182,
+    "changePct": 0.13224777359118692,
     "expectedOpen": null,
     "valid": true
    }
@@ -13858,8 +13853,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T01:04:52.463Z",
-  "lastAttempt": "2026-11-19T01:04:52.463Z",
+  "asOf": "2026-11-19T01:45:11.159Z",
+  "lastAttempt": "2026-11-19T01:45:11.159Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14535,7 +14530,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T01:04:52.463Z",
+  "lastAttempt": "2026-11-19T01:45:11.159Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15534,6 +15529,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Mideast nations ramp up efforts to avert all-out war as Israel urges Iran strikes, officials say",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
+    "pub": "2026-11-19T01:16:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump meets Xi and Putin in China with nuclear arms and two wars on the table",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
+    "pub": "2026-11-19T01:00:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump, Xi and Putin Shake Hands as Leaders Gather in China",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec",
@@ -15601,6 +15610,13 @@
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTlQtc0ZobkZaYXZoanl5Y2pMODJndHlKVDh5amVsTGY4TzA3Wmd1VklyeG5WWEpPbnk4bEl1WUF2VGxTejNmSE1xRkZhTHJWZ2dZZE95d2pzMThXUTBuMFlUZ2R5X3o3bVpzeW1JaTNtZ0xLLWFqcWMyUlN5dWs1ZmVQaFladmh5SEpSTHpMT2Fxc0Zra0c5a0ZOcjdZSW5W?oc=5",
     "pub": "2026-11-18T23:18:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump Weighs New Strikes on Iran as Israel Presses for Action, Officials Say",
+    "src": "The New York Times",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1TOTFWdU93OVF0V1d3QTZ4elZ2SHRiV0RzRmxjM3J2aTZuR3RyNlRWVmN2akRqUTcxVGpRM1dOZmFrelB4cGw3eWRha2F5TmI5SXpRdDFUZEwta3VSTUxQOTd3NGhGVnY1VUlnaWdVazFLVGhpUmlBck9xSmVzdw?oc=5",
+    "pub": "2026-11-18T23:13:04.000Z",
     "sum": ""
    },
    {
@@ -15721,27 +15737,6 @@
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNaGk3WXdmSkVnOHpaSk1rbU54WEdnaHYxYXV0MHBfQUxTYjFmVlR5MndjSEpIZEdrVzdicFdtVFNyVkZud24xNm42azNZMGhhU1NyVmxuNE92blg2NGpzZ2ZwUWx0SG9PUXhVeElIUHRETzliU1o5SGJsQkxLa09yWFRCUXNMVlZOdURGSE8tVDItZXlNRkZrc2pJQ1pudGxBWml0N0NSOTU1RkZMb1ZfTDJrU1gtN00?oc=5",
     "pub": "2026-11-18T19:29:28.000Z",
     "sum": "Ukraine has criticized the proposal by the International Atomic Energy Agency to appoint a Russian official, sanctioned by Kyiv, to a senior position"
-   },
-   {
-    "hd": "El Salvador’s president confirms and celebrates attack on home of key Haitian gang leader",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMVp1by1yclVIYnJfVnZTOEo0LWk2TFE4ampJMlFTdGVudVRMM2FROVpOUFp3WkZfTU5FVWZYMGx5OUE5d2M1TGU3UEMtUUk4Wk90cGdNeFA5dVJFT3BSSFhUeXM3azg2N1VYUEozVGRMNGw4ZlphRE9xZXRhZjlPZmJnbGx1V2c5WXZOV0pQcnktSGVHc0QtQXhzVkVGaFVURkhFdA?oc=5",
-    "pub": "2026-11-18T19:25:00.000Z",
-    "sum": "El Salvador’s president says that his troops have demolished the lavish home of a prominent gang leader in Haiti known as Jeff"
-   },
-   {
-    "hd": "Trump is trying to put the Iran war behind him, but it’s not over",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWE1ReU9uZ3dGbXlkREpmMlczVmVkb1B1bm9FcEZUdFlYVG00NXFRclhMMmdjRjFmb0R2YTRGSmxzRVJQckJkNGF5Tmg1UTdxRTh4Mkd5RXpjakNkQlpoZFRrZWNQRGdJOUZwaVRiQTNPblhnMG1wQlN2QjhIcGVRemxGamdkbmxBY084MkN6NDJIMGhDS1BucVJXNWhZelA3V1VF?oc=5",
-    "pub": "2026-11-18T19:23:31.000Z",
-    "sum": "Turmoil reigns in the Strait of Hormuz as an emboldened Iran launches fresh attacks on Gulf states, following President Donald Trump’s midterm losses."
-   },
-   {
-    "hd": "Trump expected to press Xi on Americans detained in China",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/trump-xi-detained-americans/",
-    "pub": "2026-11-18T19:08:52.000Z",
-    "sum": "President Trump is expected to again press Chinese President Xi Jinping to release two Americans wrongfully detained in China when the leaders meet, their families say."
    }
   ],
   "feeds": [
@@ -15760,8 +15755,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T01:04:52.463Z",
-  "lastAttempt": "2026-11-19T01:04:52.463Z",
+  "asOf": "2026-11-19T01:45:11.159Z",
+  "lastAttempt": "2026-11-19T01:45:11.159Z",
   "lastError": null
  }
 }
