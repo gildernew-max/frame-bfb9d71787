@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T03:00:13.242Z",
+ "generatedAt": "2026-11-19T03:30:11.053Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6658,14 +6658,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T03:00:13.242Z",
+  "at": "2026-11-19T03:30:11.053Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
    "worldNews",
-   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13033,62 +13029,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T03:00:13.242Z",
-  "lastAttempt": "2026-11-19T03:00:13.242Z",
+  "asOf": "2026-11-19T03:30:11.053Z",
+  "lastAttempt": "2026-11-19T03:30:11.053Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7378.75,
-    "lastTime": 1795056650,
+    "last": 7362.5,
+    "lastTime": 1795058415,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 38.5,
-    "changePct": 0.5245052961411396,
-    "expectedOpen": 7362.042827219781,
+    "change": 22.25,
+    "changePct": 0.30312319062702225,
+    "expectedOpen": 7345.829620925718,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27430.5,
-    "lastTime": 1795056643,
-    "settle": 27191,
+    "last": 27317,
+    "lastTime": 1795058418,
+    "settle": 27191.5,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 239.5,
-    "changePct": 0.88080614909345,
-    "expectedOpen": 24645.064929296455,
+    "change": 125.5,
+    "changePct": 0.4615412904768034,
+    "expectedOpen": 24542.639006490997,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50426,
-    "lastTime": 1795056616,
-    "settle": 50271,
+    "last": 50367,
+    "lastTime": 1795058417,
+    "settle": 50269,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 155,
-    "changePct": 0.3083288575918522,
-    "expectedOpen": 50352.94544409301,
+    "change": 98,
+    "changePct": 0.19495116274443494,
+    "expectedOpen": 50296.03191609143,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2727.7,
-    "lastTime": 1795056637,
-    "settle": 2722.300048828125,
+    "last": 2721.5,
+    "lastTime": 1795058415,
+    "settle": 2722.199951171875,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 5.399951171874818,
-    "changePct": 0.19835988226938275,
+    "change": -0.699951171875,
+    "changePct": -0.025712702388877764,
     "expectedOpen": null,
     "valid": true
    }
@@ -13550,8 +13546,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T03:00:13.242Z",
-  "lastAttempt": "2026-11-19T03:00:13.242Z",
+  "asOf": "2026-11-19T03:30:11.053Z",
+  "lastAttempt": "2026-11-19T03:30:11.053Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14227,8 +14223,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T03:00:13.242Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-19T03:30:11.053Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15226,17 +15222,31 @@
  "worldNews": {
   "items": [
    {
-    "hd": "Trump and Xi speak at APEC summit ahead of rare meeting with Putin",
+    "hd": "What to know about Trump's meeting with Xi in China",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/trump-xi-meet-china-chips-ai/",
+    "pub": "2026-11-19T03:18:55.000Z",
+    "sum": "President Trump is holding a high-stakes meeting with Chinese President Xi Jinping on Thursday against the backdrop of a widening scandal."
+   },
+   {
+    "hd": "Florida Man Found Guilty in Plot to Kill Haiti’s President",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/18/world/americas/haiti-pastor-assassination-moise.html",
+    "pub": "2026-11-19T03:17:19.000Z",
+    "sum": "Christian Emmanuel Sanon, 67, who was convicted in a Miami court, could now face life in prison over the killing of Jovenel Moïse."
+   },
+   {
+    "hd": "Trump and Xi speak at APEC summit ahead of rare joint meeting with Putin",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
-    "pub": "2026-11-19T02:53:03.000Z",
+    "pub": "2026-11-19T03:14:50.000Z",
     "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are expected to hold a rare face-to-face meeting in China."
    },
    {
     "hd": "Trump, Xi and Putin Shake Hands as Leaders Gather in China",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/live/2026/11/18/world/trump-china-asia-apec",
-    "pub": "2026-11-19T02:46:57.000Z",
+    "pub": "2026-11-19T03:05:11.000Z",
     "sum": "China’s leader, Xi Jinping, earlier hugged President Trump on the tarmac as he arrived for a regional summit in Shenzhen. They are expected to hold a trilateral meeting on Thursday with President Vladimir V. Putin of Russia."
    },
    {
@@ -15247,11 +15257,11 @@
     "sum": "America's Persian Gulf allies and oil tankers are under fire as Iran appears to lash out following U.S. strikes on a key island in the Strait of Hormuz."
    },
    {
-    "hd": "Florida Man Found Guilty in Plot to Kill Haiti’s President",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/americas/haiti-pastor-assassination-moise.html",
-    "pub": "2026-11-19T02:21:12.000Z",
-    "sum": "Christian Emmanuel Sanon, 67, who was convicted in a Miami court, could now face life in prison over the killing of Jovenel Moïse."
+    "hd": "Trump weighs strikes on Iran as Israel warns of chemical weapons",
+    "src": "Axios",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVhsMGFnUEhueFlmbkpjTEdvbU1LVkxiUk8wVzhQMUZ2QlNfYUo2Nmh4N3dVSzI5ZXByTHpmdU9FNE9HaTloeTBGQU51cHNEbkZ0VEZJZFgxVWdoMFJKdDJkQk00a0Q0VXJlRmQ0RlJKX2RBalV4cy1ZaVVkeFE3bQ?oc=5",
+    "pub": "2026-11-19T02:12:51.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump meets Xi and Putin in China with nuclear arms and two wars on the table",
@@ -15282,6 +15292,13 @@
     "sum": ""
    },
    {
+    "hd": "What the Crimean bridge attack means for Russia",
+    "src": "DW",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVWNJeU52cmNIWXVxYXloM1RVdm5SQWdTd3pFWUd6QzhXYmhNeWx4enlkSjNENHBLcnBDY240aV96SEdiTnFVOUtuTWJ4ZmVIUHYySmJaczR6NzJLXzQwc2p0Y1lfSnpNaUdfOEdHLUwyZDdGVkVFODZFZjRtVVVXUjNVdWl5REXSAYcBQVVfeXFMTWR5dF9IVHRBaVhOc2RKbGpGR193aDhrRHRwSFRDZzVLeV9EdnloLTFHRU9CRi01TU5VV09iSXJ0V2VBTGJndFo0R3BSdDhmcXpraFhlSllSREJLVEZYcDVfT3NDQXRLTVdyWEpRNEw3YUY1TVJQT09KWEowOHVWSkFMeHlRVVhB?oc=5",
+    "pub": "2026-11-19T00:14:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Xi Jinping rallies against protectionism as he welcomes Trump to Apec summit",
     "src": "The Guardian",
     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQeEczVjdhaDgxcUxoWTFaUnMyVGktWmRtMVFaUmJQNHNqRlZGUjFoelozRXFWeGhRVHZRUUtaTndCdGJERzR0eGtpT3hta3lzYjJPWnV0TXhVaDh2SG9JZnpsc05hTzlyT1ZtVVBxbDJIcTdqVkFJOUNnUnBPbkFOUkwxWWFmSWVua2VCTEVVT01YX09HTzNRc1VlODh6YXBaMzktOA?oc=5",
@@ -15301,6 +15318,13 @@
     "url": "https://www.cbsnews.com/news/haitian-president-jovenel-moise-assassination-conviction/",
     "pub": "2026-11-18T23:52:36.000Z",
     "sum": "A Florida pastor with dual Haitian-American citizenship has been convicted of U.S. charges related to the 2021 assassination of Haitian President Jovenel Moïse."
+   },
+   {
+    "hd": "Trump, Xi and Putin Will Sit Down for the First Time. It Won’t Be Like Yalta.",
+    "src": "The New York Times",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMGRTdlhWbkxzY1hHZWw0alBsRDFueVFJYW1tRTV0amhUSFVHd1lxTXFQaGxteXZHdTV2WXdrMDMwd01rSHJyREVZNmJsNXlUdXJDdVExUkVpSkp6S3hyNEdGN0lCaTVIMUlXZEl6dE12Nk9hd18wRlRmVXBZNmh3NzdhdHZSQQ?oc=5",
+    "pub": "2026-11-18T23:35:48.000Z",
+    "sum": ""
    },
    {
     "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
@@ -15338,10 +15362,10 @@
     "sum": ""
    },
    {
-    "hd": "Trump Weighs New Strikes on Iran as Israel Presses for Action, Officials Say",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1TOTFWdU93OVF0V1d3QTZ4elZ2SHRiV0RzRmxjM3J2aTZuR3RyNlRWVmN2akRqUTcxVGpRM1dOZmFrelB4cGw3eWRha2F5TmI5SXpRdDFUZEwta3VSTUxQOTd3NGhGVnY1VUlnaWdVazFLVGhpUmlBck9xSmVzdw?oc=5",
-    "pub": "2026-11-18T23:13:05.000Z",
+    "hd": "Iran and US trade tit-for-tat strikes as wild video shows strike on UAE oil tanker",
+    "src": "New York Post",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNZkhUSmRtQzRXeWN5V3RxdzJvMnAweVRQdDJtQkQxRGRubmV6T19VYnhVVzZXWDhxSF9Sd0FjUXI2Q3RFX3RqYzQ0eGxfOVhXVnlBSHZaZVYzYVBwRHBuam5TVHJkOVNhV0dOdDlQRHJsbV9IQUJPMGpJbjFmWk8zYkhWWWRxVnlOUEJ6MHRlV3N0anpTdkVuU2xTNDZSREZ0RFQ0dTZ1aw?oc=5",
+    "pub": "2026-11-18T23:11:00.000Z",
     "sum": ""
    },
    {
@@ -15357,6 +15381,13 @@
     "url": "https://abcnews.com/International/wireStory/brazils-senate-approves-lulas-10-billion-fiscal-package-138265187",
     "pub": "2026-11-18T23:04:44.000Z",
     "sum": "Brazil’s Senate approved on Wednesday a plan by President Luiz In&aacute;cio Lula da Silva to control his government’s spending and increase revenues after his reelection late October"
+   },
+   {
+    "hd": "Trump administration appeals to Supreme Court over legal protections for Venezuelan migrants",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOb3oySmt4WDNyUnNPN1QzRXJpcDZ1OWFUUkFZMXlJX3dfQXYxWkFSaDNuN2hLb1NpM3hpQWowSVlLQmVMd1c3MUM5RnY0ck9DMXh0TDNOTmc0cFMyeS1ZX0dHSDRJQzdmMGhodHRCSFF6VThMb24yem4zSG0wd3hRbE1oa19Ubk55T1R5RXdGN1NSaXpNSzkzTkNaR3I2VXNxdGlPdFNaeGFXbjlTS1c4Tm1OelIwVm8?oc=5",
+    "pub": "2026-11-18T23:03:00.000Z",
+    "sum": ""
    },
    {
     "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
@@ -15399,41 +15430,6 @@
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
     "pub": "2026-11-18T21:31:11.000Z",
     "sum": ""
-   },
-   {
-    "hd": "What the Crimean bridge attack means for Russia",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPVWNJeU52cmNIWXVxYXloM1RVdm5SQWdTd3pFWUd6QzhXYmhNeWx4enlkSjNENHBLcnBDY240aV96SEdiTnFVOUtuTWJ4ZmVIUHYySmJaczR6NzJLXzQwc2p0Y1lfSnpNaUdfOEdHLUwyZDdGVkVFODZFZjRtVVVXUjNVdWl5REXSAYcBQVVfeXFMTWR5dF9IVHRBaVhOc2RKbGpGR193aDhrRHRwSFRDZzVLeV9EdnloLTFHRU9CRi01TU5VV09iSXJ0V2VBTGJndFo0R3BSdDhmcXpraFhlSllSREJLVEZYcDVfT3NDQXRLTVdyWEpRNEw3YUY1TVJQT09KWEowOHVWSkFMeHlRVVhB?oc=5",
-    "pub": "2026-11-18T21:18:54.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "US Defense Secretary Hegseth vows to boost Venezuela military cooperation",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZV9uT1R6QjFJeHlkYmhUeTdIQ0F0Ync2akZibV9hdmhtNEZMelUzSkk1WlFTNTJUd2NKdC1ILW9rWHZJb3JZemxwT2dwNlc5QjNIYzlNS1kwVkt6aDl5aVl0VFdvRUNPYzBMeXJtMnM4YVJPWjdvSzZ6eWlQNXVFdGdhNkw3YzhpQ0V4Yk11dlFKS21RREIxZVcwUFJxS0xKZ25TMDE1bGtDRUJ2aUp2VVFBVkUtSDU1VXBLNENB?oc=5",
-    "pub": "2026-11-18T21:18:45.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "‘An absolute nightmare’ — Trump’s trilateral with Xi and Putin spooks allies",
-    "src": "Politico",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPY24yVThNVGxzaDhqbHpKbmV1OUhDZ2ZnZjZ4bkQwNkNfQVh6aHhBM0o3LWtTQ1lyVGZMVXZRV1BDV0p0OEx2RzAzdTBNN0RsUllqamtUOThZU2VZZDdBYnQ1MjZBdHlmYUUxU2hUTlAtMzJZRjBISkIxbXFCV1dhTg?oc=5",
-    "pub": "2026-11-18T20:55:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Hegseth makes surprise appearance in Venezuela, renews military partnership",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/18/hegseth-makes-surprise-appearance-venezuela-renews-military-partnership/",
-    "pub": "2026-11-18T20:33:50.000Z",
-    "sum": "The visit comes less than a year after the U.S. capture of President Nicolás Maduro, whom the Trump administration accuses of running a criminal network with deep military ties."
-   },
-   {
-    "hd": "What to know about Trump's meeting with Xi in China",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/trump-xi-meet-china-chips-ai/",
-    "pub": "2026-11-18T20:23:00.000Z",
-    "sum": "President Trump is holding a high-stakes meeting with Chinese President Xi Jinping on Thursday against the backdrop of a widening scandal."
    }
   ],
   "feeds": [
@@ -15452,8 +15448,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T03:00:13.242Z",
-  "lastAttempt": "2026-11-19T03:00:13.242Z",
+  "asOf": "2026-11-19T03:30:11.053Z",
+  "lastAttempt": "2026-11-19T03:30:11.053Z",
   "lastError": null
  }
 }
