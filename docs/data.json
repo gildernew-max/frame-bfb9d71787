@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T06:45:12.041Z",
+ "generatedAt": "2026-11-19T07:00:18.957Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 55,
-     "i": "cloud",
-     "cond": "Mostly Cloudy",
-     "windMph": 11,
-     "windDir": "E",
-     "observed": "2026-11-19T05:30:00+00:00"
+     "temp": 53,
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": 9,
+     "windDir": "ENE",
+     "observed": "2026-11-19T02:00"
     },
     "today": {
-     "h": 66,
-     "l": 50,
-     "sunrise": "07:12",
-     "sunset": "17:33"
+     "h": 67,
+     "l": 49,
+     "sunrise": "07:13",
+     "sunset": "17:32"
     },
     "forecast": [
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "partly",
-      "text": "Partly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 70,
-      "l": 54
+      "l": 51,
+      "pop": 5
      },
      {
       "date": "2026-11-21",
       "d": "Sat",
-      "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 68,
-      "l": 53
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 67,
+      "l": 53,
+      "pop": 4
      },
      {
       "date": "2026-11-22",
       "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 70,
+      "l": 52,
+      "pop": 6
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 67,
+      "l": 49,
+      "pop": 3
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 70,
+      "l": 51,
+      "pop": 5
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 67,
+      "l": 53,
+      "pop": 4
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 70,
+      "l": 52,
+      "pop": 6
+     },
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 72,
+      "l": 55,
+      "pop": 8
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 65,
+      "l": 56,
+      "pop": 16
+     },
+     {
+      "date": "2026-11-25",
+      "d": "Wed",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 56,
+      "l": 45,
+      "pop": 28
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-19T02:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T03:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T04:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 50,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T05:00",
       "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 71,
-      "l": 54
+      "text": "Partly cloudy",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T06:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T07:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 49,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T08:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 50,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T09:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 54,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-19T10:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 58,
+      "pop": 2
+     },
+     {
+      "t": "2026-11-19T11:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 62,
+      "pop": 2
+     },
+     {
+      "t": "2026-11-19T12:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 64,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-19T13:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 66,
+      "pop": 3
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 54,
+     "temp": 53,
      "i": "sun",
      "cond": "Clear",
-     "windMph": null,
-     "windDir": "",
-     "observed": "2026-11-19T05:30:00+00:00"
+     "windMph": 14,
+     "windDir": "SW",
+     "observed": "2026-11-19T01:00"
     },
     "today": {
-     "h": 56,
-     "l": 46,
-     "sunrise": "07:14",
-     "sunset": "16:41"
+     "h": 54,
+     "l": 38,
+     "sunrise": "07:15",
+     "sunset": "16:39"
     },
     "forecast": [
      {
       "date": "2026-11-20",
       "d": "Fri",
-      "i": "partly",
-      "text": "Partly Sunny",
-      "h": 64,
-      "l": 54
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 35,
+      "pop": 9
      },
      {
       "date": "2026-11-21",
       "d": "Sat",
       "i": "rain",
-      "text": "Chance Light Rain",
-      "h": 58,
-      "l": 36
+      "text": "Drizzle",
+      "h": 62,
+      "l": 46,
+      "pop": 59
      },
      {
       "date": "2026-11-22",
       "d": "Sun",
-      "i": "snow",
-      "text": "Slight Chance Rain And Snow then Mostly Sunny",
-      "h": 41,
-      "l": 24
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 46,
+      "l": 35,
+      "pop": 32
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-19",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 54,
+      "l": 38,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-20",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 35,
+      "pop": 9
+     },
+     {
+      "date": "2026-11-21",
+      "d": "Sat",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 62,
+      "l": 46,
+      "pop": 59
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 46,
+      "l": 35,
+      "pop": 32
+     },
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 37,
+      "l": 30,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 34,
+      "l": 27,
+      "pop": 2
+     },
+     {
+      "date": "2026-11-25",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 30,
+      "pop": 10
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-19T01:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T02:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T03:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 48,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T04:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T05:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T06:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T07:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 46,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T08:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 47,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T09:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 50,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T10:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T11:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-19T12:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 52,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-19T06:00:16.315Z",
-  "lastAttempt": "2026-11-19T06:00:16.315Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "lastError": null
  },
  "nfl": {
@@ -166,10 +473,38 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "Anthropic Shares Indicated More Than 20% Higher on Gray Markets",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPNDFGNWFPNzlyZllvRnktWk54QndaMUgtTlFmUV9kZHVwWXpJM2Ztc0N5TUJabkFHMjlVTzVmSHpQcndMT2FWQXVlMVBGdExGRlhBYW0xZU1QSlNldjB1ekR3X1NOQVlvVDl5UlVibmdEdnBCUHFTbnFiSXAybUNFRmlJUmo5UUNKZ2I2cnl3ZXMwQkE1SHozcldvYW85cmN1WWFQaDdmRVJtWmZZODRFZG9kbw?oc=5",
+    "pub": "2026-11-19T05:53:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Lenovo Sales Beat Estimate Due to Solid AI Hardware Demand",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNa2ZyMnl6LUU0Qnl5S2hWdU9iRGhPMUpwU01YQURIRjFyNnlWaTRPWF8zM3FIeTdHZGpTc1hhY0sxenNIdmFQZDlZOXYtUlFIcldUeEVia3VPeUpRZHZtSkQ4MnVFQTNOZkpfekY1RENlSUN3Slpjc0JRRi1WTTJYTTJtMXBVTUxDVkVEdnVJSzdTYTBOVmc4SnR5a1dtTTI0RlhoSFJXN25jeVNlTmc?oc=5",
+    "pub": "2026-11-19T05:49:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Asian Stocks Set to Fall Ahead of Anthropic Debut: Markets Wrap",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
-    "pub": "2026-11-19T05:09:00.000Z",
+    "pub": "2026-11-19T05:47:01.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Is China Winning the AI Race That Matters?",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQYW9SR2djcnFlRFRkb1FYNExHYUFjdnlCOFRhbS1ST29fdDZpall2T01VMms3NVZPTk5tRUxzZUM3VlZyTHpqOUNuUDRBWW40RURNemhnWl9TV1o2eWhkZXJFbDZnSV9WcUlNNlMzdHBVTmwzQVBvcl9ZRjV1M0tIdzVRSGJBeDg0ekNXaE1NRGdyVTNTV3BqUnNDXzNwY2V5UkM2QUJKMTdPbGFnX3VWbTFqTQ?oc=5",
+    "pub": "2026-11-19T05:00:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump Warns Against Regulations That Would ‘Stifle’ AI Industry",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTWJ1dXFRb1Q2R1NTeUc3NC1reXFsanRLdDMzWUZXNllESENlQ3JRWVIwbk1CZ2xBSGM0X1FpNHBVaUtSV1gwajdXR0RIQlIybkY4dnBhSnMzQkNPNmdCdmlHTnNqM2RsRzhmam1NUXVkTjliOHFGS014UWtVQWtuSHFMc1RhRFNFRWF4Njg1Y0wxNTlDT1UzNEtXRkRaWnJoUThyZmtMZGxsNkl6eDFsZnZn?oc=5",
+    "pub": "2026-11-19T03:52:00.000Z",
     "sum": ""
    },
    {
@@ -178,20 +513,6 @@
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNLLU4td19HNzA2NGJmY25DV0RnaGRFLW56ZnpfZWRnbWlEMkZLQngxWmlVclpTZy1ZSjV1LXpEdW0zM3k3aEhLYXVsNkw4ZVRybXIxQUs5QTNEUGtBXzFQX2o3QkRac2p4MGNMcTBmYm84amlvT3pKRUh1eVFMTUVfLWpySHRnSmg4d1E0RXNnSG5LNzJtdWVuV25yclFfQldYbVo0dC1vVVJKb0lRTVpB?oc=5",
     "pub": "2026-11-19T03:29:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump Hails ‘Great’ Ties With Xi, Downplays Nvidia Spy Scandal",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOQWZpM1JtWXdsSERxQnBGVDFrdllyaVdlVERuMWljcURSa3ZmcDVIUDA5Nldab1VCaU1MVXVBNENKT3hxQUdSY0ZrQnFISVBmT2RJQVNsSk1ZNnpYMExfWVlXenU5eXNoTVhfWGJpcm5DMGtVV1ZzLWE2cUs2eGtvbVE5ZDhRelNSR1JqVmdBZEFScjRqa2d5RkVJUGszWmNvX1FtNjZSQ2YxaG4xWEQ4?oc=5",
-    "pub": "2026-11-19T03:20:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Anthropic Is Said to Price IPO Above Range at $83 Per Share",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQa3BkQzh0ZFBoUzZmTzU4akxveFYzZ2pZWEM0aklQWU50RlBfaW4yaDNTMWxKbzFmZ1d3QW96ZkVjOC0zOHh6eUhGWHhZbkVqRHdGc09WSnk3ek56UTJzYjZtZXI5cVo5UmlRd1JJUE9Qa29HRXZEN0JZZlFNR01yX2xpYkVGWDNSTVNxeGFCTzNBZ3VDc29BQlV6dzdBdw?oc=5",
-    "pub": "2026-11-19T02:53:00.000Z",
-    "sum": "Anthropic stock is set to begin trading on the Nasdaq under the ticker symbol ANT on Thursday."
    },
    {
     "hd": "Musk says Jensen Huang is irreplaceable, regrets midterm spending",
@@ -206,20 +527,6 @@
     "url": "https://www.theinformation.com/articles/u-s-commerce-department-rushed-clear-nvidia-h200-exports-china",
     "pub": "2026-11-19T02:34:39.000Z",
     "sum": "In recent months, Jeffrey Kessler, the official overseeing the U.S. Bureau of Industry and Security, has pressured staff to expedite the approval of sales of Nvidia’s H200 graphics processing units to China, according to three people with knowledge of the matter. In some cases, Kessler directed staff at BIS —an agency under the Commerce Department—to approve the exports over objections from other U.S. government departments, two of those people said. The H200, launched in 2023, is an older generation of Nvidia chips that developers can use to train and run AI models. In December 2025…"
-   },
-   {
-    "hd": "Alibaba’s AI Ambitions Face Steep Challenge in US Chip Controls",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSWZpZTZZU3dMUFVnWXI2RW1xdUpndjNuTmNJd1YyazhpR0ZyckFzelFKSFZrUExGM08zWFQxT2RidjU2TmhBODI4a1V4QmdMZGU2bU92WnZSdld1UG5rY28tNGU2OHFNejJJSDY1NW50U3FjdFg0RE00Zl9vRnNIOEpfenY2MV9Pc1cwYktxN1gyQVVqLTd2a0c1RG52TjN4cGE4SUJMajRORU9UcDRZYkFlRk0?oc=5",
-    "pub": "2026-11-19T02:31:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "MAS Warns AI Agents Could Move Money Faster, Raise Finance Risks",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM3phS3NuMW04a3d4cEVhNnVDM25naVJfNUUtR0w3a2M4WHpjUVhxMmt5MWtoMU9DUzZrdFc3RFU1TU15djdQV1I1R1RaQ1g2ZUJnM3BqX2RXbFg4WGdDYTdfUWxic0ltSVJRQjcwd0ZXV2ZpeWF2UXFTSm16Sm9Wdl9QWTZXU1RSMkQxdF9CTWNFWS0wbmRMMjBFMVF6RmUtV1IwdXlMcHctVTBkN3RCaHJvWE4?oc=5",
-    "pub": "2026-11-19T02:31:00.000Z",
-    "sum": ""
    },
    {
     "hd": "Asian stocks fail to get a lift from Anthropic's IPO pricing",
@@ -341,6 +648,13 @@
     "sum": "“I don’t think [Huang is] disloyal to the United States,\" Musk said."
    },
    {
+    "hd": "Democrats probe whether Lutnick helped Cantor Fitzgerald avoid Nvidia-linked losses",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONTZfWHVZQkZBSHhzWl9pY3ZMUk9HQVhEUmtmckJNcVBYUXFHQ2ZDZF9XUkpESEF2bjM1cjh3S2R6T3N4cG8xeDJCS0NOQ1JLMDRRcFZvUjl0X3YzREVxM1RheFRESF9QekdKTnpFRC1oaW51Mkwwb0w1REYwSngzRjh1VXA1ZVJick5SczdmTjltWExrV0JEeXRVUmVpbDhEQ0lORlAzWGpWaG50UWJFOGpValMzd09jZGhQNQ?oc=5",
+    "pub": "2026-11-18T23:23:41.000Z",
+    "sum": "The congressional probe is among the first to be announced since the blue-wave midterm that will deliver Democrats control of the House and Senate come January."
+   },
+   {
     "hd": "The nation’s largest school districts consider ditching Google Search",
     "src": "The Verge",
     "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
@@ -367,13 +681,6 @@
     "url": "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/",
     "pub": "2026-11-18T22:58:11.000Z",
     "sum": "Microsoft's CEO says AI agents could disrupt advertising-driven business models, forcing companies like Amazon to rethink how they compete for customers."
-   },
-   {
-    "hd": "Retail investor enthusiasm for Anthropic IPO to rival SpaceX debut",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/18/anthropic-ipo-retail-investors.html",
-    "pub": "2026-11-18T22:37:00.000Z",
-    "sum": "Anthropic is gearing up for a blockbuster initial public offering this week, and excitement among retail investors looks to be off the charts."
    }
   ],
   "feeds": [
@@ -392,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-19T06:00:16.315Z",
-  "lastAttempt": "2026-11-19T06:00:16.315Z",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -6658,9 +6965,13 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T06:45:12.041Z",
+  "at": "2026-11-19T07:00:18.957Z",
   "ran": [
+   "weather",
    "alerts",
+   "news",
+   "stockNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13028,62 +13339,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T06:45:12.041Z",
-  "lastAttempt": "2026-11-19T06:45:12.041Z",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7406.25,
-    "lastTime": 1795070108,
+    "last": 7405.5,
+    "lastTime": 1795071022,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 66,
-    "changePct": 0.8991519362419536,
-    "expectedOpen": 7389.480560948196,
+    "change": 65.25,
+    "changePct": 0.8889343006028404,
+    "expectedOpen": 7388.73225911924,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27624.25,
-    "lastTime": 1795070111,
-    "settle": 27191.5,
+    "last": 27617,
+    "lastTime": 1795071023,
+    "settle": 27191,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 432.75,
-    "changePct": 1.5914899876799737,
-    "expectedOpen": 24818.684173776728,
+    "change": 426,
+    "changePct": 1.5666948622706043,
+    "expectedOpen": 24812.626753153618,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50538,
-    "lastTime": 1795070105,
-    "settle": 50269,
+    "last": 50537,
+    "lastTime": 1795071020,
+    "settle": 50271,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 269,
-    "changePct": 0.5351210487576837,
-    "expectedOpen": 50466.79097376116,
+    "change": 266,
+    "changePct": 0.5291321039963399,
+    "expectedOpen": 50463.78463308866,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2734.8,
-    "lastTime": 1795070108,
-    "settle": 2722.199951171875,
+    "last": 2734.2,
+    "lastTime": 1795071023,
+    "settle": 2722.300048828125,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 12.600048828125182,
-    "changePct": 0.4628627233168897,
+    "change": 11.899951171874818,
+    "changePct": 0.4371285662283046,
     "expectedOpen": null,
     "valid": true
    }
@@ -13545,8 +13856,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T06:45:12.041Z",
-  "lastAttempt": "2026-11-19T06:45:12.041Z",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14222,30 +14533,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T06:45:12.041Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
+    "src": "The New York Times",
+    "hd": "After A.I. Cheating Scandal, South Korea Adopts New Restrictions for Grueling College Entrance Exam",
+    "pub": "2026-11-19T06:02:00.000Z"
+   },
+   {
     "src": "Reuters",
-    "hd": "Indonesia parliament passes asset forfeiture bill into law",
-    "pub": "2026-11-19T04:50:00.000Z"
+    "hd": "Parts of Bangladesh shut down in protests by Hasina's party, Yunus' home set ablaze",
+    "pub": "2026-11-19T05:58:00.000Z"
    },
    {
-    "src": "BBC News",
-    "hd": "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
+    "src": "BBC",
+    "hd": "China's Xi Jinping has orchestrated a remarkable diplomatic moment - but it comes with pitfalls",
     "pub": "2026-11-19T04:42:52.000Z"
-   },
-   {
-    "src": "The Washington Post",
-    "hd": "Putin touts Russia’s economy at APEC as Ukraine sends it toward a fuel crisis",
-    "pub": "2026-11-19T03:23:25.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T06:00:16.315Z",
-  "lastAttempt": "2026-11-19T06:00:16.315Z",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "lastError": null
  },
  "movers": {
@@ -14472,18 +14783,18 @@
    "NVDA": {
     "items": [
      {
-      "hd": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
-      "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
-      "pub": "2026-11-19T05:47:57.000Z",
-      "sum": "Anthropic’s IPO was roughly 7 times oversubscribed, according to Bloomberg."
-     },
-     {
       "hd": "Anthropic's record IPO lands as Nvidia suffers its worst run since 2008",
       "src": "Yahoo Finance",
       "url": "https://www.euronews.com/2026/11/19/anthropics-record-ipo-lands-as-nvidia-suffers-its-worst-run-since-2008?.tsrc=rss",
-      "pub": "2026-11-19T05:31:02.000Z",
+      "pub": "2026-11-19T05:53:05.000Z",
       "sum": "Anthropic priced its record IPO at $83 a share ahead of Thursday's debut, as Nvidia heads for a seventh weekly loss and Washington tightens AI chip exports.View on euronews"
+     },
+     {
+      "hd": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=02b59ff1fded506a48693ee1d80e2d90a38ff1fdf75fd2771a78cdada35859e6",
+      "pub": "2026-11-19T05:47:57.000Z",
+      "sum": "Anthropic’s IPO was roughly 7 times oversubscribed, according to Bloomberg."
      },
      {
       "hd": "Stocks Settle Mostly Lower as Nvidia Weakness Pressures Chipmakers",
@@ -14502,42 +14813,42 @@
      {
       "hd": "Nvidia (NVDA) Rules Out Jensen Huang Return As Record Q3 Reshapes Leadership",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-rules-jensen-huang-051505790.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=523027b5f9bde7b8fae28378a1de92b64fd1304b3500ce06923e7239824ee1d2",
       "pub": "2026-11-19T05:15:05.000Z",
       "sum": "Nvidia (NasdaqGS:NVDA) confirmed that Jensen Huang will not return as CEO following his resignation over code of conduct and national security concerns. The board created a National Security and Export Control Oversight Committee to address geopolitical and compliance risks tied to sensitive technologies. The company reported record-breaking Q3 earnings and sales that came in above analyst expectations and raised its fiscal 2028 outlook while expanding share buybacks and shifting further..."
      },
      {
       "hd": "Why Did Cathie Wood Sell Nvidia Before Earnings and Buy Crypto Stocks?",
       "src": "Yahoo Finance",
-      "url": "https://beincrypto.com/why-cathie-wood-sold-nvidia-crypto/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=04eec56be3a947472808df27b48c8dc27aa88eb932946df328fe17a67e8d0082",
       "pub": "2026-11-19T05:00:00.000Z",
       "sum": "Cathie Wood's ARK sold $84.8M of Nvidia before earnings and bought crypto stocks. Three explanations fit the trade data."
      },
      {
       "hd": "Wall St’s $500 bln pledge to Nvidia yet to be mobilized, WSJ reports",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/wall-st-500-bln-pledge-044504722.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=da596300c47deeacad37f79508a8064f344cda0fc6f849c3b06e6725125f121c",
       "pub": "2026-11-19T04:45:04.000Z",
       "sum": "Investing.com-- Wall Street’s biggest banks and asset managers had pledged up to $500 billion to help Nvidia customers finance chip purchases earlier this year, but no capital has been deployed to date, the Wall Street Journal reported on Wednesday."
      },
      {
       "hd": "Fallout from former Nvidia CEO’s downfall hangs over US-China relations",
       "src": "Yahoo Finance",
-      "url": "https://www.cnn.com/2026/11/18/business/video/timeline-jensen-huang-nvidia-revelations-hnk-digvid?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=f2870ed6d4f0ceccd3e8cf231b11884c9a7dd7ec2e0ae961aef3000da41cff52",
       "pub": "2026-11-19T04:17:21.000Z",
       "sum": "Jensen Huang helped transform Nvidia into America’s second-most valuable company before reports of multiple affairs, including with a suspected Chinese intelligence asset, brought his leadership to an abrupt end. CNN’s Will Ripley examines the revelations that rocked one of AI’s most visible players and how the scandal is impacting US-China relations."
      },
      {
       "hd": "Anthropic, Nvidia And The Next AI Trade: Michael Burry Explains What Could Break The Bull Case",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-nvidia-next-ai-trade-michael-burry-what-could-break-bull-case/cNbLwugR9ig?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b4273bd42e67ad09208e7f10a64095d9c6fe85f2d995c4c12633899c3029bf07",
       "pub": "2026-11-19T04:07:45.000Z",
       "sum": "Burry held $140 Nvidia puts and flagged slower collections. The wait for payment rose from 60 to 64 days, with $81 billion owed."
      },
      {
       "hd": "4 Things the Headlines Missed in Nvidia's First Post-Jensen Earnings Report",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/18/4-things-the-headlines-missed-in-nvidia-s-first-post-jensen-earnings-report/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=97c46f440e485078ba12aec5afe98a855c27934dc8e2b0c30223c54294d6073e",
       "pub": "2026-11-19T04:07:02.000Z",
       "sum": "Nvidia easily beat third-quarter expectations, yet the real story is hiding in the fine print. Interim CEO Colette Kress just dialed back the sales swagger and put customer financing on a tighter leash."
      },
@@ -14649,7 +14960,7 @@
     ],
     "fetched": {
      "Finnhub": 154,
-     "Yahoo": 13,
+     "Yahoo": 10,
      "Google News": 92,
      "Nasdaq": 10,
      "Seeking Alpha": 29
@@ -14658,9 +14969,16 @@
    "TSLA": {
     "items": [
      {
+      "hd": "Elon Musk Doubles Down On Autonomy: Tesla Plans Wheel-Less, Pedal-Less Model Y To Sit Alongside Two-Seat Cybercab",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/elon-musk-doubles-down-autonomy-053905404.html?.tsrc=rss",
+      "pub": "2026-11-19T05:39:05.000Z",
+      "sum": "Tesla Inc. (NASDAQ:TSLA) CEO Elon Musk doubled down on his vision for autonomous vehicles on Wednesday, saying the automaker will release the Model Y without a steering wheel and pedals in the future. Model Y Without Traditional Vehicle Controls? During his appearance at the Dealbook Summit, Musk was asked about whether Tesla’s business model will focus solely on autonomy going forward. “It’s going to make sense for us to make cars that can seat different amounts of people,” he said, adding that"
+     },
+     {
       "hd": "EXCLUSIVE: Tesla Still Rules Leveraged ETFs, but Anthropic IPO and Micron’s Rise Signal What’s Next",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-tesla-still-rules-leveraged-033004009.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e42b748455cf499f7fded2d21cf0903fbce35746b9a844311cc28284652c0b63",
       "pub": "2026-11-19T03:30:04.000Z",
       "sum": "The artificial intelligence trade is expanding beyond Nvidia Corp., with memory stocks emerging as another major focus for leveraged ETF traders. Micron Technology’s strong performance and growing interest in its leveraged products underscore how investors are targeting different layers of..."
      },
@@ -14726,13 +15044,6 @@
       "url": "https://finnhub.io/api/news?id=7c1c264f5d92a648611a3e8b251ee9dc707f785a294ec0922f8cf98f58a3086c",
       "pub": "2026-11-18T18:00:00.000Z",
       "sum": "Egan-Jones released a commentary examining the Tesla Roadster demonstration and what it signals for traditional automakers, auto insurers and the wider vehicle industry. The commentary finds that the spectacle serves primarily as a way for Mr. Musk to elevate the Tesla brand, particularly among younger consumers."
-     },
-     {
-      "hd": "Tesla Stock Is Still a High-Stakes Bet on the Future. Here’s My Price Target",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1a58d606bbbed16b13e21fe4a33e0df3e611ecaaa1962a5a23db7cbea93671ac",
-      "pub": "2026-11-18T17:33:28.000Z",
-      "sum": "Tesla's business is accelerating while its shares sit in the red, and Wall Street remains unconvinced. One bold 2027 scenario would force the market to rethink everything, but it hinges on a number analysts keep moving the wrong way."
      },
      {
       "hd": "Waymo’s Speed Bump Is Bad News for Tesla Stock",
@@ -14834,15 +15145,22 @@
      }
     ],
     "fetched": {
-     "Finnhub": 134,
-     "Yahoo": 8,
-     "Google News": 16,
+     "Finnhub": 135,
+     "Yahoo": 9,
+     "Google News": 15,
      "Nasdaq": 10,
      "Seeking Alpha": 12
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Planet Labs Teams Up With Stoke Space -- Just In Case SpaceX Really Retires the Falcon 9",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/19/planet-labs-teams-up-with-stoke-space-just-in-case-spacex-really-retires-the-falcon-9/?.tsrc=rss",
+      "pub": "2026-11-19T06:50:01.000Z",
+      "sum": "If SpaceX retires the Falcon 9, Planet Labs will be ready with a replacement ride to space."
+     },
      {
       "hd": "Anthropic to begin trading after record-breaking market debut tops SpaceX record",
       "src": "Yahoo Finance",
@@ -14853,7 +15171,7 @@
      {
       "hd": "Elon Musk Names 2 Anthropic Favorites Ahead Of Its IPO — Flags A Risk To 10-GW Opportunity For SpaceX",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2-anthropic-favorites-ipo-flags-risk-10-gw-opportunity-spacex/cNbLUlbR9i0?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=018a5c08229f0509b59fd8308fdfa294af12d2c1a185284099c5b6409cf2360f",
       "pub": "2026-11-19T05:12:01.000Z",
       "sum": "Musk praised Anthropic’s Opus and Fable models, saying he met the team before the SpaceX deal and knew several employees from his OpenAI days."
      },
@@ -14881,7 +15199,7 @@
      {
       "hd": "Anthropic set to begin trading after pricing its stock at $83 per share in biggest IPO on record",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-begin-trading-pricing-011538935.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=31a465f24b2083e6bea1957de0199bee7526a7ed09ab156029b3f5b5be2874aa",
       "pub": "2026-11-19T01:15:38.000Z",
       "sum": "(AP) — Anthropic is set to begin trading on the Nasdaq on Thursday after pricing its IPO at $83 per share, valuing the artificial intelligence giant at $1.5 trillion and surpassing SpaceX as the largest initial public offering on record."
      },
@@ -14891,13 +15209,6 @@
       "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
       "pub": "2026-11-19T01:02:05.000Z",
       "sum": "Anthropic priced its initial public offering at $83 a share on Wednesday, above its expected range and toppling SpaceX's IPO to set a new record, as hot demand for the AI giant brushed aside market jitters over the spy scandal that toppled Nvidia's chief executive.The companies are investors in Anthropic or major suppliers of its computing power and have a lot riding on the IPO. Anthropic had initially set a range of $70 to $78 a share last week."
-     },
-     {
-      "hd": "Anthropic Prices at $83 a Share in Record-Sized Offering",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c26abd568b0ed88a637a0b48d7bf49f87642ebea39609c5f845e0b0fd53b5a5e",
-      "pub": "2026-11-19T00:49:19.000Z",
-      "sum": "Anthropic PBC and its co-founders raised $107.3 billion in an upsized IPO and private placement. The artificial intelligence firm sold 956.4 million shares and the co-founders sold 23.6 million shares for $83 each, according to a statement, above the marketed range. The IPO is the biggest of all time, topping SpaceX's $75 billion base deal. Sopnendu Mohanty, Group CEO of Global Finance and Technology Network, discusses some of the risks associated with the valuation."
      },
      {
       "hd": "Elon Musk on his compensation if Tesla were to merge with SpaceX",
@@ -15020,7 +15331,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 126,
+     "Finnhub": 124,
      "Yahoo": 7,
      "Google News": 37,
      "Nasdaq": 0,
@@ -15030,16 +15341,37 @@
    "ANT": {
     "items": [
      {
+      "hd": "The Rocky Road From Aggregate To Per Share Value: Anthropic's IPO Update",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4969952-rocky-road-from-aggregate-to-per-share-value-anthropics-ipo-update?source=feed_symbol_ANT",
+      "pub": "2026-11-19T06:10:00.000Z",
+      "sum": "In this post, I will start with a general discussion of how share count is complicated by the existence of multiple classes of shares and stock-based compensation."
+     },
+     {
       "hd": "Asian Stocks Set to Fall Ahead of Anthropic Debut: Markets Wrap",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
-      "pub": "2026-11-19T05:09:00.000Z",
+      "pub": "2026-11-19T05:47:01.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Anthropic set to begin trading after pricing its stock at $83 per share in biggest IPO on record",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQZXdyUExSdjhGa000MWtxaUR0YzhiVHJnNzN0N0lTUnNONktkaWZkUVUwdExoUXhXMTlJN0NEZ3F3M2RYbUZYelpiNFhpOE14LWdtYjF1MnB2M00xMk1GbENmci1UeFlXa3V0aHM4TWlxVVZNeFBwUkZjMTA2ZWhCSFBVaVVBb0FUdnpj?oc=5",
+      "pub": "2026-11-19T05:01:00.000Z",
       "sum": ""
      },
      {
       "hd": "Anthropic retail investors face squeeze in blockbuster IPO",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX1BxZ1lwWHZTQWl3dHVtU0pTVFhGUmkxVVBkczk3bEtaNzlsN0RjY21hN0t6OUJhQlpKQlBGR09GY3JseHVhcTY0clp4eW54cVJHT1RKN3JQdEU2aEVxX2hqVzd3UDBSRmxZUFcyb0tGYUNucE4zUnF6YzhVaVE1cml1ako?oc=5",
+      "pub": "2026-11-19T05:00:17.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Anthropic’s AI advances trigger new safety fears on eve of IPO",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNN2tHUWtySlNwcXE4MXdQYTFOV2dQQ2RmTkM5Zi13ZmNMQWFVSmFsbmxBeXFyMWJwWURZSWJxZ1o0OUFnZlFWN3cwdVFtUzdwSXIxakNaUDBZeXNfWS1TaUFON2ZpSkRmbmJac0M5SFVyT0tBeXZLc2tfbFN1S3c1enBVcHc?oc=5",
       "pub": "2026-11-19T05:00:17.000Z",
       "sum": ""
      },
@@ -15100,7 +15432,7 @@
       "sum": ""
      },
      {
-      "hd": "Anthropic IPO Raises $3 Billion in Japan, Lower End of Range",
+      "hd": "Anthropic Raises $3 Billion in Japan Tranche of US Mega IPO",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV19qTVRLN1dWXzV4SkR0enVfY2hHMkNJWEpPajMxMlpGOUNTNkR3Q25rZDF2dmItNE9waVhOQ05EMWliV2hqS1BKRi01WTB6bFhqbnpjUE56aHVhZ1J1b01GeEhCUnRMWE8wX3QxTkxkd0RmRXliUzhSVmRSOGZkV292djZTRVRkNEM5VkRxdnJYVHFpRDZFdTNQblJ3d2JURmpQNlpOenF4X1NYamc?oc=5",
       "pub": "2026-11-19T01:42:00.000Z",
@@ -15182,40 +15514,19 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbm1HY3ZiTDE2aWJPaXRRTzNQbUNGd3hPWUtBSEZVQzhLODNlMzFZQ0x2Y204dlM2aTk2WFFkdEtGQTJwZy1pYjB6TWYzV21BUG9Qczl5c2hENWplajlLWS01dHVEMTJidzFOTi1CRnVFYzBrQUpyc1hMcEZSQW4xZUtZenJwTXhYUTBZNUJQMEo2SXpHYkxJ?oc=5",
       "pub": "2026-11-18T21:33:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Anthropic raises record $81 billion in IPO at $1.5 trillion valuation",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR3NST2trRTZCZkdmblYtRm5pcldXRUJTVjZkZUJ6bHJYbjFUSUJ6ZGVJNW1SMVg0ZWthVnlfVVRhZnlld192c0pBaUZSUzRZS0xGdFlYRnViSU9RYVhHWXRpVDlULS0tREUzcDhfa0NGSVIzVkFTOXBzeW5JelpBVy1RV2FFWEpwdnFhZnlqUVN0bUxWSXJaTVFzTEQxTDlFVVpkRERxQmplM0V2X3c?oc=5",
-      "pub": "2026-11-18T21:26:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Anthropic clinches biggest IPO ever with $81 billion offering",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR3NST2trRTZCZkdmblYtRm5pcldXRUJTVjZkZUJ6bHJYbjFUSUJ6ZGVJNW1SMVg0ZWthVnlfVVRhZnlld192c0pBaUZSUzRZS0xGdFlYRnViSU9RYVhHWXRpVDlULS0tREUzcDhfa0NGSVIzVkFTOXBzeW5JelpBVy1RV2FFWEpwdnFhZnlqUVN0bUxWSXJaTVFzTEQxTDlFVVpkRERxQmplM0V2X3c?oc=5",
-      "pub": "2026-11-18T21:26:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Wall Street prepares for Anthropic IPO frenzy, despite broader AI stock slump",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONkZkRVdESVU1UERiQmhZWmp5cl9Vel9VQlJOOWtLM3ZfVjFVVU5rYUZVWk5UVF8xU0t3SU0ybEF4UDNBOWFNeVI3RjlGMzZVdUhMbnV4UU9JQXpqM1FxZk1reHJGbFM5Qm1VcTMwTl81SEtvWVRYNjJRa0JPZ2xkamZfR3I2elFGWnhlNUFsMWNYMW5MeWJYR3o4SFg5NWhxa0tjYzJtMVpaelVhMUREQnZJa0huN1pzSlUzdTBHWm9ackd6Q0w4?oc=5",
-      "pub": "2026-11-18T20:16:28.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 21,
+     "Finnhub": 22,
      "Yahoo": 0,
-     "Google News": 82,
-     "Nasdaq": 12,
-     "Seeking Alpha": 26
+     "Google News": 85,
+     "Nasdaq": 13,
+     "Seeking Alpha": 27
     }
    }
   },
-  "asOf": "2026-11-19T06:00:16.315Z",
-  "lastAttempt": "2026-11-19T06:00:16.315Z",
+  "asOf": "2026-11-19T07:00:18.957Z",
+  "lastAttempt": "2026-11-19T07:00:18.957Z",
   "lastError": null
  },
  "worldNews": {
