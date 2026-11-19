@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T07:15:14.243Z",
+ "generatedAt": "2026-11-19T07:30:11.757Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -6965,9 +6965,10 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T07:15:14.243Z",
+  "at": "2026-11-19T07:30:11.757Z",
   "ran": [
    "alerts",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13335,62 +13336,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T07:15:14.243Z",
-  "lastAttempt": "2026-11-19T07:15:14.243Z",
+  "asOf": "2026-11-19T07:30:11.757Z",
+  "lastAttempt": "2026-11-19T07:30:11.757Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7425,
-    "lastTime": 1795071913,
+    "last": 7417.75,
+    "lastTime": 1795072818,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 84.75,
-    "changePct": 1.1545928272197814,
-    "expectedOpen": 7408.188106672117,
+    "change": 77.5,
+    "changePct": 1.0558223493750214,
+    "expectedOpen": 7400.9545223255345,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27737,
-    "lastTime": 1795071914,
+    "last": 27668.25,
+    "lastTime": 1795072817,
     "settle": 27191.5,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 545.5,
-    "changePct": 2.0061416251402093,
-    "expectedOpen": 24919.983091958882,
+    "change": 476.75,
+    "changePct": 1.7533052608351876,
+    "expectedOpen": 24858.215458920986,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50623,
-    "lastTime": 1795071909,
+    "last": 50588,
+    "lastTime": 1795072814,
     "settle": 50269,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 354,
-    "changePct": 0.7042113429747956,
-    "expectedOpen": 50551.67120710577,
+    "change": 319,
+    "changePct": 0.634585927708926,
+    "expectedOpen": 50516.72052278741,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2740.5,
-    "lastTime": 1795071913,
+    "last": 2737.7,
+    "lastTime": 1795072817,
     "settle": 2722.199951171875,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 18.300048828125,
-    "changePct": 0.6722521914764947,
+    "change": 15.500048828124818,
+    "changePct": 0.5693942071173805,
     "expectedOpen": null,
     "valid": true
    }
@@ -13852,8 +13853,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T07:15:14.243Z",
-  "lastAttempt": "2026-11-19T07:15:14.243Z",
+  "asOf": "2026-11-19T07:30:11.757Z",
+  "lastAttempt": "2026-11-19T07:30:11.757Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14529,7 +14530,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T07:15:14.243Z",
+  "lastAttempt": "2026-11-19T07:30:11.757Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15528,17 +15529,66 @@
  "worldNews": {
   "items": [
    {
-    "hd": "Trump praises Putin ahead of rare joint meeting with Xi in China",
+    "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
+    "pub": "2026-11-19T07:26:00.000Z",
+    "sum": "America's Persian Gulf allies and oil tankers are under fire as Iran appears to lash out following U.S. strikes on a key island in the Strait of Hormuz."
+   },
+   {
+    "hd": "The UK and EU are holding a summit to patch up ties after their bitter Brexit divorce",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/uk-eu-holding-summit-patch-ties-after-bitter-138278421",
+    "pub": "2026-11-19T07:25:50.000Z",
+    "sum": "Prime Minister Andy Burnham is meeting EU officials in Brussels on Friday to discuss closer ties between the UK and the bloc that it left in 2020"
+   },
+   {
+    "hd": "Trump, Xi and Putin Convene First-Ever Summit as World Order Shifts",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNY1dwclJaOTc1ZWhZMUlidTgyaWFWbU1MeE8xbEl6TzN4Y1U4UzA3dHo1SzJSYTFPd01ZMnV3azQyR1RiYVBNUnVaZjhxY0xwRXFBSGctLUtUcG1xMkRaWGlHWm42RUFLV3NVOWNUOGF0R0hMN1R5OUhDSjJBQnYzUjFrMzNqWm96NXFmbjBZUnFIeWpibFBvenFLSWZzdGx1TUVn?oc=5",
+    "pub": "2026-11-19T07:24:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump, Xi, Putin set for rare joint meeting in China",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
-    "pub": "2026-11-19T06:26:20.000Z",
-    "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are expected to hold a rare face-to-face meeting in China."
+    "pub": "2026-11-19T07:05:18.000Z",
+    "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are about to hold a rare face-to-face meeting in China."
    },
    {
     "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
-    "pub": "2026-11-19T05:53:00.000Z",
+    "pub": "2026-11-19T06:57:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Villa Where Trump, Xi and Putin Will Meet Once Hosted Kim Jong-il",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin-kylin-villa.html",
+    "pub": "2026-11-19T06:53:53.000Z",
+    "sum": "The secluded Kylin Villa resort in the Chinese city of Shenzhen once hosted the North Korean dictator, Xi Jinping’s father and envoys of the Dalai Lama."
+   },
+   {
+    "hd": "Putin Returns to APEC ‘Family Photo,’ Testing Western Leaders",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/19/world/asia/putin-xi-trump-apec-family-photo.html",
+    "pub": "2026-11-19T06:46:07.000Z",
+    "sum": "The leaders of Australia and Canada defended their decision to join the APEC group portrait as a courtesy to the host, China, despite criticism at home."
+   },
+   {
+    "hd": "Trump, Xi and Putin set to hold historic meeting on Apec sidelines",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1JaDV1Q0dGNjZ3bW8xZEFsR3hsRzFlb1dFUGFoUFlxejBDaUNyeHZqRnpyZkRTTkhHSWFNU2IxeWhoV0M0c1p5ZEcyMmRFMmpJb2R2TmxB?oc=5",
+    "pub": "2026-11-19T06:45:39.000Z",
+    "sum": "President Donald Trump will meet with the leaders of China and Russia on the sidelines of the Asia-Pacific Economic Cooperation summit in Shenzen, China’s tech hub, next week, an unprecedented gathering of the heads of the world’s biggest nuclear powers."
+   },
+   {
+    "hd": "Trump Excitedly Greets Putin With 6 Truly Baffling Words",
+    "src": "HuffPost",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPYm5zMDh4d1Y4MVpmeXJDZXZYZ2pzV2J5TGJ4NEtwWDcxbWczX1oxYmJFMFo0eTJlaWJtVmp0YjlFa0pVTVFlZXhQejBlNjRBcS0ySkN3UVpLdE1qelRjRHF2bWM0a2g3QW4xV2tUM1dkV1M4YThyV2dxNmllaV9ZQks2clLSAYoBQVVfeXFMUHJLaDVtUWlJWG15SkN6bndpbFhiRDVXdXd4dzduTjk0TGV0dmJtTUxXLXVpOVN6cEN4bHlIQS1QWlZDRXBjSGhRNk9ZVHlHNVJJbVZIdWhqSk9pLXFrWVpCdXI5X1lCemMtbzZUVmFtNDd6dGdiTlRDWndIUnEyT0pSZ2FTYzhKYV9R?oc=5",
+    "pub": "2026-11-19T06:00:50.000Z",
     "sum": ""
    },
    {
@@ -15561,13 +15611,6 @@
     "url": "https://www.bbc.co.uk/news/articles/cr9d75we51j1o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-19T04:42:52.000Z",
     "sum": "The meeting comes with challenges as there are things Xi does not appear keen to discuss with Putin and Trump."
-   },
-   {
-    "hd": "Apec summit live: Xi, Trump and Putin set to hold historic trilateral in China",
-    "src": "The Guardian",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdzg5dVZmSGduNHR0ZWNLSXFLcGdmenJKNk44TW9iNm5oMmYxbk03Mi13OXpNdXFaSXpVOVRwRWRYSVhYRUp1VGk2QU5aUFdqMXNtZjBiSVpaY0tINGZCQ0Z3ZkI0V1RSVktucm5lYUE0eU53NjdqeF9kZ1Q4OXV5VjdTQ0ZLak9pQ3BnWWxyMTdsUVNKOUFVcG5ZM2oycERINGc?oc=5",
-    "pub": "2026-11-19T04:40:55.000Z",
-    "sum": ""
    },
    {
     "hd": "How to Decode the Xi-Trump Hug",
@@ -15605,20 +15648,6 @@
     "sum": "President Donald Trump has repeatedly placed nonproliferation near the top of the agenda for his unprecedented trilateral meeting Thursday with Chinese President Xi Jinping and Russian President Vladimir Putin, but his counterparts have expressed little interest in committing to new limitations on their nuclear arsenals."
    },
    {
-    "hd": "Florida Man Found Guilty in Plot to Kill Haiti’s President",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/americas/haiti-pastor-assassination-moise.html",
-    "pub": "2026-11-19T03:36:55.000Z",
-    "sum": "Christian Emmanuel Sanon, 67, who was convicted in a Miami court, could now face life in prison over the killing of Jovenel Moïse."
-   },
-   {
-    "hd": "Tracking China’s Intensifying War of Words Against Japan",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/17/world/asia/china-japan-propaganda-xi-takaichi.html",
-    "pub": "2026-11-19T03:32:40.000Z",
-    "sum": "Beijing is running a concerted campaign to paint Japan as an aggressor and resurgent military threat, according to a Times analysis."
-   },
-   {
     "hd": "Japan says PM Takaichi, Putin held talks at APEC summit in China",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQOGFYWEJrZkpsMjh1dWNROWxsODdhQzUxYmR2WEhqNFIxRjNLM2l6QWlNZ2lHSlFIeGhQQnJBQTN4MGNpVXBIVkxSU1lLOVZkTk9LRXJfb0RDeXJKaFM5X245bFg5WnQ0WEtQQktxSzhGbjNPMVNFRmNLb25zM1JqcUE1Z1dFSXRjSjJUS1hzZXpEREFiejN4V1dWc05kbnA5Yi1sUjBUcjU?oc=5",
@@ -15647,13 +15676,6 @@
     "sum": ""
    },
    {
-    "hd": "Iran ramps up attacks on Gulf countries after U.S. strikes",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-gulf-retaliation-strikes-strait-of-hormuz/",
-    "pub": "2026-11-19T02:27:33.000Z",
-    "sum": "America's Persian Gulf allies and oil tankers are under fire as Iran appears to lash out following U.S. strikes on a key island in the Strait of Hormuz."
-   },
-   {
     "hd": "Trump weighs strikes on Iran as Israel warns of chemical weapons",
     "src": "Axios",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVVhsMGFnUEhueFlmbkpjTEdvbU1LVkxiUk8wVzhQMUZ2QlNfYUo2Nmh4N3dVSzI5ZXByTHpmdU9FNE9HaTloeTBGQU51cHNEbkZ0VEZJZFgxVWdoMFJKdDJkQk00a0Q0VXJlRmQ0RlJKX2RBalV4cy1ZaVVkeFE3bQ?oc=5",
@@ -15672,6 +15694,13 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
     "pub": "2026-11-19T01:16:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Insurgents in Iran’s Borderlands Are Becoming a Bigger Challenge for the Regime",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQN3g1cTFKQjdZellkcnY0X2ExbFNsNVZya0xEaEJZMjNDYjZlX25YYnJrNi1vNjVEUUZqVlljM2xIUW9IMWtpbEhPTUk1QjBlTndjNE8zWHBYOWpMdWNDYk5xd040OG9Qd0lsV0R3cXZRejYzOVllMUJ5bzFLdDN0ZTBLbmQ3bVpMaF9QYUVrVkhUelZEM2ZsSmQ5TE5oSjN2Y3NsT1RhcXJuVlZRUjVXRm45YXF5c2stVUJqaXZFTGxPQkU?oc=5",
+    "pub": "2026-11-19T01:00:00.000Z",
     "sum": ""
    },
    {
@@ -15708,34 +15737,6 @@
     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZV9uT1R6QjFJeHlkYmhUeTdIQ0F0Ync2akZibV9hdmhtNEZMelUzSkk1WlFTNTJUd2NKdC1ILW9rWHZJb3JZemxwT2dwNlc5QjNIYzlNS1kwVkt6aDl5aVl0VFdvRUNPYzBMeXJtMnM4YVJPWjdvSzZ6eWlQNXVFdGdhNkw3YzhpQ0V4Yk11dlFKS21RREIxZVcwUFJxS0xKZ25TMDE1bGtDRUJ2aUp2VVFBVkUtSDU1VXBLNENB?oc=5",
     "pub": "2026-11-18T23:55:36.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Florida pastor convicted in plot to kill Haitian president",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/haitian-president-jovenel-moise-assassination-conviction/",
-    "pub": "2026-11-18T23:52:36.000Z",
-    "sum": "A Florida pastor with dual Haitian-American citizenship has been convicted of U.S. charges related to the 2021 assassination of Haitian President Jovenel Moïse."
-   },
-   {
-    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
-    "pub": "2026-11-18T23:31:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Iran War Updates: Gulf states and tankers under fire as U.S. and Iran ramp back up tit-for-tat strikes",
-    "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNczRzemtDSHlJLXZIOHl1WHVMYUZkLTFMd1Z4TDJHNWhDa2E3djdWWnM4MXlwbXpnYjNyUU9TcXR6YjhsOWRVS29ub25Dd0pLVWNZRFZWR25CdnNxeTQ4VDRYX2g1dlFqZmQ1N1o1WWowQk5XRTJvSnhwWENzaXlBSF83RW5kbE5FelFKa0J2dnlhQVJJTkE?oc=5",
-    "pub": "2026-11-18T23:29:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Russian arrested for spying on US defence company Palantir over Ukraine support",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cq20xg80ly47o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-18T23:28:03.000Z",
-    "sum": "The suspect followed employees and was found with fake US IDs and two Russian passports, prosecutors say."
    }
   ],
   "feeds": [
@@ -15754,8 +15755,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T06:30:11.726Z",
-  "lastAttempt": "2026-11-19T06:30:11.726Z",
+  "asOf": "2026-11-19T07:30:11.757Z",
+  "lastAttempt": "2026-11-19T07:30:11.757Z",
   "lastError": null
  }
 }
