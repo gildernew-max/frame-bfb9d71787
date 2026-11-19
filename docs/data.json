@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T05:15:11.067Z",
+ "generatedAt": "2026-11-19T05:30:15.153Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -6658,9 +6658,11 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T05:15:11.067Z",
+  "at": "2026-11-19T05:30:15.153Z",
   "ran": [
    "alerts",
+   "nflScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13028,62 +13030,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T05:15:11.067Z",
-  "lastAttempt": "2026-11-19T05:15:11.067Z",
+  "asOf": "2026-11-19T05:30:15.153Z",
+  "lastAttempt": "2026-11-19T05:30:15.153Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7384.25,
-    "lastTime": 1795064397,
+    "last": 7383.25,
+    "lastTime": 1795065621,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 44,
-    "changePct": 0.5994346241613024,
-    "expectedOpen": 7367.530373965465,
+    "change": 43,
+    "changePct": 0.5858111099758183,
+    "expectedOpen": 7366.532638193522,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27460,
-    "lastTime": 1795064397,
-    "settle": 27191.5,
+    "last": 27442,
+    "lastTime": 1795065623,
+    "settle": 27191,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 268.5,
-    "changePct": 0.9874409282312486,
-    "expectedOpen": 24671.115683209824,
+    "change": 251,
+    "changePct": 0.923099554999816,
+    "expectedOpen": 24655.397159721964,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50464,
-    "lastTime": 1795064675,
-    "settle": 50269,
+    "last": 50473,
+    "lastTime": 1795065619,
+    "settle": 50271,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 195,
-    "changePct": 0.387913027909845,
-    "expectedOpen": 50392.89524120233,
+    "change": 202,
+    "changePct": 0.40182212408744605,
+    "expectedOpen": 50399.87735294702,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2729.6,
-    "lastTime": 1795064394,
-    "settle": 2722.199951171875,
+    "last": 2728.8,
+    "lastTime": 1795065597,
+    "settle": 2722.300048828125,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 7.400048828124909,
-    "changePct": 0.27184075236425137,
+    "change": 6.499951171875182,
+    "changePct": 0.23876689032398288,
     "expectedOpen": null,
     "valid": true
    }
@@ -13533,8 +13535,8 @@
     }
    }
   ],
-  "asOf": "2026-11-18T23:30:12.440Z",
-  "lastAttempt": "2026-11-18T23:30:12.440Z",
+  "asOf": "2026-11-19T05:30:15.153Z",
+  "lastAttempt": "2026-11-19T05:30:15.153Z",
   "lastError": null
  },
  "alerts": {
@@ -13545,8 +13547,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T05:15:11.067Z",
-  "lastAttempt": "2026-11-19T05:15:11.067Z",
+  "asOf": "2026-11-19T05:30:15.153Z",
+  "lastAttempt": "2026-11-19T05:30:15.153Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14222,8 +14224,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T05:15:11.067Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-19T05:30:15.153Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15221,11 +15223,46 @@
  "worldNews": {
   "items": [
    {
-    "hd": "Trump and Xi speak at APEC summit ahead of rare joint meeting with Putin",
+    "hd": "Trump praises Putin ahead of rare joint meeting with Xi in China",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/",
-    "pub": "2026-11-19T04:06:45.000Z",
+    "pub": "2026-11-19T05:16:02.000Z",
     "sum": "President Trump, Chinese President Xi Jinping and Russian President Vladimir Putin are expected to hold a rare face-to-face meeting in China."
+   },
+   {
+    "hd": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/19/world/middleeast/netanyahu-arab-activists-arrests-israel-election.html",
+    "pub": "2026-11-19T05:01:06.000Z",
+    "sum": "Prime Minister Benjamin Netanyahu of Israel had claimed the detention of three opposition activists from an Arab-led party was evidence of vote rigging. His chief of staff has admitted being involved with the initial outreach to police."
+   },
+   {
+    "hd": "This is a remarkable diplomatic moment for China's Xi - but it comes with pitfalls",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5JYzJOeVlUNDZnTGFKMnF4NW93ZThRSXRyTlpxWjdJNGpVMmFWOV9hNUdKbXlETUZtekRVclZIQkhDYzQ3S0FybXpIaE1CSThlREhNdzNmU21lQXc?oc=5",
+    "pub": "2026-11-19T04:42:52.000Z",
+    "sum": "The meeting comes with challenges as there are things Xi does not appear keen to discuss with Putin and Trump."
+   },
+   {
+    "hd": "Apec summit live: Xi, Trump and Putin set to hold historic trilateral in China",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdzg5dVZmSGduNHR0ZWNLSXFLcGdmenJKNk44TW9iNm5oMmYxbk03Mi13OXpNdXFaSXpVOVRwRWRYSVhYRUp1VGk2QU5aUFdqMXNtZjBiSVpaY0tINGZCQ0Z3ZkI0V1RSVktucm5lYUE0eU53NjdqeF9kZ1Q4OXV5VjdTQ0ZLak9pQ3BnWWxyMTdsUVNKOUFVcG5ZM2oycERINGc?oc=5",
+    "pub": "2026-11-19T04:40:55.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "How to Decode the Xi-Trump Hug",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/18/world/asia/xi-trump-hug-shenzhen.html",
+    "pub": "2026-11-19T04:29:42.000Z",
+    "sum": "The welcome China’s leader, Xi Jinping, offered President Trump appeared to reflect a desire for a measure of stability at a time of growing disagreements."
+   },
+   {
+    "hd": "Nuclear arms and ending wars in Iran and Ukraine will top the agenda at Trump-Xi-Putin meeting",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZko0TjU0LUdSMUxlTkNVcnJsSThoSFo5Y2ZuamRVQ2tidnZQa2M5N1o0dlpndmptSGxNTGhYYS1IUXVKMjZibjFPcWVURHJRaHNfclhIMHlSVFdIN3VkZUxFVEo5Z1JoZFR0bkdHOUd1UUNuNXRCVDBKUlhPaGItcmVfY09NQ1U5WmhHYzRNZHdtWDVVay1JalhlNA?oc=5",
+    "pub": "2026-11-19T04:13:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump, Xi and Putin Shake Hands as Leaders Gather in China",
@@ -15247,13 +15284,6 @@
     "url": "https://www.nbcnews.com/world/asia/trump-pushes-three-way-nuclear-deal-russia-china-show-little-interest-rcna610145",
     "pub": "2026-11-19T03:46:42.000Z",
     "sum": "President Donald Trump has repeatedly placed nonproliferation near the top of the agenda for his unprecedented trilateral meeting Thursday with Chinese President Xi Jinping and Russian President Vladimir Putin, but his counterparts have expressed little interest in committing to new limitations on their nuclear arsenals."
-   },
-   {
-    "hd": "How to Decode the Xi-Trump Hug",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/asia/xi-trump-hug-shenzhen.html",
-    "pub": "2026-11-19T03:44:26.000Z",
-    "sum": "The welcome China’s leader, Xi Jinping, offered President Trump appeared to reflect a desire for a measure of stability at a time of growing disagreements."
    },
    {
     "hd": "Florida Man Found Guilty in Plot to Kill Haiti’s President",
@@ -15310,13 +15340,6 @@
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVkpMQk5Ha1FZNG45Vmt6WWxWeUtMS3lSU0hON0F0b0ItSHlWY0NnUHFyQ1JTWFBPSWViZTFVZHpKNWI3V3R1TjM0b25HWTNEZGZ2Q1ItZG5hdXNGcG03M3FjZlJKNmE5SC1lYTJERmRETERvdGJOUGlsMG9pQjVVU2dEWkJxOEY2eXJYd1RtVmNlN2pIcGlLcHJlaw?oc=5",
     "pub": "2026-11-19T01:16:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "The Shadow of Yalta Hangs Over Trump’s Summit in China",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/18/world/asia/trump-xi-putin-summit-yalta.html",
-    "pub": "2026-11-19T00:52:53.000Z",
-    "sum": "A 1945 meeting of Churchill, Stalin and Franklin Roosevelt set Europe’s course for decades. Here’s what happened."
    },
    {
     "hd": "Kerch attack: Bridge connecting Russia to occupied Crimea has been hit again",
@@ -15408,27 +15431,6 @@
     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdzN3ZEpqNW0wZlBtajBvdU9pSzk1MG9RQ2NhVlBuaFMwaVZBWVhkLVNiMnZHTTBRS2J6Z2xkdWkxRERWakdCc0JBdGtUUlhVbHJlR2dMcVVTV0lCNWVGNi1XSG5zVTVrRW84V0JVZUhOVGhKT0FZMk1uRTd3anM1RFhPUWxWNFdQWFF2WjhhYVFCdnpPMGlLYThjMDExVC1fVFJfeFZ2ZXM?oc=5",
     "pub": "2026-11-18T23:05:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Brazil's Senate approves Lula's $10 billion fiscal package after costly election spending",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/brazils-senate-approves-lulas-10-billion-fiscal-package-138265187",
-    "pub": "2026-11-18T23:04:44.000Z",
-    "sum": "Brazil’s Senate approved on Wednesday a plan by President Luiz In&aacute;cio Lula da Silva to control his government’s spending and increase revenues after his reelection late October"
-   },
-   {
-    "hd": "Trump administration appeals to Supreme Court over legal protections for Venezuelan migrants",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOb3oySmt4WDNyUnNPN1QzRXJpcDZ1OWFUUkFZMXlJX3dfQXYxWkFSaDNuN2hLb1NpM3hpQWowSVlLQmVMd1c3MUM5RnY0ck9DMXh0TDNOTmc0cFMyeS1ZX0dHSDRJQzdmMGhodHRCSFF6VThMb24yem4zSG0wd3hRbE1oa19Ubk55T1R5RXdGN1NSaXpNSzkzTkNaR3I2VXNxdGlPdFNaeGFXbjlTS1c4Tm1OelIwVm8?oc=5",
-    "pub": "2026-11-18T23:03:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "For Putin, sharing a spotlight with Trump and Xi boosts his profile on the global stage",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPVV8xWGtoUVBFb0pZRXA2U05JRldkTXdGRUxBWHpBd0ZHd2o2U2ZiYjFELU5jTGdOZ1RfZnpTZk1MM0ZqSTNuRWdYcnAxUlIzdWZzV0p1a1JhS1BreXozOWdnNC1nclNZLU5SaUV0SVdTU0VCdlNNY2ZJOG1qM3E2aS11NzRnMERpVTV6RWNCUklGQ1BxT19tX0V0T25WTnVQNlE?oc=5",
-    "pub": "2026-11-18T23:00:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15447,8 +15449,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T04:30:16.321Z",
-  "lastAttempt": "2026-11-19T04:30:16.321Z",
+  "asOf": "2026-11-19T05:30:15.153Z",
+  "lastAttempt": "2026-11-19T05:30:15.153Z",
   "lastError": null
  }
 }
