@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-19T05:45:12.411Z",
+ "generatedAt": "2026-11-19T06:00:16.315Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -11,27 +11,19 @@
     "tz": "America/New_York",
     "now": {
      "temp": 55,
-     "i": "partly",
-     "cond": "Mostly Clear",
-     "windMph": 10,
-     "windDir": "ENE",
-     "observed": "2026-11-19T03:20:00+00:00"
+     "i": "cloud",
+     "cond": "Mostly Cloudy",
+     "windMph": 11,
+     "windDir": "E",
+     "observed": "2026-11-19T05:30:00+00:00"
     },
     "today": {
-     "h": null,
+     "h": 66,
      "l": 50,
      "sunrise": "07:12",
      "sunset": "17:33"
     },
     "forecast": [
-     {
-      "date": "2026-11-19",
-      "d": "Thu",
-      "i": "partly",
-      "text": "Partly Sunny",
-      "h": 66,
-      "l": 54
-     },
      {
       "date": "2026-11-20",
       "d": "Fri",
@@ -47,6 +39,14 @@
       "text": "Mostly Sunny",
       "h": 68,
       "l": 53
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "partly",
+      "text": "Mostly Sunny",
+      "h": 71,
+      "l": 54
      }
     ]
    },
@@ -54,28 +54,20 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 57,
-     "i": "cloud",
-     "cond": "Mostly Cloudy",
-     "windMph": 15,
-     "windDir": "S",
-     "observed": "2026-11-19T03:45:00+00:00"
+     "temp": 54,
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": null,
+     "windDir": "",
+     "observed": "2026-11-19T05:30:00+00:00"
     },
     "today": {
-     "h": null,
+     "h": 56,
      "l": 46,
-     "sunrise": "07:13",
-     "sunset": "16:42"
+     "sunrise": "07:14",
+     "sunset": "16:41"
     },
     "forecast": [
-     {
-      "date": "2026-11-19",
-      "d": "Thu",
-      "i": "sun",
-      "text": "Sunny",
-      "h": 56,
-      "l": 38
-     },
      {
       "date": "2026-11-20",
       "d": "Fri",
@@ -91,14 +83,22 @@
       "text": "Chance Light Rain",
       "h": 58,
       "l": 36
+     },
+     {
+      "date": "2026-11-22",
+      "d": "Sun",
+      "i": "snow",
+      "text": "Slight Chance Rain And Snow then Mostly Sunny",
+      "h": 41,
+      "l": 24
      }
     ]
    }
   },
-  "asOf": "2026-11-19T04:00:22.171Z",
-  "lastAttempt": "2026-11-19T05:00:13.273Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT); NWS: HTTP 503 from api.weather.gov"
+  "lastError": null
  },
  "nfl": {
   "provider": "ESPN",
@@ -169,7 +169,14 @@
     "hd": "Asian Stocks Set to Fall Ahead of Anthropic Debut: Markets Wrap",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
-    "pub": "2026-11-19T04:18:00.000Z",
+    "pub": "2026-11-19T05:09:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Anthropic IPO Hands SK Hynix Tycoon’s Firm $3 Billion Windfall",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNLLU4td19HNzA2NGJmY25DV0RnaGRFLW56ZnpfZWRnbWlEMkZLQngxWmlVclpTZy1ZSjV1LXpEdW0zM3k3aEhLYXVsNkw4ZVRybXIxQUs5QTNEUGtBXzFQX2o3QkRac2p4MGNMcTBmYm84amlvT3pKRUh1eVFMTUVfLWpySHRnSmg4d1E0RXNnSG5LNzJtdWVuV25yclFfQldYbVo0dC1vVVJKb0lRTVpB?oc=5",
+    "pub": "2026-11-19T03:29:00.000Z",
     "sum": ""
    },
    {
@@ -204,6 +211,13 @@
     "hd": "Alibaba’s AI Ambitions Face Steep Challenge in US Chip Controls",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSWZpZTZZU3dMUFVnWXI2RW1xdUpndjNuTmNJd1YyazhpR0ZyckFzelFKSFZrUExGM08zWFQxT2RidjU2TmhBODI4a1V4QmdMZGU2bU92WnZSdld1UG5rY28tNGU2OHFNejJJSDY1NW50U3FjdFg0RE00Zl9vRnNIOEpfenY2MV9Pc1cwYktxN1gyQVVqLTd2a0c1RG52TjN4cGE4SUJMajRORU9UcDRZYkFlRk0?oc=5",
+    "pub": "2026-11-19T02:31:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "MAS Warns AI Agents Could Move Money Faster, Raise Finance Risks",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM3phS3NuMW04a3d4cEVhNnVDM25naVJfNUUtR0w3a2M4WHpjUVhxMmt5MWtoMU9DUzZrdFc3RFU1TU15djdQV1I1R1RaQ1g2ZUJnM3BqX2RXbFg4WGdDYTdfUWxic0ltSVJRQjcwd0ZXV2ZpeWF2UXFTSm16Sm9Wdl9QWTZXU1RSMkQxdF9CTWNFWS0wbmRMMjBFMVF6RmUtV1IwdXlMcHctVTBkN3RCaHJvWE4?oc=5",
     "pub": "2026-11-19T02:31:00.000Z",
     "sum": ""
    },
@@ -243,17 +257,10 @@
     "sum": ""
    },
    {
-    "hd": "Anthropic IPO Raises $3 Billion in Japan, Lower End of Range",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV19qTVRLN1dWXzV4SkR0enVfY2hHMkNJWEpPajMxMlpGOUNTNkR3Q25rZDF2dmItNE9waVhOQ05EMWliV2hqS1BKRi01WTB6bFhqbnpjUE56aHVhZ1J1b01GeEhCUnRMWE8wX3QxTkxkd0RmRXliUzhSVmRSOGZkV292djZTRVRkNEM5VkRxdnJYVHFpRDZFdTNQblJ3d2JURmpQNlpOenF4X1NYamc?oc=5",
-    "pub": "2026-11-19T01:42:00.000Z",
-    "sum": "Anthropic on Wednesday said it raised $81 billion in its initial public offering after pricing the IPO at $83 a share, above its marketed range of $70 to $78 a share. Anthropic sold 956.4 million shares—more than the 820 million it had earlier planned—and the seven co-founders sold 23.6 million..."
-   },
-   {
-    "hd": "Anthropic IPO Hands SK Hynix Tycoon’s Firm $3 Billion Windfall",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNLLU4td19HNzA2NGJmY25DV0RnaGRFLW56ZnpfZWRnbWlEMkZLQngxWmlVclpTZy1ZSjV1LXpEdW0zM3k3aEhLYXVsNkw4ZVRybXIxQUs5QTNEUGtBXzFQX2o3QkRac2p4MGNMcTBmYm84amlvT3pKRUh1eVFMTUVfLWpySHRnSmg4d1E0RXNnSG5LNzJtdWVuV25yclFfQldYbVo0dC1vVVJKb0lRTVpB?oc=5",
-    "pub": "2026-11-19T01:36:26.000Z",
+    "hd": "Trust, but prepare: How to make sense of AI's age of upheaval",
+    "src": "Axios",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBSb2lIVzM2M3phY1JRZGt1ZGdLUEhndEtKb213Y054MExGWDJ4aDQxLURPMEhDRE5QbmJLQlFIa3REd3VCaDdrd25WX1EwOXRUNmdydUxNdHJEREk4VjA2aktQSGZqb3NMYm5WNTdtTlY3NEFr?oc=5",
+    "pub": "2026-11-19T01:38:42.000Z",
     "sum": ""
    },
    {
@@ -334,13 +341,6 @@
     "sum": "“I don’t think [Huang is] disloyal to the United States,\" Musk said."
    },
    {
-    "hd": "Democrats probe whether Lutnick helped Cantor Fitzgerald avoid Nvidia-linked losses",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxONTZfWHVZQkZBSHhzWl9pY3ZMUk9HQVhEUmtmckJNcVBYUXFHQ2ZDZF9XUkpESEF2bjM1cjh3S2R6T3N4cG8xeDJCS0NOQ1JLMDRRcFZvUjl0X3YzREVxM1RheFRESF9QekdKTnpFRC1oaW51Mkwwb0w1REYwSngzRjh1VXA1ZVJick5SczdmTjltWExrV0JEeXRVUmVpbDhEQ0lORlAzWGpWaG50UWJFOGpValMzd09jZGhQNQ?oc=5",
-    "pub": "2026-11-18T23:23:41.000Z",
-    "sum": "The congressional probe is among the first to be announced since the blue-wave midterm that will deliver Democrats control of the House and Senate come January."
-   },
-   {
     "hd": "The nation’s largest school districts consider ditching Google Search",
     "src": "The Verge",
     "url": "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google",
@@ -392,8 +392,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-19T05:00:13.273Z",
-  "lastAttempt": "2026-11-19T05:00:13.273Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -6658,9 +6658,13 @@
   "closeFetchedFor": "2026-11-18"
  },
  "lastRun": {
-  "at": "2026-11-19T05:45:12.411Z",
+  "at": "2026-11-19T06:00:16.315Z",
   "ran": [
+   "weather",
    "alerts",
+   "news",
+   "stockNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13028,62 +13032,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-19T05:45:12.411Z",
-  "lastAttempt": "2026-11-19T05:45:12.411Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7387.75,
-    "lastTime": 1795066508,
+    "last": 7382.75,
+    "lastTime": 1795067440,
     "settle": 7340.25,
     "settleDate": "2026-11-18",
     "indexClose": 7323.63,
-    "change": 47.5,
-    "changePct": 0.6471169238104969,
-    "expectedOpen": 7371.0224491672625,
+    "change": 42.5,
+    "changePct": 0.5789993528830761,
+    "expectedOpen": 7366.033770307551,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 27481.5,
-    "lastTime": 1795066510,
-    "settle": 27191.5,
+    "last": 27450.25,
+    "lastTime": 1795067443,
+    "settle": 27191,
     "settleDate": "2026-11-18",
     "indexClose": 24429.885,
-    "change": 290,
-    "changePct": 1.0665097548866374,
-    "expectedOpen": 24690.432106632587,
+    "change": 259.25,
+    "changePct": 0.953440476628296,
+    "expectedOpen": 24662.80941198374,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50492,
-    "lastTime": 1795066507,
-    "settle": 50269,
+    "last": 50463,
+    "lastTime": 1795067442,
+    "settle": 50271,
     "settleDate": "2026-11-18",
     "indexClose": 50198.17,
-    "change": 223,
-    "changePct": 0.4436133601225407,
-    "expectedOpen": 50420.85578865702,
+    "change": 192,
+    "changePct": 0.3819299397266814,
+    "expectedOpen": 50389.89184042489,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2730.1,
-    "lastTime": 1795066511,
-    "settle": 2722.199951171875,
+    "last": 2728,
+    "lastTime": 1795067425,
+    "settle": 2722.300048828125,
     "settleDate": "2026-11-18",
     "indexClose": null,
-    "change": 7.900048828124909,
-    "changePct": 0.29020824957123487,
+    "change": 5.699951171875,
+    "changePct": 0.20937997537518582,
     "expectedOpen": null,
     "valid": true
    }
@@ -13545,8 +13549,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-19T05:45:12.411Z",
-  "lastAttempt": "2026-11-19T05:45:12.411Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14222,8 +14226,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-19T05:45:12.411Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -14238,14 +14242,14 @@
     "pub": "2026-11-19T04:42:52.000Z"
    },
    {
-    "src": "The Seattle Times",
-    "hd": "Ukraine says it hit 2 Russian oil refineries as Zelenskyy hails domestically made weapons",
-    "pub": "2026-11-19T04:15:37.000Z"
+    "src": "The Washington Post",
+    "hd": "Putin touts Russia’s economy at APEC as Ukraine sends it toward a fuel crisis",
+    "pub": "2026-11-19T03:23:25.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-19T05:00:13.273Z",
-  "lastAttempt": "2026-11-19T05:00:13.273Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "lastError": null
  },
  "movers": {
@@ -14472,6 +14476,48 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Anthropic’s Cash Pile Tops Amazon And Nvidia Combined After Record IPO – Meet The New ETF Tracking ANT-Linked Companies",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-s-cash-pile-tops-amazon-and-nvidia-combined-after-record-ipo-meet-the-new-etf-tracking-ant-linked-companies/cNbLyKgR9i1?.tsrc=rss",
+      "pub": "2026-11-19T05:47:57.000Z",
+      "sum": "Anthropic’s IPO was roughly 7 times oversubscribed, according to Bloomberg."
+     },
+     {
+      "hd": "Anthropic's record IPO lands as Nvidia suffers its worst run since 2008",
+      "src": "Yahoo Finance",
+      "url": "https://www.euronews.com/2026/11/19/anthropics-record-ipo-lands-as-nvidia-suffers-its-worst-run-since-2008?.tsrc=rss",
+      "pub": "2026-11-19T05:31:02.000Z",
+      "sum": "Anthropic priced its record IPO at $83 a share ahead of Thursday's debut, as Nvidia heads for a seventh weekly loss and Washington tightens AI chip exports.View on euronews"
+     },
+     {
+      "hd": "Stocks Settle Mostly Lower as Nvidia Weakness Pressures Chipmakers",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/stocks-settle-mostly-lower-nvidia-weakness-pressures-chipmakers",
+      "pub": "2026-11-19T05:21:56.000Z",
+      "sum": "The S&P 500 Index ($SPX ) (SPY ) closed down -0.23% on Wednesday, the Dow Jones Industrial Average ($DOWI ) (DIA ) closed down -1.11%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) closed up +0.42%. December E-mini S&P futures (ESZ26 ) fell -0.21%, and December E-mini Nasdaq futures..."
+     },
+     {
+      "hd": "Musk: Jensen Huang irreplaceable, regrets midterm spend",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-19T05:15:26.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia (NVDA) Rules Out Jensen Huang Return As Record Q3 Reshapes Leadership",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-rules-jensen-huang-051505790.html?.tsrc=rss",
+      "pub": "2026-11-19T05:15:05.000Z",
+      "sum": "Nvidia (NasdaqGS:NVDA) confirmed that Jensen Huang will not return as CEO following his resignation over code of conduct and national security concerns. The board created a National Security and Export Control Oversight Committee to address geopolitical and compliance risks tied to sensitive technologies. The company reported record-breaking Q3 earnings and sales that came in above analyst expectations and raised its fiscal 2028 outlook while expanding share buybacks and shifting further..."
+     },
+     {
+      "hd": "Why Did Cathie Wood Sell Nvidia Before Earnings and Buy Crypto Stocks?",
+      "src": "Yahoo Finance",
+      "url": "https://beincrypto.com/why-cathie-wood-sold-nvidia-crypto/?.tsrc=rss",
+      "pub": "2026-11-19T05:00:00.000Z",
+      "sum": "Cathie Wood's ARK sold $84.8M of Nvidia before earnings and bought crypto stocks. Three explanations fit the trade data."
+     },
+     {
       "hd": "Wall St’s $500 bln pledge to Nvidia yet to be mobilized, WSJ reports",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/wall-st-500-bln-pledge-044504722.html?.tsrc=rss",
@@ -14479,11 +14525,11 @@
       "sum": "Investing.com-- Wall Street’s biggest banks and asset managers had pledged up to $500 billion to help Nvidia customers finance chip purchases earlier this year, but no capital has been deployed to date, the Wall Street Journal reported on Wednesday."
      },
      {
-      "hd": "Stocks Settle Mostly Lower as Nvidia Weakness Pressures Chipmakers",
-      "src": "Nasdaq",
-      "url": "https://www.nasdaq.com/articles/stocks-settle-mostly-lower-nvidia-weakness-pressures-chipmakers",
-      "pub": "2026-11-19T04:28:10.000Z",
-      "sum": "The S&P 500 Index ($SPX ) (SPY ) closed down -0.23% on Wednesday, the Dow Jones Industrial Average ($DOWI ) (DIA ) closed down -1.11%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) closed up +0.42%. December E-mini S&P futures (ESZ26 ) fell -0.21%, and December E-mini Nasdaq futures..."
+      "hd": "Fallout from former Nvidia CEO’s downfall hangs over US-China relations",
+      "src": "Yahoo Finance",
+      "url": "https://www.cnn.com/2026/11/18/business/video/timeline-jensen-huang-nvidia-revelations-hnk-digvid?cid=external-feeds_iluminar_yahoo&.tsrc=rss",
+      "pub": "2026-11-19T04:17:21.000Z",
+      "sum": "Jensen Huang helped transform Nvidia into America’s second-most valuable company before reports of multiple affairs, including with a suspected Chinese intelligence asset, brought his leadership to an abrupt end. CNN’s Will Ripley examines the revelations that rocked one of AI’s most visible players and how the scandal is impacting US-China relations."
      },
      {
       "hd": "Anthropic, Nvidia And The Next AI Trade: Michael Burry Explains What Could Break The Bull Case",
@@ -14500,39 +14546,11 @@
       "sum": "Nvidia easily beat third-quarter expectations, yet the real story is hiding in the fine print. Interim CEO Colette Kress just dialed back the sales swagger and put customer financing on a tighter leash."
      },
      {
-      "hd": "Dow Jones Futures Rise: Anthropic IPO To Debut After Pricing High; Palo Alto And Everpure Rally On Earnings",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/107e5a2c-4fba-3df3-b2fd-5d1160e65516/dow-jones-futures-rise%3A.html?.tsrc=rss",
-      "pub": "2026-11-19T04:02:55.000Z",
-      "sum": "The stock market was mixed as UnitedHealth dived and Nvidia fell. The Anthropic IPO priced high. Palo Alto, Everpure leaped."
-     },
-     {
-      "hd": "Peter Thiel’s $85 Million Nvidia Exit Was a Bet the Stock Had Run Far Enough. After Nvidia’s Beat, It Closed Below Every Price He Could Have Sold At",
-      "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/18/peter-thiels-85-million-nvidia-exit-was-a-bet-the-stock-had-run-far-enough-after-nvidias-beat-it-closed-below-every-price-he-could-have-sold-at/?.tsrc=rss",
-      "pub": "2026-11-19T03:51:09.000Z",
-      "sum": "Peter Thiel's fund sold all 537,742 of its Nvidia shares in the third quarter of 2025, a stake worth $85 million that June. The stock ran 28% past his selling range to a $239.24 record, then fell 35% and closed Tuesday at $155.46, back inside the range. After Nvidia's beat and raised forecast, his only Nvidia exposure is about $8 million through a chip ETF."
-     },
-     {
-      "hd": "Grant Cardone Called Jensen Huang 'Shameful' — 4 Days Later He Told Nvidia Employees 'You Know Better Than the Board' After a $600 Billion Wipeout",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/grant-cardone-called-jensen-huang-034515675.html?.tsrc=rss",
-      "pub": "2026-11-19T03:45:15.000Z",
-      "sum": "On the internet, four days is plenty of time to change your mind. One celebrity investor needed exactly that long to go from scolding Nvidia Corp.‘s (NASDAQ:NVDA) former CEO to leading the cheers for his return.Real estate investor and Cardone Capital CEO Grant Cardone is now urging Nvidia employees to push their own board to bring back co-founder Jensen Huang.“Nvidia bring Jensen back… employees stand up and have your voices heard!” Cardone wrote on X on Saturday. “You know better than the boar"
-     },
-     {
-      "hd": "Dan Ives Says Nvidia’s AI Dominance Can Survive Without Jensen Huang: ‘Two, Three Years Ahead’ Of Rivals",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=98e0b06da9a65ef11d74fa25c47fe1a416e9ee850f312b21944a2eead70d1cfc",
-      "pub": "2026-11-19T03:39:56.000Z",
-      "sum": "Ives believes Nvidia's technology lead and strong AI demand can withstand Jensen Huang’s exit."
-     },
-     {
-      "hd": "CrowdStrike (CRWD) is Getting Investor Attention — Here’s Why",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=eeb612af02db1a129914847cd119161b551460964bc0259d9dab42131a9a07e6",
-      "pub": "2026-11-19T03:33:46.000Z",
-      "sum": "CrowdStrike Holdings Inc. (NASDAQ:CRWD) is one of the 10 Stocks Investors Are Rushing to Buy — Cybersecurity Names Dominate CrowdStrike bounced back by 7.95 percent on Wednesday to close at $237.03 apiece, mirroring the rally in technology stocks, with investor optimism bolstered by Nvidia Corp.’s better-than-expected earnings performance in the third quarter of fiscal year"
+      "hd": "Trump says he referred to ex-Nvidia boss Huang's situation 'briefly' in talk with Xi",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZGVNM0xjMGtxNjE0aEFnRWU2QURJZy1TSzZGSkFXNVk0eTM0bkhOZWF4cXJjWGhyZEVfZjNuWjZxVVlqUWh5cDUzckE2QTdISldZeThRZG9sZTB3dzdIU1ZOX2RJV0FMQXJ4V2dKS0U3V0t1YWNpcXE4R2FuZVVRVFJaUUNnYmZkS1pQXzluQ25WaUROQ2NVQk5wNHpPa2NheXhUZFFiQ3o5cjNxcHFWUWRVS3FCNm1meTltX0xiMA?oc=5",
+      "pub": "2026-11-19T01:46:00.000Z",
+      "sum": ""
      },
      {
       "hd": "The Bank of Nvidia Under New Management",
@@ -14584,6 +14602,13 @@
       "sum": "Nvidia is rated Buy, as 16.6x earnings and a 10-year-high free cash flow yield make the shares attractive; furthermore, Q4 may test Nvidia without Huang."
      },
      {
+      "hd": "NEWSLETTER: Can Jensen Huang come back?",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPb0pfTlRoblhQMzhyTGdsaGFpZmhYcE5lYUUxc0IwRDJkcV9JQnZoamZxOWtha2Z1by1teDN0bTU1WnJIVjVNQmZaZkx1QTVjSGZtRmd3WEN1bFlNcHMyQ2NqUmtRdjJHNWxIWldZQlhKckxtdnFCZlRDc3ZpbUg0ZXBNRHotRjBmMFhXVk1FNWlaSDZLRWFIcXY4bU1pQQ?oc=5",
+      "pub": "2026-11-18T23:00:44.000Z",
+      "sum": "Nvidia's Board Chair, Harvey Jones, says the company does not plan to reinstate Jensen Huang as CEO."
+     },
+     {
       "hd": "Nvidia Q3: Jensen Is Gone, The Momentum Is Not",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4969813-nvidia-q3-jensen-is-gone-the-momentum-is-not?source=feed_symbol_NVDA",
@@ -14624,33 +14649,12 @@
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRi1ZbVpsWDREeUZoOV8tRHkxLVZ2WnNtaFdXWENZbkVWVHRITUNZRmFFX1V1X2RCV1ctdWFBMk14emVFTEl0eDV0cERXU0ZmN3A5NnphRDZkU3FEdmpCSXpJRU5HMnFHbENrbmhoYkhsX2VIZUxrU0VlUTUycFo0a3l0UFoxaEVOS2ZxaGxwRmdRd3lJSktTZy14VUdRTVJCNlVTb3BmZW44ankzblhKWFZ6dw?oc=5",
       "pub": "2026-11-18T21:13:26.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Micron expects even tighter supply in 2027-28 than 2026; continues to work with Nvidia",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-18T20:56:46.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia's Q3 Earnings Say Buy The Stock, Not The Panic (Rating Upgrade)",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4969779-nvidias-q3-earnings-say-buy-the-stock-not-the-panic-rating-upgrade?source=feed_symbol_NVDA",
-      "pub": "2026-11-18T20:43:22.000Z",
-      "sum": "Analyst rates Nvidia a Buy with a $235 target, about 50% upside, as the market prices more damage than operating results support."
-     },
-     {
-      "hd": "Nvidia slides as interim CEO Kress speaks to employees, says, 'Let's move forward'",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-18T20:26:16.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 154,
-     "Yahoo": 12,
-     "Google News": 91,
+     "Yahoo": 13,
+     "Google News": 92,
      "Nasdaq": 10,
      "Seeking Alpha": 29
     }
@@ -14836,7 +14840,7 @@
     "fetched": {
      "Finnhub": 134,
      "Yahoo": 8,
-     "Google News": 15,
+     "Google News": 16,
      "Nasdaq": 10,
      "Seeking Alpha": 12
     }
@@ -14844,11 +14848,18 @@
    "SPCX": {
     "items": [
      {
-      "hd": "Anthropic IPO: AI lab reportedly raises $107.3B breaking SpaceX’s record debut",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-19T04:47:06.000Z",
-      "sum": ""
+      "hd": "Anthropic to begin trading after record-breaking market debut tops SpaceX record",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
+      "pub": "2026-11-19T05:35:55.000Z",
+      "sum": "Anthropic will begin trading on Thursday on the Nasdaq exchange after pricing its initial public offering at $83 a share, above its expected range and toppling SpaceX's IPO to set a new record.Its listing will give ordinary investors their first chance to bet directly on a stand-alone AI giant when it begins trading under the ticker \"ANT.\" The offering breaks the record $75 billion that Elon Musk's SpaceX raised in June at a valuation of $1.77 trillion."
+     },
+     {
+      "hd": "Elon Musk Names 2 Anthropic Favorites Ahead Of Its IPO — Flags A Risk To 10-GW Opportunity For SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/elon-musk-2-anthropic-favorites-ipo-flags-risk-10-gw-opportunity-spacex/cNbLUlbR9i0?.tsrc=rss",
+      "pub": "2026-11-19T05:12:01.000Z",
+      "sum": "Musk praised Anthropic’s Opus and Fable models, saying he met the team before the SpaceX deal and knew several employees from his OpenAI days."
      },
      {
       "hd": "SpaceX’s December Lock-Up Frees Another 17% of Its Shares. Here’s What October’s Unlock Did to the Stock.",
@@ -14872,6 +14883,13 @@
       "sum": "Elon Musk compared former Nvidia Corp. (NASDAQ:NVDA) CEO Jensen Huang to legendary NBA player Michael Jordan and said the company made a mistake parting ways with him. Musk Says Huang Isn’t ‘Disloyal’ Speaking with Andrew Ross Sorkin at The New York Times DealBook Summit on Wednesday, the CEO of Tesla Inc. (NASDAQ:TSLA) and Space Exploration Technologies Corp. (NASDAQ:SPCX) called Huang “an old friend of mine,” and added that he was like “Michael Jordan perhaps at his peak level” to a team. Musk"
      },
      {
+      "hd": "Anthropic set to begin trading after pricing its stock at $83 per share in biggest IPO on record",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-begin-trading-pricing-011538935.html?.tsrc=rss",
+      "pub": "2026-11-19T01:15:38.000Z",
+      "sum": "(AP) — Anthropic is set to begin trading on the Nasdaq on Thursday after pricing its IPO at $83 per share, valuing the artificial intelligence giant at $1.5 trillion and surpassing SpaceX as the largest initial public offering on record."
+     },
+     {
       "hd": "Hot demand lifts Anthropic IPO price to $83 a share, breaks SpaceX's record raise",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
@@ -14893,20 +14911,6 @@
       "sum": ""
      },
      {
-      "hd": "Anthropic Will Be the U.S. Market's First Pure-Play AI Lab",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=cf6d6a816ce29ff399c19b05fbf806921136b091c6de684526e5a7bba4e8102d",
-      "pub": "2026-11-18T23:23:58.000Z",
-      "sum": "Meta Platforms, Alphabet, SpaceX, and plenty of other public companies are developing artificial-intelligence models, but Anthropic will become the first where AI development is its entire business."
-     },
-     {
-      "hd": "Anthropic to debut amid security worries and SpaceX to finance GPU rentals",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=93189af6191db226b6350801128365d7e08b551b74c4fa3186dda307e5b64510",
-      "pub": "2026-11-18T22:58:01.000Z",
-      "sum": "Deirdre Bosa discusses Anthropic's (ANTH.PVT) expected IPO to launch amid multiple security worries, SpaceX (SPCX) financing GPU rentals, and getting around the AI bottleneck. Deirdre Bosa then sits down with Micron (MU) president and CTO Scott J. DeBoer to discuss the chip stock sell-off, Washington putting the screws to China in the AI trade, and TSMC's (TSM) potential move into memory. 'Deirdre Bosa Live' airs every day at 4 p.m. Tune in daily to hear how the latest developments in AI and technology are reshaping companies, industries, and the global economy."
-     },
-     {
       "hd": "How the Anthropic IPO stacks up against SpaceX",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOWkdlbW1ReWtyUXdHSHFPaWw0Q25WdThvUlFSTDY3cGI2THcyNUtSNzVhNVZUdFVkcVF1Rzh3SWl4dVRiTEk3Z3JyLWpGeEx2aGFCYWZ3bTA2SXBia1lXcVBFd2xrRFdNQTllNUV4RGxVOWZreFlLWENXNzF5Njdsa1ZLZ0NWcEVRbzRJdnNuSm0tLTVUY280clRCaXVzOGhSekhNMkhBdGF2Wmc?oc=5",
@@ -14914,10 +14918,10 @@
       "sum": ""
      },
      {
-      "hd": "Texas Starts Approving Data Centers Again—Including For SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=06eea2fe0cda05342c0d2a924e3014201b40d051c2b08ba751016f9cb951b2dc",
-      "pub": "2026-11-18T22:38:00.000Z",
+      "hd": "Texas Starts Approving Data Centers Again — Including For SpaceX",
+      "src": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPb0ZmOElxT0pSMW1rWVpydm1DMExJVzNfQ3FkS3M3VXM5dVNsamI2bTh5RTBhNGtiMnB2Y0VxVXpJdkN2NnJYOTlYOVBIZFJYbWpILWdaX1RZM0luX1IyRVNjR25YSlVieG5qZ3VNR2RlTWhNLWJSZUp0OGV5ejlkaXB3QQ?oc=5",
+      "pub": "2026-11-18T22:39:47.000Z",
       "sum": "The surprise move comes just weeks before a new government takes office with plans to halt all data-center approvals."
      },
      {
@@ -14937,7 +14941,7 @@
      {
       "hd": "Anthropic IPO raises over $81 billion in largest offering on record, topping SpaceX",
       "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5fN2ZOWVZ6YkV0emdTaWU3MGlkTzhwcFNGRl9pYXN2d2kwcnRoZW9HS0luWlp4clhWSXk3eExTeEljd1N4SklrZ3lTVkdRUzRCZE9sUFpOaDFyYTNYa19kTHNZSzVKaEV0RXl5YmJwQk9NRnRxR08w?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5fN2ZOWVZ6YkV0emdTaWU3MGlkTzhwcFNGRl9pYXN2d2kwcnRoZW9HS0luWlp4clhWSXk3eExTeEljd1N4SklrZ3lTVkdRUzRCZE9sUFpOaDFyYTNYa19kTHNZSzVKaEV0RXl5YmJwQk9NRnRxR08w0gF8QVVfeXFMTlZsNHk0MjhxNTE4MVdnY1M5clBUYkJkX1ZONlRRZExmbF9LeU5JN3JSWk83Zkc1QUVUNlZCRDVFeExRQW1ZUUlWeVE0NVVvVGJ1MEtUYWFhSVNXX2I5bGlfb0lCSzlkaExmeXNnSVpFLTdpU0ozN0VpTmdXNA?oc=5",
       "pub": "2026-11-18T15:15:54.000Z",
       "sum": ""
      },
@@ -15021,14 +15025,28 @@
     ],
     "fetched": {
      "Finnhub": 126,
-     "Yahoo": 5,
-     "Google News": 39,
+     "Yahoo": 7,
+     "Google News": 37,
      "Nasdaq": 0,
-     "Seeking Alpha": 25
+     "Seeking Alpha": 24
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Asian Stocks Set to Fall Ahead of Anthropic Debut: Markets Wrap",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
+      "pub": "2026-11-19T05:09:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Anthropic retail investors face squeeze in blockbuster IPO",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOX1BxZ1lwWHZTQWl3dHVtU0pTVFhGUmkxVVBkczk3bEtaNzlsN0RjY21hN0t6OUJhQlpKQlBGR09GY3JseHVhcTY0clp4eW54cVJHT1RKN3JQdEU2aEVxX2hqVzd3UDBSRmxZUFcyb0tGYUNucE4zUnF6YzhVaVE1cml1ako?oc=5",
+      "pub": "2026-11-19T05:00:17.000Z",
+      "sum": ""
+     },
      {
       "hd": "Anthropic IPO: AI lab reportedly raises $107.3B breaking SpaceX’s record debut",
       "src": "Seeking Alpha",
@@ -15037,10 +15055,10 @@
       "sum": ""
      },
      {
-      "hd": "Asian Stocks Set to Fall Ahead of Anthropic Debut: Markets Wrap",
+      "hd": "Anthropic IPO Hands SK Hynix Tycoon’s Firm $3 Billion Windfall",
       "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHJMMGxuVjE0QlBiMjdlLVg4Snd2RjdIVmxmMlFGX3E1cEpBS3BHaEQ0YnpUb19jc2lXMG9RQk9nSk8xSVFmN2d4VFRoSC1nQkJUdk5DTF9MWlVqRklPelgyUGpNREtJQUpEd3BTZ3A0VmVZdGRZZ21mT0x5bEdhUkd1OVVKZHNLUkRqdWY3M3VxOHBu?oc=5",
-      "pub": "2026-11-19T04:18:00.000Z",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNLLU4td19HNzA2NGJmY25DV0RnaGRFLW56ZnpfZWRnbWlEMkZLQngxWmlVclpTZy1ZSjV1LXpEdW0zM3k3aEhLYXVsNkw4ZVRybXIxQUs5QTNEUGtBXzFQX2o3QkRac2p4MGNMcTBmYm84amlvT3pKRUh1eVFMTUVfLWpySHRnSmg4d1E0RXNnSG5LNzJtdWVuV25yclFfQldYbVo0dC1vVVJKb0lRTVpB?oc=5",
+      "pub": "2026-11-19T03:29:00.000Z",
       "sum": ""
      },
      {
@@ -15090,13 +15108,6 @@
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPV19qTVRLN1dWXzV4SkR0enVfY2hHMkNJWEpPajMxMlpGOUNTNkR3Q25rZDF2dmItNE9waVhOQ05EMWliV2hqS1BKRi01WTB6bFhqbnpjUE56aHVhZ1J1b01GeEhCUnRMWE8wX3QxTkxkd0RmRXliUzhSVmRSOGZkV292djZTRVRkNEM5VkRxdnJYVHFpRDZFdTNQblJ3d2JURmpQNlpOenF4X1NYamc?oc=5",
       "pub": "2026-11-19T01:42:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Anthropic IPO Hands SK Hynix Tycoon’s Firm $3 Billion Windfall",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWGNLLU4td19HNzA2NGJmY25DV0RnaGRFLW56ZnpfZWRnbWlEMkZLQngxWmlVclpTZy1ZSjV1LXpEdW0zM3k3aEhLYXVsNkw4ZVRybXIxQUs5QTNEUGtBXzFQX2o3QkRac2p4MGNMcTBmYm84amlvT3pKRUh1eVFMTUVfLWpySHRnSmg4d1E0RXNnSG5LNzJtdWVuV25yclFfQldYbVo0dC1vVVJKb0lRTVpB?oc=5",
-      "pub": "2026-11-19T01:36:26.000Z",
       "sum": ""
      },
      {
@@ -15177,6 +15188,13 @@
       "sum": ""
      },
      {
+      "hd": "Anthropic raises record $81 billion in IPO at $1.5 trillion valuation",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR3NST2trRTZCZkdmblYtRm5pcldXRUJTVjZkZUJ6bHJYbjFUSUJ6ZGVJNW1SMVg0ZWthVnlfVVRhZnlld192c0pBaUZSUzRZS0xGdFlYRnViSU9RYVhHWXRpVDlULS0tREUzcDhfa0NGSVIzVkFTOXBzeW5JelpBVy1RV2FFWEpwdnFhZnlqUVN0bUxWSXJaTVFzTEQxTDlFVVpkRERxQmplM0V2X3c?oc=5",
+      "pub": "2026-11-18T21:26:00.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Anthropic clinches biggest IPO ever with $81 billion offering",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPR3NST2trRTZCZkdmblYtRm5pcldXRUJTVjZkZUJ6bHJYbjFUSUJ6ZGVJNW1SMVg0ZWthVnlfVVRhZnlld192c0pBaUZSUzRZS0xGdFlYRnViSU9RYVhHWXRpVDlULS0tREUzcDhfa0NGSVIzVkFTOXBzeW5JelpBVy1RV2FFWEpwdnFhZnlqUVN0bUxWSXJaTVFzTEQxTDlFVVpkRERxQmplM0V2X3c?oc=5",
@@ -15189,33 +15207,19 @@
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONkZkRVdESVU1UERiQmhZWmp5cl9Vel9VQlJOOWtLM3ZfVjFVVU5rYUZVWk5UVF8xU0t3SU0ybEF4UDNBOWFNeVI3RjlGMzZVdUhMbnV4UU9JQXpqM1FxZk1reHJGbFM5Qm1VcTMwTl81SEtvWVRYNjJRa0JPZ2xkamZfR3I2elFGWnhlNUFsMWNYMW5MeWJYR3o4SFg5NWhxa0tjYzJtMVpaelVhMUREQnZJa0huN1pzSlUzdTBHWm9ackd6Q0w4?oc=5",
       "pub": "2026-11-18T20:16:28.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Anthropic IPO: The Most Important AI Stock Has Arrived (And Is A Buy)",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4969758-anthropic-ipo-the-most-important-ai-stock-has-arrived-and-is-a-buy?source=feed_symbol_ANT",
-      "pub": "2026-11-18T19:39:06.000Z",
-      "sum": "FICO, Costco, and Ford have important interim updates ahead that could offer fresh clues about consumer credit, spending, and the auto industry."
-     },
-     {
-      "hd": "Nvidia reverses, metals crash ahead of Anthropic IPO",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPay03RVY5MHhlb2tCMTU4dVZUYXJMUE1oU1dSbkFsc25mYjB2YmhCUEVHODV6cng1RFUtVWk1bzBqWkVneGNhZktzQ0NLZUx3b0NFVFZkeURjdkdtdjRUejYxLVF4UFBSVFByWDRVbldvajdtUkJKN01Wa1NhOC0wVlM2VjRUSll0S0NFcGVGempCU3c5SXVqY0FsZ2tEeXdINkZVZENLbkN4UjVP0gGyAUFVX3lxTE5lcnVYNnF4OTlYTDN2QVowZEtFZXBlQ0VPQWZkTDFnUGZJd2VqUEN6bkdSdS1MOUYtbFlkdXFCUE9jbVZtLVRrQ2Z0N1hIQ3R1MmRmR0Z0by1ONDNMaE1GTmJmenRhdENGMUNMZ1ZPLTlkWDJ6T0JDQzdueGxiRDVZZ3hfV3F6cHduUldQZGdKcXU2STVzNzBKdjJCQVZybjJDVWVyYTh6SjB3aWVORTdfa0E?oc=5",
-      "pub": "2026-11-18T18:57:02.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 21,
      "Yahoo": 0,
-     "Google News": 83,
+     "Google News": 82,
      "Nasdaq": 12,
      "Seeking Alpha": 26
     }
    }
   },
-  "asOf": "2026-11-19T05:00:13.273Z",
-  "lastAttempt": "2026-11-19T05:00:13.273Z",
+  "asOf": "2026-11-19T06:00:16.315Z",
+  "lastAttempt": "2026-11-19T06:00:16.315Z",
   "lastError": null
  },
  "worldNews": {
