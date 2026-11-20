@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-20T20:45:18.542Z",
+ "generatedAt": "2026-11-20T21:00:11.476Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -402,10 +402,10 @@
   "status": "live",
   "lastError": null,
   "market": {
-   "isOpen": true,
-   "session": "regular",
+   "isOpen": false,
+   "session": "post-market",
    "holiday": null,
-   "checkedAt": "2026-11-20T20:45:18.542Z"
+   "checkedAt": "2026-11-20T21:00:11.476Z"
   },
   "quotes": {
    "NVDA": {
@@ -7039,18 +7039,12 @@
   "closeFetchedFor": "2026-11-19"
  },
  "lastRun": {
-  "at": "2026-11-20T20:45:18.542Z",
+  "at": "2026-11-20T21:00:11.476Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
    "movers",
    "sectors",
-   "stocks:session",
-   "series",
+   "extended",
    "usTempGrid"
   ]
  },
@@ -13934,8 +13928,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-20T20:45:18.542Z",
-  "lastAttempt": "2026-11-20T20:45:18.542Z",
+  "asOf": "2026-11-20T21:00:11.476Z",
+  "lastAttempt": "2026-11-20T21:00:11.476Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14611,7 +14605,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-20T20:45:18.542Z",
+  "lastAttempt": "2026-11-20T21:00:11.476Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14645,94 +14639,94 @@
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
   "marketState": "REGULAR",
-  "sessionTime": "2026-11-20T20:47:10.000Z",
+  "sessionTime": "2026-11-20T20:58:45.000Z",
   "sessionDate": "2026-11-20",
   "gainers": [
    {
     "s": "GAP",
     "n": "Gap, Inc. (The)",
-    "ch": 10.91,
-    "px": 20.84,
-    "cap": 7320470016,
-    "t": 1795207618
+    "ch": 11.15,
+    "px": 20.885,
+    "cap": 7336276992,
+    "t": 1795208240
    },
    {
     "s": "GPN",
     "n": "Global Payments Inc.",
-    "ch": 10.85,
-    "px": 92.58,
-    "cap": 24499984384,
-    "t": 1795207618
-   },
-   {
-    "s": "BKE",
-    "n": "Buckle, Inc. (The)",
-    "ch": 5.36,
-    "px": 44.02,
-    "cap": 2267577344,
-    "t": 1795207582
+    "ch": 10.69,
+    "px": 92.45,
+    "cap": 24465580032,
+    "t": 1795208240
    },
    {
     "s": "KVYO",
     "n": "Klaviyo, Inc. Series A",
-    "ch": 5.16,
-    "px": 22.4,
-    "cap": 6306996736,
-    "t": 1795207615
+    "ch": 4.86,
+    "px": 22.335,
+    "cap": 6288695296,
+    "t": 1795208243
    },
    {
-    "s": "HDB",
-    "n": "HDFC Bank Limited",
-    "ch": 5.09,
-    "px": 27.575,
-    "cap": 141861486592,
-    "t": 1795207619
+    "s": "BIPC",
+    "n": "Brookfield Infrastructure Corpo",
+    "ch": 4.86,
+    "px": 43.075,
+    "cap": 5299132416,
+    "t": 1795208243
+   },
+   {
+    "s": "BKE",
+    "n": "Buckle, Inc. (The)",
+    "ch": 4.83,
+    "px": 43.8,
+    "cap": 2256244480,
+    "t": 1795208222
    }
   ],
   "losers": [
    {
     "s": "APLD",
     "n": "Applied Digital Corporation",
-    "ch": -17.5,
-    "px": 11.535,
-    "cap": 3488035584,
-    "t": 1795207630
-   },
-   {
-    "s": "HUT",
-    "n": "Hut 8 Corp.",
-    "ch": -16.87,
-    "px": 46.39,
-    "cap": 5568542208,
-    "t": 1795207630
+    "ch": -18.13,
+    "px": 11.445,
+    "cap": 3460820736,
+    "t": 1795208323
    },
    {
     "s": "IREN",
     "n": "IREN LIMITED",
-    "ch": -16.66,
-    "px": 12.01,
-    "cap": 5096531968,
-    "t": 1795207630
+    "ch": -18.11,
+    "px": 11.8,
+    "cap": 5007417344,
+    "t": 1795208325
+   },
+   {
+    "s": "HUT",
+    "n": "Hut 8 Corp.",
+    "ch": -17.87,
+    "px": 45.83,
+    "cap": 5501321216,
+    "t": 1795208323
+   },
+   {
+    "s": "CIFR",
+    "n": "Cipher Digital Inc.",
+    "ch": -17.05,
+    "px": 5.375,
+    "cap": 2452962560,
+    "t": 1795208325
    },
    {
     "s": "AAOI",
     "n": "Applied Optoelectronics, Inc.",
-    "ch": -16.27,
-    "px": 33.04,
-    "cap": 2999090688,
-    "t": 1795207629
-   },
-   {
-    "s": "CLS",
-    "n": "Celestica, Inc.",
-    "ch": -15.68,
-    "px": 202.555,
-    "cap": 25544577024,
-    "t": 1795207628
+    "ch": -16.79,
+    "px": 32.835,
+    "cap": 2980482304,
+    "t": 1795208325
    }
   ],
-  "asOf": "2026-11-20T20:45:18.542Z",
-  "lastAttempt": "2026-11-20T20:45:18.542Z",
+  "asOf": "2026-11-20T21:00:11.476Z",
+  "lastAttempt": "2026-11-20T21:00:11.476Z",
   "lastError": null
  },
  "sectors": {
@@ -14742,91 +14736,91 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 150.05,
-    "d": -6.62,
-    "t": 1795207629
+    "px": 148.37,
+    "d": -7.67,
+    "t": 1795208270
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 100.38,
-    "d": -2.32,
-    "t": 1795207628
+    "px": 99.81,
+    "d": -2.87,
+    "t": 1795208270
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 112.87,
-    "d": -2.6,
-    "t": 1795207629
+    "px": 112.15,
+    "d": -3.22,
+    "t": 1795208268
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 54.81,
-    "d": -1.39,
-    "t": 1795207628
+    "px": 54.44,
+    "d": -2.05,
+    "t": 1795208269
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 177.69,
-    "d": 0.13,
-    "t": 1795207630
+    "px": 176.76,
+    "d": -0.39,
+    "t": 1795208269
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 157.03,
-    "d": -2.68,
-    "t": 1795207630
+    "px": 155.89,
+    "d": -3.39,
+    "t": 1795208269
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 90.7,
-    "d": 0.93,
-    "t": 1795207631
+    "px": 90.32,
+    "d": 0.51,
+    "t": 1795208265
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 60.92,
-    "d": 0.05,
-    "t": 1795207631
+    "px": 60.37,
+    "d": -0.85,
+    "t": 1795208269
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 42.89,
-    "d": -0.28,
-    "t": 1795207630
+    "px": 42.64,
+    "d": -0.87,
+    "t": 1795208269
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 42.65,
-    "d": -0.55,
-    "t": 1795207627
+    "px": 42.42,
+    "d": -1.08,
+    "t": 1795208263
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 48.56,
-    "d": -1.75,
-    "t": 1795207628
+    "px": 48.22,
+    "d": -2.42,
+    "t": 1795208262
    }
   ],
-  "sessionTime": "2026-11-20T20:47:11.000Z",
+  "sessionTime": "2026-11-20T20:57:50.000Z",
   "sessionDate": "2026-11-20",
-  "asOf": "2026-11-20T20:45:18.542Z",
-  "lastAttempt": "2026-11-20T20:45:18.542Z",
+  "asOf": "2026-11-20T21:00:11.476Z",
+  "lastAttempt": "2026-11-20T21:00:11.476Z",
   "lastError": null
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T14:30:11.701Z",
-  "lastAttempt": "2026-11-20T14:30:11.701Z",
+  "asOf": "2026-11-20T21:00:11.476Z",
+  "lastAttempt": "2026-11-20T21:00:11.476Z",
   "items": {
    "NVDA": {
     "session": "pre",
