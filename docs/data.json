@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-20T22:00:14.313Z",
+ "generatedAt": "2026-11-20T22:15:20.697Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,9 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-20T22:00:14.313Z",
+  "at": "2026-11-20T22:15:20.697Z",
   "ran": [
    "alerts",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14206,8 +14208,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-20T22:00:14.313Z",
-  "lastAttempt": "2026-11-20T22:00:14.313Z",
+  "asOf": "2026-11-20T22:15:20.697Z",
+  "lastAttempt": "2026-11-20T22:15:20.697Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14883,7 +14885,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-20T22:00:14.313Z",
+  "lastAttempt": "2026-11-20T22:15:20.697Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15094,44 +15096,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T22:00:14.313Z",
-  "lastAttempt": "2026-11-20T22:00:14.313Z",
+  "asOf": "2026-11-20T22:15:20.697Z",
+  "lastAttempt": "2026-11-20T22:15:20.697Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 128.75,
-    "time": 1795212014,
+    "price": 129.1,
+    "time": 1795213007,
     "ref": 125.53,
     "refTime": 1795208401,
-    "change": 3.219999999999999,
-    "changePct": 2.56512387477097
+    "change": 3.569999999999993,
+    "changePct": 2.843941687246071
    },
    "TSLA": {
     "session": "post",
-    "price": 349.5,
-    "time": 1795212006,
+    "price": 349.5801,
+    "time": 1795212997,
     "ref": 345.82,
     "refTime": 1795208401,
-    "change": 3.680000000000007,
-    "changePct": 1.06413741252675
+    "change": 3.7601000000000226,
+    "changePct": 1.0872997513157199
    },
    "SPCX": {
     "session": "post",
-    "price": 129.12,
-    "time": 1795212012,
+    "price": 128.9799,
+    "time": 1795213004,
     "ref": 127.79,
     "refTime": 1795208400,
-    "change": 1.3299999999999983,
-    "changePct": 1.040770013303074
+    "change": 1.1898999999999802,
+    "changePct": 0.9311370216761718
    },
    "ANT": {
     "session": "post",
-    "price": 87.95,
-    "time": 1795211987,
+    "price": 88.2093,
+    "time": 1795213005,
     "ref": 88.91,
     "refTime": 1795208402,
-    "change": -0.9599999999999937,
-    "changePct": -1.0797435609042783
+    "change": -0.7006999999999977,
+    "changePct": -0.7881003261725315
    }
   }
  },
@@ -15142,60 +15144,60 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Trump’s Treasury Secretary Keeps Nvidia’s H200 China Policy as House Data Show Nearly 880,000 AI Chips Approved",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/trumps-treasury-secretary-keeps-nvidias-h200-china-policy-as-house-data-show-nearly-880000-ai-chips-approved?ref=yahoofinance&tlnk=yf-261120-rx666q2r&.tsrc=rss",
+      "pub": "2026-11-20T21:58:37.000Z",
+      "sum": "Key TakeawaysHouse data show Commerce approved nearly 880,000 NVIDIA and AMD AI chips for China from December to May. Treasury Secretary Scott Bessent said Friday he doesn’t expect the H200 policy to change."
+     },
+     {
+      "hd": "Navitas Sinks 15%, Western Down 12%, Everpure Down 13% as AI Chip Rout Deepens",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=e575b463a0d8fb52d476dd9c255620fe722e05485e954bffcec001fc61d4ea5d",
+      "pub": "2026-11-20T21:50:51.000Z",
+      "sum": "Key TakeawaysNavitas Semiconductor fell 15% today with no news of its own, as an AI chip sell-off that started in Asia deepened in New York. Western Digital, Everpure and D-Wave Quantum fell too, as Anthropic slid on its second trading day and California’s attorney general subpoenaed Nvidia."
+     },
+     {
+      "hd": "Nvidia’s Stock Slide Deepens After Report of SEC Accounting Probe",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=8ea45aa89b25bf662ec532ef89c9c04f096153d6e9dc711db4f16a9cd9d560e8",
+      "pub": "2026-11-20T21:43:00.000Z",
+      "sum": "The stock fell Friday and closed lower for a seventh-consecutive trading session."
+     },
+     {
+      "hd": "Meta's Server Chip Shake-Up Could Hand Nvidia a Win",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/metas-server-chip-shake-could-214208711.html?.tsrc=rss",
+      "pub": "2026-11-20T21:42:08.000Z",
+      "sum": "The shift could change who wins the next orders."
+     },
+     {
+      "hd": "Nvidia Stock Keeps Falling As California Opens A Probe Into Its China Risk",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-keeps-falling-california-214200884.html?.tsrc=rss",
+      "pub": "2026-11-20T21:42:00.000Z",
+      "sum": "California Just Subpoenaed Nvidia. What The Probe Means For The AI Chip Giant"
+     },
+     {
+      "hd": "Nvidia Stocks Fall 3.30% as CEO Transition Overshadows $115.8 Billion Quarter",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-fall-3-30-214147795.html?.tsrc=rss",
+      "pub": "2026-11-20T21:41:47.000Z",
+      "sum": "Shares closed near a 52-week low as a $130 billion outlook excluding China failed to calm leadership and export worries."
+     },
+     {
       "hd": "CoreWeave Finds AI Demand Outside the Commercial Market",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/coreweave-finds-ai-demand-outside-213902215.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=aee78667cda8698e3f16e942bf6c428c59b57c4d404bfe79d3d3e2d3f8b53449",
       "pub": "2026-11-20T21:39:02.000Z",
       "sum": "The deal adds another link between Nvidia and CoreWeave."
      },
      {
       "hd": "From Nvidia To Amazon, Tech Giants Face Stunning Reversal As Nasdaq Erases 2026 Gains",
       "src": "Yahoo Finance",
-      "url": "https://www.ibtimes.com/us-stocks-ai-selloff-nasdaq-market-decline-3810038?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=82b1087a33c565801cefa3a4d554a8431fd5bc9079d7e60d9fa0cfbfb68a32d4",
       "pub": "2026-11-20T21:34:47.000Z",
       "sum": "Technology shares led a broad market retreat as investors questioned lofty AI valuations and responded to rising expectations for another Federal Reserve rate hike."
-     },
-     {
-      "hd": "Nvidia Stock Just Lost $900 Billion in Its Worst Week Since 2008. The Last Time the SEC Examined Nvidia’s Accounting, the Stock Fell 81% in a Year",
-      "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/20/nvidia-stock-just-lost-900-billion-in-its-worst-week-since-2008-the-last-time-the-sec-examined-nvidias-accounting-the-stock-fell-81-in-a-year/?.tsrc=rss",
-      "pub": "2026-11-20T21:33:04.000Z",
-      "sum": "Nvidia closed down 14% Friday and 23% for the week, erasing about $900 billion, the largest one-week loss of market value on record. The SEC examined Nvidia's accounting once before, in 2002. Here's what the stock did next."
-     },
-     {
-      "hd": "Could Jensen Huang Land At Nvidia Rival Intel?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/0f796a98-f9a0-3610-b88d-21a75faa2e7b/could-jensen-huang-land-at.html?.tsrc=rss",
-      "pub": "2026-11-20T21:28:35.000Z",
-      "sum": "A Wall Street portfolio manager speculated that ex-Nvidia CEO Jensen Huang could end up at rival Intel."
-     },
-     {
-      "hd": "Nvidia Stock Plunge Wipes Out Nearly $500 Billion in One Day as SEC Reportedly Probes Its Accounting",
-      "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/20/nvidia-stock-plunge-wipes-out-nearly-usd500-billion-in-one-day-as-sec-reportedly-probes-its-accounting/?.tsrc=rss",
-      "pub": "2026-11-20T21:27:22.000Z",
-      "sum": "A Reuters report that the SEC is looking at Nvidia's accounting sent the stock plunging on Friday. Here's what's known and what investors should do."
-     },
-     {
-      "hd": "US Equity Indexes Slump as Clouds Hovering Over Chipmakers, Hawkish Fed Outweigh Anthropic's Nasdaq Debut This Week",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-slump-clouds-212255820.html?.tsrc=rss",
-      "pub": "2026-11-20T21:22:55.000Z",
-      "sum": "US equity indexes slumped as Anthropic's (ANT) biggest-ever public listing and Nvidia's (NVDA) blowo"
-     },
-     {
-      "hd": "US Equity Markets Fall Amid Sharp Sell-off in Technology, AI-Related Stocks",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-markets-fall-amid-211419997.html?.tsrc=rss",
-      "pub": "2026-11-20T21:14:19.000Z",
-      "sum": "US equity indexes ended lower Friday amid a sharp sell-off in technology and AI stocks, with Nvidia"
-     },
-     {
-      "hd": "Trump critiques Jensen Huang's replacement as he wades deeper into Nvidia turmoil",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/article/trump-critiques-jensen-huangs-replacement-as-he-wades-deeper-into-nvidia-turmoil-210729338.html?.tsrc=rss",
-      "pub": "2026-11-20T21:07:29.000Z",
-      "sum": "President Trump on Friday offered a defense of ousted Nvidia CEO Jensen Huang, but — perhaps more significantly — criticized the new leadership of the chipmaker."
      },
      {
       "hd": "EXCLUSIVE: Nvidia's accounting is a focus of US SEC investigation, sources say",
@@ -15318,12 +15320,14 @@
      }
     ],
     "fetched": {
-     "Finnhub": 106,
+     "Finnhub": 108,
      "Yahoo": 10,
-     "Google News": 89,
      "Nasdaq": 6,
      "Seeking Alpha": 26
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "TSLA": {
     "items": [
@@ -15506,13 +15510,22 @@
     "fetched": {
      "Finnhub": 144,
      "Yahoo": 12,
-     "Google News": 16,
      "Nasdaq": 6,
      "Seeking Alpha": 12
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "A $9.7 Billion Fund Bought These 3 Stocks Last Quarter",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/a-9-7-billion-fund-bought-these-3-stocks-last-quarter?ref=yahoofinance&tlnk=yf-261120-83gq9xg9&.tsrc=rss",
+      "pub": "2026-11-20T21:35:24.000Z",
+      "sum": "Key TakeawaysA $9. 7 billion fund, Hyperion Asset Management, added to its stakes in SpaceX, Arm Holdings and Taiwan Semiconductor in the third quarter."
+     },
      {
       "hd": "SpaceX Sells $32 Bil Of Debt For AI Chips. But Yields, Orbital Deployment Raise Concerns.",
       "src": "Yahoo Finance",
@@ -15561,13 +15574,6 @@
       "url": "https://finnhub.io/api/news?id=9ad24a4d56fdb7140170bf4fec873a2a306f166be9c9a3cbc15459d079210a2b",
       "pub": "2026-11-20T19:01:03.000Z",
       "sum": "Brad Garlinghouse claims crypto holders cashed out to chase the biggest IPO in history, and he says the same thing happened before SpaceX listed. The SpaceX aftermath offers a timeline, but this sell-off looks different."
-     },
-     {
-      "hd": "Forget SpaceX: This Stock Could Be the Real Winner of the Space Race",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=036fdcc27a6c6de22afb462741e83f29c287fc3b0846445fd3e9ae5ec8202526",
-      "pub": "2026-11-20T18:50:02.000Z",
-      "sum": "Autonomous driving technology is a beneficiary of today's space race."
      },
      {
       "hd": "Arizona AG asks local zoning board to delay vote on SpaceX's $50B data center: report",
@@ -15691,14 +15697,23 @@
     ],
     "fetched": {
      "Finnhub": 128,
-     "Yahoo": 8,
-     "Google News": 34,
+     "Yahoo": 9,
      "Nasdaq": 0,
      "Seeking Alpha": 24
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Chartstopper: November 20, 2026",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/economic-institute/chartstopper-112026",
+      "pub": "2026-11-20T22:00:00.000Z",
+      "sum": "This week saw the historic Anthropic IPO (✓), mega-cap earnings beats (✓), and positive economic data (✓), so naturally the stock market is [checks notes] down 8% this week. So what gives?"
+     },
      {
       "hd": "Nasdaq turns negative: Why Anthropic & other tech stocks are getting crushed",
       "src": "Yahoo Finance",
@@ -15866,30 +15881,32 @@
       "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
       "pub": "2026-11-20T16:38:16.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
-      "src": "The Verge",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaEZDbk4zRlNqQlluWm15Rk5CUTh6S2JuUHphM1N3MVBpRmJxTndYYm1tcElvaUxmZWxfVmhTY3M5RWVISzVxcllJUVZCZWtXeUV0Ui1pRTladU5ocGE3ZHlmXzgtN1lLZjZ3UUVWTndJRHJaODdxM1pnd0d2eG1zREFFVkpvWVBBOW0yaGlVc1dzeDZWalQtMVBlYVI4THN3dHQxYWRMVW5QTnNnSkd6RllzZw?oc=5",
-      "pub": "2026-11-20T16:34:13.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 93,
-     "Yahoo": 13,
-     "Google News": 94,
+     "Yahoo": 0,
      "Nasdaq": 12,
      "Seeking Alpha": 27
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    }
   },
-  "asOf": "2026-11-20T21:45:14.897Z",
-  "lastAttempt": "2026-11-20T21:45:14.897Z",
+  "asOf": "2026-11-20T22:15:20.697Z",
+  "lastAttempt": "2026-11-20T22:15:20.697Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Denmark Expels Russian Diplomat After Accusing Moscow of Planning a Hit",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/20/world/europe/denmark-russia-ukraine-rapper-assassination.html",
+    "pub": "2026-11-20T21:47:21.000Z",
+    "sum": "Danish officials say Russian intelligence services recruited members of a violent gang to try to assassinate a Ukrainian rapper at a concert outside Copenhagen."
+   },
    {
     "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
     "src": "WSJ",
@@ -16040,7 +16057,7 @@
    {
     "hd": "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know",
     "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBvUU1SLWZGMnpDTVE4bkRqX0RPTGl0eERIWTBwZTZRb3B6bTJheGVXbUNaUkZURlRsNlU2d1lLTGkyUk1ocjNMTkQwUWNEYjU1clVGWnNGSGVsemo3LW1Ja2FzaUtPWVhSNjg4ZGJYejc4cFE0ZkJKNERsX0E?oc=5",
+    "url": "https://www.nytimes.com/2026/11/20/world/europe/uk-eu-summit-brexit.html",
     "pub": "2026-11-20T16:50:16.000Z",
     "sum": "Prime Minister Andy Burnham and European leaders said they had agreed to remove some of the barriers created when Britain left the European Union."
    },
@@ -16092,20 +16109,9 @@
     "url": "https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html",
     "pub": "2026-11-20T16:05:55.000Z",
     "sum": "The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire."
-   },
-   {
-    "hd": "When Nazis were held responsible for war crimes",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRTk5TXpOa1dSNzY0aHY4UThjUmdsNjFBQVlVbi1VbnlWTTgxQUozVE1JaWRoU244QVhiNVhIMVZOSWVWNDhMaHNYTUtQVDZSelRPcHQ0ek1wS3FObENNTWpidW5kb3U2UDdhenVwYjN4V1dFZ1dwY0hWTlVqTGtQblFKNjFNeTVqcE43WHk5OWdJZld0WDFB?oc=5",
-    "pub": "2026-11-20T16:03:04.000Z",
-    "sum": "The judges at Nuremberg rejected the just-following-orders defense."
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16116,9 +16122,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-20T21:45:14.897Z",
-  "lastAttempt": "2026-11-20T21:45:14.897Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-20T22:15:20.697Z",
+  "lastAttempt": "2026-11-20T22:15:20.697Z",
   "lastError": null
  }
 }
