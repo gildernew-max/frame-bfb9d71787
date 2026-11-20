@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-20T13:00:23.590Z",
+ "generatedAt": "2026-11-20T13:15:11.308Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7205,9 +7205,11 @@
   "closeFetchedFor": "2026-11-19"
  },
  "lastRun": {
-  "at": "2026-11-20T13:00:23.590Z",
+  "at": "2026-11-20T13:15:11.308Z",
   "ran": [
    "alerts",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13576,62 +13578,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T13:00:23.590Z",
-  "lastAttempt": "2026-11-20T13:00:23.590Z",
+  "asOf": "2026-11-20T13:15:11.308Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7125.5,
-    "lastTime": 1795179023,
+    "last": 7127,
+    "lastTime": 1795179915,
     "settle": 7194.25,
     "settleDate": "2026-11-19",
     "indexClose": 7175.83,
-    "change": -68.75,
-    "changePct": -0.9556242832817875,
-    "expectedOpen": 7107.2560259929805,
+    "change": -67.25,
+    "changePct": -0.9347742989192758,
+    "expectedOpen": 7108.752185425861,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26100,
-    "lastTime": 1795179025,
-    "settle": 26589.25,
+    "last": 26116.25,
+    "lastTime": 1795179923,
+    "settle": 26589.5,
     "settleDate": "2026-11-19",
     "indexClose": 23879.2,
-    "change": -489.25,
-    "changePct": -1.8400293351636468,
-    "expectedOpen": 23439.815714997603,
+    "change": -473.25,
+    "changePct": -1.7798379059403149,
+    "expectedOpen": 23454.1889467647,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49000,
-    "lastTime": 1795179024,
+    "last": 49028,
+    "lastTime": 1795179924,
     "settle": 49162,
     "settleDate": "2026-11-19",
     "indexClose": 49097.06,
-    "change": -162,
-    "changePct": -0.3295228021642732,
-    "expectedOpen": 48935.27399210772,
+    "change": -134,
+    "changePct": -0.2725682437655099,
+    "expectedOpen": 48963.2370058175,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2653.3,
-    "lastTime": 1795179024,
-    "settle": 2661.89990234375,
+    "last": 2652.6,
+    "lastTime": 1795179923,
+    "settle": 2661.800048828125,
     "settleDate": "2026-11-19",
     "indexClose": null,
-    "change": -8.599902343749818,
-    "changePct": -0.32307384421847624,
+    "change": -9.200048828125091,
+    "changePct": -0.3456326042286863,
     "expectedOpen": null,
     "valid": true
    }
@@ -14093,8 +14095,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-20T13:00:23.590Z",
-  "lastAttempt": "2026-11-20T13:00:23.590Z",
+  "asOf": "2026-11-20T13:15:11.308Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14770,7 +14772,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-20T13:00:23.590Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14981,44 +14983,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T13:00:23.590Z",
-  "lastAttempt": "2026-11-20T13:00:23.590Z",
+  "asOf": "2026-11-20T13:15:11.308Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 141.2354,
-    "time": 1795179624,
+    "price": 141.05,
+    "time": 1795180523,
     "ref": 145.98,
     "refTime": 1795122001,
-    "change": -4.744599999999991,
-    "changePct": -3.2501712563364786
+    "change": -4.929999999999978,
+    "changePct": -3.377174955473338
    },
    "TSLA": {
     "session": "pre",
-    "price": 366.38,
-    "time": 1795179622,
+    "price": 365.6,
+    "time": 1795180517,
     "ref": 374.41,
     "refTime": 1795122001,
-    "change": -8.03000000000003,
-    "changePct": -2.1447076734061667
+    "change": -8.810000000000002,
+    "changePct": -2.3530354424294226
    },
    "SPCX": {
     "session": "pre",
-    "price": 130.24,
-    "time": 1795179624,
+    "price": 129.86,
+    "time": 1795180516,
     "ref": 138.43,
     "refTime": 1795122001,
-    "change": -8.189999999999998,
-    "changePct": -5.9163476125117365
+    "change": -8.569999999999993,
+    "changePct": -6.190854583544024
    },
    "ANT": {
     "session": "pre",
-    "price": 87.54,
-    "time": 1795179625,
+    "price": 87.93,
+    "time": 1795180524,
     "ref": 97.17,
     "refTime": 1795122001,
-    "change": -9.629999999999995,
-    "changePct": -9.910466193269523
+    "change": -9.239999999999995,
+    "changePct": -9.509107749305336
    }
   }
  },
@@ -15028,6 +15030,34 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Exclusive | SEC Is Probing Nvidia Amid Departure of CEO Jensen Huang",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbjl2b0tzT1ROT2plV1p5RHhQd3hXOEJKRFhOZ1ItZExOQV9oVGkzTU9tcEEyTXhjNHRKQVExRTNRdEtlY24zUFhmS0h0c21FUVVrVVh0NGF2SXFmdm1wcmVRLUlCcG5CMGRIZklSdVBkVElkS3lwRF9LaGg4YzU5b0dsZXlveWxSNzhGYzJlZmRSRkhvUWZRTHB3?oc=5",
+      "pub": "2026-11-20T13:08:39.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Jensen Huang Needs to Stay Gone... His Fan Club Proves It",
+      "src": "Yahoo Finance",
+      "url": "https://app.moby.co/home/news/news-jensen-huang-needs-to-stay-gone-his-fan-club-proves-it?utm_source=yahoo_finance&utm_medium=rss&.tsrc=rss",
+      "pub": "2026-11-20T12:53:00.000Z",
+      "sum": "The billionaires insisting Nvidia can’t run without its founder are describing the biggest key man risk in the history of the stock market"
+     },
+     {
+      "hd": "Amazon, Nvidia Fell As Anthropic Gained $185 Billion",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/amzn/articles/627187/amazon-nvidia-fell-as-anthropic-gained-185-billion/2026-11-20?.tsrc=rss",
+      "pub": "2026-11-20T12:51:47.000Z",
+      "sum": "Today's big story: Will 2027 Be A 2022 Repeat For Stocks."
+     },
+     {
+      "hd": "Democrats open probe into Nvidia influence on US Megaspeed investigation",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONXlIa2U1bk4zSS1KNXFDNEVGNWhqdkY1NXlrT1RVSGZlUk5CUVc1cEFEc204WVBJLXVsZDVybGM0d1E5RTNmdnNla0xiZm1RZXFILXdkeGRWcjFmbm9rTDM4TVczU0pBWmpRcFdPWEdJUENqdFBMM3FtRkd1U1lsaHIzd2NZbnE3aW1Pdmx6Sy1XLU93MDlpZ2xpTE9qMUVpV3NncXphaHhQbWNDZ1hlMXhjQVVUbVNVVTJVelFDWQ?oc=5",
+      "pub": "2026-11-20T12:35:39.000Z",
+      "sum": "The inquiry adds to congressional scrutiny of Nvidia and the Commerce Department’s handling of suspected chip diversion to China."
+     },
      {
       "hd": "Nvidia, AMD in focus as GF Securities says talk of server CPU cuts is 'overstated'",
       "src": "Seeking Alpha",
@@ -15078,20 +15108,6 @@
       "sum": "The financing will fund Nvidia chip purchases through a structure designed to keep borrowing off SpaceX's balance sheet."
      },
      {
-      "hd": "OpenAI tried to ruin Anthropic's IPO. It backfired.",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/openai-tried-ruin-anthropics-ipo-120000298.html?.tsrc=rss",
-      "pub": "2026-11-20T12:00:00.000Z",
-      "sum": "OpenAI released GPT-6.2 Astra right before Anthropic's IPO, and the move backfired as Google took the No. 2 spot in the AI race. Host Ejaaz Ahamadeen breaks down the Astra reviews, Google's four Gemini 4 models in five weeks and Nvidia's record $115.8 billion quarter without Jensen Huang."
-     },
-     {
-      "hd": "Jensen Huang Pledges $350 Million to Nvidia-Backed CoreWeave",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-pledges-350-million-115855482.html?.tsrc=rss",
-      "pub": "2026-11-20T11:58:55.000Z",
-      "sum": "How A Huge Charity Gift Is Linking Nvidia, CoreWeave And The Wider AI Boom"
-     },
-     {
       "hd": "Nvidia Stock Is Down 40% From Its High. It Might Look Ugly but There Is Hope.",
       "src": "Barron's",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5INVNuU2E4Z3Bsa0FYa0RqbHNYM3ZlS1lZV3BlODA2Q2F2ejlxMllHQnl2YzhmMm5IeW5RdU9tUzhGUUdlVTJtMUozbkJYZGZOMFpnMmRaWWxpRDY0OVF3a1JiTVBrZmNWMkJsTVotRERzWUZvQVNV?oc=5",
@@ -15106,13 +15122,6 @@
       "sum": ""
      },
      {
-      "hd": "Democrats open probe into Nvidia influence on US Megaspeed investigation",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxONXlIa2U1bk4zSS1KNXFDNEVGNWhqdkY1NXlrT1RVSGZlUk5CUVc1cEFEc204WVBJLXVsZDVybGM0d1E5RTNmdnNla0xiZm1RZXFILXdkeGRWcjFmbm9rTDM4TVczU0pBWmpRcFdPWEdJUENqdFBMM3FtRkd1U1lsaHIzd2NZbnE3aW1Pdmx6Sy1XLU93MDlpZ2xpTE9qMUVpV3NncXphaHhQbWNDZ1hlMXhjQVVUbVNVVTJVelFDWQ?oc=5",
-      "pub": "2026-11-20T10:05:30.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Trump administration signed off nearly 900,000 Nvidia, AMD AI chips for China in six months",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -15124,6 +15133,13 @@
       "src": "CNBC",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE50RzRKZlFQNVc5QjdpUWRtYjlWSWVfSm0xeTY5WjFxWkJ3bUFzVzF2RExQNkgwa0ZpUHBvb0gzVG1uRkkwMFpmVU1ET0ozZVJEcWZwSFNLZmZsM0xKOUNHNVg1TUsxZmpGRlpzYVFYOXFYdVkt0gF6QVVfeXFMTWNYWWtkSnZJbkpvWFNBSmVKNTM3aFlCakNSb1BlMWVRMF8tTUlidTdNbWZoSUNyQ2hGNHEwckNsa3VGWUFuYldEc2MweXJsdXc3Yzd0OENTNGlBa1JRYmJZMVEwbmVncmJuVnRvQU9OamlpaDNaU3FVbHc?oc=5",
       "pub": "2026-11-20T09:06:36.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Scandal Fallout Creates Opening for India AI Hopefuls",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQb2JRb2RoUHlYSWhqd290azdzbUVkMnNRYlBVRW8taDhVMkh3MFRvN3R0cWswaWNDNzNCUHpEaGcyZy1YbUhQMlhiemdNaXJGdnMycklKTlNKMzVFN3l3NzlrNFg0ZGVwekNEa1pacUlKbWMzcjVoWi1JY1BzUDlfSkh2eW16dGo5eG00XzAwb2Ria1F3anpIUEgzTnFTWFNHbjQ0YTB5QjM2ZDJkZjhhX18yTGdSdVF4eXhlR1lsUl9PYXpnc1NLbFl3?oc=5",
+      "pub": "2026-11-20T07:50:00.000Z",
       "sum": ""
      },
      {
@@ -15188,25 +15204,11 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU1JnZlB6YVZ4SGVkcGZoWFc3eWVGdjY2T3g2ZXhoZ2NrcXd5NjZNTUx0ZE9wZ2I0Uk9fNGxyal9pWnZYdS0wa0tKYUlpem5PSllfSWFueWw3VnY5aVM1andIeTZadW1ZSEduazNsWTNXemlITUpDV0R1d3N1WU9aNG9JSk1kSklNTlBHTXlCb2ttZ3otUW95Zld4YWlQS3pNbjdn?oc=5",
       "pub": "2026-11-20T00:02:51.000Z",
       "sum": ""
-     },
-     {
-      "hd": "California AG subpoenas Nvidia over concerns about former CEO, China ties",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNY2NBVmplUHV4MUZrbVByaDVvby13dXpkX3RuaGVwd1RDMzAxdGtGSDQ3aFhjNjc3VHNxWnlYNHBrcWhRa0xiemxLOE8wTnZFVE9YZ3B4NVFjZ3d5QmJTaWtqc3JTVWdRX0IyT3VlU3BOaEFlMm5fS1lqczg1RmxyMUk4c0JfTEtUSlV4bDh0Z1BVQ0NySHZ3UHRINXZBdUM5NDhOX3Y0bUdsZXRuODdDZDJsMWNHUjY3STVCRA?oc=5",
-      "pub": "2026-11-19T23:31:26.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "California Probing If Nvidia Misled Investors on China Risks",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZUg3UnVfai1kekpndDVTelRpel96Q093cGxDaVZGTl9LY0JuR2VfTkVwVGhySnR3akdYLWw3UzlhZkFuYlF1Q0c3VV9WemlGckRLdlRQR0U4Y0dMak9mbHdUaFRqOTZ3OW1UNHIwbG9lOHFIRUFUWEhBU3hFbDJ1azlJLU9XbDNfOC1LVHZka0JTUEN4aWVRUWt3aDlveG91TDk5RDQxSHd1RUZaWHhsVHJ2TQ?oc=5",
-      "pub": "2026-11-19T23:01:07.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 87,
-     "Yahoo": 9,
+     "Yahoo": 4,
      "Google News": 83,
      "Nasdaq": 8,
      "Seeking Alpha": 28
@@ -15214,6 +15216,13 @@
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "Don’t Sell Tesla Stock. A Merger Is Coming.",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/d592b819-836f-3be7-8792-8c24d9e9a701/don%E2%80%99t-sell-tesla-stock.-a.html?.tsrc=rss",
+      "pub": "2026-11-20T12:24:00.000Z",
+      "sum": "HSBC analyst Michael Tyndall upgraded shares of Tesla to Hold from Sell."
+     },
      {
       "hd": "HSBC upgrades Tesla, more than doubles target on SpaceX merger potential",
       "src": "Yahoo Finance",
@@ -15234,13 +15243,6 @@
       "url": "https://finnhub.io/api/news?id=1434e3e2df29c04a1adcb83d904376a75141cff94c4d3a40447009ebda896f4f",
       "pub": "2026-11-20T11:03:10.000Z",
       "sum": "ETFs pulled $136.7 million from Tesla on Nov. 18, with 33 funds buying and 24 selling."
-     },
-     {
-      "hd": "Tesla Stock Gets An HSBC Upgrade — But Analyst Says Strategic Logic Of TSLA-SPCX Merger Is ‘Limited’",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f74d791cc99b61d8a75517a232d5b8562a182c907170d5d4f6248b3007a0a33d",
-      "pub": "2026-11-20T11:02:42.000Z",
-      "sum": "Analyst Michael Tyndall raised Tesla’s rating to ‘Hold’ from ‘Reduce’ and increased its price target by 129% to $359, according to The Fly."
      },
      {
       "hd": "A SpaceX-Tesla Merger Needs \"Yes\" From 50% of All Tesla Shares, Not Just Votes Cast. Here's Why That Math Is Harder Than Wall Street Thinks.",
@@ -15392,8 +15394,8 @@
     ],
     "fetched": {
      "Finnhub": 135,
-     "Yahoo": 11,
-     "Google News": 16,
+     "Yahoo": 10,
+     "Google News": 14,
      "Nasdaq": 7,
      "Seeking Alpha": 11
     }
@@ -15420,6 +15422,13 @@
       "url": "https://finance.yahoo.com/technology/ai/articles/spacexs-8-26-bond-yield-120052825.html?.tsrc=rss",
       "pub": "2026-11-20T12:00:52.000Z",
       "sum": "The financing will fund Nvidia chip purchases through a structure designed to keep borrowing off SpaceX's balance sheet."
+     },
+     {
+      "hd": "Three Ways SpaceX Stock Can Buck the AI Slump",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/71127f0c-bdaa-3559-a96e-a9989d2a30c1/three-ways-spacex-stock-can.html?.tsrc=rss",
+      "pub": "2026-11-20T11:55:00.000Z",
+      "sum": "Failing to achieve escape velocity: SpaceX stock feels tethered to its $135 IPO price."
      },
      {
       "hd": "Anthropic and SpaceX prove Nasdaq is crushing the IPO game",
@@ -15455,13 +15464,6 @@
       "url": "https://finnhub.io/api/news?id=77a58ee001824099bf19eb1380383d414426d95a3f4ac41a427476083d6fc334",
       "pub": "2026-11-20T11:01:21.000Z",
       "sum": "ETFs bought a net $21.6 million of Space Exploration Technologies shares in Wednesday's session."
-     },
-     {
-      "hd": "Anthropic's IPO buyers made $14 billion on day one, second only to SpaceX: Chart of the Day",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e8abf9f35e38b620bfedcf40b2cc00178fd18bdaaa847e4ac78654fa0e534727",
-      "pub": "2026-11-20T11:00:00.000Z",
-      "sum": "Anthropic's first-day pop handed IPO buyers about $14 billion on paper, second only to SpaceX."
      },
      {
       "hd": "SpaceX Sells $32 Billion of AI Chip Debt at Yields Topping 8%",
@@ -15578,7 +15580,7 @@
     ],
     "fetched": {
      "Finnhub": 117,
-     "Yahoo": 13,
+     "Yahoo": 10,
      "Google News": 30,
      "Nasdaq": 0,
      "Seeking Alpha": 23
@@ -15587,6 +15589,69 @@
    "ANT": {
     "items": [
      {
+      "hd": "’A generational company’: William Blair starts Anthropic stock at Buy",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/generational-company-william-blair-starts-130304107.html?.tsrc=rss",
+      "pub": "2026-11-20T13:03:04.000Z",
+      "sum": "Investing.com -- William Blair initiated coverage of Anthropic with an Outperform rating, calling the artificial intelligence developer \"a generational company driving a generational technology shift.\""
+     },
+     {
+      "hd": "Anthropic post-IPO hype is here. One strategist's advice: 'Stick to your fundamentals.'",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/article/anthropic-post-ipo-hype-is-here-one-strategists-advice-stick-to-your-fundamentals-130018707.html?.tsrc=rss",
+      "pub": "2026-11-20T13:00:18.000Z",
+      "sum": "A helpful quick guide on how to think through whether to invest in Anthropic post IPO."
+     },
+     {
+      "hd": "What is an IPO? Anthropic's public offering explained.",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/personal-finance/investing/article/what-is-an-ipo-130000699.html?.tsrc=rss",
+      "pub": "2026-11-20T13:00:00.000Z",
+      "sum": "An initial public offering (IPO) is when a private company first offers shares to the public, giving investors a chance to buy in before trading begins. Here's how it works."
+     },
+     {
+      "hd": "Ninepoint Anthropic HighShares ETF Begins Trading on the TSX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ninepoint-anthropic-highshares-etf-begins-130000025.html?.tsrc=rss",
+      "pub": "2026-11-20T13:00:00.000Z",
+      "sum": "ANHI offers leveraged exposure to Anthropic, the company behind Claude, with a covered call strategy and twice-monthly distributionsTORONTO, Nov. 20, 2026 (GLOBE NEWSWIRE) -- Ninepoint Partners LP (“Ninepoint”), one of Canada’s leading independent investment managers, is pleased to announce the launch of the Ninepoint Anthropic HighShares ETF (TSX: ANHI), which begins trading today on the Toronto Stock Exchange (“TSX”). ANHI provides Canadian investors with leveraged exposure to Anthropic, PBC ("
+     },
+     {
+      "hd": "LongPoint Adds New Double Leveraged Single Stock ETFs",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/options/articles/longpoint-adds-double-leveraged-single-130000366.html?.tsrc=rss",
+      "pub": "2026-11-20T13:00:00.000Z",
+      "sum": "LongPoint launches two ETFs - ANTU and SNDUNew Savvy ETFs provide two times leveraged long exposure to Anthropic and Sandisk LongPoint is a Canadian owned and operated ETF providerToronto, Ontario--(Newsfile Corp. - November 20, 2026) - LongPoint Asset Management Inc. (\"LongPoint\") is proud to announce the launch of two new Savvy Double Leveraged Single Stock ETFs on the Toronto Stock Exchange (the \"TSX\") on Friday, November 20, 2026. The SavvyLong (2X) Anthropic ETF (\"ANTU\") offers two times..."
+     },
+     {
+      "hd": "Equity Futures Drop as AI Concerns Remain Despite Anthropic's Record Market Debut",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/equity-futures-drop-ai-concerns-125343442.html?.tsrc=rss",
+      "pub": "2026-11-20T12:53:43.000Z",
+      "sum": "US equity futures were tracking in the red before Friday's opening bell as Anthropic's (ANT) record-"
+     },
+     {
+      "hd": "US Equity Futures Drop Pre-Bell as Anthropic Shares Decline One Day After Debut",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-futures-drop-pre-125211794.html?.tsrc=rss",
+      "pub": "2026-11-20T12:52:11.000Z",
+      "sum": "US equity futures were lower pre-bell Friday as Anthropic (ANT) shares declined one day after the Cl"
+     },
+     {
+      "hd": "Amazon, Nvidia Fell As Anthropic Gained $185 Billion",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/amzn/articles/627187/amazon-nvidia-fell-as-anthropic-gained-185-billion/2026-11-20?.tsrc=rss",
+      "pub": "2026-11-20T12:51:47.000Z",
+      "sum": "Today's big story: Will 2027 Be A 2022 Repeat For Stocks."
+     },
+     {
+      "hd": "Anthropic Slumps 5% Post-Market After Record $107.3 Billion IPO",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU05IcE5RazNyajNodmVGbEJxU0g5U3FPc2IzMFlfdVdSbkxsUWRFYkxpc0JpOWxQNnVZSGlEVWpHSklHMGwyRzRmdjZXUFVYWDdxdTIwbmRGUVk0WGZ6RnB3MHFhSS1YR3VJSVUxeUtlcktQY1NDbUVWNXpfOVpXREFYY3k5bXpnMjEwM2drWTdMQldwWEFFVG9BX2cySUdmUUNOcFFURVNIa2dZal84?oc=5",
+      "pub": "2026-11-20T12:34:46.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Anthropic's post-debut stumble delivers reality check for AI trade",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPNWtIWXhnWHpsWWZSZ2dFVFRFSXBHaUxOWlp1VnFSZEoycGRtMDE1NVhuM2NEa2ZUTHlLN0lFbG5aX295SThLcFVXMEV3VmJidHF2amdDelVYWWprLXRsNWpodU9LcERma2xnc2pWaTZGbmNHZnYwREdjQnBOcGR0S0JSdnZTaC1aYmtBWXdRXzJiVDhHbFBEZ3lDdWhzS3Q3dnFMY3d3cjZIdw?oc=5",
@@ -15594,60 +15659,11 @@
       "sum": ""
      },
      {
-      "hd": "TSX futures edge down amid AI anxieties, gold selloff",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tsx-futures-edge-down-amid-123221987.html?.tsrc=rss",
-      "pub": "2026-11-20T12:32:21.000Z",
-      "sum": "Investing.com - Futures linked to Canada’s main stock index pointed lower on Friday as worries around the artificial intelligence persisted despite Anthropic’s historic initial public offering."
-     },
-     {
-      "hd": "Harvest Announces Listing of the Harvest Anthropic Enhanced High Income Shares ETF",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/harvest-announces-listing-harvest-anthropic-123000572.html?.tsrc=rss",
-      "pub": "2026-11-20T12:30:00.000Z",
-      "sum": "OAKVILLE, Ontario, November 20, 2026--Harvest ETFs (\"Harvest\") is pleased to announce the initial public offering of Class A Units of the Harvest Anthropic Enhanced High Income Shares ETF (\"ANTE\") under the prospectus dated November 11, 2026, filed with the securities regulatory authorities in all of the Canadian provinces and territories. The Class A Units of the Harvest Anthropic Enhanced High Income Shares ETF will commence trading on the Toronto Stock Exchange (\"TSX\") today under the followi"
-     },
-     {
-      "hd": "Purpose Investments Launches Purpose Anthropic (ANT) Yield Shares ETF and Purpose Micron (MU) Yield Shares ETF",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/purpose-investments-launches-purpose-anthropic-123000762.html?.tsrc=rss",
-      "pub": "2026-11-20T12:30:00.000Z",
-      "sum": "Single-stock ETFs built to pay enhanced*, tax-efficient monthly income from high-growth AI names, while keeping investors meaningfully exposed to the upside potentialTORONTO, Nov. 20, 2026 (GLOBE NEWSWIRE) -- Purpose Investments Inc. (“Purpose” or “Purpose Investments”) is excited to announce the expansion of its Yield Shares suite with the launch of the Purpose Anthropic (ANT) Yield Shares ETF (ticker: ANTY) and the Purpose Micron (MU) Yield Shares ETF (ticker: MUY), which begin trading today o"
-     },
-     {
-      "hd": "Satya Nadella Says Microsoft Is “Building Tools, Not Gods” as Copilot Undercuts Anthropic on Price",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/satya-nadella-says-microsoft-is-building-tools-not-gods-as-copilot-undercuts-anthropic-on-price?ref=yahoofinance&tlnk=yf-261120-g49fp72m&.tsrc=rss",
-      "pub": "2026-11-20T12:24:07.000Z",
-      "sum": "Key TakeawaysMicrosoft says Copilot beats Anthropic’s Claude and OpenAI’s ChatGPT on price, a pitch it made two days before Anthropic’s Nov. 19 market debut."
-     },
-     {
-      "hd": "Nasdaq Futures Slide, Anthropic Shares Reverse IPO Gains — LITE, IREN, SNDK, NVDA In Focus",
-      "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/nasdaq-futures-slide-anthropic-shares-reverse-ipo-gains-lite-iren-sndk-nvda-in-focus/cNbSL5RR9Ks?.tsrc=rss",
-      "pub": "2026-11-20T12:20:04.000Z",
-      "sum": "Oil prices fell on Friday and were set for a weekly loss as strong Middle East exports offset concerns over supply disruptions from Houthi attacks on Riyadh and tanker disruptions in the Strait of Hormuz."
-     },
-     {
-      "hd": "STARTRADER Launches Anthropic Stock CFDs Following Nasdaq Debut",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/startrader-launches-anthropic-stock-cfds-122000203.html?.tsrc=rss",
-      "pub": "2026-11-20T12:20:00.000Z",
-      "sum": "PORT LOUIS, Mauritius, Nov. 20, 2026 (GLOBE NEWSWIRE) -- ANT follows regular US market hours, while ANT.24H trades 24 hours on weekdays. Both are now live on MT5, web and app. STARTRADER has launched two CFDs referencing Anthropic, which began trading on the Nasdaq Global Select Market under ticker ANT on November 19. Anthropic, developer of the Claude AI models, priced its IPO at $83 per share on November 18, above its marketed range of $70 to $78, and its shares opened at $111.50 on their firs"
-     },
-     {
-      "hd": "CME Group Stock And Other Exchange Operators Leveraged To AI Trading",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/options/articles/cme-group-stock-other-exchange-121358083.html?.tsrc=rss",
-      "pub": "2026-11-20T12:13:58.000Z",
-      "sum": "The Anthropic IPO has rewritten the script for mega-cap AI, pulling even more market power into a tight cluster of giant platforms and the indices built around them. That concentration can magnify gains when enthusiasm runs hot, and it can also sharpen the pain if expectations reset. This article walks through three stocks exposed to that AI-driven trading surge and explores why some investors are watching them so closely right now. The stocks below are only a starter set, since the full..."
-     },
-     {
-      "hd": "OpenAI tried to ruin Anthropic's IPO. It backfired.",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/openai-tried-ruin-anthropics-ipo-120000298.html?.tsrc=rss",
-      "pub": "2026-11-20T12:00:00.000Z",
-      "sum": "OpenAI released GPT-6.2 Astra right before Anthropic's IPO, and the move backfired as Google took the No. 2 spot in the AI race. Host Ejaaz Ahamadeen breaks down the Astra reviews, Google's four Gemini 4 models in five weeks and Nvidia's record $115.8 billion quarter without Jensen Huang."
+      "hd": "Cathie Wood's ARK Invest was a big buyer of Anthropic during debut",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUkliWjF3NHFsUlM3a3dLMjJ0UjAxbUhfYXpUOWl4RVhTTERTRGJCV3dCcGtSTU1RaU10WFdJQkhCZ1FCZUxwZV9EN1RPSHBLZXNHcDJRMTRYNm4tbkYzX0g0cU9ROTB0WlZOMXQxSk95VzRRNFhXMzdyOWdLU2hfRDRPbWZMRWJiZWlqWFRLalVfRlBzQnlMTDNzTU4zWG50MDVRVtIBqgFBVV95cUxOYVRKQ1BaQjExVUhFV0E0Q2VoeWtTSTZjdWtFMUlSTzN4VTR6ajZYcmNiYkVuQThSNXpVUUpCSDhEVklzcGlMbXNTRlcwM0R2cl8ySklaMnFZOEhIc3oyZGctdTF6NVRIQld0Y0JiUHRyR3cyYk1fTEp0N0xJTWpLVDZBLWp1RGlOWGJwczNkbkdZd3AtWExVTkFZODA5Und1dEQtTmhyVXlxZw?oc=5",
+      "pub": "2026-11-20T12:02:10.000Z",
+      "sum": ""
      },
      {
       "hd": "Anthropic Pops",
@@ -15662,13 +15678,6 @@
       "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
       "pub": "2026-11-20T11:46:21.000Z",
       "sum": "Anthropic, one of the world’s leading artificial intelligence companies, began trading on the Nasdaq Stock Market on Thursday, November 19."
-     },
-     {
-      "hd": "Anthropic Slumps 5% Post-Market After Record $107.3 Billion IPO",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU05IcE5RazNyajNodmVGbEJxU0g5U3FPc2IzMFlfdVdSbkxsUWRFYkxpc0JpOWxQNnVZSGlEVWpHSklHMGwyRzRmdjZXUFVYWDdxdTIwbmRGUVk0WGZ6RnB3MHFhSS1YR3VJSVUxeUtlcktQY1NDbUVWNXpfOVpXREFYY3k5bXpnMjEwM2drWTdMQldwWEFFVG9BX2cySUdmUUNOcFFURVNIa2dZal84?oc=5",
-      "pub": "2026-11-20T11:24:07.000Z",
-      "sum": ""
      },
      {
       "hd": "Anthropic's IPO Funds The Chip Boom, While Falling AI Prices Strain Its Compute Commitments",
@@ -15753,13 +15762,6 @@
       "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
       "pub": "2026-11-20T06:37:38.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Market Brief: Anthropic After The IPO: Valuation, Float And Price",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4970475-market-brief-anthropic-after-ipo-valuation-float-price?source=feed_symbol_ANT",
-      "pub": "2026-11-20T06:10:00.000Z",
-      "sum": "Anthropic priced its IPO on Wednesday and begins trading Thursday. The company sold 980 million shares."
      }
     ],
     "fetched": {
@@ -15771,18 +15773,25 @@
     }
    }
   },
-  "asOf": "2026-11-20T12:45:13.251Z",
-  "lastAttempt": "2026-11-20T12:45:13.251Z",
+  "asOf": "2026-11-20T13:15:11.308Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
    {
+    "hd": "When Nazis were held responsible for war crimes",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRTk5TXpOa1dSNzY0aHY4UThjUmdsNjFBQVlVbi1VbnlWTTgxQUozVE1JaWRoU244QVhiNVhIMVZOSWVWNDhMaHNYTUtQVDZSelRPcHQ0ek1wS3FObENNTWpidW5kb3U2UDdhenVwYjN4V1dFZ1dwY0hWTlVqTGtQblFKNjFNeTVqcE43WHk5OWdJZld0WDFB?oc=5",
+    "pub": "2026-11-20T13:03:04.000Z",
+    "sum": "The judges at Nuremberg rejected the just-following-orders defense."
+   },
+   {
     "hd": "Russian missile hits Poland as Ukraine's allies hold military exercise, says Tusk",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-20T12:41:52.000Z",
-    "sum": "Prime Minister Donald Tusk said it did not appear to be an accident when Western military exercises were taking place in the region."
+    "pub": "2026-11-20T12:56:48.000Z",
+    "sum": "Nobody was hurt and no damage has been reported, but Warsaw described the incident as a \"provocation\" from Moscow."
    },
    {
     "hd": "European troops from 11 countries hold a drill in Poland for a potential postwar Ukraine mission",
@@ -15813,6 +15822,13 @@
     "sum": "Russia launched one of its biggest air attacks yet as it rejected the prospect of security guarantees for Ukraine."
    },
    {
+    "hd": "Russian cruise missile crashes in Poland in violation condemned as intentional",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8wTkZBWEhyWUxyWHJPbmJIZ1pVcFZwMTkwQXduY1F5bWN0c0FfZ3o4SXJyd0FtckdncnJIbFRWcHo2bjFncDYwOGhZNERnUWRlWXNaWkVsUXBpX1E?oc=5",
+    "pub": "2026-11-20T12:09:29.000Z",
+    "sum": ""
+   },
+   {
     "hd": "As Trump courts Xi and Putin, middle powers make their own moves",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPSTlEeUw0SVZ1dkFoRVM0WEdFTktVUVFoQ2VvVlV5YmpQaEdwVGFWWmVnSmdmRU1pdXBRZng0MTV6ZVhOZjd0b2o5MlVicFh4Q3RkWEFMLWl4QzRtSHFJZ0VUbDA0YzcyOTNlZF9EQzhtUjA5R1gxXzBYS05qM0ZISGlBdnZCdXpFdjZhc2lCZ3dGdHlEU3JlOXNVdnFlVlVqWC1qWHdwNA?oc=5",
@@ -15838,6 +15854,13 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNXhFLWVHeVA2TTIyRTRBRklRM29NQlpLTkNSbkdUYlNWVTNLek1BNG52cDFJRjNNVGNxNW04V3RDTEJPNGtDZ1R6WXE5TVV3SDJhQkFDRVFEMXZaTF92aWhZdS1xS1A0QnR2dE9selFRNGJYclZkRmdKUlJrWjB3VGxzTFE3aVBjYWJCUXhsM0Q1Sk5qR1U3TFlIekxkUE43MUNNenk2bw?oc=5",
     "pub": "2026-11-20T11:54:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Russia accuses Estonia of erecting new 'Iron Curtain' with border closure, says it will respond",
+    "src": "Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQ200SEcxTGlIMUZEa0FtSDhEaWFWUWpzWGI1eE10Y0dwLTB2c0JLeFM3ZmhEdVF2dm1CZ0lBSkpsZ1lpR0wwRDk3NG9kYmtiSy1lb0xjeHBEOXNmb1EzU0NQVVFJOFZBWDU3UVRsaHVjUE1FNE1FT2t5MmdYZUw0WGNwbU5JcGJVMXQ2TTFkS21ydS1IX3lqMQ?oc=5",
+    "pub": "2026-11-20T11:49:29.000Z",
     "sum": ""
    },
    {
@@ -15890,18 +15913,18 @@
     "sum": "Prime Minister Andy Burnham is in Brussels to announce a deal to reset Britain’s relationship with the European Union, a decade after it left the bloc."
    },
    {
+    "hd": "Rights groups urge sanctions after top UN court finds Myanmar committed genocide against Rohingya",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLTNLWmdYdncxbDRfcFZhVlRFeVRfN3Jic2JSb252SkQ4djE0ckRoaGpqcnZKWDU5Wm4tUXdjTHdPZVNtWkVRWVNSN29EcFNQQkhVeVF6WWQ5NFB2WUFURVFyWjI3dmRGeEJNSDJrMk1HYTdMMXVTMkZqZl9ZVjlJMVlhSWRTR0Nha0NJZ3J0TVBpVndia25nVXNDZi1GcnVxYTFtdklydElZQy1FMHo5TGhJcUpjcG5rWDZJaQ?oc=5",
+    "pub": "2026-11-20T10:32:00.000Z",
+    "sum": "The unprecedented International Court of Justice verdict concerns a 2017 military crackdown that killed thousands."
+   },
+   {
     "hd": "The War Is Ravaging Ukraine’s Wildlife, Too",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html",
     "pub": "2026-11-20T10:00:26.000Z",
     "sum": "The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire."
-   },
-   {
-    "hd": "When Nazis were held responsible for war crimes",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/20/when-nazis-were-held-responsible-war-crimes/",
-    "pub": "2026-11-20T10:00:00.000Z",
-    "sum": "The judges at Nuremberg rejected the just-following-orders defense."
    },
    {
     "hd": "Russia pushes back against US idea of NATO-style security guarantees for Ukraine",
@@ -15965,27 +15988,6 @@
     "url": "https://abcnews.com/International/wireStory/sydney-man-charged-car-bomb-plot-downloading-islamic-138312769",
     "pub": "2026-11-20T07:49:52.000Z",
     "sum": "Australian police have arrested a man in the greater Sydney area on charges of researching how to build a car bomb and downloading violent material inspired by the Islamic State group"
-   },
-   {
-    "hd": "Xi projects China’s global influence after hosting Trump and Putin at APEC",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/xi-projects-chinas-global-influence-after-hosting-trump-138313749",
-    "pub": "2026-11-20T07:45:48.000Z",
-    "sum": "China’s President Xi Jinping has emerged from the Asia-Pacific Economic Cooperation summit with a diplomatic win, reinforcing his global standing despite limited substantive progress"
-   },
-   {
-    "hd": "Malaysia says it will resettle 10,000 Rohingya refugees in Turkey",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbG80dHJYdWlEQV9wcnhWN2psaVBsNlRnNjJabEUyQ1Y0V3hEWXRlMmlsUTd5RjBtWWNpcHpFQ190d2kyOGpxY1lEMFRGejFpMlY4UDlOb3hzWnFXc054bFJuM3IzR05lelJCNG5Qa3gzbzB1M3hLdHhuaVk2N1BRWnhod3RtTXdNdUMtSWZ4bTRZWW1id0tqS1NpWTRtd01KVUhBUjlFbmpiMm5fcUxkVk5uNV8xTFE?oc=5",
-    "pub": "2026-11-20T07:45:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Hours after Trump reportedly says ‘tired’ Putin is ready for a deal, Ukraine hit with massive strikes",
-    "src": "CNN",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBpV3JjbDVibllndkIzNWN4U2xkeE5rLWdqNEFMbDlERFQwQWl6OTI2bkJNSXF2bFB4NWpGUnlraEZYVGYybXFPa2hSMmh5Yk1zandSY3MxR1gwMWhnVDZNdkpYU3U2eHVvWVpMYTlGeWY3eVBoeE1DeVVYNzRmdw?oc=5",
-    "pub": "2026-11-20T07:40:34.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16004,8 +16006,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-20T12:45:13.251Z",
-  "lastAttempt": "2026-11-20T12:45:13.251Z",
+  "asOf": "2026-11-20T13:15:11.308Z",
+  "lastAttempt": "2026-11-20T13:15:11.308Z",
   "lastError": null
  }
 }
