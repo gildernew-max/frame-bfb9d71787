@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-20T01:30:11.125Z",
+ "generatedAt": "2026-11-20T01:45:11.459Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7205,11 +7205,13 @@
   "closeFetchedFor": "2026-11-19"
  },
  "lastRun": {
-  "at": "2026-11-20T01:30:11.125Z",
+  "at": "2026-11-20T01:45:11.459Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13577,62 +13579,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T01:30:11.125Z",
-  "lastAttempt": "2026-11-20T01:30:11.125Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7184.25,
-    "lastTime": 1795137604,
+    "last": 7182,
+    "lastTime": 1795138520,
     "settle": 7194.25,
     "settleDate": "2026-11-19",
     "indexClose": 7175.83,
-    "change": -10,
-    "changePct": -0.1389998957500782,
-    "expectedOpen": 7165.855603780797,
+    "change": -12.25,
+    "changePct": -0.17027487229384577,
+    "expectedOpen": 7163.611364631477,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26480.25,
-    "lastTime": 1795137611,
+    "last": 26465.25,
+    "lastTime": 1795138520,
     "settle": 26589.5,
     "settleDate": "2026-11-19",
     "indexClose": 23879.2,
-    "change": -109.25,
-    "changePct": -0.4108764737960473,
-    "expectedOpen": 23781.085985069294,
+    "change": -124.25,
+    "changePct": -0.46728971962616817,
+    "expectedOpen": 23767.61495327103,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49153,
-    "lastTime": 1795137606,
+    "last": 49150,
+    "lastTime": 1795138517,
     "settle": 49162,
     "settleDate": "2026-11-19",
     "indexClose": 49097.06,
-    "change": -9,
-    "changePct": -0.018306822342459624,
-    "expectedOpen": 49088.071888450424,
+    "change": -12,
+    "changePct": -0.02440909645661283,
+    "expectedOpen": 49085.07585126724,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2657.4,
-    "lastTime": 1795137610,
+    "last": 2656.6,
+    "lastTime": 1795138515,
     "settle": 2661.800048828125,
     "settleDate": "2026-11-19",
     "indexClose": null,
-    "change": -4.400048828124909,
-    "changePct": -0.16530350692803014,
+    "change": -5.200048828125091,
+    "changePct": -0.19535835647814517,
     "expectedOpen": null,
     "valid": true
    }
@@ -13656,9 +13658,9 @@
     "id": "401873066",
     "start": "2026-11-20T01:15Z",
     "state": "in",
-    "status": "Q1 10:43",
+    "status": "Q1 3:54",
     "period": 1,
-    "clock": "10:43",
+    "clock": "3:54",
     "completed": false,
     "away": {
      "name": "Indianapolis Colts",
@@ -14082,8 +14084,8 @@
     }
    }
   ],
-  "asOf": "2026-11-20T01:30:11.125Z",
-  "lastAttempt": "2026-11-20T01:30:11.125Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": null
  },
  "alerts": {
@@ -14094,8 +14096,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-20T01:30:11.125Z",
-  "lastAttempt": "2026-11-20T01:30:11.125Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14766,12 +14768,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-20T01:30:11.125Z",
-  "lastAttempt": "2026-11-20T01:30:11.125Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-20T01:30:11.125Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15030,11 +15032,60 @@
    "NVDA": {
     "items": [
      {
+      "hd": "California attorney general subpoenas Nvidia over chips, former CEO's affair",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/california-attorney-general-subpoenas-nvidia-013306809.html?.tsrc=rss",
+      "pub": "2026-11-20T01:33:06.000Z",
+      "sum": "California Attorney General Rob Bonta has issued an investigative subpoena to Nvidia related to former CEO Jensen Huang's affair with a suspected Chinese spy. The California Department of Justice said Thursday it is asking Nvidia whether its advanced chips or confidential information may have gone to China and whether Nvidia misled investors and the public."
+     },
+     {
+      "hd": "Why Nvidia's sell-off could be a buying opportunity (with a catch)",
+      "src": "Yahoo Finance",
+      "url": "https://www.thestreet.com/investing/stocks/why-nvidias-sell-off-could-be-a-buying-opportunity-with-a-catch?.tsrc=rss",
+      "pub": "2026-11-20T01:25:30.000Z",
+      "sum": "Worth Charting CEO and founder Carter Worth explains why Nvidia’s sharp decline could present a buying opportunity, but cautions that a rebound doesn’t necessarily mean a recovery."
+     },
+     {
+      "hd": "Alibaba Group Holding Accused of Hiding Ties to Suspected Spy in Nvidia Scandal, Lawsuit Says",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=74406cd314cf4182011ad0e415b562c81c76f6e61c1c988a826f667762446573",
+      "pub": "2026-11-20T01:04:13.000Z",
+      "sum": "Alibaba Group Holding (BABA) was sued in a proposed securities class action by shareholders who accu"
+     },
+     {
+      "hd": "Michael Burry Says He Tried to Warn You About Nvidia, CoreWeave and Nebius. Here's What the 'Big Short' Investor Saw",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=d08afd289d5a3fb8c0bef43a829d42c33337df31271078244eee17edfb1ea0c9",
+      "pub": "2026-11-20T01:03:36.000Z",
+      "sum": "The famed investor took a victory lap as AI stocks slid again on Thursday."
+     },
+     {
+      "hd": "US approved sale of Nvidia and AMD chips to Chinese companies",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPLTZTNmxkcXpZN2hrOFVhQlFhR1dfVVQ3ZkRCdVFVVi1mWGZfTTBjdDJ2S1JtV19ISjBOdll0YlduVEtMODFHUDhlY1FDRzZVaWVjdWd5RnlpTlh5cXk1VjBENmJWNjRFMG5VX1B4NkVNYlFyY3p2cmZka3RHYjRlakRvYkk?oc=5",
+      "pub": "2026-11-20T00:43:21.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Faces California Subpoena as Its Regulatory Troubles Grow",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=436127883e2cefb0bdd1d5e69617b4a897a807d93b76ebdd2d0166e648f581e5",
+      "pub": "2026-11-20T00:26:00.000Z",
+      "sum": "The California attorney general is investigating whether Nvidia or its former CEO, Jensen Huang, allowed advanced chips or confidential information to reach China."
+     },
+     {
       "hd": "IBM (IBM) Stock May Be 27% Below Fair Value On Quantum Platform News",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-stock-may-27-002028644.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8a9be27bad3b2776432131fc7b3c08d1f9748bbaa6a5f7c51d1e1bb67ef9395e",
       "pub": "2026-11-20T00:20:28.000Z",
       "sum": "International Business Machines has pulled back sharply in recent months after a powerful multi year run, which puts a fresh spotlight on whether the current share price fairly reflects the cash that IBM can generate over time. Over the past 5 years the stock has returned 130.8%, so a lot of investor wealth now rests on how durable IBM's future cash flows prove to be. Fresh partnerships in quantum and AI, including work with NVIDIA, Fermilab and Microsoft, may support expectations for new..."
+     },
+     {
+      "hd": "California Attorney General Issues Investigative Subpoena to Nvidia",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPU1JnZlB6YVZ4SGVkcGZoWFc3eWVGdjY2T3g2ZXhoZ2NrcXd5NjZNTUx0ZE9wZ2I0Uk9fNGxyal9pWnZYdS0wa0tKYUlpem5PSllfSWFueWw3VnY5aVM1andIeTZadW1ZSEduazNsWTNXemlITUpDV0R1d3N1WU9aNG9JSk1kSklNTlBHTXlCb2ttZ3otUW95Zld4YWlQS3pNbjdn?oc=5",
+      "pub": "2026-11-20T00:01:00.000Z",
+      "sum": ""
      },
      {
       "hd": "A 66-Year-Old With $600,000 in VOO Owns Nvidia Without Ever Buying a Share. SCHD Owns None.",
@@ -15044,18 +15095,18 @@
       "sum": "One simple core fund quietly hands a retiree a stake in the market's biggest tech name, while a dividend-focused rival leaves that company out entirely. Which approach has the edge depends on when you start counting."
      },
      {
+      "hd": "California AG subpoenas Nvidia over concerns about former CEO, China ties",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNY2NBVmplUHV4MUZrbVByaDVvby13dXpkX3RuaGVwd1RDMzAxdGtGSDQ3aFhjNjc3VHNxWnlYNHBrcWhRa0xiemxLOE8wTnZFVE9YZ3B4NVFjZ3d5QmJTaWtqc3JTVWdRX0IyT3VlU3BOaEFlMm5fS1lqczg1RmxyMUk4c0JfTEtUSlV4bDh0Z1BVQ0NySHZ3UHRINXZBdUM5NDhOX3Y0bUdsZXRuODdDZDJsMWNHUjY3STVCRA?oc=5",
+      "pub": "2026-11-19T23:31:26.000Z",
+      "sum": ""
+     },
+     {
       "hd": "California AG subpoenas Nvidia over China leak risks and investor disclosures",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=a6eb04ec2c8411a01e0b5669d704328850400e1e7f745e4e43ad06e4c5a0b14d",
       "pub": "2026-11-19T23:23:52.000Z",
       "sum": "Investing.com -- California Attorney General Rob Bonta served an investigative subpoena on NVIDIA Corporation (NASDAQ:NVDA) on Thursday, escalating regulatory scrutiny into whether the chipmaker misled investors regarding potential leaks of advanced technology and confidential information to China. The California Department of Justice inquiry stems from revelations surrounding former Chief Executive Officer Jensen Huang’s alleged affair with an individual suspected of acting as a Chinese intelli"
-     },
-     {
-      "hd": "California subpoenas Nvidia as questions about CEO affair, AI chips mount",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/california-subpoenas-nvidia-questions-ceo-230444672.html?.tsrc=rss",
-      "pub": "2026-11-19T23:04:44.000Z",
-      "sum": "Atty. Gen. Rob Bonta's office said information gleaned from the subpoenas 'will help the California Department of Justice evaluate whether Nvidia's actions violated California law.'"
      },
      {
       "hd": "California Probing If Nvidia Misled Investors on China Risks",
@@ -15065,24 +15116,10 @@
       "sum": ""
      },
      {
-      "hd": "Grand Theft Auto VI outplays Nvidia and SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8a5478ea738a14a23229365d344d77010c68a68f2aad38d1504731aba89fc3f2",
-      "pub": "2026-11-19T23:00:00.000Z",
-      "sum": "Rockstar’s long-awaited blockbuster sends a tokenized stock past Wall Street’s favorite chipmaker, and the game itself is drawing near-perfect reviews."
-     },
-     {
       "hd": "Calif. AG serves Nvidia investigative subpoena over China issues",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-19T22:54:12.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "California attorney general issues Nvidia subpoena in probe of China chip diversion",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOVB4dzhBNkMxNmJSVG1wSVNOWEpGcElVS2dSMl82bHV0SzJ4SXpuNkp4cTJwbTk4eVNjaUMxbS1nZjYyWXVBSWRWcV9nNnZ5S1dUR0dsUDZ5SHQ3YlZMQVpBYlBXWkJfTGZIZTVQVWxsTmVBVzlWNGNBQkxtWnBEZEtwSzV4ZXN50gGOAUFVX3lxTE80LW5HNkNja2V1OXpuT0QwRG9lNzdVQVVrc2NPVUVhN3FJQmpDUGsyQVdhNHN5NFVlSzZHQUt5cFFXLVF3dEcwQ2E4V3AwM0ZFZThiRE5UT09HSlo1VTM0VC10UnZPY25UWlctdVhHWDU5OTNzcng3emp1bDZuaHo4eDJIMGxtbDVyRERkb2c?oc=5",
-      "pub": "2026-11-19T22:49:04.000Z",
       "sum": ""
      },
      {
@@ -15091,20 +15128,6 @@
       "url": "https://seekingalpha.com/article/4970324-nvidia-is-financing-its-own-demand-and-the-fed-noticed?source=feed_symbol_NVDA",
       "pub": "2026-11-19T22:33:52.000Z",
       "sum": "Analyst rates Nvidia a 12-month Sell: $118 billion in guarantees equal 33% of trailing revenue, and customer bonds trade below ratings."
-     },
-     {
-      "hd": "Anthropic soars in record Wall Street debut",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-set-price-ipo-key-030309911.html?.tsrc=rss",
-      "pub": "2026-11-19T22:23:09.000Z",
-      "sum": "Anthropic shares closed 17 percent higher in their record Nasdaq debut on Thursday, defying a broad Wall Street sell-off as investors shrugged off the Nvidia spy scandal and fears of a tech bubble to back the AI giant.The gain came on a rough day for the market, with both the tech-heavy Nasdaq and the broader S&P 500 closing down more than two percent."
-     },
-     {
-      "hd": "Nvidia vs. Intel: One AI Stock Is Worth the Drama, the Other Isn’t Worth the Wait, Says Investor",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9b89c962d6827de4d755fccfbd677c1760eb7b4b78a8b1ac4e6a1b7216319da4",
-      "pub": "2026-11-19T22:20:36.000Z",
-      "sum": "For a while, the only thing Nvidia (NASDAQ:NVDA) and Intel (NASDAQ:INTC) had in common was that they both made chips. Nvidia rode the AI boom to become one of the world’s most valuable companies, while Intel spent years trying to repair its business. Now they share a problem: shareholders who aren’t sure what comes next. Nvidia released its third-quarter earnings report on Tuesday, its first since Jensen Huang resigned as CEO, and the stock still fell the next day. Intel’s slide deepened after i"
      },
      {
       "hd": "Nvidia: Hold Your Horses (Double Downgrade)",
@@ -15126,13 +15149,6 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNVEJ3VzdMRnFXV3ZlNU1Kc0NHZ0toc2w3aFRGSFF5QkFCYmRTQUVGOW9YVE52UE9nLWR4U1JSZmF0R0h6aUNjREs4VGVyZ1NaZkhOdGhzQ0ZQbEdHQTlrU1VuaEFMMDlQdE1YdVdRYTdtaVp2UWQtX3hZMjBVLXQ4Z1VuTDRabnRRTnl4Zy1GZlA5QW52cTJIcGw1SnBZZ2VmQ01GYVUxQWNzSzEzelctbkhWX2w?oc=5",
       "pub": "2026-11-19T21:45:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Is Nvidia Stock a Once-in-a-Decade Buying Opportunity After Its Latest Earnings?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4584327b670259c6eac873ac0eaeb3ea95512630706dc9c997750cdd744dfbad",
-      "pub": "2026-11-19T21:35:02.000Z",
-      "sum": "There is a light at the end of the tunnel for Nvidia."
      },
      {
       "hd": "Nvidia: Rarely Been Cheaper, Yet Uncertainties Mount - Strong Buy Reiterated",
@@ -15189,32 +15205,32 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOM0V3d1ZlZG04SEFmUFJDc1lRZDRWMkZMMkVULVc2SlZqMmI2VUlfUW9sWS1UOFAydWxxdDBVZDZVU2FRODNxMUtTdGdKSnh1Z0tnOF90VDNzMThFUkk2dFE0Y0ZwenFLSWl5TFNKUDhod1pOU0VHT2lEbE0tUUtKN3hQNjk?oc=5",
       "pub": "2026-11-19T18:19:00.000Z",
       "sum": "Nvidia stock is down in the dumps. The AI trade has been faltering for months amid concerns around rising debt and the sustainability of spending."
-     },
-     {
-      "hd": "Nvidia’s Finance Chief Kress to Lead First Earnings Call Following Huang’s Ouster",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOYWNSeEVqX0dfVEF1QnBYdks5Tk92TU9mWEdlYkZ1a285YnBfOThIeGkybjZSTG9oSkJIYUE5WFgwYlZtdzBuVUQwQzJZTm1fcEtCeFBWd242RkVIVThYaVFaSm5sV1ppZlBWdGdtUkVNRXRUZ1dCWVpBd2hzMlhISWhyNms4R1BSUzM4S282SG5NT2J3VExlWjVtb015ZUd1UEpoQVh3US1oZGotRlQ0LWJrZUItbmtiWjlEcg?oc=5",
-      "pub": "2026-11-19T18:17:12.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Trump bought Nvidia, Palantir, SpaceX in September as federal deals, White House ties grew",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNMF90TDNmOE5NZDdRdFNJY0NTMjRtVEgtM2d5c0tneWFIRlgwZ2kxQm5xanFDTTFoUkVnMUtzc2ZnRzZiNFdPX2RKOHZUeml2R1FrbU91YXJLN0tNNHdCakRKLUpqOWR6TUNncGxqSkhmOEtqV2tNemZnY2twaFdkRk8tQWdERFdaak5ZdmliWC1vZ9IBlwFBVV95cUxOQXhDcmxvYTY2RkxKUzZJRGNmYUhUbkhWYzU3TVhqbGY2ZlZCdWZUcVZ5WE8yZnpxTFlQbG1xaUgxNG9JWXIwRThqblFNM09VejBMNFA1TXgxQmxFbDJhWGhFQWtEbWRFM29YRllPaTA3WEV4RFpicndzX2ctUEhGQnk0NlRkeFpNRW9YQlk1b2l3VEhGcVVr?oc=5",
-      "pub": "2026-11-19T17:59:04.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 93,
-     "Yahoo": 5,
+     "Finnhub": 91,
+     "Yahoo": 8,
      "Google News": 92,
-     "Nasdaq": 6,
+     "Nasdaq": 8,
      "Seeking Alpha": 27
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "Tesla Will Invest $3.31 Billion to Expand German Factory for Cybercab Production",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdktrVUd5d0c1dVV0VG5ZSnJEZmstVjQzZFNFdzd6MEFrRmM2YnRSaF95cEljZ0FOR1VIenBEV0VCRzRWTUVxYXZQYVdEb0E1UDBucGZWQ2VjR2t1UlcxLXJNVGdwYnJKdmRPQWR4U1BNSGR0VXpEQUZRRXhVd0RVYnQ0aTRBYk56bjhpUGMxLWU4QldpRUV2RzNtWVlYc2tzOGMwdzNaOFRhYm9fLTZRTDFLdlh3QQ?oc=5",
+      "pub": "2026-11-20T01:16:26.000Z",
+      "sum": "Tesla (NasdaqGS:TSLA) plans a €3b expansion of its Berlin Gigafactory to build fully autonomous Cybercabs at scale. The enlarged German plant is targeted to support output of up to 1 million driverless Cybercabs annually from 2029. Management expects the project to create thousands of additional roles at the Grünheide site as the facility shifts toward autonomy focused production. Tesla's €3b Berlin Cybercab expansion and pivot to driverless production is important to weigh alongside the..."
+     },
+     {
+      "hd": "Musk Says Optimus Will Do the Dishes “Within 12-18 Months.” Here’s Where Tesla’s Robot Stands",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-says-optimus-will-do-the-dishes-within-12-18-months-heres-where-teslas-robot-stands?ref=yahoofinance&tlnk=yf-261119-6gjh8j3r&.tsrc=rss",
+      "pub": "2026-11-19T22:37:52.000Z",
+      "sum": "Key TakeawaysElon Musk said on Nov. 18 that Optimus will be able to take out the trash and put away dishes in about 12 to 18 months."
+     },
      {
       "hd": "Tesla Robo-Taxi Expands to Dallas. It Isn’t Enough.",
       "src": "Yahoo Finance",
@@ -15284,13 +15300,6 @@
       "url": "https://finnhub.io/api/news?id=670f77ae7bd46c730200221956e0c1c93f2ba4daf56390875963498b60a67406",
       "pub": "2026-11-19T18:36:55.000Z",
       "sum": "Shanghai delivered 810,889 Model 3 and Model Y vehicles in ten months, already pressing against its stated capacity."
-     },
-     {
-      "hd": "Can Tesla's Cash Cover $20 Billion Of Spending?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7556d2db5ea1b9ffb44ee07a7fa0a0edc570fc38ba4a70ca6d26c663cce8fa80",
-      "pub": "2026-11-19T18:23:20.000Z",
-      "sum": "Today's big story: Could Anthropic Stock Fall 25."
      },
      {
       "hd": "Tesla: Nowhere Near As Expensive As It Seems",
@@ -15382,18 +15391,11 @@
       "url": "https://seekingalpha.com/article/4969247-spacex-tesla-merger-bet-on-breakthroughs-that-havent-happened?source=feed_symbol_TSLA",
       "pub": "2026-11-17T20:46:15.000Z",
       "sum": "Analyst rates both Tesla, Inc., and SpaceX at Sell: the $3.44 trillion merger valuation requires $340 billion in 2030 net income, 1.6 times Wall Street consensus."
-     },
-     {
-      "hd": "SpaceX Stock Lands in Stanley Druckenmiller’s Duquesne Portfolio",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=56e70413da041e9ac01cd2496fe93af627cb31c9c19d1761b30a4c6aa62e201d",
-      "pub": "2026-11-17T15:53:13.000Z",
-      "sum": "Druckenmiller’s Duquesne bought a $30M SpaceX stake, halved Tesla call exposure, boosted Amazon and exited Alphabet in Q3."
      }
     ],
     "fetched": {
      "Finnhub": 135,
-     "Yahoo": 11,
+     "Yahoo": 12,
      "Google News": 18,
      "Nasdaq": 7,
      "Seeking Alpha": 11
@@ -15407,6 +15409,13 @@
       "url": "https://finance.yahoo.com/technology/articles/spacex-apos-data-center-vote-003116969.html?.tsrc=rss",
       "pub": "2026-11-20T00:31:16.000Z",
       "sum": "SpaceX's (SPCX) proposed data center in Cochise County, Arizona, should not be approved until state"
+     },
+     {
+      "hd": "Lenders aim to bar SpaceX from launching $40bn of chips into orbit",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPOXdESDhWTHF3Y0Z1ZVo2dzgtTEM2QnI1cm5pdk1nQ21zbjhpVDJONzdmcGhBU0NQUEtTSEtkVTFuUVhqRHdBa2tucUZqa1pvLXZvVkxUNUY4R1hxVFZVTEk2TWJJMHZIZ2tlbklJcXVxTzlxMFZKXzR5UTVfX0tYNGFsME0?oc=5",
+      "pub": "2026-11-20T00:15:41.000Z",
+      "sum": ""
      },
      {
       "hd": "SpaceX Stock Price Forecast: How Much Upside Do Analysts See as Anthropic Goes Public?",
@@ -15568,19 +15577,12 @@
       "url": "https://finnhub.io/api/news?id=9032d7ee3b748151421e73b2f0ee35fae0a83f79af8fc451b6bb7ed107dbd4a2",
       "pub": "2026-11-19T05:28:49.000Z",
       "sum": "Trump defended Jensen Huang amid China-linked scrutiny, praised Musk’s SpaceX achievements, and urged America to support tech innovators."
-     },
-     {
-      "hd": "Anthropic IPO: AI lab reportedly raises $107.3B breaking SpaceX’s record debut",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-19T04:47:06.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 117,
      "Yahoo": 8,
-     "Google News": 33,
+     "Google News": 34,
      "Nasdaq": 0,
      "Seeking Alpha": 23
     }
@@ -15588,11 +15590,18 @@
    "ANT": {
     "items": [
      {
+      "hd": "SoftBank plunges over 16% as AI sell-off hits Asian tech stocks following Anthropic debut",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPV0Z3OWtzZHlQVU5iZEZqYV91VG00Vnd6M2J3dk12bUhiSmNRN21Vc3Z3Q3YyVjZLRDZjZmF4d0t3QWJDNTJzX0VfNzh6QmhueTIyUndyRkRkdWFpclpEcmVsVFpMTjRHeml3UEtQSklzcy12VVRlQ1F6WjcyNEh1UVN3b190d28zY2fSAY8BQVVfeXFMT3pEcUJ3Qmgwb3NFM3BNd1p2Rk5DYmZSaHVZcUxMeWFJZW9DQldzTXlaOHdBQ3Y4ZHhRbWVEZ0xwSVJnT1hOSWhJc0FOXzVvS3JsTWxibE9zc0xTRXlFcThPWkZHb1Fvd2pvNXM4eEtSejFMcm9oYWZXbUFzTWxEaE11ZzlCaWNYRktQUTAyLWM?oc=5",
+      "pub": "2026-11-20T01:07:00.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Anthropic: A Strange Time To Be Sensible",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4970392-anthropic-a-strange-time-to-be-sensible?source=feed_symbol_ANT",
       "pub": "2026-11-20T00:42:39.000Z",
-      "sum": ""
+      "sum": "Analyst sees Anthropic, PBC as a long-term opportunity but favors waiting: its $81B run rate is far below the roughly $600B revenue needed for 3x sales."
      },
      {
       "hd": "Stocks Erase Early Gains as Anthropic Optimism Fades",
@@ -15754,30 +15763,30 @@
       "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
       "pub": "2026-11-19T22:00:13.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Anthropic, AMD, Alphabet, Palo Alto, Take-Two, Walmart, and More Stocks That Explain Today’s Market",
-      "src": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9JVzJDLTFPc2lrY2ZPcXR4NElkVklfRGRyUGpQaTM3ZVZMcDY1UExMSjJ6QW5SQmstMFhES0gzMUQwQTZvY0ZJYUR1X2hLMllkSHVjajk0MmtnSko1LVAtcERldVA?oc=5",
-      "pub": "2026-11-19T21:47:00.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 40,
+     "Finnhub": 41,
      "Yahoo": 0,
-     "Google News": 93,
+     "Google News": 94,
      "Nasdaq": 15,
      "Seeking Alpha": 28
     }
    }
   },
-  "asOf": "2026-11-20T00:45:12.064Z",
-  "lastAttempt": "2026-11-20T00:45:12.064Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "He Runs One of the World’s Deadliest Military Forces. We Went Inside His Bunker.",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
+    "pub": "2026-11-20T01:31:11.000Z",
+    "sum": ""
+   },
    {
     "hd": "Trump, Xi and Putin Seek to Project Power at Their First Summit",
     "src": "The New York Times",
@@ -15793,6 +15802,13 @@
     "sum": "European allies of Ukraine say they have a \"united\" negotiating position at a summit in Berlin."
    },
    {
+    "hd": "Takeaways from the historic summit among Trump, Xi and Putin",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUGR5Qm9EVktTdGlZU2p0QlJOOGRieUpsczVJc2RfTXA2XzZFRUtnaUNZWHdVLTN1X3JnZ2FTQ0J4V3ZyWkJEV21aMzhqV2pqbzB4amYyM0pCdWs4NWNUUE1aakhtWW9IZDhmR2ZSUl9NNFhXZ3JMQmEzVjJVVmswODFhOHU2VkZ5TmE3NWF3?oc=5",
+    "pub": "2026-11-20T00:39:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Canada and China Draw Closer with Expanded Trade Pact",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
@@ -15803,7 +15819,7 @@
     "hd": "Trump Flaunts Camaraderie With Xi and Putin but Has Little to Show for It",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin.html",
-    "pub": "2026-11-20T00:14:03.000Z",
+    "pub": "2026-11-20T00:14:04.000Z",
     "sum": "President Trump called Russia’s leader his “friend” and marveled at China’s warm welcome for his first-ever trilateral summit. But there were no breakthroughs on nuclear control, the war in Ukraine or A.I."
    },
    {
@@ -15814,10 +15830,17 @@
     "sum": ""
    },
    {
-    "hd": "He Runs One of the World’s Deadliest Military Forces. We Went Inside His Bunker.",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOLWtJTEVDSzk3aU5WSHlrb0lvdXl6eUk4cWNRU1R4dDY1YklQLUloamRUTXVSWnZEOVBLVjNrN0xudmRDdG45YWFNOTU1Q3AyTVRLbFMycWNkaVB1TU9KTkVVMTNGZE5qdlFDQnRqZ1lNc1NoSGMzQ3ktRVFzaU83S24wWnUzeW5abmtYTGlmSndUbUUxREw4ZG9NVE5JbXIwdG9Pa2J0VU5pd3VaU0ZyVkh3?oc=5",
-    "pub": "2026-11-20T00:01:11.000Z",
+    "hd": "Trump’s trilateral draws backlash from Republicans and Ukraine allies",
+    "src": "Politico",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYnhZLVp2Y25hNHlIRGk5TVpEUWlKcmFIN2xyUnZkWHFyTEJRTFhReVFmeENkdTJrMUxia2s5LVdzSnI1UHBmM2h1MVlRYUtCQW53MFdhWlFwb3NKTGpCaFNuV1piUjRSUl9kSWdic19ZaTIyVGdXRUFzS2ZiZXNoN09McmhuNHBoLWVkWlhIaWVKUEdkYVJUcHdrSS1ya1QwQ3RjcA?oc=5",
+    "pub": "2026-11-20T00:06:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Record profits but record outflows: 'Sell Korea' trade stalks Seoul market",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPbDVJVUxnTV8wWW53ZDBmMC1GX3V1Z2k1N24zdTk0bkdYR2lBYTB2c3J4QVkzUFRiTHJSTkoycmM0ZG5jSWxnSkxVOWJNZzFFX3kydHoyWU9oSURMel9Yck5VMlk3TTVaNkhBX09wU1B1TzVuYlhnYnZhMmhnMEpIMmZLeXVXT09IWEs5cXJLOWtNcklfZkU1NU85WE1NSEE1ZUhzRDBKY2dzaW5pWnQzdTJra3UybUdXVWpDeWRYYw?oc=5",
+    "pub": "2026-11-19T23:37:59.000Z",
     "sum": ""
    },
    {
@@ -15933,10 +15956,10 @@
     "sum": "The ruling by the International Court of Justice deals with issues relevant to the case brought against Israel alleging genocide in Gaza. Israel has rejected the charge."
    },
    {
-    "hd": "Trump eyes 2027 to 'see what happens' with Iran",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQkkzQVk3M3pnOXRWVlFCMmVzUEN0alhCS0gzQUhYNkhCMDhCOUM0N0tmMFpZNVNKcnVNbktaYXV5MV9ERm13WHoxTEVtUGRMUkZwT3dJZmlRZ2pyRE1WMGoyZW1VcXVWdTVRTmxZV1RISHNXWE9YY1BUUC1EWlJWRWRsYzlGTXo0WmhjaUxiUnAyMDl2OU9mWmliYndLd0htWGVLYWFUUldMOUIzLV9TSnBB?oc=5",
-    "pub": "2026-11-19T20:50:06.000Z",
+    "hd": "Trump says surprise visit with North Korea's Kim Jong Un on Asia trip didn't 'work out' — but vows to 'have that meeting' in the future",
+    "src": "Yahoo",
+    "url": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNUE83RmFlb3VxWkFNcURFLWJmZDJyYy1ZWm9QUjkxNkpZYU9pMndTY1FmQ2UzZnhFOXRDd2lUNkxPNU5oTzFZN1k0UVJxVXAxTVp6NzBRZU82R0NMQXJEVDVYQ0t5ZXVyb2pOSFRyWUZ3NzJURk9DX1kxUGJKZGxOUHNILTJKbGI3X28ySmlDd3hfT00yRFF4ZlJrMUYwYW1uRlFEN1RfSzlHd01xVmtSMmY5NWE4bHNWTEJiSVNoZW5hV2pxYW00Tmd6aEdyTnBESS1RblN0VzRUbWdwWDE3ZXc1X003VHJ2ci1UVXpLSW1KYmR5Q1NFcDdramRlNGJMbnd0NklTY2tYM1EwZ0cyWUN3?oc=5",
+    "pub": "2026-11-19T20:54:02.000Z",
     "sum": ""
    },
    {
@@ -15966,27 +15989,6 @@
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPM2xvRWtCcGhZTnI3SkRZZE1Hb29IV0FLQXd4WFU0ckRYV0xtVVJhTk1IVkx0UW1TMVM5VC1rZURuTDZqekQwM3lmdVh0cVJPYjdHZ3hLdUljb3liaG9OVGNHM183R1NIWF9MbTJJc200UlRtRFNLZ3dIdXUwRXFDNHBWOEIxRGdzZHBXVlBLbWJiVFAxVFdj?oc=5",
     "pub": "2026-11-19T20:17:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Trump-Xi Summit Shows Putin’s Powerful Friendships Have Their Limits",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc0tJQkxsakZJaEd3ZkNVV25vVW44WlRjeEJQUEpCajBhNFE0VE5tSVA1THZGcVJvalozd3BxWVFZNW5nTnNWdEloOVdsendjNDF6RVRJV0lYWVBiQkpOSVRUODhQX3BZWG1QcmthZll5QzRqSG1zekhfRWZQdzdUckc3TzZGNDVSNVUwVWNiMndZZVUzLXlteHBpVWxmVGp3dG1CWkpTaDU1aFRlTEE?oc=5",
-    "pub": "2026-11-19T20:08:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "France’s Diallo and Japan’s Tashima challenging Infantino in FIFA president election",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNV0JNYTJhdElycVdZeUtCejcteGRSYTFGRU5nMXZUUnpjd0pKVi1CVHk0MkhNZEFSY2l4ODlLSzFqVzBWYTRNS2U5YUJzS3I0WkNmZHV2OTFZOEpsMU1LLUVKRkQ4UXVzSWlYVnU5dnBVS1Y5aXhlRjZHelQwNWdEQUlZYWN3NWNqR05LSWZmT1FoU25nTHhSRkZNdXVpcHd0WDU5OGhpRXBaWTNU?oc=5",
-    "pub": "2026-11-19T19:57:13.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump touts ‘unbelievable’ summit with Putin and Xi, though peace deals remain elusive",
-    "src": "NBC News",
-    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNZ1ZqeHBBUkpzd1dXRjlaQ0RkemNaNWItOUN3RnlWdnFkdmo2Y19xOUFNQ3FHN0hLRndCM1I4TkYyUzlGY0ljc004UkdVejA5N2gyQmtQTWhET3VueEZjY292aUQtdlE5TWYwcEQ2MVNONFFNM1MtQnJHSEltaHlYRGJDUHZXWVdzd2JIUzFaeXdCRHlOdVRoaklhMU45U3BPMzFielVtR0RtTFRzNF9XZnNXcjY3eDNObU1mbGlLbTFrRUJtY3c?oc=5",
-    "pub": "2026-11-19T19:42:53.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16005,8 +16007,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-20T01:15:14.271Z",
-  "lastAttempt": "2026-11-20T01:15:14.271Z",
+  "asOf": "2026-11-20T01:45:11.459Z",
+  "lastAttempt": "2026-11-20T01:45:11.459Z",
   "lastError": null
  }
 }
