@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-20T23:00:02.145Z",
+ "generatedAt": "2026-11-20T23:15:13.676Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,10 +7319,13 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-20T23:00:02.145Z",
+  "at": "2026-11-20T23:15:13.676Z",
   "ran": [
    "alerts",
+   "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14195,8 +14198,8 @@
     }
    }
   ],
-  "asOf": "2026-11-20T17:15:10.789Z",
-  "lastAttempt": "2026-11-20T17:15:10.789Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "lastError": null
  },
  "alerts": {
@@ -14207,8 +14210,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-20T23:00:02.145Z",
-  "lastAttempt": "2026-11-20T23:00:02.145Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14879,13 +14882,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-20T23:00:02.145Z",
-  "lastAttempt": "2026-11-20T23:00:02.145Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-20T23:00:02.145Z",
-  "lastError": "Open-Meteo: fetch failed (ECONNRESET)"
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15095,44 +15098,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-20T23:00:02.145Z",
-  "lastAttempt": "2026-11-20T23:00:02.145Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 129.1,
-    "time": 1795215599,
+    "price": 129.7754,
+    "time": 1795216525,
     "ref": 125.53,
     "refTime": 1795208401,
-    "change": 3.569999999999993,
-    "changePct": 2.843941687246071
+    "change": 4.245399999999989,
+    "changePct": 3.381980403090886
    },
    "TSLA": {
     "session": "post",
-    "price": 350.4628,
-    "time": 1795215601,
+    "price": 351.35,
+    "time": 1795216522,
     "ref": 345.82,
     "refTime": 1795208401,
-    "change": 4.6428000000000225,
-    "changePct": 1.3425481464345679
+    "change": 5.53000000000003,
+    "changePct": 1.5990977965415618
    },
    "SPCX": {
     "session": "post",
-    "price": 129.39,
-    "time": 1795215587,
+    "price": 129.5392,
+    "time": 1795216523,
     "ref": 127.79,
     "refTime": 1795208400,
-    "change": 1.59999999999998,
-    "changePct": 1.2520541513420298
+    "change": 1.7491999999999877,
+    "changePct": 1.3688082009546816
    },
    "ANT": {
     "session": "post",
-    "price": 88.99,
-    "time": 1795215600,
+    "price": 88.98,
+    "time": 1795216512,
     "ref": 88.91,
     "refTime": 1795208402,
-    "change": 0.0799999999999983,
-    "changePct": 0.0899786300753552
+    "change": 0.07000000000000739,
+    "changePct": 0.07873130131594577
    }
   }
  },
@@ -15157,11 +15160,25 @@
       "sum": "Was Burry right about the “AI bubble?” Find out what “The Big Short” superinvestor is saying about the AI trade and why he thinks the tech wreck isn’t over."
      },
      {
+      "hd": "Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/nvidia-plunges-sec-probe-deepens-221134186.html?.tsrc=rss",
+      "pub": "2026-11-20T22:11:34.000Z",
+      "sum": "Comprehensive cross-platform coverage of the U.S. market close on Bloomberg Television, Bloomberg Radio, and YouTube with Romaine Bostick, Carol Massar and Tim Stenovec."
+     },
+     {
       "hd": "Trump’s Treasury Secretary Keeps Nvidia’s H200 China Policy as House Data Show Nearly 880,000 AI Chips Approved",
       "src": "Yahoo Finance",
       "url": "https://www.tikr.com/blog/trumps-treasury-secretary-keeps-nvidias-h200-china-policy-as-house-data-show-nearly-880000-ai-chips-approved?ref=yahoofinance&tlnk=yf-261120-rx666q2r&.tsrc=rss",
       "pub": "2026-11-20T21:58:37.000Z",
       "sum": "Key TakeawaysHouse data show Commerce approved nearly 880,000 NVIDIA and AMD AI chips for China from December to May. Treasury Secretary Scott Bessent said Friday he doesn’t expect the H200 policy to change."
+     },
+     {
+      "hd": "Nvidia faces US regulator’s probe into its accounting",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZWJsU0wwemxtMW1PcWVVZlpsNXdhODhIZkZSZGd5NGNacmE5UWhTVnphVUR2NGVuWmhpQnJtUUsxQ1VLRnJkTUl6QVhjdDFEak96YUhwbVpmUHA4WGwtY3czNWstelpTdnhaTk1zSkE2SGhfTmtsNlROVE9BNHhMNnZwX1Y?oc=5",
+      "pub": "2026-11-20T21:58:08.000Z",
+      "sum": ""
      },
      {
       "hd": "Navitas Sinks 15%, Western Down 12%, Everpure Down 13% as AI Chip Rout Deepens",
@@ -15192,13 +15209,6 @@
       "sum": "California Just Subpoenaed Nvidia. What The Probe Means For The AI Chip Giant"
      },
      {
-      "hd": "Nvidia Stocks Fall 3.30% as CEO Transition Overshadows $115.8 Billion Quarter",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-fall-3-30-214147795.html?.tsrc=rss",
-      "pub": "2026-11-20T21:41:47.000Z",
-      "sum": "Shares closed near a 52-week low as a $130 billion outlook excluding China failed to calm leadership and export worries."
-     },
-     {
       "hd": "Nvidia Stock Drops Below $150 Support After Jensen Huang Scandal: Key Levels to Watch",
       "src": "Barron's",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQNldhalBiZklRZ3ExMXViMU1CTWExTFh5SHhRSEVaSWJ0UmVlQS1lQnNsRVIwTDNtVHFuYVFXcGpnbkJ4V0ZDNmg4Y2dMSzBFV1BMNEJRSkRwTVd1bFRIZTlnOFhDdFhsakh0dlpkNml5aVU4TVJzSXFQNjUzNmY1ZXRZQjlpNnEtQVE?oc=5",
@@ -15206,18 +15216,18 @@
       "sum": ""
      },
      {
+      "hd": "Trump Calls for Nvidia to Rehire Jensen Huang",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcFpjZTl5Ni1VV2k4MndkZFgxbG5sWVNfZ1R2bWpubThpOXZsaW9sMjdrR0JnU01rN0g4NV94WUtyWnU0TUZLSXJSTEJQQWJnTDFrQWxpQlVtOGgwNTlSNXZnZDMwbXkwZmhWSC1XZDhTZTFxQkZxUnpyOFV5cVY5dTFTRlZiMk9odnVTYUs1cDU4RjlzZ2FGUXJJbnZGNE9SS090OU9JeGRCb19O?oc=5",
+      "pub": "2026-11-20T20:56:18.000Z",
+      "sum": "President Trump expressed continued support for former Nvidia CEO Jensen Huang, who was ousted after his affair with a suspected Chinese intelligence asset came to light."
+     },
+     {
       "hd": "EXCLUSIVE: Nvidia's accounting is a focus of US SEC investigation, sources say",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMzlPdFVTT2cyVkhmMFVKNWZ1MnpNT0NLcURnblg4THMwUWNuYTRBLWUxU0ZSSUR5bk1zNnBmVlhIUjByNkN6TzVBNC1uaXQxM0dwY2FkMzZQdm00a0xyMXo3NFNpSUNPdERZWU82aGZLa0lNZHpMOXVnVDBVQW9lMmNrWEVRczVYS1Racm1NNlNERDBJeTFJRG1pZVRfTC1LTy1pNjhpVzRaeGRrY25kSzQ1aDNUUQ?oc=5",
       "pub": "2026-11-20T20:37:03.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Trump Calls for Nvidia to Rehire Jensen Huang",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcFpjZTl5Ni1VV2k4MndkZFgxbG5sWVNfZ1R2bWpubThpOXZsaW9sMjdrR0JnU01rN0g4NV94WUtyWnU0TUZLSXJSTEJQQWJnTDFrQWxpQlVtOGgwNTlSNXZnZDMwbXkwZmhWSC1XZDhTZTFxQkZxUnpyOFV5cVY5dTFTRlZiMk9odnVTYUs1cDU4RjlzZ2FGUXJJbnZGNE9SS090OU9JeGRCb19O?oc=5",
-      "pub": "2026-11-20T19:55:54.000Z",
-      "sum": "President Trump expressed continued support for former Nvidia CEO Jensen Huang, who was ousted after his affair with a suspected Chinese intelligence asset came to light."
      },
      {
       "hd": "Exclusive | SEC Is Probing Nvidia Amid Departure of CEO Jensen Huang",
@@ -15309,19 +15319,12 @@
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOR1lHWVFlSnZTcW9OVTZGU0lwdDdreE5TSm94Z0FTZDktRHRLOEU0LVBTTHpOZ1lYYmFCZ041UWUtTEh6VEFhczZFd2xlSjNLRlNNMHhDd2tFcDl2N1BIMndRY1VaN09HeHowT0hVblhkd1ZpUGxTakdwVFk4cjFWTzlTRnJQeWNGUW92YUxWUG9XR3BzM0hrZDdaWU5vUHJyMVdRcDktdWNMSUlkLS1Nek1SZjYxQQ?oc=5",
       "pub": "2026-11-20T15:31:27.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia Turmoil Leaves Few Stock Market Winners in Sea of Losers",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUXZlRzF4RUlhY2F3dTJTajZOaUtDN19fS2dGc2VXd3pSQnZuanp0MnkySi1WQ3R1dnJSOEFZUXFQSEVlYVd5aXhnY2lWQVZlMHRkR1k0MGRhNTE3WW9lbVpuRUFGckhXSGRpNERhR1g5LW05X1VaRGV5RTVzWFJXdVJxaVpUWlRjRnV6aDRia3ZuOVpRRDhHWW5zNm1qT0Nldm45cVlGdC1CZDdlb2xnbTk3dHI?oc=5",
-      "pub": "2026-11-20T14:42:04.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 108,
-     "Yahoo": 8,
-     "Google News": 86,
+     "Yahoo": 7,
+     "Google News": 88,
      "Nasdaq": 5,
      "Seeking Alpha": 26
     }
@@ -15515,6 +15518,13 @@
    "SPCX": {
     "items": [
      {
+      "hd": "ANT Stock Ends Lower: Retail Investors Reportedly Bought As Much As $120B Of Anthropic, Beating SpaceX Debut",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-ends-lower-retail-investors-reportedly-bought-as-much-as-120-b-of-anthropic-beating-space-x-debut/cNbSHoQR91f?.tsrc=rss",
+      "pub": "2026-11-20T22:41:37.000Z",
+      "sum": "Artificial intelligence developer Anthropic attracted more than $615 billion in combined retail and institutional orders for its historic initial public offering, Bloomberg reported."
+     },
+     {
       "hd": "SpaceX Plans to Spend $2.8 Billion on Gas Turbines. Here’s What That Much Natural Gas Demand Means for Pipeline Investors.",
       "src": "Yahoo Finance",
       "url": "https://www.fool.com/investing/2026/11/20/spacex-plans-to-spend-usd2-8-billion-on-gas-turbines-here-s-what-that-much-natural-gas-demand-means-for-pipeline-investors/?.tsrc=rss",
@@ -15562,13 +15572,6 @@
       "url": "https://finnhub.io/api/news?id=bbf257194baf07cbb79197c18cc12cb51b90b30e15ded13483dab99e9650f8c5",
       "pub": "2026-11-20T20:11:04.000Z",
       "sum": "SpaceX (SPCX) has a “game plan” for its huge AI data center expansion, and Bernstein analyst Douglas Harned believes it could pay off. The company wants to build computing capacity quickly while demand is high and prices remain strong. This could help it recover its investment before computing prices fall. The facilities could also support Elon Musk’s longer-term plans for AI data centers in space. The 4-star analyst reiterated an Outperform rating and a $268 price target, implying 93.6% upside"
-     },
-     {
-      "hd": "Trouble For Elon Musk's SpaceX In Texas? Proposed $24 Billion Data Center and Power Plant Face Uncertainty After Local Officials Reject Tax Break",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7e564ac9f0ad47c5e23ed6d757e21ca63d0fe6dab0668c8f038d2ce25735a3a1",
-      "pub": "2026-11-20T19:30:05.000Z",
-      "sum": "Space Exploration Technologies Corp. has warned that property taxes in Texas could face greater fluctuations after local officials rejected the company’s request for a tax rebate on its new $24 billion data center in the state. Equipment Depreciation Could Lead..."
      },
      {
       "hd": "Arizona AG asks local zoning board to delay vote on SpaceX's $50B data center: report",
@@ -15692,8 +15695,8 @@
     ],
     "fetched": {
      "Finnhub": 129,
-     "Yahoo": 10,
-     "Google News": 32,
+     "Yahoo": 11,
+     "Google News": 31,
      "Nasdaq": 0,
      "Seeking Alpha": 23
     }
@@ -15878,25 +15881,53 @@
     ],
     "fetched": {
      "Finnhub": 93,
-     "Yahoo": 8,
-     "Google News": 95,
+     "Yahoo": 0,
+     "Google News": 96,
      "Nasdaq": 12,
      "Seeking Alpha": 27
     }
    }
   },
-  "asOf": "2026-11-20T22:45:12.372Z",
-  "lastAttempt": "2026-11-20T22:45:12.372Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iraqi security forces deploy in Iran-backed militia stronghold",
+    "src": "NBC News",
+    "url": "https://www.nbcnews.com/world/middle-east/iraqi-security-forces-deploy-iran-backed-militia-stronghold-rcna610516",
+    "pub": "2026-11-20T23:08:04.000Z",
+    "sum": "JURF AL-SAKHAR, Iraq — Iraqi security forces deployed in Jurf al-Sakhar, a stronghold of the Kataib Hezbollah armed group, on Friday under a deal that seeks to limit the reach of Iran’s most powerful Shi’ite militia ally in the country without provoking a confrontation."
+   },
+   {
+    "hd": "The War Is Ravaging Ukraine’s Wildlife, Too",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html",
+    "pub": "2026-11-20T23:05:46.000Z",
+    "sum": "The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire."
+   },
+   {
+    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
+    "pub": "2026-11-20T22:48:45.000Z",
+    "sum": ""
+   },
    {
     "hd": "Trump Flaunts Camaraderie With Xi and Putin but Has Little to Show for It",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/19/world/asia/trump-xi-putin.html",
     "pub": "2026-11-20T22:34:05.000Z",
     "sum": "President Trump called Russia’s leader his “friend” and marveled at China’s warm welcome for his first-ever trilateral summit. But there were no breakthroughs on nuclear control, the war in Ukraine or A.I."
+   },
+   {
+    "hd": "Myanmar genocide judgment may bolster Gaza case against Israel",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVXpvX3JTUmpQTWxpbnp3ZFFxaVFmd3ZEUjhSbmFlNDBwbG4tcWNmTzNnSkZXVks3YzlsSUNqOXk3QThrZXRONnBaSlh6RXp1YndKOFhKcEhQeHJGdjFzYlhKdnBnLXR6clpkQkl2ejh4UzJmaVhNbXc3My1ucEpqS0UzNTFmYzhNY2F6UV9sTHJ3RWlsdUFrWUxtQ2pPRHJUYWV3RlI2eVB3Q2N3bnVhMkUtenBUcXlq?oc=5",
+    "pub": "2026-11-20T22:21:42.000Z",
+    "sum": ""
    },
    {
     "hd": "Denmark Expels Russian Diplomat After Accusing Moscow of Planning a Hit",
@@ -15931,6 +15962,13 @@
     "src": "DW",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPeV9qSzNGLU5BaGd1UHRudmk5NjV5UDFnLVJuX2FYUUZnZmpVZjZkZFVSZzE3SnFzMkZLVVZDMktHTGdUbGJTM3E4S2VZMW9hcWhaR21uSFB5czM3ZDZBNkF2ZmlrUWtmOHF0S3Z4MzhLUzl2ZmxiWXlwUjdSODdHeHlOa29DUmNzTl9oTG5WbjlfbjJheEt3YmRBR2I?oc=5",
     "pub": "2026-11-20T21:30:19.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "European Union and UK strike a 'landmark deal' to strengthen ties after Brexit",
+    "src": "DW",
+    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPREFrUjJQcHVYN1ZEWlNBTnNydEREdGxZVVlXMENxMTU2cWpzc1lSTWRUbHRORTlVMW9KOTE1cG9UZ2xJSnBMVjQwZlJCNFIzNUxmRHdST2tBQWRxVk1QbHVMVm0tZUJfRDkzYVhMNWRhdlRJQjFrRnRPMEEwdlBiRXVzZ091VndXVC1kWWJNQW1qd2czY0R6Qnl1Z9IBmwFBVV95cUxNRmhNNnhpaHJSVEZnYUxMZkM0SVNKVkF5dTMzYnpRQWhqUjlnRld6REk2SEVaY2o5UXh2bXViRzBQeTRYZFlkN3BTQVB0NUdjcUJ0Zm1reXJ2NWVOeFZNMGZoc3RaS1NjbnVudkxtdlZ1YXpyMzdya2UtdVNheW5WT3dpSEtyTWE4Wml2VmdEbDFtLXN6VDJEbjV1MA?oc=5",
+    "pub": "2026-11-20T21:14:08.000Z",
     "sum": ""
    },
    {
@@ -16011,6 +16049,13 @@
     "sum": "Hollywood seems oblivious to the radically new nature of war. Why, exactly?"
    },
    {
+    "hd": "Trump says Putin is \"having a hard time because he's in a war that should have lasted one day\"",
+    "src": "Українська правда",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE45TVpieXpaWjZXdkFnX2ltQjB4c0p5d1BtcGc1d054UmJ3ejV6ZjVIZlo0UjRXWk43V1RGcFU5WDU3akJfakxqX3FidUVYVExVbXA3X2RMbjNJWUxSQVJHYkV1N2fSAXBBVV95cUxOWmp0N25icFJKb1dXQnpjU0dVX1lTNWFjeWROd1hOeDhKeXBTM3dtckVUUGVNV3ltVnpWODdLMFhLbWdOdW1vc0JJdENWNjRXUy1nbm9rZnV3VFhpTVp6ZkJ2Z2FTemRXOFZRRFZ4S0JS?oc=5",
+    "pub": "2026-11-20T19:03:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump touts Asia deals and meeting with Xi and Putin at White House press conference",
     "src": "CBS News",
     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPN05lbnJqODFXYk1OV3NsRGkwWVEwZk9ETGdXOXB5Z25ROXdhTlRlc0V1SVB6NV9fUWo5aW5Wa0t1UG9EUE9ack4xd24tU0hSd1JUd1ZyV1ROakNNa1NhYVRKeHMxeVNJTnJIcjdFS3dxeklhLVpsMnpYX2JXWE9kUmRMeENxbll3eE5J?oc=5",
@@ -16058,48 +16103,6 @@
     "url": "https://www.nbcnews.com/world/europe/trump-friend-greeting-putin-causes-alarm-europe-ukraine-rcna610373",
     "pub": "2026-11-20T17:01:20.000Z",
     "sum": "When President Donald Trump called Vladimir Putin his “friend” this week, European leaders and foreign policy experts were dismayed and alarmed."
-   },
-   {
-    "hd": "Russian missile hits Poland as Ukraine's allies hold military exercise, says Tusk",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cqx2x9dklxnro?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-20T16:54:29.000Z",
-    "sum": "Nobody was hurt and no damage has been reported, but Warsaw described the incident as a \"provocation\" from Moscow."
-   },
-   {
-    "hd": "Britain Announces Brexit Reset Deal at E.U. Summit: What to Know",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBvUU1SLWZGMnpDTVE4bkRqX0RPTGl0eERIWTBwZTZRb3B6bTJheGVXbUNaUkZURlRsNlU2d1lLTGkyUk1ocjNMTkQwUWNEYjU1clVGWnNGSGVsemo3LW1Ja2FzaUtPWVhSNjg4ZGJYejc4cFE0ZkJKNERsX0E?oc=5",
-    "pub": "2026-11-20T16:50:16.000Z",
-    "sum": "Prime Minister Andy Burnham and European leaders said they had agreed to remove some of the barriers created when Britain left the European Union."
-   },
-   {
-    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
-    "pub": "2026-11-20T16:48:44.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "European Union and UK strike a 'landmark deal' to strengthen ties after Brexit",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPREFrUjJQcHVYN1ZEWlNBTnNydEREdGxZVVlXMENxMTU2cWpzc1lSTWRUbHRORTlVMW9KOTE1cG9UZ2xJSnBMVjQwZlJCNFIzNUxmRHdST2tBQWRxVk1QbHVMVm0tZUJfRDkzYVhMNWRhdlRJQjFrRnRPMEEwdlBiRXVzZ091VndXVC1kWWJNQW1qd2czY0R6Qnl1Z9IBmwFBVV95cUxNRmhNNnhpaHJSVEZnYUxMZkM0SVNKVkF5dTMzYnpRQWhqUjlnRld6REk2SEVaY2o5UXh2bXViRzBQeTRYZFlkN3BTQVB0NUdjcUJ0Zm1reXJ2NWVOeFZNMGZoc3RaS1NjbnVudkxtdlZ1YXpyMzdya2UtdVNheW5WT3dpSEtyTWE4Wml2VmdEbDFtLXN6VDJEbjV1MA?oc=5",
-    "pub": "2026-11-20T16:45:30.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Iraqi forces deploy to Jurf al-Sakhar after deal with Iran-backed group",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOSDdELUI3RVJITHJubkdreVZyVEVNSGFjV0hZRnZ6WlMzRG03NXBOclVuaktKX2ZHTVBNSEJXeUpmOE13ejhxdE1WUXQ3bl9VckVBbkhBdUt2Y1JoLVpWSEtIQmNMcEpOY0QwTlFqdFhYTEt6bDh2RWdfelhQcWFsdEpYY1BHVVgtUXdCQ29jWGdQVEx4TlAwdWRMZW13bElkaFVtSVJMZGNzbXk5anBGSWxaQdIBuAFBVV95cUxPd1dodnduMjZCVVl6VWFCOElnZWRTeFpEbjBhSmlVWkFVeDR2M2pEVkNzOGxTYmVtcWp5OWxyX2M2OTRyUG1xaGsyTlNxZWV3VE1Sb2xrWFNzLTU0RnpGQXR1ZHZrTzRfYkdBdFZRS1BSWHkxeUNUdV9UUG1kQjFFTEdIbEs0TUEyZzN3YVFreG1nQVRkZVpUQWN1SVh5UHpXeDJuZnJCcXB5dzktZFg4TWZ3QU1jNVVG?oc=5",
-    "pub": "2026-11-20T16:43:36.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Myanmar calls UN court's Rohingya genocide ruling a 'great disappointment'",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOazVmQWNON0pUR1lkMG9ESFlrYjhtOUtQRGNJREZ0cWpPNWIxYTNYaWxjQUN4cUxHU3BVX05BTUc0SlBsblFmQmJ5YjJiOUhHV1RuQTk0OGNLWTFoaWhudm9XS193THFlcU9xbHZqS2w0TGlyOEpRU2Y2dXhDcmFLZXhncDNHa1ctVGFoRFhRcXZROVpYdzZrTWdYbw?oc=5",
-    "pub": "2026-11-20T16:36:55.000Z",
-    "sum": "Myanmar’s government has dismissed a landmark judgment by the United Nations’ top court finding the country guilty of genocide against its Rohingya minority as “unfair.”"
    }
   ],
   "feeds": [
@@ -16118,8 +16121,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-20T22:45:12.372Z",
-  "lastAttempt": "2026-11-20T22:45:12.372Z",
+  "asOf": "2026-11-20T23:15:13.676Z",
+  "lastAttempt": "2026-11-20T23:15:13.676Z",
   "lastError": null
  }
 }
