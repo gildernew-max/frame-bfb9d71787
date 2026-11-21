@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T00:45:12.624Z",
+ "generatedAt": "2026-11-21T01:00:20.426Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7012,15 +7012,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-21T00:45:12.624Z",
+  "at": "2026-11-21T01:00:20.426Z",
   "ran": [
-   "weather",
    "alerts",
    "cfbScoreboard",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
    "extended",
    "usTempGrid"
   ]
@@ -13905,8 +13900,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-21T00:45:12.624Z",
-  "lastAttempt": "2026-11-21T00:45:12.624Z",
+  "asOf": "2026-11-21T01:00:20.426Z",
+  "lastAttempt": "2026-11-21T01:00:20.426Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14577,13 +14572,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-21T00:45:12.624Z",
-  "lastAttempt": "2026-11-21T00:45:12.624Z",
+  "asOf": "2026-11-21T01:00:20.426Z",
+  "lastAttempt": "2026-11-21T01:00:20.426Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-21T00:45:12.624Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-21T01:00:20.426Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -14793,44 +14788,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-21T00:45:12.624Z",
-  "lastAttempt": "2026-11-21T00:45:12.624Z",
+  "asOf": "2026-11-21T01:00:20.426Z",
+  "lastAttempt": "2026-11-21T01:00:20.426Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 130.1279,
-    "time": 1795221949,
+    "price": 130.01,
+    "time": 1795222798,
     "ref": 125.53,
     "refTime": 1795208401,
-    "change": 4.59790000000001,
-    "changePct": 3.6627897713694013
+    "change": 4.47999999999999,
+    "changePct": 3.568867999681343
    },
    "TSLA": {
     "session": "post",
-    "price": 350.9866,
-    "time": 1795221910,
+    "price": 351.0845,
+    "time": 1795222795,
     "ref": 345.82,
     "refTime": 1795208401,
-    "change": 5.166600000000017,
-    "changePct": 1.494014227054542
+    "change": 5.264499999999998,
+    "changePct": 1.5223237522410498
    },
    "SPCX": {
     "session": "post",
-    "price": 129.6,
-    "time": 1795221941,
+    "price": 129.5507,
+    "time": 1795222786,
     "ref": 127.79,
     "refTime": 1795208400,
-    "change": 1.809999999999988,
-    "changePct": 1.4163862587056797
+    "change": 1.7607,
+    "changePct": 1.377807340167462
    },
    "ANT": {
     "session": "post",
-    "price": 88.6954,
-    "time": 1795221943,
+    "price": 87.7902,
+    "time": 1795222796,
     "ref": 88.91,
     "refTime": 1795208402,
-    "change": -0.21459999999999013,
-    "changePct": -0.24136767517713437
+    "change": -1.119799999999998,
+    "changePct": -1.2594758744798087
    }
   }
  },
