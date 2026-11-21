@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T00:00:15.309Z",
+ "generatedAt": "2026-11-21T00:15:12.643Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,10 +7319,12 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-21T00:00:15.309Z",
+  "at": "2026-11-21T00:15:12.643Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14207,8 +14209,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-21T00:00:15.309Z",
-  "lastAttempt": "2026-11-21T00:00:15.309Z",
+  "asOf": "2026-11-21T00:15:12.643Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14879,12 +14881,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-21T00:00:15.309Z",
-  "lastAttempt": "2026-11-21T00:00:15.309Z",
+  "asOf": "2026-11-21T00:15:12.643Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-21T00:00:15.309Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15095,44 +15097,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-21T00:00:15.309Z",
-  "lastAttempt": "2026-11-21T00:00:15.309Z",
+  "asOf": "2026-11-21T00:15:12.643Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 129.41,
-    "time": 1795219212,
+    "price": 129.84,
+    "time": 1795220120,
     "ref": 125.53,
     "refTime": 1795208401,
-    "change": 3.8799999999999955,
-    "changePct": 3.090894606866881
+    "change": 4.310000000000002,
+    "changePct": 3.4334422050505875
    },
    "TSLA": {
     "session": "post",
-    "price": 350.16,
-    "time": 1795219163,
+    "price": 350.71,
+    "time": 1795220114,
     "ref": 345.82,
     "refTime": 1795208401,
-    "change": 4.340000000000032,
-    "changePct": 1.2549881441212285
+    "change": 4.889999999999986,
+    "changePct": 1.4140304204499412
    },
    "SPCX": {
     "session": "post",
-    "price": 129.5,
-    "time": 1795219202,
+    "price": 129.7,
+    "time": 1795220122,
     "ref": 127.79,
     "refTime": 1795208400,
-    "change": 1.7099999999999937,
-    "changePct": 1.3381328742468062
+    "change": 1.9099999999999824,
+    "changePct": 1.494639643164553
    },
    "ANT": {
     "session": "post",
-    "price": 88.8,
-    "time": 1795219207,
+    "price": 88.7546,
+    "time": 1795220071,
     "ref": 88.91,
     "refTime": 1795208402,
-    "change": -0.10999999999999943,
-    "changePct": -0.12372061635361538
+    "change": -0.1554000000000002,
+    "changePct": -0.1747834889213814
    }
   }
  },
@@ -15157,6 +15159,13 @@
       "sum": "Execs and investors at the TomorrowX conference in Austin, Texas, are as bullish as ever about AI’s ability to improve lives. The rest of America isn’t so sure."
      },
      {
+      "hd": "Data Center AI Chips Could Change the Winners: Broadcom and Marvell",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/20/data-center-ai-chips-could-change-the-winners-broadcom-and-marvell/?.tsrc=rss",
+      "pub": "2026-11-20T23:25:54.000Z",
+      "sum": "While investors fixate on Nvidia's share price, hyperscalers are quietly buying different chips for different jobs. Counting accelerators misses the real money, and a memory-stack model shows why the chip tally can mislead."
+     },
+     {
       "hd": "Nvidia Can Rebound to $200, Analyst Says. Plus, L3Harris and 4 More Stocks.",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/d30b4016-add4-3d50-90e3-6716f9e7de29/nvidia-can-rebound-to-%24200%2C.html?.tsrc=rss",
@@ -15169,6 +15178,20 @@
       "url": "https://finance.yahoo.com/m/f3fc6a40-f533-3e3c-91f4-b28fb796c736/the-case-for-buying-nvidia.html?.tsrc=rss",
       "pub": "2026-11-20T23:15:00.000Z",
       "sum": "Letters to the editor on Nvidia, Anthropic, and Walt Disney."
+     },
+     {
+      "hd": "Trump Reportedly Traded Over $97 Million Worth of Nvidia Stock in 2 Years — Elizabeth Warren Wants Congress to Force Him to ‘Divest’ (UPDATED)",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/trump-reportedly-traded-over-97-230005028.html?.tsrc=rss",
+      "pub": "2026-11-20T23:00:05.000Z",
+      "sum": "Editor’s note: The story has been updated to include a comment from the White House. Sen. Elizabeth Warren (D-Mass.) criticized President Donald Trump‘s reported trading of Nvidia Corp. stock, urging lawmakers to force him to divest from his positions in..."
+     },
+     {
+      "hd": "Treasury secretary says no further restrictions are needed for Nvidia chip exports to China",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWVNwbUpEZjJtY1NaOWc5Z1ZfYUo2QXJqdl9WVGhJVnFvajdCTGV5RFJwNzNQTFVSeENSNzdUQ2ctRjB5Sl9ybmJqb3FfZENLMEZkeFdYSUJMa1FSamFBS2pqTGpjQzAwWHBza2JHOXBzdmV2ZG1icEgzQXp1aW4zRDFLWnN1Rm1USW9zZ3I4V2NZZ05RN2tBa295b0I4c1VIME1OR3N0VXlZc0ZxOUcwb2lrOA?oc=5",
+      "pub": "2026-11-20T22:36:00.000Z",
+      "sum": ""
      },
      {
       "hd": "Methuselah Advisors Issues Open Letter to the Board of Directors of NVIDIA Corporation",
@@ -15185,18 +15208,11 @@
       "sum": "Was Burry right about the “AI bubble?” Find out what “The Big Short” superinvestor is saying about the AI trade and why he thinks the tech wreck isn’t over."
      },
      {
-      "hd": "Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/nvidia-plunges-sec-probe-deepens-221134186.html?.tsrc=rss",
-      "pub": "2026-11-20T22:11:34.000Z",
+      "hd": "Watch Nvidia Plunges as SEC Probe Deepens AI Market Selloff | Closing Bell",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZDlpZDd5Tk1WUDBidVlyd2VOcURuaTc3V2lSRE9adVlTb2RmU3l5UDlGQVdBRjc3aGdrZ2c3MEMwMkRUd1p4bXZJQTlXZlI5dXpiQzJlY3JYdGtuNUlhaFhjSkE1NXh6Ylp4eUpzMDhGZ2dySV9qYmdYRWlnd2tHVHlqYWVjbXZ1V1NYMGRHZTJKYmZZQ1ExUzlCNA?oc=5",
+      "pub": "2026-11-20T22:12:21.000Z",
       "sum": "Comprehensive cross-platform coverage of the U.S. market close on Bloomberg Television, Bloomberg Radio, and YouTube with Romaine Bostick, Carol Massar and Tim Stenovec."
-     },
-     {
-      "hd": "Trump’s Treasury Secretary Keeps Nvidia’s H200 China Policy as House Data Show Nearly 880,000 AI Chips Approved",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/trumps-treasury-secretary-keeps-nvidias-h200-china-policy-as-house-data-show-nearly-880000-ai-chips-approved?ref=yahoofinance&tlnk=yf-261120-rx666q2r&.tsrc=rss",
-      "pub": "2026-11-20T21:58:37.000Z",
-      "sum": "Key TakeawaysHouse data show Commerce approved nearly 880,000 NVIDIA and AMD AI chips for China from December to May. Treasury Secretary Scott Bessent said Friday he doesn’t expect the H200 policy to change."
      },
      {
       "hd": "Nvidia faces US regulator’s probe into its accounting",
@@ -15302,26 +15318,12 @@
       "url": "https://www.nasdaq.com/articles/nvda-november-2027-options-begin-trading",
       "pub": "2026-11-20T15:44:42.000Z",
       "sum": "Investors in NVIDIA Corp (Symbol: NVDA) saw new options begin trading today, for the November 2027 expiration. One of the key inputs that goes into the price an option buyer is willing to pay, is the time value, so with 364 days until expiration the newly trading contracts repr"
-     },
-     {
-      "hd": "Dow Movers: NVDA, HONIV",
-      "src": "Nasdaq",
-      "url": "https://www.nasdaq.com/articles/dow-movers-nvda-honiv-8",
-      "pub": "2026-11-20T15:33:29.000Z",
-      "sum": "In early trading on Friday, shares of Honeywell International topped the list of the day's best performing Dow Jones Industrial Average components, trading up 7.5%. Year to date, Honeywell International registers a 42.2% gain. And the worst performing Dow component thus far on"
-     },
-     {
-      "hd": "Nvidia's share slide knocks it below Alphabet in valuation",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOR1lHWVFlSnZTcW9OVTZGU0lwdDdreE5TSm94Z0FTZDktRHRLOEU0LVBTTHpOZ1lYYmFCZ041UWUtTEh6VEFhczZFd2xlSjNLRlNNMHhDd2tFcDl2N1BIMndRY1VaN09HeHowT0hVblhkd1ZpUGxTakdwVFk4cjFWTzlTRnJQeWNGUW92YUxWUG9XR3BzM0hrZDdaWU5vUHJyMVdRcDktdWNMSUlkLS1Nek1SZjYxQQ?oc=5",
-      "pub": "2026-11-20T15:31:27.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 108,
-     "Yahoo": 7,
-     "Google News": 88,
+     "Yahoo": 8,
+     "Google News": 89,
      "Nasdaq": 4,
      "Seeking Alpha": 26
     }
@@ -15693,13 +15695,20 @@
     "fetched": {
      "Finnhub": 129,
      "Yahoo": 10,
-     "Google News": 30,
+     "Google News": 29,
      "Nasdaq": 0,
      "Seeking Alpha": 23
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Is Anthropic Worth $2 Trillion, or $1.5 Trillion? How to Make Sense of the Valuations",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMzhvTFYxa3AyUGJGVFJNcFJycUxBRXdoWjdnQV8xRkt0aFVOcmxTcnRPNndXNDhZOVdnS3E5QzdPTDlpS2dIVG44U3ZiSk1VZ0FOamV2T0JfOXdTOWVhbjl4aEdqdEEzeThWa01LNlJHM2Y1ZHlDUEg0OTNPeUNNS2lnNDkyS1hKdXZFM2pPcjhmRGRBMmdpUVkwSWhqdldrd3o1NmRGMnFqMzlXbG1ydDM4SHJoel9zS19MM28tMXpkY0NJVGQ5WUNB?oc=5",
+      "pub": "2026-11-21T00:01:23.000Z",
+      "sum": ""
+     },
      {
       "hd": "Hindlian Advisory CEO on AI & Anthropic Market Sell-off",
       "src": "Yahoo Finance",
@@ -15727,6 +15736,13 @@
       "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-ends-lower-retail-investors-reportedly-bought-as-much-as-120-b-of-anthropic-beating-space-x-debut/cNbSHoQR91f?.tsrc=rss",
       "pub": "2026-11-20T22:41:37.000Z",
       "sum": "Artificial intelligence developer Anthropic attracted more than $615 billion in combined retail and institutional orders for its historic initial public offering, Bloomberg reported."
+     },
+     {
+      "hd": "Anthropic Share Slump Nearly Erases IPO Pop as AI Trade Unravels",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSWx3SUw5VXNrMldJUzZ3UnQ4SGxJWXBHNTEwcWViWlJhMC1GaVJQZ3ZWNXdmajdFR3N6SHJaYlU2c0ZJcTFaOGpRdndOU0d0enNJdzdMY1NYdWt3Vk1QMnNSTFZUcHp4dXJCOUItQzJFck5GZDlkNXppT2lCRmJhcGl0bW80cEs2VVhTd240Q0pWRFFEUUxFTHo0VVVjaDVCc3hqVnJMSnp5Mm9UOHVObk9EakYxdw?oc=5",
+      "pub": "2026-11-20T22:36:00.000Z",
+      "sum": ""
      },
      {
       "hd": "Anthropic’s Day Two Drop Fuels Broader Tech Rout; Dan Ives Points To ‘Perfect Storm’",
@@ -15771,6 +15787,13 @@
       "sum": "This week saw the historic Anthropic IPO (✓), mega-cap earnings beats (✓), and positive economic data (✓), so naturally the stock market is [checks notes] down 8% this week. So what gives?"
      },
      {
+      "hd": "Anthropic Mathematician Says AI Has Solved the Most Famous Problem in Math",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd2R1UU5HMEVNTGhtYWxQaTNBMjVRZnZxZjJVU0U1MVk0U2dIRHh6akhYNV9tNWxXYjNmeU16UzdqZDM3bUpDS1BxOEd2b3oySzVMako4Z25JMmNFUVd5ZlFWNTZ4WmJ6d2NXT0R5Z1JsNVNGMi04MGowVF9CQkl4dEEtXzJNYWRDeHA3Rk1hV250dEZWQjNRLW5RZHZPQ0ZMMlNLSDdkejFKTklvZW1ZNDZZalFOQQ?oc=5",
+      "pub": "2026-11-20T21:56:50.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Take-Two Interactive vs. Anthropic: Which Market-Moving Stock Is the Better Buy?",
       "src": "Yahoo Finance",
       "url": "https://www.fool.com/investing/2026/11/20/take-two-interactive-vs-anthropic-which-market-moving-stock-is-the-better-buy/?.tsrc=rss",
@@ -15792,25 +15815,11 @@
       "sum": ""
      },
      {
-      "hd": "Anthropic Share Slump Nearly Erases IPO Pop as AI Trade Unravels",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSWx3SUw5VXNrMldJUzZ3UnQ4SGxJWXBHNTEwcWViWlJhMC1GaVJQZ3ZWNXdmajdFR3N6SHJaYlU2c0ZJcTFaOGpRdndOU0d0enNJdzdMY1NYdWt3Vk1QMnNSTFZUcHp4dXJCOUItQzJFck5GZDlkNXppT2lCRmJhcGl0bW80cEs2VVhTd240Q0pWRFFEUUxFTHo0VVVjaDVCc3hqVnJMSnp5Mm9UOHVObk9EakYxdw?oc=5",
-      "pub": "2026-11-20T21:09:59.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Anthropic Is Public, And Where Is The Capital Headed?",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4970689-anthropic-is-public-where-is-capital-headed?source=feed_symbol_ANT",
       "pub": "2026-11-20T20:05:00.000Z",
       "sum": "Anthropic began trading on Nasdaq yesterday, the first frontier AI lab to go public. How did Anthropic get here so fast? Can the model layer make money? And where does the $107 billion go?"
-     },
-     {
-      "hd": "Is Anthropic Worth $2 Trillion, or $1.5 Trillion? How to Make Sense of the Valuations",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMzhvTFYxa3AyUGJGVFJNcFJycUxBRXdoWjdnQV8xRkt0aFVOcmxTcnRPNndXNDhZOVdnS3E5QzdPTDlpS2dIVG44U3ZiSk1VZ0FOamV2T0JfOXdTOWVhbjl4aEdqdEEzeThWa01LNlJHM2Y1ZHlDUEg0OTNPeUNNS2lnNDkyS1hKdXZFM2pPcjhmRGRBMmdpUVkwSWhqdldrd3o1NmRGMnFqMzlXbG1ydDM4SHJoel9zS19MM28tMXpkY0NJVGQ5WUNB?oc=5",
-      "pub": "2026-11-20T19:31:20.000Z",
-      "sum": ""
      },
      {
       "hd": "Tech Rout Deepens as Anthropic Stock Slides",
@@ -15862,13 +15871,6 @@
       "sum": ""
      },
      {
-      "hd": "Anthropic Mathematician Says AI Has Solved the Most Famous Problem in Math",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd2R1UU5HMEVNTGhtYWxQaTNBMjVRZnZxZjJVU0U1MVk0U2dIRHh6akhYNV9tNWxXYjNmeU16UzdqZDM3bUpDS1BxOEd2b3oySzVMako4Z25JMmNFUVd5ZlFWNTZ4WmJ6d2NXT0R5Z1JsNVNGMi04MGowVF9CQkl4dEEtXzJNYWRDeHA3Rk1hV250dEZWQjNRLW5RZHZPQ0ZMMlNLSDdkejFKTklvZW1ZNDZZalFOQQ?oc=5",
-      "pub": "2026-11-20T17:28:51.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Anthropic's IPO bank closed position meant to stabilize stock, removing source of support",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQSVpRUnlwbWF4cmpjRkg1N1ZnRU9Dc1ZIRFFQU3pyMHNac0tJSXlINUg5YUdLRl9mMUEzQTRkZTdQWHJwRkhJbmYyWV9VYkt4dDVTSGRib3VzbVVENWd1WWllZkhzR2E5SGhrNm5xOUM1QzBfdFFqZlNvNmJDUHFNeU1IdnRMclVkRmdsNTRxTWVZY0hQYWJHN05EZ2xxZTFORDZ0V1g2eWZEWnBGRnVEVVNROURGMVFCTzkwbA?oc=5",
@@ -15879,22 +15881,50 @@
     "fetched": {
      "Finnhub": 93,
      "Yahoo": 9,
-     "Google News": 96,
+     "Google News": 95,
      "Nasdaq": 11,
      "Seeking Alpha": 27
     }
    }
   },
-  "asOf": "2026-11-20T23:45:16.091Z",
-  "lastAttempt": "2026-11-20T23:45:16.091Z",
+  "asOf": "2026-11-21T00:15:12.643Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
    {
+    "hd": "Trump insists he's \"not rushing to make any decisions on Iran\"",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+    "pub": "2026-11-21T00:00:42.000Z",
+    "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
+   },
+   {
+    "hd": "Live Updates: Trump says next move on Iran may not come until 2027 as Tehran denies chemical weapons claim",
+    "src": "CBS News",
+    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNTGgwZTZaQWNtSzNpRDhQajRHRHFFTDhiVXczZmUtaFJiMVdTMFcwN1dWV053c1lGY2hiUnJrNnc3X1JoREFHLWNYTG52bVk5cXhMSDlCU2NkcDVCeWhQamZsX3JXdVBYdzJSdWQ1NDlKaTE4ZzIxc3U1SE1lcnhjdm45TmtHVzBMTmI4?oc=5",
+    "pub": "2026-11-20T23:56:00.000Z",
+    "sum": "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month."
+   },
+   {
+    "hd": "US Vice President Vance declines to say he would have ordered Iran strikes",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQUp6a3JFdW5UTE50bkNkVmExSGVkZlNWMHR0YnZMaWxGQzlZaF9CNFdQYXZCVWFwYXA2QmI1eG1EUGFLY0FydzFDZ0FBNGlkVjZKMURfb0hNOWZ4a3ZEU3V1TXVwaEMzU0dxZVVxTWhxeHFOd1RwQmFmV19MYlc3LW9MVm5TOG5uTjFhVU5RSXZaZ2ZwRmZ5Y1BmdlBUMllHMlNSeEplQ2IyXzU5NE51NnRlUm1HUUU?oc=5",
+    "pub": "2026-11-20T23:45:19.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Brazil ex-President Bolsonaro hospitalized with intestinal obstruction",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQnhGQzVqMUN5Z0VlenUyUE1IRndZMnpvNXRnbmkxRWdhMUZQSUJTX1FiVk5KN0JHN0RLQm4zRnJqWm4zQUkyOXQ1RENLU2xQN0dJbnZvc2hNbXJSTU9ic1BjLXA5VVZGZEVISUxPZk9Ibl9SaDZ5YVFvRUhSMi1fRVRkX0luUi1HSkh6RGdUM2pUVmZ0RlBPUXI3dU5NX0I1bEwteUlUOTUyYk9mWGNJekt2cGdCUDhZbHN6clJkNEhKQQ?oc=5",
+    "pub": "2026-11-20T23:15:48.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Iraqi security forces deploy in Iran-backed militia stronghold",
     "src": "NBC News",
-    "url": "https://www.nbcnews.com/world/middle-east/iraqi-security-forces-deploy-iran-backed-militia-stronghold-rcna610516",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQ2RLdGYxc2lXdVVnQmx3bnBCbGtQRy1vOTZxeVROMGRIVHBkNnhtUFVaZTlScG93YzA5QUdkRlhld3dlUE0yNnNBTzRhTVA0S0ZRMzhUVTFhTHVUWEdscXA2NV9rVmhrWmtTS19FTFVidTBrX21hcGpPb3NkXzZqclMyYWlqU25vOXJvdFZ5YTFBX2xGd1RuWEx2VWczRnFaSTNyRHNDelpEZHVFSG9MSFl3?oc=5",
     "pub": "2026-11-20T23:08:04.000Z",
     "sum": "JURF AL-SAKHAR, Iraq — Iraqi security forces deployed in Jurf al-Sakhar, a stronghold of the Kataib Hezbollah armed group, on Friday under a deal that seeks to limit the reach of Iran’s most powerful Shi’ite militia ally in the country without provoking a confrontation."
    },
@@ -15962,13 +15992,6 @@
     "sum": ""
    },
    {
-    "hd": "Brazil ex-President Bolsonaro hospitalized with abdominal pain",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQnhGQzVqMUN5Z0VlenUyUE1IRndZMnpvNXRnbmkxRWdhMUZQSUJTX1FiVk5KN0JHN0RLQm4zRnJqWm4zQUkyOXQ1RENLU2xQN0dJbnZvc2hNbXJSTU9ic1BjLXA5VVZGZEVISUxPZk9Ibl9SaDZ5YVFvRUhSMi1fRVRkX0luUi1HSkh6RGdUM2pUVmZ0RlBPUXI3dU5NX0I1bEwteUlUOTUyYk9mWGNJekt2cGdCUDhZbHN6clJkNEhKQQ?oc=5",
-    "pub": "2026-11-20T21:21:58.000Z",
-    "sum": ""
-   },
-   {
     "hd": "European Union and UK strike a 'landmark deal' to strengthen ties after Brexit",
     "src": "DW",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPREFrUjJQcHVYN1ZEWlNBTnNydEREdGxZVVlXMENxMTU2cWpzc1lSTWRUbHRORTlVMW9KOTE1cG9UZ2xJSnBMVjQwZlJCNFIzNUxmRHdST2tBQWRxVk1QbHVMVm0tZUJfRDkzYVhMNWRhdlRJQjFrRnRPMEEwdlBiRXVzZ091VndXVC1kWWJNQW1qd2czY0R6Qnl1Z9IBmwFBVV95cUxNRmhNNnhpaHJSVEZnYUxMZkM0SVNKVkF5dTMzYnpRQWhqUjlnRld6REk2SEVaY2o5UXh2bXViRzBQeTRYZFlkN3BTQVB0NUdjcUJ0Zm1reXJ2NWVOeFZNMGZoc3RaS1NjbnVudkxtdlZ1YXpyMzdya2UtdVNheW5WT3dpSEtyTWE4Wml2VmdEbDFtLXN6VDJEbjV1MA?oc=5",
@@ -16011,13 +16034,6 @@
     "sum": "The ruling by the International Court of Justice deals with issues relevant to the case brought against Israel alleging genocide in Gaza. Israel has rejected the charge."
    },
    {
-    "hd": "Trump insists he's \"not rushing to make any decisions on Iran\"",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
-    "pub": "2026-11-20T20:00:46.000Z",
-    "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
-   },
-   {
     "hd": "Netanyahu Associates Acknowledge Role in Setting Off Election Day Arrests",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/19/world/middleeast/netanyahu-arab-activists-arrests-israel-election.html",
@@ -16037,13 +16053,6 @@
     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQLTNLWmdYdncxbDRfcFZhVlRFeVRfN3Jic2JSb252SkQ4djE0ckRoaGpqcnZKWDU5Wm4tUXdjTHdPZVNtWkVRWVNSN29EcFNQQkhVeVF6WWQ5NFB2WUFURVFyWjI3dmRGeEJNSDJrMk1HYTdMMXVTMkZqZl9ZVjlJMVlhSWRTR0Nha0NJZ3J0TVBpVndia25nVXNDZi1GcnVxYTFtdklydElZQy1FMHo5TGhJcUpjcG5rWDZJaQ?oc=5",
     "pub": "2026-11-20T19:35:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Live Updates: Trump says next move on Iran may not come until 2027 as Tehran denies chemical weapons claim",
-    "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNTGgwZTZaQWNtSzNpRDhQajRHRHFFTDhiVXczZmUtaFJiMVdTMFcwN1dWV053c1lGY2hiUnJrNnc3X1JoREFHLWNYTG52bVk5cXhMSDlCU2NkcDVCeWhQamZsX3JXdVBYdzJSdWQ1NDlKaTE4ZzIxc3U1SE1lcnhjdm45TmtHVzBMTmI4?oc=5",
-    "pub": "2026-11-20T19:32:00.000Z",
-    "sum": "President Trump told Fox News there are indications Iran may be working on biological or chemical weapons as the war drags on toward its ninth month."
    },
    {
     "hd": "Pop Culture Still Can’t Figure Out Drone Warfare",
@@ -16093,13 +16102,6 @@
     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOWG11c0t2cHNUVFlEZEwyWHVQRk40anlnM3ltcWtYOE1hV01IaEswQmpnRExZNEk1Z0xGRkZ0T083cWNGTUhvZUd6YUxwWjVwNjA1djJZZWZZQXh4SjI4SGRLVmtBMzN6Q0cxWVJjMFpJOW5DdUFWVlUtNEF5NW5IcU5sMHNwcmNVZTBfeXZVMWRKMk5HV1UwTGVycE1xd0c3TG9HYQ?oc=5",
     "pub": "2026-11-20T18:04:00.000Z",
     "sum": "Saudi Arabia says Iran-backed Houthi rebels have fired more missiles and drones at the kingdom"
-   },
-   {
-    "hd": "Denmark accuses Russian intelligence of plotting to kill American Ukrainian on its soil",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/denmark-accuses-russian-intelligence-plotting-kill-american-ukrainian-138323497",
-    "pub": "2026-11-20T17:59:38.000Z",
-    "sum": "Authorities thwarted the attempted killing of an American Ukrainian citizen on Danish soil in a plot allegedly orchestrated by Russian intelligence services"
    }
   ],
   "feeds": [
@@ -16118,8 +16120,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-20T23:45:16.091Z",
-  "lastAttempt": "2026-11-20T23:45:16.091Z",
+  "asOf": "2026-11-21T00:15:12.643Z",
+  "lastAttempt": "2026-11-21T00:15:12.643Z",
   "lastError": null
  }
 }
