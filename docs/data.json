@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T16:00:11.983Z",
+ "generatedAt": "2026-11-21T16:15:19.991Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,10 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-21T16:00:11.983Z",
+  "at": "2026-11-21T16:15:19.991Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14198,8 +14199,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-21T16:00:11.983Z",
-  "lastAttempt": "2026-11-21T16:00:11.983Z",
+  "asOf": "2026-11-21T16:15:19.991Z",
+  "lastAttempt": "2026-11-21T16:15:19.991Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14870,12 +14871,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-21T16:00:11.983Z",
-  "lastAttempt": "2026-11-21T16:00:11.983Z",
+  "asOf": "2026-11-21T16:15:19.991Z",
+  "lastAttempt": "2026-11-21T16:15:19.991Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-21T16:00:11.983Z",
+  "lastAttempt": "2026-11-21T16:15:19.991Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15883,6 +15884,27 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
+    "pub": "2026-11-21T16:10:59.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Trump says he wants \"permanent\" deal with Iran",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
+    "pub": "2026-11-21T16:04:57.000Z",
+    "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
+   },
+   {
+    "hd": "Poland says Russian missiles hit its territory; Trump calls it a ‘mistake’",
+    "src": "The Washington Post",
+    "url": "https://www.washingtonpost.com/world/2026/11/21/poland-says-russian-missiles-hit-its-territory-trump-calls-it-mistake/",
+    "pub": "2026-11-21T15:56:44.000Z",
+    "sum": "Polish Prime Minister Donald Tusk claimed Russia deliberately violated his country's airspace while a military exercise was underway."
+   },
+   {
     "hd": "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVGh0bmJObHpuamE0THBab0FlVkplMFE2SmlzWGliRkZad2JIdVg0bkMxVUNPdi1TSDlic2J3R1JoTEtpTXlHVlNTcG5XeVZLRDY0eWpOOVpDYUU3M2hPOHBoSUNlWl9FY0NkOF9oNUgzR2VUdWtnaFlET1UwRnpnYXhmVFA0aHdmX0VXckVkdVJSU2xxNWpMZWlCaFRsWVdvWmJyN3ZscENTZ0E?oc=5",
@@ -16070,27 +16092,6 @@
     "url": "https://abcnews.com/International/wireStory/endurance-athlete-swims-strait-hormuz-highlight-iran-wars-138338972",
     "pub": "2026-11-21T06:53:49.000Z",
     "sum": "British endurance swimmer Lewis Pugh has swum the Strait of Hormuz to highlight environmental threats during ongoing conflict"
-   },
-   {
-    "hd": "Russia dusts off its prewar demands as the US raises discussing European security at Ukraine talks",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/russia-dusts-off-prewar-demands-us-raises-discussing-138338870",
-    "pub": "2026-11-21T06:39:23.000Z",
-    "sum": "After nearly five years of fighting in Ukraine, the Kremlin is eagerly embracing a U.S. offer to discuss postwar European security"
-   },
-   {
-    "hd": "Meta's India offices hit by opposition protests over account removals",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNTmdhX3h3bjctYVFyRXFLZHQ5Zm9aTmQ3cS15R01pWHFxdnRySDBDa1JJbFBHVEZmMm9scHV0VW1xOVlHT19FWlpWaWcxN25aZ3NUQjR6SkFRU2RwQ3Y0YVg5X3A3bTZDT0FXV0JBeEF0SHRjUUM5UWg0cm80YVNyT2JlWHVYR0Iwc2pDZGZKcFNyaG1EWmEtenViMnBDajltODNOUUg2QWo4Yk5sdTllelNGUEdiNGxPWjNKYkthdkg?oc=5",
-    "pub": "2026-11-21T05:55:43.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Moscow Rejects Kaja Kallas as Europe Pushes for Role in Ukraine Peace Talks",
-    "src": "Kyiv Post",
-    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5wM1ZxRVAtVk0wcjJuakE1TUdCWU4yR2tOUmJUU2JqSVZzTkFDalBsU2RBaHBMX3RUWDVmaGd6OWY5TmhURnpkdDhJRQ?oc=5",
-    "pub": "2026-11-21T05:49:17.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16109,8 +16110,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-21T15:45:18.151Z",
-  "lastAttempt": "2026-11-21T15:45:18.151Z",
+  "asOf": "2026-11-21T16:15:19.991Z",
+  "lastAttempt": "2026-11-21T16:15:19.991Z",
   "lastError": null
  }
 }
