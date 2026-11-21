@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-21T03:00:13.765Z",
+ "generatedAt": "2026-11-21T03:15:15.767Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7012,10 +7012,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-21T03:00:13.765Z",
+  "at": "2026-11-21T03:15:15.767Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -13899,8 +13900,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-21T03:00:13.765Z",
-  "lastAttempt": "2026-11-21T03:00:13.765Z",
+  "asOf": "2026-11-21T03:15:15.767Z",
+  "lastAttempt": "2026-11-21T03:15:15.767Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14342,16 +14343,16 @@
     "id": "401858529",
     "start": "2026-11-21T01:00Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 9:58",
+    "period": 3,
+    "clock": "9:58",
     "completed": false,
     "away": {
      "name": "Oregon Ducks",
      "short": "Oregon",
      "id": "2483",
      "abbrev": "ORE",
-     "score": "17",
+     "score": "24",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2483.png",
      "record": "7-3",
      "winner": false,
@@ -14571,12 +14572,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-21T03:00:13.765Z",
-  "lastAttempt": "2026-11-21T03:00:13.765Z",
+  "asOf": "2026-11-21T03:15:15.767Z",
+  "lastAttempt": "2026-11-21T03:15:15.767Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-21T03:00:13.765Z",
+  "lastAttempt": "2026-11-21T03:15:15.767Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15663,14 +15664,14 @@
    {
     "hd": "Iraqi security forces deploy in Iran-backed militia stronghold",
     "src": "NBC News",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQ2RLdGYxc2lXdVVnQmx3bnBCbGtQRy1vOTZxeVROMGRIVHBkNnhtUFVaZTlScG93YzA5QUdkRlhld3dlUE0yNnNBTzRhTVA0S0ZRMzhUVTFhTHVUWEdscXA2NV9rVmhrWmtTS19FTFVidTBrX21hcGpPb3NkXzZqclMyYWlqU25vOXJvdFZ5YTFBX2xGd1RuWEx2VWczRnFaSTNyRHNDelpEZHVFSG9MSFl3?oc=5",
+    "url": "https://www.nbcnews.com/world/middle-east/iraqi-security-forces-deploy-iran-backed-militia-stronghold-rcna610516",
     "pub": "2026-11-20T23:08:04.000Z",
     "sum": "JURF AL-SAKHAR, Iraq — Iraqi security forces deployed in Jurf al-Sakhar, a stronghold of the Kataib Hezbollah armed group, on Friday under a deal that seeks to limit the reach of Iran’s most powerful Shi’ite militia ally in the country without provoking a confrontation."
    },
    {
     "hd": "The War Is Ravaging Ukraine’s Wildlife, Too",
     "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1mSGhHcWttY0cxZTVGa3VBcDFzX2NqeVNpaTBLcmxqaEY1MHZGV0lEalNLWFhHYUlUSE5iSWVIaGdFczFHNTBvaGl6WUJvMUFDcGdaZGVuMnlZQWVXdHhmM0NWS2hlWGdteHBQTGRvdm4telhFYUxCYlZNYlNDZw?oc=5",
+    "url": "https://www.nytimes.com/2026/11/20/world/europe/ukraine-wildlife-war.html",
     "pub": "2026-11-20T23:05:46.000Z",
     "sum": "The war in Ukraine has had untold consequences for dolphins, moose, storks and a huge range of other wildlife whose habitats are now rife with anti-drone netting, minefields or in the direct line of fire."
    },
@@ -15795,10 +15796,6 @@
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -15809,9 +15806,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-21T02:45:11.941Z",
-  "lastAttempt": "2026-11-21T02:45:11.941Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-21T03:15:15.767Z",
+  "lastAttempt": "2026-11-21T03:15:15.767Z",
   "lastError": null
  }
 }
