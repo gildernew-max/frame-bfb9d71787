@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T01:00:10.723Z",
+ "generatedAt": "2026-11-22T01:15:14.020Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,12 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T01:00:10.723Z",
+  "at": "2026-11-22T01:15:14.020Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14187,8 +14188,8 @@
     }
    }
   ],
-  "asOf": "2026-11-22T01:00:10.723Z",
-  "lastAttempt": "2026-11-22T01:00:10.723Z",
+  "asOf": "2026-11-22T01:15:14.020Z",
+  "lastAttempt": "2026-11-22T01:15:14.020Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14200,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T01:00:10.723Z",
-  "lastAttempt": "2026-11-22T01:00:10.723Z",
+  "asOf": "2026-11-22T01:15:14.020Z",
+  "lastAttempt": "2026-11-22T01:15:14.020Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14213,9 +14214,9 @@
     "id": "401856753",
     "start": "2026-11-22T00:30Z",
     "state": "in",
-    "status": "Q1 9:23",
+    "status": "Q1 2:38",
     "period": 1,
-    "clock": "9:23",
+    "clock": "2:38",
     "completed": false,
     "away": {
      "name": "Georgia Bulldogs",
@@ -14279,9 +14280,9 @@
     "id": "401858307",
     "start": "2026-11-22T00:30Z",
     "state": "in",
-    "status": "Q1 6:59",
+    "status": "Q1 0:54",
     "period": 1,
-    "clock": "6:59",
+    "clock": "0:54",
     "completed": false,
     "away": {
      "name": "SMU Mustangs",
@@ -14300,7 +14301,7 @@
      "short": "Notre Dame",
      "id": "87",
      "abbrev": "ND",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/87.png",
      "record": "9-1",
      "winner": false,
@@ -14345,9 +14346,9 @@
     "id": "401858302",
     "start": "2026-11-22T00:00Z",
     "state": "in",
-    "status": "Q2 10:09",
+    "status": "Q2 5:03",
     "period": 2,
-    "clock": "10:09",
+    "clock": "5:03",
     "completed": false,
     "away": {
      "name": "Virginia Tech Hokies",
@@ -14741,9 +14742,9 @@
     "id": "401856751",
     "start": "2026-11-22T00:30Z",
     "state": "in",
-    "status": "Q1 4:10",
-    "period": 1,
-    "clock": "4:10",
+    "status": "Q2 14:12",
+    "period": 2,
+    "clock": "14:12",
     "completed": false,
     "away": {
      "name": "Kentucky Wildcats",
@@ -14762,7 +14763,7 @@
      "short": "Missouri",
      "id": "142",
      "abbrev": "MIZ",
-     "score": "6",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png",
      "record": "6-4",
      "winner": false,
@@ -14774,9 +14775,9 @@
     "id": "401858534",
     "start": "2026-11-21T23:15Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 11:25",
+    "period": 3,
+    "clock": "11:25",
     "completed": false,
     "away": {
      "name": "Maryland Terrapins",
@@ -14807,9 +14808,9 @@
     "id": "401856865",
     "start": "2026-11-22T00:00Z",
     "state": "in",
-    "status": "Q2 12:02",
+    "status": "Q2 8:44",
     "period": 2,
-    "clock": "12:02",
+    "clock": "8:44",
     "completed": false,
     "away": {
      "name": "Arizona Wildcats",
@@ -14828,7 +14829,7 @@
      "short": "Kansas St",
      "id": "2306",
      "abbrev": "KSU",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2306.png",
      "record": "4-6",
      "winner": false,
@@ -14871,13 +14872,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-22T01:00:10.723Z",
-  "lastAttempt": "2026-11-22T01:00:10.723Z",
+  "asOf": "2026-11-22T01:15:14.020Z",
+  "lastAttempt": "2026-11-22T01:15:14.020Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T01:00:10.723Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-22T01:15:14.020Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15884,6 +15885,27 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
+    "pub": "2026-11-22T01:11:03.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Drones, Texts and Diversions: How Mexico Captured a Most Wanted Man",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/21/world/americas/mexico-captures-drug-kingpin.html",
+    "pub": "2026-11-22T01:02:29.000Z",
+    "sum": "U.S. and Mexican authorities shared intelligence for weeks to track Fausto Isidro Meza Flores, a drug cartel leader that a U.S. official called the most dangerous man in Mexico."
+   },
+   {
+    "hd": "Poland says Russian missiles hit its territory; Trump calls it a mistake",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPS2NDX2gya2JxN0FLNlFBSjdJcXNqczVsWGJrNHdGVHoxNEF6a2hrSnlKc2hkVC0wSGROWkMzcXgyN0YtaHdMX0k0U043RE5BSkRXVGtlQ3h1Ym9iVk9uaVFnV0YyZEw0a3ZjRWxvUkZ6NHNGVWJSc1dDcEU5aUtrODZ5YTRQMVQ5UTA2WHd5U0ZGUkhybGllQXNseGR0ZHl4dC1JdGtPa2FGT3MzNzhXdkxrSU9XcENkLUE?oc=5",
+    "pub": "2026-11-22T00:59:33.000Z",
+    "sum": "Poland also joined other European countries in expressing outrage over allegations of a thwarted plot linked to Moscow to kill a U.S.-Ukrainian rapper on Danish soil."
+   },
+   {
     "hd": "Why Neither Trump Nor Xi Is Likely to Raise Nvidia at Their Summit",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQVGh0bmJObHpuamE0THBab0FlVkplMFE2SmlzWGliRkZad2JIdVg0bkMxVUNPdi1TSDlic2J3R1JoTEtpTXlHVlNTcG5XeVZLRDY0eWpOOVpDYUU3M2hPOHBoSUNlWl9FY0NkOF9oNUgzR2VUdWtnaFlET1UwRnpnYXhmVFA0aHdmX0VXckVkdVJSU2xxNWpMZWlCaFRsWVdvWmJyN3ZscENTZ0E?oc=5",
@@ -15896,20 +15918,6 @@
     "url": "https://www.bbc.co.uk/news/articles/ck4g174n020eo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-22T00:10:37.000Z",
     "sum": "Fewer young people have registered to vote in next year's election than in 2023 - are young people losing faith in democracy?"
-   },
-   {
-    "hd": "Drones, Texts and Diversions: How Mexico Captured a Most Wanted Man",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/21/world/americas/mexico-captures-drug-kingpin.html",
-    "pub": "2026-11-22T00:01:08.000Z",
-    "sum": "U.S. and Mexican authorities shared intelligence for weeks to track Fausto Isidro Meza Flores, a drug cartel leader the F.B.I. had sought for years."
-   },
-   {
-    "hd": "Poland says Russian missiles hit its territory; Trump calls it a mistake",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPS2NDX2gya2JxN0FLNlFBSjdJcXNqczVsWGJrNHdGVHoxNEF6a2hrSnlKc2hkVC0wSGROWkMzcXgyN0YtaHdMX0k0U043RE5BSkRXVGtlQ3h1Ym9iVk9uaVFnV0YyZEw0a3ZjRWxvUkZ6NHNGVWJSc1dDcEU5aUtrODZ5YTRQMVQ5UTA2WHd5U0ZGUkhybGllQXNseGR0ZHl4dC1JdGtPa2FGT3MzNzhXdkxrSU9XcENkLUE?oc=5",
-    "pub": "2026-11-21T23:29:33.000Z",
-    "sum": "Poland also joined other European countries in expressing outrage over allegations of a thwarted plot linked to Moscow to kill a U.S.-Ukrainian rapper on Danish soil."
    },
    {
     "hd": "Iran launches attacks in Bahrain, Hormuz and moves against US blockade",
@@ -15952,13 +15960,6 @@
     "url": "https://www.washingtonpost.com/world/2026/11/21/zelensky-suggests-new-round-peace-talks-could-happen-during-g-20-summit/",
     "pub": "2026-11-21T20:45:00.000Z",
     "sum": "The Ukrainian president wants to join President Donald Trump and Russian President Vladimir Putin for trilateral peace talks next month in Miami."
-   },
-   {
-    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
-    "pub": "2026-11-21T20:41:01.000Z",
-    "sum": ""
    },
    {
     "hd": "Pentagon Issued Memo Limiting ‘Social Activities’ With Canadian Military",
@@ -16110,8 +16111,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-22T00:45:17.212Z",
-  "lastAttempt": "2026-11-22T00:45:17.212Z",
+  "asOf": "2026-11-22T01:15:14.020Z",
+  "lastAttempt": "2026-11-22T01:15:14.020Z",
   "lastError": null
  }
 }
