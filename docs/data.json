@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T13:00:10.904Z",
+ "generatedAt": "2026-11-22T13:15:14.932Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,9 +7319,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T13:00:10.904Z",
+  "at": "2026-11-22T13:15:14.932Z",
   "ran": [
    "alerts",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14197,8 +14198,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T13:00:10.904Z",
-  "lastAttempt": "2026-11-22T13:00:10.904Z",
+  "asOf": "2026-11-22T13:15:14.932Z",
+  "lastAttempt": "2026-11-22T13:15:14.932Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14874,8 +14875,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T13:00:10.904Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-22T13:15:14.932Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15882,6 +15883,27 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Russian cargo ship still on fire off Finland after attack",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXUxa0FLT1o3Tzh4MUR0MV9ZenU1LU9PZl9QSzhsQXlOQThFNUxWbWFXRXZTOHFpb1lJdG1GTV9hOUZsc2x4YzBOSzV3ZHZkV2pyNjNIaTVWZEViQ2lLb3JkcjJsbGhVNXFmWXQ5c0pDTkVXeG9IbmlKV3AxYUtfNE5DVnhWX3lvNmg0SF9SZ1lHQzEtSnY1REsycUlvWFVEOFlBSXR3?oc=5",
+    "pub": "2026-11-22T12:53:09.000Z",
+    "sum": "Finnish defence forces say that Ukraine was likely behind the drone attack on the vessel."
+   },
+   {
+    "hd": "Air alert sounds hours after attack on Russia-bound ship in the Gulf of Finland",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/air-alert-sounds-kaliningrad-hours-after-attack-russia-138356879",
+    "pub": "2026-11-22T12:50:47.000Z",
+    "sum": "The governor of Kaliningrad says a rare air alert sounded in the Russian exclave near Poland and Lithuania"
+   },
+   {
+    "hd": "Arson attacks by Israeli settlers in West Bank add to tense political debate",
+    "src": "The Washington Post",
+    "url": "https://www.washingtonpost.com/world/2026/11/22/arson-attacks-by-israeli-settlers-west-bank-add-tense-political-debate/",
+    "pub": "2026-11-22T12:44:16.000Z",
+    "sum": "Opposition leader Gadi Eisenkot called the attacks “Jewish terrorism,” while Netanyahu backers accused Eisenkot of courting Arab parties to form a government."
+   },
+   {
     "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
@@ -15903,18 +15925,25 @@
     "sum": ""
    },
    {
+    "hd": "Turkey's final draft at UN climate talks doesn't mention the fossil fuels that cause global warming",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlZ4dzdCVnBlV0g5cDVCV19scWJkTG9RQWtiMng5NFlVb2VqSng0SmhxRGxLaUJ5aEgyTXRVMlpGVV9abXMwX19naG9EMlhjdEhaemxUTHM2bVhTdWc5Q09NMTR5Wk4yVmtlY2NFSHVncDdMWkhtU05keGJ6NXlGSTVKaFNlOVpsVl80QWE0T3ZQY0t5ZDB4YlNVUWdJZXJaZnJPZmFhb3I?oc=5",
+    "pub": "2026-11-22T12:08:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "At least 14 people missing after Russian drone hit building in Kyiv region, Zelenskiy says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUmFwN2pYTHZEVndFX2hfN3VOQnduN3pEYnZXa2tfT1d1UGZDejk3ZU11dkwwLTdsUTltdm0taU8wTnpNTkZVV045Z3pkc0czd2FSS1lEZDhyLVVCNFJvNk9xUHR2ZUxydnAyYTJDVzd3RWIwQ1E0YjAyc2R6bkpkbkt1aThfVldjUGRKbkhXanhraVo3SkJHcHBuMmxBcXJreDhQSEx1QV9ZUXhDOHdhbmZMRkZoeVBOXzJ5ag?oc=5",
+    "pub": "2026-11-22T11:37:43.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump says he wants \"permanent\" deal with Iran",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
     "pub": "2026-11-22T11:36:55.000Z",
     "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
-   },
-   {
-    "hd": "Russian cargo ship still on fire off Finland after attack",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXUxa0FLT1o3Tzh4MUR0MV9ZenU1LU9PZl9QSzhsQXlOQThFNUxWbWFXRXZTOHFpb1lJdG1GTV9hOUZsc2x4YzBOSzV3ZHZkV2pyNjNIaTVWZEViQ2lLb3JkcjJsbGhVNXFmWXQ5c0pDTkVXeG9IbmlKV3AxYUtfNE5DVnhWX3lvNmg0SF9SZ1lHQzEtSnY1REsycUlvWFVEOFlBSXR3?oc=5",
-    "pub": "2026-11-22T11:28:46.000Z",
-    "sum": "Finnish defence forces say that Ukraine was likely behind the drone attack on the vessel."
    },
    {
     "hd": "China’s Spies Set Sights on A.I. Chips Years Before Nvidia Scandal",
@@ -15943,20 +15972,6 @@
     "url": "https://www.bbc.co.uk/news/articles/cw3dgk29d37no?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-22T09:20:45.000Z",
     "sum": "Choi Kyo-jin admits last-minute measures to stop AI-assisted cheating during the college entrance exam caused chaos."
-   },
-   {
-    "hd": "At least 14 people missing after Russian drone hit building in Kyiv region, Zelenskiy says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUmFwN2pYTHZEVndFX2hfN3VOQnduN3pEYnZXa2tfT1d1UGZDejk3ZU11dkwwLTdsUTltdm0taU8wTnpNTkZVV045Z3pkc0czd2FSS1lEZDhyLVVCNFJvNk9xUHR2ZUxydnAyYTJDVzd3RWIwQ1E0YjAyc2R6bkpkbkt1aThfVldjUGRKbkhXanhraVo3SkJHcHBuMmxBcXJreDhQSEx1QV9ZUXhDOHdhbmZMRkZoeVBOXzJ5ag?oc=5",
-    "pub": "2026-11-22T09:01:43.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Turkey's final draft at UN climate talks doesn't mention the fossil fuels that cause global warming",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlZ4dzdCVnBlV0g5cDVCV19scWJkTG9RQWtiMng5NFlVb2VqSng0SmhxRGxLaUJ5aEgyTXRVMlpGVV9abXMwX19naG9EMlhjdEhaemxUTHM2bVhTdWc5Q09NMTR5Wk4yVmtlY2NFSHVncDdMWkhtU05keGJ6NXlGSTVKaFNlOVpsVl80QWE0T3ZQY0t5ZDB4YlNVUWdJZXJaZnJPZmFhb3I?oc=5",
-    "pub": "2026-11-22T08:30:00.000Z",
-    "sum": ""
    },
    {
     "hd": "Athlete swims Strait of Hormuz to raise awareness of Iran war's toll on wildlife",
@@ -16076,20 +16091,6 @@
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTzltZHhpNzJyRTg4dE5kYUJSOUJ4azFWY2txckEtQUlGQVVfTEtIUUpWN3dHZWlocXlZWGFidVRIMjN3ZDM4d2xQWVZ0UFAxRm81TGFfbFNZRzMxTXJOemdzOHRNeWJOLXhEWF83a3N0a1hiR0FjbUE1eGZVX002eVpMNHJyX2JoVXp5bFdjcDJBYkhOWFE4a1AzN0hSRE1wTDFmNGxvaFR6TkR6bkd4a3FSSUU1anZp?oc=5",
     "pub": "2026-11-21T21:24:10.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Top Drug Kingpin Is Captured by Mexican Army as Gunfire Erupts",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/21/world/americas/mexico-el-chapo-isidro-captured-drugs.html",
-    "pub": "2026-11-21T21:12:24.000Z",
-    "sum": "The arrest of Fausto Isidro Meza Flores, who is known as El Chapo Isidro and was one of the F.B.I.’s 10 most wanted, was a victory for the Mexican government."
-   },
-   {
-    "hd": "Russian cargo ship ablaze in Baltic Sea after drone strike, crew evacuates",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPaUFLdlZmeWprX3A2YllLMmlQSXZrYTRIazVMOEExREZuTXFCYThyVUlnR3U0TDg3dGpUeHE5SHJyanJWQUZTRHdwUG5YYTFxVXMtUU5rY1pOVzZkRUxhQ29oUEVUS0NJTWFxcUJmLW9lRE52cGs3N2FLbXZzNmVFNFpXTmZNZnI4S1pWNDB5RWV0UFhUUGlCTVUwNjlWZDMxcXhxS0FvZUdNNWN4UU9jMEw4bWVaOVB0TlE?oc=5",
-    "pub": "2026-11-21T21:01:49.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16108,8 +16109,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-22T12:45:10.651Z",
-  "lastAttempt": "2026-11-22T12:45:10.651Z",
+  "asOf": "2026-11-22T13:15:14.932Z",
+  "lastAttempt": "2026-11-22T13:15:14.932Z",
   "lastError": null
  }
 }
