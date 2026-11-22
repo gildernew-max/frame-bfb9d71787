@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T21:15:11.462Z",
+ "generatedAt": "2026-11-22T21:30:10.218Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T21:15:11.462Z",
+  "at": "2026-11-22T21:30:10.218Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "worldNews",
    "usTempGrid"
   ]
  },
@@ -13758,45 +13757,12 @@
   ],
   "games": [
    {
-    "id": "401873068",
-    "start": "2026-11-22T18:00Z",
-    "state": "in",
-    "status": "Q4 0:36",
-    "period": 4,
-    "clock": "0:36",
-    "completed": false,
-    "away": {
-     "name": "Baltimore Ravens",
-     "short": "Ravens",
-     "id": "33",
-     "abbrev": "BAL",
-     "score": "33",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
-     "record": "4-6",
-     "winner": false,
-     "color": "#29126f",
-     "rank": null
-    },
-    "home": {
-     "name": "Carolina Panthers",
-     "short": "Panthers",
-     "id": "29",
-     "abbrev": "CAR",
-     "score": "35",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
-     "record": "4-5",
-     "winner": false,
-     "color": "#0085ca",
-     "rank": null
-    }
-   },
-   {
     "id": "401873074",
     "start": "2026-11-22T21:05Z",
     "state": "in",
-    "status": "Q1 10:25",
+    "status": "Q1 3:14",
     "period": 1,
-    "clock": "10:25",
+    "clock": "3:14",
     "completed": false,
     "away": {
      "name": "New York Jets",
@@ -13815,7 +13781,7 @@
      "short": "Chargers",
      "id": "24",
      "abbrev": "LAC",
-     "score": "0",
+     "score": "3",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
      "record": "1-8",
      "winner": false,
@@ -13826,10 +13792,10 @@
    {
     "id": "401873069",
     "start": "2026-11-22T21:25Z",
-    "state": "pre",
-    "status": "Sun 4:25 PM ET",
-    "period": 0,
-    "clock": "0:00",
+    "state": "in",
+    "status": "Q1 13:23",
+    "period": 1,
+    "clock": "13:23",
     "completed": false,
     "away": {
      "name": "Jacksonville Jaguars",
@@ -13859,10 +13825,10 @@
    {
     "id": "401873075",
     "start": "2026-11-22T21:25Z",
-    "state": "pre",
-    "status": "Sun 4:25 PM ET",
-    "period": 0,
-    "clock": "0:00",
+    "state": "in",
+    "status": "Q1 12:01",
+    "period": 1,
+    "clock": "12:01",
     "completed": false,
     "away": {
      "name": "Las Vegas Raiders",
@@ -14018,6 +13984,39 @@
      "record": "8-2",
      "winner": true,
      "color": "#e31837",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873068",
+    "start": "2026-11-22T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Baltimore Ravens",
+     "short": "Ravens",
+     "id": "33",
+     "abbrev": "BAL",
+     "score": "33",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/bal.png",
+     "record": "4-7",
+     "winner": false,
+     "color": "#29126f",
+     "rank": null
+    },
+    "home": {
+     "name": "Carolina Panthers",
+     "short": "Panthers",
+     "id": "29",
+     "abbrev": "CAR",
+     "score": "35",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/car.png",
+     "record": "5-5",
+     "winner": true,
+     "color": "#0085ca",
      "rank": null
     }
    },
@@ -14187,8 +14186,8 @@
     }
    }
   ],
-  "asOf": "2026-11-22T21:15:11.462Z",
-  "lastAttempt": "2026-11-22T21:15:11.462Z",
+  "asOf": "2026-11-22T21:30:10.218Z",
+  "lastAttempt": "2026-11-22T21:30:10.218Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14198,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T21:15:11.462Z",
-  "lastAttempt": "2026-11-22T21:15:11.462Z",
+  "asOf": "2026-11-22T21:30:10.218Z",
+  "lastAttempt": "2026-11-22T21:30:10.218Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,7 +14875,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T21:15:11.462Z",
+  "lastAttempt": "2026-11-22T21:30:10.218Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
