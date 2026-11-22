@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T23:30:13.675Z",
+ "generatedAt": "2026-11-22T23:45:11.269Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -13,9 +13,9 @@
      "temp": 60,
      "i": "cloud",
      "cond": "Overcast",
-     "windMph": 4,
+     "windMph": 3,
      "windDir": "WNW",
-     "observed": "2026-11-22T17:45"
+     "observed": "2026-11-22T18:45"
     },
     "today": {
      "h": 61,
@@ -56,8 +56,8 @@
      {
       "date": "2026-11-22",
       "d": "Sun",
-      "i": "rain",
-      "text": "Drizzle",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 61,
       "l": 54,
       "pop": 24
@@ -119,13 +119,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-22T18:00",
-      "i": "rain",
-      "text": "Drizzle",
-      "temp": 60,
-      "pop": 0
-     },
-     {
       "t": "2026-11-22T19:00",
       "i": "cloud",
       "text": "Overcast",
@@ -148,9 +141,9 @@
      },
      {
       "t": "2026-11-22T22:00",
-      "i": "rain",
-      "text": "Drizzle",
-      "temp": 59,
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 60,
       "pop": 1
      },
      {
@@ -158,7 +151,7 @@
       "i": "cloud",
       "text": "Overcast",
       "temp": 60,
-      "pop": 2
+      "pop": 1
      },
      {
       "t": "2026-11-23T00:00",
@@ -169,37 +162,44 @@
      },
      {
       "t": "2026-11-23T01:00",
-      "i": "partly",
-      "text": "Partly cloudy",
+      "i": "cloud",
+      "text": "Overcast",
       "temp": 59,
       "pop": 1
      },
      {
       "t": "2026-11-23T02:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 57,
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 59,
       "pop": 1
      },
      {
       "t": "2026-11-23T03:00",
       "i": "sun",
-      "text": "Clear",
-      "temp": 57,
+      "text": "Mostly clear",
+      "temp": 58,
       "pop": 1
      },
      {
       "t": "2026-11-23T04:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 56,
+      "temp": 57,
       "pop": 1
      },
      {
       "t": "2026-11-23T05:00",
-      "i": "partly",
-      "text": "Partly cloudy",
+      "i": "sun",
+      "text": "Clear",
       "temp": 56,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T06:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 55,
       "pop": 1
      }
     ]
@@ -208,12 +208,12 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 36,
+     "temp": 35,
      "i": "sun",
-     "cond": "Mostly clear",
-     "windMph": 11,
+     "cond": "Clear",
+     "windMph": 12,
      "windDir": "WNW",
-     "observed": "2026-11-22T16:45"
+     "observed": "2026-11-22T17:45"
     },
     "today": {
      "h": 43,
@@ -317,13 +317,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-22T17:00",
-      "i": "sun",
-      "text": "Mostly clear",
-      "temp": 35,
-      "pop": 0
-     },
-     {
       "t": "2026-11-22T18:00",
       "i": "sun",
       "text": "Clear",
@@ -332,9 +325,9 @@
      },
      {
       "t": "2026-11-22T19:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 33,
+      "i": "sun",
+      "text": "Clear",
+      "temp": 32,
       "pop": 0
      },
      {
@@ -395,16 +388,23 @@
      },
      {
       "t": "2026-11-23T04:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 28,
+      "i": "sun",
+      "text": "Clear",
+      "temp": 27,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T05:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 26,
       "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-22T22:45:09.591Z",
-  "lastAttempt": "2026-11-22T22:45:09.591Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  },
  "nfl": {
@@ -473,6 +473,13 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "AI Bubble Deflating? Dell, Workday on Deck",
+    "src": "The Information",
+    "url": "https://www.theinformation.com/articles/ai-bubble-deflating-dell-workday-deck",
+    "pub": "2026-11-22T23:01:12.000Z",
+    "sum": "Friday’s tech stock bloodbath prompted much gnashing of teeth over the weekend. With stocks most exposed to AI—such as Nvidia, AMD, Broadcom, neoclouds such as CoreWeave, Nebius—falling in the 12-16% range, and Anthropic tanking on its second day of trading, it felt like the air has finally gone out of the AI bubble. Indeed, worries about AI financing are so intense that Oracle issued a statement late on Friday proclaiming that it had raised all the money it needed for its big OpenAI data center deal and any report that said otherwise was wrong—suggesting it’s a little sensitive about…"
+   },
+   {
     "hd": "Exclusive | SEC Is Probing Nvidia Amid Departure of CEO Jensen Huang",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbjl2b0tzT1ROT2plV1p5RHhQd3hXOEJKRFhOZ1ItZExOQV9oVGkzTU9tcEEyTXhjNHRKQVExRTNRdEtlY24zUFhmS0h0c21FUVVrVVh0NGF2SXFmdm1wcmVRLUlCcG5CMGRIZklSdVBkVElkS3lwRF9LaGg4YzU5b0dsZXlveWxSNzhGYzJlZmRSRkhvUWZRTHB3?oc=5",
@@ -508,6 +515,20 @@
     "sum": "OpenAI’s chief scientist called for leading AI model developers to agree on limits that they won’t cross “until our ability to understand and monitor AI behavior achieve a certain concrete milestone.” “I’d like an industry standard that specifies a first limit on development, measured by some..."
    },
    {
+    "hd": "S&P 500 at 5,600? Crushing China’s AI Ambitions Has a Price",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUzFrbktMT2VWcmgzZTV6enRFcmdNVDBsaE93WUM2UGZHbjRHRzh2dTlhRFdpdVdfTzVRMTlMQ3hmQkFvckFLcUJZRnh4S2dPYnBwQ0Z4LTdUeEx0MDJROE9pVTU5SVhCU0FxS3Zaa2NDbmo3TU9YWHhqa3JweHRhNmlFdUU2R05iQWZya2M2dktTNFo1Y0Z5NUhHaUVEb293MkV5QWdsRkQ4aDg?oc=5",
+    "pub": "2026-11-22T20:01:13.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "The Brother-Sister Duo Who Want to Keep Anthropic Weird",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZGJyNGh6cktKS0FsM3FIbF9LbjFqVThfY3MyRURJREVmd1JqVGtVX3pTV1FuQzBUUUI3VDdXVHdUYkpKTDk1Ml9vZzdoN1p5T0pVZ3g1eGpwQ1NfVFp6VlhJX1FSXzZ6ajVDYjVKazF5N2FGbXVHLUdjN05YRzVQZnRYaVZtMkE?oc=5",
+    "pub": "2026-11-22T19:36:19.000Z",
+    "sum": ""
+   },
+   {
     "hd": "The Blame Game Has Begun Over Anthropic’s Turbulent Trading Debut",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQd0p4QVlqUGxNcEQwUVJFWkU2cnBwOGRoMjk0ZDRSaFlNZzZMdmt5d3p0QzZzeDZXZks1TGhyN1JPNDI0clRKSHMtSWpOdHNMeUMyNHU5YlpJY0NITnJ4MUhJeTByWmtKdU9QdlZIZGtvYmJlZW1oTjVKZ25WRGowQVRXSWp1cDZYLTRONXRoVkRSc3ZjdDNvWE5jLUhnY2lHd202LXd5Umk3ZlQt?oc=5",
@@ -536,7 +557,7 @@
     "sum": "Journalist Paris Marx unpacks his new book \"Hyperscale.\""
    },
    {
-    "hd": "Spy Chief Says US Probing Alleged Spy Tied to Former Nvidia CEO",
+    "hd": "US Probing Alleged Spy Tied to Ex-Nvidia CEO, Spy Chief Says",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdE91b1JDX3BfalBuWlNGXzRwNERXUThKVzRESzZnZHMwaHYtM25YYlloMk9DWTJEY01kanUtczZEcC1jUjkzLTBoZnBtWC15eGZLbGlRQnNWa1dWNHpxSnhEcEFJVkQxUGpPb2wyam5kN2xISnRlaW5mdUF6WlZ1S0FKUEx5ZTdTQUFtelJDbDlsc3RjT0dHQmxkcUtIbUlZa3NkZ2xlMmJ4SHFvaXdvRldCM3c?oc=5",
     "pub": "2026-11-22T18:06:18.000Z",
@@ -660,27 +681,6 @@
     "url": "https://www.theinformation.com/briefings/amazon-nearing-7-5-billion-purchase-decart",
     "pub": "2026-11-21T18:38:54.000Z",
     "sum": "Amazon is nearing a deal to buy Decart, an Israeli AI startup developing video models, for $7.5 billion, the Financial Times reported on Saturday. News that Amazon was considering a Decart purchase was first reported early last month by the Wall Street Journal. The three year old startup has..."
-   },
-   {
-    "hd": "AI advertising faces an attention crunch",
-    "src": "Axios",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNcmg5RkZLS05lVHpoSm9jWTh1M1ktNzVhQVFVLW9QdEFOOHAyOE9PczNWUG92c25Pd0VTSnk0TFUxeXpRYkdVRTRod1QwcHA0RlBHSmZOempXQjh6S2E4bmpuWjA1SUszeEx0UUp6OEdYOGhNNnllNUhhN3k2OUtaeHBfWG16SlBpX3hpemg4ZEEzSHRWQ0dFWE90M0xDdw?oc=5",
-    "pub": "2026-11-21T17:59:42.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Here are the top AI agents that can live in your text messages",
-    "src": "TechCrunch",
-    "url": "https://techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages/",
-    "pub": "2026-11-21T17:00:00.000Z",
-    "sum": "We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work."
-   },
-   {
-    "hd": "Anthropic’s record IPO collides with tech’s worst week on Wall Street since 2020",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html",
-    "pub": "2026-11-21T16:40:05.000Z",
-    "sum": "Anthropic held its historic Nasdaq debut a day before Nvidia's stock closed out its longest weekly losing streak since 2008."
    }
   ],
   "feeds": [
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-22T22:45:09.591Z",
-  "lastAttempt": "2026-11-22T22:45:09.591Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -7319,10 +7319,15 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T23:30:13.675Z",
+  "at": "2026-11-22T23:45:11.269Z",
   "ran": [
+   "weather",
    "alerts",
    "nflScoreboard",
+   "news",
+   "stockNews",
+   "worldNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13682,62 +13687,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-22T23:30:13.675Z",
-  "lastAttempt": "2026-11-22T23:30:13.675Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7027.5,
-    "lastTime": 1795389613,
+    "last": 7042.75,
+    "lastTime": 1795390541,
     "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 83.75,
-    "changePct": 1.2061206120612062,
-    "expectedOpen": 6993.737638163816,
+    "change": 99,
+    "changePct": 1.425742574257426,
+    "expectedOpen": 7008.914372277228,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25718.75,
-    "lastTime": 1795389613,
+    "last": 25757.75,
+    "lastTime": 1795390541,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 576.75,
-    "changePct": 2.2939702489857607,
-    "expectedOpen": 23136.576043075333,
+    "change": 615.75,
+    "changePct": 2.449089173494551,
+    "expectedOpen": 23171.660425702015,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48575,
-    "lastTime": 1795389611,
+    "last": 48686,
+    "lastTime": 1795390540,
     "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 341,
-    "changePct": 0.7069701870050172,
-    "expectedOpen": 48487.71726893892,
+    "change": 452,
+    "changePct": 0.9370983123937471,
+    "expectedOpen": 48598.51781689265,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2617.9,
-    "lastTime": 1795389612,
+    "last": 2622.9,
+    "lastTime": 1795390535,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 29.50009765625009,
-    "changePct": 1.1397040167378418,
+    "change": 34.50009765625009,
+    "changePct": 1.3328735496014688,
     "expectedOpen": null,
     "valid": true
    }
@@ -13761,9 +13766,9 @@
     "id": "401873074",
     "start": "2026-11-22T21:05Z",
     "state": "in",
-    "status": "Q4 5:08",
+    "status": "Q4 1:37",
     "period": 4,
-    "clock": "5:08",
+    "clock": "1:37",
     "completed": false,
     "away": {
      "name": "New York Jets",
@@ -13782,7 +13787,7 @@
      "short": "Chargers",
      "id": "24",
      "abbrev": "LAC",
-     "score": "17",
+     "score": "24",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
      "record": "1-8",
      "winner": false,
@@ -13794,9 +13799,9 @@
     "id": "401873069",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q3 9:09",
+    "status": "Q3 1:03",
     "period": 3,
-    "clock": "9:09",
+    "clock": "1:03",
     "completed": false,
     "away": {
      "name": "Jacksonville Jaguars",
@@ -13827,16 +13832,16 @@
     "id": "401873075",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q3 7:38",
+    "status": "Q3 1:10",
     "period": 3,
-    "clock": "7:38",
+    "clock": "1:10",
     "completed": false,
     "away": {
      "name": "Las Vegas Raiders",
      "short": "Raiders",
      "id": "13",
      "abbrev": "LV",
-     "score": "10",
+     "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
      "record": "4-6",
      "winner": false,
@@ -14187,8 +14192,8 @@
     }
    }
   ],
-  "asOf": "2026-11-22T23:30:13.675Z",
-  "lastAttempt": "2026-11-22T23:30:13.675Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14204,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T23:30:13.675Z",
-  "lastAttempt": "2026-11-22T23:30:13.675Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,11 +14881,16 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T23:30:13.675Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
+   {
+    "src": "NPR",
+    "hd": "Ukraine war spilling into NATO territory",
+    "pub": "2026-11-22T22:40:22.000Z"
+   },
    {
     "src": "The Washington Post",
     "hd": "Ukrainian city moves to remote learning as Russian strikes disrupt utilities",
@@ -14890,16 +14900,11 @@
     "src": "BBC News",
     "hd": "'Danger seems greater all the time': Ukrainians search for missing after Russian strikes",
     "pub": "2026-11-22T22:37:43.000Z"
-   },
-   {
-    "src": "Reuters",
-    "hd": "Israel's Eisenkot condemns arson attacks by Jewish settlers in West Bank",
-    "pub": "2026-11-22T21:54:56.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-22T22:45:09.591Z",
-  "lastAttempt": "2026-11-22T22:45:09.591Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  },
  "movers": {
@@ -15177,7 +15182,7 @@
       "sum": ""
      },
      {
-      "hd": "Spy Chief Says US Probing Alleged Spy Tied to Former Nvidia CEO",
+      "hd": "US Probing Alleged Spy Tied to Ex-Nvidia CEO, Spy Chief Says",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdE91b1JDX3BfalBuWlNGXzRwNERXUThKVzRESzZnZHMwaHYtM25YYlloMk9DWTJEY01kanUtczZEcC1jUjkzLTBoZnBtWC15eGZLbGlRQnNWa1dWNHpxSnhEcEFJVkQxUGpPb2wyam5kN2xISnRlaW5mdUF6WlZ1S0FKUEx5ZTdTQUFtelJDbDlsc3RjT0dHQmxkcUtIbUlZa3NkZ2xlMmJ4SHFvaXdvRldCM3c?oc=5",
       "pub": "2026-11-22T18:06:18.000Z",
@@ -15313,7 +15318,7 @@
     "fetched": {
      "Finnhub": 68,
      "Yahoo": 2,
-     "Google News": 83,
+     "Google News": 82,
      "Nasdaq": 11,
      "Seeking Alpha": 24
     }
@@ -15499,13 +15504,20 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 16,
-     "Google News": 15,
+     "Google News": 16,
      "Nasdaq": 10,
      "Seeking Alpha": 12
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Stanley Druckenmiller and 42 Other Big Funds Bought SpaceX Last Quarter. Brad Gerstner and 23 Others Sold. Who’s Right?",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/stanley-druckenmiller-and-42-other-big-funds-bought-spacex-last-quarter-brad-gerstner-and-23-others-sold-whos-right?ref=yahoofinance&tlnk=yf-261122-prh63fwm&.tsrc=rss",
+      "pub": "2026-11-22T22:35:12.000Z",
+      "sum": "Key TakeawaysStanley Druckenmiller’s Duquesne Family Office, David Tepper’s Appaloosa and Cathie Wood’s ARK Invest were among 43 big funds that bought SpaceX in the third quarter. Another 24 sold, including Brad Gerstner’s Altimeter Capital."
+     },
      {
       "hd": "Cathie Wood Just Bought $22 Million of SpaceX Across 2 ARK Funds",
       "src": "Yahoo Finance",
@@ -15561,13 +15573,6 @@
       "url": "https://finnhub.io/api/news?id=e392717988e1e20e4080094fcb8ea775b11dbb3686c7a912f664734ba2e658fe",
       "pub": "2026-11-22T11:25:00.000Z",
       "sum": "SpaceX says its Texas and Arizona supercomputing campuses will pay their own way. A gas plant, a 6-gigawatt grid draw, and two Dec. 9 votes will test that."
-     },
-     {
-      "hd": "SpaceX Orders “100 GW/Year” of Solar Equipment. Musk’s Math Puts That at $1 Trillion a Year",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=91ac7b90ebb6a8b0c8c838b86617070b55248da669579a2ded1f62e8ed1b23db",
-      "pub": "2026-11-22T11:12:27.000Z",
-      "sum": "Key TakeawaysElon Musk said SpaceX ordered “100 GW/year” of solar equipment from Singulus Technologies. The signed contract covers one line worth more than €60 million (about $67 million)."
      },
      {
       "hd": "This Week in TSLA: Cybercab's Deliveries, SpaceX-Tesla Merger Talk, Model Y Without Steering Wheel and More",
@@ -15685,7 +15690,7 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 13,
-     "Google News": 23,
+     "Google News": 27,
      "Nasdaq": 0,
      "Seeking Alpha": 24
     }
@@ -15726,6 +15731,13 @@
       "url": "https://finance.yahoo.com/markets/options/articles/defiance-2x-long-2x-short-202300162.html?.tsrc=rss",
       "pub": "2026-11-22T20:23:00.000Z",
       "sum": "Defiance 2X ANT Long and Short Daily ETFs Trading begins November 23rd, 2026. MIAMI, Nov. 22, 2026 (GLOBE NEWSWIRE) -- Defiance ETFs today announced that its two 2X daily Anthropic ETFs, the Defiance 2X ANT Long Daily ETF (Nasdaq: ANTC) and the Defiance 2X ANT Short Daily ETF (Nasdaq: ANTQ), begin trading on The Nasdaq Stock Market tomorrow, Monday, November 23, 2026, at the 9:30 a.m. ET open. The two leveraged single-stock ETFs, one long and one inverse, are tied to the share price of Anthropic"
+     },
+     {
+      "hd": "The Brother-Sister Duo Who Want to Keep Anthropic Weird",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZGJyNGh6cktKS0FsM3FIbF9LbjFqVThfY3MyRURJREVmd1JqVGtVX3pTV1FuQzBUUUI3VDdXVHdUYkpKTDk1Ml9vZzdoN1p5T0pVZ3g1eGpwQ1NfVFp6VlhJX1FSXzZ6ajVDYjVKazF5N2FGbXVHLUdjN05YRzVQZnRYaVZtMkE?oc=5",
+      "pub": "2026-11-22T19:36:19.000Z",
+      "sum": ""
      },
      {
       "hd": "Stocks are 'on fire sale' as Anthropic IPO fails to calm AI trade jitters",
@@ -15826,13 +15838,6 @@
       "sum": ""
      },
      {
-      "hd": "The Brother-Sister Duo Who Want to Keep Anthropic Weird",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZGJyNGh6cktKS0FsM3FIbF9LbjFqVThfY3MyRURJREVmd1JqVGtVX3pTV1FuQzBUUUI3VDdXVHdUYkpKTDk1Ml9vZzdoN1p5T0pVZ3g1eGpwQ1NfVFp6VlhJX1FSXzZ6ajVDYjVKazF5N2FGbXVHLUdjN05YRzVQZnRYaVZtMkE?oc=5",
-      "pub": "2026-11-22T10:31:40.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Anthropic: Following The Palantir Playbook",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4970912-anthropic-following-the-palantir-playbook?source=feed_symbol_ANT",
@@ -15877,12 +15882,26 @@
     }
    }
   },
-  "asOf": "2026-11-22T22:45:09.591Z",
-  "lastAttempt": "2026-11-22T22:45:09.591Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Russian Ships Struck in Attacks Far From Ukraine as War’s Fallout Spreads",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNUVkazV3eVU0VlliLUJtY3hUY3J0djVGelpZTGY4R3dqZ2U5dTB1SXo4Y3JoSEFvRjF3Y2ZwVVZ0elJRTkI5WElHcHlZVFFaSTBzaWEwN1BINjBJQlJSaGpyYnRubkJ3VkVGNF9ZVS1LX2xCczdFZ1BaQ2QwWTBXOURrc1NUOHdvWm9TQ3NlWTRRTUNrLWRGY1BxNXNERjBya3pKUFR0d2xKY1lqNENEQXlGVGE?oc=5",
+    "pub": "2026-11-22T23:09:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
+    "pub": "2026-11-22T23:04:32.000Z",
+    "sum": ""
+   },
    {
     "hd": "Ukraine war spilling into NATO territory",
     "src": "NPR",
@@ -15891,11 +15910,32 @@
     "sum": "The war between Russia and Ukraine once again creeps onto European territory – from attacks on ships to missiles in Poland and fresh allegations of Russian operations inside Denmark."
    },
    {
+    "hd": "Iranian president turns out office lights to urge citizens to save energy",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
+    "pub": "2026-11-22T22:32:36.000Z",
+    "sum": "Iran has some of the world's largest oil and natural gas reserves but is facing an energy crisis because of U.S. economic sanctions and a naval blockade."
+   },
+   {
     "hd": "Trump says he wants \"permanent\" deal with Iran",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
     "pub": "2026-11-22T22:29:17.000Z",
     "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
+   },
+   {
+    "hd": "Russian vessel hit by suspected Ukrainian drone at Libya’s Benghazi port",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZzU3ZEZYME5lS0ROc3NoTHNrNlpjVlUyd2xjVnRLREpzSWlZWXMyS1E3OTJMZmxZNHZJV1BpbGM1U045c3JTc2p2dlFTYTNTSU9qdnVZamZZN29zR0JBY3ZpYjZ0Z1FpVXc2cDViTFZRMHNwejhPcTBrUHVqdFhZZG5XTTFSYi1Yc3AxaVlLc09VcTdyVzdFaNIBngFBVV95cUxNZlFIcHE3SVRDUFdGeE9CTEgtM3I3T2o3OTBUZWlQaU5IbWhXNVY4NjVqQ2s2eEJLVTRlUXFXakFWdkc0T3ViME1EMUt5US1zejJPSkthWjVaejRkTExNOGJ3LURHWDB3dndjeDBBM0hyRWt6d05ESnE0Ul9BbzlzSXZLSS1MZHM2RUJ4ZjJaMVFZSmlWS3ZSMEgtR2RJdw?oc=5",
+    "pub": "2026-11-22T22:14:33.000Z",
+    "sum": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
+   },
+   {
+    "hd": "Tehran threatens to 'break legs' as 'Trump corridor' prepares to launch on Iran's border",
+    "src": "Fox News",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMzJEdmVaWERGRkpBVTRSSUlMN2EtdUVIdHZTdGZsRHp2bERPRGQyMUJPYlc4TEVBd1l6QXNOMHVDTnVrU3djbHVHYUxDTGY2S1BwSVdXMkFUM2ltV1NFNU9VZDlHSktQRmM5Z3V5cEJsUDR3WThRUjdKd1g1a3ZkR0pqSDEzTVJUZzFZd2xLMVN5TFdYYmpOVjlYWVBPcENteEdN0gGoAUFVX3lxTE1Cdi1ZaFdLVWItZzhQRzFjUmpUNHpOZEJRWmFzbkItTVBnV3FvaDdtTGRGblBpMGNyd3VQT2VudnRFVzhCTTJKZkwxbU9Qc3hZbXowOFVnX3RiT2R1R2NvZUh1SFQwRGYwM3p5N3lGWk5mM3BlRTktS1NaSDg3a0tVakVndEdaNDVCOXB5R1J0R1RRWFNkbjlsQ05ZaUpDZ2oyOFE1M2IzNQ?oc=5",
+    "pub": "2026-11-22T22:13:15.000Z",
+    "sum": ""
    },
    {
     "hd": "Israel's Eisenkot condemns arson attacks by Jewish settlers in West Bank",
@@ -15926,13 +15966,6 @@
     "sum": ""
    },
    {
-    "hd": "Iranian president turns out office lights to urge citizens to save energy",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/22/iranian-president-turns-out-office-lights-urge-citizens-save-energy/",
-    "pub": "2026-11-22T21:00:00.000Z",
-    "sum": "Iran has some of the world's largest oil and natural gas reserves but is facing an energy crisis because of U.S. economic sanctions and a naval blockade."
-   },
-   {
     "hd": "Russian warship struck by suspected Ukrainian drones at Libya naval base",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/russian-warship-struck-suspected-ukrainian-sea-drones-benghazi-naval-base-libya-officials/",
@@ -15951,6 +15984,13 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSHU3NmsxWHB4a0x6ZTdpdG9ZWWlqS29GMXowZ3BEQndXZVBuU0tBc1EycDY2blB2SnNhV3pxTHctWDNFajhDWENxRlVzbHBTU193TjZsVVhXQlB3ZTZwQUZNT25KWDM5bWxXTG9FSUtvOW9zZ0wwTFBsTmFGcHZEOWlvN1QzanQtd1hQYzNR?oc=5",
     "pub": "2026-11-22T19:54:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Netanyahu rival condemns ‘Jewish terrorism’ after settler attacks on Palestinian villages",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNRlZMY3hXQU13T0cxY3NmM2kxZjRBOGszckVoNW5VOXJvbkVja3RLSjdEVzBhQ3VTTHZVNUE3TmpMV0lMdWpYTzZMZGdadElicFpUa0lETzJWRk9sNWswSmhwWHdxSVJ1U1FTbW5FdnJOV0tzeW95UmhxRVlUU3l3N1duWjlLRUVsUk56THVobmlKcjR0YzlITlJneUFYdUJ0Wkc2bGx2U2VlaEJvemVoR3plWEk5OERnWVlwX1FHUmY?oc=5",
+    "pub": "2026-11-22T19:48:00.000Z",
     "sum": ""
    },
    {
@@ -15991,7 +16031,7 @@
    {
     "hd": "Lebanese villagers return to wrecked homes as the Israeli army pulls back",
     "src": "NPR",
-    "url": "https://www.npr.org/2026/11/22/nx-s1-6048710/lebanon-israel-army-conflict-homes",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORll3ZkNWTTRuZ19vOTViOVlJZXlXczJUa0ZOWmN6M3JSVVlQbmhhZ0FsTTFrQUE4VDhDbjV6cGNyTVNOSnZxTUF2Z1p2NmE0MmhweGlLelliRnY2RkhUalpwWTgybUdsYWljc200MmFoWEFlbF9JWUJGZXBlREdJdTg3Q1Etdw?oc=5",
     "pub": "2026-11-22T17:44:52.000Z",
     "sum": "In a pilot project in a village in southern Lebanon, Israeli forces have left and the Lebanese army moved it. But villagers who return find their houses wrecked."
    },
@@ -16057,46 +16097,14 @@
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOSlRhbXYxMjBxNnZDcUV5TVZvazM2RjBhanlMSVllcmtrSi1aRk5MRkJ3X2VqMDRraDBqdTJWRkgtWGlSWW80X1owVFVJWmgyZEpNMnEwVnYtX2lFb19HNlZ5ZzVCUWduOFdZVTM0RWRTdEhWNkVZc3RUcnBzZHFRYXMxRDBibWxJMHBaNU1BdEdRS0NiVy05V3VPRmFPOEdMeXhHV0pyZmtpMDdYbDYxanFSOEh5TU5N?oc=5",
     "pub": "2026-11-22T15:44:03.000Z",
     "sum": ""
-   },
-   {
-    "hd": "U.N. climate summit ends without deal after contentious fossil fuel debate",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/",
-    "pub": "2026-11-22T15:41:41.000Z",
-    "sum": "COP31, the latest installment of the United Nations' annual climate conference, ended Sunday without a final agreement after days of contentious talks collapsed."
-   },
-   {
-    "hd": "A suspected drone strike hits a Russian vessel in Libya",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/suspected-drone-strike-hits-russian-vessel-libya-138359178",
-    "pub": "2026-11-22T15:36:31.000Z",
-    "sum": "The sea drone strike triggered an explosion and fire in Benghazi."
-   },
-   {
-    "hd": "Why Somalia’s president turned against his former ally, the UAE",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPWkhBSVN4a3R3Y01DNnpYUTYxNW5iUmNrZlNMdk9oWm1pVEQxNzlpUkt0TXB2RVFrbkYwUi1VekZOM2RrRDJhTUhfR2d4ZXViREFYcEl4dXcwSmpqZWw1Q3lDUEN1NkJ5UThIVkh1b09jZDUzZXNpTVd5bmh1SVFiVXppeVRTWjMxcUMySGh4RTkxVGYtblhWV0hVelFSUkx2Qm01RFR30gGrAUFVX3lxTE5ucE1RdjFfVWd4c0pZRS1SZUtCdzdlVjRCMGZPRXp3bXplSlUtZ09JQkg2UlhLcF84VDVHNVZYMzVCV0o4ZDBoWXRHZlo1MkFPRnFkTFFsek5kb3FybjVyV1pkdWp5eVhPWW9EcUYzUnNZR1o2SFRGTW9WWnd3Tk1mcTFwVEU1Z21HNTYta2taS19iZTNNeDRKSmxKY0xQRDlFUnYyWEJiWU9HMA?oc=5",
-    "pub": "2026-11-22T15:32:42.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began",
-    "src": "CNN",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPazIzNmZVck5Udmx0UjFsVV9LQjJsSDhlUm95QjhZalplRUNIa1QyNXh0Z0lPYXVEblBmOWpWN3p3b0pXWXhyZko4cmlzSl92b19UbjNqS3NZUHJwWFZiZnZiRWJHSTVKMjBkNGFmdWJWcGpBcEJfSzROU0VjZHEyVXdOWWFkb2gxN1FaZ0N3?oc=5",
-    "pub": "2026-11-22T15:13:28.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Drone attacks kill four near Sudan’s capital, damage UN building",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE95V2lBM1hDaWY4eHByMlh4RnpLTkhIOVBtQnFXMHM3R0hfV2lxZEZSNTNBbEg5cHowV2VobnNxU3VnZzlTMU16alVwNjJ0XzBNNlRCVElvdEFkVkV0RFhSV3ZvV2FUQThMSzdqLXVYNDBIeWxmTHpjd3FwUncwME3SAYQBQVVfeXFMUGo3NGlSR1RUbFN2RGd1QkNpQUV3YlpOOGhNc2lvYWs1WVVEbmpJNjVBanY2Mk1LZWFvLWJCLVdYU0pqaFRLUGNHYi1wM2J0cGdqSkVUQkRlbGo4bEh3SENuQjRFUC1uSms0TDJCR19UU21VSEk3b2I0UmR5NVdWTjFIdjFS?oc=5",
-    "pub": "2026-11-22T15:07:12.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
+   "Google News",
+   "AP",
+   "Reuters",
+   "WSJ",
    "The New York Times",
-   "The Washington Post",
    "NPR",
    "BBC News",
    "Politico",
@@ -16106,13 +16114,10 @@
    "ABC News"
   ],
   "feedErrors": [
-   "Google News: HTTP 503 from news.google.com",
-   "AP (Google News): HTTP 503 from news.google.com",
-   "Reuters (Google News): HTTP 503 from news.google.com",
-   "WSJ (Google News): HTTP 503 from news.google.com"
+   "The Washington Post: fetch failed"
   ],
-  "asOf": "2026-11-22T23:15:21.952Z",
-  "lastAttempt": "2026-11-22T23:15:21.952Z",
+  "asOf": "2026-11-22T23:45:11.269Z",
+  "lastAttempt": "2026-11-22T23:45:11.269Z",
   "lastError": null
  }
 }
