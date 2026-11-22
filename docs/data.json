@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T14:00:10.964Z",
+ "generatedAt": "2026-11-22T14:15:16.899Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T14:00:10.964Z",
+  "at": "2026-11-22T14:15:16.899Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "cfbScoreboard",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14187,8 +14187,8 @@
     }
    }
   ],
-  "asOf": "2026-11-22T14:00:10.964Z",
-  "lastAttempt": "2026-11-22T14:00:10.964Z",
+  "asOf": "2026-11-22T14:15:16.899Z",
+  "lastAttempt": "2026-11-22T14:15:16.899Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14199,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T14:00:10.964Z",
-  "lastAttempt": "2026-11-22T14:00:10.964Z",
+  "asOf": "2026-11-22T14:15:16.899Z",
+  "lastAttempt": "2026-11-22T14:15:16.899Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,7 +14876,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T14:00:10.964Z",
+  "lastAttempt": "2026-11-22T14:15:16.899Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15884,6 +15884,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "U.N. climate summit ends without deal after contentious fossil fuel debate",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/",
+    "pub": "2026-11-22T13:55:29.000Z",
+    "sum": "COP31, the latest installment of the United Nations' annual climate conference, ended Sunday without a final agreement after days of contentious talks collapsed."
+   },
+   {
+    "hd": "Turkey's final draft at UN climate talks doesn't mention the fossil fuels that cause global warming",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlZ4dzdCVnBlV0g5cDVCV19scWJkTG9RQWtiMng5NFlVb2VqSng0SmhxRGxLaUJ5aEgyTXRVMlpGVV9abXMwX19naG9EMlhjdEhaemxUTHM2bVhTdWc5Q09NMTR5Wk4yVmtlY2NFSHVncDdMWkhtU05keGJ6NXlGSTVKaFNlOVpsVl80QWE0T3ZQY0t5ZDB4YlNVUWdJZXJaZnJPZmFhb3I?oc=5",
+    "pub": "2026-11-22T13:53:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump says he wants \"permanent\" deal with Iran",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
@@ -15940,10 +15954,17 @@
     "sum": ""
    },
    {
-    "hd": "Turkey's final draft at UN climate talks doesn't mention the fossil fuels that cause global warming",
+    "hd": "Israeli opposition leader condemns suspected settler attacks as 'terrorism,' and other Mideast news",
     "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNVlZ4dzdCVnBlV0g5cDVCV19scWJkTG9RQWtiMng5NFlVb2VqSng0SmhxRGxLaUJ5aEgyTXRVMlpGVV9abXMwX19naG9EMlhjdEhaemxUTHM2bVhTdWc5Q09NMTR5Wk4yVmtlY2NFSHVncDdMWkhtU05keGJ6NXlGSTVKaFNlOVpsVl80QWE0T3ZQY0t5ZDB4YlNVUWdJZXJaZnJPZmFhb3I?oc=5",
-    "pub": "2026-11-22T12:08:00.000Z",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPd1JSaXVlNUR1NmhkbmNlT0RQMEpGVlROckdUU0czRm5nNHJkc2VWeDVGeWRLUGJiU0ZtY19SVG5veUJsRk5oWlZzNzdkcW03VXRVajBoVU1TQVpHdHNFeUtaRURabFZEUHZUWG5KUWtINTdEVXROQllnTDRua0pNdzdkVXNBc3plTVRpd1V2aGs5MlpjdlJ4dEszcFpUMG83M2JPbQ?oc=5",
+    "pub": "2026-11-22T11:53:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "What’s behind Iran’s escalation of attacks in the Gulf?",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOM1owT2pOYVc3bXd5Z0RTeGlaemVoVXVReXNLeHcza0U3aVo2RW5FWDJjUTFGdGtrNm9OVEY4VVZCYXh6aTZ3bzZaVG1NYzdwZGRYOHRlUXVyanBTVzNTQ0FPNnpLbFl5WDBSamUxQmkxRHVUMG1sMk5xMm9sbmZKOEpwMUxVSHJCamsxdFJEZ3dKUWRoSy1SaGJn0gGfAUFVX3lxTE1sMGtPREkyMU1XR0dvQ0pkM2hraWFPblNyWGtsNC1fY1REcjFELUU2Sk9hNFNpT2dxVmxoU3JZQU9QMmlVWlladjlCRW95bEx6MGItcFNjN1VuMHJQSTZwWm1SQ3pLN28zbE05ZHo4cnBGWFZwZXhUR0VYUC1DMGFkTnV2XzlnZTRubzJtSzJ6YzhwUzgwRk1HdnhpVlNNWQ?oc=5",
+    "pub": "2026-11-22T11:48:45.000Z",
     "sum": ""
    },
    {
@@ -15973,6 +15994,13 @@
     "url": "https://www.washingtonpost.com/world/2026/11/22/china-is-becoming-easier-visit-harder-leave/",
     "pub": "2026-11-22T10:00:00.000Z",
     "sum": "Amid a tech race with Washington, Beijing is pledging “openness and integration” while increasing its say over who can depart the country."
+   },
+   {
+    "hd": "Ukrainian Drones Reportedly Hit Russian National Guard Headquarters Deep Inside Russia",
+    "src": "UNITED24 Media",
+    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQS0UzV0Jkbk9HZUFtb0ZvTUM4RE90MGFHUWpEOGlSekhSSXVadlU0WkZER2hyY2dBNWRMZ3RzOU02QmZ0SlhYdV9YV0hkT3JpbmdFYlJJbmZTSkNyQmo5VVA5TkdvZmt6QmVXMmVGclF1N3BpTWMxUE4tcXl1RXFUaUp5Vlpjb29OUnQ0cDlMd3g1TV9VYndtOXhnS3gzbTVlc2JQN2lxR2ZSS19GX19BaVk4WVRieFpRb1dveW1rTHdUX3EtdTV6ZEpyck9uUQ?oc=5",
+    "pub": "2026-11-22T09:42:19.000Z",
+    "sum": ""
    },
    {
     "hd": "South Korea education minister resigns over exam cheating scandal",
@@ -16024,17 +16052,17 @@
     "sum": "Poland also joined other European countries in expressing outrage over allegations of a thwarted plot linked to Moscow to kill a U.S.-Ukrainian rapper on Danish soil."
    },
    {
+    "hd": "EU and Indonesia sign landmark trade deal from palm oil to pharmaceuticals",
+    "src": "DW",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Ic0hSN0xxaVNqd0JPYzg3N202Zll2Y1J0Vk5pMFVMV0ZrcGJCaDNyZnk4SGY0T05iMFg0Y1BFVW1wMnFITDdiNmMteGw5RXZydFdsazdyVkYwQi1xV0RqRXZRdFEyNE1ZZzdOa2pGODcycDjSAXNBVV95cUxOeFJWM1NmcTJidG5EZDVYVjJULTlpYjdNc3RucEpYNkVhajJhUFVYVTFBbnY0eV83RDcyZFoxcENfZ1NBMjVkSTFGMGJwNkFMbWhpRkVUSTZiVFQ3UjQwYUstS05ybDFhSTJyQ1VOeTZMMm1R?oc=5",
+    "pub": "2026-11-22T04:49:59.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Myanmar's army-backed government calls ASEAN decision 'unfair and imbalanced'",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPS1FENS0tc2xfZjRuaEUtTU5Fa1pYZXYtUm1BcXl5TldHOXdaSGM0VE5IaHgzcENjVDlnTmNJN0VEazRhWHU5ZHl3eG5VU1pLZkZxMy1wekcwdW5yanBFdEJNV3dGdVB0OGlJVFF5bTBkQ0JVbGUxcm1tQnBRT1JpZ3Q0a0lvV2poTUluZzBoZFdGOHYtQkh6Uy0xUk81Ty1Bb0h2Zi0teWpNTWJPOVl2VG0wb3dqQzljVGhtU1BKNkM1UHM?oc=5",
     "pub": "2026-11-22T04:01:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukrainian drones reportedly strike Russian National Guard facility in Krasnodar",
-    "src": "The Kyiv Independent",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQb3UxYlVjdzIySTV1SDQybG42b1NFTjU4cW15cmZtY3p3a05SaXBudHZCSXpiYTFCenhnVmRUZV9UMU80XzcxMGlKQV9Ycm5EVTJ3M3l6dmhLWXlTMWxjT2RMRnFhQTBIcWYzV2otM25MdHJFekRZWHlyRVhJUkFnU0Zmd1dTcFJvZzM5Z3F3dTZyd1JFLV9MbURNTWIwbkFSaHVOMGN2LWNGZEkz?oc=5",
-    "pub": "2026-11-22T03:18:23.000Z",
     "sum": ""
    },
    {
@@ -16059,39 +16087,11 @@
     "sum": "U.S. and Mexican authorities shared intelligence for weeks to track Fausto Isidro Meza Flores, a drug cartel leader that a U.S. official called the most dangerous man in Mexico."
    },
    {
-    "hd": "EU and Indonesia sign landmark trade deal from palm oil to pharmaceuticals",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5Ic0hSN0xxaVNqd0JPYzg3N202Zll2Y1J0Vk5pMFVMV0ZrcGJCaDNyZnk4SGY0T05iMFg0Y1BFVW1wMnFITDdiNmMteGw5RXZydFdsazdyVkYwQi1xV0RqRXZRdFEyNE1ZZzdOa2pGODcycDjSAXNBVV95cUxOeFJWM1NmcTJidG5EZDVYVjJULTlpYjdNc3RucEpYNkVhajJhUFVYVTFBbnY0eV83RDcyZFoxcENfZ1NBMjVkSTFGMGJwNkFMbWhpRkVUSTZiVFQ3UjQwYUstS05ybDFhSTJyQ1VOeTZMMm1R?oc=5",
-    "pub": "2026-11-22T01:44:58.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Nigerian youth have shown their power in the past - why aren't they shaping this election?",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/ck4g174n020eo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-22T00:10:37.000Z",
     "sum": "Fewer young people have registered to vote in next year's election than in 2023 - are young people losing faith in democracy?"
-   },
-   {
-    "hd": "US senator says Pentagon restrictions on Canada focus on think tanks and social events",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNQy1HRmtuYU9aVXlJYkNPR1FxLXlDMEVLMzd1M1Q4ODRfUV9Zd3BLenJBRENhYVNMSTM2UU1Yc2VCSkxaXzNJRy1jM3AyZWhldE41WmJET0huQUlIaUZNdF9ZNVhQanMtLUIwc1RUTHF4QlFzeWNBdVgxZkRneFZfNkdCTkd1UjJ2dzM2bUVYOVRfX0ZFemRZTE5vREVlZEp6ajNvcWw5RUlwMkhXeHVZ?oc=5",
-    "pub": "2026-11-21T23:19:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Iran launches attacks in Bahrain, Hormuz and moves against US blockade",
-    "src": "Euronews",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWUJYOUdFdXlpMHE3RUhFVzFQTENEc2pUcEJ5WDZuckZlQjN1bF9aX055VUZUelpSSGVwT2dHLXFVQmR2Yk9IYUxPU1d0MlJhS2lWRDlWaTRleFZkeXlHTExaVTNTamZ0Y216QTJEVXpEYkdfN2pGN0xYSXZ5Y01Yb05FRE1qOVpXMW1yUWgtcEt2RVBzRURyOHJhRnZWcjNDbmh4aWI5RWE1ZDFVQW5UaTAwZFhmOVp0TEE?oc=5",
-    "pub": "2026-11-21T22:54:42.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "What did Xi Jinping get from the bear hug with Trump at the Shenzhen summit?",
-    "src": "NPR",
-    "url": "https://www.npr.org/2026/11/21/nx-s1-6048741/what-did-xi-jinping-get-from-the-bear-hug-with-trump-at-the-shenzhen-summit",
-    "pub": "2026-11-21T22:01:42.000Z",
-    "sum": "NPR's Rob Schmitz speaks with Robert Daly, director of the program on US China relations at University of Maryland's School of Public Policy, about President Trump's trip to China this week."
    }
   ],
   "feeds": [
@@ -16110,8 +16110,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-22T13:45:11.031Z",
-  "lastAttempt": "2026-11-22T13:45:11.031Z",
+  "asOf": "2026-11-22T14:15:16.899Z",
+  "lastAttempt": "2026-11-22T14:15:16.899Z",
   "lastError": null
  }
 }
