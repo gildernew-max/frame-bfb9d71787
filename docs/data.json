@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T23:00:09.605Z",
+ "generatedAt": "2026-11-22T23:15:21.952Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,10 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T23:00:09.605Z",
+  "at": "2026-11-22T23:15:21.952Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13682,21 +13683,21 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-22T23:00:09.605Z",
-  "lastAttempt": "2026-11-22T23:00:09.605Z",
+  "asOf": "2026-11-22T23:15:21.952Z",
+  "lastAttempt": "2026-11-22T23:15:21.952Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
     "last": 6935,
-    "lastTime": 1795211998,
-    "settle": 6943.75,
+    "lastTime": 1795388733,
+    "settle": 6943.5,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": -8.75,
-    "changePct": -0.126012601260126,
-    "expectedOpen": 6901.682037803781,
+    "change": -8.5,
+    "changePct": -0.12241664866421834,
+    "expectedOpen": 6901.930532152373,
     "valid": true
    },
    "NASDAQ": {
@@ -13704,7 +13705,7 @@
     "label": "NQ",
     "name": "Nasdaq 100",
     "last": 25126.5,
-    "lastTime": 1795211999,
+    "lastTime": 1795388733,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
@@ -13718,13 +13719,13 @@
     "label": "YM",
     "name": "Dow",
     "last": 48216,
-    "lastTime": 1795211996,
-    "settle": 48234,
+    "lastTime": 1795388733,
+    "settle": 48240,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": -18,
-    "changePct": -0.03731807438736161,
-    "expectedOpen": 48129.36234357507,
+    "change": -24,
+    "changePct": -0.04975124378109452,
+    "expectedOpen": 48123.37610447761,
     "valid": true
    },
    "RUT": {
@@ -13732,7 +13733,7 @@
     "label": "RTY",
     "name": "Russell 2000",
     "last": 2587.4,
-    "lastTime": 1795211998,
+    "lastTime": 1795388731,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
@@ -13761,9 +13762,9 @@
     "id": "401873074",
     "start": "2026-11-22T21:05Z",
     "state": "in",
-    "status": "Q3 3:16",
-    "period": 3,
-    "clock": "3:16",
+    "status": "Q4 11:18",
+    "period": 4,
+    "clock": "11:18",
     "completed": false,
     "away": {
      "name": "New York Jets",
@@ -13782,7 +13783,7 @@
      "short": "Chargers",
      "id": "24",
      "abbrev": "LAC",
-     "score": "10",
+     "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lac.png",
      "record": "1-8",
      "winner": false,
@@ -13794,9 +13795,9 @@
     "id": "401873069",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q2 0:11",
-    "period": 2,
-    "clock": "0:11",
+    "status": "Q3 14:54",
+    "period": 3,
+    "clock": "14:54",
     "completed": false,
     "away": {
      "name": "Jacksonville Jaguars",
@@ -13827,9 +13828,9 @@
     "id": "401873075",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q2 0:11",
-    "period": 2,
-    "clock": "0:11",
+    "status": "Q3 15:00",
+    "period": 3,
+    "clock": "15:00",
     "completed": false,
     "away": {
      "name": "Las Vegas Raiders",
@@ -14187,8 +14188,8 @@
     }
    }
   ],
-  "asOf": "2026-11-22T23:00:09.605Z",
-  "lastAttempt": "2026-11-22T23:00:09.605Z",
+  "asOf": "2026-11-22T23:15:21.952Z",
+  "lastAttempt": "2026-11-22T23:15:21.952Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14200,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T23:00:09.605Z",
-  "lastAttempt": "2026-11-22T23:00:09.605Z",
+  "asOf": "2026-11-22T23:15:21.952Z",
+  "lastAttempt": "2026-11-22T23:15:21.952Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,8 +14877,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T23:00:09.605Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-22T23:15:21.952Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15884,6 +15885,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Ukraine war spilling into NATO territory",
+    "src": "NPR",
+    "url": "https://www.npr.org/2026/11/22/nx-s1-6050236/ukraine-war-spilling-into-nato-territory",
+    "pub": "2026-11-22T22:40:22.000Z",
+    "sum": "The war between Russia and Ukraine once again creeps onto European territory – from attacks on ships to missiles in Poland and fresh allegations of Russian operations inside Denmark."
+   },
+   {
     "hd": "Trump says he wants \"permanent\" deal with Iran",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
@@ -15984,7 +15992,7 @@
    {
     "hd": "Lebanese villagers return to wrecked homes as the Israeli army pulls back",
     "src": "NPR",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORll3ZkNWTTRuZ19vOTViOVlJZXlXczJUa0ZOWmN6M3JSVVlQbmhhZ0FsTTFrQUE4VDhDbjV6cGNyTVNOSnZxTUF2Z1p2NmE0MmhweGlLelliRnY2RkhUalpwWTgybUdsYWljc200MmFoWEFlbF9JWUJGZXBlREdJdTg3Q1Etdw?oc=5",
+    "url": "https://www.npr.org/2026/11/22/nx-s1-6048710/lebanon-israel-army-conflict-homes",
     "pub": "2026-11-22T17:44:52.000Z",
     "sum": "In a pilot project in a village in southern Lebanon, Israeli forces have left and the Lebanese army moved it. But villagers who return find their houses wrecked."
    },
@@ -16085,20 +16093,9 @@
     "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE95V2lBM1hDaWY4eHByMlh4RnpLTkhIOVBtQnFXMHM3R0hfV2lxZEZSNTNBbEg5cHowV2VobnNxU3VnZzlTMU16alVwNjJ0XzBNNlRCVElvdEFkVkV0RFhSV3ZvV2FUQThMSzdqLXVYNDBIeWxmTHpjd3FwUncwME3SAYQBQVVfeXFMUGo3NGlSR1RUbFN2RGd1QkNpQUV3YlpOOGhNc2lvYWs1WVVEbmpJNjVBanY2Mk1LZWFvLWJCLVdYU0pqaFRLUGNHYi1wM2J0cGdqSkVUQkRlbGo4bEh3SENuQjRFUC1uSms0TDJCR19UU21VSEk3b2I0UmR5NVdWTjFIdjFS?oc=5",
     "pub": "2026-11-22T15:07:12.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Critics cry foul as Israel cranks up deportations of foreign activists in West Bank",
-    "src": "The Times of Israel",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbFN4dGV0NFJTc3BPWWRKMmZNMkJSblZGX0VqUkp6bzVMWWxjSEctOVl2SEkwTlRVbXkzTXZtaDh3UVJGd2NhaU9UMm53dlBuMGJPaXF5dTg1RHk1WTNtU3dST3hwSE5qWE5OZ21uNHRCNFNlLUpXc1pTaHZfVEtoM0dobFQwZW02NUhXMWJCQkwwbHFFZ29SZllvNmM0OVM3ZG1jVjVKZVBUV2xIeW5XdWRMdlDSAboBQVVfeXFMT1BGaGRqeE92cFpVaTd4TjQ4QjVMclRiR0V5eVNlZk9sUk1yRlpaX1paeHFwWUFzdldmSEpEMjlEclItMElHUnN3NkdWd2k5LS1ocDNBRENEWjNsYlNnV2Y4Y1V6TThiQmZwb1JRVW9Bejh3RGY5SGRnaGxlTlk1UWo4RW43WEJGWEpQcnU3WnJkNTBxOURYQlJxU25TRGVQMGxEcW94akE4bVY2SXZLQ2trSjlSbE8zU1ln?oc=5",
-    "pub": "2026-11-22T15:05:45.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16109,9 +16106,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-22T22:45:09.591Z",
-  "lastAttempt": "2026-11-22T22:45:09.591Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-22T23:15:21.952Z",
+  "lastAttempt": "2026-11-22T23:15:21.952Z",
   "lastError": null
  }
 }
