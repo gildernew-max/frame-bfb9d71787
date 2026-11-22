@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T05:51:52.025Z",
+ "generatedAt": "2026-11-22T06:00:10.168Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,8 +7319,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T05:51:52.025Z",
+  "at": "2026-11-22T06:00:10.168Z",
   "ran": [
+   "alerts",
+   "cfbScoreboard",
    "usTempGrid"
   ]
  },
@@ -14196,8 +14198,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T05:45:11.747Z",
-  "lastAttempt": "2026-11-22T05:45:11.747Z",
+  "asOf": "2026-11-22T06:00:10.168Z",
+  "lastAttempt": "2026-11-22T06:00:10.168Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14242,20 +14244,20 @@
    {
     "id": "401856872",
     "start": "2026-11-22T02:00Z",
-    "state": "in",
-    "status": "Q4 2:48",
+    "state": "post",
+    "status": "Final",
     "period": 4,
-    "clock": "2:48",
-    "completed": false,
+    "clock": "0:00",
+    "completed": true,
     "away": {
      "name": "Utah Utes",
      "short": "Utah",
      "id": "254",
      "abbrev": "UTAH",
-     "score": "31",
+     "score": "38",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
-     "record": "10-0",
-     "winner": false,
+     "record": "11-0",
+     "winner": true,
      "color": "#be0000",
      "rank": 2
     },
@@ -14266,7 +14268,7 @@
      "abbrev": "TCU",
      "score": "17",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
-     "record": "5-5",
+     "record": "5-6",
      "winner": false,
      "color": "#4d1979",
      "rank": null
@@ -14672,16 +14674,16 @@
     "id": "401860925",
     "start": "2026-11-22T02:30Z",
     "state": "in",
-    "status": "Q4 3:53",
+    "status": "Q4 1:44",
     "period": 4,
-    "clock": "3:53",
+    "clock": "1:44",
     "completed": false,
     "away": {
      "name": "San Diego State Aztecs",
      "short": "San Diego St",
      "id": "21",
      "abbrev": "SDSU",
-     "score": "13",
+     "score": "19",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/21.png",
      "record": "5-5",
      "winner": false,
@@ -14868,12 +14870,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-22T05:45:11.747Z",
-  "lastAttempt": "2026-11-22T05:45:11.747Z",
+  "asOf": "2026-11-22T06:00:10.168Z",
+  "lastAttempt": "2026-11-22T06:00:10.168Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T05:51:52.025Z",
+  "lastAttempt": "2026-11-22T06:00:10.168Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
