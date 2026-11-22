@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-22T11:00:11.095Z",
+ "generatedAt": "2026-11-22T11:15:15.306Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-22T11:00:11.095Z",
+  "at": "2026-11-22T11:15:15.306Z",
   "ran": [
    "alerts",
-   "nfl",
-   "rates",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14199,8 +14198,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-22T11:00:11.095Z",
-  "lastAttempt": "2026-11-22T11:00:11.095Z",
+  "asOf": "2026-11-22T11:15:15.306Z",
+  "lastAttempt": "2026-11-22T11:15:15.306Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,8 +14875,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-22T11:00:11.095Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-22T11:15:15.306Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15884,6 +15883,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "China’s Spies Set Sights on A.I. Chips Years Before Nvidia Scandal",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/21/world/asia/china-nvidia-spy-chips-state-security.html",
+    "pub": "2026-11-22T11:03:04.000Z",
+    "sum": "China’s espionage agency has been running a secret campaign to help the country’s companies acquire advanced A.I. chips and to gather intelligence on the sector, officials say."
+   },
+   {
     "hd": "Exclusive | Poland Nears Construction Deal With U.S. Consortium for $50 Billion Nuclear Plant",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORV9KbWp6SnZ2NF8zUzg5d3FucHFtSWZXa0FsaGF2SERCcnpwdzY5T3ZNZlhmTkhsRlhRWDFkcUw5ZjUwY1dlRVRZLXM5aEN4dDlWeTlPc1RXMGVoTnFDdEZWTHgxRVRnM1VVek9Ya1NfNlNXRjlXVGJFbm5nMVNfTWQ4QnowTTVwS0hKdXg2eFNVSkFwU3M2QnFaYUpCTmg1NHNGdC12LUtORU1pMnd2UkhVX1lnWW8?oc=5",
@@ -15966,13 +15972,6 @@
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPS2NDX2gya2JxN0FLNlFBSjdJcXNqczVsWGJrNHdGVHoxNEF6a2hrSnlKc2hkVC0wSGROWkMzcXgyN0YtaHdMX0k0U043RE5BSkRXVGtlQ3h1Ym9iVk9uaVFnV0YyZEw0a3ZjRWxvUkZ6NHNGVWJSc1dDcEU5aUtrODZ5YTRQMVQ5UTA2WHd5U0ZGUkhybGllQXNseGR0ZHl4dC1JdGtPa2FGT3MzNzhXdkxrSU9XcENkLUE?oc=5",
     "pub": "2026-11-22T06:28:30.000Z",
     "sum": "Poland also joined other European countries in expressing outrage over allegations of a thwarted plot linked to Moscow to kill a U.S.-Ukrainian rapper on Danish soil."
-   },
-   {
-    "hd": "China’s Spies Set Sights on A.I. Chips Years Before Nvidia Scandal",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/21/world/asia/china-nvidia-spy-chips-state-security.html",
-    "pub": "2026-11-22T04:28:43.000Z",
-    "sum": "China’s espionage agency has been running a secret campaign to help the country’s companies acquire advanced A.I. chips and to gather intelligence on the sector, officials say."
    },
    {
     "hd": "Myanmar's army-backed government calls ASEAN decision 'unfair and imbalanced'",
@@ -16110,8 +16109,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-22T10:45:14.927Z",
-  "lastAttempt": "2026-11-22T10:45:14.927Z",
+  "asOf": "2026-11-22T11:15:15.306Z",
+  "lastAttempt": "2026-11-22T11:15:15.306Z",
   "lastError": null
  }
 }
