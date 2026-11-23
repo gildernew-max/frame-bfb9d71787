@@ -134,46 +134,42 @@
 
   /* Detail */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;position:relative}
-  /* Hero: logo | name+rank+chips (weather is a full-width band below) */
-  .d-hero{flex:none;display:flex;align-items:center;gap:20px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair)}
-  .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;
-    border-left:4px solid var(--accent,var(--gold));padding-left:16px}
-  .d-hero-top{display:flex;align-items:baseline;gap:12px;min-width:0}
-  /* ~52px on the 1920 viewport (stage is 2×). */
-  .d-hero h2{margin:0;font:300 104px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    border-bottom:2px solid var(--accent,var(--gold));padding-bottom:8px}
+  /* Hero: logo (~360×150) | name+rank+chips | inline Aug–May weather table */
+  .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
+    min-height:300px;max-height:340px}
+  .d-hero-main{flex:0 1 560px;min-width:280px;max-width:34%;display:flex;flex-direction:column;justify-content:center;gap:6px;
+    border-left:4px solid var(--accent,var(--gold));padding-left:14px}
+  /* ~44px on the 1920 viewport when width is tight; may wrap to 2 lines. */
+  .d-hero h2{margin:0;font:300 88px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;min-width:0;
+    white-space:normal;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:2.3em;
+    border-bottom:2px solid var(--accent,var(--gold));padding-bottom:6px}
   .d-hero h2 .prog{color:var(--muted)}
-  .d-hero .rank-pill{flex:none;align-self:center}
-  .d-hero .tags{gap:8px}
+  .d-hero .rank-pill{flex:none;align-self:flex-start}
+  .d-hero .tags{gap:6px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
-  /* Full-width monthly weather band under the hero — room-readable at 1920×1080 (~220–260px on screen).
-     Stage is 2× viewport, so sizes below are stage coords (≈2× the named on-screen sizes). */
-  .wx-month-band{flex:none;width:100%;display:flex;flex-direction:column;justify-content:center;
-    padding:20px 24px 16px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0;
-    min-height:440px;max-height:520px;box-sizing:border-box}
-  .wx-month-band .sec-h{margin:0 0 12px;padding-bottom:8px;gap:12px}
-  .wx-month-band .sec-h span{font-size:28px}
+  /* Inline monthly weather — fills remaining hero width, height capped to the logo row. */
+  .wx-month-band{flex:1 1 900px;min-width:0;display:flex;flex-direction:column;justify-content:center;
+    padding:8px 12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);box-sizing:border-box}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
-  .wx-month-table th,.wx-month-table td{padding:6px 4px;text-align:center;vertical-align:middle;
+  .wx-month-table th,.wx-month-table td{padding:2px 3px;text-align:center;vertical-align:middle;
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-month-table thead th{font-size:56px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
-    border-bottom:1px solid var(--hair);padding-bottom:8px}
-  .wx-month-table thead th .wx-season{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-  .wx-month-table thead th .wx-season svg{width:72px;height:72px;color:var(--accent,var(--gold));flex:none}
-  .wx-month-table tbody th{text-align:left;font-size:44px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--dim);padding-left:4px;white-space:nowrap}
-  .wx-month-table tbody td{font:700 68px/1.05 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table thead th{font-size:38px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--hair);padding-bottom:4px}
+  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px}
+  .wx-month-table thead th .wx-season svg{width:22px;height:22px;color:var(--accent,var(--gold));flex:none}
+  .wx-month-table tbody th{text-align:left;font-size:28px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--dim);padding-left:2px;white-space:nowrap}
+  .wx-month-table tbody td{font:700 48px/1.05 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
   .wx-month-table tbody tr.wx-hi td{color:#E0A070}
   .wx-month-table tbody tr.wx-lo td{color:#7EB6E0}
   .wx-month-table tbody tr+tr th,.wx-month-table tbody tr+tr td{border-top:1px solid rgba(255,255,255,.04)}
-  .wx-month-cap{margin:10px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);letter-spacing:.04em;
+  .wx-month-cap{margin:4px 0 0;font-size:16px;font-weight:400;color:var(--dim);letter-spacing:.03em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .wx-normals-fallback{display:flex;flex-direction:column;gap:6px;padding:4px 0 0}
-  .wx-normals-fallback .line{grid-template-columns:80px minmax(0,1fr);gap:12px}
-  .wx-normals-fallback .lab{font-size:22px}
-  .wx-normals-fallback .txt{font-size:28px;-webkit-line-clamp:2;max-height:calc(2 * 1.2em)}
+  .wx-normals-fallback{display:flex;flex-direction:column;gap:4px;padding:2px 0 0}
+  .wx-normals-fallback .line{grid-template-columns:64px minmax(0,1fr);gap:8px}
+  .wx-normals-fallback .lab{font-size:20px}
+  .wx-normals-fallback .txt{font-size:24px;-webkit-line-clamp:1;max-height:1.2em}
   .card .line.wx-line .lab{color:var(--gold)}
   .d-page-ind{position:absolute;right:8px;bottom:0;z-index:2;font-size:var(--t1);font-weight:500;
     letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:6px 12px;border-radius:6px;
@@ -923,19 +919,27 @@
     if(wm.source||wm.station){
       cap='<p class="wx-month-cap">'+esc([wm.source,wm.station].filter(Boolean).join(' \u00b7 '))+'</p>';
     }
-    return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
+    return '<aside class="wx-month-band" aria-label="Weather">'+
       '<table class="wx-month-table"><thead><tr><th scope="col"></th>'+head+'</tr></thead><tbody>'+
       '<tr class="wx-hi"><th scope="row">High</th>'+rowH+'</tr>'+
       '<tr class="wx-lo"><th scope="row">Low</th>'+rowL+'</tr>'+
       '<tr class="wx-rain"><th scope="row">Rain</th>'+rowR+'</tr>'+
       '<tr class="wx-snow"><th scope="row">Snow</th>'+rowS+'</tr>'+
-      '</tbody></table>'+cap+'</section>';
+      '</tbody></table>'+cap+'</aside>';
   }
   function weatherFallbackHtml(rows){
     var norms=weatherNormals(rows);
     if(!norms.length)return '';
-    return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
-      '<div class="wx-normals-fallback">'+dLines(norms)+'</div></section>';
+    return '<aside class="wx-month-band" aria-label="Weather">'+
+      '<div class="wx-normals-fallback">'+dLines(norms)+'</div></aside>';
+  }
+  function heroHtml(s, wxBand){
+    return '<div class="d-hero">'+logoHtml(s,'lg')+
+      '<div class="d-hero-main">'+
+        '<h2>'+nameHtml(s)+'</h2>'+
+        rankPill(s,true)+
+        '<div class="tags">'+tagsHtml(s,true)+'</div>'+
+      '</div>'+(wxBand||'')+'</div>';
   }
   function maristHtml(m){
     if(!m)return '';
@@ -968,8 +972,8 @@
     var page, ind='', usePages;
     accent=readableAccent(s.accent||'#C9A86A');
     // Page 1: Snapshot, On the board, Why/Why not, What students like/don't
-    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Deadlines, Status history
-    // Weather is a full-width band under the hero on page 1 (no live Open-Meteo fetch).
+    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Deadlines, Marist, Status history
+    // Weather sits in the hero row (logo | name | table) on both pages.
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
@@ -1008,8 +1012,8 @@
     }
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
-    // Big weather band forces a split whenever page-2 content exists.
-    usePages=page2.length>0&&(!!wxBand||page1.length>0);
+    // Keep 2-page split when page-2 content exists (inline weather reclaims height for body).
+    usePages=page2.length>0&&page1.length>0;
     state.detailPages=usePages?2:1;
     if(state.detailPage<1||state.detailPage>state.detailPages)state.detailPage=1;
     page=state.detailPage;
@@ -1020,15 +1024,10 @@
         :('\u25c0 Page <b>2</b> of 2'))+'</div>';
     }
     if(page===1||!usePages){
-      $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
-        '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
-        '<div class="tags">'+tagsHtml(s,true)+'</div></div></div>'+
-        (wxBand||'')+
+      $('detail').innerHTML=heroHtml(s,wxBand)+
         (page1.length?'<div class="d-body">'+page1.join('')+'</div>':'')+ind;
     }else{
-      $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
-        '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
-        '<div class="tags">'+tagsHtml(s,true)+'</div></div></div>'+
+      $('detail').innerHTML=heroHtml(s,wxBand)+
         (page2.length?'<div class="d-body page-fit-2">'+page2.join('')+'</div>':'')+ind;
     }
     layoutDetail();
