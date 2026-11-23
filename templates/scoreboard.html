@@ -132,6 +132,11 @@
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .eyebrow{margin-bottom:6px}
+  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .why-bullets li{position:relative;padding:0 0 0 22px;font-size:var(--line-size);line-height:1.32;font-weight:300;color:#D8D2C8;
+    overflow-wrap:break-word;word-break:normal}
+  .why-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .why-bullets li b{font-weight:600;color:var(--ink);margin-right:8px}
   .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
   .tl li{position:relative;display:grid;grid-template-columns:140px minmax(0,1fr);gap:10px;padding:0 0 0 22px;font-size:var(--line-size);line-height:1.28}
   .tl li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold)}
@@ -301,7 +306,7 @@
   function detailHasContent(d){
     if(!d)return false;
     if(d.history&&d.history.length)return true;
-    if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not)return true;
+    if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
@@ -327,8 +332,9 @@
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
     out.weather=cleanLabeled(d.weather);
-    out.why_points=cleanLabeled(d.why_points);
-    out.why_not_points=cleanLabeled(d.why_not_points);
+    out.why_points=cleanLabeled(d.why_points,8);
+    out.why_not_points=cleanLabeled(d.why_not_points,8);
+    out.scattergram_url=str(d.scattergram_url)||null;
     return out;
   }
   function cleanLocation(loc){
@@ -602,12 +608,20 @@
     return h+'</div>';
   }
   function whyBody(points, prose){
-    if(points&&points.length)return dLines(points);
+    // Prefer counselor point lists; when they exist, ignore the old one-line why/why_not strings.
+    if(points&&points.length){
+      var h='<ul class="why-bullets">', i, lab, txt;
+      for(i=0;i<points.length;i++){
+        lab=points[i].label; txt=points[i].text;
+        h+='<li>'+(lab?'<b>'+esc(lab)+'</b> ':'')+esc(txt)+'</li>';
+      }
+      return h+'</ul>';
+    }
     if(prose)return '<p class="prose">'+esc(prose)+'</p>';
     return '';
   }
   function renderDetail(s){
-    var d=s.detail||{}, parts=[], i, snap=[], li='', whyL, whyR, weatherBody;
+    var d=s.detail||{}, parts=[], i, snap=[], li='', whyL, whyR, weatherBody, acad;
     // Fixed order: Snapshot → On the board → About → Academics → Internships → Alumni →
     // Facts → Housing → Costs → Deadlines → Weather → Why/Why not → Status history.
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
@@ -616,7 +630,9 @@
     if(snap.length)parts.push(dSec('next','Snapshot',dLines(snap)));
     if(s.lines&&s.lines.length)parts.push(dSec('board','On the board',dLines(s.lines)));
     if(d.about&&d.about.length)parts.push(dSec('','About',dLines(d.about)));
-    if(d.academics&&d.academics.length)parts.push(dSec('','Academics',dLines(d.academics)));
+    acad=(d.academics&&d.academics.length)?d.academics.slice():[];
+    if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
+    if(acad.length)parts.push(dSec('','Academics',dLines(acad)));
     if(d.internships&&d.internships.length)parts.push(dSec('','Internships',dLines(d.internships)));
     if(d.alumni&&d.alumni.length)parts.push(dSec('','Alumni',dLines(d.alumni)));
     if(d.facts&&d.facts.length)parts.push(dSec('','Facts',dLines(d.facts)));
