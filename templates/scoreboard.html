@@ -192,6 +192,47 @@
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
     padding:8px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
+  .d-card{cursor:pointer;outline:none;transition:box-shadow .12s ease,border-color .12s ease}
+  .d-card.d-card-focus,.d-card:focus{border-color:var(--accent,var(--gold));
+    box-shadow:0 0 0 6px rgba(201,168,106,.65),0 0 0 2px var(--accent,var(--gold)) inset}
+  .why-pair .why-col.d-card{padding:6px 8px;border:1px solid transparent;border-radius:6px;background:transparent}
+  .why-pair .why-col.d-card.d-card-focus,.why-pair .why-col.d-card:focus{
+    border-color:var(--accent,var(--gold));background:rgba(255,255,255,.04);
+    box-shadow:0 0 0 6px rgba(201,168,106,.65)}
+
+  /* Detail card popup — ~90% overlay, ~2× body type */
+  #d-pop{position:absolute;left:0;top:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;
+    --pop-line:48px;--pop-lab:36px;--pop-title:56px}
+  #d-pop[hidden]{display:none!important}
+  .d-pop-backdrop{position:absolute;left:0;top:0;right:0;bottom:0;background:rgba(0,0,0,.78)}
+  .d-pop-panel{position:relative;z-index:1;width:90%;height:90%;box-sizing:border-box;display:flex;flex-direction:column;
+    gap:20px;padding:36px 44px 32px;border:1px solid var(--hair);border-radius:14px;
+    background:linear-gradient(180deg,#16181F 0%,#0E1014 100%);box-shadow:0 24px 80px rgba(0,0,0,.55);min-height:0;overflow:hidden;
+    border-top:3px solid var(--accent,var(--gold))}
+  .d-pop-h{flex:none;display:flex;align-items:center;gap:14px;min-width:0;padding-bottom:12px;
+    border-bottom:2px solid var(--accent,var(--gold))}
+  .d-pop-h::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--gold))}
+  .d-pop-h span{font-size:var(--pop-title);font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent,var(--gold));line-height:1.15;overflow-wrap:break-word}
+  .d-pop-h em{font-style:normal;color:var(--accent,var(--gold));margin-left:10px;opacity:.85;font-weight:600}
+  .d-pop-body{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding-right:8px}
+  .d-pop-body .d-lines{gap:14px}
+  .d-pop-body .line{gap:18px;grid-template-columns:minmax(160px,32%) minmax(0,1fr)}
+  .d-pop-body .lab{font-size:var(--pop-lab);letter-spacing:.08em;-webkit-line-clamp:4;max-height:none;overflow:visible}
+  .d-pop-body .txt{font-size:var(--pop-line);line-height:1.35;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  .d-pop-body .prose{font-size:var(--pop-line);line-height:1.4;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  .d-pop-body .why-bullets{gap:12px}
+  .d-pop-body .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px}
+  .d-pop-body .why-bullets li::before{width:8px;height:8px;top:.6em}
+  .d-pop-body .tl{gap:12px}
+  .d-pop-body .tl li{font-size:var(--pop-line);grid-template-columns:160px minmax(0,1fr);gap:16px;padding-left:24px}
+  .d-pop-body .tl .d{font-size:var(--pop-lab)}
+  .d-pop-body .tl .e{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  .d-pop-body .marist-year,.d-pop-body .marist-names,.d-pop-body .marist-majors,.d-pop-body .marist-empty{
+    font-size:var(--pop-line);line-height:1.35}
+  .d-pop-body .marist-note{font-size:var(--pop-lab)}
+  .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+    text-align:center;padding-top:8px}
   #detail .lab{font-size:var(--lab-size);letter-spacing:.06em;overflow-wrap:break-word;word-break:break-word;
     white-space:normal;-webkit-line-clamp:3;max-height:calc(3 * 1.25em);hyphens:auto}
   #detail .txt{font-size:var(--line-size);min-width:0}
@@ -271,6 +312,14 @@
   </div>
   <div class="cols" id="cols"></div>
   <div id="detail" hidden></div>
+  <div id="d-pop" hidden>
+    <div class="d-pop-backdrop" aria-hidden="true"></div>
+    <div class="d-pop-panel" role="dialog" aria-modal="true">
+      <div class="d-pop-h"><span id="d-pop-title"></span></div>
+      <div class="d-pop-body" id="d-pop-body"></div>
+      <div class="d-pop-hint">▲▼ Scroll · OK / Back Close</div>
+    </div>
+  </div>
   <div id="roi" hidden></div>
   <div class="also" id="also" hidden></div>
   <div class="foot"><div class="hints" id="hints"></div><div id="foot-r"></div></div>
@@ -302,7 +351,9 @@
   ];
   var DATE_RE=/^\d{4}-\d{2}-\d{2}$/;
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
-  var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board'};
+  // cardFocus: index into detail .d-card nodes; popupOpen: detail section overlay.
+  var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
+    cardFocus:0,popupOpen:false};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -568,10 +619,12 @@
     };
   }
 
-  function cleanCardLines(raw){
+  function cleanCardLines(raw, lim){
     // Always reserve a slot for Weather so GT/Rice/UGA-style long cards never drop it.
+    // lim null/0 = keep every line (for popups); otherwise cap for the board card.
     if(!Array.isArray(raw))return [];
-    var others=[], weather=null, i, lim=10, row, tone;
+    var others=[], weather=null, i, row, tone, out;
+    if(lim==null||lim<=0)lim=0;
     for(i=0;i<raw.length;i++){
       var x=raw[i];
       if(!x||typeof x!=='object'||!str(x.text))continue;
@@ -580,7 +633,11 @@
       if(/^weather$/i.test(row.label)){weather=row;continue;}
       others.push(row);
     }
-    var out=others.slice(0, weather?lim-1:lim);
+    if(!lim){
+      if(weather)others.push(weather);
+      return others;
+    }
+    out=others.slice(0, weather?lim-1:lim);
     if(weather)out.push(weather);
     return out;
   }
@@ -603,7 +660,7 @@
       if(!s||typeof s!=='object')continue;
       var status=s.status==null?'unconfirmed':s.status;
       if(!str(s.school)||status==='unconfirmed'&&s.status!=null||!STATUS[status])continue;
-      var step=str(s.next_step);
+      var stepFull=str(s.next_step), step=stepFull;
       if(step.length>60)step=step.slice(0,59)+'\u2026';
       out.push({
         id:String(s.id!=null&&s.id!==''?s.id:'#'+i),
@@ -616,13 +673,15 @@
         status:status,
         expected:typeof s.decision_expected==='string'&&DATE_RE.test(s.decision_expected)?s.decision_expected:null,
         step:step,
+        stepFull:stepFull,
         location:cleanLocation(s.location),
         logo:cleanLogo(s.logo),
         accent:cleanAccent(s.accent),
-        lines:cleanCardLines(s.card_lines),
+        lines:cleanCardLines(s.card_lines, 10),
+        linesAll:cleanCardLines(s.card_lines, 0),
         detail:cleanDetail(s.detail)
       });
-      out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0;
+      out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0;
     }
     out.sort(function(a,b){
       var ga=STATUS[a.status].group, gb=STATUS[b.status].group;
@@ -780,7 +839,8 @@
   function setHints(){
     var h;
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
-    else if(state.view==='detail')h='<span><b>Back</b>Board</span>';
+    else if(state.view==='detail'&&state.popupOpen)h='<span><b>OK</b>Close</span><span><b>Back</b>Close</span>';
+    else if(state.view==='detail')h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Cards</span><span><b>OK</b>Expand</span><span><b>Back</b>Board</span>';
     else if(state.chipFocus)h='<span><b>OK</b>ROI Ladder</span><span><b>\u25bc</b>Schools</span><span><b>Back</b>Daybreak</span>';
     else h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+(state.roi?'<span><b>\u25b2</b>ROI</span>':'')+'<span><b>Back</b>Daybreak</span>';
     $('hints').innerHTML=h;
@@ -816,9 +876,96 @@
     paintFocus();
   }
 
-  function dSec(cls,label,body){
+  function dSec(cls,label,body,ckey){
     if(!body)return '';
-    return '<section class="d-sec'+(cls?' '+cls:'')+'"><div class="sec-h"><span>'+label+'</span></div>'+body+'</section>';
+    return '<section class="d-sec d-card'+(cls?' '+cls:'')+'" tabindex="-1" data-card="1" data-ckey="'+esc(ckey||'')+'">'+
+      '<div class="sec-h"><span>'+label+'</span></div>'+body+'</section>';
+  }
+  function whyColHtml(title, body, ckey){
+    return '<div class="why-col d-card" tabindex="-1" data-card="1" data-ckey="'+esc(ckey||'')+'">'+
+      '<div class="sec-h"><span>'+title+'</span></div>'+(body||'<p class="prose">\u2014</p>')+'</div>';
+  }
+  function historyListHtml(rows){
+    if(!rows||!rows.length)return '';
+    var li='', i;
+    for(i=0;i<rows.length;i++){
+      li+='<li><span class="d">'+esc(fmtDate(rows[i].date,true))+'</span><span class="e">'+esc(rows[i].event)+'</span></li>';
+    }
+    return '<ul class="tl">'+li+'</ul>';
+  }
+  function maristBodyHtml(m){
+    if(!m)return '';
+    var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
+    var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
+    var body='', names='', i, cols;
+    if(empty){
+      body='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
+    }else{
+      if(c27.length){
+        cols=c27.length>4?' cols-2':'';
+        names='';
+        for(i=0;i<c27.length;i++){
+          names+='<div>'+esc(c27[i].name)+(c27[i].major?' \u2014 '+esc(c27[i].major):'')+'</div>';
+        }
+        body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
+      }
+      body+='<div><div class="marist-year"><b>2026:</b>'+esc(String(c26.count||0))+' students</div>'+
+        (c26.majors&&c26.majors.length?'<div class="marist-majors">'+esc(c26.majors.join(' \u00b7 '))+'</div>':'')+'</div>';
+      body+='<div><div class="marist-year"><b>2025:</b>'+esc(String(c25.count||0))+' students</div>'+
+        (c25.majors&&c25.majors.length?'<div class="marist-majors">'+esc(c25.majors.join(' \u00b7 '))+'</div>':'')+'</div>';
+    }
+    if(m.note)body+='<p class="marist-note">'+esc(m.note)+(m.source?' \u00b7 '+esc(m.source):'')+'</p>';
+    else if(m.source)body+='<p class="marist-note">'+esc(m.source)+'</p>';
+    return '<div class="marist-body">'+body+'</div>';
+  }
+  function popupContentForKey(s, key){
+    var d=s&&s.detail?s.detail:{}, snap=[], acad, title='', body='', next;
+    if(key==='snapshot'){
+      title='Snapshot';
+      next=s.stepFull||s.step;
+      if(next)snap.push({label:'Next',text:next,tone:''});
+      if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
+      if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
+      body=dLines(snap);
+    }else if(key==='board'){
+      title='On the board';
+      body=dLines((s.linesAll&&s.linesAll.length)?s.linesAll:(s.lines||[]));
+    }else if(key==='why'){
+      title='Why'; body=whyBody(d.why_points,d.why)||'<p class="prose">\u2014</p>';
+    }else if(key==='why_not'){
+      title='Why not'; body=whyBody(d.why_not_points,d.why_not)||'<p class="prose">\u2014</p>';
+    }else if(key==='students_like'){
+      title='Students like'; body=whyBody(d.student_likes,null)||'<p class="prose">\u2014</p>';
+    }else if(key==='students_dont'){
+      title='Students don\u2019t'; body=whyBody(d.student_dislikes,null)||'<p class="prose">\u2014</p>';
+    }else if(key==='about'){
+      title='About'; body=dLines(d.about||[]);
+    }else if(key==='academics'){
+      title='Academics';
+      acad=(d.academics&&d.academics.length)?d.academics.slice():[];
+      if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
+      body=dLines(acad);
+    }else if(key==='internships'){
+      title='Internships'; body=dLines(d.internships||[]);
+    }else if(key==='alumni'){
+      title='Alumni'; body=dLines(d.alumni||[]);
+    }else if(key==='facts'){
+      title='Facts'; body=dLines(d.facts||[]);
+    }else if(key==='housing'){
+      title='Housing'; body=dLines(d.housing||[]);
+    }else if(key==='costs'){
+      title='Costs'; body=dLines(d.costs||[]);
+    }else if(key==='deadlines'){
+      title='Deadlines'; body=dLines(d.deadlines||[]);
+    }else if(key==='marist'){
+      title='Marist classmates'; body=maristBodyHtml(d.marist_classmates);
+    }else if(key==='take'){
+      title='Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':'');
+      body=d.counselor_take?'<p class="prose">'+esc(d.counselor_take)+'</p>':'';
+    }else if(key==='history'){
+      title='Status history'; body=historyListHtml(d.history||[]);
+    }
+    return {titleHtml:'<span>'+title+'</span>', bodyHtml:body||''};
   }
   function dLines(rows){
     if(!rows||!rows.length)return '';
@@ -969,7 +1116,7 @@
     }
     if(m.note)body+='<p class="marist-note">'+esc(m.note)+(m.source?' \u00b7 '+esc(m.source):'')+'</p>';
     else if(m.source)body+='<p class="marist-note">'+esc(m.source)+'</p>';
-    return dSec('marist','Marist classmates','<div class="marist-body">'+body+'</div>');
+    return dSec('marist','Marist classmates','<div class="marist-body">'+body+'</div>','marist');
   }
   function trimRows(rows, limit){
     if(!rows||!rows.length)return [];
@@ -990,44 +1137,134 @@
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
-    if(snap.length)secs.push(dSec('next','Snapshot',dLines(snap)));
-    if(s.lines&&s.lines.length)secs.push(dSec('board','On the board',dLines(trimRows(s.lines, listN))));
+    if(snap.length)secs.push(dSec('next','Snapshot',dLines(snap),'snapshot'));
+    if(s.lines&&s.lines.length)secs.push(dSec('board','On the board',dLines(trimRows(s.lines, listN)),'board'));
     whyL=whyBodyLimited(d.why_points,d.why,whyN);
     whyR=whyBodyLimited(d.why_not_points,d.why_not,whyN);
     if(whyL||whyR){
       secs.push('<section class="d-sec why-pair"><div class="why-cols">'+
-        '<div class="why-col"><div class="sec-h"><span>Why</span></div>'+(whyL||'<p class="prose">\u2014</p>')+'</div>'+
-        '<div class="why-col"><div class="sec-h"><span>Why not</span></div>'+(whyR||'<p class="prose">\u2014</p>')+'</div>'+
+        whyColHtml('Why', whyL, 'why')+whyColHtml('Why not', whyR, 'why_not')+
         '</div></section>');
     }
     var like=whyBodyLimited(d.student_likes,null,whyN), dislike=whyBodyLimited(d.student_dislikes,null,whyN);
     if(like||dislike){
       secs.push('<section class="d-sec why-pair"><div class="why-cols">'+
-        '<div class="why-col"><div class="sec-h"><span>Students like</span></div>'+(like||'<p class="prose">\u2014</p>')+'</div>'+
-        '<div class="why-col"><div class="sec-h"><span>Students don\u2019t</span></div>'+(dislike||'<p class="prose">\u2014</p>')+'</div>'+
+        whyColHtml('Students like', like, 'students_like')+whyColHtml('Students don\u2019t', dislike, 'students_dont')+
         '</div></section>');
     }
-    if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN))));
+    if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-    if(acad.length)secs.push(dSec('','Academics',dLines(trimRows(acad, listN))));
-    if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN))));
-    if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN))));
-    if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN))));
-    if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN))));
-    if(d.costs&&d.costs.length)secs.push(dSec('','Costs',dLines(trimRows(d.costs, listN))));
-    if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN))));
+    if(acad.length)secs.push(dSec('','Academics',dLines(trimRows(acad, listN)),'academics'));
+    if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
+    if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
+    if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
+    if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
+    if(d.costs&&d.costs.length)secs.push(dSec('','Costs',dLines(trimRows(d.costs, listN)),'costs'));
+    if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN)),'deadlines'));
     if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN));
-    if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
+    if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>','take'));
     if(d.history&&d.history.length&&histN>0){
       li='';
       for(i=0;i<d.history.length&&i<histN;i++){
         li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
       }
       if(d.history.length>histN)li+='<li><span class="d"></span><span class="e">\u2026</span></li>';
-      secs.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
+      secs.push(dSec('','Status history','<ul class="tl">'+li+'</ul>','history'));
     }
     return secs;
+  }
+  function detailCards(){
+    var root=$('detail');
+    if(!root)return [];
+    return root.querySelectorAll('.d-card');
+  }
+  function paintCardFocus(){
+    var cards=detailCards(), i, el;
+    for(i=0;i<cards.length;i++)cards[i].classList.remove('d-card-focus');
+    if(state.view!=='detail'||!cards.length)return;
+    if(state.cardFocus<0||state.cardFocus>=cards.length)state.cardFocus=0;
+    el=cards[state.cardFocus];
+    if(el){
+      el.classList.add('d-card-focus');
+      try{el.focus();}catch(_){}
+    }
+  }
+  function moveCardFocus(dir){
+    var cards=detailCards(), i, j, cur, r, cx, cy, x, y, dx, dy, ok, primary, secondary, score, best, bestScore;
+    if(!cards.length)return;
+    i=state.cardFocus|0;
+    if(i<0||i>=cards.length){state.cardFocus=0;paintCardFocus();return;}
+    cur=cards[i].getBoundingClientRect();
+    cx=cur.left+cur.width/2; cy=cur.top+cur.height/2;
+    best=-1; bestScore=1e15;
+    for(j=0;j<cards.length;j++){
+      if(j===i)continue;
+      r=cards[j].getBoundingClientRect();
+      x=r.left+r.width/2; y=r.top+r.height/2;
+      dx=x-cx; dy=y-cy; ok=false;
+      if(dir==='right'&&dx>10)ok=true;
+      else if(dir==='left'&&dx<-10)ok=true;
+      else if(dir==='down'&&dy>10)ok=true;
+      else if(dir==='up'&&dy<-10)ok=true;
+      if(!ok)continue;
+      primary=(dir==='left'||dir==='right')?Math.abs(dx):Math.abs(dy);
+      secondary=(dir==='left'||dir==='right')?Math.abs(dy):Math.abs(dx);
+      score=primary+secondary*2.2;
+      if(score<bestScore){bestScore=score;best=j;}
+    }
+    if(best>=0){state.cardFocus=best;paintCardFocus();}
+  }
+  function layoutPopup(){
+    var pop=$('d-pop'), body=$('d-pop-body'), sizes, i;
+    if(!pop||!body||pop.hidden)return;
+    // ~44px on the 1920 viewport (stage is 2×) down to ~22px; scroll if still too long.
+    sizes=[88,80,72,64,56,52,48,44];
+    for(i=0;i<sizes.length;i++){
+      pop.style.setProperty('--pop-line', sizes[i]+'px');
+      pop.style.setProperty('--pop-lab', Math.max(28, Math.round(sizes[i]*0.72))+'px');
+      pop.style.setProperty('--pop-title', Math.max(40, Math.round(sizes[i]*1.2))+'px');
+      if(body.scrollHeight<=body.clientHeight+8)return;
+    }
+  }
+  function scrollPopup(dir){
+    var body=$('d-pop-body'), step;
+    if(!body)return;
+    step=Math.max(48, Math.round(body.clientHeight*0.25));
+    body.scrollTop=body.scrollTop+(dir==='down'?step:-step);
+  }
+  function openCardPopup(card){
+    var pop=$('d-pop'), head, body=$('d-pop-body'), s, key, content;
+    if(!pop||!card)return;
+    s=focusedSchool();
+    key=card.getAttribute('data-ckey')||'';
+    content=(s&&key)?popupContentForKey(s, key):null;
+    head=pop.querySelector('.d-pop-h');
+    if(head)head.innerHTML=(content&&content.titleHtml)||'<span>Details</span>';
+    if(body){
+      body.innerHTML=(content&&content.bodyHtml)||'';
+      body.scrollTop=0;
+    }
+    pop.hidden=false;
+    pop.style.setProperty('--accent', ($('detail')&&$('detail').style.getPropertyValue('--accent'))||'');
+    state.popupOpen=true;
+    layoutPopup();
+    setTimeout(layoutPopup, 0);
+    setHints();
+  }
+  function closeCardPopup(){
+    var pop=$('d-pop'), body=$('d-pop-body');
+    if(pop)pop.hidden=true;
+    if(body)body.innerHTML='';
+    state.popupOpen=false;
+    paintCardFocus();
+    setHints();
+  }
+  function openFocusedCardPopup(){
+    var cards=detailCards();
+    if(!cards.length)return;
+    if(state.cardFocus<0||state.cardFocus>=cards.length)state.cardFocus=0;
+    openCardPopup(cards[state.cardFocus]);
   }
   function renderDetail(s){
     var d=s.detail||{}, accent, wxBand='', secs, trim, steps, si;
@@ -1037,6 +1274,8 @@
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
     state.detailPages=1;
     state.detailPage=1;
+    state.cardFocus=0;
+    closeCardPopup();
     $('detail').style.setProperty('--accent', accent);
     // Prefer full content; if it won't fit at ≥18px, shorten Status history / Facts first, then lists.
     trim={hist:5, facts:6, list:8, why:5, marist:6};
@@ -1053,7 +1292,8 @@
       $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
       if(layoutDetail())break;
     }
-    setTimeout(function(){layoutDetail();}, 0);
+    setTimeout(function(){layoutDetail();paintCardFocus();}, 0);
+    paintCardFocus();
     setHints();
   }
   function detailBodyOverflows(){
@@ -1156,10 +1396,10 @@
   function showDetail(on){
     var s=on?focusedSchool():null;
     if(on&&!(s&&s.hasDetail))return;
-    if(on){state.chipFocus=false;state.view='detail';state.detailPage=1;}
-    else{state.view='board';state.detailPage=1;state.detailPages=1;}
+    if(on){state.chipFocus=false;state.view='detail';state.detailPage=1;state.cardFocus=0;}
+    else{state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();}
     state.detail=s?s.id:null;
-    if(s)renderDetail(s);else $('detail').innerHTML='';
+    if(s)renderDetail(s);else{$('detail').innerHTML='';closeCardPopup();}
     $('detail').hidden=!s;
     $('cols').hidden=!!s;
     if($('roi'))$('roi').hidden=true;
@@ -1199,7 +1439,9 @@
     }
   }
   function blank(){
-    state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board'};
+    state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
+      cardFocus:0,popupOpen:false};
+    closeCardPopup();
     $('stage').hidden=true;
     $('cols').innerHTML='';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
     if($('roi')){$('roi').innerHTML='';$('roi').hidden=true;}
@@ -1252,6 +1494,15 @@
     if(!state.data)return;
     var code=e.keyCode||e.which;
     var isBack=code===10009||code===27||code===8||e.key==='Escape'||e.key==='Backspace'||e.key==='XF86Back'||e.key==='GoBack';
+    var dir;
+    // Detail popup: Up/Down scroll; Back / Esc / Enter closes; arrows do not move focus underneath.
+    if(state.view==='detail'&&state.popupOpen){
+      e.preventDefault();
+      if(isBack||code===13||e.key==='Enter'){closeCardPopup();return;}
+      if(code===38){scrollPopup('up');return;}
+      if(code===40){scrollPopup('down');return;}
+      return;
+    }
     if(isBack){
       e.preventDefault();
       if(state.view==='roi'){showRoi(false);return;}
@@ -1260,8 +1511,9 @@
     }
     if(state.view==='roi')return;
     if(state.view==='detail'){
-      // Single-screen detail: arrows are no-ops. Back already handled above.
-      if(code===37||code===38||code===39||code===40)e.preventDefault();
+      if(code===13||e.key==='Enter'){e.preventDefault();openFocusedCardPopup();return;}
+      dir=code===37?'left':code===39?'right':code===38?'up':code===40?'down':'';
+      if(dir){e.preventDefault();moveCardFocus(dir);}
       return;
     }
     if(code===13||e.key==='Enter'){
@@ -1270,15 +1522,32 @@
       else showDetail(true);
       return;
     }
-    var dir=code===37?'left':code===39?'right':code===38?'up':code===40?'down':'';
+    dir=code===37?'left':code===39?'right':code===38?'up':code===40?'down':'';
     if(dir){e.preventDefault();move(dir);}
   });
   document.addEventListener('click',function(e){
-    var chip=e.target.closest?e.target.closest('#roi-chip'):null;
+    var chip, el, card, pop, cards, i;
+    // Popup open: any click on the overlay (backdrop or panel) closes it.
+    if(state.popupOpen){
+      pop=$('d-pop');
+      if(pop&&pop.contains(e.target)){e.preventDefault();closeCardPopup();return;}
+    }
+    chip=e.target.closest?e.target.closest('#roi-chip'):null;
     if(chip&&state.roi&&state.view==='board'){
       e.preventDefault();state.chipFocus=true;paintFocus();showRoi(true);return;
     }
-    var el=e.target.closest?e.target.closest('.card'):null;
+    if(state.view==='detail'){
+      card=e.target.closest?e.target.closest('.d-card'):null;
+      if(card&&$('detail')&&$('detail').contains(card)){
+        e.preventDefault();
+        cards=detailCards();
+        for(i=0;i<cards.length;i++)if(cards[i]===card){state.cardFocus=i;break;}
+        paintCardFocus();
+        openCardPopup(card);
+        return;
+      }
+    }
+    el=e.target.closest?e.target.closest('.card'):null;
     if(!el||state.view!=='board')return;
     state.chipFocus=false;
     state.focus={col:+el.getAttribute('data-c'),idx:+el.getAttribute('data-i')};
