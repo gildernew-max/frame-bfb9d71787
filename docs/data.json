@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T18:30:11.759Z",
+ "generatedAt": "2026-11-23T18:45:21.517Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 64,
-     "i": "cloud",
-     "cond": "Mostly Cloudy",
-     "windMph": 13,
+     "temp": 66,
+     "i": "sun",
+     "cond": "Mostly clear",
+     "windMph": 11,
      "windDir": "NW",
-     "observed": "2026-11-23T17:30:00+00:00"
+     "observed": "2026-11-23T13:45"
     },
     "today": {
-     "h": 70,
-     "l": 48,
-     "sunrise": "07:16",
-     "sunset": "17:31"
+     "h": 67,
+     "l": 51,
+     "sunrise": "07:17",
+     "sunset": "17:30"
     },
     "forecast": [
      {
       "date": "2026-11-24",
       "d": "Tue",
-      "i": "partly",
-      "text": "Partly Sunny",
-      "h": 64,
-      "l": 44
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 58,
+      "l": 47,
+      "pop": 10
      },
      {
       "date": "2026-11-25",
       "d": "Wed",
       "i": "rain",
-      "text": "Rain Showers Likely",
-      "h": 54,
-      "l": 45
+      "text": "Drizzle",
+      "h": 49,
+      "l": 44,
+      "pop": 73
      },
      {
       "date": "2026-11-26",
       "d": "Thu",
       "i": "rain",
-      "text": "Rain Showers",
+      "text": "Drizzle",
+      "h": 50,
+      "l": 41,
+      "pop": 73
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 67,
+      "l": 51,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 58,
-      "l": 38
+      "l": 47,
+      "pop": 10
+     },
+     {
+      "date": "2026-11-25",
+      "d": "Wed",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 49,
+      "l": 44,
+      "pop": 73
+     },
+     {
+      "date": "2026-11-26",
+      "d": "Thu",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 50,
+      "l": 41,
+      "pop": 73
+     },
+     {
+      "date": "2026-11-27",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 51,
+      "l": 39,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-28",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 58,
+      "l": 44,
+      "pop": 2
+     },
+     {
+      "date": "2026-11-29",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 47,
+      "pop": 10
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-23T14:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 66,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T15:00",
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 67,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T16:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 66,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T17:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 64,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T18:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 61,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T19:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 60,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T20:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 58,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T21:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 55,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-23T22:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 53,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T23:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 52,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-24T00:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 51,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-24T01:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 49,
+      "pop": 0
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 28,
-     "i": "sun",
-     "cond": "Clear",
-     "windMph": 13,
-     "windDir": "WNW",
-     "observed": "2026-11-23T17:30:00+00:00"
+     "temp": 30,
+     "i": "partly",
+     "cond": "Partly cloudy",
+     "windMph": 9,
+     "windDir": "NW",
+     "observed": "2026-11-23T12:45"
     },
     "today": {
-     "h": 32,
-     "l": 17,
-     "sunrise": "07:19",
-     "sunset": "16:38"
+     "h": 30,
+     "l": 23,
+     "sunrise": "07:20",
+     "sunset": "16:36"
     },
     "forecast": [
      {
       "date": "2026-11-24",
       "d": "Tue",
       "i": "cloud",
-      "text": "Mostly Cloudy",
+      "text": "Overcast",
       "h": 34,
-      "l": 26
+      "l": 17,
+      "pop": 6
      },
      {
       "date": "2026-11-25",
       "d": "Wed",
-      "i": "partly",
-      "text": "Partly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
       "h": 38,
-      "l": 23
+      "l": 28,
+      "pop": 7
      },
      {
       "date": "2026-11-26",
       "d": "Thu",
-      "i": "partly",
-      "text": "Mostly Sunny",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 31,
+      "pop": 1
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-23",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 30,
+      "l": 23,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-24",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 34,
+      "l": 17,
+      "pop": 6
+     },
+     {
+      "date": "2026-11-25",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 38,
+      "l": 28,
+      "pop": 7
+     },
+     {
+      "date": "2026-11-26",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 31,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-27",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 43,
+      "l": 31,
+      "pop": 10
+     },
+     {
+      "date": "2026-11-28",
+      "d": "Sat",
+      "i": "rain",
+      "text": "Drizzle",
       "h": 39,
-      "l": 27
+      "l": 34,
+      "pop": 10
+     },
+     {
+      "date": "2026-11-29",
+      "d": "Sun",
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 39,
+      "l": 31,
+      "pop": 10
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-23T13:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 30,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T14:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 30,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T15:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 30,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T16:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 29,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T17:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 26,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T18:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 25,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T19:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 24,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T20:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 24,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T21:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 24,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T22:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 24,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-23T23:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 24,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-24T00:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 23,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-23T17:45:14.057Z",
-  "lastAttempt": "2026-11-23T17:45:14.057Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-23T18:45:21.517Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
   "lastError": null
  },
  "nfl": {
@@ -405,44 +712,44 @@
    "isOpen": true,
    "session": "regular",
    "holiday": null,
-   "checkedAt": "2026-11-23T18:30:11.759Z"
+   "checkedAt": "2026-11-23T18:45:21.517Z"
   },
   "quotes": {
    "NVDA": {
     "s": "NVDA",
     "n": "NVIDIA",
     "kind": "stock",
-    "px": 165.24,
-    "ch": 31.6339,
-    "d": 39.71,
+    "px": 164.34,
+    "ch": 30.9169,
+    "d": 38.81,
     "pc": 125.53,
-    "t": 1795458605,
+    "t": 1795459503,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:05.000Z"
+    "quoteTime": "2026-11-23T18:45:03.000Z"
    },
    "TSLA": {
     "s": "TSLA",
     "n": "Tesla",
     "kind": "stock",
-    "px": 387.89,
-    "ch": 12.1653,
-    "d": 42.07,
+    "px": 387.61,
+    "ch": 12.0843,
+    "d": 41.79,
     "pc": 345.82,
-    "t": 1795458604,
+    "t": 1795459503,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:04.000Z"
+    "quoteTime": "2026-11-23T18:45:03.000Z"
    },
    "SPCX": {
     "s": "SPCX",
     "n": "SpaceX",
     "kind": "stock",
-    "px": 136.28,
-    "ch": 6.6437,
-    "d": 8.49,
+    "px": 135.41,
+    "ch": 5.9629,
+    "d": 7.62,
     "pc": 127.79,
-    "t": 1795458605,
+    "t": 1795459499,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:05.000Z"
+    "quoteTime": "2026-11-23T18:44:59.000Z"
    },
    "ANT": {
     "s": "ANT",
@@ -452,13 +759,13 @@
     "range": "$70–78",
     "note": "IPO Nov 19 · $70–78 range",
     "upcoming": false,
-    "px": 90.36,
-    "ch": 1.6309,
-    "d": 1.45,
+    "px": 89.12,
+    "ch": 0.2362,
+    "d": 0.21,
     "pc": 88.91,
-    "t": 1795458605,
+    "t": 1795459503,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:05.000Z"
+    "quoteTime": "2026-11-23T18:45:03.000Z"
    },
    "DOW": {
     "s": "DJIA",
@@ -466,13 +773,13 @@
     "kind": "index",
     "symbol": "^DJI",
     "source": "Yahoo Finance",
-    "px": 49711.11,
-    "ch": 3.247909979428377,
-    "d": 1563.7818750000006,
+    "px": 49603.27,
+    "ch": 3.023930780167247,
+    "d": 1455.9418749999968,
     "pc": 48147.328125,
-    "t": 1795458621,
+    "t": 1795459522,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:21.000Z"
+    "quoteTime": "2026-11-23T18:45:22.000Z"
    },
    "SPX": {
     "s": "SPX",
@@ -480,13 +787,13 @@
     "kind": "index",
     "symbol": "^GSPC",
     "source": "Yahoo Finance",
-    "px": 7253.27,
-    "ch": 4.961801815780832,
-    "d": 342.87986328125044,
+    "px": 7234.79,
+    "ch": 4.694378419498095,
+    "d": 324.39986328124996,
     "pc": 6910.39013671875,
-    "t": 1795458618,
+    "t": 1795459523,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:18.000Z"
+    "quoteTime": "2026-11-23T18:45:23.000Z"
    },
    "NASDAQ": {
     "s": "NASDAQ",
@@ -494,21 +801,17 @@
     "kind": "index",
     "symbol": "^IXIC",
     "source": "Yahoo Finance",
-    "px": 24162.59,
-    "ch": 6.830303037630013,
-    "d": 1544.8595312500001,
+    "px": 24084.71,
+    "ch": 6.4859714075948744,
+    "d": 1466.9795312499991,
     "pc": 22617.73046875,
-    "t": 1795458622,
+    "t": 1795459520,
     "vol": null,
-    "quoteTime": "2026-11-23T18:30:22.000Z"
+    "quoteTime": "2026-11-23T18:45:20.000Z"
    }
   },
   "history": {
    "NVDA": [
-    {
-     "t": 1795027514,
-     "c": 152.28
-    },
     {
      "t": 1795028316,
      "c": 152.32
@@ -824,13 +1127,13 @@
     {
      "t": 1795458605,
      "c": 165.24
+    },
+    {
+     "t": 1795459503,
+     "c": 164.34
     }
    ],
    "TSLA": [
-    {
-     "t": 1795027513,
-     "c": 386.46
-    },
     {
      "t": 1795028316,
      "c": 385.92
@@ -1146,13 +1449,13 @@
     {
      "t": 1795458604,
      "c": 387.89
+    },
+    {
+     "t": 1795459503,
+     "c": 387.61
     }
    ],
    "SPCX": [
-    {
-     "t": 1795027514,
-     "c": 144.58
-    },
     {
      "t": 1795028316,
      "c": 144.46
@@ -1468,13 +1771,13 @@
     {
      "t": 1795458605,
      "c": 136.28
+    },
+    {
+     "t": 1795459499,
+     "c": 135.41
     }
    ],
    "DOW": [
-    {
-     "t": 1795028334,
-     "c": 50363.97
-    },
     {
      "t": 1795029329,
      "c": 50228.54
@@ -1790,13 +2093,13 @@
     {
      "t": 1795458621,
      "c": 49711.11
+    },
+    {
+     "t": 1795459522,
+     "c": 49603.27
     }
    ],
    "SPX": [
-    {
-     "t": 1795028334,
-     "c": 7349.26
-    },
     {
      "t": 1795029330,
      "c": 7328.28
@@ -2112,13 +2415,13 @@
     {
      "t": 1795458618,
      "c": 7253.27
+    },
+    {
+     "t": 1795459523,
+     "c": 7234.79
     }
    ],
    "NASDAQ": [
-    {
-     "t": 1795028331,
-     "c": 24512.637
-    },
     {
      "t": 1795029330,
      "c": 24441.795
@@ -2434,6 +2737,10 @@
     {
      "t": 1795458622,
      "c": 24162.59
+    },
+    {
+     "t": 1795459520,
+     "c": 24084.71
     }
    ],
    "ANT": [
@@ -2676,11 +2983,15 @@
     {
      "t": 1795458605,
      "c": 90.36
+    },
+    {
+     "t": 1795459503,
+     "c": 89.12
     }
    ]
   },
-  "lastAttempt": "2026-11-23T18:30:11.759Z",
-  "asOf": "2026-11-23T18:30:11.759Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
+  "asOf": "2026-11-23T18:45:21.517Z",
   "indexSource": "Yahoo Finance",
   "details": {
    "NVDA": {
@@ -3320,11 +3631,11 @@
      },
      {
       "t": 1795444200,
-      "c": 165.25,
-      "v": 572102593
+      "c": 164.2449951171875,
+      "v": 585129521
      }
     ],
-    "volume": 572102593,
+    "volume": 585129521,
     "week52High": 243.37,
     "week52Low": 124.5,
     "peTTM": 13.371,
@@ -3996,11 +4307,11 @@
      },
      {
       "t": 1795444200,
-      "c": 387.635009765625,
-      "v": 27678978
+      "c": 387.8299865722656,
+      "v": 28341978
      }
     ],
-    "volume": 27678978,
+    "volume": 28341978,
     "week52High": 498.83,
     "week52Low": 297.38,
     "peTTM": 424.5164,
@@ -4607,11 +4918,11 @@
      },
      {
       "t": 1795444200,
-      "c": 136.14999389648438,
-      "v": 65466121
+      "c": 135.40269470214844,
+      "v": 67004276
      }
     ],
-    "volume": 65466121,
+    "volume": 67004276,
     "week52High": 225.64,
     "week52Low": 104.83,
     "peTTM": 0,
@@ -4620,29 +4931,29 @@
     "exchange": "NASDAQ NMS - GLOBAL MARKET",
     "news": [
      {
-      "hd": "Rocket Lab Rallies 11% After Its Worst Week Ever as CFO Eyes Higher Electron Prices; AST SpaceMobile Jumps 14%, SpaceX Surges 9%",
+      "hd": "SpaceX Stocks Climb 8.69% as Jefferies Starts Coverage With Buy and $210 Target",
       "src": "Yahoo",
-      "pub": "2026-11-23T15:58:23.000Z"
+      "pub": "2026-11-23T17:55:16.000Z"
      },
      {
-      "hd": "SpaceX Could Hit Microsoft-Scale Revenue in 2027—Then the Math and Mechanics Get Murky",
+      "hd": "Tesla Stocks Surge 13.67% as SpaceX Merger Committees and Cybercab Sales Draw Buyers",
       "src": "Yahoo",
-      "pub": "2026-11-23T15:45:47.000Z"
+      "pub": "2026-11-23T17:53:07.000Z"
      },
      {
-      "hd": "SpaceX Soars 9% as Jefferies Initiates at Buy With $210 Target, Calls Its Engineering “Exceptional”",
+      "hd": "SPCX Stock Gets A ‘Buy’ Rating From Jefferies For Its Engineering Edge, But Musk Reportedly Fears SpaceX’s AI Lag",
       "src": "Yahoo",
-      "pub": "2026-11-23T15:33:50.000Z"
+      "pub": "2026-11-23T17:24:25.000Z"
      },
      {
-      "hd": "Cathie Wood Sells $107 Million of Nvidia Stock, Adds $74 Million to SpaceX",
+      "hd": "Wall Street's SpaceX sequel: Anthropic gets leveraged ETFs and options, and the original didn't end well",
       "src": "Yahoo",
-      "pub": "2026-11-23T15:32:42.000Z"
+      "pub": "2026-11-23T17:11:44.000Z"
      },
      {
-      "hd": "Why SpaceX Stock Is Gaining Today",
+      "hd": "SpaceX Exec Bret Johnsen Says ‘The Operating Cost in Space Is Zero.’",
       "src": "Yahoo",
-      "pub": "2026-11-23T15:30:01.000Z"
+      "pub": "2026-11-23T16:49:58.000Z"
      }
     ]
    },
@@ -4663,11 +4974,11 @@
      },
      {
       "t": 1795444200,
-      "c": 90.16999816894531,
-      "v": 177250187
+      "c": 89.12999725341797,
+      "v": 181991324
      }
     ],
-    "volume": 177250187,
+    "volume": 181991324,
     "week52High": 115.1,
     "week52Low": 83.05,
     "peTTM": 0,
@@ -5339,11 +5650,11 @@
      },
      {
       "t": 1795444200,
-      "c": 49716.640625,
-      "v": 771479800
+      "c": 49603.62890625,
+      "v": 789948212
      }
     ],
-    "volume": 771479800,
+    "volume": 789948212,
     "week52High": 54744.33,
     "week52Low": 45057.28
    },
@@ -5984,11 +6295,11 @@
      },
      {
       "t": 1795444200,
-      "c": 7254.669921875,
-      "v": 2227612000
+      "c": 7234.85009765625,
+      "v": 2296547000
      }
     ],
-    "volume": 2227612000,
+    "volume": 2296547000,
     "week52High": 7844.52,
     "week52Low": 6316.91
    },
@@ -6629,11 +6940,11 @@
      },
      {
       "t": 1795444200,
-      "c": 24167.603515625,
-      "v": 6157668000
+      "c": 24089.12890625,
+      "v": 6299931000
      }
     ],
-    "volume": 6157668000,
+    "volume": 6299931000,
     "week52High": 27722.75,
     "week52Low": 20690.25
    }
@@ -6641,8 +6952,8 @@
   "series": {
    "provider": "Yahoo Finance",
    "mode": "90d",
-   "asOf": "2026-11-23T18:30:11.759Z",
-   "lastAttempt": "2026-11-23T18:30:11.759Z",
+   "asOf": "2026-11-23T18:45:21.517Z",
+   "lastAttempt": "2026-11-23T18:45:21.517Z",
    "items": {
     "NVDA": {
      "mode": "90d",
@@ -6780,7 +7091,7 @@
       150.96,
       145.98,
       125.53,
-      165.25
+      164.25
      ]
     },
     "TSLA": {
@@ -6919,7 +7230,7 @@
       383.72,
       374.41,
       345.82,
-      387.72
+      387.88
      ]
     },
     "SPCX": {
@@ -7058,7 +7369,7 @@
       143.5,
       138.43,
       127.79,
-      136.16
+      135.4
      ]
     }
    }
@@ -7066,13 +7377,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T18:30:11.759Z",
+  "at": "2026-11-23T18:45:21.517Z",
   "ran": [
+   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
    "movers",
    "sectors",
    "stocks:session",
@@ -13952,8 +14260,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T18:30:11.759Z",
-  "lastAttempt": "2026-11-23T18:30:11.759Z",
+  "asOf": "2026-11-23T18:45:21.517Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14596,7 +14904,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T18:30:11.759Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14627,94 +14935,94 @@
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
   "marketState": "REGULAR",
-  "sessionTime": "2026-11-23T18:30:26.000Z",
+  "sessionTime": "2026-11-23T18:45:21.000Z",
   "sessionDate": "2026-11-23",
   "gainers": [
    {
     "s": "NVDA",
     "n": "NVIDIA Corporation",
-    "ch": 31.63,
-    "px": 165.23,
-    "cap": 3989808611328,
-    "t": 1795458626
+    "ch": 30.87,
+    "px": 164.285,
+    "cap": 3966989762560,
+    "t": 1795459521
    },
    {
     "s": "KYMR",
     "n": "Kymera Therapeutics, Inc.",
-    "ch": 31.36,
-    "px": 151.46,
-    "cap": 12930353152,
-    "t": 1795458623
+    "ch": 30.4,
+    "px": 150.36,
+    "cap": 12836444160,
+    "t": 1795459518
    },
    {
     "s": "IREN",
     "n": "IREN LIMITED",
-    "ch": 24.74,
-    "px": 14.7443,
-    "cap": 6256852480,
-    "t": 1795458626
+    "ch": 23.55,
+    "px": 14.6037,
+    "cap": 6197187584,
+    "t": 1795459521
    },
    {
     "s": "AXTI",
     "n": "AXT Inc",
-    "ch": 23.31,
-    "px": 37.695,
-    "cap": 2477404160,
-    "t": 1795458624
+    "ch": 22.41,
+    "px": 37.42,
+    "cap": 2459330304,
+    "t": 1795459518
    },
    {
     "s": "MXL",
     "n": "MaxLinear, Inc",
-    "ch": 22.75,
-    "px": 50.88,
-    "cap": 4630080512,
-    "t": 1795458567
+    "ch": 21.82,
+    "px": 50.495,
+    "cap": 4595045376,
+    "t": 1795459464
    }
   ],
   "losers": [
    {
     "s": "PLBL",
     "n": "Polibeli Group Ltd",
-    "ch": -17.32,
-    "px": 8.0534,
-    "cap": 2950664704,
-    "t": 1795458605
+    "ch": -18.72,
+    "px": 7.92,
+    "cap": 2901788672,
+    "t": 1795459492
    },
    {
     "s": "CRWD",
     "n": "CrowdStrike Holdings, Inc.",
-    "ch": -10.24,
-    "px": 205.94,
-    "cap": 210869141504,
-    "t": 1795458626
+    "ch": -10.87,
+    "px": 204.495,
+    "cap": 209389551616,
+    "t": 1795459521
    },
    {
     "s": "CDLR",
     "n": "Cadeler plc",
-    "ch": -7.22,
-    "px": 5.91,
-    "cap": 2100442496,
-    "t": 1795458589
+    "ch": -6.91,
+    "px": 5.93,
+    "cap": 2107550592,
+    "t": 1795459274
    },
    {
     "s": "VVX",
     "n": "V2X, Inc.",
-    "ch": -5.73,
-    "px": 70.875,
-    "cap": 2222048000,
-    "t": 1795458280
+    "ch": -6.37,
+    "px": 70.39,
+    "cap": 2206842368,
+    "t": 1795459502
    },
    {
     "s": "IOVA",
     "n": "Iovance Biotherapeutics, Inc.",
-    "ch": -4.71,
-    "px": 6.575,
-    "cap": 3041957376,
-    "t": 1795458613
+    "ch": -5.32,
+    "px": 6.533,
+    "cap": 3022525952,
+    "t": 1795459510
    }
   ],
-  "asOf": "2026-11-23T18:30:11.759Z",
-  "lastAttempt": "2026-11-23T18:30:11.759Z",
+  "asOf": "2026-11-23T18:45:21.517Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
   "lastError": null
  },
  "sectors": {
@@ -14724,85 +15032,85 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 162.43,
-    "d": 9.01,
-    "t": 1795458626
+    "px": 161.81,
+    "d": 8.59,
+    "t": 1795459521
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 103.63,
-    "d": 3.6,
-    "t": 1795458625
+    "px": 103.37,
+    "d": 3.33,
+    "t": 1795459519
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 117.49,
-    "d": 4.47,
-    "t": 1795458626
+    "px": 117.23,
+    "d": 4.24,
+    "t": 1795459512
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 55.82,
-    "d": 2.29,
-    "t": 1795458614
+    "px": 55.68,
+    "d": 2.02,
+    "t": 1795459514
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 179.4,
-    "d": 1.22,
-    "t": 1795458621
+    "px": 179.17,
+    "d": 1.09,
+    "t": 1795459520
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 162.63,
-    "d": 4,
-    "t": 1795458621
+    "px": 162.25,
+    "d": 3.76,
+    "t": 1795459520
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 90.59,
-    "d": 0.14,
-    "t": 1795458625
+    "px": 90.42,
+    "d": -0.04,
+    "t": 1795459520
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 60.37,
-    "d": -0.23,
-    "t": 1795458624
+    "px": 60.27,
+    "d": -0.4,
+    "t": 1795459511
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 43.3,
-    "d": 1.42,
-    "t": 1795458621
+    "px": 43.21,
+    "d": 1.21,
+    "t": 1795459514
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 42.89,
-    "d": 1.01,
-    "t": 1795458620
+    "px": 42.81,
+    "d": 0.81,
+    "t": 1795459500
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 49.78,
-    "d": 2.98,
-    "t": 1795458626
+    "px": 49.68,
+    "d": 2.76,
+    "t": 1795459518
    }
   ],
-  "sessionTime": "2026-11-23T18:30:26.000Z",
+  "sessionTime": "2026-11-23T18:45:21.000Z",
   "sessionDate": "2026-11-23",
-  "asOf": "2026-11-23T18:30:11.759Z",
-  "lastAttempt": "2026-11-23T18:30:11.759Z",
+  "asOf": "2026-11-23T18:45:21.517Z",
+  "lastAttempt": "2026-11-23T18:45:21.517Z",
   "lastError": null
  },
  "extended": {
