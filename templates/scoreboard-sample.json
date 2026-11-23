@@ -515,46 +515,65 @@
         "marist_classmates": {
           "source": "Sample Marist roster export",
           "note": "Placeholder classmates for fixture only \u2014 not real students.",
+          "last_new_at": "2026-11-22T18:30:00-05:00",
+          "class_2023": {
+            "count": 2,
+            "note": "Placeholder 2023 total only \u2014 sample note under the five-year row."
+          },
+          "class_2024": {
+            "count": 0,
+            "note": "Placeholder 2024 total is zero for fixture density."
+          },
           "class_2027": [
             {
               "name": "Student A",
-              "major": "Engineering"
+              "major": "Engineering",
+              "added_at": "2026-09-01T12:00:00Z"
             },
             {
               "name": "Student B",
-              "major": "Biology"
+              "major": "Biology",
+              "added_at": "2026-09-15T12:00:00Z"
             },
             {
               "name": "Student C",
-              "major": "Computer Science"
+              "major": "Computer Science",
+              "added_at": "2026-10-01T12:00:00Z"
             },
             {
               "name": "Student D",
-              "major": "Business"
+              "major": "Business",
+              "added_at": "2026-10-12T12:00:00Z"
             },
             {
               "name": "Student E",
-              "major": "Psychology"
+              "major": "Psychology",
+              "added_at": "2026-10-20T12:00:00Z"
             },
             {
               "name": "Student F",
-              "major": "Economics"
+              "major": "Economics",
+              "added_at": "2026-11-01T12:00:00Z"
             },
             {
               "name": "Student G",
-              "major": "Nursing"
+              "major": "Nursing",
+              "added_at": "2026-11-10T12:00:00Z"
             },
             {
               "name": "Student H",
-              "major": "History"
+              "major": "History",
+              "added_at": "2026-11-18T12:00:00Z"
             },
             {
               "name": "Student I",
-              "major": "Physics"
+              "major": "Physics",
+              "added_at": "2026-11-20T12:00:00Z"
             },
             {
-              "name": "Student J",
-              "major": "Art"
+              "name": "Student New",
+              "major": "Art",
+              "added_at": "2026-11-22T18:30:00-05:00"
             }
           ],
           "class_2026": {
@@ -577,6 +596,37 @@
               "Political Science"
             ]
           }
+        },
+        "new_creative_school": {
+          "name": "Sample School of Arts, Entertainment & Creative Tech",
+          "summary": "Placeholder announcement: a new creative-tech school is planned on this campus, combining studio practice with computing and production tracks. Fixture text only \u2014 not a real program description.",
+          "facts": [
+            "Placeholder fact: shared maker labs open to first-years in sample year one.",
+            "Placeholder fact: sample curriculum blends design, media, and applied computing.",
+            "Placeholder fact: sample industry partners listed for co-op rotations.",
+            "Placeholder fact: sample building timeline targets a phased opening."
+          ],
+          "why_it_matters_for_coco": "Placeholder counseling note: if the creative-tech school lands, it could align with Coco's studio-plus-tech interests better than the generic major path on this card.",
+          "articles": [
+            {
+              "title": "Placeholder: campus outlines new creative-tech school",
+              "outlet": "Sample Campus News",
+              "date": "2026-09-12",
+              "url": "https://example.edu/news/placeholder-creative-school"
+            },
+            {
+              "title": "Placeholder: industry advisors named for arts-tech launch",
+              "outlet": "Sample Trade Weekly",
+              "date": "2026-10-03",
+              "url": "https://example.com/placeholder-advisors"
+            },
+            {
+              "title": "Placeholder: facilities plan for entertainment labs",
+              "outlet": "Sample City Report",
+              "date": "2026-10-21",
+              "url": "https://example.com/placeholder-facilities"
+            }
+          ]
         }
       },
       "rank": "#33",
