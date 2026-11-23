@@ -121,6 +121,10 @@
     color:var(--c);border:1px solid var(--cb);background:var(--cf)}
   .tag.plain{--c:var(--muted);--cb:var(--hair);--cf:transparent}
   .tag.date{--c:var(--gold);--cb:rgba(201,168,106,.3);--cf:rgba(201,168,106,.06)}
+  /* New Marist classmate flag on board tiles — bright gold, readable across the room */
+  .tag.new-marist{--c:#1A1508;--cb:rgba(255,210,74,.95);--cf:#FFD24A;font-weight:700;letter-spacing:.14em}
+  .tag.new-marist-who{--c:#FFD24A;--cb:rgba(255,210,74,.4);--cf:rgba(255,210,74,.1);
+    max-width:46%;overflow:hidden;text-overflow:ellipsis}
   #cols{--line-size:24px;--lab-size:20px}
   #cols .lab{font-size:var(--lab-size)}
   #cols .txt{font-size:var(--line-size);max-height:calc(3 * 1.35em)}
@@ -529,29 +533,87 @@
     if(c==null||c<0)c=0;
     return {count:c, note:note};
   }
+  // Tizen-safe ISO parse → epoch ms. Accepts Z / ±HH:MM / date-only; returns null if invalid.
+  function parseIsoMs(iso){
+    if(typeof iso!=='string'||!iso)return null;
+    var s=iso.replace(/^\s+|\s+$/g,''), m, y, mo, d, hh, mm, ss, ms, t, sign, oh, om;
+    m=/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d{1,3}))?)?)?(?:Z|([+-])(\d{2}):?(\d{2}))?$/.exec(s);
+    if(!m)return null;
+    y=+m[1]; mo=+m[2]-1; d=+m[3];
+    hh=m[4]!=null?+m[4]:0; mm=m[5]!=null?+m[5]:0; ss=m[6]!=null?+m[6]:0;
+    ms=m[7]!=null?+((m[7]+'000').slice(0,3)):0;
+    if(mo<0||mo>11||d<1||d>31||hh>23||mm>59||ss>59)return null;
+    t=Date.UTC(y,mo,d,hh,mm,ss,ms);
+    if(m[8]){
+      sign=m[8]==='+'?-1:1;
+      oh=+m[9]; om=+m[10];
+      if(oh>23||om>59)return null;
+      t+=sign*(oh*60+om)*60000;
+    }
+    return t;
+  }
   function cleanMaristClassmates(raw){
     // Always return an object when the field is present so the section can show the empty state.
     if(raw==null)return null;
     if(typeof raw!=='object')return null;
-    var list=[], i, x, name, major;
+    var list=[], i, x, name, major, added, lastNew;
     if(Array.isArray(raw.class_2027)){
       for(i=0;i<raw.class_2027.length&&list.length<24;i++){
         x=raw.class_2027[i];
         if(!x||typeof x!=='object')continue;
         name=str(x.name); major=str(x.major);
         if(!name)continue;
-        list.push({name:name, major:major});
+        added=str(x.added_at);
+        list.push({name:name, major:major, added_at:parseIsoMs(added)!=null?added:''});
       }
     }
+    lastNew=str(raw.last_new_at);
     return {
       source:str(raw.source),
       note:str(raw.note),
+      last_new_at:parseIsoMs(lastNew)!=null?lastNew:'',
       class_2027:list,
       class_2026:cleanMaristCohort(raw.class_2026),
       class_2025:cleanMaristCohort(raw.class_2025),
       class_2024:('class_2024' in raw)?cleanMaristYearTotal(raw.class_2024):null,
       class_2023:('class_2023' in raw)?cleanMaristYearTotal(raw.class_2023):null
     };
+  }
+  function lastOpenedStorageKey(s){
+    var id=s&&s.id!=null&&String(s.id)!==''?String(s.id):(s&&s.school?String(s.school):'');
+    return 'daybreak.coco.lastOpened.'+id;
+  }
+  function getSchoolLastOpenedMs(s){
+    try{
+      var v=window.localStorage.getItem(lastOpenedStorageKey(s));
+      if(v==null||v==='')return null;
+      var n=+v;
+      return isFinite(n)?n:null;
+    }catch(e){return null;}
+  }
+  function markSchoolOpened(s){
+    if(!s)return;
+    try{window.localStorage.setItem(lastOpenedStorageKey(s), String(Date.now()));}catch(e){}
+  }
+  function hasNewMaristClassmate(s){
+    var m=s&&s.detail&&s.detail.marist_classmates, neu, opened;
+    if(!m||!m.last_new_at)return false;
+    neu=parseIsoMs(m.last_new_at);
+    if(neu==null)return false;
+    opened=getSchoolLastOpenedMs(s);
+    if(opened==null)return true;
+    return neu>opened;
+  }
+  function newestMaristClassmateName(s){
+    var list=s&&s.detail&&s.detail.marist_classmates&&s.detail.marist_classmates.class_2027;
+    var i, best=null, bestT=-1, t;
+    if(!list||!list.length)return '';
+    for(i=0;i<list.length;i++){
+      t=list[i].added_at?parseIsoMs(list[i].added_at):-1;
+      if(t==null)t=-1;
+      if(t>bestT){bestT=t;best=list[i];}
+    }
+    return bestT>=0&&best&&best.name?best.name:'';
   }
   var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
   function cleanWeatherMonthly(raw){
@@ -830,9 +892,15 @@
     return h+'</div>';
   }
   function cardHtml(s,ci,i){
+    var tags=tagsHtml(s,false), who;
+    if(hasNewMaristClassmate(s)){
+      who=newestMaristClassmateName(s);
+      tags='<span class="tag new-marist">NEW</span>'+
+        (who?'<span class="tag new-marist-who">'+esc(who)+'</span>':'')+tags;
+    }
     return '<div class="card '+s.status+'" data-c="'+ci+'" data-i="'+i+'" data-has-detail="'+(s.hasDetail?1:0)+'" style="--c:'+STATUS[s.status].c+'">'+
       '<div class="name-row">'+logoHtml(s,'sm')+'<div class="name">'+nameHtml(s)+'</div>'+rankPill(s,false)+'</div>'+
-      '<div class="tags">'+tagsHtml(s,false)+'</div>'+linesHtml(s.lines)+
+      '<div class="tags">'+tags+'</div>'+linesHtml(s.lines)+
       (s.step?'<div class="step"><b>Next</b>'+esc(s.step)+'</div>':'')+'</div>';
   }
   function alsoHtml(list){
@@ -1564,7 +1632,11 @@
   function showDetail(on){
     var s=on?focusedSchool():null;
     if(on&&!(s&&s.hasDetail))return;
-    if(on){state.chipFocus=false;state.view='detail';state.detailPage=1;state.cardFocus=0;}
+    if(on){
+      state.chipFocus=false;state.view='detail';state.detailPage=1;state.cardFocus=0;
+      // Persist last-opened so the board NEW flag clears after return / reload.
+      markSchoolOpened(s);
+    }
     else{state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();}
     state.detail=s?s.id:null;
     if(s)renderDetail(s);else{$('detail').innerHTML='';closeCardPopup();}
@@ -1578,7 +1650,7 @@
     document.querySelector('.head-r').style.visibility=s?'hidden':'';
     $('title').style.display=s?'none':'';
     syncRoiChip();
-    if(!s){layoutBoard();paintFocus();}
+    if(!s){renderBoard();paintFocus();}
     setHints();
   }
 
