@@ -33,10 +33,10 @@
 
   /* —— Shared primitives —— */
   .eyebrow{font-size:var(--t1);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-  .sec-h{display:flex;align-items:center;gap:12px;margin:0 0 12px;min-width:0;
-    padding-bottom:8px;border-bottom:2px solid var(--accent,var(--gold))}
-  .sec-h::before{content:"";flex:none;width:28px;height:3px;border-radius:2px;background:var(--accent,var(--gold));opacity:1}
-  .sec-h span{font-size:26px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  .sec-h{display:flex;align-items:center;gap:10px;margin:0 0 8px;min-width:0;
+    padding-bottom:4px;border-bottom:2px solid var(--accent,var(--gold))}
+  .sec-h::before{content:"";flex:none;width:24px;height:3px;border-radius:2px;background:var(--accent,var(--gold));opacity:1}
+  .sec-h span{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
     color:var(--accent,var(--gold));white-space:nowrap}
   .sec-h em{font-style:normal;color:var(--accent,var(--gold));margin-left:8px;letter-spacing:.08em;font-weight:600;opacity:.85}
   .lab{font-size:var(--t1);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);
@@ -132,9 +132,9 @@
   .roi-chip.focus{box-shadow:0 0 0 2px rgba(201,168,106,.9)}
 
   /* Detail */
-  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px;--line-size:24px;--lab-size:20px}
-  /* One compact hero band: logo | name+rank+chips (centered) */
-  .d-hero{flex:none;display:flex;align-items:center;gap:20px;min-width:0;padding-bottom:12px;border-bottom:1px solid var(--hair)}
+  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px}
+  /* Hero: logo | name+rank+chips | compact monthly weather (right) */
+  .d-hero{flex:none;display:flex;align-items:stretch;gap:20px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair)}
   .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;
     border-left:4px solid var(--accent,var(--gold));padding-left:16px}
   .d-hero-top{display:flex;align-items:baseline;gap:12px;min-width:0}
@@ -146,45 +146,50 @@
   .d-hero .tags{gap:8px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
-  /* Monthly weather table — full-width band under the hero */
-  .wx-month-band{flex:none;padding:16px 20px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0}
-  .wx-month-band .sec-h{margin-bottom:12px}
+  /* Compact monthly weather — right half of hero (~150px tall) */
+  .wx-month-band{flex:none;width:980px;max-width:48%;display:flex;flex-direction:column;justify-content:center;
+    padding:8px 12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0;
+    max-height:156px;box-sizing:border-box}
+  .wx-month-band .sec-h{margin:0 0 4px;padding-bottom:2px;gap:8px}
+  .wx-month-band .sec-h::before{width:16px;height:2px}
+  .wx-month-band .sec-h span{font-size:18px}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
-  .wx-month-table th,.wx-month-table td{padding:8px 6px;text-align:center;vertical-align:middle;
+  .wx-month-table th,.wx-month-table td{padding:1px 2px;text-align:center;vertical-align:middle;
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-month-table thead th{font-size:22px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
-    border-bottom:1px solid var(--hair)}
-  .wx-month-table thead th .wx-season{display:flex;flex-direction:column;align-items:center;gap:4px}
-  .wx-month-table thead th .wx-season svg{width:28px;height:28px;color:var(--accent,var(--gold))}
-  .wx-month-table tbody th{text-align:left;font-size:22px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--dim);padding-left:4px;white-space:nowrap}
-  .wx-month-table tbody td{font:500 28px/1.15 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table thead th{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--hair);padding-bottom:3px}
+  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:3px}
+  .wx-month-table thead th .wx-season svg{width:14px;height:14px;color:var(--accent,var(--gold));flex:none}
+  .wx-month-table tbody th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--dim);padding-left:2px;white-space:nowrap}
+  .wx-month-table tbody td{font:500 18px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
   .wx-month-table tbody tr+tr th,.wx-month-table tbody tr+tr td{border-top:1px solid rgba(255,255,255,.04)}
-  .wx-month-cap{margin:10px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);letter-spacing:.04em}
-  .wx-normals-fallback{display:flex;flex-direction:column;gap:6px;padding:4px 0 0}
-  .wx-normals-fallback .line{grid-template-columns:72px minmax(0,1fr);gap:10px}
-  .wx-normals-fallback .lab{font-size:var(--t1)}
-  .wx-normals-fallback .txt{font-size:var(--t2);-webkit-line-clamp:2;max-height:calc(2 * 1.35em)}
+  .wx-month-cap{margin:3px 0 0;font-size:12px;font-weight:400;color:var(--dim);letter-spacing:.03em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wx-normals-fallback{display:flex;flex-direction:column;gap:2px;padding:2px 0 0}
+  .wx-normals-fallback .line{grid-template-columns:56px minmax(0,1fr);gap:8px}
+  .wx-normals-fallback .lab{font-size:12px}
+  .wx-normals-fallback .txt{font-size:16px;-webkit-line-clamp:1;max-height:1.2em}
   .card .line.wx-line .lab{color:var(--gold)}
 
   .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
-  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 16px;
+  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 12px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
-    padding:16px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
+    padding:12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
   #detail .lab{font-size:var(--lab-size)}
   #detail .txt{font-size:var(--line-size)}
-  .d-sec .prose{margin:0;font-size:var(--t2);line-height:1.4;font-weight:400;color:var(--ink)}
-  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
+  .d-sec .prose{margin:0;font-size:var(--t2);line-height:1.35;font-weight:400;color:var(--ink)}
+  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
   .why-pair .why-col{min-width:0}
-  .why-pair .why-col .sec-h{margin-bottom:8px}
-  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-  .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--t2);line-height:1.4;font-weight:400;color:var(--ink);
+  .why-pair .why-col .sec-h{margin-bottom:6px}
+  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
     overflow-wrap:break-word;word-break:normal}
   .why-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
   .why-bullets li b{font-weight:600;color:var(--ink);margin-right:6px}
-  .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-  .tl li{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:0 0 0 16px;font-size:var(--t2);line-height:1.35}
+  .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .tl li{position:relative;display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.3}
   .tl li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
   .tl li::after{content:"";position:absolute;left:2px;top:18px;bottom:-10px;width:1px;background:var(--rule)}
   .tl li:last-child::after{display:none}
@@ -913,25 +918,26 @@
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
     $('detail').style.setProperty('--accent', accent);
+    // Weather sits in the hero's right block so the 4-col body keeps cf81089 height.
     $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
       '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
-      '<div class="tags">'+tagsHtml(s,true)+'</div></div></div>'+
-      wxBand+
+      '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+(wxBand||'')+'</div>'+
       (parts.length?'<div class="d-body">'+parts.join('')+'</div>':'');
     layoutDetail();
+    // Second pass after column layout settles so we do not keep an oversized type size.
+    setTimeout(layoutDetail, 0);
   }
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!root||!body)return;
-    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20,18,16,14], cols, i, c;
-    // Prefer fewer columns when content is light; always verify both axes so a fifth
-    // column cannot clip Status history / Counselor off-screen.
+    // Floor at 20px — never shrink body text below the readable cf81089 board/detail size.
+    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20], cols, i, c;
     cols=n<=3?[2]:n<=8?[3,2]:[4,3,2];
     for(c=0;c<cols.length;c++){
       body.style.columnCount=String(cols[c]);
       for(i=0;i<sizes.length;i++){
         root.style.setProperty('--line-size', sizes[i]+'px');
-        root.style.setProperty('--lab-size', Math.max(13, sizes[i]-2)+'px');
+        root.style.setProperty('--lab-size', Math.max(18, sizes[i]-2)+'px');
         if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return;
       }
     }
