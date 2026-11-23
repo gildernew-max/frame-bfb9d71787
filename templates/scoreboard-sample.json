@@ -59,9 +59,16 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -420,7 +427,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 82,
+              "low_f": 66,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 75,
+              "low_f": 59,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 64,
+              "low_f": 48,
+              "rain_in": 3.6,
+              "snow_in": 0.0
+            },
+            {
+              "month": "Nov",
+              "high_f": 53,
+              "low_f": 38,
+              "rain_in": 3.8,
+              "snow_in": 1.2
+            },
+            {
+              "month": "Dec",
+              "high_f": 42,
+              "low_f": 28,
+              "rain_in": 3.5,
+              "snow_in": 6.4
+            },
+            {
+              "month": "Jan",
+              "high_f": 37,
+              "low_f": 23,
+              "rain_in": 3.2,
+              "snow_in": 9.1
+            },
+            {
+              "month": "Feb",
+              "high_f": 39,
+              "low_f": 25,
+              "rain_in": 3.0,
+              "snow_in": 8.2
+            },
+            {
+              "month": "Mar",
+              "high_f": 47,
+              "low_f": 32,
+              "rain_in": 3.7,
+              "snow_in": 4.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 58,
+              "low_f": 41,
+              "rain_in": 3.5,
+              "snow_in": 0.4
+            },
+            {
+              "month": "May",
+              "high_f": 69,
+              "low_f": 51,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#33",
       "location": {
@@ -434,7 +517,8 @@
         "source_url": "https://example.edu/brand/r1",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#B3A369"
     },
     {
       "id": "r2",
@@ -488,9 +572,20 @@
           "tone": "muted"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -849,7 +944,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 90,
+              "low_f": 74,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 83,
+              "low_f": 67,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 72,
+              "low_f": 56,
+              "rain_in": 3.6,
+              "snow_in": null
+            },
+            {
+              "month": "Nov",
+              "high_f": 61,
+              "low_f": 46,
+              "rain_in": 3.8,
+              "snow_in": null
+            },
+            {
+              "month": "Dec",
+              "high_f": 50,
+              "low_f": 36,
+              "rain_in": 3.5,
+              "snow_in": 1.6
+            },
+            {
+              "month": "Jan",
+              "high_f": 45,
+              "low_f": 31,
+              "rain_in": 3.2,
+              "snow_in": 2.3
+            },
+            {
+              "month": "Feb",
+              "high_f": 47,
+              "low_f": 33,
+              "rain_in": 3.0,
+              "snow_in": 2.0
+            },
+            {
+              "month": "Mar",
+              "high_f": 55,
+              "low_f": 40,
+              "rain_in": 3.7,
+              "snow_in": 1.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 66,
+              "low_f": 49,
+              "rain_in": 3.5,
+              "snow_in": 0.1
+            },
+            {
+              "month": "May",
+              "high_f": 77,
+              "low_f": 59,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#18",
       "location": {
@@ -863,7 +1034,8 @@
         "source_url": "https://example.edu/brand/r2",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#A7C7E7"
     },
     {
       "id": "t1",
@@ -917,9 +1089,20 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -1252,7 +1435,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 82,
+              "low_f": 66,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 75,
+              "low_f": 59,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 64,
+              "low_f": 48,
+              "rain_in": 3.6,
+              "snow_in": 0.0
+            },
+            {
+              "month": "Nov",
+              "high_f": 53,
+              "low_f": 38,
+              "rain_in": 3.8,
+              "snow_in": 1.2
+            },
+            {
+              "month": "Dec",
+              "high_f": 42,
+              "low_f": 28,
+              "rain_in": 3.5,
+              "snow_in": 6.4
+            },
+            {
+              "month": "Jan",
+              "high_f": 37,
+              "low_f": 23,
+              "rain_in": 3.2,
+              "snow_in": 9.1
+            },
+            {
+              "month": "Feb",
+              "high_f": 39,
+              "low_f": 25,
+              "rain_in": 3.0,
+              "snow_in": 8.2
+            },
+            {
+              "month": "Mar",
+              "high_f": 47,
+              "low_f": 32,
+              "rain_in": 3.7,
+              "snow_in": 4.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 58,
+              "low_f": 41,
+              "rain_in": 3.5,
+              "snow_in": 0.4
+            },
+            {
+              "month": "May",
+              "high_f": 69,
+              "low_f": 51,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#72",
       "location": {
@@ -1266,7 +1525,8 @@
         "source_url": "https://example.edu/brand/t1",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#C4785A"
     },
     {
       "id": "t2",
@@ -1320,9 +1580,20 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -1651,7 +1922,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 90,
+              "low_f": 74,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 83,
+              "low_f": 67,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 72,
+              "low_f": 56,
+              "rain_in": 3.6,
+              "snow_in": null
+            },
+            {
+              "month": "Nov",
+              "high_f": 61,
+              "low_f": 46,
+              "rain_in": 3.8,
+              "snow_in": null
+            },
+            {
+              "month": "Dec",
+              "high_f": 50,
+              "low_f": 36,
+              "rain_in": 3.5,
+              "snow_in": 1.6
+            },
+            {
+              "month": "Jan",
+              "high_f": 45,
+              "low_f": 31,
+              "rain_in": 3.2,
+              "snow_in": 2.3
+            },
+            {
+              "month": "Feb",
+              "high_f": 47,
+              "low_f": 33,
+              "rain_in": 3.0,
+              "snow_in": 2.0
+            },
+            {
+              "month": "Mar",
+              "high_f": 55,
+              "low_f": 40,
+              "rain_in": 3.7,
+              "snow_in": 1.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 66,
+              "low_f": 49,
+              "rain_in": 3.5,
+              "snow_in": 0.1
+            },
+            {
+              "month": "May",
+              "high_f": 77,
+              "low_f": 59,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#55",
       "location": {
@@ -1665,7 +2012,8 @@
         "source_url": "https://example.edu/brand/t2",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#7BA17B"
     },
     {
       "id": "t3",
@@ -1719,9 +2067,20 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -2058,7 +2417,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 82,
+              "low_f": 66,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 75,
+              "low_f": 59,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 64,
+              "low_f": 48,
+              "rain_in": 3.6,
+              "snow_in": 0.0
+            },
+            {
+              "month": "Nov",
+              "high_f": 53,
+              "low_f": 38,
+              "rain_in": 3.8,
+              "snow_in": 1.2
+            },
+            {
+              "month": "Dec",
+              "high_f": 42,
+              "low_f": 28,
+              "rain_in": 3.5,
+              "snow_in": 6.4
+            },
+            {
+              "month": "Jan",
+              "high_f": 37,
+              "low_f": 23,
+              "rain_in": 3.2,
+              "snow_in": 9.1
+            },
+            {
+              "month": "Feb",
+              "high_f": 39,
+              "low_f": 25,
+              "rain_in": 3.0,
+              "snow_in": 8.2
+            },
+            {
+              "month": "Mar",
+              "high_f": 47,
+              "low_f": 32,
+              "rain_in": 3.7,
+              "snow_in": 4.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 58,
+              "low_f": 41,
+              "rain_in": 3.5,
+              "snow_in": 0.4
+            },
+            {
+              "month": "May",
+              "high_f": 69,
+              "low_f": 51,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#89",
       "location": {
@@ -2072,7 +2507,8 @@
         "source_url": "https://example.edu/brand/t3",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#9B8EC4"
     },
     {
       "id": "s1",
@@ -2121,9 +2557,24 @@
           "tone": "muted"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -2456,7 +2907,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 90,
+              "low_f": 74,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 83,
+              "low_f": 67,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 72,
+              "low_f": 56,
+              "rain_in": 3.6,
+              "snow_in": null
+            },
+            {
+              "month": "Nov",
+              "high_f": 61,
+              "low_f": 46,
+              "rain_in": 3.8,
+              "snow_in": null
+            },
+            {
+              "month": "Dec",
+              "high_f": 50,
+              "low_f": 36,
+              "rain_in": 3.5,
+              "snow_in": 1.6
+            },
+            {
+              "month": "Jan",
+              "high_f": 45,
+              "low_f": 31,
+              "rain_in": 3.2,
+              "snow_in": 2.3
+            },
+            {
+              "month": "Feb",
+              "high_f": 47,
+              "low_f": 33,
+              "rain_in": 3.0,
+              "snow_in": 2.0
+            },
+            {
+              "month": "Mar",
+              "high_f": 55,
+              "low_f": 40,
+              "rain_in": 3.7,
+              "snow_in": 1.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 66,
+              "low_f": 49,
+              "rain_in": 3.5,
+              "snow_in": 0.1
+            },
+            {
+              "month": "May",
+              "high_f": 77,
+              "low_f": 59,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#140",
       "location": {
@@ -2470,7 +2997,8 @@
         "source_url": "https://example.edu/brand/s1",
         "format": "svg",
         "background": "light"
-      }
+      },
+      "accent": "#D4A574"
     },
     {
       "id": "s2",
@@ -2524,9 +3052,20 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "rank": "#112",
@@ -2856,7 +3395,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 82,
+              "low_f": 66,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 75,
+              "low_f": 59,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 64,
+              "low_f": 48,
+              "rain_in": 3.6,
+              "snow_in": 0.0
+            },
+            {
+              "month": "Nov",
+              "high_f": 53,
+              "low_f": 38,
+              "rain_in": 3.8,
+              "snow_in": 1.2
+            },
+            {
+              "month": "Dec",
+              "high_f": 42,
+              "low_f": 28,
+              "rain_in": 3.5,
+              "snow_in": 6.4
+            },
+            {
+              "month": "Jan",
+              "high_f": 37,
+              "low_f": 23,
+              "rain_in": 3.2,
+              "snow_in": 9.1
+            },
+            {
+              "month": "Feb",
+              "high_f": 39,
+              "low_f": 25,
+              "rain_in": 3.0,
+              "snow_in": 8.2
+            },
+            {
+              "month": "Mar",
+              "high_f": 47,
+              "low_f": 32,
+              "rain_in": 3.7,
+              "snow_in": 4.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 58,
+              "low_f": 41,
+              "rain_in": 3.5,
+              "snow_in": 0.4
+            },
+            {
+              "month": "May",
+              "high_f": 69,
+              "low_f": 51,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "location": {
         "city": "Bloomington",
@@ -2869,7 +3484,8 @@
         "source_url": "https://example.edu/brand/s2",
         "format": "svg",
         "background": "dark"
-      }
+      },
+      "accent": "#6FA8DC"
     },
     {
       "id": "s3",
@@ -2923,9 +3539,20 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -3262,7 +3889,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 90,
+              "low_f": 74,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 83,
+              "low_f": 67,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 72,
+              "low_f": 56,
+              "rain_in": 3.6,
+              "snow_in": null
+            },
+            {
+              "month": "Nov",
+              "high_f": 61,
+              "low_f": 46,
+              "rain_in": 3.8,
+              "snow_in": null
+            },
+            {
+              "month": "Dec",
+              "high_f": 50,
+              "low_f": 36,
+              "rain_in": 3.5,
+              "snow_in": 1.6
+            },
+            {
+              "month": "Jan",
+              "high_f": 45,
+              "low_f": 31,
+              "rain_in": 3.2,
+              "snow_in": 2.3
+            },
+            {
+              "month": "Feb",
+              "high_f": 47,
+              "low_f": 33,
+              "rain_in": 3.0,
+              "snow_in": 2.0
+            },
+            {
+              "month": "Mar",
+              "high_f": 55,
+              "low_f": 40,
+              "rain_in": 3.7,
+              "snow_in": 1.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 66,
+              "low_f": 49,
+              "rain_in": 3.5,
+              "snow_in": 0.1
+            },
+            {
+              "month": "May",
+              "high_f": 77,
+              "low_f": 59,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#98",
       "location": {
@@ -3276,7 +3979,8 @@
         "source_url": "https://example.edu/brand/s3",
         "format": "svg",
         "background": "dark"
-      }
+      },
+      "accent": "#C9A86A"
     },
     {
       "id": "s4",
@@ -3325,9 +4029,24 @@
           "tone": "muted"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "detail": {
@@ -3636,7 +4355,83 @@
               "https://example.com/reviews/winter"
             ]
           }
-        ]
+        ],
+        "weather_monthly": {
+          "source": "Sample NOAA normals",
+          "station": "Sample City USW0000000",
+          "months": [
+            {
+              "month": "Aug",
+              "high_f": 82,
+              "low_f": 66,
+              "rain_in": 3.4,
+              "snow_in": null
+            },
+            {
+              "month": "Sep",
+              "high_f": 75,
+              "low_f": 59,
+              "rain_in": 3.1,
+              "snow_in": null
+            },
+            {
+              "month": "Oct",
+              "high_f": 64,
+              "low_f": 48,
+              "rain_in": 3.6,
+              "snow_in": 0.0
+            },
+            {
+              "month": "Nov",
+              "high_f": 53,
+              "low_f": 38,
+              "rain_in": 3.8,
+              "snow_in": 1.2
+            },
+            {
+              "month": "Dec",
+              "high_f": 42,
+              "low_f": 28,
+              "rain_in": 3.5,
+              "snow_in": 6.4
+            },
+            {
+              "month": "Jan",
+              "high_f": 37,
+              "low_f": 23,
+              "rain_in": 3.2,
+              "snow_in": 9.1
+            },
+            {
+              "month": "Feb",
+              "high_f": 39,
+              "low_f": 25,
+              "rain_in": 3.0,
+              "snow_in": 8.2
+            },
+            {
+              "month": "Mar",
+              "high_f": 47,
+              "low_f": 32,
+              "rain_in": 3.7,
+              "snow_in": 4.0
+            },
+            {
+              "month": "Apr",
+              "high_f": 58,
+              "low_f": 41,
+              "rain_in": 3.5,
+              "snow_in": 0.4
+            },
+            {
+              "month": "May",
+              "high_f": 69,
+              "low_f": 51,
+              "rain_in": 3.3,
+              "snow_in": null
+            }
+          ]
+        }
       },
       "rank": "#121",
       "location": {
@@ -3650,7 +4445,8 @@
         "source_url": "https://example.edu/brand/s4",
         "format": "svg",
         "background": "dark"
-      }
+      },
+      "accent": "#8FBF9A"
     },
     {
       "id": "s5",
@@ -3709,9 +4505,16 @@
           "tone": "warn"
         },
         {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
+          "label": "Note",
+          "text": "Placeholder counseling note for board density / Weather pin."
+        },
+        {
           "label": "Weather",
-          "text": "Damp Mid-Atlantic winters, humid summers, and rare class cancellations \u2014 check today\u2019s live conditions on the detail page.",
-          "tone": "muted"
+          "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
       "rank": null,
@@ -4030,7 +4833,8 @@
         "source_url": "",
         "format": "svg",
         "background": "dark"
-      }
+      },
+      "accent": "#ADA8A0"
     }
   ],
   "also_active": [

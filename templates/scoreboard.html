@@ -33,10 +33,12 @@
 
   /* —— Shared primitives —— */
   .eyebrow{font-size:var(--t1);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
-  .sec-h{display:flex;align-items:center;gap:12px;margin:0 0 12px;min-width:0}
-  .sec-h::before{content:"";flex:none;width:24px;height:1px;background:var(--gold);opacity:.85}
-  .sec-h span{font-size:var(--t1);font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
-  .sec-h em{font-style:normal;color:var(--gold);margin-left:8px;letter-spacing:.08em}
+  .sec-h{display:flex;align-items:center;gap:10px;margin:0 0 8px;min-width:0;
+    padding-bottom:4px;border-bottom:2px solid var(--accent,var(--gold))}
+  .sec-h::before{content:"";flex:none;width:24px;height:3px;border-radius:2px;background:var(--accent,var(--gold));opacity:1}
+  .sec-h span{font-size:22px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent,var(--gold));white-space:nowrap}
+  .sec-h em{font-style:normal;color:var(--accent,var(--gold));margin-left:8px;letter-spacing:.08em;font-weight:600;opacity:.85}
   .lab{font-size:var(--t1);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);
     line-height:1.25;text-align:right;padding-top:2px;
     white-space:normal;overflow:hidden;overflow-wrap:normal;word-break:normal;hyphens:none;
@@ -130,57 +132,64 @@
   .roi-chip.focus{box-shadow:0 0 0 2px rgba(201,168,106,.9)}
 
   /* Detail */
-  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px;--line-size:24px;--lab-size:20px}
-  /* One compact hero band: logo | name+rank+chips (centered) | weather */
-  .d-hero{flex:none;display:flex;align-items:center;gap:20px;min-width:0;padding-bottom:12px;border-bottom:1px solid var(--hair)}
-  .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px}
+  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px}
+  /* Hero: logo | name+rank+chips | compact monthly weather (right) */
+  .d-hero{flex:none;display:flex;align-items:stretch;gap:20px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair)}
+  .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;
+    border-left:4px solid var(--accent,var(--gold));padding-left:16px}
   .d-hero-top{display:flex;align-items:baseline;gap:12px;min-width:0}
   .d-hero h2{margin:0;font:300 44px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    border-bottom:2px solid var(--accent,var(--gold));padding-bottom:6px}
   .d-hero h2 .prog{color:var(--muted)}
   .d-hero .rank-pill{flex:none;align-self:center}
   .d-hero .tags{gap:8px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
-  /* Big weather panel — room-readable, top-right of detail hero */
-  .wx-panel{flex:none;width:640px;display:flex;flex-direction:column;gap:8px;padding:12px 16px;border:1px solid var(--hair);
-    border-radius:8px;background:var(--panel);min-width:0}
-  .wx-live{display:flex;align-items:center;gap:16px;min-width:0}
-  .wx-live[hidden]{display:none!important}
-  .wx-icon{flex:none;width:120px;height:120px;color:var(--gold)}
-  .wx-icon svg{display:block;width:100%;height:100%}
-  .wx-now{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
-  .wx-temp{font:200 72px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;color:var(--ink);
+  /* Compact monthly weather — right half of hero (~150px tall) */
+  .wx-month-band{flex:none;width:980px;max-width:48%;display:flex;flex-direction:column;justify-content:center;
+    padding:8px 12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0;
+    max-height:156px;box-sizing:border-box}
+  .wx-month-band .sec-h{margin:0 0 4px;padding-bottom:2px;gap:8px}
+  .wx-month-band .sec-h::before{width:16px;height:2px}
+  .wx-month-band .sec-h span{font-size:18px}
+  .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .wx-month-table th,.wx-month-table td{padding:1px 2px;text-align:center;vertical-align:middle;
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-temp span{font-size:32px;font-weight:300;margin-left:2px;color:var(--muted)}
-  .wx-cond{font-size:var(--t2);font-weight:400;color:var(--ink);letter-spacing:-.01em}
-  .wx-range{font-size:var(--t1);font-weight:400;color:var(--muted)}
-  .wx-place{font-size:var(--t1);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-  .wx-normals{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid var(--hair)}
-  .wx-normals .line{grid-template-columns:56px minmax(0,1fr);gap:8px}
-  .wx-normals .lab{font-size:var(--t1);text-align:right;-webkit-line-clamp:1;max-height:1.3em}
-  .wx-normals .txt{font-size:var(--t1);line-height:1.3;display:block;-webkit-line-clamp:unset;
-    max-height:none;overflow:visible;white-space:normal;overflow-wrap:break-word}
-  .wx-panel.wx-waiting .wx-live{opacity:.35}
+  .wx-month-table thead th{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--hair);padding-bottom:3px}
+  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:3px}
+  .wx-month-table thead th .wx-season svg{width:14px;height:14px;color:var(--accent,var(--gold));flex:none}
+  .wx-month-table tbody th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--dim);padding-left:2px;white-space:nowrap}
+  .wx-month-table tbody td{font:500 18px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table tbody tr+tr th,.wx-month-table tbody tr+tr td{border-top:1px solid rgba(255,255,255,.04)}
+  .wx-month-cap{margin:3px 0 0;font-size:12px;font-weight:400;color:var(--dim);letter-spacing:.03em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .wx-normals-fallback{display:flex;flex-direction:column;gap:2px;padding:2px 0 0}
+  .wx-normals-fallback .line{grid-template-columns:56px minmax(0,1fr);gap:8px}
+  .wx-normals-fallback .lab{font-size:12px}
+  .wx-normals-fallback .txt{font-size:16px;-webkit-line-clamp:1;max-height:1.2em}
+  .card .line.wx-line .lab{color:var(--gold)}
 
   .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
-  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 16px;
+  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 12px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
-    padding:16px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
+    padding:12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
   #detail .lab{font-size:var(--lab-size)}
   #detail .txt{font-size:var(--line-size)}
-  .d-sec .prose{margin:0;font-size:var(--t2);line-height:1.4;font-weight:400;color:var(--ink)}
-  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0}
+  .d-sec .prose{margin:0;font-size:var(--t2);line-height:1.35;font-weight:400;color:var(--ink)}
+  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
   .why-pair .why-col{min-width:0}
-  .why-pair .why-col .sec-h{margin-bottom:8px}
-  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-  .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--t2);line-height:1.4;font-weight:400;color:var(--ink);
+  .why-pair .why-col .sec-h{margin-bottom:6px}
+  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
     overflow-wrap:break-word;word-break:normal}
   .why-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
   .why-bullets li b{font-weight:600;color:var(--ink);margin-right:6px}
-  .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-  .tl li{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr);gap:12px;padding:0 0 0 16px;font-size:var(--t2);line-height:1.35}
+  .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .tl li{position:relative;display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.3}
   .tl li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
   .tl li::after{content:"";position:absolute;left:2px;top:18px;bottom:-10px;width:1px;background:var(--rule)}
   .tl li:last-child::after{display:none}
@@ -354,10 +363,35 @@
   function detailHasContent(d){
     if(!d)return false;
     if(d.history&&d.history.length)return true;
+    if(d.weather_monthly&&d.weather_monthly.months&&d.weather_monthly.months.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
+  }
+  var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
+  function cleanWeatherMonthly(raw){
+    if(!raw||typeof raw!=='object'||!Array.isArray(raw.months))return null;
+    var by={}, i, m, key, mon, out=[];
+    for(i=0;i<raw.months.length;i++){
+      m=raw.months[i];
+      if(!m||typeof m!=='object')continue;
+      key=String(m.month||'').toLowerCase().slice(0,3);
+      if(WX_MONTH_ORDER.indexOf(key)<0)continue;
+      by[key]={
+        month:key,
+        high_f:num(m.high_f),
+        low_f:num(m.low_f),
+        rain_in:num(m.rain_in),
+        snow_in:num(m.snow_in)
+      };
+    }
+    for(i=0;i<WX_MONTH_ORDER.length;i++){
+      mon=by[WX_MONTH_ORDER[i]];
+      if(mon)out.push(mon);
+    }
+    if(out.length<6)return null;
+    return {source:str(raw.source), station:str(raw.station), months:out};
   }
   function cleanDetail(d){
     if(!d||typeof d!=='object')return {};
@@ -379,13 +413,49 @@
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
-    out.weather=cleanLabeled(d.weather,4);
+    // Keep enough weather rows for Jan/Jul/Rain/Snow selection (fallback when monthly missing).
+    out.weather=cleanLabeled(d.weather,12);
+    out.weather_monthly=cleanWeatherMonthly(d.weather_monthly);
     out.why_points=cleanLabeled(d.why_points,8);
     out.why_not_points=cleanLabeled(d.why_not_points,8);
     out.student_likes=cleanStudentNotes(d.student_likes);
     out.student_dislikes=cleanStudentNotes(d.student_dislikes);
     out.scattergram_url=str(d.scattergram_url)||null;
     return out;
+  }
+  function parseHexColor(hex){
+    var m=/^#?([0-9A-Fa-f]{6})$/.exec(str(hex));
+    if(!m)return null;
+    return {r:parseInt(m[1].slice(0,2),16), g:parseInt(m[1].slice(2,4),16), b:parseInt(m[1].slice(4,6),16)};
+  }
+  function hexFromRgb(c){
+    function h(n){var s=Math.max(0,Math.min(255,n|0)).toString(16);return s.length<2?'0'+s:s;}
+    return '#'+h(c.r)+h(c.g)+h(c.b);
+  }
+  function relLuminance(c){
+    function chan(v){v=v/255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);}
+    return 0.2126*chan(c.r)+0.7152*chan(c.g)+0.0722*chan(c.b);
+  }
+  function contrastRatio(a,b){
+    var L1=relLuminance(a), L2=relLuminance(b), hi=Math.max(L1,L2), lo=Math.min(L1,L2);
+    return (hi+0.05)/(lo+0.05);
+  }
+  function mixTowardWhite(c,t){
+    return {r:Math.round(c.r+(255-c.r)*t), g:Math.round(c.g+(255-c.g)*t), b:Math.round(c.b+(255-c.b)*t)};
+  }
+  // Dark page backdrop #15171C — lighten accent until WCAG AA text contrast (4.5:1).
+  function readableAccent(hex){
+    var bg={r:0x15,g:0x17,b:0x1C}, orig=parseHexColor(hex), c, t;
+    if(!orig)orig=parseHexColor('#C9A86A');
+    for(t=0;t<=1.001;t+=0.05){
+      c=mixTowardWhite(orig,t);
+      if(contrastRatio(c,bg)>=4.5)return hexFromRgb(c);
+    }
+    return '#FFFFFF';
+  }
+  function cleanAccent(raw){
+    var c=parseHexColor(raw);
+    return c?hexFromRgb(c):null;
   }
   function cleanLocation(loc){
     if(!loc||typeof loc!=='object')return null;
@@ -439,14 +509,19 @@
   }
 
   function cleanCardLines(raw){
+    // Always reserve a slot for Weather so GT/Rice/UGA-style long cards never drop it.
     if(!Array.isArray(raw))return [];
-    var out=[], i;
-    for(i=0;i<raw.length&&out.length<10;i++){
+    var others=[], weather=null, i, lim=10, row, tone;
+    for(i=0;i<raw.length;i++){
       var x=raw[i];
       if(!x||typeof x!=='object'||!str(x.text))continue;
-      var tone=x.tone==='good'||x.tone==='warn'||x.tone==='muted'?x.tone:'';
-      out.push({label:str(x.label), text:str(x.text), tone:tone});
+      tone=x.tone==='good'||x.tone==='warn'||x.tone==='muted'?x.tone:'';
+      row={label:str(x.label), text:str(x.text), tone:tone};
+      if(/^weather$/i.test(row.label)){weather=row;continue;}
+      others.push(row);
     }
+    var out=others.slice(0, weather?lim-1:lim);
+    if(weather)out.push(weather);
     return out;
   }
   function cleanAlso(raw){
@@ -483,6 +558,7 @@
         step:step,
         location:cleanLocation(s.location),
         logo:cleanLogo(s.logo),
+        accent:cleanAccent(s.accent),
         lines:cleanCardLines(s.card_lines),
         detail:cleanDetail(s.detail)
       });
@@ -548,9 +624,11 @@
   function rgbHex(rgb){return '#'+rgb.split(',').map(function(n){var h=(+n).toString(16);return h.length<2?'0'+h:h;}).join('');}
   function linesHtml(lines){
     if(!lines||!lines.length)return '';
-    var h='<div class="lines">', i;
+    var h='<div class="lines">', i, isWx;
     for(i=0;i<lines.length;i++){
-      var x=lines[i], cls='line'+(x.tone?' '+x.tone:'')+(x.label?'':' nolab');
+      var x=lines[i];
+      isWx=/^weather$/i.test(x.label||'');
+      var cls='line'+(x.tone?' '+x.tone:'')+(x.label?'':' nolab')+(isWx?' wx-line':'');
       h+='<div class="'+cls+'">'+(x.label?'<span class="lab">'+esc(x.label)+'</span>':'')+
         '<span class="txt">'+richText(x.text)+'</span></div>';
     }
@@ -731,11 +809,9 @@
     if(nums&&nums.length&&(key.indexOf('rain')===0||key.indexOf('snow')===0||key.indexOf('precip')===0||/\bin(?:ches)?\b/i.test(text))){
       return {label:short, text:fmtInches(+nums[0])};
     }
-    // Fallback: keep prose; CSS wraps instead of truncating with ellipsis.
     return {label:short||lab, text:text};
   }
   function weatherNormals(rows){
-    // Prefer Jan / Jul / Rain / Snow when present; otherwise first four rows. Compact when parseable.
     if(!rows||!rows.length)return [];
     var want=['jan','jul','rain','snow'], picked=[], used={}, i, j, lab, out=[];
     for(i=0;i<want.length;i++){
@@ -748,29 +824,62 @@
     for(i=0;i<picked.length&&i<4;i++)out.push(compactWeatherRow(picked[i]));
     return out;
   }
-  function wxPanelHtml(s){
-    var d=s.detail||{}, norms=weatherNormals(d.weather), hasNorm=norms.length>0, hasLoc=!!s.location;
-    if(!hasNorm&&!hasLoc)return '';
-    var place='';
-    if(s.location)place=(s.location.city||'')+(s.location.city&&s.location.state?', ':'')+(s.location.state||'');
-    return '<aside class="wx-panel'+(hasLoc?' wx-waiting':'')+'" id="wx-panel">'+
-      '<div class="wx-live" id="wx-live"'+(hasLoc?'':' hidden')+'>'+
-        '<div class="wx-icon" id="wx-icon" aria-hidden="true"></div>'+
-        '<div class="wx-now">'+
-          '<div class="wx-temp" id="wx-temp">\u2014<span>\u00b0</span></div>'+
-          '<div class="wx-cond" id="wx-cond">Weather</div>'+
-          '<div class="wx-range" id="wx-range"></div>'+
-          (place?'<div class="wx-place">'+esc(place)+'</div>':'')+
-        '</div>'+
-      '</div>'+
-      (hasNorm?'<div class="wx-normals">'+dLines(norms)+'</div>':'')+
-    '</aside>';
+  function seasonIconKind(mon){
+    if(mon==='aug'||mon==='sep'||mon==='may')return 'sun';
+    if(mon==='oct'||mon==='nov')return 'leaf';
+    if(mon==='dec'||mon==='jan'||mon==='feb')return 'snow';
+    return 'flower';
+  }
+  function seasonIconSvg(kind){
+    var c='currentColor';
+    if(kind==='sun')return '<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="14" r="5" fill="'+c+'"/><g stroke="'+c+'" stroke-width="2" stroke-linecap="round"><path d="M14 2v3M14 23v3M2 14h3M23 14h3M5 5l2 2M21 21l2 2M23 5l-2 2M5 23l2-2"/></g></svg>';
+    if(kind==='leaf')return '<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 24c0-10 8-16 12-18-2 10-6 16-12 18z" fill="'+c+'" opacity=".9"/><path d="M14 24C14 14 6 8 2 6c2 10 6 16 12 18z" fill="'+c+'" opacity=".55"/><path d="M14 24V10" stroke="'+c+'" stroke-width="1.5" fill="none"/></svg>';
+    if(kind==='snow')return '<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g stroke="'+c+'" stroke-width="1.8" stroke-linecap="round" fill="none"><path d="M14 3v22M4.5 8.5l19 11M4.5 19.5l19-11"/><path d="M14 7l-2-2M14 7l2-2M14 21l-2 2M14 21l2 2"/></g></svg>';
+    return '<svg viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="14" cy="16" r="5" fill="none" stroke="'+c+'" stroke-width="1.8"/><circle cx="14" cy="8" r="2.2" fill="'+c+'"/><circle cx="9" cy="11" r="2" fill="'+c+'"/><circle cx="19" cy="11" r="2" fill="'+c+'"/><circle cx="8" cy="17" r="1.8" fill="'+c+'"/><circle cx="20" cy="17" r="1.8" fill="'+c+'"/></svg>';
+  }
+  function fmtWxCell(v, inches){
+    if(v==null||!isFinite(v))return '\u2014';
+    if(inches){
+      var r=Math.round(v*10)/10;
+      return Math.abs(r-Math.round(r))<0.05?String(Math.round(r)):r.toFixed(1);
+    }
+    return String(Math.round(v));
+  }
+  function weatherMonthlyHtml(wm){
+    if(!wm||!wm.months||!wm.months.length)return '';
+    var months=wm.months, i, m, head='', rowH='', rowL='', rowR='', rowS='', cap='';
+    for(i=0;i<months.length;i++){
+      m=months[i];
+      head+='<th scope="col"><div class="wx-season">'+seasonIconSvg(seasonIconKind(m.month))+
+        '<span>'+esc(m.month.toUpperCase())+'</span></div></th>';
+      rowH+='<td>'+esc(fmtWxCell(m.high_f,false))+'</td>';
+      rowL+='<td>'+esc(fmtWxCell(m.low_f,false))+'</td>';
+      rowR+='<td>'+esc(fmtWxCell(m.rain_in,true))+'</td>';
+      rowS+='<td>'+esc(fmtWxCell(m.snow_in,true))+'</td>';
+    }
+    if(wm.source||wm.station){
+      cap='<p class="wx-month-cap">'+esc([wm.source,wm.station].filter(Boolean).join(' \u00b7 '))+'</p>';
+    }
+    return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
+      '<table class="wx-month-table"><thead><tr><th scope="col"></th>'+head+'</tr></thead><tbody>'+
+      '<tr><th scope="row">High \u00b0F</th>'+rowH+'</tr>'+
+      '<tr><th scope="row">Low \u00b0F</th>'+rowL+'</tr>'+
+      '<tr><th scope="row">Rain in</th>'+rowR+'</tr>'+
+      '<tr><th scope="row">Snow in</th>'+rowS+'</tr>'+
+      '</tbody></table>'+cap+'</section>';
+  }
+  function weatherFallbackHtml(rows){
+    var norms=weatherNormals(rows);
+    if(!norms.length)return '';
+    return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
+      '<div class="wx-normals-fallback">'+dLines(norms)+'</div></section>';
   }
   function renderDetail(s){
-    var d=s.detail||{}, parts=[], i, snap=[], li='', whyL, whyR, acad;
+    var d=s.detail||{}, parts=[], i, snap=[], li='', whyL, whyR, acad, accent, wxBand='';
+    accent=readableAccent(s.accent||'#C9A86A');
     // Fixed order: Snapshot → On the board → About → Academics → Internships → Alumni →
     // Facts → Housing → Costs → Deadlines → Why/Why not → Status history.
-    // Weather lives in the hero panel (icon + live temps + normals).
+    // Weather is a full-width monthly table under the hero (no live Open-Meteo fetch).
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
@@ -806,96 +915,33 @@
       for(i=0;i<d.history.length&&i<10;i++)li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
       parts.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
     }
+    if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
+    else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
+    $('detail').style.setProperty('--accent', accent);
+    // Weather sits in the hero's right block so the 4-col body keeps cf81089 height.
     $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
       '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
-      '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+wxPanelHtml(s)+'</div>'+
+      '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+(wxBand||'')+'</div>'+
       (parts.length?'<div class="d-body">'+parts.join('')+'</div>':'');
     layoutDetail();
-    fillLiveWeather(s);
+    // Second pass after column layout settles so we do not keep an oversized type size.
+    setTimeout(layoutDetail, 0);
   }
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!root||!body)return;
-    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20,18,16,14], cols, i, c;
-    // Prefer fewer columns when content is light; always verify both axes so a fifth
-    // column cannot clip Status history / Counselor off-screen.
+    // Floor at 20px — never shrink body text below the readable cf81089 board/detail size.
+    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20], cols, i, c;
     cols=n<=3?[2]:n<=8?[3,2]:[4,3,2];
     for(c=0;c<cols.length;c++){
       body.style.columnCount=String(cols[c]);
       for(i=0;i<sizes.length;i++){
         root.style.setProperty('--line-size', sizes[i]+'px');
-        root.style.setProperty('--lab-size', Math.max(13, sizes[i]-2)+'px');
+        root.style.setProperty('--lab-size', Math.max(18, sizes[i]-2)+'px');
         if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return;
       }
     }
   }
-  var WX_CODE={
-    0:'Clear',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',
-    45:'Fog',48:'Icy fog',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',
-    61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',75:'Heavy snow',
-    80:'Rain showers',81:'Showers',82:'Heavy showers',85:'Snow showers',86:'Heavy snow showers',
-    95:'Thunderstorm',96:'Thunderstorm',99:'Severe storm'
-  };
-  function wxLabel(code){return WX_CODE[code]||'Conditions';}
-  function wxKind(code){
-    var c=+code;
-    if(c===0||c===1)return 'clear';
-    if(c===2)return 'partly';
-    if(c===3)return 'cloudy';
-    if(c===45||c===48)return 'fog';
-    if(c>=71&&c<=77||c===85||c===86)return 'snow';
-    if(c>=95&&c<=99)return 'thunder';
-    if(c>=51&&c<=67||c>=80&&c<=82)return 'rain';
-    return 'cloudy';
-  }
-  function wxIconSvg(kind, isDay){
-    var stroke='currentColor', fill='none', sun='#C9A86A', moon='#ADA8A0';
-    // Simple room-scale icons; day/night variants for clear + partly cloudy.
-    if(kind==='clear'&&isDay)return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="22" fill="'+sun+'"/><g stroke="'+sun+'" stroke-width="6" stroke-linecap="round"><path d="M60 12v14M60 94v14M12 60h14M94 60h14M26 26l10 10M84 84l10 10M94 26L84 36M36 84L26 94"/></g></svg>';
-    if(kind==='clear')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M78 70a28 28 0 1 1-26-42 22 22 0 1 0 26 42z" fill="'+moon+'"/></svg>';
-    if(kind==='partly'&&isDay)return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="40" cy="40" r="14" fill="'+sun+'"/><g stroke="'+sun+'" stroke-width="4" stroke-linecap="round"><path d="M40 14v10M40 56v10M14 40h10M56 40h10M22 22l7 7M51 51l7 7M58 22l-7 7M29 51l-7 7"/></g><path d="M34 78h52a18 18 0 0 0 0-36 24 24 0 0 0-46-6A16 16 0 0 0 34 78z" fill="rgba(240,237,230,.22)" stroke="'+stroke+'" stroke-width="3"/></svg>';
-    if(kind==='partly')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M78 34a16 16 0 1 1-14-24 14 14 0 1 0 14 24z" fill="'+moon+'"/><path d="M34 78h52a18 18 0 0 0 0-36 24 24 0 0 0-46-6A16 16 0 0 0 34 78z" fill="rgba(240,237,230,.22)" stroke="'+stroke+'" stroke-width="3"/></svg>';
-    if(kind==='cloudy')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M30 78h60a22 22 0 0 0 0-44 28 28 0 0 0-54-8A20 20 0 0 0 30 78z" fill="rgba(240,237,230,.2)" stroke="'+stroke+'" stroke-width="3"/></svg>';
-    if(kind==='fog')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><g stroke="'+stroke+'" stroke-width="5" stroke-linecap="round" opacity=".85"><path d="M22 44h76M18 60h84M26 76h68"/></g></svg>';
-    if(kind==='rain')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M30 58h60a20 20 0 0 0 0-40 26 26 0 0 0-50-6A18 18 0 0 0 30 58z" fill="rgba(240,237,230,.18)" stroke="'+stroke+'" stroke-width="3"/><g stroke="#6FA8DC" stroke-width="5" stroke-linecap="round"><path d="M42 72v22M60 70v26M78 72v22"/></g></svg>';
-    if(kind==='snow')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M30 54h60a20 20 0 0 0 0-40 26 26 0 0 0-50-6A18 18 0 0 0 30 54z" fill="rgba(240,237,230,.18)" stroke="'+stroke+'" stroke-width="3"/><g fill="#D8D2C8"><circle cx="42" cy="78" r="4"/><circle cx="60" cy="88" r="4"/><circle cx="78" cy="78" r="4"/><circle cx="50" cy="98" r="3"/><circle cx="70" cy="98" r="3"/></g></svg>';
-    if(kind==='thunder')return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M30 52h60a20 20 0 0 0 0-40 26 26 0 0 0-50-6A18 18 0 0 0 30 52z" fill="rgba(240,237,230,.18)" stroke="'+stroke+'" stroke-width="3"/><path d="M66 58L48 86h14l-8 24 28-36H68l10-16z" fill="'+sun+'"/></svg>';
-    return '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="28" stroke="'+stroke+'" stroke-width="3" fill="none"/></svg>';
-  }
-  function fillLiveWeather(s){
-    var panel=$('wx-panel'), live=$('wx-live'), loc=s&&s.location;
-    if(!panel)return;
-    if(!loc){
-      // Normals-only panel (no lat/lon): leave live block hidden.
-      panel.className=panel.className.replace(/\bwx-waiting\b/g,'').replace(/\s+/g,' ').replace(/^\s|\s$/g,'');
-      return;
-    }
-    var url='https://api.open-meteo.com/v1/forecast?latitude='+encodeURIComponent(loc.lat)+
-      '&longitude='+encodeURIComponent(loc.lon)+
-      '&current=temperature_2m,weather_code,is_day&daily=temperature_2m_max,temperature_2m_min'+
-      '&temperature_unit=fahrenheit&timezone=auto&forecast_days=1';
-    fetch(url,{cache:'no-store'}).then(function(r){return r.ok?r.json():Promise.reject();}).then(function(j){
-      if(!j||!j.current)return Promise.reject();
-      var now=Math.round(j.current.temperature_2m);
-      var code=j.current.weather_code;
-      var isDay=!!j.current.is_day;
-      var hi=j.daily&&j.daily.temperature_2m_max&&j.daily.temperature_2m_max.length?Math.round(j.daily.temperature_2m_max[0]):null;
-      var lo=j.daily&&j.daily.temperature_2m_min&&j.daily.temperature_2m_min.length?Math.round(j.daily.temperature_2m_min[0]):null;
-      var icon=$('wx-icon'), temp=$('wx-temp'), cond=$('wx-cond'), range=$('wx-range');
-      if(icon)icon.innerHTML=wxIconSvg(wxKind(code), isDay);
-      if(temp)temp.innerHTML=String(now)+'<span>\u00b0</span>';
-      if(cond)cond.textContent=wxLabel(code);
-      if(range)range.textContent=(hi!=null&&lo!=null)?('High '+hi+'\u00b0  \u00b7  Low '+lo+'\u00b0'):'';
-      if(live)live.hidden=false;
-      panel.className=panel.className.replace(/\bwx-waiting\b/g,'').replace(/\s+/g,' ').replace(/^\s|\s$/g,'');
-      layoutDetail();
-    }).catch(function(){
-      // Keep the panel; hide the live block and leave normals visible.
-      if(live)live.hidden=true;
-      panel.className=panel.className.replace(/\bwx-waiting\b/g,'').replace(/\s+/g,' ').replace(/^\s|\s$/g,'');
-    });
-  }
-
   function fmtK(n){
     var a=Math.abs(n), sign=n<0?'-':'';
     if(a>=1000)return sign+'$'+Math.round(a/1000)+'K';
