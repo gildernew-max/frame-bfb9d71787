@@ -21,6 +21,8 @@
     --ink:#E8E4DC; --muted:#9A958C; --dim:rgba(232,228,220,.55);
     --hair:rgba(255,255,255,.08); --rule:rgba(255,255,255,.12);
     --gold:#C9A86A; --up:#8FBF9A; --panel:rgba(255,255,255,.03);
+    /* TV remote focus — bright gold, readable across the room (stage coords; ~½ on 1920 viewport). */
+    --focus-ring:#FFD24A;
   }
   *{box-sizing:border-box}
   html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#0B0C0E}
@@ -81,20 +83,29 @@
   .count.admitted .l{color:var(--up)}.count.pending .l{color:var(--gold)}.count.denied .l{color:var(--muted)}
 
   /* Board columns */
-  .cols{flex:1;min-height:0;display:grid;gap:16px}
+  .cols{flex:1;min-height:0;display:grid;gap:16px;overflow:visible}
   .col{min-width:0;min-height:0;display:flex;flex-direction:column;gap:8px}
   .col-head{flex:none;display:flex;align-items:center;justify-content:space-between;padding:8px 0;
     border-bottom:2px solid rgba(var(--t),.55)}
   .col-head .t{font-size:var(--t1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--t))}
   .col-head .c{font-size:var(--t1);font-weight:500;letter-spacing:.1em;color:var(--dim)}
-  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+  /* overflow visible + padding so focus scale/ring/glow are not clipped */
+  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:visible;padding:18px 14px;box-sizing:border-box}
   .col-cue{flex:none;height:24px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:var(--t1);color:var(--dim)}
 
   .card{flex:none;position:relative;display:flex;flex-direction:column;gap:8px;padding:16px 16px 16px 20px;border-radius:8px;
-    border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none}
+    border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none;z-index:0;
+    transform:scale(1);transform-origin:center center;
+    transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
   .card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 2px 2px 0;background:var(--c)}
   .card.denied,.card.withdrawn{opacity:.72}
-  .card.focus{border-color:rgba(201,168,106,.55);box-shadow:inset 0 0 0 1px rgba(201,168,106,.35)}
+  /* Thick ring via box-shadow (no layout shift) + glow + scale; z-index above neighbors */
+  .card.focus{border-color:var(--focus-ring);opacity:1;filter:none;z-index:6;
+    transform:scale(1.04);
+    box-shadow:0 0 0 16px var(--focus-ring),0 0 56px 18px rgba(255,210,74,.55),0 22px 44px rgba(0,0,0,.55)}
+  #cols.cards-focused .card:not(.focus){opacity:.7;filter:brightness(.75)}
+  #cols.cards-focused .card.denied:not(.focus),
+  #cols.cards-focused .card.withdrawn:not(.focus){opacity:.55}
   .name-row{flex:none;display:flex;align-items:center;gap:12px;min-width:0}
   .name{flex:1;min-width:0;font:400 var(--t3)/1.15 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -133,7 +144,7 @@
   .roi-chip.focus{box-shadow:0 0 0 2px rgba(201,168,106,.9)}
 
   /* Detail */
-  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:200px;position:relative}
+  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:200px;position:relative;overflow:visible}
   /* Hero: logo (~360×150) | name+program+rank+chips | inline Aug–May weather table */
   .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
     min-height:300px}
@@ -187,18 +198,24 @@
   .marist-empty{margin:0;font-size:var(--line-size,var(--t2));font-weight:400;color:var(--muted)}
   .marist-note{margin:4px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.3}
 
-  .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:hidden}
+  /* Padding + visible overflow so focused card scale/ring/glow are not clipped by columns */
+  .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:visible;padding:20px 16px;box-sizing:border-box}
   .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 8px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
     padding:8px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
-  .d-card{cursor:pointer;outline:none;transition:box-shadow .12s ease,border-color .12s ease}
-  .d-card.d-card-focus,.d-card:focus{border-color:var(--accent,var(--gold));
-    box-shadow:0 0 0 6px rgba(201,168,106,.65),0 0 0 2px var(--accent,var(--gold)) inset}
+  .d-card{cursor:pointer;outline:none;position:relative;z-index:0;
+    transform:scale(1);transform-origin:center center;
+    transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
+  .d-card.d-card-focus,.d-card:focus{border-color:var(--focus-ring);z-index:6;opacity:1;filter:none;
+    transform:scale(1.04);
+    box-shadow:0 0 0 16px var(--focus-ring),0 0 56px 18px rgba(255,210,74,.55),0 22px 44px rgba(0,0,0,.55)}
+  #detail.cards-focused .d-card:not(.d-card-focus){opacity:.7;filter:brightness(.75)}
   .why-pair .why-col.d-card{padding:6px 8px;border:1px solid transparent;border-radius:6px;background:transparent}
   .why-pair .why-col.d-card.d-card-focus,.why-pair .why-col.d-card:focus{
-    border-color:var(--accent,var(--gold));background:rgba(255,255,255,.04);
-    box-shadow:0 0 0 6px rgba(201,168,106,.65)}
+    border-color:var(--focus-ring);background:rgba(255,255,255,.04);z-index:6;opacity:1;filter:none;
+    transform:scale(1.04);
+    box-shadow:0 0 0 16px var(--focus-ring),0 0 56px 18px rgba(255,210,74,.55),0 22px 44px rgba(0,0,0,.55)}
 
   /* Detail card popup — ~90% overlay, ~2× body type */
   #d-pop{position:absolute;left:0;top:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;
@@ -832,13 +849,19 @@
     for(i=0;i<state.cols.length;i++)layoutCol(i);
   }
   function paintFocus(){
-    var on=document.querySelectorAll('.card.focus'), i;
+    var on=document.querySelectorAll('.card.focus'), i, el, colsEl, hasCard;
     for(i=0;i<on.length;i++)on[i].classList.remove('focus');
     var chip=$('roi-chip');
     if(chip)chip.classList.toggle('focus',!!(state.chipFocus&&state.roi&&state.view==='board'));
+    hasCard=false;
     if(!state.chipFocus&&state.focus){
-      var el=document.querySelector('.card[data-c="'+state.focus.col+'"][data-i="'+state.focus.idx+'"]');
-      if(el)el.classList.add('focus');
+      el=document.querySelector('.card[data-c="'+state.focus.col+'"][data-i="'+state.focus.idx+'"]');
+      if(el){el.classList.add('focus');hasCard=true;}
+    }
+    colsEl=$('cols');
+    if(colsEl){
+      if(hasCard&&state.view==='board')colsEl.classList.add('cards-focused');
+      else colsEl.classList.remove('cards-focused');
     }
     setHints();
   }
@@ -1190,14 +1213,22 @@
     return root.querySelectorAll('.d-card');
   }
   function paintCardFocus(){
-    var cards=detailCards(), i, el;
+    var cards=detailCards(), i, el, root, has;
     for(i=0;i<cards.length;i++)cards[i].classList.remove('d-card-focus');
-    if(state.view!=='detail'||!cards.length)return;
-    if(state.cardFocus<0||state.cardFocus>=cards.length)state.cardFocus=0;
-    el=cards[state.cardFocus];
-    if(el){
-      el.classList.add('d-card-focus');
-      try{el.focus();}catch(_){}
+    root=$('detail');
+    has=false;
+    if(state.view==='detail'&&cards.length){
+      if(state.cardFocus<0||state.cardFocus>=cards.length)state.cardFocus=0;
+      el=cards[state.cardFocus];
+      if(el){
+        el.classList.add('d-card-focus');
+        has=true;
+        try{el.focus();}catch(_){}
+      }
+    }
+    if(root){
+      if(has)root.classList.add('cards-focused');
+      else root.classList.remove('cards-focused');
     }
   }
   function moveCardFocus(dir){
