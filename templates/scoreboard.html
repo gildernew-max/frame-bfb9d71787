@@ -233,6 +233,13 @@
   .d-pop-body .marist-note{font-size:var(--pop-lab)}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
+  .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
+    appearance:none;-webkit-appearance:none;margin:0;padding:0;border:0;cursor:pointer;
+    background:transparent;color:rgba(232,228,220,.35);font-size:64px;line-height:1;
+    display:flex;align-items:center;justify-content:center;transition:color .12s ease,background .12s ease}
+  .d-pop-edge:hover,.d-pop-edge:focus{outline:none;color:var(--accent,var(--gold));background:rgba(255,255,255,.04)}
+  .d-pop-edge-l{left:0;border-radius:0 12px 12px 0}
+  .d-pop-edge-r{right:0;border-radius:12px 0 0 12px}
   #detail .lab{font-size:var(--lab-size);letter-spacing:.06em;overflow-wrap:break-word;word-break:break-word;
     white-space:normal;-webkit-line-clamp:3;max-height:calc(3 * 1.25em);hyphens:auto}
   #detail .txt{font-size:var(--line-size);min-width:0}
@@ -314,10 +321,12 @@
   <div id="detail" hidden></div>
   <div id="d-pop" hidden>
     <div class="d-pop-backdrop" aria-hidden="true"></div>
+    <button type="button" class="d-pop-edge d-pop-edge-l" data-pop-nav="left" aria-label="Previous card">&#9664;</button>
+    <button type="button" class="d-pop-edge d-pop-edge-r" data-pop-nav="right" aria-label="Next card">&#9654;</button>
     <div class="d-pop-panel" role="dialog" aria-modal="true">
       <div class="d-pop-h"><span id="d-pop-title"></span></div>
       <div class="d-pop-body" id="d-pop-body"></div>
-      <div class="d-pop-hint">▲▼ Scroll · OK / Back Close</div>
+      <div class="d-pop-hint">&#9664; &#9654; Cards &middot; &#9650;&#9660; Scroll &middot; OK / Back Close</div>
     </div>
   </div>
   <div id="roi" hidden></div>
@@ -840,7 +849,7 @@
   function setHints(){
     var h;
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
-    else if(state.view==='detail'&&state.popupOpen)h='<span><b>OK</b>Close</span><span><b>Back</b>Close</span>';
+    else if(state.view==='detail'&&state.popupOpen)h='<span><b>\u25c0\u25b6</b>Cards</span><span><b>\u25b2\u25bc</b>Scroll</span><span><b>OK</b>Close</span><span><b>Back</b>Close</span>';
     else if(state.view==='detail')h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Cards</span><span><b>OK</b>Expand</span><span><b>Back</b>Board</span>';
     else if(state.chipFocus)h='<span><b>OK</b>ROI Ladder</span><span><b>\u25bc</b>Schools</span><span><b>Back</b>Daybreak</span>';
     else h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+(state.roi?'<span><b>\u25b2</b>ROI</span>':'')+'<span><b>Back</b>Daybreak</span>';
@@ -1253,6 +1262,18 @@
     setTimeout(layoutPopup, 0);
     setHints();
   }
+  function shiftPopupCard(dir){
+    // Step through detailCards() in DOM/focus-list order; wrap at the ends.
+    var cards=detailCards(), n, i, next;
+    if(!cards.length)return;
+    n=cards.length;
+    i=state.cardFocus|0;
+    if(i<0||i>=n)i=0;
+    next=dir==='right'?((i+1)%n):((i-1+n)%n);
+    state.cardFocus=next;
+    paintCardFocus();
+    openCardPopup(cards[next]);
+  }
   function closeCardPopup(){
     var pop=$('d-pop'), body=$('d-pop-body');
     if(pop)pop.hidden=true;
@@ -1496,10 +1517,12 @@
     var code=e.keyCode||e.which;
     var isBack=code===10009||code===27||code===8||e.key==='Escape'||e.key==='Backspace'||e.key==='XF86Back'||e.key==='GoBack';
     var dir;
-    // Detail popup: Up/Down scroll; Back / Esc / Enter closes; arrows do not move focus underneath.
+    // Detail popup: Left/Right switch cards; Up/Down scroll; Back / Esc / Enter closes.
     if(state.view==='detail'&&state.popupOpen){
       e.preventDefault();
       if(isBack||code===13||e.key==='Enter'){closeCardPopup();return;}
+      if(code===37){shiftPopupCard('left');return;}
+      if(code===39){shiftPopupCard('right');return;}
       if(code===38){scrollPopup('up');return;}
       if(code===40){scrollPopup('down');return;}
       return;
@@ -1527,10 +1550,17 @@
     if(dir){e.preventDefault();move(dir);}
   });
   document.addEventListener('click',function(e){
-    var chip, el, card, pop, cards, i;
-    // Popup open: any click on the overlay (backdrop or panel) closes it.
+    var chip, el, card, pop, cards, i, nav;
+    // Popup open: edge arrows switch cards; any other click on the overlay closes it.
     if(state.popupOpen){
       pop=$('d-pop');
+      nav=e.target.closest?e.target.closest('[data-pop-nav]'):null;
+      if(nav&&pop&&pop.contains(nav)){
+        e.preventDefault();
+        e.stopPropagation();
+        shiftPopupCard(nav.getAttribute('data-pop-nav')==='left'?'left':'right');
+        return;
+      }
       if(pop&&pop.contains(e.target)){e.preventDefault();closeCardPopup();return;}
     }
     chip=e.target.closest?e.target.closest('#roi-chip'):null;
