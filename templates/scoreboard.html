@@ -157,9 +157,10 @@
   .wx-range{font-size:var(--t1);font-weight:400;color:var(--muted)}
   .wx-place{font-size:var(--t1);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
   .wx-normals{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid var(--hair)}
-  .wx-normals .line{grid-template-columns:72px minmax(0,1fr);gap:8px}
-  .wx-normals .lab{font-size:var(--t1);text-align:right}
-  .wx-normals .txt{font-size:var(--t1);line-height:1.3;-webkit-line-clamp:1;max-height:1.3em}
+  .wx-normals .line{grid-template-columns:56px minmax(0,1fr);gap:8px}
+  .wx-normals .lab{font-size:var(--t1);text-align:right;-webkit-line-clamp:1;max-height:1.3em}
+  .wx-normals .txt{font-size:var(--t1);line-height:1.3;display:block;-webkit-line-clamp:unset;
+    max-height:none;overflow:visible;white-space:normal;overflow-wrap:break-word}
   .wx-panel.wx-waiting .wx-live{opacity:.35}
 
   .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
@@ -334,6 +335,22 @@
     }
     return out;
   }
+  // Real shape: [{text, sources:[urls]}] (no label, ≤4, ≤140 chars). Also accept {label,text}.
+  // Sources are never rendered.
+  function cleanStudentNotes(raw){
+    if(!Array.isArray(raw))return [];
+    var out=[], i, t, lab;
+    for(i=0;i<raw.length&&out.length<4;i++){
+      var x=raw[i];
+      if(!x||typeof x!=='object')continue;
+      t=str(x.text);
+      if(!t)continue;
+      if(t.length>140)t=t.slice(0,140);
+      lab=str(x.label);
+      out.push({label:lab, text:t});
+    }
+    return out;
+  }
   function detailHasContent(d){
     if(!d)return false;
     if(d.history&&d.history.length)return true;
@@ -365,8 +382,8 @@
     out.weather=cleanLabeled(d.weather,4);
     out.why_points=cleanLabeled(d.why_points,8);
     out.why_not_points=cleanLabeled(d.why_not_points,8);
-    out.student_likes=cleanLabeled(d.student_likes,8);
-    out.student_dislikes=cleanLabeled(d.student_dislikes,8);
+    out.student_likes=cleanStudentNotes(d.student_likes);
+    out.student_dislikes=cleanStudentNotes(d.student_dislikes);
     out.scattergram_url=str(d.scattergram_url)||null;
     return out;
   }
@@ -379,8 +396,11 @@
   function cleanLogo(logo){
     if(!logo||typeof logo!=='object')return null;
     var file=str(logo.file);
-    // Basename only — served from logos/ next to the page (HA: /local/logos/).
-    if(!file||file.indexOf('..')>=0||file.indexOf('/')>=0||file.indexOf('\\')>=0)return null;
+    // Real data ships as logos/<id>.svg — strip one leading logos/, then basename-check.
+    // Served from logos/ next to the page (HA: /local/logos/).
+    if(!file||file.indexOf('..')>=0)return null;
+    if(file.indexOf('logos/')===0)file=file.slice(6);
+    if(!file||file.indexOf('/')>=0||file.indexOf('\\')>=0)return null;
     if(!/^[A-Za-z0-9._-]+$/.test(file))return null;
     var bg=logo.background==='light'||logo.background==='dark'?logo.background:'dark';
     return {file:file, source_url:str(logo.source_url), format:str(logo.format), background:bg};
@@ -685,19 +705,48 @@
     if(prose)return '<p class="prose">'+esc(prose)+'</p>';
     return '';
   }
+  function weatherShortLab(lab){
+    var k=String(lab||'').toLowerCase();
+    if(k.indexOf('jan')===0)return 'JAN';
+    if(k.indexOf('jul')===0)return 'JUL';
+    if(k.indexOf('rain')===0||k.indexOf('precip')===0)return 'RAIN';
+    if(k.indexOf('snow')===0)return 'SNOW';
+    return String(lab||'');
+  }
+  function fmtInches(n){
+    var r=Math.round(n*10)/10;
+    return (Math.abs(r-Math.round(r))<0.05?String(Math.round(r)):r.toFixed(1))+' in';
+  }
+  function compactWeatherRow(row){
+    var lab=String(row.label||''), key=lab.toLowerCase(), text=String(row.text||''), slash, nums, short;
+    short=weatherShortLab(lab);
+    slash=text.match(/(-?\d+(?:\.\d+)?)\s*\/\s*(-?\d+(?:\.\d+)?)/);
+    if(slash&&(key.indexOf('jan')===0||key.indexOf('jul')===0||(/high/i.test(text)&&/low/i.test(text)))){
+      return {label:short, text:Math.round(+slash[1])+'\u00b0/'+Math.round(+slash[2])+'\u00b0'};
+    }
+    nums=text.match(/-?\d+(?:\.\d+)?/g);
+    if(nums&&nums.length>=2&&(key.indexOf('jan')===0||key.indexOf('jul')===0||(/high/i.test(text)&&/low/i.test(text)))){
+      return {label:short, text:Math.round(+nums[0])+'\u00b0/'+Math.round(+nums[1])+'\u00b0'};
+    }
+    if(nums&&nums.length&&(key.indexOf('rain')===0||key.indexOf('snow')===0||key.indexOf('precip')===0||/\bin(?:ches)?\b/i.test(text))){
+      return {label:short, text:fmtInches(+nums[0])};
+    }
+    // Fallback: keep prose; CSS wraps instead of truncating with ellipsis.
+    return {label:short||lab, text:text};
+  }
   function weatherNormals(rows){
-    // Prefer Jan / Jul / Rain / Snow when present; otherwise first four rows.
+    // Prefer Jan / Jul / Rain / Snow when present; otherwise first four rows. Compact when parseable.
     if(!rows||!rows.length)return [];
-    var want=['jan','jul','rain','snow'], picked=[], used={}, i, j, lab, key;
+    var want=['jan','jul','rain','snow'], picked=[], used={}, i, j, lab, out=[];
     for(i=0;i<want.length;i++){
       for(j=0;j<rows.length;j++){
         lab=String(rows[j].label||'').toLowerCase();
         if(lab.indexOf(want[i])===0||lab===want[i]){picked.push(rows[j]);used[j]=1;break;}
       }
     }
-    if(picked.length>=4)return picked.slice(0,4);
-    for(j=0;j<rows.length&&picked.length<4;j++)if(!used[j])picked.push(rows[j]);
-    return picked.slice(0,4);
+    if(picked.length<4)for(j=0;j<rows.length&&picked.length<4;j++)if(!used[j])picked.push(rows[j]);
+    for(i=0;i<picked.length&&i<4;i++)out.push(compactWeatherRow(picked[i]));
+    return out;
   }
   function wxPanelHtml(s){
     var d=s.detail||{}, norms=weatherNormals(d.weather), hasNorm=norms.length>0, hasLoc=!!s.location;
@@ -745,11 +794,11 @@
         '<div class="why-col"><div class="sec-h"><span>Why not</span></div>'+(whyR||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
-    var love=whyBody(d.student_likes,null), gripe=whyBody(d.student_dislikes,null);
-    if(love||gripe){
+    var like=whyBody(d.student_likes,null), dislike=whyBody(d.student_dislikes,null);
+    if(like||dislike){
       parts.push('<section class="d-sec why-pair"><div class="why-cols">'+
-        '<div class="why-col"><div class="sec-h"><span>Students love</span></div>'+(love||'<p class="prose">\u2014</p>')+'</div>'+
-        '<div class="why-col"><div class="sec-h"><span>Students gripe</span></div>'+(gripe||'<p class="prose">\u2014</p>')+'</div>'+
+        '<div class="why-col"><div class="sec-h"><span>What students like</span></div>'+(like||'<p class="prose">\u2014</p>')+'</div>'+
+        '<div class="why-col"><div class="sec-h"><span>What students don\u2019t</span></div>'+(dislike||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
     if(d.counselor_take)parts.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
