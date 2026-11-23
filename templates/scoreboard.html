@@ -647,12 +647,17 @@
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!root||!body)return;
-    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20,18,16], i;
-    body.style.columnCount=n<=3?2:n<=7?3:4;
-    for(i=0;i<sizes.length;i++){
-      root.style.setProperty('--line-size', sizes[i]+'px');
-      root.style.setProperty('--lab-size', Math.max(15, sizes[i]-2)+'px');
-      if(body.scrollHeight<=body.clientHeight+4)break;
+    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20,18,16,14], cols, i, c;
+    // Prefer fewer columns when content is light; always verify both axes so a fifth
+    // column cannot clip Status history / Counselor off-screen.
+    cols=n<=3?[2]:n<=8?[3,2]:[4,3,2];
+    for(c=0;c<cols.length;c++){
+      body.style.columnCount=String(cols[c]);
+      for(i=0;i<sizes.length;i++){
+        root.style.setProperty('--line-size', sizes[i]+'px');
+        root.style.setProperty('--lab-size', Math.max(13, sizes[i]-2)+'px');
+        if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return;
+      }
     }
   }
   var WX_CODE={
