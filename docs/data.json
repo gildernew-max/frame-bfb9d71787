@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T01:45:10.807Z",
+ "generatedAt": "2026-11-23T02:00:19.361Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,15 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T01:45:10.807Z",
+  "at": "2026-11-23T02:00:19.361Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
+   "cfbScoreboard",
    "futures",
    "usTempGrid"
   ]
@@ -13687,62 +13683,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T01:45:10.807Z",
-  "lastAttempt": "2026-11-23T01:45:10.807Z",
+  "asOf": "2026-11-23T02:00:19.361Z",
+  "lastAttempt": "2026-11-23T02:00:19.361Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7085.25,
-    "lastTime": 1795397722,
+    "last": 7083,
+    "lastTime": 1795398618,
     "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 141.5,
-    "changePct": 2.0378037803780376,
-    "expectedOpen": 7051.210188658866,
+    "change": 139.25,
+    "changePct": 2.0054005400540054,
+    "expectedOpen": 7048.970998379838,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25839,
-    "lastTime": 1795397723,
+    "last": 25830,
+    "lastTime": 1795398618,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 697,
-    "changePct": 2.77225359955453,
-    "expectedOpen": 23244.752889507596,
+    "change": 688,
+    "changePct": 2.7364569246678863,
+    "expectedOpen": 23236.656493516824,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49006,
-    "lastTime": 1795397720,
+    "last": 49000,
+    "lastTime": 1795398615,
     "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 772,
-    "changePct": 1.6005307459468425,
-    "expectedOpen": 48917.942820002485,
+    "change": 766,
+    "changePct": 1.5880913878177219,
+    "expectedOpen": 48911.95360119418,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2635.9,
-    "lastTime": 1795397718,
+    "last": 2636.4,
+    "lastTime": 1795398614,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 47.50009765625009,
-    "changePct": 1.835114335046899,
+    "change": 48.00009765625009,
+    "changePct": 1.8544312883332617,
     "expectedOpen": null,
     "valid": true
    }
@@ -13766,16 +13762,16 @@
     "id": "401873077",
     "start": "2026-11-23T01:20Z",
     "state": "in",
-    "status": "Q1 6:50",
+    "status": "Q1 1:13",
     "period": 1,
-    "clock": "6:50",
+    "clock": "1:13",
     "completed": false,
     "away": {
      "name": "Minnesota Vikings",
      "short": "Vikings",
      "id": "16",
      "abbrev": "MIN",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
      "record": "7-2",
      "winner": false,
@@ -14192,8 +14188,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T01:45:10.807Z",
-  "lastAttempt": "2026-11-23T01:45:10.807Z",
+  "asOf": "2026-11-23T02:00:19.361Z",
+  "lastAttempt": "2026-11-23T02:00:19.361Z",
   "lastError": null
  },
  "alerts": {
@@ -14204,8 +14200,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T01:45:10.807Z",
-  "lastAttempt": "2026-11-23T01:45:10.807Z",
+  "asOf": "2026-11-23T02:00:19.361Z",
+  "lastAttempt": "2026-11-23T02:00:19.361Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,12 +14872,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-22T20:00:12.834Z",
-  "lastAttempt": "2026-11-22T20:00:12.834Z",
+  "asOf": "2026-11-23T02:00:19.361Z",
+  "lastAttempt": "2026-11-23T02:00:19.361Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T01:45:10.807Z",
+  "lastAttempt": "2026-11-23T02:00:19.361Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
