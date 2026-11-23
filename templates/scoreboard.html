@@ -61,11 +61,12 @@
   .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
   /* Detail logo plate: ~360×150 on the 1920 viewport (stage is 2×; object-fit contain). */
   .logo-lg{width:720px;height:300px;border-radius:16px;padding:28px 36px}
-  /* Popup header logo: same asset as detail hero, ~260×≤120 on the 1920 viewport (stage is 2×). */
-  .logo-pop{width:520px;max-width:520px;height:auto;max-height:240px;border-radius:14px;padding:16px 22px;
-    display:flex;align-items:center;justify-content:center}
+  /* Popup header logo: size by height (~100px viewport / min 90), width auto, max ~360px viewport.
+     Stage is 2×; ultra-wide wordmarks hit max-width and shrink height instead of becoming thin strips. */
+  .logo-pop{width:auto;max-width:720px;height:200px;min-height:180px;border-radius:14px;padding:16px 22px;
+    display:flex;align-items:center;justify-content:center;box-sizing:border-box}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-  .logo-pop img{width:100%;height:auto;max-height:200px;object-fit:contain;object-position:center}
+  .logo-pop img{height:100%;width:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
   .logo-lg .mono{font-size:72px;letter-spacing:.1em}
   .logo-pop .mono{font-size:56px;letter-spacing:.08em}
@@ -263,8 +264,8 @@
     padding-bottom:14px;border-bottom:3px solid var(--accent,var(--focus-ring))}
   .d-pop-h-text{flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding-right:8px}
   .d-pop-h-text::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--focus-ring))}
-  /* Reserve ~520px + gap so title/rule wrap instead of running under the large logo */
-  .d-pop-h.has-logo .d-pop-h-text{padding-right:28px;max-width:calc(100% - 560px)}
+  /* Reserve max logo width (~360px viewport / 720 stage) + gap so title never runs under it */
+  .d-pop-h.has-logo .d-pop-h-text{padding-right:28px;max-width:calc(100% - 760px)}
   .d-pop-h .logo-pop{flex:none;flex-shrink:0;align-self:flex-start;margin:0}
   .d-pop-h span{font-size:var(--pop-title);font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     color:var(--accent,var(--focus-ring));line-height:1.15;overflow-wrap:break-word}
@@ -274,6 +275,8 @@
   .d-pop-body .line{gap:18px;grid-template-columns:minmax(160px,32%) minmax(0,1fr)}
   .d-pop-body .lab,.d-pop-body .lbl{font-size:var(--pop-lab);letter-spacing:.08em;-webkit-line-clamp:4;max-height:none;overflow:visible}
   .d-pop-body .txt{font-size:var(--pop-line);line-height:1.35;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
+  /* Academics CDS / source parentheticals: ~60% of body, off-white at ~75% opacity (not tiny grey) */
+  #d-pop .txt .src,#d-pop .prose .src{font-size:calc(var(--pop-line) * 0.6);color:rgba(245,241,232,.75);font-weight:400}
   .d-pop-body .prose{font-size:var(--pop-line);line-height:1.4;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
   .d-pop-body .why-bullets{gap:12px}
   .d-pop-body .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
@@ -805,6 +808,48 @@
   function readableAccent(hex){return readableAccentOn(hex,{r:0x15,g:0x17,b:0x1C});}
   // Popup panel #16181F — title rule + in-content labels use this tint.
   function popupReadableAccent(hex){return readableAccentOn(hex,{r:0x16,g:0x18,b:0x1F});}
+  function accentPassesOn(hex, bg){
+    var c=parseHexColor(hex), backdrop=bg||{r:0x16,g:0x18,b:0x1F};
+    if(!c)return false;
+    return contrastRatio(c,backdrop)>=4.5;
+  }
+  // When primary is too dark for the popup, prefer a known secondary (e.g. Auburn orange)
+  // if the school record has no secondary/alt field of its own.
+  var POPUP_ACCENT_SECONDARY={
+    auburn:'#E87722',
+    'auburn university':'#E87722',
+    'auburn university placeholder':'#E87722'
+  };
+  function popupSecondaryOverride(s){
+    var id, name, key;
+    if(!s)return null;
+    id=String(s.id||'').replace(/^\s+|\s+$/g,'').toLowerCase();
+    name=String(s.school||'').replace(/^\s+|\s+$/g,'').toLowerCase();
+    if(id&&POPUP_ACCENT_SECONDARY[id])return POPUP_ACCENT_SECONDARY[id];
+    if(name&&POPUP_ACCENT_SECONDARY[name])return POPUP_ACCENT_SECONDARY[name];
+    for(key in POPUP_ACCENT_SECONDARY){
+      if(Object.prototype.hasOwnProperty.call(POPUP_ACCENT_SECONDARY,key)&&name.indexOf(key)>=0)
+        return POPUP_ACCENT_SECONDARY[key];
+    }
+    return null;
+  }
+  // Popup accent: use primary if ≥4.5:1 on #16181F; else a passing secondary/alt (data or override);
+  // else lighten the primary. Same color drives title, rule, labels, and leads.
+  function resolvePopupAccent(s){
+    var bg={r:0x16,g:0x18,b:0x1F}, primary, secondary, c;
+    primary=(s&&s.accent)||'#FFD24A';
+    if(accentPassesOn(primary,bg)){
+      c=parseHexColor(primary);
+      return c?hexFromRgb(c):popupReadableAccent(primary);
+    }
+    secondary=(s&&(s.accent_secondary||s.secondary||s.accent_alt))||null;
+    if(!secondary)secondary=popupSecondaryOverride(s);
+    if(secondary&&accentPassesOn(secondary,bg)){
+      c=parseHexColor(secondary);
+      return c?hexFromRgb(c):popupReadableAccent(secondary);
+    }
+    return popupReadableAccent(primary);
+  }
   function cleanAccent(raw){
     var c=parseHexColor(raw);
     return c?hexFromRgb(c):null;
@@ -918,6 +963,9 @@
         location:cleanLocation(s.location),
         logo:cleanLogo(s.logo),
         accent:cleanAccent(s.accent),
+        accent_secondary:cleanAccent(s.accent_secondary||s.secondary||s.accent_alt),
+        secondary:cleanAccent(s.secondary||s.accent_secondary||s.accent_alt),
+        accent_alt:cleanAccent(s.accent_alt||s.accent_secondary||s.secondary),
         lines:cleanCardLines(s.card_lines, 10),
         linesAll:cleanCardLines(s.card_lines, 0),
         detail:cleanDetail(s.detail)
@@ -1586,7 +1634,7 @@
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
     titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
-    // Same enlarged header logo asset as the detail hero (~260×≤120 viewport); hide when no logo.
+    // Height-sized popup logo (~100px viewport, max ~360 wide); hide when no logo.
     logo=(s&&s.logo)?logoHtml(s,'pop'):'';
     if(head){
       head.className='d-pop-h'+(logo?' has-logo':'');
@@ -1597,8 +1645,8 @@
       body.scrollTop=0;
     }
     pop.hidden=false;
-    // Popup accent: school color lightened to ≥4.5:1 on the popup panel (title rule + labels).
-    accent=popupReadableAccent((s&&s.accent)||'#FFD24A');
+    // Popup accent: primary if it passes; else secondary/alt (or Auburn override); else lightened primary.
+    accent=resolvePopupAccent(s);
     pop.style.setProperty('--accent', accent);
     state.popupOpen=true;
     layoutPopup();
