@@ -3,7 +3,7 @@
   "updated": "2026-11-23T09:41:00-05:00",
   "schools": [
     {
-      "id": "sample-a",
+      "id": "r1",
       "school": "Sample University A",
       "program": "Engineering",
       "tier": "reach",
@@ -15,75 +15,70 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$89,500 / yr sticker \u00b7 COA $94K",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "ED locked \u00b7 midyear due Jan 15",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "No merit menu; need-based only",
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
           "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "CSS + noncustodial still open",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
           "label": "Thackston",
-          "text": "Essays among the strongest on this list",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Marist data",
-          "text": "Admit ~12% ED \u00b7 eng. yield high",
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
           "tone": "muted"
         },
         {
           "label": "Why",
-          "text": "Design studio from year one; co-op network",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Large intros; far from home",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         },
         {
           "label": "Confirm",
-          "text": "Portal complete \u00b7 interview waived",
-          "tone": "good"
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
+          "tone": "warn"
+        },
+        {
+          "label": "Likelihood",
+          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
+          "tone": "warn"
         }
       ],
       "detail": {
-        "history": [
-          {
-            "date": "2026-11-01",
-            "event": "Application submitted (ED)"
-          },
-          {
-            "date": "2026-11-20",
-            "event": "Status changed to in review"
-          }
-        ],
-        "odds": "Long shot \u2014 about 1 in 8",
+        "odds": "Long shot",
         "sticker_price_per_year": "$89,500",
         "counselor_name": "Counselor A",
-        "counselor_take": "Strong fit. Plan the rest of the list as if this one does not come through.",
-        "why": "Hands-on design studio from year one.",
-        "why_not": "Large intro classes.",
+        "counselor_take": "Strong fit; plan the rest of the list anyway.",
+        "why": "Studio from year one.",
+        "why_not": "Large intros.",
         "aid_forms_open": [
-          "CSS Profile",
-          "Noncustodial parent form"
+          "CSS Profile"
         ]
-      }
+      },
+      "rank": "#33"
     },
     {
-      "id": "sample-c",
+      "id": "r2",
       "school": "Sample Institute C",
       "program": "Computer Science",
       "tier": "reach",
@@ -95,186 +90,60 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$88,400 / yr",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "Deferred to RD \u00b7 decision Mar 28",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Need-based only; no early merit",
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
           "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "CSS Profile still open",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
           "label": "Thackston",
-          "text": "One short LOCI with new grades",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "CS research labs + co-op pipeline",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Very low REA yield historically",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         },
         {
           "label": "Confirm",
-          "text": "LOCI draft due this Friday",
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
           "tone": "warn"
+        },
+        {
+          "label": "Undergrad",
+          "text": "Undergraduate research is available from sophomore year if the student joins a lab early; qualitative methods seminars fill quickly, so register in the first advising window.",
+          "tone": "muted"
         }
       ],
       "detail": {
-        "history": [
-          {
-            "date": "2026-10-30",
-            "event": "Application submitted (REA)"
-          },
-          {
-            "date": "2026-12-14",
-            "event": "Deferred to regular decision"
-          }
-        ],
-        "counselor_name": "Counselor A",
-        "counselor_take": "A deferral is not a no.",
+        "counselor_take": "Deferral is not a no.",
         "aid_forms_open": [
           "CSS Profile"
         ]
-      }
+      },
+      "rank": "#18"
     },
     {
-      "id": "sample-e",
-      "school": "Sample University E",
-      "program": "Public Policy",
-      "tier": "reach",
-      "round": "EA",
-      "submitted": "2026-11-01",
-      "status": "submitted",
-      "decision_expected": "2027-01-31",
-      "next_step": "Schedule alumni interview",
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$86,000 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Deadline",
-          "text": "EA decision window ends Jan 31",
-          "tone": "warn"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Need-based; no automatic merit",
-          "tone": "muted"
-        },
-        {
-          "label": "Aid forms",
-          "text": "FAFSA + CSS on file",
-          "tone": "good"
-        },
-        {
-          "label": "Thackston",
-          "text": "Interview can tip a borderline file",
-          "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Policy clinic + DC semester",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Less quantitative than preferred",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Alumni interview not booked",
-          "tone": "warn"
-        }
-      ],
-      "detail": {
-        "history": [
-          {
-            "date": "2026-11-01",
-            "event": "Application submitted (EA)"
-          }
-        ],
-        "odds": "About 1 in 6",
-        "sticker_price_per_year": "$86,000"
-      }
-    },
-    {
-      "id": "sample-b",
-      "school": "Sample College B",
-      "program": null,
-      "tier": "reach",
-      "round": "RD",
-      "submitted": null,
-      "status": "not_submitted",
-      "decision_expected": "2027-01-01",
-      "next_step": "Finish supplemental essay draft 2",
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$91,200 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Deadline",
-          "text": "RD due Jan 1 \u2014 essay draft 2 open",
-          "tone": "warn"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Competitive merit; apply by Jan 1",
-          "tone": "warn"
-        },
-        {
-          "label": "Aid forms",
-          "text": "Not started",
-          "tone": "warn"
-        },
-        {
-          "label": "Thackston",
-          "text": "Worth the RD slot if essay lands",
-          "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Open curriculum; small seminars",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Cold winters; limited CS depth",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal account not created yet",
-          "tone": "warn"
-        }
-      ],
-      "detail": {
-        "odds": "Reach",
-        "sticker_price_per_year": "$91,200",
-        "why": "Small seminars and an open curriculum."
-      }
-    },
-    {
-      "id": "sample-h",
+      "id": "t1",
       "school": "Sample State University H",
       "program": "Honors College",
       "tier": "target",
@@ -286,75 +155,63 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$34,800 in-state / yr",
-          "tone": "good"
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
+          "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "Accepted \u00b7 deposit May 1",
-          "tone": "good"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Honors merit pending \u2014 compare by Dec 10",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
+          "label": "Scholarship",
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
+        },
+        {
           "label": "Aid forms",
-          "text": "Scholarship essay + housing form open",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
           "label": "Marist data",
-          "text": "4-yr grad 78% \u00b7 avg debt $22K",
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
           "tone": "muted"
         },
         {
           "label": "Thackston",
-          "text": "Strong result \u2014 wait for merit letter",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Honors housing + guaranteed research",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Very large campus",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         },
         {
           "label": "Confirm",
-          "text": "Merit letter not in portal yet",
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
           "tone": "warn"
         }
       ],
       "detail": {
-        "history": [
-          {
-            "date": "2026-10-15",
-            "event": "Application submitted (EA)"
-          },
-          {
-            "date": "2026-11-20",
-            "event": "Accepted to the honors college"
-          }
-        ],
         "odds": "Accepted",
         "sticker_price_per_year": "$34,800 in-state",
         "counselor_name": "Counselor A",
-        "counselor_take": "Wait for the merit letter before deciding.",
-        "why": "Honors housing and research.",
-        "why_not": "Very large campus.",
+        "counselor_take": "Wait for merit.",
         "aid_forms_open": [
-          "Scholarship essay",
-          "Honors housing form"
+          "Scholarship essay"
         ]
-      }
+      },
+      "rank": "#72"
     },
     {
-      "id": "sample-i",
+      "id": "t2",
       "school": "Sample College I",
       "program": "Biology",
       "tier": "target",
@@ -366,56 +223,58 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$71,400 / yr",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "RD \u00b7 scores still to send",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Auto-merit bands by GPA/test",
-          "tone": "good"
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "FAFSA + CSS incomplete",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
           "label": "Marist data",
-          "text": "Bio research match rate ~40%",
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
           "tone": "muted"
         },
         {
           "label": "Thackston",
-          "text": "Solid target if scores update",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Biology research track",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Suburban / less urban energy",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
+        },
+        {
+          "label": "More help",
+          "text": "More help needed from home on the CSS verification documents \u2014 last year two families lost aid because W-2 uploads were late and the school closed the file.",
+          "tone": "warn"
         }
       ],
       "detail": {
         "odds": "Even odds",
-        "sticker_price_per_year": "$71,400",
-        "aid_forms_open": [
-          "FAFSA",
-          "CSS Profile"
-        ]
-      }
+        "sticker_price_per_year": "$71,400"
+      },
+      "rank": "#55"
     },
     {
-      "id": "sample-j",
+      "id": "t3",
       "school": "Sample University J",
       "program": null,
       "tier": "target",
@@ -427,61 +286,57 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$62,000 / yr",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "Waitlist reply due soon",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Limited aid if later admitted",
-          "tone": "warn"
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "FAFSA on file",
-          "tone": "good"
-        },
-        {
-          "label": "Thackston",
-          "text": "Keep warm but do not bank on it",
-          "tone": "muted"
-        },
-        {
-          "label": "Why",
-          "text": "Rolling admit was a fast path",
-          "tone": "muted"
-        },
-        {
-          "label": "Why not",
-          "text": "Aid outlook weak if offered",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
+          "label": "Thackston",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
+          "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
+          "tone": "muted"
+        },
+        {
           "label": "Confirm",
-          "text": "Waitlist form opened Nov 12",
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
+          "tone": "warn"
+        },
+        {
+          "label": "Likelihood",
+          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
           "tone": "warn"
         }
       ],
       "detail": {
-        "history": [
-          {
-            "date": "2026-09-30",
-            "event": "Application submitted (rolling)"
-          },
-          {
-            "date": "2026-11-10",
-            "event": "Placed on waitlist"
-          }
-        ],
-        "why_not": "Limited aid for waitlisted students."
-      }
+        "why_not": "Limited waitlist aid."
+      },
+      "rank": "#89"
     },
     {
-      "id": "sample-m",
+      "id": "s1",
       "school": "Sample State University M",
       "program": null,
       "tier": "safety",
@@ -493,70 +348,53 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$29,900 in-state / yr",
-          "tone": "good"
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
+          "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "Accepted \u00b7 housing deposit May 1",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Merit award on file",
-          "tone": "good"
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "FAFSA complete",
-          "tone": "good"
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
+          "tone": "warn"
         },
         {
           "label": "Marist data",
-          "text": "In-state net ~$18K after merit",
-          "tone": "good"
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
+          "tone": "muted"
         },
         {
           "label": "Thackston",
-          "text": "True safety \u2014 keep the deposit date",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Strong value; known campus",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Less selective peer group",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Housing portal opens March",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         }
       ],
       "detail": {
-        "history": [
-          {
-            "date": "2026-09-15",
-            "event": "Application submitted (rolling)"
-          },
-          {
-            "date": "2026-10-20",
-            "event": "Accepted with merit scholarship"
-          }
-        ],
         "odds": "Accepted",
-        "sticker_price_per_year": "$29,900 in-state",
-        "aid_forms_open": [
-          "FAFSA"
-        ]
-      }
+        "sticker_price_per_year": "$29,900 in-state"
+      },
+      "rank": "#140"
     },
     {
-      "id": "sample-n",
+      "id": "s2",
       "school": "Sample College N",
       "program": "Engineering",
       "tier": "safety",
@@ -568,53 +406,54 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$41,200 / yr",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "EA in review \u00b7 Dec 20",
-          "tone": null
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
+          "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Engineering dean's scholarship likely",
-          "tone": "good"
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "FAFSA submitted",
-          "tone": "good"
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
+          "tone": "warn"
         },
         {
           "label": "Marist data",
-          "text": "Admit ~64% \u00b7 eng. retention strong",
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
           "tone": "muted"
         },
         {
           "label": "Thackston",
-          "text": "Comfortable safety with co-op",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Engineering co-op from year two",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Fewer research labs than reaches",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         },
         {
           "label": "Confirm",
-          "text": "Nothing due \u2014 wait",
-          "tone": "good"
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
+          "tone": "warn"
         }
-      ]
+      ],
+      "rank": "#112"
     },
     {
-      "id": "sample-o",
+      "id": "s3",
       "school": "Sample University O",
       "program": "Business",
       "tier": "safety",
@@ -626,55 +465,174 @@
       "card_lines": [
         {
           "label": "MSRP",
-          "text": "$41,000 / yr",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
           "tone": "muted"
         },
         {
           "label": "Deadline",
-          "text": "RD \u00b7 transcript request open",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
           "tone": "warn"
         },
         {
           "label": "Scholarship",
-          "text": "Business school merit by Feb 1",
-          "tone": "warn"
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
-          "text": "Not started",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
           "tone": "warn"
         },
         {
           "label": "Thackston",
-          "text": "File if H does not clear aid",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Business co-op; close to home",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
         },
         {
           "label": "Why not",
-          "text": "Less of a stretch academically",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
           "tone": "muted"
         },
         {
           "label": "Confirm",
-          "text": "Transcript not requested",
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
           "tone": "warn"
         },
         {
-          "label": "Marist data",
-          "text": "Regional business placement solid",
-          "tone": "muted"
+          "label": "More help",
+          "text": "More help needed from home on the CSS verification documents \u2014 last year two families lost aid because W-2 uploads were late and the school closed the file.",
+          "tone": "warn"
         }
       ],
       "detail": {
         "odds": "Likely",
-        "sticker_price_per_year": "$41,000",
-        "why": "Strong business co-op and close to home."
-      }
+        "sticker_price_per_year": "$41,000"
+      },
+      "rank": "#98"
+    },
+    {
+      "id": "s4",
+      "school": "Sample Tech P",
+      "program": "Data Science",
+      "tier": "safety",
+      "round": "Rolling",
+      "submitted": "2026-10-01",
+      "status": "admitted",
+      "decision_expected": "2026-10-28",
+      "next_step": "Decide on honors invite",
+      "card_lines": [
+        {
+          "label": "MSRP",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
+          "tone": "muted"
+        },
+        {
+          "label": "Deadline",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
+          "tone": "warn"
+        },
+        {
+          "label": "Scholarship",
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
+        },
+        {
+          "label": "Aid forms",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
+          "tone": "warn"
+        },
+        {
+          "label": "Marist data",
+          "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
+          "tone": "muted"
+        },
+        {
+          "label": "Thackston",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
+          "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
+          "tone": "good"
+        },
+        {
+          "label": "Undergrad",
+          "text": "Undergraduate research is available from sophomore year if the student joins a lab early; qualitative methods seminars fill quickly, so register in the first advising window.",
+          "tone": "muted"
+        }
+      ],
+      "detail": {},
+      "rank": "#121"
+    },
+    {
+      "id": "s5",
+      "school": "Sample College Q",
+      "program": "Marine Science",
+      "tier": "safety",
+      "round": "RD",
+      "submitted": null,
+      "status": "not_submitted",
+      "decision_expected": "2027-01-15",
+      "next_step": "Confirm deadline with admissions",
+      "card_lines": [
+        {
+          "label": "MSRP",
+          "text": "Sticker is about $89,500 per year before any aid, with a full cost of attendance near $94,000 once you add housing, food, books, and travel home twice a year.",
+          "tone": "muted"
+        },
+        {
+          "label": "Deadline",
+          "text": "Early decision materials are locked; the midyear report and first-semester grades still need to reach the portal by mid-January or the file may be marked incomplete.",
+          "tone": "warn"
+        },
+        {
+          "label": "Scholarship",
+          "text": "There is no automatic merit grid for this school \u2014 need-based aid only \u2014 so every dollar depends on CSS Profile, verification, and how the institutional form is filled out.",
+          "tone": "muted"
+        },
+        {
+          "label": "Aid forms",
+          "text": "CSS Profile and the noncustodial parent form are still open; the institutional aid questionnaire has a soft deadline two weeks after the application is marked complete.",
+          "tone": "warn"
+        },
+        {
+          "label": "Thackston",
+          "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
+          "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
+          "tone": "warn"
+        },
+        {
+          "label": "Likelihood",
+          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
+          "tone": "warn"
+        },
+        {
+          "label": "More help",
+          "text": "More help needed from home on the CSS verification documents \u2014 last year two families lost aid because W-2 uploads were late and the school closed the file.",
+          "tone": "warn"
+        }
+      ],
+      "rank": null
     }
   ],
   "also_active": [
@@ -685,15 +643,11 @@
     {
       "school": "Sample Online University V",
       "note": "Backup online BS if aid falls through"
-    },
-    {
-      "school": "Sample Gap Year W",
-      "note": "Counselor exploring a deferred start"
     }
   ],
   "roi": {
     "title": "ROI Ladder",
-    "subtitle": "Placeholder comparison of net cost, admit odds, and earnings if admitted \u2014 sample schools only.",
+    "subtitle": "Placeholder comparison \u2014 sample schools only.",
     "ceiling_per_year": 45000,
     "updated": "2026-11-23T09:41:00-05:00",
     "rows": [
@@ -718,56 +672,6 @@
         "cost_estimated": true
       },
       {
-        "school": "Sample University O",
-        "tier": "likely",
-        "net_cost_per_year": 29500,
-        "admit_odds_pct": 68,
-        "biz_earnings": 84000,
-        "earnings_proxy": false,
-        "roi": 2.8,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample State University H",
-        "tier": "target",
-        "net_cost_per_year": 26800,
-        "admit_odds_pct": 54,
-        "biz_earnings": 88000,
-        "earnings_proxy": false,
-        "roi": 3.3,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample College I",
-        "tier": "target",
-        "net_cost_per_year": 34200,
-        "admit_odds_pct": 41,
-        "biz_earnings": 91000,
-        "earnings_proxy": false,
-        "roi": 2.7,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample University J",
-        "tier": "target",
-        "net_cost_per_year": 36500,
-        "admit_odds_pct": 33,
-        "biz_earnings": 78000,
-        "earnings_proxy": false,
-        "roi": 2.1,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample University E",
-        "tier": "reach",
-        "net_cost_per_year": 38600,
-        "admit_odds_pct": 18,
-        "biz_earnings": 98000,
-        "earnings_proxy": false,
-        "roi": 2.5,
-        "cost_estimated": false
-      },
-      {
         "school": "Sample University A",
         "tier": "reach",
         "net_cost_per_year": 48200,
@@ -788,20 +692,19 @@
         "cost_estimated": false
       },
       {
-        "school": "Sample College B",
-        "tier": "reach",
-        "net_cost_per_year": 44800,
-        "admit_odds_pct": 14,
-        "biz_earnings": 99000,
-        "earnings_proxy": true,
-        "roi": 2.2,
-        "cost_estimated": true
+        "school": "Sample State University H",
+        "tier": "target",
+        "net_cost_per_year": 26800,
+        "admit_odds_pct": 54,
+        "biz_earnings": 88000,
+        "earnings_proxy": false,
+        "roi": 3.3,
+        "cost_estimated": false
       }
     ],
     "footnotes": [
-      "* Biz earnings marked with a star use a peer-school proxy, not the school's own reported figure.",
-      "Net cost is sticker price minus average need-based aid only \u2014 merit awards are ignored.",
-      "Ceiling line marks a household soft budget of $45K per year before aid stacking."
+      "* Proxy earnings marked with a star.",
+      "Ceiling is a household soft budget of $45K / yr."
     ]
   }
 }

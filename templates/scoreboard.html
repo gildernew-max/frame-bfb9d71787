@@ -50,7 +50,7 @@
   .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:hidden}
   .col-cue{flex:none;height:28px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:24px}
 
-  .card{flex:1 1 0;min-height:0;position:relative;display:flex;flex-direction:column;gap:5px;padding:10px 16px 8px 22px;border-radius:12px;
+  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:5px;padding:10px 16px 8px 22px;border-radius:12px;
     border:1px solid var(--hair);background:rgba(255,255,255,.032);box-shadow:inset 0 1px 0 rgba(255,255,255,.028);cursor:pointer;outline:none}
   .card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:5px;border-radius:0 3px 3px 0;background:var(--c)}
   .card.denied,.card.withdrawn{background:rgba(255,255,255,.016)}
@@ -58,25 +58,33 @@
   .card.denied .step,.card.withdrawn .step,.card.denied .tags,.card.withdrawn .tags,.card.denied .lines,.card.withdrawn .lines{opacity:.75}
   .card.focus{background-color:rgba(201,168,106,.06);
     box-shadow:inset 0 0 0 6px rgba(201,168,106,.95),inset 0 0 40px rgba(201,168,106,.18)}
-  .name{flex:none;font:400 32px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em;
+  .name-row{flex:none;display:flex;align-items:baseline;gap:14px;min-width:0}
+  .name{flex:1;min-width:0;font:400 32px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .name .prog{color:var(--muted);font-weight:300}
+  .rank-pill{flex:none;font-size:22px;font-weight:500;letter-spacing:.08em;color:var(--muted);
+    padding:2px 10px;border-radius:100px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);white-space:nowrap}
+  .d-head .rank-pill{font-size:28px;padding:6px 14px;margin-left:8px}
   .tags{flex:none;display:flex;flex-wrap:wrap;gap:5px}
   .tag{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:100px;white-space:nowrap;
     font-size:24px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
     color:var(--c);border:1px solid var(--cb);background:var(--cf)}
   .tag.plain{--c:rgba(240,237,230,.8);--cb:rgba(240,237,230,.22);--cf:rgba(240,237,230,.05)}
   .tag.date{--c:var(--gold);--cb:rgba(201,168,106,.38);--cf:rgba(201,168,106,.08)}
-  .lines{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:1px;min-width:0;overflow:hidden}
-  .line{display:grid;grid-template-columns:148px minmax(0,1fr);gap:10px;align-items:baseline;min-width:0}
-  .line .lab{font-size:22px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .line .txt{font-size:24px;line-height:1.2;font-weight:300;color:#D8D2C8;overflow-wrap:anywhere;word-break:break-word;
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  /* Lines stack tight with the same rhythm in every card/column — never stretched. */
+  #cols{--line-size:24px;--lab-size:22px}
+  .lines{flex:none;display:flex;flex-direction:column;justify-content:flex-start;gap:4px;min-width:0}
+  .line{display:grid;grid-template-columns:220px minmax(0,1fr);gap:14px;align-items:start;min-width:0}
+  .line .lab{font-size:var(--lab-size);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);
+    line-height:1.2;white-space:normal;overflow:hidden;overflow-wrap:break-word;hyphens:manual;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:calc(2 * 1.2em);text-overflow:clip}
+  .line .txt{font-size:var(--line-size);line-height:1.28;font-weight:300;color:#D8D2C8;overflow-wrap:break-word;word-break:normal;
+    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-height:calc(3 * 1.28em)}
   .line.good .txt{color:#99C7A6}.line.warn .txt{color:#D4A574}.line.muted .txt{color:#A9A49C}
   .line.nolab{grid-template-columns:minmax(0,1fr)}
-  .step{flex:none;margin-top:auto;padding-top:5px;border-top:1px solid var(--hair);font-size:24px;line-height:1.2;font-weight:300;color:var(--muted);
-    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .step b{font-weight:500;color:var(--hint);font-size:20px;letter-spacing:.12em;text-transform:uppercase;margin-right:10px}
+  .step{flex:none;margin-top:6px;padding-top:6px;border-top:1px solid var(--hair);font-size:var(--line-size);line-height:1.25;font-weight:300;color:var(--muted);
+    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.25em)}
+  .step b{font-weight:500;color:var(--hint);font-size:var(--lab-size);letter-spacing:.12em;text-transform:uppercase;margin-right:10px}
 
   .also{flex:none;display:flex;align-items:baseline;gap:16px;padding:8px 16px;border:1px dashed var(--hair);border-radius:10px;
     background:rgba(255,255,255,.02);min-width:0}
@@ -93,7 +101,8 @@
 
   /* Detail view */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:40px}
-  .d-head h2{margin:14px 0 0;font:300 96px/1.02 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em;
+  .d-head .name-row{margin-top:14px;align-items:center;gap:22px}
+  .d-head h2{margin:0;font:300 96px/1.02 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em;flex:1;min-width:0;
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.02em)}
   .d-head h2 .prog{color:var(--muted)}
   .d-head .tags{margin-top:28px;gap:16px}
@@ -365,6 +374,7 @@
         id:String(s.id!=null&&s.id!==''?s.id:'#'+i),
         school:str(s.school),
         program:str(s.program),
+        rank:str(s.rank),
         tier:s.tier==='reach'||s.tier==='target'||s.tier==='safety'?s.tier:'unsorted',
         round:ROUNDS[s.round]?s.round:'',
         submitted:typeof s.submitted==='string'&&DATE_RE.test(s.submitted)?s.submitted:null,
@@ -392,6 +402,10 @@
   }
 
   function nameHtml(s){return esc(s.school)+(s.program?'<span class="prog"> \u2014 '+esc(s.program)+'</span>':'');}
+  function rankPill(s,detail){
+    if(!s.rank)return '';
+    return '<span class="rank-pill">'+(detail?'USNWR '+esc(s.rank):esc(s.rank))+'</span>';
+  }
   function tagsHtml(s,withTier){
     var st=STATUS[s.status], h='';
     if(withTier){var t=tierOf(s.tier);h+='<span class="tag" style="'+tagVars(rgbHex(t.rgb))+'">'+esc(t.label)+'</span>';}
@@ -420,7 +434,8 @@
   }
   function cardHtml(s,ci,i){
     return '<div class="card '+s.status+'" data-c="'+ci+'" data-i="'+i+'" data-has-detail="'+(s.hasDetail?1:0)+'" style="--c:'+STATUS[s.status].c+'">'+
-      '<div class="name">'+nameHtml(s)+'</div><div class="tags">'+tagsHtml(s,false)+'</div>'+linesHtml(s.lines)+
+      '<div class="name-row"><div class="name">'+nameHtml(s)+'</div>'+rankPill(s,false)+'</div>'+
+      '<div class="tags">'+tagsHtml(s,false)+'</div>'+linesHtml(s.lines)+
       (s.step?'<div class="step"><b>Next</b>'+esc(s.step)+'</div>':'')+'</div>';
   }
   function alsoHtml(list){
@@ -441,36 +456,49 @@
     return one('admitted','Admitted')+one('pending','Pending')+one('denied','Denied');
   }
 
-  // Whole cards only. If every card fits, show them all and let flex grow fill the column;
-  // otherwise window from col.first and keep the focused card visible.
+  // One shared line size for every column so Reach and Safety keep the same rhythm.
+  // Short columns simply end early (no stretched gaps). Long columns shrink to 22px, then scroll.
+  function setBoardLineSize(px){
+    var cols=$('cols');
+    if(!cols)return;
+    cols.style.setProperty('--line-size', px+'px');
+    cols.style.setProperty('--lab-size', Math.max(20, px-2)+'px');
+  }
   function layoutCol(ci){
     var col=state.cols[ci], body=$('col-body-'+ci), cue=$('col-cue-'+ci);
     if(!body)return;
-    var cards=body.querySelectorAll('.card'), i, gap=8;
+    var cards=body.querySelectorAll('.card'), i, gap=8, avail=body.clientHeight;
     for(i=0;i<cards.length;i++){cards[i].style.display='';cards[i].style.flex='none';}
-    var avail=body.clientHeight, hs=[];
-    for(i=0;i<cards.length;i++)hs.push(cards[i].offsetHeight);
-    function fits(from){var h=0,n=0;for(var j=from;j<hs.length;j++){var add=hs[j]+(n?gap:0);if(h+add>avail&&n)break;h+=add;n++;}return n;}
-    var allH=0;
-    for(i=0;i<hs.length;i++)allH+=hs[i]+(i?gap:0);
-    if(hs.length&&allH<=avail){
+    var hs=[], allH=0;
+    for(i=0;i<cards.length;i++){hs.push(cards[i].offsetHeight);allH+=hs[i]+(i?gap:0);}
+    if(!cards.length||allH<=avail){
       col.first=0;
-      for(i=0;i<cards.length;i++){cards[i].style.display='';cards[i].style.flex='1 1 0';}
       cue.textContent='';cue.style.visibility='hidden';
       return;
     }
+    function fits(from){var h=0,n=0;for(var j=from;j<hs.length;j++){var add=hs[j]+(n?gap:0);if(h+add>avail&&n)break;h+=add;n++;}return n;}
     var f=state.focus&&state.focus.col===ci&&!state.chipFocus?state.focus.idx:-1;
     if(f>=0&&f<col.first)col.first=f;
     while(f>=0&&f>=col.first+fits(col.first)&&col.first<f)col.first++;
     if(col.first>Math.max(0,hs.length-1))col.first=Math.max(0,hs.length-1);
     var n=fits(col.first);
-    for(i=0;i<cards.length;i++){
-      if(i>=col.first&&i<col.first+n){cards[i].style.display='';cards[i].style.flex='1 1 0';}
-      else{cards[i].style.display='none';cards[i].style.flex='none';}
-    }
+    for(i=0;i<cards.length;i++)cards[i].style.display=i>=col.first&&i<col.first+n?'':'none';
     var above=col.first, below=hs.length-col.first-n;
     cue.textContent=(above?'\u25b2 '+above+' above':'')+(above&&below?'  \u00b7  ':'')+(below?'\u25bc '+below+' more':'');
     cue.style.visibility=above||below?'visible':'hidden';
+  }
+  function layoutBoard(){
+    var i, gap=8, minPx=22, basePx=24, needMin=false;
+    setBoardLineSize(basePx);
+    for(i=0;i<state.cols.length;i++){
+      var body=$('col-body-'+i); if(!body)continue;
+      var cards=body.querySelectorAll('.card'), j, h=0;
+      for(j=0;j<cards.length;j++){cards[j].style.display='';cards[j].style.flex='none';}
+      for(j=0;j<cards.length;j++)h+=cards[j].offsetHeight+(j?gap:0);
+      if(cards.length&&h>body.clientHeight)needMin=true;
+    }
+    if(needMin)setBoardLineSize(minPx);
+    for(i=0;i<state.cols.length;i++)layoutCol(i);
   }
   function paintFocus(){
     var on=document.querySelectorAll('.card.focus'), i;
@@ -522,7 +550,7 @@
     for(i=0;i<state.cols.length&&keepId!==null;i++)for(j=0;j<state.cols[i].items.length;j++)
       if(state.cols[i].items[j].id===keepId)state.focus={col:i,idx:j};
     if(!state.focus)for(i=0;i<state.cols.length;i++)if(state.cols[i].items.length){state.focus={col:i,idx:0};break;}
-    for(i=0;i<state.cols.length;i++)layoutCol(i);
+    layoutBoard();
     paintFocus();
   }
 
@@ -548,7 +576,7 @@
     if(d.why_not)c.push(secHtml('why','Why not','<p>'+esc(d.why_not)+'</p>'));
     var cols=[a,b,c].filter(function(x){return x.length;}), grid='';
     for(i=0;i<cols.length;i++)grid+='<div class="d-col">'+cols[i].join('')+'</div>';
-    $('detail').innerHTML='<div class="d-head"><div class="eyebrow">College Application Board</div><h2>'+nameHtml(s)+'</h2>'+
+    $('detail').innerHTML='<div class="d-head"><div class="eyebrow">College Application Board</div><div class="name-row"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
       '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+
       (cols.length?'<div class="d-grid" style="grid-template-columns:repeat('+cols.length+',minmax(0,1fr))">'+grid+'</div>':'');
   }
@@ -622,7 +650,7 @@
         $('also').hidden=false;$('also').innerHTML=alsoHtml(state.data.also);
       }
       state.chipFocus=true;
-      for(var i=0;i<state.cols.length;i++)layoutCol(i);
+      layoutBoard();
       paintFocus();
     }
     setHints();
@@ -645,7 +673,7 @@
     document.querySelector('.head-r').style.visibility=s?'hidden':'';
     $('title').style.display=s?'none':'';
     syncRoiChip();
-    if(!s){for(var i=0;i<state.cols.length;i++)layoutCol(i);paintFocus();}
+    if(!s){layoutBoard();paintFocus();}
     setHints();
   }
 
