@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T03:00:13.219Z",
+ "generatedAt": "2026-11-23T03:15:11.177Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7012,10 +7012,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T03:00:13.219Z",
+  "at": "2026-11-23T03:15:11.177Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13375,62 +13376,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T03:00:13.219Z",
-  "lastAttempt": "2026-11-23T03:00:13.219Z",
+  "asOf": "2026-11-23T03:15:11.177Z",
+  "lastAttempt": "2026-11-23T03:15:11.177Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7064,
-    "lastTime": 1795402209,
-    "settle": 6943.5,
+    "last": 7074.75,
+    "lastTime": 1795403118,
+    "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 120.5,
-    "changePct": 1.7354360192986247,
-    "expectedOpen": 7030.31539713401,
+    "change": 131,
+    "changePct": 1.8865886588658867,
+    "expectedOpen": 7040.760634023402,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25668.25,
-    "lastTime": 1795402212,
+    "last": 25760.25,
+    "lastTime": 1795403119,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 526.25,
-    "changePct": 2.0931111287884816,
-    "expectedOpen": 23091.14626557155,
+    "change": 618.25,
+    "changePct": 2.4590326942963965,
+    "expectedOpen": 23173.90942458834,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48935,
-    "lastTime": 1795402209,
-    "settle": 48240,
+    "last": 48937,
+    "lastTime": 1795403116,
+    "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 695,
-    "changePct": 1.4407131011608625,
-    "expectedOpen": 48840.99489116916,
+    "change": 703,
+    "changePct": 1.4574781274619564,
+    "expectedOpen": 48849.066803706926,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2629.1,
-    "lastTime": 1795402212,
+    "last": 2632.3,
+    "lastTime": 1795403118,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 40.70009765624991,
-    "changePct": 1.5724037703523592,
+    "change": 43.90009765625018,
+    "changePct": 1.6960322713850908,
     "expectedOpen": null,
     "valid": true
    }
@@ -13880,8 +13881,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T03:00:13.219Z",
-  "lastAttempt": "2026-11-23T03:00:13.219Z",
+  "asOf": "2026-11-23T03:15:11.177Z",
+  "lastAttempt": "2026-11-23T03:15:11.177Z",
   "lastError": null
  },
  "alerts": {
@@ -13892,8 +13893,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T03:00:13.219Z",
-  "lastAttempt": "2026-11-23T03:00:13.219Z",
+  "asOf": "2026-11-23T03:15:11.177Z",
+  "lastAttempt": "2026-11-23T03:15:11.177Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14569,7 +14570,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T03:00:13.219Z",
+  "lastAttempt": "2026-11-23T03:15:11.177Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15577,6 +15578,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "The Russian Exile Behind the Missiles That Helped Destroy the Crimea Bridge",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNR2x2YmcxbUxhczFBaXBfV0FObk9oYkJRREJSa0Y2OU5rVF9ES2FlUGVTZzZsd2JwSTBSU3RFLXg2VlRGVDNjRVczcEo1eDdSTGU4XzVPYmFfR1BSejJLS180Rm1CMXRFMjZreU5HUjhlcmxzLU1ocWhSVEtXNFRhN1ZBakg0cHVIdG9oMTctWi1IVk8zRWZBbERCdUZKb21IeVhBNFRXaWVNQmdRQ0U4?oc=5",
+    "pub": "2026-11-23T03:00:42.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-23T02:59:35.000Z",
+    "sum": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
+   },
+   {
     "hd": "U.N. climate summit ends without deal after contentious fossil fuel debate",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/",
@@ -15619,6 +15634,13 @@
     "sum": "With several powerful drug kingpins recently taken down by Mexican forces, some experts see what may be a new chapter beginning in Mexico."
    },
    {
+    "hd": "South Korea's education minister quits over exam cheating chaos",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSHhGdTlDN3hOUVlXUHRLSlVmbWRGTWRQWWdQaDV0a0UyZFhjR0w1RDZtRmZMcHNvTWE1QWJhclVLaHBtVXBMVVo0cU1jemIyc2NzUmQtX2NHU0FRaklZcElORnoxYnBkVE53TEhFQkMydlpULWJFM2pVbHc2UXREal9ENG42SkFqZWg5dEM2eTZLaHVYVUg0b0gtOVpCcDNuLVhPU3cwZjdUTHdST3VHYzhmNjVCQmlI?oc=5",
+    "pub": "2026-11-23T00:20:00.000Z",
+    "sum": "Choi Kyo-jin admits last-minute measures to stop AI-assisted cheating during the college entrance exam caused chaos."
+   },
+   {
     "hd": "Russian Ships Struck in Attacks Far From Ukraine as War’s Fallout Spreads",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNUVkazV3eVU0VlliLUJtY3hUY3J0djVGelpZTGY4R3dqZ2U5dTB1SXo4Y3JoSEFvRjF3Y2ZwVVZ0elJRTkI5WElHcHlZVFFaSTBzaWEwN1BINjBJQlJSaGpyYnRubkJ3VkVGNF9ZVS1LX2xCczdFZ1BaQ2QwWTBXOURrc1NUOHdvWm9TQ3NlWTRRTUNrLWRGY1BxNXNERjBya3pKUFR0d2xKY1lqNENEQXlGVGE?oc=5",
@@ -15637,7 +15659,7 @@
     "src": "BBC",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9SSWluQ3ZBMFVrQ3RuZFQ5WmNORDZoTzRpN2dSbGJRYWpBQktmUHZsc1BKZVhIV3N0cGF0b25OODRSYUp5QjVrc0hwZmc0MkhBR1IyZlIwOHpCX0U?oc=5",
     "pub": "2026-11-22T22:49:10.000Z",
-    "sum": ""
+    "sum": "The prime minister will tell MPs the deal agreed on Friday is a \"choice between a broken status quo or change\"."
    },
    {
     "hd": "Ukraine war spilling into NATO territory",
@@ -15652,13 +15674,6 @@
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/",
     "pub": "2026-11-22T22:29:17.000Z",
     "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
-   },
-   {
-    "hd": "Russian vessel hit by suspected Ukrainian drone at Libya’s Benghazi port",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZzU3ZEZYME5lS0ROc3NoTHNrNlpjVlUyd2xjVnRLREpzSWlZWXMyS1E3OTJMZmxZNHZJV1BpbGM1U045c3JTc2p2dlFTYTNTSU9qdnVZamZZN29zR0JBY3ZpYjZ0Z1FpVXc2cDViTFZRMHNwejhPcTBrUHVqdFhZZG5XTTFSYi1Yc3AxaVlLc09VcTdyVzdFaNIBngFBVV95cUxNZlFIcHE3SVRDUFdGeE9CTEgtM3I3T2o3OTBUZWlQaU5IbWhXNVY4NjVqQ2s2eEJLVTRlUXFXakFWdkc0T3ViME1EMUt5US1zejJPSkthWjVaejRkTExNOGJ3LURHWDB3dndjeDBBM0hyRWt6d05ESnE0Ul9BbzlzSXZLSS1MZHM2RUJ4ZjJaMVFZSmlWS3ZSMEgtR2RJdw?oc=5",
-    "pub": "2026-11-22T22:14:33.000Z",
-    "sum": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
    },
    {
     "hd": "Tehran threatens to 'break legs' as 'Trump corridor' prepares to launch on Iran's border",
@@ -15680,13 +15695,6 @@
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNQm96RExBbGw0OERZX1lMWGxhczRYS00yOXR6Rlg0XzJ0VHk2bEhZVHVFNmFRYllVUjZvZUhqYzFQSnNULTNhRjNhcE5IOXFNQmFOU2RlZlRZYWxrUnVZbWJrWGEyQWF6T1Z4MUUweHVKTmsyNnMtSS1KeHhxeWdoUWlZYU03eUR0X242RVdjNUp5dnU1R3hXRmNwOV94Nkx5UGtySXZMVnV2QQ?oc=5",
     "pub": "2026-11-22T21:49:18.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Libya's eastern government suspects drone attack caused explosion on Russian ship",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSHNFQ2hvQUxyR05zYXIyVjczNjE3eEVLWWhMdk1mS01BQV91dy03OU5SSzVzbzlvVk1ManQ2TFhqU2xkRkhZcGthVlZad0E1aVRKU1E5ZWxJTWRQVG5UYmFYYmcxZGJ1TFc1YzE0a2E4XzQ4SGJLNjNlc0otTGhGRnRWTHpmeW1mWnVBLTNhYmFLU3JOUTVfSTliN19fMG9rRWlmeFdKNHFSU1JVTTdnQUNhUlBUWmRSTDVXUUJuUW9fNEV2cjNWdTlPZw?oc=5",
-    "pub": "2026-11-22T21:44:25.000Z",
-    "sum": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
    },
    {
     "hd": "Russian warship struck by suspected Ukrainian drones at Libya naval base",
@@ -15778,18 +15786,10 @@
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNVFd4aFJTcU9tRGNzS0t2c2VPZTZ4SUoxZG9GSk9OZUFYeDBYSER0U3pfRTVKeGxYX3JrX1VkLXNIM0hHTWg4clBhcW03S1R6d3k1VVIyVUlPdjVfQWtfV09WbDg4Z3BienFNeFdRUWswdm44SDhESnMxeHkyenRvSnRHM3RsVlRNYWZxemhRSFJsWU1JNm5r?oc=5",
     "pub": "2026-11-22T17:32:05.000Z",
     "sum": "Amid a tech race with Washington, Beijing is pledging “openness and integration” while increasing its say over who can depart the country."
-   },
-   {
-    "hd": "How the Myanmar Genocide Ruling Raises the Stakes for Israel",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVjN0dk4ycW8xekFvcVR1OTFuOGFHdTBBRjdNa0FWeEZ1czQ5bG1Qckx6N1NENEh5dm9yOEJYTjVtc2Y5b2hNM2RhVnptVGdhaS10al9RVkJmVWM1YW5UYW9KUWVWdE54WmRpaEs5X0lzWEFVWTJnUmNROEdJSTVRVTVPVnhFd2hSWUVjeVBDOFJXUjlnTTA1d0ttMDloZHFIZzg3ekRheDNFSmc?oc=5",
-    "pub": "2026-11-22T17:24:47.000Z",
-    "sum": "The ruling by the International Court of Justice deals with issues relevant to the case brought against Israel alleging genocide in Gaza. Israel has rejected the charge."
    }
   ],
   "feeds": [
    "Google News",
-   "AP",
    "Reuters",
    "WSJ",
    "The New York Times",
@@ -15802,9 +15802,11 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-23T02:45:12.773Z",
-  "lastAttempt": "2026-11-23T02:45:12.773Z",
+  "feedErrors": [
+   "AP (Google News): HTTP 429 from news.google.com"
+  ],
+  "asOf": "2026-11-23T03:15:11.177Z",
+  "lastAttempt": "2026-11-23T03:15:11.177Z",
   "lastError": null
  }
 }
