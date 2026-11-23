@@ -61,12 +61,14 @@
   .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
   /* Detail logo plate: ~360×150 on the 1920 viewport (stage is 2×; object-fit contain). */
   .logo-lg{width:720px;height:300px;border-radius:16px;padding:28px 36px}
-  /* Popup header logo: ~90px tall on the 1920 viewport (stage is 2×). */
-  .logo-pop{width:240px;height:180px;border-radius:12px;padding:14px 18px}
+  /* Popup header logo: same asset as detail hero, ~260×≤120 on the 1920 viewport (stage is 2×). */
+  .logo-pop{width:520px;max-width:520px;height:auto;max-height:240px;border-radius:14px;padding:16px 22px;
+    display:flex;align-items:center;justify-content:center}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+  .logo-pop img{width:100%;height:auto;max-height:200px;object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
   .logo-lg .mono{font-size:72px;letter-spacing:.1em}
-  .logo-pop .mono{font-size:44px;letter-spacing:.08em}
+  .logo-pop .mono{font-size:56px;letter-spacing:.08em}
   .logo.on-light .mono{color:#1A1C20}
   .logo:not(.mono-only) .mono{display:none}
   .logo.mono-only .mono{display:block}
@@ -220,25 +222,31 @@
   .ncs-source{margin:0;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
     overflow-wrap:break-word;word-break:normal}
   .ncs-source b{font-weight:700;color:var(--ink)}
+  .wish-src{margin:6px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.35;
+    overflow-wrap:break-word}
+  /* Detail-page lead accents stay muted; popup overrides via #d-pop rule below */
 
   /* Padding + visible overflow so focused card scale/ring/glow are not clipped by columns */
   .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:visible;padding:20px 16px;box-sizing:border-box}
-  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 8px;
+  /* Extra bottom margin so top-origin scale(1.04) + 20px ring never covers the next card's text */
+  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 40px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
     padding:8px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
   .d-card{cursor:pointer;outline:none;position:relative;z-index:0;
-    transform:scale(1);transform-origin:center center;
+    transform:scale(1);transform-origin:top center;
     transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
   .d-card.d-card-focus,.d-card:focus{border-color:var(--focus-ring);z-index:6;opacity:1;filter:none;
     transform:scale(1.04);
     box-shadow:0 0 0 20px var(--focus-ring),0 0 64px 22px rgba(255,210,74,.6),0 22px 44px rgba(0,0,0,.55)}
   #detail.cards-focused .d-card:not(.d-card-focus){opacity:.7;filter:brightness(.75)}
-  .why-pair .why-col.d-card{padding:6px 8px;border:1px solid transparent;border-radius:6px;background:transparent}
+  .why-pair .why-col.d-card{padding:6px 8px;border:1px solid transparent;border-radius:6px;background:transparent;
+    transform-origin:top center}
   .why-pair .why-col.d-card.d-card-focus,.why-pair .why-col.d-card:focus{
     border-color:var(--focus-ring);background:rgba(255,255,255,.04);z-index:6;opacity:1;filter:none;
     transform:scale(1.04);
     box-shadow:0 0 0 20px var(--focus-ring),0 0 64px 22px rgba(255,210,74,.6),0 22px 44px rgba(0,0,0,.55)}
+  .why-pair{margin-bottom:40px}
 
   /* Detail card popup — ~90% overlay, ~2× body type */
   #d-pop{position:absolute;left:0;top:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;justify-content:center;
@@ -255,34 +263,39 @@
     padding-bottom:14px;border-bottom:3px solid var(--accent,var(--focus-ring))}
   .d-pop-h-text{flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding-right:8px}
   .d-pop-h-text::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--focus-ring))}
-  .d-pop-h.has-logo .d-pop-h-text{padding-right:16px;max-width:calc(100% - 268px)}
-  .d-pop-h .logo-pop{flex:none;align-self:flex-start;margin:0}
+  /* Reserve ~520px + gap so title/rule wrap instead of running under the large logo */
+  .d-pop-h.has-logo .d-pop-h-text{padding-right:28px;max-width:calc(100% - 560px)}
+  .d-pop-h .logo-pop{flex:none;flex-shrink:0;align-self:flex-start;margin:0}
   .d-pop-h span{font-size:var(--pop-title);font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     color:var(--accent,var(--focus-ring));line-height:1.15;overflow-wrap:break-word}
   .d-pop-h em{font-style:normal;color:var(--accent,var(--focus-ring));margin-left:10px;opacity:.9;font-weight:700}
   .d-pop-body{flex:1;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding-right:8px;color:var(--pop-ink)}
   .d-pop-body .d-lines{gap:14px}
   .d-pop-body .line{gap:18px;grid-template-columns:minmax(160px,32%) minmax(0,1fr)}
-  .d-pop-body .lab{font-size:var(--pop-lab);letter-spacing:.08em;-webkit-line-clamp:4;max-height:none;overflow:visible;color:rgba(245,241,232,.55)}
+  .d-pop-body .lab,.d-pop-body .lbl{font-size:var(--pop-lab);letter-spacing:.08em;-webkit-line-clamp:4;max-height:none;overflow:visible}
   .d-pop-body .txt{font-size:var(--pop-line);line-height:1.35;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
   .d-pop-body .prose{font-size:var(--pop-line);line-height:1.4;-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
   .d-pop-body .why-bullets{gap:12px}
   .d-pop-body .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
   .d-pop-body .why-bullets li::before{width:8px;height:8px;top:.6em;background:var(--accent,var(--focus-ring))}
+  /* One high-specificity rule: every popup label / lead / bold lead-in uses contrast-safe --accent */
+  #d-pop .lab,#d-pop .lbl,#d-pop .pop-lead,#d-pop .ncs-subhead,
+  #d-pop b,#d-pop strong,#d-pop dt,#d-pop .tl .d,
+  #d-pop .marist-year b,#d-pop .marist-totals b{
+    color:var(--accent,var(--focus-ring));font-weight:700}
   .d-pop-body .tl{gap:12px}
   .d-pop-body .tl li{font-size:var(--pop-line);grid-template-columns:160px minmax(0,1fr);gap:16px;padding-left:24px;color:var(--pop-ink)}
-  .d-pop-body .tl .d{font-size:var(--pop-lab);color:rgba(245,241,232,.55)}
+  .d-pop-body .tl .d{font-size:var(--pop-lab)}
   .d-pop-body .tl .e{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
   .d-pop-body .tl li::before{background:var(--accent,var(--focus-ring))}
   .d-pop-body .marist-year,.d-pop-body .marist-names,.d-pop-body .marist-majors,.d-pop-body .marist-empty,
   .d-pop-body .marist-totals{font-size:var(--pop-line);line-height:1.35;color:var(--pop-ink)}
-  .d-pop-body .marist-year b,.d-pop-body .marist-totals b{color:var(--accent,var(--focus-ring))}
   .d-pop-body .marist-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55)}
   .d-pop-body .ncs-body{gap:16px}
-  .d-pop-body .ncs-subhead{font-size:var(--pop-lab);letter-spacing:.1em;color:var(--accent,var(--focus-ring));margin-top:8px}
+  .d-pop-body .ncs-subhead{font-size:var(--pop-lab);letter-spacing:.1em;margin-top:8px}
   .d-pop-body .ncs-para,.d-pop-body .ncs-source{font-size:var(--pop-line);line-height:1.4;color:var(--pop-ink)}
-  .d-pop-body .ncs-source b{color:var(--pop-ink)}
   .d-pop-body .ncs-sources{gap:10px}
+  .d-pop-body .wish-src{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -503,6 +516,7 @@
     if(d.weather_monthly&&d.weather_monthly.months&&d.weather_monthly.months.length)return true;
     if(d.marist_classmates)return true;
     if(d.new_creative_school)return true;
+    if(d.wish_i_knew)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
@@ -686,7 +700,76 @@
     out.student_dislikes=cleanStudentNotes(d.student_dislikes);
     out.scattergram_url=str(d.scattergram_url)||null;
     out.new_creative_school=cleanNewCreativeSchool(d.new_creative_school);
+    out.wish_i_knew=cleanWishIKnew(d.wish_i_knew);
     return out;
+  }
+  // Optional "wish I'd known" tips. URLs kept but never rendered on TV.
+  function cleanWishIKnew(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var title=str(raw.title), tips=[], sources=[], i, t, s, sub, thr, y, url;
+    if(Array.isArray(raw.tips)){
+      for(i=0;i<raw.tips.length&&tips.length<16;i++){
+        t=typeof raw.tips[i]==='string'?str(raw.tips[i]):str(raw.tips[i]&&raw.tips[i].text);
+        if(t)tips.push(t);
+      }
+    }
+    if(Array.isArray(raw.sources)){
+      for(i=0;i<raw.sources.length&&sources.length<24;i++){
+        s=raw.sources[i];
+        if(!s||typeof s!=='object')continue;
+        sub=str(s.subreddit).replace(/^r\//i,'');
+        thr=str(s.thread_title);
+        if(typeof s.year==='number'&&isFinite(s.year))y=Math.round(s.year);
+        else if(typeof s.year==='string'&&/^\d{4}$/.test(String(s.year).replace(/^\s+|\s+$/g,'')))y=+String(s.year).replace(/^\s+|\s+$/g,'');
+        else y=null;
+        url=str(s.url)||null;
+        if(!sub&&!thr)continue;
+        sources.push({subreddit:sub, thread_title:thr, year:y, url:url});
+      }
+    }
+    if(!title&&!tips.length&&!sources.length)return null;
+    return {title:title, tips:tips, sources:sources};
+  }
+  function wishIKnewSourceLine(sources){
+    var subs=[], years=[], i, sub, y, seenS={}, seenY={}, key, subPart, yearPart;
+    if(!sources||!sources.length)return '';
+    for(i=0;i<sources.length;i++){
+      sub=str(sources[i].subreddit).replace(/^r\//i,'');
+      if(sub){
+        key=sub.toLowerCase();
+        if(!seenS[key]){seenS[key]=1;subs.push(sub);}
+      }
+      y=sources[i].year;
+      if(y!=null&&isFinite(y)&&!seenY[y]){seenY[y]=1;years.push(y);}
+    }
+    years.sort(function(a,b){return a-b;});
+    subPart=[];
+    for(i=0;i<subs.length;i++)subPart.push('r/'+subs[i]);
+    subPart=subPart.join(', ');
+    if(years.length>=3)yearPart=years[0]+'\u2013'+years[years.length-1];
+    else if(years.length)yearPart=years.join(', ');
+    else yearPart='';
+    if(subPart&&yearPart)return 'From '+subPart+' threads, '+yearPart;
+    if(subPart)return 'From '+subPart+' threads';
+    if(yearPart)return 'From threads, '+yearPart;
+    return '';
+  }
+  function wishIKnewTitle(w){
+    return (w&&w.title)?w.title:'Things I wish I\'d known as a freshman';
+  }
+  function wishIKnewBodyHtml(w, tipLimit){
+    if(!w)return '';
+    var body='', tips=w.tips||[], lim, i, src;
+    lim=tipLimit!=null?tipLimit:tips.length;
+    if(tips.length&&lim>0){
+      body+='<ul class="why-bullets">';
+      for(i=0;i<tips.length&&i<lim;i++)body+='<li>'+accentLeadHtml(tips[i])+'</li>';
+      if(tips.length>lim)body+='<li>\u2026</li>';
+      body+='</ul>';
+    }
+    src=wishIKnewSourceLine(w.sources);
+    if(src)body+='<p class="wish-src">'+esc(src)+'</p>';
+    return body?'<div class="ncs-body">'+body+'</div>':'';
   }
   function parseHexColor(hex){
     var m=/^#?([0-9A-Fa-f]{6})$/.exec(str(hex));
@@ -708,16 +791,20 @@
   function mixTowardWhite(c,t){
     return {r:Math.round(c.r+(255-c.r)*t), g:Math.round(c.g+(255-c.g)*t), b:Math.round(c.b+(255-c.b)*t)};
   }
-  // Dark page backdrop #15171C — lighten accent until WCAG AA text contrast (4.5:1).
-  function readableAccent(hex){
-    var bg={r:0x15,g:0x17,b:0x1C}, orig=parseHexColor(hex), c, t;
-    if(!orig)orig=parseHexColor('#C9A86A');
+  // Lighten accent until WCAG AA text contrast (4.5:1) against a dark backdrop.
+  function readableAccentOn(hex, bg){
+    var orig=parseHexColor(hex), c, t, backdrop=bg||{r:0x15,g:0x17,b:0x1C};
+    if(!orig)orig=parseHexColor('#FFD24A');
     for(t=0;t<=1.001;t+=0.05){
       c=mixTowardWhite(orig,t);
-      if(contrastRatio(c,bg)>=4.5)return hexFromRgb(c);
+      if(contrastRatio(c,backdrop)>=4.5)return hexFromRgb(c);
     }
     return '#FFFFFF';
   }
+  // Dark page backdrop #15171C.
+  function readableAccent(hex){return readableAccentOn(hex,{r:0x15,g:0x17,b:0x1C});}
+  // Popup panel #16181F — title rule + in-content labels use this tint.
+  function popupReadableAccent(hex){return readableAccentOn(hex,{r:0x16,g:0x18,b:0x1F});}
   function cleanAccent(raw){
     var c=parseHexColor(raw);
     return c?hexFromRgb(c):null;
@@ -876,9 +963,25 @@
       '<img src="'+esc(src)+'" alt="" onerror="this.onerror=null;this.parentNode.className+=\' mono-only\';if(this.parentNode)this.parentNode.removeChild(this);">'+
       '</div>';
   }
+  // Wrap a short leading "Label: / Label — / Label -" in .pop-lead (accent in popup CSS).
+  function accentLeadHtml(raw){
+    var s=String(raw==null?'':raw), m, lab, sep, rest, out;
+    m=/^(.{1,40}?)(\s*:\s*|\s+[\u2014\u2013-]\s+)([\s\S]+)$/.exec(s);
+    if(m){
+      lab=String(m[1]).replace(/^\s+|\s+$/g,'');
+      sep=m[2]; rest=m[3];
+      // Skip URL-ish or empty leads; keep short human labels (MSRP, Why, Weather…).
+      if(lab&&lab.length<=40&&lab.indexOf('http')!==0&&lab.indexOf('/')<0&&!/^\d+(\.\d+)?$/.test(lab)){
+        out='<span class="pop-lead">'+esc(lab)+'</span>'+esc(sep)+esc(rest);
+        return out.replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
+      }
+    }
+    return esc(s).replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
+  }
   function richText(text){
     // Parentheticals render muted/smaller so source notes do not compete with the value.
-    return esc(text).replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
+    // Also accent a short leading label when the text is "Label: rest" / "Label — rest".
+    return accentLeadHtml(text);
   }
   function tagsHtml(s,withTier){
     var st=STATUS[s.status], h='';
@@ -1109,7 +1212,7 @@
     fLim=limits&&limits.facts!=null?limits.facts:facts.length;
     if(facts.length&&fLim>0){
       body+='<ul class="why-bullets">';
-      for(i=0;i<facts.length&&i<fLim;i++)body+='<li>'+esc(facts[i])+'</li>';
+      for(i=0;i<facts.length&&i<fLim;i++)body+='<li>'+accentLeadHtml(facts[i])+'</li>';
       if(facts.length>fLim)body+='<li>\u2026</li>';
       body+='</ul>';
     }
@@ -1182,6 +1285,9 @@
     }else if(key==='new_creative'){
       title=esc(NCS_CARD_TITLE);
       body=newCreativeSchoolBodyHtml(d.new_creative_school, null)||'<p class="prose">\u2014</p>';
+    }else if(key==='wish_i_knew'){
+      title=esc(wishIKnewTitle(d.wish_i_knew));
+      body=wishIKnewBodyHtml(d.wish_i_knew, null)||'<p class="prose">\u2014</p>';
     }
     return {titleHtml:'<span>'+title+'</span>', bodyHtml:body||''};
   }
@@ -1201,11 +1307,13 @@
       var h='<ul class="why-bullets">', i, lab, txt;
       for(i=0;i<points.length;i++){
         lab=points[i].label; txt=points[i].text;
-        h+='<li>'+(lab?'<b>'+esc(lab)+'</b> ':'')+esc(txt)+'</li>';
+        // <b> so the shared #d-pop b accent rule always catches Why/Why-not lead-ins.
+        if(lab)h+='<li><b>'+esc(lab)+'</b> '+esc(txt)+'</li>';
+        else h+='<li>'+accentLeadHtml(txt)+'</li>';
       }
       return h+'</ul>';
     }
-    if(prose)return '<p class="prose">'+esc(prose)+'</p>';
+    if(prose)return '<p class="prose">'+accentLeadHtml(prose)+'</p>';
     return '';
   }
   function weatherShortLab(lab){
@@ -1375,6 +1483,11 @@
         newCreativeSchoolBodyHtml(d.new_creative_school,{facts:Math.min(whyN,4),articles:Math.min(listN,3)}),
         'new_creative'));
     }
+    if(d.wish_i_knew){
+      secs.push(dSec('',esc(wishIKnewTitle(d.wish_i_knew)),
+        wishIKnewBodyHtml(d.wish_i_knew, Math.min(whyN,5)),
+        'wish_i_knew'));
+    }
     if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
@@ -1473,7 +1586,7 @@
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
     titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
-    // Same asset/source as detail hero; hide entirely when the school has no logo.
+    // Same enlarged header logo asset as the detail hero (~260×≤120 viewport); hide when no logo.
     logo=(s&&s.logo)?logoHtml(s,'pop'):'';
     if(head){
       head.className='d-pop-h'+(logo?' has-logo':'');
@@ -1484,9 +1597,8 @@
       body.scrollTop=0;
     }
     pop.hidden=false;
-    // School accent from detail; bright gold when none (strong contrast on dark popup).
-    accent=($('detail')&&$('detail').style.getPropertyValue('--accent'))||'';
-    if(!accent||!String(accent).replace(/\s/g,'').length)accent='#FFD24A';
+    // Popup accent: school color lightened to ≥4.5:1 on the popup panel (title rule + labels).
+    accent=popupReadableAccent((s&&s.accent)||'#FFD24A');
     pop.style.setProperty('--accent', accent);
     state.popupOpen=true;
     layoutPopup();
