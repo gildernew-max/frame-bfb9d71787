@@ -57,10 +57,11 @@
   .logo.on-light{background:#F4F1EA;border-color:transparent}
   .logo.on-dark{background:#1E2128;border:1px solid var(--hair)}
   .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
-  .logo-lg{width:220px;height:96px;border-radius:10px;padding:12px 16px}
+  /* Detail logo plate: ~360×150 on the 1920 viewport (stage is 2×; object-fit contain). */
+  .logo-lg{width:720px;height:300px;border-radius:16px;padding:28px 36px}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
-  .logo-lg .mono{font-size:28px;letter-spacing:.1em}
+  .logo-lg .mono{font-size:72px;letter-spacing:.1em}
   .logo.on-light .mono{color:#1A1C20}
   .logo:not(.mono-only) .mono{display:none}
   .logo.mono-only .mono{display:block}
@@ -132,60 +133,80 @@
   .roi-chip.focus{box-shadow:0 0 0 2px rgba(201,168,106,.9)}
 
   /* Detail */
-  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px}
-  /* Hero: logo | name+rank+chips | compact monthly weather (right) */
-  .d-hero{flex:none;display:flex;align-items:stretch;gap:20px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair)}
+  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;position:relative}
+  /* Hero: logo | name+rank+chips (weather is a full-width band below) */
+  .d-hero{flex:none;display:flex;align-items:center;gap:20px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair)}
   .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;
     border-left:4px solid var(--accent,var(--gold));padding-left:16px}
   .d-hero-top{display:flex;align-items:baseline;gap:12px;min-width:0}
-  .d-hero h2{margin:0;font:300 44px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
+  /* ~52px on the 1920 viewport (stage is 2×). */
+  .d-hero h2{margin:0;font:300 104px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-    border-bottom:2px solid var(--accent,var(--gold));padding-bottom:6px}
+    border-bottom:2px solid var(--accent,var(--gold));padding-bottom:8px}
   .d-hero h2 .prog{color:var(--muted)}
   .d-hero .rank-pill{flex:none;align-self:center}
   .d-hero .tags{gap:8px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
-  /* Compact monthly weather — right half of hero (~150px tall) */
-  .wx-month-band{flex:none;width:980px;max-width:48%;display:flex;flex-direction:column;justify-content:center;
-    padding:8px 12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0;
-    max-height:156px;box-sizing:border-box}
-  .wx-month-band .sec-h{margin:0 0 4px;padding-bottom:2px;gap:8px}
-  .wx-month-band .sec-h::before{width:16px;height:2px}
-  .wx-month-band .sec-h span{font-size:18px}
+  /* Full-width monthly weather band under the hero — room-readable at 1920×1080 (~220–260px on screen).
+     Stage is 2× viewport, so sizes below are stage coords (≈2× the named on-screen sizes). */
+  .wx-month-band{flex:none;width:100%;display:flex;flex-direction:column;justify-content:center;
+    padding:20px 24px 16px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);min-width:0;
+    min-height:440px;max-height:520px;box-sizing:border-box}
+  .wx-month-band .sec-h{margin:0 0 12px;padding-bottom:8px;gap:12px}
+  .wx-month-band .sec-h span{font-size:28px}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
-  .wx-month-table th,.wx-month-table td{padding:1px 2px;text-align:center;vertical-align:middle;
+  .wx-month-table th,.wx-month-table td{padding:6px 4px;text-align:center;vertical-align:middle;
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-month-table thead th{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
-    border-bottom:1px solid var(--hair);padding-bottom:3px}
-  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:3px}
-  .wx-month-table thead th .wx-season svg{width:14px;height:14px;color:var(--accent,var(--gold));flex:none}
-  .wx-month-table tbody th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
-    color:var(--dim);padding-left:2px;white-space:nowrap}
-  .wx-month-table tbody td{font:500 18px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table thead th{font-size:56px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);
+    border-bottom:1px solid var(--hair);padding-bottom:8px}
+  .wx-month-table thead th .wx-season{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+  .wx-month-table thead th .wx-season svg{width:72px;height:72px;color:var(--accent,var(--gold));flex:none}
+  .wx-month-table tbody th{text-align:left;font-size:44px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--dim);padding-left:4px;white-space:nowrap}
+  .wx-month-table tbody td{font:700 68px/1.05 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table tbody tr.wx-hi td{color:#E0A070}
+  .wx-month-table tbody tr.wx-lo td{color:#7EB6E0}
   .wx-month-table tbody tr+tr th,.wx-month-table tbody tr+tr td{border-top:1px solid rgba(255,255,255,.04)}
-  .wx-month-cap{margin:3px 0 0;font-size:12px;font-weight:400;color:var(--dim);letter-spacing:.03em;
+  .wx-month-cap{margin:10px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);letter-spacing:.04em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .wx-normals-fallback{display:flex;flex-direction:column;gap:2px;padding:2px 0 0}
-  .wx-normals-fallback .line{grid-template-columns:56px minmax(0,1fr);gap:8px}
-  .wx-normals-fallback .lab{font-size:12px}
-  .wx-normals-fallback .txt{font-size:16px;-webkit-line-clamp:1;max-height:1.2em}
+  .wx-normals-fallback{display:flex;flex-direction:column;gap:6px;padding:4px 0 0}
+  .wx-normals-fallback .line{grid-template-columns:80px minmax(0,1fr);gap:12px}
+  .wx-normals-fallback .lab{font-size:22px}
+  .wx-normals-fallback .txt{font-size:28px;-webkit-line-clamp:2;max-height:calc(2 * 1.2em)}
   .card .line.wx-line .lab{color:var(--gold)}
+  .d-page-ind{position:absolute;right:8px;bottom:0;z-index:2;font-size:var(--t1);font-weight:500;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:6px 12px;border-radius:6px;
+    border:1px solid var(--hair);background:rgba(12,13,16,.85);pointer-events:none}
+  .d-page-ind b{font-weight:600;color:var(--accent,var(--gold));margin:0 6px}
+
+  .marist-body{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .marist-year{font-size:var(--line-size,var(--t2));font-weight:600;color:var(--ink);letter-spacing:.02em}
+  .marist-year b{font-weight:700;color:var(--accent,var(--gold));margin-right:8px}
+  .marist-names{display:grid;grid-template-columns:1fr;gap:4px 16px;margin:4px 0 0;font-size:var(--line-size,var(--t2));
+    font-weight:400;color:var(--ink);line-height:1.3}
+  .marist-names.cols-2{grid-template-columns:1fr 1fr}
+  .marist-names .more{color:var(--muted);font-weight:500}
+  .marist-majors{margin:2px 0 0;font-size:var(--line-size,var(--t2));font-weight:400;color:var(--ink);line-height:1.35;
+    overflow-wrap:break-word}
+  .marist-empty{margin:0;font-size:var(--line-size,var(--t2));font-weight:400;color:var(--muted)}
+  .marist-note{margin:4px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.3}
 
   .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
+  .d-body.page-fit-2{column-count:3}
   .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 12px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
     padding:12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
   #detail .lab{font-size:var(--lab-size)}
   #detail .txt{font-size:var(--line-size)}
-  .d-sec .prose{margin:0;font-size:var(--t2);line-height:1.35;font-weight:400;color:var(--ink)}
+  .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink)}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .sec-h{margin-bottom:6px}
   .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
   .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
-    overflow-wrap:break-word;word-break:normal}
+    overflow-wrap:break-word;word-break:normal;display:block;-webkit-line-clamp:unset;max-height:none;overflow:visible}
   .why-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
   .why-bullets li b{font-weight:600;color:var(--ink);margin-right:6px}
   .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
@@ -278,7 +299,7 @@
   ];
   var DATE_RE=/^\d{4}-\d{2}-\d{2}$/;
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
-  var state={cols:[],focus:null,detail:null,data:null,roi:null,chipFocus:false,view:'board'};
+  var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board'};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -364,10 +385,45 @@
     if(!d)return false;
     if(d.history&&d.history.length)return true;
     if(d.weather_monthly&&d.weather_monthly.months&&d.weather_monthly.months.length)return true;
+    if(d.marist_classmates)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
+  }
+  function cleanMaristCohort(raw){
+    if(!raw||typeof raw!=='object')return {count:0, majors:[]};
+    var majors=[], i, m, c=num(raw.count);
+    if(Array.isArray(raw.majors)){
+      for(i=0;i<raw.majors.length&&majors.length<16;i++){
+        m=str(raw.majors[i]);
+        if(m)majors.push(m);
+      }
+    }
+    if(c==null||c<0)c=majors.length;
+    return {count:c, majors:majors};
+  }
+  function cleanMaristClassmates(raw){
+    // Always return an object when the field is present so the section can show the empty state.
+    if(raw==null)return null;
+    if(typeof raw!=='object')return null;
+    var list=[], i, x, name, major;
+    if(Array.isArray(raw.class_2027)){
+      for(i=0;i<raw.class_2027.length&&list.length<24;i++){
+        x=raw.class_2027[i];
+        if(!x||typeof x!=='object')continue;
+        name=str(x.name); major=str(x.major);
+        if(!name)continue;
+        list.push({name:name, major:major});
+      }
+    }
+    return {
+      source:str(raw.source),
+      note:str(raw.note),
+      class_2027:list,
+      class_2026:cleanMaristCohort(raw.class_2026),
+      class_2025:cleanMaristCohort(raw.class_2025)
+    };
   }
   var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
   function cleanWeatherMonthly(raw){
@@ -416,6 +472,7 @@
     // Keep enough weather rows for Jan/Jul/Rain/Snow selection (fallback when monthly missing).
     out.weather=cleanLabeled(d.weather,12);
     out.weather_monthly=cleanWeatherMonthly(d.weather_monthly);
+    out.marist_classmates=cleanMaristClassmates(d.marist_classmates);
     out.why_points=cleanLabeled(d.why_points,8);
     out.why_not_points=cleanLabeled(d.why_not_points,8);
     out.student_likes=cleanStudentNotes(d.student_likes);
@@ -720,7 +777,13 @@
   function setHints(){
     var h;
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
-    else if(state.view==='detail')h='<span><b>Back</b>Board</span>';
+    else if(state.view==='detail'){
+      h='<span><b>Back</b>Board</span>';
+      if(state.detailPages>1){
+        if(state.detailPage<state.detailPages)h+='<span><b>\u25b6\u25bc</b>Page '+(state.detailPage+1)+'</span>';
+        if(state.detailPage>1)h+='<span><b>\u25c0\u25b2</b>Page '+(state.detailPage-1)+'</span>';
+      }
+    }
     else if(state.chipFocus)h='<span><b>OK</b>ROI Ladder</span><span><b>\u25bc</b>Schools</span><span><b>Back</b>Daybreak</span>';
     else h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+(state.roi?'<span><b>\u25b2</b>ROI</span>':'')+'<span><b>Back</b>Daybreak</span>';
     $('hints').innerHTML=h;
@@ -862,10 +925,10 @@
     }
     return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
       '<table class="wx-month-table"><thead><tr><th scope="col"></th>'+head+'</tr></thead><tbody>'+
-      '<tr><th scope="row">High \u00b0F</th>'+rowH+'</tr>'+
-      '<tr><th scope="row">Low \u00b0F</th>'+rowL+'</tr>'+
-      '<tr><th scope="row">Rain in</th>'+rowR+'</tr>'+
-      '<tr><th scope="row">Snow in</th>'+rowS+'</tr>'+
+      '<tr class="wx-hi"><th scope="row">High</th>'+rowH+'</tr>'+
+      '<tr class="wx-lo"><th scope="row">Low</th>'+rowL+'</tr>'+
+      '<tr class="wx-rain"><th scope="row">Rain</th>'+rowR+'</tr>'+
+      '<tr class="wx-snow"><th scope="row">Snow</th>'+rowS+'</tr>'+
       '</tbody></table>'+cap+'</section>';
   }
   function weatherFallbackHtml(rows){
@@ -874,65 +937,111 @@
     return '<section class="wx-month-band"><div class="sec-h"><span>Weather</span></div>'+
       '<div class="wx-normals-fallback">'+dLines(norms)+'</div></section>';
   }
+  function maristHtml(m){
+    if(!m)return '';
+    var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
+    var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
+    var body='', names='', i, shown, extra, cols;
+    if(empty){
+      body='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
+    }else{
+      if(c27.length){
+        shown=c27.slice(0,8); extra=c27.length-shown.length; cols=shown.length>4?' cols-2':'';
+        names='';
+        for(i=0;i<shown.length;i++){
+          names+='<div>'+esc(shown[i].name)+(shown[i].major?' \u2014 '+esc(shown[i].major):'')+'</div>';
+        }
+        if(extra>0)names+='<div class="more">+'+extra+' more</div>';
+        body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
+      }
+      body+='<div><div class="marist-year"><b>2026:</b>'+esc(String(c26.count||0))+' students</div>'+
+        (c26.majors&&c26.majors.length?'<div class="marist-majors">'+esc(c26.majors.join(' \u00b7 '))+'</div>':'')+'</div>';
+      body+='<div><div class="marist-year"><b>2025:</b>'+esc(String(c25.count||0))+' students</div>'+
+        (c25.majors&&c25.majors.length?'<div class="marist-majors">'+esc(c25.majors.join(' \u00b7 '))+'</div>':'')+'</div>';
+    }
+    if(m.note)body+='<p class="marist-note">'+esc(m.note)+(m.source?' \u00b7 '+esc(m.source):'')+'</p>';
+    else if(m.source)body+='<p class="marist-note">'+esc(m.source)+'</p>';
+    return dSec('marist','Marist classmates','<div class="marist-body">'+body+'</div>');
+  }
   function renderDetail(s){
-    var d=s.detail||{}, parts=[], i, snap=[], li='', whyL, whyR, acad, accent, wxBand='';
+    var d=s.detail||{}, page1=[], page2=[], i, snap=[], li='', whyL, whyR, acad, accent, wxBand='';
+    var page, ind='', usePages;
     accent=readableAccent(s.accent||'#C9A86A');
-    // Fixed order: Snapshot → On the board → About → Academics → Internships → Alumni →
-    // Facts → Housing → Costs → Deadlines → Why/Why not → Status history.
-    // Weather is a full-width monthly table under the hero (no live Open-Meteo fetch).
+    // Page 1: Snapshot, On the board, Why/Why not, What students like/don't
+    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Deadlines, Status history
+    // Weather is a full-width band under the hero on page 1 (no live Open-Meteo fetch).
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
-    if(snap.length)parts.push(dSec('next','Snapshot',dLines(snap)));
-    if(s.lines&&s.lines.length)parts.push(dSec('board','On the board',dLines(s.lines)));
-    if(d.about&&d.about.length)parts.push(dSec('','About',dLines(d.about)));
-    acad=(d.academics&&d.academics.length)?d.academics.slice():[];
-    if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-    if(acad.length)parts.push(dSec('','Academics',dLines(acad)));
-    if(d.internships&&d.internships.length)parts.push(dSec('','Internships',dLines(d.internships)));
-    if(d.alumni&&d.alumni.length)parts.push(dSec('','Alumni',dLines(d.alumni)));
-    if(d.facts&&d.facts.length)parts.push(dSec('','Facts',dLines(d.facts)));
-    if(d.housing&&d.housing.length)parts.push(dSec('','Housing',dLines(d.housing)));
-    if(d.costs&&d.costs.length)parts.push(dSec('','Costs',dLines(d.costs)));
-    if(d.deadlines&&d.deadlines.length)parts.push(dSec('','Deadlines',dLines(d.deadlines)));
+    if(snap.length)page1.push(dSec('next','Snapshot',dLines(snap)));
+    if(s.lines&&s.lines.length)page1.push(dSec('board','On the board',dLines(s.lines)));
     whyL=whyBody(d.why_points,d.why);
     whyR=whyBody(d.why_not_points,d.why_not);
     if(whyL||whyR){
-      parts.push('<section class="d-sec why-pair"><div class="why-cols">'+
+      page1.push('<section class="d-sec why-pair"><div class="why-cols">'+
         '<div class="why-col"><div class="sec-h"><span>Why</span></div>'+(whyL||'<p class="prose">\u2014</p>')+'</div>'+
         '<div class="why-col"><div class="sec-h"><span>Why not</span></div>'+(whyR||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
     var like=whyBody(d.student_likes,null), dislike=whyBody(d.student_dislikes,null);
     if(like||dislike){
-      parts.push('<section class="d-sec why-pair"><div class="why-cols">'+
+      page1.push('<section class="d-sec why-pair"><div class="why-cols">'+
         '<div class="why-col"><div class="sec-h"><span>What students like</span></div>'+(like||'<p class="prose">\u2014</p>')+'</div>'+
         '<div class="why-col"><div class="sec-h"><span>What students don\u2019t</span></div>'+(dislike||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
-    if(d.counselor_take)parts.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
+    if(d.about&&d.about.length)page2.push(dSec('','About',dLines(d.about)));
+    acad=(d.academics&&d.academics.length)?d.academics.slice():[];
+    if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
+    if(acad.length)page2.push(dSec('','Academics',dLines(acad)));
+    if(d.internships&&d.internships.length)page2.push(dSec('','Internships',dLines(d.internships)));
+    if(d.alumni&&d.alumni.length)page2.push(dSec('','Alumni',dLines(d.alumni)));
+    if(d.facts&&d.facts.length)page2.push(dSec('','Facts',dLines(d.facts)));
+    if(d.housing&&d.housing.length)page2.push(dSec('','Housing',dLines(d.housing)));
+    if(d.costs&&d.costs.length)page2.push(dSec('','Costs',dLines(d.costs)));
+    if(d.deadlines&&d.deadlines.length)page2.push(dSec('','Deadlines',dLines(d.deadlines)));
+    if(d.marist_classmates)page2.push(maristHtml(d.marist_classmates));
+    if(d.counselor_take)page2.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
     if(d.history&&d.history.length){
       for(i=0;i<d.history.length&&i<10;i++)li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
-      parts.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
+      page2.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
     }
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
+    // Big weather band forces a split whenever page-2 content exists.
+    usePages=page2.length>0&&(!!wxBand||page1.length>0);
+    state.detailPages=usePages?2:1;
+    if(state.detailPage<1||state.detailPage>state.detailPages)state.detailPage=1;
+    page=state.detailPage;
     $('detail').style.setProperty('--accent', accent);
-    // Weather sits in the hero's right block so the 4-col body keeps cf81089 height.
-    $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
-      '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
-      '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+(wxBand||'')+'</div>'+
-      (parts.length?'<div class="d-body">'+parts.join('')+'</div>':'');
+    if(usePages){
+      ind='<div class="d-page-ind">'+(page===1
+        ?('Page <b>1</b> of 2 \u25b6')
+        :('\u25c0 Page <b>2</b> of 2'))+'</div>';
+    }
+    if(page===1||!usePages){
+      $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
+        '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
+        '<div class="tags">'+tagsHtml(s,true)+'</div></div></div>'+
+        (wxBand||'')+
+        (page1.length?'<div class="d-body">'+page1.join('')+'</div>':'')+ind;
+    }else{
+      $('detail').innerHTML='<div class="d-hero">'+logoHtml(s,'lg')+
+        '<div class="d-hero-main"><div class="d-hero-top"><h2>'+nameHtml(s)+'</h2>'+rankPill(s,true)+'</div>'+
+        '<div class="tags">'+tagsHtml(s,true)+'</div></div></div>'+
+        (page2.length?'<div class="d-body page-fit-2">'+page2.join('')+'</div>':'')+ind;
+    }
     layoutDetail();
-    // Second pass after column layout settles so we do not keep an oversized type size.
     setTimeout(layoutDetail, 0);
+    setHints();
   }
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!root||!body)return;
-    // Floor at 20px — never shrink body text below the readable cf81089 board/detail size.
+    // Floor at 20px — never shrink body text below the readable size. Prefer layout over truncation.
     var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20], cols, i, c;
-    cols=n<=3?[2]:n<=8?[3,2]:[4,3,2];
+    cols=n<=3?[2]:n<=6?[3,2]:[4,3,2];
+    if(body.className.indexOf('page-fit-2')>=0)cols=[3,2];
     for(c=0;c<cols.length;c++){
       body.style.columnCount=String(cols[c]);
       for(i=0;i<sizes.length;i++){
@@ -941,6 +1050,14 @@
         if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return;
       }
     }
+  }
+  function setDetailPage(p){
+    if(state.view!=='detail'||!state.detail)return;
+    if(p<1||p>state.detailPages)return;
+    if(p===state.detailPage)return;
+    state.detailPage=p;
+    var s=focusedSchool();
+    if(s&&s.id===state.detail)renderDetail(s);
   }
   function fmtK(n){
     var a=Math.abs(n), sign=n<0?'-':'';
@@ -1021,8 +1138,8 @@
   function showDetail(on){
     var s=on?focusedSchool():null;
     if(on&&!(s&&s.hasDetail))return;
-    if(on){state.chipFocus=false;state.view='detail';}
-    else state.view='board';
+    if(on){state.chipFocus=false;state.view='detail';state.detailPage=1;}
+    else{state.view='board';state.detailPage=1;state.detailPages=1;}
     state.detail=s?s.id:null;
     if(s)renderDetail(s);else $('detail').innerHTML='';
     $('detail').hidden=!s;
@@ -1064,7 +1181,7 @@
     }
   }
   function blank(){
-    state={cols:[],focus:null,detail:null,data:null,roi:null,chipFocus:false,view:'board'};
+    state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board'};
     $('stage').hidden=true;
     $('cols').innerHTML='';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
     if($('roi')){$('roi').innerHTML='';$('roi').hidden=true;}
@@ -1116,7 +1233,7 @@
   document.addEventListener('keydown',function(e){
     if(!state.data)return;
     var code=e.keyCode||e.which;
-    var isBack=code===10009||code===27||e.key==='Escape'||e.key==='XF86Back'||e.key==='GoBack';
+    var isBack=code===10009||code===27||code===8||e.key==='Escape'||e.key==='Backspace'||e.key==='XF86Back'||e.key==='GoBack';
     if(isBack){
       e.preventDefault();
       if(state.view==='roi'){showRoi(false);return;}
@@ -1124,7 +1241,12 @@
       location.href=backUrl();return;
     }
     if(state.view==='roi')return;
-    if(state.view==='detail')return;
+    if(state.view==='detail'){
+      // Right/Down → page 2; Left/Up → page 1. Back already handled above.
+      if(code===39||code===40){e.preventDefault();setDetailPage(Math.min(state.detailPages,state.detailPage+1));return;}
+      if(code===37||code===38){e.preventDefault();setDetailPage(Math.max(1,state.detailPage-1));return;}
+      return;
+    }
     if(code===13||e.key==='Enter'){
       e.preventDefault();
       if(state.chipFocus)showRoi(true);
