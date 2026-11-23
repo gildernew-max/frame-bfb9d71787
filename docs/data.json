@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T04:15:10.137Z",
+ "generatedAt": "2026-11-23T04:30:13.291Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,7 +7319,7 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T04:15:10.137Z",
+  "at": "2026-11-23T04:30:13.291Z",
   "ran": [
    "alerts",
    "nflScoreboard",
@@ -13682,62 +13682,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T04:15:10.137Z",
-  "lastAttempt": "2026-11-23T04:15:10.137Z",
+  "asOf": "2026-11-23T04:30:13.291Z",
+  "lastAttempt": "2026-11-23T04:30:13.291Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7089.75,
-    "lastTime": 1795406706,
+    "last": 7092.25,
+    "lastTime": 1795407611,
     "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 146,
-    "changePct": 2.102610261026103,
-    "expectedOpen": 7055.688569216922,
+    "change": 148.5,
+    "changePct": 2.1386138613861387,
+    "expectedOpen": 7058.176558415842,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25852.5,
-    "lastTime": 1795406708,
+    "last": 25891.5,
+    "lastTime": 1795407611,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 710.5,
-    "changePct": 2.8259486118844963,
-    "expectedOpen": 23256.897483493754,
+    "change": 749.5,
+    "changePct": 2.981067536393286,
+    "expectedOpen": 23291.981866120437,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48986,
-    "lastTime": 1795406706,
+    "last": 48987,
+    "lastTime": 1795407607,
     "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 752,
-    "changePct": 1.559066218849774,
-    "expectedOpen": 48897.97875730813,
+    "change": 753,
+    "changePct": 1.5611394452046274,
+    "expectedOpen": 48898.97696044284,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2636.6,
-    "lastTime": 1795406699,
+    "last": 2637.4,
+    "lastTime": 1795407607,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 48.20009765624991,
-    "changePct": 1.8621580696478,
+    "change": 49.00009765625009,
+    "changePct": 1.8930651949059871,
     "expectedOpen": null,
     "valid": true
    }
@@ -13757,39 +13757,6 @@
    "SEA"
   ],
   "games": [
-   {
-    "id": "401873077",
-    "start": "2026-11-23T01:20Z",
-    "state": "in",
-    "status": "Q4 3:46",
-    "period": 4,
-    "clock": "3:46",
-    "completed": false,
-    "away": {
-     "name": "Minnesota Vikings",
-     "short": "Vikings",
-     "id": "16",
-     "abbrev": "MIN",
-     "score": "10",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
-     "record": "7-2",
-     "winner": false,
-     "color": "#4f2683",
-     "rank": null
-    },
-    "home": {
-     "name": "San Francisco 49ers",
-     "short": "49ers",
-     "id": "25",
-     "abbrev": "SF",
-     "score": "35",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
-     "record": "8-1",
-     "winner": false,
-     "color": "#aa0000",
-     "rank": null
-    }
-   },
    {
     "id": "401873078",
     "start": "2026-11-24T01:15Z",
@@ -14185,10 +14152,43 @@
      "color": "#0a2343",
      "rank": null
     }
+   },
+   {
+    "id": "401873077",
+    "start": "2026-11-23T01:20Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Minnesota Vikings",
+     "short": "Vikings",
+     "id": "16",
+     "abbrev": "MIN",
+     "score": "10",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/min.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#4f2683",
+     "rank": null
+    },
+    "home": {
+     "name": "San Francisco 49ers",
+     "short": "49ers",
+     "id": "25",
+     "abbrev": "SF",
+     "score": "35",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
+     "record": "9-1",
+     "winner": true,
+     "color": "#aa0000",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-23T04:15:10.137Z",
-  "lastAttempt": "2026-11-23T04:15:10.137Z",
+  "asOf": "2026-11-23T04:30:13.291Z",
+  "lastAttempt": "2026-11-23T04:30:13.291Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14199,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T04:15:10.137Z",
-  "lastAttempt": "2026-11-23T04:15:10.137Z",
+  "asOf": "2026-11-23T04:30:13.291Z",
+  "lastAttempt": "2026-11-23T04:30:13.291Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,7 +14876,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T04:15:10.137Z",
+  "lastAttempt": "2026-11-23T04:30:13.291Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
