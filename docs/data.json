@@ -1,206 +1,52 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T15:39:10.358Z",
+ "generatedAt": "2026-11-23T15:45:21.222Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "Open-Meteo",
-  "credit": "Weather: Open-Meteo",
+  "provider": "National Weather Service",
+  "credit": "Weather: NWS",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 60,
-     "i": "cloud",
-     "cond": "Overcast",
-     "windMph": 6,
-     "windDir": "NW",
-     "observed": "2026-11-23T09:45"
+     "temp": 63,
+     "i": "partly",
+     "cond": "Partly Cloudy",
+     "windMph": 8,
+     "windDir": "WNW",
+     "observed": "2026-11-23T15:05:00+00:00"
     },
     "today": {
-     "h": 66,
-     "l": 51,
-     "sunrise": "07:17",
-     "sunset": "17:30"
+     "h": 70,
+     "l": 48,
+     "sunrise": "07:16",
+     "sunset": "17:31"
     },
     "forecast": [
      {
       "date": "2026-11-24",
       "d": "Tue",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 58,
-      "l": 45,
-      "pop": 2
+      "i": "partly",
+      "text": "Partly Sunny",
+      "h": 64,
+      "l": 44
      },
      {
       "date": "2026-11-25",
       "d": "Wed",
       "i": "rain",
-      "text": "Drizzle",
-      "h": 49,
-      "l": 44,
-      "pop": 71
+      "text": "Rain Showers Likely",
+      "h": 54,
+      "l": 45
      },
      {
       "date": "2026-11-26",
       "d": "Thu",
       "i": "rain",
-      "text": "Drizzle",
-      "h": 50,
-      "l": 41,
-      "pop": 71
-     }
-    ],
-    "days7": [
-     {
-      "date": "2026-11-23",
-      "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 66,
-      "l": 51,
-      "pop": 2
-     },
-     {
-      "date": "2026-11-24",
-      "d": "Tue",
-      "i": "cloud",
-      "text": "Overcast",
+      "text": "Rain Showers",
       "h": 58,
-      "l": 45,
-      "pop": 2
-     },
-     {
-      "date": "2026-11-25",
-      "d": "Wed",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 49,
-      "l": 44,
-      "pop": 71
-     },
-     {
-      "date": "2026-11-26",
-      "d": "Thu",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 50,
-      "l": 41,
-      "pop": 71
-     },
-     {
-      "date": "2026-11-27",
-      "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 51,
-      "l": 39,
-      "pop": 1
-     },
-     {
-      "date": "2026-11-28",
-      "d": "Sat",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 58,
-      "l": 44,
-      "pop": 1
-     },
-     {
-      "date": "2026-11-29",
-      "d": "Sun",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 62,
-      "l": 47,
-      "pop": 8
-     }
-    ],
-    "hourly": [
-     {
-      "t": "2026-11-23T10:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 61,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T11:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 63,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T12:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 64,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T13:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 64,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T14:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 65,
-      "pop": 2
-     },
-     {
-      "t": "2026-11-23T15:00",
-      "i": "partly",
-      "text": "Partly cloudy",
-      "temp": 65,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T16:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 65,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T17:00",
-      "i": "partly",
-      "text": "Partly cloudy",
-      "temp": 63,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T18:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 61,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T19:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 59,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T20:00",
-      "i": "partly",
-      "text": "Partly cloudy",
-      "temp": 57,
-      "pop": 1
-     },
-     {
-      "t": "2026-11-23T21:00",
-      "i": "sun",
-      "text": "Mostly clear",
-      "temp": 55,
-      "pop": 1
+      "l": 38
      }
     ]
    },
@@ -210,201 +56,48 @@
     "now": {
      "temp": 27,
      "i": "cloud",
-     "cond": "Overcast",
-     "windMph": 10,
+     "cond": "Cloudy",
+     "windMph": 14,
      "windDir": "NW",
-     "observed": "2026-11-23T08:45"
+     "observed": "2026-11-23T15:30:00+00:00"
     },
     "today": {
-     "h": 30,
-     "l": 24,
-     "sunrise": "07:20",
-     "sunset": "16:36"
+     "h": 32,
+     "l": 17,
+     "sunrise": "07:19",
+     "sunset": "16:38"
     },
     "forecast": [
      {
       "date": "2026-11-24",
       "d": "Tue",
       "i": "cloud",
-      "text": "Overcast",
+      "text": "Mostly Cloudy",
       "h": 34,
-      "l": 17,
-      "pop": 6
+      "l": 26
      },
      {
       "date": "2026-11-25",
       "d": "Wed",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "partly",
+      "text": "Partly Sunny",
       "h": 38,
-      "l": 28,
-      "pop": 9
+      "l": 23
      },
      {
       "date": "2026-11-26",
       "d": "Thu",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 40,
-      "l": 31,
-      "pop": 2
-     }
-    ],
-    "days7": [
-     {
-      "date": "2026-11-23",
-      "d": "Mon",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 30,
-      "l": 24,
-      "pop": 0
-     },
-     {
-      "date": "2026-11-24",
-      "d": "Tue",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 34,
-      "l": 17,
-      "pop": 6
-     },
-     {
-      "date": "2026-11-25",
-      "d": "Wed",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 38,
-      "l": 28,
-      "pop": 9
-     },
-     {
-      "date": "2026-11-26",
-      "d": "Thu",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 40,
-      "l": 31,
-      "pop": 2
-     },
-     {
-      "date": "2026-11-27",
-      "d": "Fri",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 43,
-      "l": 31,
-      "pop": 8
-     },
-     {
-      "date": "2026-11-28",
-      "d": "Sat",
-      "i": "rain",
-      "text": "Drizzle",
+      "i": "partly",
+      "text": "Mostly Sunny",
       "h": 39,
-      "l": 34,
-      "pop": 8
-     },
-     {
-      "date": "2026-11-29",
-      "d": "Sun",
-      "i": "rain",
-      "text": "Drizzle",
-      "h": 39,
-      "l": 31,
-      "pop": 8
-     }
-    ],
-    "hourly": [
-     {
-      "t": "2026-11-23T09:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 28,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T10:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 28,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T11:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 28,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T12:00",
-      "i": "sun",
-      "text": "Mostly clear",
-      "temp": 29,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T13:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 29,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T14:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 30,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T15:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 30,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T16:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 29,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T17:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 26,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T18:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 25,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T19:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 25,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-23T20:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 25,
-      "pop": 0
+      "l": 27
      }
     ]
    }
   },
-  "asOf": "2026-11-23T14:45:12.455Z",
-  "lastAttempt": "2026-11-23T14:45:12.455Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
+  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
   "lastError": null
  },
  "nfl": {
@@ -712,44 +405,44 @@
    "isOpen": true,
    "session": "regular",
    "holiday": null,
-   "checkedAt": "2026-11-23T15:39:10.358Z"
+   "checkedAt": "2026-11-23T15:45:21.222Z"
   },
   "quotes": {
    "NVDA": {
     "s": "NVDA",
     "n": "NVIDIA",
     "kind": "stock",
-    "px": 170.06,
-    "ch": 35.4736,
-    "d": 44.53,
+    "px": 168.73,
+    "ch": 34.4141,
+    "d": 43.2,
     "pc": 125.53,
-    "t": 1795447801,
+    "t": 1795448746,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:01.000Z"
+    "quoteTime": "2026-11-23T15:45:46.000Z"
    },
    "TSLA": {
     "s": "TSLA",
     "n": "Tesla",
     "kind": "stock",
-    "px": 392.21,
-    "ch": 13.4145,
-    "d": 46.39,
+    "px": 391.99,
+    "ch": 13.3509,
+    "d": 46.17,
     "pc": 345.82,
-    "t": 1795447801,
+    "t": 1795448746,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:01.000Z"
+    "quoteTime": "2026-11-23T15:45:46.000Z"
    },
    "SPCX": {
     "s": "SPCX",
     "n": "SpaceX",
     "kind": "stock",
-    "px": 139.25,
-    "ch": 8.9678,
-    "d": 11.46,
+    "px": 138.24,
+    "ch": 8.1775,
+    "d": 10.45,
     "pc": 127.79,
-    "t": 1795447801,
+    "t": 1795448746,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:01.000Z"
+    "quoteTime": "2026-11-23T15:45:46.000Z"
    },
    "ANT": {
     "s": "ANT",
@@ -759,13 +452,13 @@
     "range": "$70–78",
     "note": "IPO Nov 19 · $70–78 range",
     "upcoming": false,
-    "px": 85.63,
-    "ch": -3.6891,
-    "d": -3.28,
+    "px": 87.69,
+    "ch": -1.3722,
+    "d": -1.22,
     "pc": 88.91,
-    "t": 1795447801,
+    "t": 1795448746,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:01.000Z"
+    "quoteTime": "2026-11-23T15:45:46.000Z"
    },
    "DOW": {
     "s": "DJIA",
@@ -773,13 +466,13 @@
     "kind": "index",
     "symbol": "^DJI",
     "source": "Yahoo Finance",
-    "px": 49725.12,
-    "ch": 3.2770081673145857,
-    "d": 1577.7918750000026,
+    "px": 49582.92,
+    "ch": 2.9816646757072736,
+    "d": 1435.5918749999983,
     "pc": 48147.328125,
-    "t": 1795447808,
+    "t": 1795448749,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:08.000Z"
+    "quoteTime": "2026-11-23T15:45:49.000Z"
    },
    "SPX": {
     "s": "SPX",
@@ -787,13 +480,13 @@
     "kind": "index",
     "symbol": "^GSPC",
     "source": "Yahoo Finance",
-    "px": 7285.09,
-    "ch": 5.422267858514401,
-    "d": 374.69986328125015,
+    "px": 7253.35,
+    "ch": 4.962959492821016,
+    "d": 342.95986328125036,
     "pc": 6910.39013671875,
-    "t": 1795447815,
+    "t": 1795448750,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:15.000Z"
+    "quoteTime": "2026-11-23T15:45:50.000Z"
    },
    "NASDAQ": {
     "s": "NASDAQ",
@@ -801,21 +494,17 @@
     "kind": "index",
     "symbol": "^IXIC",
     "source": "Yahoo Finance",
-    "px": 24320.598,
-    "ch": 7.528905402789129,
-    "d": 1702.8675312500018,
+    "px": 24207.146,
+    "ch": 7.027298930129314,
+    "d": 1589.4155312500006,
     "pc": 22617.73046875,
-    "t": 1795447807,
+    "t": 1795448746,
     "vol": null,
-    "quoteTime": "2026-11-23T15:30:07.000Z"
+    "quoteTime": "2026-11-23T15:45:46.000Z"
    }
   },
   "history": {
    "NVDA": [
-    {
-     "t": 1795015808,
-     "c": 153.78
-    },
     {
      "t": 1795016685,
      "c": 152.09
@@ -1131,13 +820,13 @@
     {
      "t": 1795447801,
      "c": 170.06
+    },
+    {
+     "t": 1795448746,
+     "c": 168.73
     }
    ],
    "TSLA": [
-    {
-     "t": 1795015807,
-     "c": 381.73
-    },
     {
      "t": 1795016685,
      "c": 380.26
@@ -1453,13 +1142,13 @@
     {
      "t": 1795447801,
      "c": 392.21
+    },
+    {
+     "t": 1795448746,
+     "c": 391.99
     }
    ],
    "SPCX": [
-    {
-     "t": 1795015807,
-     "c": 145.94
-    },
     {
      "t": 1795016684,
      "c": 144.63
@@ -1775,13 +1464,13 @@
     {
      "t": 1795447801,
      "c": 139.25
+    },
+    {
+     "t": 1795448746,
+     "c": 138.24
     }
    ],
    "DOW": [
-    {
-     "t": 1795016713,
-     "c": 50180.61
-    },
     {
      "t": 1795017626,
      "c": 50220.66
@@ -2097,13 +1786,13 @@
     {
      "t": 1795447808,
      "c": 49725.12
+    },
+    {
+     "t": 1795448749,
+     "c": 49582.92
     }
    ],
    "SPX": [
-    {
-     "t": 1795016713,
-     "c": 7311.32
-    },
     {
      "t": 1795017630,
      "c": 7324.55
@@ -2419,13 +2108,13 @@
     {
      "t": 1795447815,
      "c": 7285.09
+    },
+    {
+     "t": 1795448750,
+     "c": 7253.35
     }
    ],
    "NASDAQ": [
-    {
-     "t": 1795016712,
-     "c": 24325.69
-    },
     {
      "t": 1795017624,
      "c": 24400.549
@@ -2741,6 +2430,10 @@
     {
      "t": 1795447807,
      "c": 24320.598
+    },
+    {
+     "t": 1795448746,
+     "c": 24207.146
     }
    ],
    "ANT": [
@@ -2935,11 +2628,15 @@
     {
      "t": 1795447801,
      "c": 85.63
+    },
+    {
+     "t": 1795448746,
+     "c": 87.69
     }
    ]
   },
-  "lastAttempt": "2026-11-23T15:30:13.687Z",
-  "asOf": "2026-11-23T15:30:13.687Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
   "indexSource": "Yahoo Finance",
   "details": {
    "NVDA": {
@@ -3579,11 +3276,11 @@
      },
      {
       "t": 1795444200,
-      "c": 170.3800048828125,
-      "v": 365118231
+      "c": 167.85499572753906,
+      "v": 394616966
      }
     ],
-    "volume": 365118231,
+    "volume": 394616966,
     "week52High": 243.37,
     "week52Low": 124.5,
     "peTTM": 13.371,
@@ -4255,11 +3952,11 @@
      },
      {
       "t": 1795444200,
-      "c": 392.55499267578125,
-      "v": 16449152
+      "c": 390.80950927734375,
+      "v": 18003337
      }
     ],
-    "volume": 16449152,
+    "volume": 18003337,
     "week52High": 498.83,
     "week52Low": 297.38,
     "peTTM": 424.5164,
@@ -4866,11 +4563,11 @@
      },
      {
       "t": 1795444200,
-      "c": 139.30999755859375,
-      "v": 37075383
+      "c": 137.8000030517578,
+      "v": 41420105
      }
     ],
-    "volume": 37075383,
+    "volume": 41420105,
     "week52High": 225.64,
     "week52Low": 104.83,
     "peTTM": 0,
@@ -4922,11 +4619,11 @@
      },
      {
       "t": 1795444200,
-      "c": 85.9531021118164,
-      "v": 101559910
+      "c": 87.66000366210938,
+      "v": 112569354
      }
     ],
-    "volume": 101559910,
+    "volume": 112569354,
     "week52High": 115.1,
     "week52Low": 83.05,
     "peTTM": 0,
@@ -5598,11 +5295,11 @@
      },
      {
       "t": 1795444200,
-      "c": 49730.76953125,
-      "v": 462011041
+      "c": 49574.5703125,
+      "v": 505463638
      }
     ],
-    "volume": 462011041,
+    "volume": 505463638,
     "week52High": 54744.33,
     "week52Low": 45057.28
    },
@@ -6243,11 +5940,11 @@
      },
      {
       "t": 1795444200,
-      "c": 7285.919921875,
-      "v": 1131617000
+      "c": 7251.740234375,
+      "v": 1269621000
      }
     ],
-    "volume": 1131617000,
+    "volume": 1269621000,
     "week52High": 7844.52,
     "week52Low": 6316.91
    },
@@ -6888,11 +6585,11 @@
      },
      {
       "t": 1795444200,
-      "c": 24316.208984375,
-      "v": 3661218000
+      "c": 24182.287109375,
+      "v": 3974698000
      }
     ],
-    "volume": 3661218000,
+    "volume": 3974698000,
     "week52High": 27722.75,
     "week52Low": 20690.25
    }
@@ -6900,8 +6597,8 @@
   "series": {
    "provider": "Yahoo Finance",
    "mode": "90d",
-   "asOf": "2026-11-23T15:30:13.687Z",
-   "lastAttempt": "2026-11-23T15:30:13.687Z",
+   "asOf": "2026-11-23T15:45:21.222Z",
+   "lastAttempt": "2026-11-23T15:45:21.222Z",
    "items": {
     "NVDA": {
      "mode": "90d",
@@ -7039,7 +6736,7 @@
       150.96,
       145.98,
       125.53,
-      170.38
+      167.87
      ]
     },
     "TSLA": {
@@ -7178,7 +6875,7 @@
       383.72,
       374.41,
       345.82,
-      392.57
+      390.81
      ]
     },
     "SPCX": {
@@ -7317,7 +7014,7 @@
       143.5,
       138.43,
       127.79,
-      139.36
+      137.87
      ]
     }
    }
@@ -7325,8 +7022,16 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T15:39:10.358Z",
+  "at": "2026-11-23T15:45:21.222Z",
   "ran": [
+   "weather",
+   "alerts",
+   "stockNews",
+   "worldNews",
+   "movers",
+   "sectors",
+   "stocks:session",
+   "series",
    "usTempGrid"
   ]
  },
@@ -14202,8 +13907,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T15:30:13.687Z",
-  "lastAttempt": "2026-11-23T15:30:13.687Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14846,7 +14551,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T15:39:10.358Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -14877,94 +14582,94 @@
   "credit": "Movers: Yahoo Finance",
   "minCap": 2000000000,
   "marketState": "REGULAR",
-  "sessionTime": "2026-11-23T15:30:13.000Z",
+  "sessionTime": "2026-11-23T15:45:49.000Z",
   "sessionDate": "2026-11-23",
   "gainers": [
    {
     "s": "NVDA",
     "n": "NVIDIA Corporation",
-    "ch": 35.65,
-    "px": 170.2799,
-    "cap": 4111748825088,
-    "t": 1795447813
+    "ch": 33.82,
+    "px": 167.99,
+    "cap": 4056454529024,
+    "t": 1795448749
    },
    {
     "s": "IREN",
     "n": "IREN LIMITED",
-    "ch": 32.99,
-    "px": 15.72,
-    "cap": 6670898176,
-    "t": 1795447813
+    "ch": 30.12,
+    "px": 15.3802,
+    "cap": 6526701568,
+    "t": 1795448749
+   },
+   {
+    "s": "KYMR",
+    "n": "Kymera Therapeutics, Inc.",
+    "ch": 29.27,
+    "px": 149.06,
+    "cap": 12725460992,
+    "t": 1795448744
    },
    {
     "s": "AXTI",
     "n": "AXT Inc",
-    "ch": 31.27,
-    "px": 40.135,
-    "cap": 2637766400,
-    "t": 1795447813
+    "ch": 26.64,
+    "px": 38.7151,
+    "cap": 2544447488,
+    "t": 1795448748
    },
    {
     "s": "NBIS",
     "n": "Nebius Group N.V.",
-    "ch": 29.64,
-    "px": 105.41,
-    "cap": 30874843136,
-    "t": 1795447813
-   },
-   {
-    "s": "APLD",
-    "n": "Applied Digital Corporation",
-    "ch": 27.46,
-    "px": 14.645,
-    "cap": 4428459520,
-    "t": 1795447812
+    "ch": 26.53,
+    "px": 102.88,
+    "cap": 30133798912,
+    "t": 1795448749
    }
   ],
   "losers": [
    {
     "s": "PLBL",
     "n": "Polibeli Group Ltd",
-    "ch": -12.94,
-    "px": 8.48,
-    "cap": 3106965504,
-    "t": 1795447803
+    "ch": -22.23,
+    "px": 7.575,
+    "cap": 2775384832,
+    "t": 1795448739
    },
    {
     "s": "CRWD",
     "n": "CrowdStrike Holdings, Inc.",
-    "ch": -10.16,
-    "px": 206.13,
-    "cap": 211063701504,
-    "t": 1795447812
+    "ch": -9.64,
+    "px": 207.326,
+    "cap": 212288323584,
+    "t": 1795448748
    },
    {
     "s": "CDLR",
     "n": "Cadeler plc",
-    "ch": -6.28,
-    "px": 5.97,
-    "cap": 2121766784,
-    "t": 1795447567
+    "ch": -6.44,
+    "px": 5.96,
+    "cap": 2118212864,
+    "t": 1795448582
    },
    {
-    "s": "KSS",
-    "n": "Kohl's Corporation",
-    "ch": -5.84,
-    "px": 20.95,
-    "cap": 2375236608,
-    "t": 1795447813
+    "s": "VOD",
+    "n": "Vodafone Group Plc",
+    "ch": -5.14,
+    "px": 13.3,
+    "cap": 30814291968,
+    "t": 1795448748
    },
    {
-    "s": "TPL",
-    "n": "Texas Pacific Land Corporation",
-    "ch": -5.11,
-    "px": 253.775,
-    "cap": 17504049152,
-    "t": 1795447812
+    "s": "VVX",
+    "n": "V2X, Inc.",
+    "ch": -5.13,
+    "px": 71.3225,
+    "cap": 2236078080,
+    "t": 1795448694
    }
   ],
-  "asOf": "2026-11-23T15:30:13.687Z",
-  "lastAttempt": "2026-11-23T15:30:13.687Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": null
  },
  "sectors": {
@@ -14974,85 +14679,85 @@
    {
     "s": "XLK",
     "n": "Technology",
-    "px": 164.68,
-    "d": 10.52,
-    "t": 1795447810
+    "px": 163.34,
+    "d": 9.62,
+    "t": 1795448748
    },
    {
     "s": "XLC",
     "n": "Communication",
-    "px": 103.34,
-    "d": 3.31,
-    "t": 1795447812
+    "px": 103.12,
+    "d": 3.09,
+    "t": 1795448748
    },
    {
     "s": "XLY",
     "n": "Cons. Discretionary",
-    "px": 117.42,
-    "d": 4.41,
-    "t": 1795447813
+    "px": 117.09,
+    "d": 4.12,
+    "t": 1795448749
    },
    {
     "s": "XLF",
     "n": "Financials",
-    "px": 55.8,
-    "d": 2.24,
-    "t": 1795447811
+    "px": 55.66,
+    "d": 2,
+    "t": 1795448748
    },
    {
     "s": "XLV",
     "n": "Health Care",
-    "px": 179.52,
-    "d": 1.28,
-    "t": 1795447812
+    "px": 179.16,
+    "d": 1.08,
+    "t": 1795448749
    },
    {
     "s": "XLI",
     "n": "Industrials",
-    "px": 162.57,
-    "d": 3.96,
-    "t": 1795447811
+    "px": 162.18,
+    "d": 3.72,
+    "t": 1795448749
    },
    {
     "s": "XLP",
     "n": "Cons. Staples",
-    "px": 89.96,
-    "d": -0.55,
-    "t": 1795447812
+    "px": 90.11,
+    "d": -0.39,
+    "t": 1795448749
    },
    {
     "s": "XLE",
     "n": "Energy",
-    "px": 60.63,
-    "d": 0.19,
-    "t": 1795447812
+    "px": 60.37,
+    "d": -0.23,
+    "t": 1795448749
    },
    {
     "s": "XLU",
     "n": "Utilities",
-    "px": 43.01,
-    "d": 0.75,
-    "t": 1795447813
+    "px": 42.99,
+    "d": 0.7,
+    "t": 1795448748
    },
    {
     "s": "XLRE",
     "n": "Real Estate",
-    "px": 42.99,
-    "d": 1.25,
-    "t": 1795447804
+    "px": 42.94,
+    "d": 1.13,
+    "t": 1795448749
    },
    {
     "s": "XLB",
     "n": "Materials",
-    "px": 49.57,
-    "d": 2.54,
-    "t": 1795447810
+    "px": 49.45,
+    "d": 2.3,
+    "t": 1795448744
    }
   ],
-  "sessionTime": "2026-11-23T15:30:13.000Z",
+  "sessionTime": "2026-11-23T15:45:49.000Z",
   "sessionDate": "2026-11-23",
-  "asOf": "2026-11-23T15:30:13.687Z",
-  "lastAttempt": "2026-11-23T15:30:13.687Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": null
  },
  "extended": {
@@ -15105,53 +14810,88 @@
    "NVDA": {
     "items": [
      {
-      "hd": "CoreWeave, Nebius lead neocloud stocks higher as Jensen Huang's Nvidia return lifts AI trade",
+      "hd": "If Colette Kress leaves Nvidia, there'll be no one left to challenge Jensen Huang",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/article/coreweave-nebius-lead-neocloud-stocks-higher-as-jensen-huang-is-reinstated-as-ceo-of-nvidia-151417634.html?.tsrc=rss",
-      "pub": "2026-11-23T15:14:17.000Z",
-      "sum": "CoreWeave and Nebius shares soared on Monday as CEO Jensen Huang returned to Nvidia, a major backer of the AI trade."
+      "url": "https://finance.yahoo.com/video/if-colette-kress-leaves-nvidia-therell-be-no-one-left-to-challenge-jensen-huang-153905050.html?.tsrc=rss",
+      "pub": "2026-11-23T15:39:05.000Z",
+      "sum": "Yahoo Finance Executive Editor Brian Sozzi chats with Julie Hyman about what Jensen Huang's return as Nvidia (NVDA) CEO means for interim CEO and longtime CFO Colette Kress."
      },
      {
-      "hd": "'Eyes in the back of his head': Why Jensen could be sharper after ouster",
+      "hd": "What does Jensen's return mean for AMD?",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/eyes-in-the-back-of-his-head-why-jensen-could-be-sharper-after-ouster-151351120.html?.tsrc=rss",
-      "pub": "2026-11-23T15:13:51.000Z",
-      "sum": "EMJ Capital founder and president Eric Jackson joins Yahoo Finance Executive Editor Brian Sozzi to discuss Nvidia (NVDA) reinstating Jensen Huang as its CEO and how his ousting will leave him more focused and more careful."
+      "url": "https://finance.yahoo.com/video/what-does-jensens-return-mean-for-amd-153757690.html?.tsrc=rss",
+      "pub": "2026-11-23T15:37:57.000Z",
+      "sum": "Patrick Moorhead, founder, CEO, and chief analyst for Moor Insights and Strategy, joins Yahoo Finance Executive Editor Brian Sozzi to discuss how AMD (AMD) will be affected after Nvidia (NVDA) reinstated Jensen Huang as its CEO."
      },
      {
-      "hd": "Jensen Huang Back As Nvidia CEO. Stock Jumps.",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/9d4f41fa-65db-3d79-8406-bd396f20b522/jensen-huang-back-as-nvidia.html?.tsrc=rss",
-      "pub": "2026-11-23T15:09:06.000Z",
-      "sum": "Jensen Huang has been reinstated as Nvidia's CEO by the company's board. Nvidia stock rallied on the news."
+      "hd": "Nvidia board reinstates Jensen Huang as CEO just days after rejecting his offer to return",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNbUdPNnFZNXVRRHJqeGNYX0ptRk1oUW85OHlueHM2aW5teGxVWmViTWdKOGVTTVBYdWNVTjA3M2d4NUFfQ1Fac2g2ZzVZZ0hMdnZ6V1RQdFRmdWNfZlFzNnRYNmR0YWsxUjFIaTNYR2c5V3RQUHdVVUx4X1loaHF6dEcyNF9fQQ?oc=5",
+      "pub": "2026-11-23T15:36:00.000Z",
+      "sum": ""
      },
      {
-      "hd": "Nvidia shares jump 30% at the open as Jensen Huang returns as CEO",
+      "hd": "Nvidia Shares Soar More Than 30% as Board Reinstates Jensen Huang as CEO",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shares-soar-more-30-153445282.html?.tsrc=rss",
+      "pub": "2026-11-23T15:34:45.000Z",
+      "sum": "Nvidia (NVDA) shares surged more than 30% Monday after its board reinstated Jensen Huang as chief ex"
+     },
+     {
+      "hd": "Canadian Investment Regulatory Organization Single Stock Circuit Breaker Halt - NVDD",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/canadian-investment-regulatory-organization-single-153400797.html?.tsrc=rss",
+      "pub": "2026-11-23T15:34:00.000Z",
+      "sum": "TORONTO, Nov. 23, 2026 (GLOBE NEWSWIRE) -- The following issues have been halted by CIRO: Company: SAVVYSHORT (-2X) NVDA ETF SHARES TSX Symbol: NVDD All Issues: No Reason: Single Stock Circuit Breaker Halt Time (ET): 09:34:46 AM Resumption Time (ET): 09:39:47 AM CIRO can make a decision to impose a temporary suspension (halt) of trading in a security of a publicly-listed company. Trading halts are implemented to ensure a fair and orderly market. CIRO is the national self-regulatory organization"
+     },
+     {
+      "hd": "Nvidia CEO Search Ends as Jensen Huang Returns, Arm Boss Stays Put",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/nvidia-ceo-search-ends-jensen-153342060.html?.tsrc=rss",
+      "pub": "2026-11-23T15:33:42.000Z",
+      "sum": "Arm CEO Rene Haas commits to staying through 2033 as Jensen Huang's surprise return reshapes Nvidia"
+     },
+     {
+      "hd": "Nvidia shares jump over 30% at the open as Jensen Huang returns as CEO",
       "src": "Yahoo Finance",
       "url": "https://www.euronews.com/2026/11/23/nvidia-reinstates-jensen-huang-as-ceo-11-days-after-he-resigned?.tsrc=rss",
-      "pub": "2026-11-23T15:04:20.000Z",
-      "sum": "Nvidia shares jumped more than 30% at the start of US trading after the board unanimously reinstated Jensen Huang as chief executive. US President Donald Trump welcomed his return, and Nvidia said its independent investigation would continue.View on euronews"
+      "pub": "2026-11-23T15:33:11.000Z",
+      "sum": "Nvidia shares jumped more than 30% from their Friday close at the start of US trading on Monday after the board unanimously reinstated Jensen Huang as CEO. US President Donald Trump welcomed his return and Nvidia said its independent investigation will continue.View on euronews"
      },
      {
-      "hd": "Nasdaq Soars 6%, Dow Jumps 1,200 Points as Nvidia's CEO Comeback Sends Shares Skyrocketing",
+      "hd": "Cathie Wood Sells $107 Million of Nvidia Stock, Adds $74 Million to SpaceX",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-soars-6-dow-jumps-150404656.html?.tsrc=rss",
-      "pub": "2026-11-23T15:04:04.000Z",
-      "sum": "Wall Street Erases Sell-Off Losses as Nvidia Soars on Huang's Return"
+      "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-sells-107-million-153242383.html?.tsrc=rss",
+      "pub": "2026-11-23T15:32:42.000Z",
+      "sum": "The investment firm reversed its previous week's Nvidia purchases while increasing its exposure to SpaceX."
      },
      {
-      "hd": "Nvidia Is About 5% of a $500,000 S&P 500 Fund. On Monday Morning It Delivered About a Third of the Fund’s $23,900 Gain",
+      "hd": "Nvidia stock rally: Sell the news or hold after Jensen Huang’s reinstatement",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/23/nvidia-is-about-5-of-a-500000-sp-500-fund-on-monday-morning-it-delivered-about-a-third-of-the-funds-23900-gain/?.tsrc=rss",
-      "pub": "2026-11-23T15:03:00.000Z",
-      "sum": "Nvidia is about 5.1% of an S&P 500 index fund. On a $500,000 fund, its Monday jump added about $7,900 of a $23,900 gain."
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-rally-sell-news-153217792.html?.tsrc=rss",
+      "pub": "2026-11-23T15:32:17.000Z",
+      "sum": "Investing.com -- NVIDIA Corporation (NVDA) is at $165.66 (+31.97%) as of Nov 23, 9:56 AM EST. That is about $40 above Friday’s close of roughly $125.5. The rally mostly reverses a panic. It isn’t a new high. Shares are still about 32% below the 52-week high of $243.37 and down 21.5% over the past month."
      },
      {
-      "hd": "Applied Digital Soars 26% on $5.4B Hyperscaler Lease; Cipher Digital Jumps 19%, TeraWulf Surges 15%",
-      "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/23/applied-digital-soars-26-on-5-4b-hyperscaler-lease-cipher-digital-jumps-19-terawulf-surges-15/?.tsrc=rss",
-      "pub": "2026-11-23T15:02:41.000Z",
-      "sum": "An 18-year lease with a mystery hyperscaler lit up AI data center stocks, but a surprise boardroom reversal at NVIDIA may be doing just as much of the lifting. Can the rebound survive a week of heavy macro data and chip export curbs?"
+      "hd": "S&P 500 Movers: CRWD, NVDA",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/sp-500-movers-crwd-nvda",
+      "pub": "2026-11-23T15:18:27.000Z",
+      "sum": "In early trading on Monday, shares of NVIDIA topped the list of the day's best performing components of the S&P 500 index, trading up 26.8%. Year to date, NVIDIA has lost about 14.6% of its value. And the worst performing S&P 500 component thus far on the day is CrowdS"
+     },
+     {
+      "hd": "NVIDIA Reinstates Jensen Huang As CEO Amid National Security Clearance",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/nvidia-reinstates-jensen-huang-ceo-amid-national-security-clearance",
+      "pub": "2026-11-23T15:16:58.000Z",
+      "sum": "(RTTNews) - NVIDIA Corp. (NVDA), a major AI chip maker, announced Monday that its Board of Directors unanimously voted to reinstate Jensen Huang as President and Chief Executive Officer and as a member of the Board, effective immediately. The Board's decision followed a series of"
+     },
+     {
+      "hd": "Nvidia’s stock soars 30%-plus as Jensen Huang returns as CEO",
+      "src": "MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNTE3UTJiTDJBdGEteFJpU1RwQjQ3NW56dVJyc2ZXcTd0M0V5b3hfMDZEdnEzaW9GNmJjV25iYl9Gb01jallBT2VMaDgxWndBdnU4WERzcXo5TEpKTU1EUGJXTTRxWFoyZ0dmSUJFenZrdG81ZWNkN0pXNmo5SDhWOHFuRkYyMHZjWmlDck1nS2toS0dhMnlmRWhWRFIyU2gyZ0lIaktGVEVjMDRoMkFzcWVyRkt4blFjRVpCOHNsb2s?oc=5",
+      "pub": "2026-11-23T15:15:00.000Z",
+      "sum": ""
      },
      {
       "hd": "Nvidia soars +34% and is now poised for its second-best daily gain in company history",
@@ -15161,11 +14901,25 @@
       "sum": ""
      },
      {
-      "hd": "Arm Soars 13% as CEO Haas Stays Through 2033, Says He’s “Never Been More Confident”",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/arm-soars-13-as-ceo-haas-stays-through-2033-says-hes-never-been-more-confident?ref=yahoofinance&tlnk=yf-261123-7jv69hxj&.tsrc=rss",
-      "pub": "2026-11-23T14:55:30.000Z",
-      "sum": "Key TakeawaysArm Holdings shares jumped 13% after CEO Rene Haas, approached by Nvidia’s recruiters, signed on through 2033. The chip rally explains much of the jump, but keeping Haas protects Arm’s server push against Intel."
+      "hd": "Arm CEO Snubs Nvidia Approach, Extending Contract Through 2033",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV2VIVEFDaFFQRTMzWl96NmhERll5Q2pINWw2T1Zqd3M0NUpKcHp1emdUdk9PellRWkg5b1o3UjBHeVBqdHZLMFhkOUc3RHFYcTRwY3BmZjh6aUlYdVRnM29vNjRzR0FYaUs4aWN3QkgzZUhjaHY4N3Q2c2xzMnYtNGcwQ2dSSGNWRjA0dzJfdXBsNUNfcGZjV1FTM3hOdHpFOEZ2Z1RfZzBVU2w5VlBN?oc=5",
+      "pub": "2026-11-23T14:53:35.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "US stocks soar and recover much of last week's brutal loss after Jensen Huang returns to Nvidia",
+      "src": "AP News",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNF9ZLU84V2VPZHBHcGx0V3p5TVVoV21zbUYyQWFOWU96ZjBmcExvQ1lpVmtFRzl5RVpXdFg3TGhUM3ZHM282MkdnMVgxZ2lwUTRkcm9KaWlHMEcyZ3R6amZIM25vMFRRM0l1OXNxMFFSQVVnR3hzY3BNb1NyUWwxa2hLMndRMkpVZ2l2X0N2Z3JFcmRVMzRMZldCbzlEZkpGZjNmTVJZdw?oc=5",
+      "pub": "2026-11-23T14:51:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Reinstates Huang as CEO, Trump Says No Risk to Security",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUkNIMGtvdXlmRlE2NVZqSEhkRFItNWFyeGJtR0pKbWxZTjRxZHQwTmxIbnB1eXFsZV9QWkE4bFRVMEtoU0huMmdNZHRUbnZmNTRkM3l6eVQtQ3J5OUxkZ1hxckxLQlF0aE5YZUtDTVBTT0x2eHRuQjVhdnFzNmpscXdMaUhRaGlsaVFVM0dHbF9yTURqSFpMczlrQXAyYjdqbUJTdWFjS2Jqa1pGeG9n?oc=5",
+      "pub": "2026-11-23T14:50:50.000Z",
+      "sum": ""
      },
      {
       "hd": "Nvidia Reinstates Jensen Huang as CEO With Government Input",
@@ -15182,10 +14936,10 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia reinstates Jensen Huang as CEO amid pressure from President Trump, investors",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd19EYmc4X2wzaW5zXzZ5VXZ1cUFJbS1OYzJsZ2VSTVRnMkQteWdiN3Z0dTBlNmltdll6Vy1RWnpxVUthOF9XX3g0YmVvNWdXODJUMGpSeXdldVdYQWE3N2hCQXU3RExXSDViSWI3S2xHNVZFc0NUVmh5bGRhem5aUzdDa29xb1hH?oc=5",
-      "pub": "2026-11-23T14:31:21.000Z",
+      "hd": "Jensen Huang's return to Nvidia puts spotlight on ETFs with the biggest exposure to the stock",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-23T14:34:53.000Z",
       "sum": ""
      },
      {
@@ -15229,73 +14983,66 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-23T13:43:16.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Premarket Movers: Nvidia, Dell, HPE Gain; CrowdStrike, UnitedHealth Slide",
-      "src": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=ec07e5dc041b7fa4bdae54192db66181218072d0d93055406ae6bcae196b1f42",
-      "pub": "2026-11-23T13:36:23.000Z",
-      "sum": "Premarket movers: Nvidia rose 8.66%, Dell 8.27%, and HPE 7.46%, while CrowdStrike fell 6.76% and UnitedHealth 6.28%."
-     },
-     {
-      "hd": "Arm CEO Snubs Nvidia Approach, Extending Contract Through 2033",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQV2VIVEFDaFFQRTMzWl96NmhERll5Q2pINWw2T1Zqd3M0NUpKcHp1emdUdk9PellRWkg5b1o3UjBHeVBqdHZLMFhkOUc3RHFYcTRwY3BmZjh6aUlYdVRnM29vNjRzR0FYaUs4aWN3QkgzZUhjaHY4N3Q2c2xzMnYtNGcwQ2dSSGNWRjA0dzJfdXBsNUNfcGZjV1FTM3hOdHpFOEZ2Z1RfZzBVU2w5VlBN?oc=5",
-      "pub": "2026-11-23T13:03:53.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Arm's Haas extends contract to lead chip firm through 2033 amid Nvidia top job chatter",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbmMza241dkVmQ1dzbDZCendPZ01FRmQ3VTJQTUt3XzRKVUhjWk96TVgyS2lrbmFiMnRtVG5KdmxIajI4a2t6MExRajV3UjQ0MjE1dFROTzBWWmkzdzNKdWIxRHBEQzRPRU1VTklEOUFtZDFJMHhfVU1VcVcyUWFIQS1lWHhHeDBwNkwxLWp5RWJCUDdHbXRhS016VHN1UV9pcm5rVlJxY0xjdV9XQ2tzTUgxWE1PXzhLUzVPNlJlWdIBxAFBVV95cUxQTUFMZTc3b09WYXZCZTFWVmNUX2pDZW1oNTJ6eXA3TFRMLVJHbENwWkRyajZneTNhOS1PZ2VOR2JkZW8yMWtYdU1mQklYMGxJZDlEN1FMTE54OW54OXZaRnYwNEI5UjhkcEdUcmNQVXBKV0tOWW5vcXVlQUhnWDdDbC1LYmxSUjQ0N0kycUI4QU1ZclptWXFqZjRYbW9FUGsxcEtsQ2NpOTZlZE5WakxsR2tyRUhXMlE3WkJnQmpGenRQZzY4?oc=5",
-      "pub": "2026-11-23T12:37:38.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia loses the equivalent of 8.4% of annual U.S. GDP in market value",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-23T12:28:56.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Rene Haas affirms his ‘long-term commitment’ to Arm after Nvidia approach",
-      "src": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE04dkZwQjNvRlBzV0xfbDhfT0Z3dWVUcEJWYjdNZmJpd1lVZ2Fsa2NsaW9rM2EwR0RFM3ZGN1ZJT3JJRVNNSkdZU0k1NDI3bGxFYWxhTFRjZ2FNTnh2RXNCWW1NRm1tTTR4T09kQV9uazE?oc=5",
-      "pub": "2026-11-23T12:28:53.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "The Danger of Jensen Huang’s Handshake Deals at Nvidia",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1fdkZ5R1J5S3R5UjEzbTdiVW1OTl9RRkFkcFdyYTJNVHpOMVR0TTlQM0YxUUI3VFZwdVEzSFdKMmdCTDVla3VBY3dtOGVxTnEwWFdyeFJneFEwTkZTb3FQQkZveUdGNUI2allxaUNZcVI?oc=5",
-      "pub": "2026-11-23T12:01:35.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Why Is Nebius Stock Surging on Monday?",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=c93d8ce99b329397913efe37e2394efa486658695916a9e2713b6226f8a299cd",
-      "pub": "2026-11-23T10:43:58.000Z",
-      "sum": "Find out why Nebius Group (NASDAQ: NBIS) stock is rising on Monday, driven by an AI infrastructure sector recovery and NVIDIA's leadership update."
      }
     ],
     "fetched": {
      "Finnhub": 91,
      "Yahoo": 11,
      "Google News": 52,
-     "Nasdaq": 11,
+     "Nasdaq": 12,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
      {
+      "hd": "NYSE Parent's Tokenized Stock Venture Opens With 113 Assets Planned. Apple, Nvidia And Tesla Are Staying Out.",
+      "src": "Yahoo Finance",
+      "url": "https://www.ibtimes.com/okx-ice-tokenized-securities-market-113-assets-3810086?.tsrc=rss",
+      "pub": "2026-11-23T15:19:27.000Z",
+      "sum": "OKX and NYSE parent ICE are launching a 24/7 tokenized securities venue with 113 assets planned for a phased rollout. Apple, Nvidia, Tesla and other major companies have objected to participation."
+     },
+     {
+      "hd": "Tesla’s Big Self-Driving Upgrade Arrives Right on Time for the Stock",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/6a733e08-c8a9-3da6-bbdc-9f5eb9ca9edd/tesla%E2%80%99s-big-self-driving.html?.tsrc=rss",
+      "pub": "2026-11-23T15:15:00.000Z",
+      "sum": "How the new version of Tesla’s Full Self-Driving software can help the stock."
+     },
+     {
+      "hd": "Tesla Soars 13% as FSD V15 Rolls Out: Musk Calls It a “Banger Release”",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/tesla-soars-13-as-fsd-v15-rolls-out-musk-calls-it-a-banger-release?ref=yahoofinance&tlnk=yf-261123-hqjc8686&.tsrc=rss",
+      "pub": "2026-11-23T15:12:50.000Z",
+      "sum": "Key TakeawaysTesla shares rose 13% today as it began rolling out FSD v15, which it says handles safety-critical cases 25x better. Part of the gain is the market’s rebound from Friday’s AI selloff, and Tesla hasn’t said how it measured the 25x."
+     },
+     {
+      "hd": "Tesla Stock Soars After Friday's Rout -- Musk Has a New AI Upgrade",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-stock-soars-fridays-rout-150902835.html?.tsrc=rss",
+      "pub": "2026-11-23T15:09:02.000Z",
+      "sum": "Tesla Shares Jump as FSD 15 Rolls Out. Here's What Investors Need to Know"
+     },
+     {
+      "hd": "SpaceX Stock Jumps. For Investors, the Good Outweighs the Bad Today.",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/9c2ec5db-97d0-391b-9d5a-611c8d24fe36/spacex-stock-jumps.-for.html?.tsrc=rss",
+      "pub": "2026-11-23T15:06:00.000Z",
+      "sum": "Starlink might be coming to a Tesla near you."
+     },
+     {
       "hd": "Tesla FSD V15 Rolling Out, Goes 'Wide' Next Month. Elon Musk Says It's 'Something Special.'",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/b31af40e-5144-3249-9033-82521507fe84/tesla-fsd-v15-rolling-out%2C.html?.tsrc=rss",
       "pub": "2026-11-23T15:03:53.000Z",
       "sum": "Tesla Full Self Driving version 15 rolled out to initial FSD users on Saturday. A wide release is planned for next month, CEO Elon Musk said."
+     },
+     {
+      "hd": "Elon Musk warns AI industry faces a severe cash shortage",
+      "src": "Yahoo Finance",
+      "url": "https://www.proactiveinvestors.com/companies/news/1102264/elon-musk-warns-ai-industry-faces-a-severe-cash-shortage-1102264.html?.tsrc=rss",
+      "pub": "2026-11-23T14:20:00.000Z",
+      "sum": "Elon Musk warned that the AI industry could face a severe cash shortage as companies wait for data centers to come online and start generating revenue. The Tesla Inc (NASDAQ:TSLA) and SpaceX Corp (NASDAQ:SPCX) CEO made the remarks Saturday in a reply on X to a post showing low valuations for..."
      },
      {
       "hd": "Mercedes gets edge over Tesla in race for self-driving success in Europe",
@@ -15312,53 +15059,11 @@
       "sum": "Key TakeawaysGary Black puts Tesla’s 2027 P/E at 168x and SpaceX’s at 30. 6x, and he expects a binding merger agreement before year end."
      },
      {
-      "hd": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/9c2ec5db-97d0-391b-9d5a-611c8d24fe36/spacex-stock-rebounds-as-musk.html?.tsrc=rss",
-      "pub": "2026-11-23T13:08:00.000Z",
-      "sum": "Starlink might be coming to a Tesla near you."
-     },
-     {
-      "hd": "Tesla's autonomy ambitions just got a Wall Street vote of confidence",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=67468dc4df3e647874a26031a58860d861213e9cfbafcce13c5bf6c6a74cb187",
-      "pub": "2026-11-23T13:00:35.000Z",
-      "sum": "Tesla just dropped a major update that is right up the alley of the bulls."
-     },
-     {
       "hd": "Tesla: Stagnation Priced For Growth",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4971037-tesla-stagnation-priced-for-growth?source=feed_symbol_TSLA",
       "pub": "2026-11-23T12:47:40.000Z",
       "sum": "Analyst rates Tesla a short: its infrastructure vision does not justify its valuation, and recent results do not support reversing the call."
-     },
-     {
-      "hd": "Could Tesla Stock Really Fall To $140?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8d65bc746bf02bae97b2f749d87721938f4962f10e862515cf8ce5208980e03f",
-      "pub": "2026-11-23T12:39:53.000Z",
-      "sum": "Tesla stock closed at $345.82 on Friday, Nov 20, down 7.6% in one day. US stocks fell that day in a sell-off in artificial intelligence stocks. Nvidia dropped 14.0%, and the S&P 500 lost 3.7."
-     },
-     {
-      "hd": "Musk Says Teslas Will Tap “Grok’s Real-Time X Feed.” Another Tie Between Tesla and SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0f64b786f1beeaa1d8db1d4cce12ccdf41e60a112a8c6d1e6fd48362020af0b5",
-      "pub": "2026-11-23T12:36:24.000Z",
-      "sum": "Key TakeawaysElon Musk says Tesla’s cars will combine shared traffic data with Grok’s real-time X feed, a product SpaceX owns. Uber and Lyft would have a hard time matching it, since their robotaxis come from partners like Avride and Waymo."
-     },
-     {
-      "hd": "Tesla’s Big Self-Driving Upgrade Arrives Right on Time for the Stock",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/6a733e08-c8a9-3da6-bbdc-9f5eb9ca9edd/tesla%E2%80%99s-big-self-driving.html?.tsrc=rss",
-      "pub": "2026-11-23T12:30:00.000Z",
-      "sum": "How the new version of Tesla’s Full Self-Driving software can help the stock."
-     },
-     {
-      "hd": "Tesla Makes an Unsafe Pitch to Senior Drivers Clinging to Car Keys",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7647cf156cb094d7545ee7b7e0c7fb6502597ef11b2e8d39c1415ef6d2f41223",
-      "pub": "2026-11-23T11:30:09.000Z",
-      "sum": "The company is increasingly promoting its driver-assistance features to aging consumers."
      },
      {
       "hd": "Reported November 22, Tesla Says FSD V15 Is Now Beginning Its Rollout",
@@ -15469,13 +15174,34 @@
     "fetched": {
      "Finnhub": 157,
      "Yahoo": 14,
-     "Google News": 14,
+     "Google News": 13,
      "Nasdaq": 11,
      "Seeking Alpha": 12
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Cathie Wood Sells $107 Million of Nvidia Stock, Adds $74 Million to SpaceX",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-sells-107-million-153242383.html?.tsrc=rss",
+      "pub": "2026-11-23T15:32:42.000Z",
+      "sum": "The investment firm reversed its previous week's Nvidia purchases while increasing its exposure to SpaceX."
+     },
+     {
+      "hd": "Why SpaceX Stock Is Gaining Today",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/why-spacex-stock-is-gaining-today/?.tsrc=rss",
+      "pub": "2026-11-23T15:30:01.000Z",
+      "sum": "Jensen Huang is back at Nvidia."
+     },
+     {
+      "hd": "Why One Analyst Upgrade Sent SpaceX Soaring on Monday",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/why-one-analyst-upgrade-sent-spacex-soaring-on-monday/?.tsrc=rss",
+      "pub": "2026-11-23T15:18:06.000Z",
+      "sum": "Jefferies analyst Sheila Kahyaoglu just initiated SpaceX stock with a buy rating and a $210 price target."
+     },
      {
       "hd": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen” to Musk. Oops.",
       "src": "Yahoo Finance",
@@ -15491,11 +15217,11 @@
       "sum": "SpaceX has declined 43% from its post-IPO high, creating a more attractive entry opportunity and prompting my Buy upgrade."
      },
      {
-      "hd": "SpaceX Stock: Is It a Buy at $130?",
+      "hd": "Elon Musk warns AI industry faces a severe cash shortage",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/23/spacex-stock-is-it-a-buy-at-130/?.tsrc=rss",
-      "pub": "2026-11-23T14:14:02.000Z",
-      "sum": "Investors who didn't buy the SpaceX IPO now have a chance to buy the space stock at an even lower price."
+      "url": "https://www.proactiveinvestors.com/companies/news/1102264/elon-musk-warns-ai-industry-faces-a-severe-cash-shortage-1102264.html?.tsrc=rss",
+      "pub": "2026-11-23T14:20:00.000Z",
+      "sum": "Elon Musk warned that the AI industry could face a severe cash shortage as companies wait for data centers to come online and start generating revenue. The Tesla Inc (NASDAQ:TSLA) and SpaceX Corp (NASDAQ:SPCX) CEO made the remarks Saturday in a reply on X to a post showing low valuations for..."
      },
      {
       "hd": "Update: SpaceX Sued by Virginia, Oregon Over Grok's Creation of Child Sexual Abuse Images, Non-Consensual Material",
@@ -15517,27 +15243,6 @@
       "url": "https://finnhub.io/api/news?id=466f8df06ede8ad19d5e2efec6d31d046c825660bae9dff3093037658859f1f5",
       "pub": "2026-11-23T13:28:23.000Z",
       "sum": "Investing.com -- Jefferies initiated coverage of SpaceX with a Buy rating and a $210 price target in a note on Monday, telling investors that the company's engineering lead in rocket launches underpins growth across its businesses."
-     },
-     {
-      "hd": "Tesla Bulls Banking on SpaceX “Don’t Get the Dilution Math,” Says Gary Black. Tesla Trades at 3.4x SpaceX’s 2027 Multiple",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f3eaab24fd5f35fa555e661a42a7c1fe1fed6dda2c5a416c572aa5d78486f2f8",
-      "pub": "2026-11-23T13:20:48.000Z",
-      "sum": "Key TakeawaysGary Black puts Tesla’s 2027 P/E at 168x and SpaceX’s at 30. 6x, and he expects a binding merger agreement before year end."
-     },
-     {
-      "hd": "SpaceX Fell Below Its IPO Price. Gene Munster Says It Trades at “10 Times Revenue” Growing 270%",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=70c8d5b6dda703d730ec3bf9e13972f437dec77361b9b4883db4bad1ddc435fd",
-      "pub": "2026-11-23T13:20:24.000Z",
-      "sum": "Key TakeawaysSpaceX slipped below its $135 IPO price on Friday, the week Anthropic went public. Gene Munster argues that SpaceX, at 10x revenue and growing 270%, is a better buy than Anthropic, and TIKR’s figures mostly back his math."
-     },
-     {
-      "hd": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of a Tesla Merger",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9be4e76b7308d356ace9054acc75782ef5e5eaaa0cd73cb400dd6bee675c8693",
-      "pub": "2026-11-23T13:08:00.000Z",
-      "sum": "Starlink might be coming to a Tesla near you."
      },
      {
       "hd": "RKLB Stock Soars Pre-Market: Rocket Lab CFO Sees ‘Very Strong’ Electron Demand Ahead, Predicts Potential Pricing Surge as Customers Look Beyond SpaceX Rideshare Launches",
@@ -15654,8 +15359,8 @@
     ],
     "fetched": {
      "Finnhub": 162,
-     "Yahoo": 12,
-     "Google News": 23,
+     "Yahoo": 13,
+     "Google News": 22,
      "Nasdaq": 0,
      "Seeking Alpha": 23
     }
@@ -15840,24 +15545,31 @@
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 10,
-     "Google News": 91,
+     "Yahoo": 0,
+     "Google News": 88,
      "Nasdaq": 13,
      "Seeking Alpha": 25
     }
    }
   },
-  "asOf": "2026-11-23T15:15:17.318Z",
-  "lastAttempt": "2026-11-23T15:15:17.318Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
    {
+    "hd": "Russian warship hit by Ukrainian drones in Libya, Zelensky says",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-23T15:41:23.000Z",
+    "sum": "The Kremlin warns of an \"escalation of tensions in the region\", but declines to comment directly on the attacks in Libya."
+   },
+   {
     "hd": "Ukraine confirms it used naval drones to strike two Russian ships off Libya",
     "src": "The Guardian",
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONjlYcEJxcWh6djFUeEhBbnR4eHJKWHdqOVNOVHhwc2ZGM3QtWGtDNUN3bHA2eUN0WEV3SkxwRVVyNXgzZzVlVHU5YXBZVm5CQmRoNUQ5ck00Rk1lOGFGc3FLRUFFelRnckhkaF9oVmplSE9UR2lEdEFQbFBNRjMya2l0WmFsTVR3bDM4SjNGS0FwOGJhblBsRmNKTQ?oc=5",
-    "pub": "2026-11-23T14:34:00.000Z",
+    "pub": "2026-11-23T15:01:00.000Z",
     "sum": ""
    },
    {
@@ -15929,13 +15641,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9DSW1vTUphY2tRcXJHWTJvV2pISHRJUG4zeXZTcVBMQmJ6OTJxMWZ5M0pwTGVkTWExZHFlUHNWWktWeHpIQ1dBSk5lUlVkVzl0blA3UWtXc3lPNmc?oc=5",
     "pub": "2026-11-23T11:57:33.000Z",
     "sum": "The report says there are signs of possible contamination across almost all of Gaza as a result of Israel's actions."
-   },
-   {
-    "hd": "Russian warship hit by Ukrainian drones in Libya, Zelensky says",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-23T11:40:01.000Z",
-    "sum": "The Kremlin warns of an \"escalation of tensions in the region\", but declines to comment directly on the attacks in Libya."
    },
    {
     "hd": "Turkey: Thousands protest closure of critical media outlets",
@@ -16080,8 +15785,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T15:15:17.318Z",
-  "lastAttempt": "2026-11-23T15:15:17.318Z",
+  "asOf": "2026-11-23T15:45:21.222Z",
+  "lastAttempt": "2026-11-23T15:45:21.222Z",
   "lastError": null
  }
 }
