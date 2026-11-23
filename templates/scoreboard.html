@@ -109,16 +109,69 @@
   .forms{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
   .forms li{display:flex;align-items:center;gap:20px;font-size:38px;font-weight:300;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .forms li::before{content:"";flex:none;width:22px;height:22px;border-radius:6px;border:2px solid var(--gold)}
+
+  .head-l{display:flex;align-items:flex-end;gap:36px;min-width:0}
+  .roi-chip{appearance:none;-webkit-appearance:none;margin:0 0 14px;padding:14px 28px;border-radius:100px;cursor:pointer;outline:none;
+    border:1px solid rgba(201,168,106,.35);background:rgba(201,168,106,.08);color:var(--ink);
+    font:500 30px/1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+  .roi-chip[hidden]{display:none!important}
+  .roi-chip.focus{background-color:rgba(201,168,106,.14);
+    box-shadow:0 0 0 6px rgba(201,168,106,.95),0 0 0 10px rgba(201,168,106,.35),0 0 40px 8px rgba(201,168,106,.28)}
+
+  /* ROI Ladder */
+  #roi{flex:1;min-height:0;display:flex;flex-direction:column;gap:28px}
+  .roi-head h2{margin:10px 0 0;font:300 88px/.98 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.03em}
+  .roi-sub{margin-top:14px;font-size:36px;font-weight:300;color:var(--muted);max-width:2800px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roi-table{flex:1;min-height:0;display:flex;flex-direction:column;border:1px solid var(--hair);border-radius:22px;
+    background:rgba(255,255,255,.028);overflow:hidden}
+  .roi-cols{flex:none;display:grid;grid-template-columns:560px minmax(0,1.45fr) minmax(0,.95fr) 300px minmax(0,1fr);
+    gap:24px;padding:18px 36px 14px;border-bottom:1px solid var(--hair)}
+  .roi-cols span{font-size:28px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--hint)}
+  .roi-cols span:nth-child(4),.roi-cols span:nth-child(5){text-align:right}
+  .roi-rows{flex:1;min-height:0;display:flex;flex-direction:column}
+  .roi-row{flex:1;min-height:0;display:grid;grid-template-columns:560px minmax(0,1.45fr) minmax(0,.95fr) 300px minmax(0,1fr);
+    gap:24px;align-items:center;padding:0 36px;border-top:1px solid rgba(255,255,255,.05)}
+  .roi-row:first-child{border-top:0}
+  .roi-school{display:flex;align-items:center;gap:20px;min-width:0}
+  .roi-dot{flex:none;width:22px;height:22px;border-radius:50%;background:var(--tc)}
+  .roi-school .n{font:400 38px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .roi-metric{display:flex;align-items:center;gap:18px;min-width:0}
+  .roi-track{position:relative;flex:1;min-width:0;height:28px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
+  .roi-track .fill{position:absolute;left:0;top:0;bottom:0;border-radius:8px;background:var(--fill,rgba(201,168,106,.75))}
+  .roi-track.est .fill{background:repeating-linear-gradient(135deg,rgba(201,168,106,.38) 0 10px,rgba(201,168,106,.14) 10px 20px);
+    border:1px dashed rgba(240,237,230,.35);border-left:0;box-sizing:border-box}
+  .roi-track .ceil{position:absolute;top:-8px;bottom:-8px;width:0;border-left:3px dashed rgba(226,154,145,.92);z-index:2}
+  .roi-val{flex:none;min-width:110px;text-align:right;font:500 34px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    font-feature-settings:"tnum" 1,"lnum" 1;letter-spacing:-.01em}
+  .roi-earn{justify-content:flex-end;font:300 38px/1 Inter,"SF Pro Display",system-ui,sans-serif;
+    font-feature-settings:"tnum" 1,"lnum" 1;letter-spacing:-.015em;white-space:nowrap}
+  .roi-earn i{font-style:normal;color:var(--gold);margin-left:6px;font-size:30px}
+  .roi-metric.roi-out .fill{background:rgba(153,199,166,.78)}
+  .roi-metric.roi-out .roi-val{font-weight:600;font-size:40px;color:#E8F0E6;min-width:130px}
+  .roi-leg{flex:none;display:flex;align-items:center;gap:36px;flex-wrap:wrap}
+  .roi-leg .item{display:flex;align-items:center;gap:14px;font-size:30px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--hint)}
+  .roi-leg .dot{width:18px;height:18px;border-radius:50%;background:var(--c)}
+  .roi-leg .ceil-mark{width:28px;height:0;border-top:3px dashed rgba(226,154,145,.92)}
+  .roi-leg .dash-mark{width:36px;height:16px;border-radius:4px;border:1px dashed rgba(240,237,230,.4);
+    background:repeating-linear-gradient(135deg,rgba(201,168,106,.35) 0 8px,rgba(201,168,106,.12) 8px 16px)}
+  .roi-notes{flex:none;font-size:28px;line-height:1.35;font-weight:300;color:var(--hint);
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.35em)}
 </style>
 </head>
 <body>
 <div id="stage" hidden>
   <div class="head">
-    <div><div class="eyebrow">Daybreak / 02</div><h1 id="title">College Application Board</h1></div>
+    <div class="head-l">
+      <div><div class="eyebrow">Daybreak / 02</div><h1 id="title">College Application Board</h1></div>
+      <button type="button" class="roi-chip" id="roi-chip" hidden>ROI</button>
+    </div>
     <div class="head-r"><div class="counts" id="counts"></div><div class="updated"><b>Updated</b><span id="updated"></span></div></div>
   </div>
   <div class="cols" id="cols"></div>
   <div id="detail" hidden></div>
+  <div id="roi" hidden></div>
   <div class="foot eyebrow"><div class="hints" id="hints"></div><div id="foot-r"></div></div>
 </div>
 <script>
@@ -147,8 +200,8 @@
     {key:'unsorted',label:'Unsorted',rgb:'173,168,160'}
   ];
   var DATE_RE=/^\d{4}-\d{2}-\d{2}$/;
-  // cols: [{tier, items:[school], first}]; focus: {col, idx}; detail: school id or null
-  var state={cols:[],focus:null,detail:null,data:null};
+  // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
+  var state={cols:[],focus:null,detail:null,data:null,roi:null,chipFocus:false,view:'board'};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -226,7 +279,39 @@
     }
     return out;
   }
-  function clean(raw){
+  
+  var ROI_TIERS={likely:'#6FA8DC',target:'#D4A574',reach:'#B9A3D6'};
+  function num(v){return typeof v==='number'&&isFinite(v)?v:null;}
+  function cleanRoi(raw){
+    if(!raw||typeof raw!=='object'||!Array.isArray(raw.rows)||!raw.rows.length)return null;
+    var ceil=num(raw.ceiling_per_year);
+    if(ceil==null||ceil<=0)return null;
+    var rows=[], i;
+    for(i=0;i<raw.rows.length;i++){
+      var r=raw.rows[i];
+      if(!r||typeof r!=='object'||!str(r.school))continue;
+      if(!(r.tier==='likely'||r.tier==='target'||r.tier==='reach'))continue;
+      var nc=num(r.net_cost_per_year), od=num(r.admit_odds_pct), be=num(r.biz_earnings), roi=num(r.roi);
+      if(nc==null||od==null||be==null||roi==null)continue;
+      rows.push({
+        school:str(r.school), tier:r.tier, net:nc, odds:Math.max(0,Math.min(100,od)),
+        earn:be, proxy:!!r.earnings_proxy, roi:roi, est:!!r.cost_estimated
+      });
+    }
+    if(!rows.length)return null;
+    rows.sort(function(a,b){return b.roi-a.roi||a.school.localeCompare(b.school);});
+    var notes=[];
+    if(Array.isArray(raw.footnotes))for(i=0;i<raw.footnotes.length;i++)if(str(raw.footnotes[i]))notes.push(str(raw.footnotes[i]));
+    return {
+      title:str(raw.title)||'ROI Ladder',
+      subtitle:str(raw.subtitle),
+      ceiling:ceil,
+      updated:typeof raw.updated==='string'?raw.updated:null,
+      rows:rows.slice(0,14),
+      footnotes:notes
+    };
+  }
+function clean(raw){
     if(!raw||typeof raw!=='object'||raw.schema_version!==1||!Array.isArray(raw.schools))return null;
     var out=[];
     for(var i=0;i<raw.schools.length;i++){
@@ -263,7 +348,7 @@
       }
       return a.school.localeCompare(b.school);
     });
-    return {updated:raw.updated,schools:out};
+    return {updated:raw.updated,schools:out,roi:cleanRoi(raw.roi)};
   }
 
   function nameHtml(s){return esc(s.school)+(s.program?'<span class="prog"> \u2014 '+esc(s.program)+'</span>':'');}
@@ -318,11 +403,14 @@
     cue.style.visibility=above||below?'visible':'hidden';
   }
   function paintFocus(){
-    var on=document.querySelectorAll('.card.focus');
-    for(var i=0;i<on.length;i++)on[i].classList.remove('focus');
-    if(!state.focus)return;
-    var el=document.querySelector('.card[data-c="'+state.focus.col+'"][data-i="'+state.focus.idx+'"]');
-    if(el)el.classList.add('focus');
+    var on=document.querySelectorAll('.card.focus'), i;
+    for(i=0;i<on.length;i++)on[i].classList.remove('focus');
+    var chip=$('roi-chip');
+    if(chip)chip.classList.toggle('focus',!!(state.chipFocus&&state.roi&&state.view==='board'));
+    if(!state.chipFocus&&state.focus){
+      var el=document.querySelector('.card[data-c="'+state.focus.col+'"][data-i="'+state.focus.idx+'"]');
+      if(el)el.classList.add('focus');
+    }
     setHints();
   }
   function focusedSchool(){
@@ -330,9 +418,12 @@
     return f&&state.cols[f.col]?state.cols[f.col].items[f.idx]||null:null;
   }
   function setHints(){
-    $('hints').innerHTML=state.detail
-      ?'<span><b>Back</b>Board</span>'
-      :'<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+'<span><b>Back</b>Daybreak</span>';
+    var h;
+    if(state.view==='roi')h='<span><b>Back</b>Board</span>';
+    else if(state.view==='detail')h='<span><b>Back</b>Board</span>';
+    else if(state.chipFocus)h='<span><b>OK</b>ROI Ladder</span><span><b>\u25bc</b>Schools</span><span><b>Back</b>Daybreak</span>';
+    else h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+(state.roi?'<span><b>\u25b2</b>ROI</span>':'')+'<span><b>Back</b>Daybreak</span>';
+    $('hints').innerHTML=h;
   }
 
   function renderBoard(){
@@ -391,36 +482,120 @@
       '<div class="tags">'+tagsHtml(s,true)+'</div></div>'+
       (cols.length?'<div class="d-grid" style="grid-template-columns:repeat('+cols.length+',minmax(0,1fr))">'+grid+'</div>':'');
   }
+
+  function fmtK(n){
+    var a=Math.abs(n), sign=n<0?'-':'';
+    if(a>=1000)return sign+'$'+Math.round(a/1000)+'K';
+    return sign+'$'+Math.round(a).toLocaleString('en-US');
+  }
+  function fmtRoi(n){
+    var t=Math.round(n*10)/10;
+    return (t%1===0?String(t):t.toFixed(1))+'x';
+  }
+  function renderRoiPage(){
+    var r=state.roi, i, maxCost=r.ceiling, maxRoi=1;
+    for(i=0;i<r.rows.length;i++){if(r.rows[i].net>maxCost)maxCost=r.rows[i].net;if(r.rows[i].roi>maxRoi)maxRoi=r.rows[i].roi;}
+    maxCost=Math.max(maxCost*1.05,r.ceiling*1.05); maxRoi=Math.max(maxRoi*1.08,1);
+    var ceilPct=Math.min(100,(r.ceiling/maxCost)*100);
+    var rows='';
+    for(i=0;i<r.rows.length;i++){
+      var x=r.rows[i], tc=ROI_TIERS[x.tier], np=Math.min(100,(x.net/maxCost)*100), rp=Math.min(100,(x.roi/maxRoi)*100);
+      rows+='<div class="roi-row">'+
+        '<div class="roi-school"><i class="roi-dot" style="--tc:'+tc+'"></i><span class="n">'+esc(x.school)+'</span></div>'+
+        '<div class="roi-metric"><div class="roi-track'+(x.est?' est':'')+'"><span class="fill" style="width:'+np.toFixed(2)+'%"></span><span class="ceil" style="left:'+ceilPct.toFixed(2)+'%"></span></div><span class="roi-val">'+fmtK(x.net)+'</span></div>'+
+        '<div class="roi-metric"><div class="roi-track"><span class="fill" style="width:'+x.odds.toFixed(2)+'%;background:rgba(111,168,220,.78)"></span></div><span class="roi-val">'+Math.round(x.odds)+'%</span></div>'+
+        '<div class="roi-earn">'+fmtK(x.earn)+(x.proxy?'<i>*</i>':'')+'</div>'+
+        '<div class="roi-metric roi-out"><div class="roi-track"><span class="fill" style="width:'+rp.toFixed(2)+'%"></span></div><span class="roi-val">'+fmtRoi(x.roi)+'</span></div>'+
+      '</div>';
+    }
+    var notes='';
+    for(i=0;i<r.footnotes.length;i++)notes+=(i?' \u00b7 ':'')+esc(r.footnotes[i]);
+    var upd=r.updated?fmtUpdated(r.updated):'';
+    $('roi').innerHTML=
+      '<div class="roi-head"><div class="eyebrow">College Application Board'+(upd?' \u00b7 '+esc(upd):'')+'</div>'+
+      '<h2>'+esc(r.title)+'</h2>'+(r.subtitle?'<div class="roi-sub">'+esc(r.subtitle)+'</div>':'')+'</div>'+
+      '<div class="roi-table"><div class="roi-cols"><span>School</span><span>Net cost / yr (no aid)</span><span>Admit odds</span><span>Biz earnings</span><span>ROI if admitted</span></div>'+
+      '<div class="roi-rows">'+rows+'</div></div>'+
+      '<div class="roi-leg">'+
+        '<span class="item"><i class="dot" style="--c:'+ROI_TIERS.likely+'"></i>Likely</span>'+
+        '<span class="item"><i class="dot" style="--c:'+ROI_TIERS.target+'"></i>Target</span>'+
+        '<span class="item"><i class="dot" style="--c:'+ROI_TIERS.reach+'"></i>Reach</span>'+
+        '<span class="item"><i class="ceil-mark"></i>Ceiling '+fmtK(r.ceiling)+'/yr</span>'+
+        '<span class="item"><i class="dash-mark"></i>Cost partly estimated</span>'+
+      '</div>'+(notes?'<div class="roi-notes">'+notes+'</div>':'');
+  }
+  function syncRoiChip(){
+    var chip=$('roi-chip');
+    if(!chip)return;
+    var on=!!state.roi;
+    chip.hidden=!on;
+    if(!on)state.chipFocus=false;
+  }
+  function showRoi(on){
+    if(on&&!state.roi)return;
+    if(on&&state.view==='detail')showDetail(false);
+    state.view=on?'roi':'board';
+    if(on){
+      state.chipFocus=true;
+      renderRoiPage();
+      $('roi').hidden=false;$('cols').hidden=true;$('detail').hidden=true;
+      document.querySelector('.head-r').style.visibility='hidden';
+      $('title').style.display='none';
+      $('roi-chip').hidden=true;
+    }else{
+      $('roi').hidden=true;$('roi').innerHTML='';$('cols').hidden=false;
+      document.querySelector('.head-r').style.visibility='';
+      $('title').style.display='';
+      syncRoiChip();
+      state.chipFocus=true;
+      for(var i=0;i<state.cols.length;i++)layoutCol(i);
+      paintFocus();
+    }
+    setHints();
+  }
+
   function showDetail(on){
     var s=on?focusedSchool():null;
     if(on&&!(s&&s.hasDetail))return;
+    if(on){state.chipFocus=false;state.view='detail';}
+    else state.view='board';
     state.detail=s?s.id:null;
     if(s)renderDetail(s);else $('detail').innerHTML='';
     $('detail').hidden=!s;
     $('cols').hidden=!!s;
+    if($('roi'))$('roi').hidden=true;
     document.querySelector('.head-r').style.visibility=s?'hidden':'';
     $('title').style.display=s?'none':'';
+    syncRoiChip();
     if(!s){for(var i=0;i<state.cols.length;i++)layoutCol(i);paintFocus();}
     setHints();
   }
 
   function render(d){
     state.data=d;
+    state.roi=d.roi||null;
     $('stage').hidden=false;
     $('updated').textContent=fmtUpdated(d.updated)||'\u2014';
     $('counts').innerHTML=countsHtml(d.schools);
-    var wasDetail=state.detail;
-    if(wasDetail){$('cols').hidden=false;$('detail').hidden=true;}
+    var wasView=state.view, wasDetail=state.detail, keepChip=state.chipFocus;
+    if(wasView==='roi'||wasView==='detail'){$('cols').hidden=false;$('detail').hidden=true;$('roi').hidden=true;$('roi').innerHTML='';}
+    syncRoiChip();
     renderBoard();
-    if(wasDetail){
+    if(wasView==='roi'&&state.roi)showRoi(true);
+    else if(wasView==='detail'&&wasDetail){
       var s=focusedSchool();
       showDetail(!!(s&&s.id===wasDetail));
-    }else setHints();
+    }else{
+      state.chipFocus=!!(keepChip&&state.roi);
+      paintFocus();
+    }
   }
   function blank(){
-    state={cols:[],focus:null,detail:null,data:null};
+    state={cols:[],focus:null,detail:null,data:null,roi:null,chipFocus:false,view:'board'};
     $('stage').hidden=true;
     $('cols').innerHTML='';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
+    if($('roi')){$('roi').innerHTML='';$('roi').hidden=true;}
+    if($('roi-chip')){$('roi-chip').hidden=true;$('roi-chip').classList.remove('focus');}
     $('counts').innerHTML='';$('updated').textContent='';$('hints').innerHTML='';
     document.querySelector('.head-r').style.visibility='';$('title').style.display='';
   }
@@ -432,11 +607,26 @@
   }
 
   function move(dir){
+    if(state.chipFocus){
+      if(dir==='down'||dir==='left'||dir==='right'){
+        state.chipFocus=false;
+        if(!state.focus){
+          for(var i=0;i<state.cols.length;i++)if(state.cols[i].items.length){state.focus={col:i,idx:0};break;}
+        }
+        if(state.focus)layoutCol(state.focus.col);
+        paintFocus();
+      }
+      return;
+    }
     var f=state.focus;
     if(!f)return;
     if(dir==='up'||dir==='down'){
       var n=state.cols[f.col].items.length, to=f.idx+(dir==='down'?1:-1);
-      if(to<0||to>=n)return;
+      if(to<0){
+        if(state.roi){state.chipFocus=true;paintFocus();}
+        return;
+      }
+      if(to>=n)return;
       f.idx=to;layoutCol(f.col);
     }else{
       var step=dir==='right'?1:-1, ci=f.col+step;
@@ -455,17 +645,29 @@
     var isBack=code===10009||code===27||e.key==='Escape'||e.key==='XF86Back'||e.key==='GoBack';
     if(isBack){
       e.preventDefault();
-      if(state.detail){showDetail(false);return;}
+      if(state.view==='roi'){showRoi(false);return;}
+      if(state.view==='detail'||state.detail){showDetail(false);return;}
       location.href=backUrl();return;
     }
-    if(state.detail)return;
-    if(code===13||e.key==='Enter'){e.preventDefault();showDetail(true);return;}
+    if(state.view==='roi')return;
+    if(state.view==='detail')return;
+    if(code===13||e.key==='Enter'){
+      e.preventDefault();
+      if(state.chipFocus)showRoi(true);
+      else showDetail(true);
+      return;
+    }
     var dir=code===37?'left':code===39?'right':code===38?'up':code===40?'down':'';
     if(dir){e.preventDefault();move(dir);}
   });
   document.addEventListener('click',function(e){
+    var chip=e.target.closest?e.target.closest('#roi-chip'):null;
+    if(chip&&state.roi&&state.view==='board'){
+      e.preventDefault();state.chipFocus=true;paintFocus();showRoi(true);return;
+    }
     var el=e.target.closest?e.target.closest('.card'):null;
-    if(!el||state.detail)return;
+    if(!el||state.view!=='board')return;
+    state.chipFocus=false;
     state.focus={col:+el.getAttribute('data-c'),idx:+el.getAttribute('data-i')};
     paintFocus();showDetail(true);
   });

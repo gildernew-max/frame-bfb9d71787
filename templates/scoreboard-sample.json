@@ -388,5 +388,158 @@
       "decision_expected": null,
       "next_step": "Look up the application deadline"
     }
-  ]
+  ],
+  "roi": {
+    "title": "ROI Ladder",
+    "subtitle": "Placeholder comparison of net cost, admit odds, and earnings if admitted \u2014 sample schools only.",
+    "ceiling_per_year": 45000,
+    "updated": "2026-11-23T09:41:00-05:00",
+    "rows": [
+      {
+        "school": "Sample State University M",
+        "tier": "likely",
+        "net_cost_per_year": 18200,
+        "admit_odds_pct": 86,
+        "biz_earnings": 72000,
+        "earnings_proxy": false,
+        "roi": 4.0,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample Tech P",
+        "tier": "likely",
+        "net_cost_per_year": 21400,
+        "admit_odds_pct": 78,
+        "biz_earnings": 81000,
+        "earnings_proxy": false,
+        "roi": 3.8,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample University H",
+        "tier": "target",
+        "net_cost_per_year": 26800,
+        "admit_odds_pct": 54,
+        "biz_earnings": 88000,
+        "earnings_proxy": false,
+        "roi": 3.3,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample College N",
+        "tier": "likely",
+        "net_cost_per_year": 24100,
+        "admit_odds_pct": 71,
+        "biz_earnings": 76000,
+        "earnings_proxy": true,
+        "roi": 3.2,
+        "cost_estimated": true
+      },
+      {
+        "school": "Sample University O",
+        "tier": "likely",
+        "net_cost_per_year": 29500,
+        "admit_odds_pct": 68,
+        "biz_earnings": 84000,
+        "earnings_proxy": false,
+        "roi": 2.8,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample College I",
+        "tier": "target",
+        "net_cost_per_year": 34200,
+        "admit_odds_pct": 41,
+        "biz_earnings": 91000,
+        "earnings_proxy": false,
+        "roi": 2.7,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample University E",
+        "tier": "reach",
+        "net_cost_per_year": 38600,
+        "admit_odds_pct": 18,
+        "biz_earnings": 98000,
+        "earnings_proxy": false,
+        "roi": 2.5,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample College F",
+        "tier": "target",
+        "net_cost_per_year": 40100,
+        "admit_odds_pct": 36,
+        "biz_earnings": 94000,
+        "earnings_proxy": true,
+        "roi": 2.3,
+        "cost_estimated": true
+      },
+      {
+        "school": "Sample University A",
+        "tier": "reach",
+        "net_cost_per_year": 48200,
+        "admit_odds_pct": 12,
+        "biz_earnings": 112000,
+        "earnings_proxy": false,
+        "roi": 2.3,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample Institute C",
+        "tier": "reach",
+        "net_cost_per_year": 51000,
+        "admit_odds_pct": 9,
+        "biz_earnings": 118000,
+        "earnings_proxy": false,
+        "roi": 2.3,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample College B",
+        "tier": "reach",
+        "net_cost_per_year": 44800,
+        "admit_odds_pct": 14,
+        "biz_earnings": 99000,
+        "earnings_proxy": true,
+        "roi": 2.2,
+        "cost_estimated": true
+      },
+      {
+        "school": "Sample University J",
+        "tier": "target",
+        "net_cost_per_year": 36500,
+        "admit_odds_pct": 33,
+        "biz_earnings": 78000,
+        "earnings_proxy": false,
+        "roi": 2.1,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample University R",
+        "tier": "target",
+        "net_cost_per_year": 42200,
+        "admit_odds_pct": 28,
+        "biz_earnings": 86000,
+        "earnings_proxy": false,
+        "roi": 2.0,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample Academy S",
+        "tier": "reach",
+        "net_cost_per_year": 55600,
+        "admit_odds_pct": 7,
+        "biz_earnings": 105000,
+        "earnings_proxy": true,
+        "roi": 1.9,
+        "cost_estimated": true
+      }
+    ],
+    "footnotes": [
+      "* Biz earnings marked with a star use a peer-school proxy, not the school's own reported figure.",
+      "Net cost is sticker price minus average need-based aid only \u2014 merit awards are ignored.",
+      "Ceiling line marks a household soft budget of $45K per year before aid stacking."
+    ]
+  }
 }
