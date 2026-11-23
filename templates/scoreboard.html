@@ -134,33 +134,37 @@
 
   /* Detail */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;position:relative}
-  /* Hero: logo (~360×150) | name+rank+chips | inline Aug–May weather table */
+  /* Hero: logo (~360×150) | name+program+rank+chips | inline Aug–May weather table */
   .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
-    min-height:300px;max-height:340px}
-  .d-hero-main{flex:0 1 560px;min-width:280px;max-width:34%;display:flex;flex-direction:column;justify-content:center;gap:6px;
+    min-height:300px}
+  /* ~420px min on the 1920 viewport (stage is 2×). Weather flexes to fill the rest. */
+  .d-hero-main{flex:0 1 auto;min-width:840px;max-width:48%;display:flex;flex-direction:column;justify-content:center;gap:10px;
     border-left:4px solid var(--accent,var(--gold));padding-left:14px}
-  /* ~44px on the 1920 viewport when width is tight; may wrap to 2 lines. */
-  .d-hero h2{margin:0;font:300 88px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;min-width:0;
-    white-space:normal;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:2.3em;
+  .d-hero-title{min-width:0}
+  /* School ~44px viewport; wrap allowed, never clipped. Underline under the school name only. */
+  .d-hero h2{margin:0;font:300 88px/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;min-width:0;
+    white-space:normal;overflow:visible;overflow-wrap:break-word;word-break:normal;
     border-bottom:2px solid var(--accent,var(--gold));padding-bottom:6px}
-  .d-hero h2 .prog{color:var(--muted)}
-  .d-hero .rank-pill{flex:none;align-self:flex-start}
-  .d-hero .tags{gap:6px}
+  /* Program on its own line ~28px viewport, muted — clear of underline and chips. */
+  .d-hero-prog{margin:8px 0 0;font:400 56px/1.2 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.01em;
+    color:var(--muted);white-space:normal;overflow:visible;overflow-wrap:break-word}
+  .d-hero .rank-pill{flex:none;align-self:flex-start;margin-top:2px}
+  .d-hero .tags{gap:6px;margin-top:2px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
-  /* Inline monthly weather — fills remaining hero width, height capped to the logo row. */
-  .wx-month-band{flex:1 1 900px;min-width:0;display:flex;flex-direction:column;justify-content:center;
-    padding:8px 12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);box-sizing:border-box}
+  /* Inline monthly weather — fills remaining hero width; columns shrink slightly vs name block. */
+  .wx-month-band{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;
+    padding:6px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);box-sizing:border-box}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
-  .wx-month-table th,.wx-month-table td{padding:2px 3px;text-align:center;vertical-align:middle;
+  .wx-month-table th,.wx-month-table td{padding:2px 2px;text-align:center;vertical-align:middle;
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-month-table thead th{font-size:38px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);
+  .wx-month-table thead th{font-size:36px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);
     border-bottom:1px solid var(--hair);padding-bottom:4px}
-  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:4px}
-  .wx-month-table thead th .wx-season svg{width:22px;height:22px;color:var(--accent,var(--gold));flex:none}
-  .wx-month-table tbody th{text-align:left;font-size:28px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  .wx-month-table thead th .wx-season{display:inline-flex;flex-direction:row;align-items:center;justify-content:center;gap:3px}
+  .wx-month-table thead th .wx-season svg{width:20px;height:20px;color:var(--accent,var(--gold));flex:none}
+  .wx-month-table tbody th{text-align:left;font-size:26px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
     color:var(--dim);padding-left:2px;white-space:nowrap}
-  .wx-month-table tbody td{font:700 48px/1.05 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
+  .wx-month-table tbody td{font:700 46px/1.05 Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink)}
   .wx-month-table tbody tr.wx-hi td{color:#E0A070}
   .wx-month-table tbody tr.wx-lo td{color:#7EB6E0}
   .wx-month-table tbody tr+tr th,.wx-month-table tbody tr+tr td{border-top:1px solid rgba(255,255,255,.04)}
@@ -936,7 +940,9 @@
   function heroHtml(s, wxBand){
     return '<div class="d-hero">'+logoHtml(s,'lg')+
       '<div class="d-hero-main">'+
-        '<h2>'+nameHtml(s)+'</h2>'+
+        '<div class="d-hero-title"><h2>'+esc(s.school)+'</h2>'+
+          (s.program?'<div class="d-hero-prog">'+esc(s.program)+'</div>':'')+
+        '</div>'+
         rankPill(s,true)+
         '<div class="tags">'+tagsHtml(s,true)+'</div>'+
       '</div>'+(wxBand||'')+'</div>';
@@ -971,8 +977,8 @@
     var d=s.detail||{}, page1=[], page2=[], i, snap=[], li='', whyL, whyR, acad, accent, wxBand='';
     var page, ind='', usePages;
     accent=readableAccent(s.accent||'#C9A86A');
-    // Page 1: Snapshot, On the board, Why/Why not, What students like/don't
-    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Deadlines, Marist, Status history
+    // Page 1: Snapshot, On the board, Why/Why not, students, Deadlines, Marist (fill right column)
+    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Counselor, Status history
     // Weather sits in the hero row (logo | name | table) on both pages.
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
@@ -994,6 +1000,11 @@
         '<div class="why-col"><div class="sec-h"><span>What students don\u2019t</span></div>'+(dislike||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
+    // Prefer Deadlines + Marist on page 1's right column; fall back to page 2 if they overflow.
+    var deadHtml=d.deadlines&&d.deadlines.length?dSec('','Deadlines',dLines(d.deadlines)):'';
+    var maristSec=d.marist_classmates?maristHtml(d.marist_classmates):'';
+    if(deadHtml)page1.push(deadHtml);
+    if(maristSec)page1.push(maristSec);
     if(d.about&&d.about.length)page2.push(dSec('','About',dLines(d.about)));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
@@ -1003,8 +1014,6 @@
     if(d.facts&&d.facts.length)page2.push(dSec('','Facts',dLines(d.facts)));
     if(d.housing&&d.housing.length)page2.push(dSec('','Housing',dLines(d.housing)));
     if(d.costs&&d.costs.length)page2.push(dSec('','Costs',dLines(d.costs)));
-    if(d.deadlines&&d.deadlines.length)page2.push(dSec('','Deadlines',dLines(d.deadlines)));
-    if(d.marist_classmates)page2.push(maristHtml(d.marist_classmates));
     if(d.counselor_take)page2.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
     if(d.history&&d.history.length){
       for(i=0;i<d.history.length&&i<10;i++)li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
@@ -1012,7 +1021,7 @@
     }
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
-    // Keep 2-page split when page-2 content exists (inline weather reclaims height for body).
+    // Two pages when both sides have content; never drop page2 if page1 is empty.
     usePages=page2.length>0&&page1.length>0;
     state.detailPages=usePages?2:1;
     if(state.detailPage<1||state.detailPage>state.detailPages)state.detailPage=1;
@@ -1023,16 +1032,38 @@
         ?('Page <b>1</b> of 2 \u25b6')
         :('\u25c0 Page <b>2</b> of 2'))+'</div>';
     }
-    if(page===1||!usePages){
-      $('detail').innerHTML=heroHtml(s,wxBand)+
-        (page1.length?'<div class="d-body">'+page1.join('')+'</div>':'')+ind;
+    if(usePages){
+      if(page===1){
+        $('detail').innerHTML=heroHtml(s,wxBand)+'<div class="d-body">'+page1.join('')+'</div>'+ind;
+      }else{
+        $('detail').innerHTML=heroHtml(s,wxBand)+'<div class="d-body page-fit-2">'+page2.join('')+'</div>'+ind;
+      }
     }else{
+      var only=page1.length?page1:page2;
       $('detail').innerHTML=heroHtml(s,wxBand)+
-        (page2.length?'<div class="d-body page-fit-2">'+page2.join('')+'</div>':'')+ind;
+        (only.length?'<div class="d-body">'+only.join('')+'</div>':'')+ind;
     }
     layoutDetail();
+    // If Deadlines/Marist made page 1 overflow at the 20px floor, move them to page 2.
+    if(usePages&&page===1&&(deadHtml||maristSec)&&detailBodyOverflows()){
+      if(deadHtml){page1=page1.filter(function(x){return x!==deadHtml;}); page2.unshift(deadHtml);}
+      if(maristSec){page1=page1.filter(function(x){return x!==maristSec;}); page2.push(maristSec);}
+      usePages=page2.length>0&&page1.length>0;
+      state.detailPages=usePages?2:1;
+      ind=usePages?'<div class="d-page-ind">Page <b>1</b> of 2 \u25b6</div>':'';
+      $('detail').innerHTML=heroHtml(s,wxBand)+
+        (page1.length?'<div class="d-body">'+page1.join('')+'</div>':'')+ind;
+      layoutDetail();
+    }
     setTimeout(layoutDetail, 0);
     setHints();
+  }
+  function detailBodyOverflows(){
+    var root=$('detail'), body=root?root.querySelector('.d-body'):null;
+    if(!body)return false;
+    var line=parseFloat(getComputedStyle(root).getPropertyValue('--line-size'))||0;
+    if(line>20.5)return false;
+    return body.scrollHeight>body.clientHeight+4||body.scrollWidth>body.clientWidth+4;
   }
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
