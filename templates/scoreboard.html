@@ -61,9 +61,12 @@
   .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
   /* Detail logo plate: ~360×150 on the 1920 viewport (stage is 2×; object-fit contain). */
   .logo-lg{width:720px;height:300px;border-radius:16px;padding:28px 36px}
+  /* Popup header logo: ~90px tall on the 1920 viewport (stage is 2×). */
+  .logo-pop{width:240px;height:180px;border-radius:12px;padding:14px 18px}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
   .logo-lg .mono{font-size:72px;letter-spacing:.1em}
+  .logo-pop .mono{font-size:44px;letter-spacing:.08em}
   .logo.on-light .mono{color:#1A1C20}
   .logo:not(.mono-only) .mono{display:none}
   .logo.mono-only .mono{display:block}
@@ -197,6 +200,10 @@
     overflow-wrap:break-word}
   .marist-empty{margin:0;font-size:var(--line-size,var(--t2));font-weight:400;color:var(--muted)}
   .marist-note{margin:4px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.3}
+  .marist-totals{margin:0 0 6px;font-size:var(--line-size,var(--t2));font-weight:500;color:var(--ink);
+    letter-spacing:.02em;line-height:1.35;overflow-wrap:break-word}
+  .marist-totals b{font-weight:700;color:var(--accent,var(--gold));margin-right:4px}
+  .marist-tot-sep{color:var(--dim);font-weight:400}
 
   /* Padding + visible overflow so focused card scale/ring/glow are not clipped by columns */
   .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:visible;padding:20px 16px;box-sizing:border-box}
@@ -226,10 +233,14 @@
     gap:20px;padding:36px 44px 32px;border:1px solid var(--hair);border-radius:14px;
     background:linear-gradient(180deg,#16181F 0%,#0E1014 100%);box-shadow:0 24px 80px rgba(0,0,0,.55);min-height:0;overflow:hidden;
     border-top:3px solid var(--accent,var(--focus-ring));color:var(--pop-ink)}
-  /* Title: school accent (fallback bright gold), bold, clearly larger than body + thin accent rule */
-  .d-pop-h{flex:none;display:flex;align-items:center;gap:14px;min-width:0;padding-bottom:14px;
-    border-bottom:3px solid var(--accent,var(--focus-ring))}
-  .d-pop-h::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--focus-ring))}
+  /* Title: school accent (fallback bright gold), bold, clearly larger than body + thin accent rule.
+     Optional logo sits top-right; title/rule/body never overlap it (reserved flex + gap). */
+  .d-pop-h{flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:28px;min-width:0;
+    padding-bottom:14px;border-bottom:3px solid var(--accent,var(--focus-ring))}
+  .d-pop-h-text{flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding-right:8px}
+  .d-pop-h-text::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--focus-ring))}
+  .d-pop-h.has-logo .d-pop-h-text{padding-right:16px;max-width:calc(100% - 268px)}
+  .d-pop-h .logo-pop{flex:none;align-self:flex-start;margin:0}
   .d-pop-h span{font-size:var(--pop-title);font-weight:800;letter-spacing:.1em;text-transform:uppercase;
     color:var(--accent,var(--focus-ring));line-height:1.15;overflow-wrap:break-word}
   .d-pop-h em{font-style:normal;color:var(--accent,var(--focus-ring));margin-left:10px;opacity:.9;font-weight:700}
@@ -247,9 +258,9 @@
   .d-pop-body .tl .d{font-size:var(--pop-lab);color:rgba(245,241,232,.55)}
   .d-pop-body .tl .e{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;color:var(--pop-ink)}
   .d-pop-body .tl li::before{background:var(--accent,var(--focus-ring))}
-  .d-pop-body .marist-year,.d-pop-body .marist-names,.d-pop-body .marist-majors,.d-pop-body .marist-empty{
-    font-size:var(--pop-line);line-height:1.35;color:var(--pop-ink)}
-  .d-pop-body .marist-year b{color:var(--accent,var(--focus-ring))}
+  .d-pop-body .marist-year,.d-pop-body .marist-names,.d-pop-body .marist-majors,.d-pop-body .marist-empty,
+  .d-pop-body .marist-totals{font-size:var(--pop-line);line-height:1.35;color:var(--pop-ink)}
+  .d-pop-body .marist-year b,.d-pop-body .marist-totals b{color:var(--accent,var(--focus-ring))}
   .d-pop-body .marist-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55)}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
@@ -470,10 +481,34 @@
     if(d.history&&d.history.length)return true;
     if(d.weather_monthly&&d.weather_monthly.months&&d.weather_monthly.months.length)return true;
     if(d.marist_classmates)return true;
+    if(d.new_creative_school)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
+  }
+  // Optional school announcement card. URLs are kept for data fidelity but never rendered (TV).
+  function cleanNewCreativeSchool(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var name=str(raw.name), summary=str(raw.summary), why=str(raw.why_it_matters_for_coco);
+    var facts=[], articles=[], i, t, a, title, outlet, date, url;
+    if(Array.isArray(raw.facts)){
+      for(i=0;i<raw.facts.length&&facts.length<12;i++){
+        t=typeof raw.facts[i]==='string'?str(raw.facts[i]):str(raw.facts[i]&&raw.facts[i].text);
+        if(t)facts.push(t);
+      }
+    }
+    if(Array.isArray(raw.articles)){
+      for(i=0;i<raw.articles.length&&articles.length<12;i++){
+        a=raw.articles[i];
+        if(!a||typeof a!=='object')continue;
+        title=str(a.title); outlet=str(a.outlet); date=str(a.date); url=str(a.url)||null;
+        if(!title&&!outlet)continue;
+        articles.push({title:title, outlet:outlet, date:date, url:url});
+      }
+    }
+    if(!name&&!summary&&!facts.length&&!why&&!articles.length)return null;
+    return {name:name, summary:summary, facts:facts, why_it_matters_for_coco:why, articles:articles};
   }
   function cleanMaristCohort(raw){
     if(!raw||typeof raw!=='object')return {count:0, majors:[]};
@@ -486,6 +521,13 @@
     }
     if(c==null||c<0)c=majors.length;
     return {count:c, majors:majors};
+  }
+  // Totals-only years (2023/2024): {count, note?}. Missing field → null (render as dash).
+  function cleanMaristYearTotal(raw){
+    if(raw==null||typeof raw!=='object')return null;
+    var c=num(raw.count), note=str(raw.note);
+    if(c==null||c<0)c=0;
+    return {count:c, note:note};
   }
   function cleanMaristClassmates(raw){
     // Always return an object when the field is present so the section can show the empty state.
@@ -506,7 +548,9 @@
       note:str(raw.note),
       class_2027:list,
       class_2026:cleanMaristCohort(raw.class_2026),
-      class_2025:cleanMaristCohort(raw.class_2025)
+      class_2025:cleanMaristCohort(raw.class_2025),
+      class_2024:('class_2024' in raw)?cleanMaristYearTotal(raw.class_2024):null,
+      class_2023:('class_2023' in raw)?cleanMaristYearTotal(raw.class_2023):null
     };
   }
   var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
@@ -562,6 +606,7 @@
     out.student_likes=cleanStudentNotes(d.student_likes);
     out.student_dislikes=cleanStudentNotes(d.student_dislikes);
     out.scattergram_url=str(d.scattergram_url)||null;
+    out.new_creative_school=cleanNewCreativeSchool(d.new_creative_school);
     return out;
   }
   function parseHexColor(hex){
@@ -743,7 +788,8 @@
   }
   function logoHtml(s,size){
     var bg=s.logo&&s.logo.background==='light'?'light':'dark';
-    var cls='logo logo-'+(size==='lg'?'lg':'sm')+(bg==='light'?' on-light':' on-dark');
+    var sz=size==='lg'?'lg':(size==='pop'?'pop':'sm');
+    var cls='logo logo-'+sz+(bg==='light'?' on-light':' on-dark');
     var mono='<span class="mono">'+esc(monogram(s))+'</span>';
     if(!s.logo)return '<div class="'+cls+' mono-only" aria-hidden="true">'+mono+'</div>';
     var src='logos/'+encodeURIComponent(s.logo.file);
@@ -929,13 +975,28 @@
     }
     return '<ul class="tl">'+li+'</ul>';
   }
+  function maristTotalsRowHtml(m){
+    if(!m)return '';
+    var c27=m.class_2027||[], c26=m.class_2026||{count:0}, c25=m.class_2025||{count:0};
+    var y23=m.class_2023, y24=m.class_2024, parts=[], html;
+    function cell(year, val){return '<span class="marist-tot"><b>'+year+'</b> '+esc(val)+'</span>';}
+    parts.push(cell('2023', y23?String(y23.count):'\u2014'));
+    parts.push(cell('2024', y24?String(y24.count):'\u2014'));
+    parts.push(cell('2025', String(c25.count!=null?c25.count:0)));
+    parts.push(cell('2026', String(c26.count!=null?c26.count:0)));
+    parts.push(cell('2027', String(c27.length)));
+    html='<div class="marist-totals">'+parts.join('<span class="marist-tot-sep"> \u00b7 </span>')+'</div>';
+    if(y23&&y23.note)html+='<p class="marist-note">2023: '+esc(y23.note)+'</p>';
+    if(y24&&y24.note)html+='<p class="marist-note">2024: '+esc(y24.note)+'</p>';
+    return html;
+  }
   function maristBodyHtml(m){
     if(!m)return '';
     var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
     var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
-    var body='', names='', i, cols;
+    var body=maristTotalsRowHtml(m), names='', i, cols;
     if(empty){
-      body='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
+      body+='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
     }else{
       if(c27.length){
         cols=c27.length>4?' cols-2':'';
@@ -953,6 +1014,39 @@
     if(m.note)body+='<p class="marist-note">'+esc(m.note)+(m.source?' \u00b7 '+esc(m.source):'')+'</p>';
     else if(m.source)body+='<p class="marist-note">'+esc(m.source)+'</p>';
     return '<div class="marist-body">'+body+'</div>';
+  }
+  var NCS_CARD_TITLE='New: School of Arts, Entertainment & Creative Tech';
+  function newCreativeSchoolBodyHtml(ncs, limits){
+    if(!ncs)return '';
+    var body='', i, facts=ncs.facts||[], arts=ncs.articles||[], fLim, aLim, parts, dDisp, line;
+    if(ncs.summary)body+='<p class="prose">'+esc(ncs.summary)+'</p>';
+    fLim=limits&&limits.facts!=null?limits.facts:facts.length;
+    if(facts.length&&fLim>0){
+      body+='<ul class="why-bullets">';
+      for(i=0;i<facts.length&&i<fLim;i++)body+='<li>'+esc(facts[i])+'</li>';
+      if(facts.length>fLim)body+='<li>\u2026</li>';
+      body+='</ul>';
+    }
+    if(ncs.why_it_matters_for_coco){
+      body+='<div class="d-lines"><div class="line"><span class="lab">For Coco</span>'+
+        '<span class="txt">'+esc(ncs.why_it_matters_for_coco)+'</span></div></div>';
+    }
+    aLim=limits&&limits.articles!=null?limits.articles:arts.length;
+    if(arts.length&&aLim>0){
+      body+='<div class="d-lines">';
+      for(i=0;i<arts.length&&i<aLim;i++){
+        dDisp=arts[i].date&&DATE_RE.test(arts[i].date)?fmtDate(arts[i].date,true):arts[i].date;
+        parts=[];
+        if(arts[i].outlet)parts.push(arts[i].outlet);
+        if(dDisp)parts.push(dDisp);
+        if(arts[i].title)parts.push(arts[i].title);
+        line=parts.join(' \u00b7 ');
+        if(line)body+='<div class="line nolab"><span class="txt">'+esc(line)+'</span></div>';
+      }
+      if(arts.length>aLim)body+='<div class="line nolab"><span class="txt">\u2026</span></div>';
+      body+='</div>';
+    }
+    return body;
   }
   function popupContentForKey(s, key){
     var d=s&&s.detail?s.detail:{}, snap=[], acad, title='', body='', next;
@@ -1000,6 +1094,9 @@
       body=d.counselor_take?'<p class="prose">'+esc(d.counselor_take)+'</p>':'';
     }else if(key==='history'){
       title='Status history'; body=historyListHtml(d.history||[]);
+    }else if(key==='new_creative'){
+      title=esc(NCS_CARD_TITLE);
+      body=newCreativeSchoolBodyHtml(d.new_creative_school, null)||'<p class="prose">\u2014</p>';
     }
     return {titleHtml:'<span>'+title+'</span>', bodyHtml:body||''};
   }
@@ -1132,9 +1229,9 @@
     var lim=nameLimit!=null?nameLimit:6;
     var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
     var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
-    var body='', names='', i, shown, extra, cols;
+    var body=maristTotalsRowHtml(m), names='', i, shown, extra, cols;
     if(empty){
-      body='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
+      body+='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
     }else{
       if(c27.length){
         shown=c27.slice(0,lim); extra=c27.length-shown.length; cols=shown.length>4?' cols-2':'';
@@ -1187,6 +1284,11 @@
       secs.push('<section class="d-sec why-pair"><div class="why-cols">'+
         whyColHtml('Students like', like, 'students_like')+whyColHtml('Students don\u2019t', dislike, 'students_dont')+
         '</div></section>');
+    }
+    if(d.new_creative_school){
+      secs.push(dSec('','New: School of Arts, Entertainment &amp; Creative Tech',
+        newCreativeSchoolBodyHtml(d.new_creative_school,{facts:Math.min(whyN,4),articles:Math.min(listN,3)}),
+        'new_creative'));
     }
     if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
@@ -1279,13 +1381,19 @@
     body.scrollTop=body.scrollTop+(dir==='down'?step:-step);
   }
   function openCardPopup(card){
-    var pop=$('d-pop'), head, body=$('d-pop-body'), s, key, content, accent;
+    var pop=$('d-pop'), head, body=$('d-pop-body'), s, key, content, accent, titleHtml, logo;
     if(!pop||!card)return;
     s=focusedSchool();
     key=card.getAttribute('data-ckey')||'';
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
-    if(head)head.innerHTML=(content&&content.titleHtml)||'<span>Details</span>';
+    titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
+    // Same asset/source as detail hero; hide entirely when the school has no logo.
+    logo=(s&&s.logo)?logoHtml(s,'pop'):'';
+    if(head){
+      head.className='d-pop-h'+(logo?' has-logo':'');
+      head.innerHTML='<div class="d-pop-h-text">'+titleHtml+'</div>'+logo;
+    }
     if(body){
       body.innerHTML=(content&&content.bodyHtml)||'';
       body.scrollTop=0;
