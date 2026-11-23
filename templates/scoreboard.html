@@ -74,9 +74,9 @@
   /* Lines stack tight with the same rhythm in every card/column — never stretched. */
   #cols{--line-size:24px;--lab-size:22px}
   .lines{flex:none;display:flex;flex-direction:column;justify-content:flex-start;gap:4px;min-width:0}
-  .line{display:grid;grid-template-columns:220px minmax(0,1fr);gap:14px;align-items:start;min-width:0}
-  .line .lab{font-size:var(--lab-size);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);
-    line-height:1.2;white-space:normal;overflow:hidden;overflow-wrap:break-word;hyphens:manual;
+  .line{display:grid;grid-template-columns:260px minmax(0,1fr);gap:14px;align-items:start;min-width:0}
+  .line .lab{font-size:var(--lab-size);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--hint);
+    line-height:1.2;white-space:normal;overflow:hidden;overflow-wrap:normal;word-break:normal;hyphens:none;
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:calc(2 * 1.2em);text-overflow:clip}
   .line .txt{font-size:var(--line-size);line-height:1.28;font-weight:300;color:#D8D2C8;overflow-wrap:break-word;word-break:normal;
     white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-height:calc(3 * 1.28em)}
@@ -109,17 +109,24 @@
   .d-head .tags{margin-top:10px;gap:8px}
   .d-head .tag{font-size:24px;padding:4px 12px}
   .d-body{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:10px;align-content:start;overflow:hidden}
+  .d-body.fill{align-content:stretch;grid-auto-rows:minmax(0,1fr)}
+  .d-body.cols2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .d-body.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}
   .d-sec{min-width:0;min-height:0;height:100%;display:flex;flex-direction:column;gap:6px;padding:10px 14px 12px;border:1px solid var(--hair);
     border-radius:12px;background:rgba(255,255,255,.028);overflow:hidden}
   .d-sec.span2{grid-column:span 2}
   .d-sec.span3{grid-column:span 3}
+  .d-sec.span4,.d-sec.full{grid-column:1 / -1}
+  .d-body.fill .d-sec.board .line .txt{-webkit-line-clamp:4;max-height:calc(4 * 1.28em)}
+  .d-body.fill .d-sec .prose{-webkit-line-clamp:12;max-height:calc(12 * 1.32em)}
+  .d-body.fill .d-sec.take .prose{-webkit-line-clamp:14;max-height:calc(14 * 1.32em)}
   .d-sec.next{border-color:rgba(201,168,106,.45);background:rgba(201,168,106,.07);box-shadow:inset 4px 0 0 rgba(201,168,106,.85)}
   .d-sec .eyebrow{flex:none;margin:0;font-size:22px}
   .d-sec .eyebrow em{font-style:normal;color:var(--gold);margin-left:10px}
   .d-sec .d-lines{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;gap:4px;overflow:hidden}
-  .d-sec .line{display:grid;grid-template-columns:160px minmax(0,1fr);gap:10px;align-items:start;min-width:0}
-  .d-sec .line .lab{font-size:var(--lab-size);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);
-    line-height:1.2;white-space:normal;overflow:hidden;overflow-wrap:break-word;
+  .d-sec .line{display:grid;grid-template-columns:240px minmax(0,1fr);gap:12px;align-items:start;min-width:0}
+  .d-sec .line .lab{font-size:var(--lab-size);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--hint);
+    line-height:1.2;white-space:normal;overflow:hidden;overflow-wrap:normal;word-break:normal;hyphens:none;
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:calc(2 * 1.2em);text-overflow:clip}
   .d-sec .line .txt{font-size:var(--line-size);line-height:1.28;font-weight:300;color:#D8D2C8;overflow-wrap:break-word;
     white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.28em)}
@@ -136,11 +143,6 @@
   .tl li:not(:first-child)::before{background:rgba(201,168,106,.5)}
   .tl .d{font-size:var(--lab-size);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--hint);padding-top:2px}
   .tl .e{font-weight:300;color:#D8D2C8;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:calc(2 * 1.28em)}
-  .forms{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;flex:1;min-height:0}
-  .forms li{display:flex;align-items:flex-start;gap:12px;font-size:var(--line-size);font-weight:300;line-height:1.28;min-width:0}
-  .forms li span{min-width:0;overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:calc(2 * 1.28em)}
-  .forms li::before{content:"";flex:none;width:14px;height:14px;margin-top:4px;border-radius:4px;border:2px solid var(--gold)}
-
   .head-l{display:flex;align-items:flex-end;gap:36px;min-width:0}
   .roi-chip{appearance:none;-webkit-appearance:none;margin:0 0 14px;padding:14px 28px;border-radius:100px;cursor:pointer;outline:none;
     border:1px solid rgba(201,168,106,.35);background:rgba(201,168,106,.08);color:var(--ink);
@@ -303,8 +305,7 @@
     if(!d)return false;
     if(d.history&&d.history.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not)return true;
-    if(d.aid&&d.aid.length)return true;
-    var keys=['about','costs','deadlines','academics','alumni','facts','internships'], i;
+    var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
   }
@@ -320,10 +321,6 @@
       out.history.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0;});
     }
     ['odds','sticker_price_per_year','counselor_name','counselor_take','why','why_not'].forEach(function(k){out[k]=str(d[k]);});
-    if(Array.isArray(d.aid_forms_open)){
-      out.aid=[];
-      for(i=0;i<d.aid_forms_open.length;i++)if(str(d.aid_forms_open[i]))out.aid.push(str(d.aid_forms_open[i]));
-    }
     out.about=cleanLabeled(d.about);
     out.costs=cleanLabeled(d.costs);
     out.deadlines=cleanLabeled(d.deadlines);
@@ -331,6 +328,7 @@
     out.alumni=cleanLabeled(d.alumni);
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
+    out.housing=cleanLabeled(d.housing);
     return out;
   }
   
@@ -597,24 +595,20 @@
     return h+'</div>';
   }
   function renderDetail(s){
-    var d=s.detail||{}, parts=[], i, snap=[], fl='', li='';
+    var d=s.detail||{}, parts=[], i, snap=[], li='';
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
     if(snap.length)parts.push(dSec('next','Snapshot',dLines(snap)));
-    if(s.lines&&s.lines.length)parts.push(dSec('','On the board',dLines(s.lines)));
+    if(s.lines&&s.lines.length)parts.push(dSec('board','On the board',dLines(s.lines)));
     if(d.about&&d.about.length)parts.push(dSec('','About',dLines(d.about)));
     if(d.academics&&d.academics.length)parts.push(dSec('','Academics',dLines(d.academics)));
     if(d.costs&&d.costs.length)parts.push(dSec('','Costs',dLines(d.costs)));
+    if(d.housing&&d.housing.length)parts.push(dSec('','Housing',dLines(d.housing)));
     if(d.deadlines&&d.deadlines.length)parts.push(dSec('','Deadlines',dLines(d.deadlines)));
     if(d.internships&&d.internships.length)parts.push(dSec('','Internships',dLines(d.internships)));
     if(d.alumni&&d.alumni.length)parts.push(dSec('','Alumni',dLines(d.alumni)));
     if(d.facts&&d.facts.length)parts.push(dSec('','Facts',dLines(d.facts)));
-    if(d.aid&&d.aid.length){
-      for(i=0;i<d.aid.length&&i<8;i++)fl+='<li><span>'+esc(d.aid[i])+'</span></li>';
-      if(d.aid.length>8)fl+='<li><span>+ '+(d.aid.length-8)+' more</span></li>';
-      parts.push(dSec('','Aid forms still open','<ul class="forms">'+fl+'</ul>'));
-    }
     if(d.history&&d.history.length){
       for(i=0;i<d.history.length&&i<10;i++)li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
       parts.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
@@ -630,11 +624,40 @@
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!root||!body)return;
-    var sizes=[24,22,20,18,16], i;
+    var board=body.querySelector('.d-sec.board'), secs=body.querySelectorAll('.d-sec'), n=secs.length, i;
+    body.classList.remove('fill');body.classList.remove('cols2');body.classList.remove('cols3');
+    if(board){board.classList.remove('full');board.classList.remove('span2');board.classList.remove('span3');board.classList.remove('span4');}
+    // Pack denser column counts when there are only a handful of panels.
+    if(n<=3)body.classList.add('cols2');
+    else if(n<=6)body.classList.add('cols3');
+    var sizes=[24,22,20,18,16];
     for(i=0;i<sizes.length;i++){
       root.style.setProperty('--line-size', sizes[i]+'px');
       root.style.setProperty('--lab-size', Math.max(15, sizes[i]-2)+'px');
-      if(body.scrollHeight<=body.clientHeight+4)return;
+      if(body.scrollHeight<=body.clientHeight+4)break;
+    }
+    // Sparse pages: full-width card_lines on top + stretch remaining panels to fill the stage.
+    if(body.scrollHeight<body.clientHeight*0.88||n<=6){
+      body.classList.add('fill');
+      if(board){
+        board.classList.add('full');
+        if(body.firstChild!==board)body.insertBefore(board, body.firstChild);
+      }
+      // Prefer 2 columns under a full-width board so the lower row does not leave empty cells.
+      body.classList.remove('cols3');
+      if(n<=8)body.classList.add('cols2');
+      var rest=[], el, kids=body.querySelectorAll('.d-sec');
+      for(i=0;i<kids.length;i++){
+        el=kids[i];
+        if(el!==board){el.classList.remove('span2');el.classList.remove('full');rest.push(el);}
+      }
+      // Odd trailing panel: span the full row so the stage does not show a blank cell.
+      if(body.classList.contains('cols2')&&rest.length%2===1)rest[rest.length-1].classList.add('full');
+      for(i=0;i<sizes.length;i++){
+        root.style.setProperty('--line-size', sizes[i]+'px');
+        root.style.setProperty('--lab-size', Math.max(15, sizes[i]-2)+'px');
+        if(body.scrollHeight<=body.clientHeight+4)break;
+      }
     }
   }
 
@@ -682,9 +705,10 @@
   function syncRoiChip(){
     var chip=$('roi-chip');
     if(!chip)return;
-    var on=!!state.roi;
+    // ROI chip belongs on the board header only — hide on detail/ROI so it cannot float over the detail title.
+    var on=!!(state.roi&&state.view==='board');
     chip.hidden=!on;
-    if(!on)state.chipFocus=false;
+    if(!on){state.chipFocus=false;chip.classList.remove('focus');}
   }
   function showRoi(on){
     if(on&&!state.roi)return;
