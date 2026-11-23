@@ -4719,8 +4719,13 @@ renderSlotChrome();
 // grid slot, not symbol, because rotateSpotlight rebuilds the grid every 15 s.
 var NAV_IDS=['clock-card','weather-card','nfl-card','spotlight','news-card','adm-tile'];
 // Family admissions board, served by Home Assistant on the home LAN (templates/scoreboard.html).
+// HA serves /local with Cache-Control max-age=31d — bust the cache at click time so the TV always loads the latest board.
 var SCOREBOARD_URL='http://192.168.68.84:8123/local/daybreak-scoreboard.html?f=coco-admissions.json&back='+encodeURIComponent(location.href);
-$('adm-tile').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();location.href=SCOREBOARD_URL;});
+$('adm-tile').addEventListener('click',function(e){
+  e.preventDefault();
+  e.stopPropagation();
+  location.href=SCOREBOARD_URL+'&v='+new Date().getTime();
+});
 var NAV_IDLE_MS=10000;
 var navKey='clock-card',navShown=false,navTimer=null;
 function navKeyOf(el){
