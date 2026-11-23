@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T22:46:38.016Z",
+ "generatedAt": "2026-11-23T23:00:12.789Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,8 +7417,14 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-23T22:46:38.016Z",
+  "at": "2026-11-23T23:00:12.789Z",
   "ran": [
+   "alerts",
+   "nflScoreboard",
+   "stockNews",
+   "worldNews",
+   "extended",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -13777,62 +13783,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T21:43:28.360Z",
-  "lastAttempt": "2026-11-23T21:43:28.360Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7265.5,
-    "lastTime": 1795469630,
+    "last": 7270.5,
+    "lastTime": 1795471199,
     "settle": 7257.5,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": 8,
-    "changePct": 0.11023079572855667,
-    "expectedOpen": 7245.147590079228,
+    "change": 13,
+    "changePct": 0.1791250430589046,
+    "expectedOpen": 7250.133583878746,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26813.25,
-    "lastTime": 1795469632,
+    "last": 26845,
+    "lastTime": 1795471199,
     "settle": 26816.5,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": -3.25,
-    "changePct": -0.012119404098223109,
-    "expectedOpen": 24086.639488999313,
+    "change": 28.5,
+    "changePct": 0.10627785132287958,
+    "expectedOpen": 24115.16086569836,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49733,
-    "lastTime": 1795469627,
+    "last": 49785,
+    "lastTime": 1795471197,
     "settle": 49693,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": 40,
-    "changePct": 0.08049423460044673,
-    "expectedOpen": 49635.23136518221,
+    "change": 92,
+    "changePct": 0.1851367395810275,
+    "expectedOpen": 49687.1291399191,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2675.3,
-    "lastTime": 1795469627,
+    "last": 2678.1,
+    "lastTime": 1795471197,
     "settle": 2675.800048828125,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": -0.5000488281248181,
-    "changePct": -0.018687824912172194,
+    "change": 2.299951171874909,
+    "changePct": 0.08595377568971119,
     "expectedOpen": null,
     "valid": true
    }
@@ -14282,8 +14288,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T16:52:17.190Z",
-  "lastAttempt": "2026-11-23T16:52:17.190Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "lastError": null
  },
  "alerts": {
@@ -14294,8 +14300,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T22:45:15.065Z",
-  "lastAttempt": "2026-11-23T22:45:15.065Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14938,7 +14944,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T22:46:38.016Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15149,44 +15155,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T22:45:15.065Z",
-  "lastAttempt": "2026-11-23T22:45:15.065Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 166.7,
-    "time": 1795473913,
+    "price": 165.89,
+    "time": 1795474824,
     "ref": 165.05,
     "refTime": 1795467601,
-    "change": 1.6499999999999773,
-    "changePct": 0.9996970614965024
+    "change": 0.839999999999975,
+    "changePct": 0.5089366858527568
    },
    "TSLA": {
     "session": "post",
-    "price": 386.3,
-    "time": 1795473907,
+    "price": 386.03,
+    "time": 1795474804,
     "ref": 385.46,
     "refTime": 1795467600,
-    "change": 0.8400000000000318,
-    "changePct": 0.21792144450786902
+    "change": 0.5699999999999932,
+    "changePct": 0.14787526591604658
    },
    "SPCX": {
     "session": "post",
-    "price": 134.39,
-    "time": 1795473905,
+    "price": 134.239,
+    "time": 1795474823,
     "ref": 133.35,
     "refTime": 1795467600,
-    "change": 1.039999999999992,
-    "changePct": 0.7799025121859708
+    "change": 0.88900000000001,
+    "changePct": 0.6666666666666742
    },
    "ANT": {
     "session": "post",
-    "price": 87.4701,
-    "time": 1795473896,
+    "price": 87.4,
+    "time": 1795474810,
     "ref": 87.64,
     "refTime": 1795467601,
-    "change": -0.16989999999999839,
-    "changePct": -0.1938612505705139
+    "change": -0.23999999999999488,
+    "changePct": -0.27384755819260026
    }
   }
  },
@@ -15197,6 +15203,69 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Stocks Rebound Sharply as Nvidia Reinstates Huang",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/stocks-rebound-sharply-nvidia-reinstates-huang-0",
+      "pub": "2026-11-23T22:44:38.000Z",
+      "sum": "The S&P 500 Index ($SPX ) (SPY ) is up +4.06%, the Dow Jones Industrial Average ($DOWI ) (DIA ) is up +2.06%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) is up +6.11%. December E-mini S&P futures (ESZ26 ) are up +3.84%, and December E-mini Nasdaq futures (NQZ26..."
+     },
+     {
+      "hd": "President Trump Says He Convinced Nvidia’s Board to Bring Back Jensen Huang",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/president-trump-says-he-convinced-nvidia-s-board-to-bring-back-jensen-huang/?.tsrc=rss",
+      "pub": "2026-11-23T22:40:02.000Z",
+      "sum": "Nvidia's board brought Jensen Huang back after \"input from senior U.S. government officials.\""
+     },
+     {
+      "hd": "Jensen Huang’s Return Gives NVDA Stock Biggest Single-Day Gain Since 2003: Nvidia Senior Leaders Were Reportedly Not Consulted On Reinstatement",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-s-return-gives-nvda-stock-biggest-single-day-gain-since-2003-nvidia-senior-leaders-were-reportedly-not-consulted-on-reinstatement/cNbpiRXR9jo?.tsrc=rss",
+      "pub": "2026-11-23T22:38:22.000Z",
+      "sum": "NVDA stock closed up 31% on Monday, clocking its best day since May 2003, while S&P 500 edged up 5% and the tech heavy Nasdaq Composite 7%."
+     },
+     {
+      "hd": "Why ASML Stock Popped Today",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?.tsrc=rss",
+      "pub": "2026-11-23T22:36:24.000Z",
+      "sum": "The AI sector soared as Jensen Huang returned to Nvidia."
+     },
+     {
+      "hd": "Jensen Huang back at Nvidia after staff reported humiliating threats, insults — 'thinks he can get away with anything'",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-back-nvidia-staff-223000688.html?.tsrc=rss",
+      "pub": "2026-11-23T22:30:00.000Z",
+      "sum": "Huang’s return won Wall Street’s approval. But allegations of workplace abuse raise questions about the cost of his comeback."
+     },
+     {
+      "hd": "Has Buying Evergy Stock At A High Paid Off?",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/evrg/articles/627671/has-buying-evergy-stock-at-a-high-paid-off/2026-11-23?.tsrc=rss",
+      "pub": "2026-11-23T22:29:12.000Z",
+      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
+     },
+     {
+      "hd": "Update: US Equity Indexes Soar as Nvidia's Unexpected Move to Reinstate Jensen Huang as CEO Energizes AI Trade",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/us-equity-indexes-soar-nvidia-222851998.html?.tsrc=rss",
+      "pub": "2026-11-23T22:28:51.000Z",
+      "sum": "(Updates with index/price moves, macroeconomic data, and company news from the first paragraph.)"
+     },
+     {
+      "hd": "Jensen Huang returns to Nvidia headquarters to cheering employees",
+      "src": "Yahoo Finance",
+      "url": "https://www.usatoday.com/story/money/2026/11/23/jensen-huang-nvidia-return-video/92932153007/?.tsrc=rss",
+      "pub": "2026-11-23T22:28:16.000Z",
+      "sum": "Jensen Huang returned to Nvidia headquarters after he was reinstated as CEO on Nov. 23. See video of employees' reaction."
+     },
+     {
+      "hd": "How Rare Is AMC's Record Profit Margin?",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/amc/articles/627673/how-rare-is-amc-s-record-profit-margin/2026-11-23?.tsrc=rss",
+      "pub": "2026-11-23T22:22:44.000Z",
+      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
+     },
+     {
       "hd": "US stocks surge and recover half of last week’s plunge after Jensen Huang returns as Nvidia’s CEO",
       "src": "AP News",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNNF9ZLU84V2VPZHBHcGx0V3p5TVVoV21zbUYyQWFOWU96ZjBmcExvQ1lpVmtFRzl5RVpXdFg3TGhUM3ZHM282MkdnMVgxZ2lwUTRkcm9KaWlHMEcyZ3R6amZIM25vMFRRM0l1OXNxMFFSQVVnR3hzY3BNb1NyUWwxa2hLMndRMkpVZ2l2X0N2Z3JFcmRVMzRMZldCbzlEZkpGZjNmTVJZdw?oc=5",
@@ -15204,74 +15273,11 @@
       "sum": "Chips designed by Nvidia push the boundaries of artificial intelligence, and its leather-jacket-wearing co-founder Jensen Huang built the company into one of the world's most important brands over his 33 years at the helm.- Meteoric rise - California-based Nvidia has catapulted to become one of the world's most valuable companies due to the insatiable appetite for chips known as Graphics Processing Units (GPUs) that it designs."
      },
      {
-      "hd": "These BTC miner stocks explode on shocking Nvidia news",
-      "src": "Yahoo Finance",
-      "url": "https://www.thestreet.com/crypto/markets/these-btc-miner-stocks-explode-on-shocking-nvidia-news?.tsrc=rss",
-      "pub": "2026-11-23T22:15:00.000Z",
-      "sum": "MARA, Cipher Mining, and other Bitcoin mining stocks are rallying as Nvidia jumps more than 33% following Jensen Huang’s return as CEO."
-     },
-     {
-      "hd": "Nvidia Adds Nearly $1 Trillion in Value as Trump Hails Huang as a “National Treasure.” It’s Still Cheaper Than Walmart",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/nvidia-adds-nearly-1-trillion-in-value-as-trump-hails-huang-as-a-national-treasure-its-still-cheaper-than-walmart?ref=yahoofinance&tlnk=yf-261123-v5m7h4gg&.tsrc=rss",
-      "pub": "2026-11-23T22:13:00.000Z",
-      "sum": "Key TakeawaysNVIDIA shares jumped 31% today after its board reinstated Jensen Huang as CEO, adding nearly $1 trillion of market value. The November selloff priced in a leadership crisis while analysts kept raising NVIDIA’s earnings estimates."
-     },
-     {
-      "hd": "Ex-Nvidia employee: 'Stability and accountability can coexist'",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/ex-nvidia-employee-stability-and-accountability-can-coexist-221105947.html?.tsrc=rss",
-      "pub": "2026-11-23T22:11:05.000Z",
-      "sum": "Amulya Vishwanath, Techable VC Founder and Managing Partner and a former Nvidia (NVDA) employee, joins Yahoo Finance's Deirdre Bosa to discuss how Jensen Huang's return as CEO is good for founders and the company's execution and who must own the question of accountability."
-     },
-     {
-      "hd": "Steve Eisman Says “Stock Picking Is Back” Now That AI Is “No Longer One Trade”",
-      "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/23/steve-eisman-says-stock-picking-is-back-now-that-ai-is-no-longer-one-trade/?.tsrc=rss",
-      "pub": "2026-11-23T22:07:02.000Z",
-      "sum": "Jensen Huang is back as NVIDIA's CEO, and the stock exploded in a single session. Yet six big AI names tell wildly different stories this year, and one famous Big Short investor says that gap should change how your retirement fund looks."
-     },
-     {
-      "hd": "Should You Swap Tech For Johnson & Johnson Stock?",
-      "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/jnj/articles/627623/should-you-swap-tech-for-johnson-johnson-stock/2026-11-23?.tsrc=rss",
-      "pub": "2026-11-23T22:02:04.000Z",
-      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
-     },
-     {
       "hd": "The Morning Risk Report: China’s AI Firms Are Hooked on Nvidia Chips. Now Comes the Withdrawal.",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMHEyLWU1cHVQOEsyMWdfSkhfaV90MldNcl9JVjdtTmdRVXp2dU1xeUN3MF8yeVlnV21Ga01fbGJDWEVTNjR3YUdQcXpoWlBCOThDNjRGNktGaFB4S3BvRXZjcjl1Qkl2OEl4NDlYWWdTSUN3Vm1wOEJPU0dWSlRDN0JWME1vWXE0UXpZUHphcEYzYUNzS2FkY2l3aTNZVEFoLWxIcndrNERMTGN5ckU3NXkzMVRMOEEwMTlaNW90Uk5EZTViWDg4MERnR01zcTNKVk8tSmlBcmpKdlFo?oc=5",
       "pub": "2026-11-23T21:58:09.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Stocks Rebound Sharply as Nvidia Reinstates CEO Huang",
-      "src": "Nasdaq",
-      "url": "https://www.nasdaq.com/articles/stocks-rebound-sharply-nvidia-reinstates-ceo-huang",
-      "pub": "2026-11-23T21:55:30.000Z",
-      "sum": "The S&P 500 Index ($SPX ) (SPY ) is up +5.15%, the Dow Jones Industrial Average ($DOWI ) (DIA ) is up +3.05%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) is up +7.34%. December E-mini S&P futures (ESZ26 ) are up +4.85%, and December E-mini Nasdaq futures (NQZ26..."
-     },
-     {
-      "hd": "US stocks surge, cheering return of Nvidia CEO and shrugging off scandal",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-tech-back-firing-line-024445930.html?.tsrc=rss",
-      "pub": "2026-11-23T21:44:58.000Z",
-      "sum": "Shares in AI chip behemoth Nvidia rocketed more than 30 percent higher on Monday after the shock reinstatement of its CEO Jensen Huang, accentuating a rebound after last week's rout.Shares of the AI pacesetter leaped higher, finishing up 31.5 percent, a rise that added more than $900 billion in market value."
-     },
-     {
-      "hd": "Plot Twist: Cathie Wood Sold Nvidia Over “Losing Jensen.” Nvidia Just Rehired Him, but Her Other Worry Remains",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=2d415468040bde72ff572d8e686b7ce97389157d61f5d83bdf29c0835a1782b3",
-      "pub": "2026-11-23T21:44:44.000Z",
-      "sum": "Key TakeawaysNvidia shares jumped 31% today after its board reinstated Jensen Huang as CEO. Huang’s return removes the reason Cathie Wood gave for ARK’s swap out of Nvidia and into SpaceX."
-     },
-     {
-      "hd": "Wall Street Roars Back From Brutal Selloff. Nvidia's 31% Surge Sends Nasdaq Soaring 6.5%.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5cdba4c37ecc87e5c2cf68a13504558851aa6afac3262f02c67fbf8016d263d4",
-      "pub": "2026-11-23T21:43:48.000Z",
-      "sum": "The Nasdaq jumped 6.5%, while the S&P 500 and Dow also posted sharp gains as investors renewed bets on artificial intelligence companies."
      },
      {
       "hd": "Nvidia board reinstates Jensen Huang as CEO just days after rejecting his offer to return",
@@ -15374,8 +15380,8 @@
     ],
     "fetched": {
      "Finnhub": 136,
-     "Yahoo": 9,
-     "Google News": 71,
+     "Yahoo": 10,
+     "Google News": 73,
      "Nasdaq": 14,
      "Seeking Alpha": 27
     }
@@ -15560,8 +15566,8 @@
     ],
     "fetched": {
      "Finnhub": 155,
-     "Yahoo": 10,
-     "Google News": 11,
+     "Yahoo": 9,
+     "Google News": 12,
      "Nasdaq": 8,
      "Seeking Alpha": 8
     }
@@ -15749,11 +15755,25 @@
      "Yahoo": 12,
      "Google News": 20,
      "Nasdaq": 0,
-     "Seeking Alpha": 19
+     "Seeking Alpha": 17
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Crypto traders saw Anthropic's 34% debut pop coming",
+      "src": "Yahoo Finance",
+      "url": "https://www.thestreet.com/crypto/markets/crypto-traders-saw-anthropics-34-debut-pop-coming-?.tsrc=rss",
+      "pub": "2026-11-23T22:47:15.000Z",
+      "sum": "Weeks before bankers priced Anthropic’s IPO, a 24/7 crypto market was already trading the shares much higher. The debut showed how close it got."
+     },
+     {
+      "hd": "Anthropic Stock Is Now Public. Here’s What History Says About Buying the Hottest IPOs in Their First Month.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/anthropic-stock-is-now-public-here-s-what-history-says-about-buying-the-hottest-ipos-in-their-first-month/?.tsrc=rss",
+      "pub": "2026-11-23T22:43:01.000Z",
+      "sum": "Waiting to buy IPO stocks months later is usually the correct move for individual investors."
+     },
      {
       "hd": "Nvidia, Dell, Micron, Anthropic, CrowdStrike, UnitedHealth, and More Stocks That Explain Today’s Market",
       "src": "Yahoo Finance",
@@ -15830,20 +15850,6 @@
       "url": "https://seekingalpha.com/article/4971145-anthropic-priced-for-perfection?source=feed_symbol_ANT",
       "pub": "2026-11-23T19:01:40.000Z",
       "sum": "Anthropic fell to $89 on Friday, after a promising first day of trading as a public company. The frontier AI lab now has a $1.2 billion market cap. I rate ANT stock as Sell."
-     },
-     {
-      "hd": "Jensen Huang's return to Nvidia: Long or short accountability?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/jensen-huangs-return-to-nvidia-long-or-short-accountability-185949254.html?.tsrc=rss",
-      "pub": "2026-11-23T18:59:49.000Z",
-      "sum": "Market Hang tackles the top stories of the day. Including Nvidia's board unanimously reinstating Jensen Huang as CEO and what the White House's involvement says about accountability in corporate America, whether the government has effectively put a floor under the AI trade, and Anthropic falling as options on the stock begin trading for the first time. The panel, with Yahoo Finance's Julie Hyman, debates where everyone sits on a one-to-five bullishness scale, whether this is a stock picker's market or a CapEx bubble that precedes a secular bear, the risk of a politically driven slowdown in…"
-     },
-     {
-      "hd": "Did Anthropic Stock's 9% Slide Make It Cheap?",
-      "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/ant/articles/627440/did-anthropic-stock-s-9-slide-make-it-cheap/2026-11-23?.tsrc=rss",
-      "pub": "2026-11-23T18:48:30.000Z",
-      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
      },
      {
       "hd": "Anthropic's Biggest Liability Is Someone Else's Biggest Asset",
@@ -15932,19 +15938,26 @@
     ],
     "fetched": {
      "Finnhub": 147,
-     "Yahoo": 10,
+     "Yahoo": 9,
      "Google News": 92,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
    }
   },
-  "asOf": "2026-11-23T22:30:11.391Z",
-  "lastAttempt": "2026-11-23T22:30:11.391Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
+    "pub": "2026-11-23T22:49:09.000Z",
+    "sum": ""
+   },
    {
     "hd": "Collapse of U.N. summit intensifies calls for new approach to climate talks",
     "src": "The Washington Post",
@@ -15996,8 +16009,8 @@
    },
    {
     "hd": "What strike on Russian ship in Libya says about spread of Ukraine war",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&at_campaign=rss",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA4Nkh0dF9ndTRBVjktYnQtQWh4clVUZVlwcmtIdjFLa0dfeW5Wb3NFVlhuYXJ4d0Y0c2ZLZG5zaTd0TEdnNHFFVzhUV3VYS1lXWnYyZHFzSjUzdTg?oc=5",
     "pub": "2026-11-23T20:48:35.000Z",
     "sum": "Ukraine's sinking of a Russian battleship at a port in Libya raises the stakes of the war a notch, writes Frank Gardner."
    },
@@ -16147,13 +16160,6 @@
     "url": "https://abcnews.com/International/wireStory/hungarys-magyar-visit-ukraine-sign-mending-relations-138377958",
     "pub": "2026-11-23T17:02:18.000Z",
     "sum": "Hungarian Prime Minister Péter Magyar plans to visit Ukraine soon, signaling improved relations between the two countries"
-   },
-   {
-    "hd": "Mexico, China agree to create working group to boost trade",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNGQzdEcwdnZKUC05dU4zQWZFRkRKV0tmVTM1d0oxeU5ldlM0Ukk4RVhlZTNPZXZtQ2tGejdIa1V1SEdvLUx5VHJ6dGxDWlhya041NE9MckZkOEFzbjNneGhwMzFDOXhrWGx3c0JFMFg1NnhnaURuYVNpRWRIakNqbWxueHlYeU1zY3ZLYkVtZTVoX1JEV2N0Ug?oc=5",
-    "pub": "2026-11-23T16:47:48.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16172,8 +16178,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T22:30:11.391Z",
-  "lastAttempt": "2026-11-23T22:30:11.391Z",
+  "asOf": "2026-11-23T23:00:12.789Z",
+  "lastAttempt": "2026-11-23T23:00:12.789Z",
   "lastError": null
  }
 }
