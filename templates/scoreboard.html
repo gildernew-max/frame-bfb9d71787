@@ -61,11 +61,13 @@
   .logo.on-light{background:#E8E6E0;border:1px solid rgba(255,255,255,.08);border-radius:10px}
   .logo.on-dark{background:#1E2128;border:1px solid var(--hair)}
   .logo-sm{width:84px;height:28px;border-radius:8px;padding:3px 6px;display:flex}
-  /* Detail + popup: width/height auto from the image; max ~360×100 viewport (stage 2×). */
+  /* Detail + popup plates hug the image; JS fitLogoImg sets explicit px from naturalWidth/Height
+     so viewBox-only SVGs (0×0 with width/height:auto) and small-pixel marks both scale into 680×200 stage. */
   .logo-lg,.logo-pop{width:auto;max-width:720px;height:auto;min-height:0;border-radius:10px;padding:10px 14px;
     align-self:flex-start;flex:none}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-  .logo-lg img,.logo-pop img{width:auto;height:auto;max-width:692px;max-height:200px;object-fit:contain;object-position:center}
+  .logo-lg img,.logo-pop img{display:block;width:auto;height:auto;max-width:none;max-height:none;
+    object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
   .logo-lg .mono,.logo-pop .mono{font-size:56px;letter-spacing:.08em;line-height:1;padding:8px 4px}
   .logo.on-light .mono{color:#1A1C20}
@@ -97,7 +99,7 @@
   .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:visible;padding:12px 10px;box-sizing:border-box}
   .col-cue{flex:none;height:18px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:16px;color:var(--dim)}
 
-  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:6px;padding:12px 14px 14px 18px;border-radius:8px;
+  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:6px;padding:10px 14px 10px 18px;border-radius:8px;
     border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none;z-index:0;
     transform:scale(1);transform-origin:center center;
     transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
@@ -135,9 +137,9 @@
   #cols .tag{padding:3px 9px;font-size:18px}
   #cols .rank-pill{font-size:18px;padding:3px 9px}
   #cols .logo-sm{width:78px;height:26px;padding:2px 6px}
-  /* Extra breathing room above NEXT so it does not hug the card bottom edge */
-  .step{flex:none;margin-top:6px;padding:12px 0 2px;border-top:1px solid var(--hair);font-size:20px;line-height:1.3;font-weight:400;color:var(--muted);
-    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;max-height:1.3em}
+  /* NEXT line: full unclipped text (no max-height/line-clamp — those ate padding under border-box) */
+  .step{flex:none;margin-top:4px;padding:8px 0 0;border-top:1px solid var(--hair);font-size:20px;line-height:1.3;font-weight:400;color:var(--muted);
+    display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .step b{font-weight:500;color:var(--dim);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-right:8px}
 
   .also{flex:none;display:flex;align-items:baseline;gap:16px;padding:8px 0;border-top:1px solid var(--hair);min-width:0}
@@ -1070,18 +1072,44 @@
     else if((parts[0]||'').length>1)b=parts[0].charAt(1);
     return (a+b).toUpperCase();
   }
+  // Fit detail/popup logos from naturalWidth/Height into 680×200 stage (~340×100 viewport).
+  // Required for viewBox-only SVGs (Chromium reports natural size from viewBox but CSS auto → 0×0)
+  // and to upscale small-pixel SVGs (IU 129×150, TCU, Northeastern) to couch-readable size.
+  function fitLogoImg(img){
+    var maxW=680, maxH=200, nw, nh, s;
+    if(!img)return;
+    nw=img.naturalWidth; nh=img.naturalHeight;
+    if(!nw||!nh)return;
+    s=Math.min(maxW/nw, maxH/nh);
+    if(!(s>0)||!isFinite(s))return;
+    img.style.width=Math.round(nw*s)+'px';
+    img.style.height=Math.round(nh*s)+'px';
+  }
+  function fitLogoImgsIn(root){
+    var imgs, i, img;
+    if(!root)return;
+    imgs=root.querySelectorAll('.logo-lg img, .logo-pop img');
+    for(i=0;i<imgs.length;i++){
+      img=imgs[i];
+      if(img.complete&&img.naturalWidth>0)fitLogoImg(img);
+    }
+  }
+  // Inline onload needs a global; keep ES5/Tizen-safe.
+  window.fitLogoImg=fitLogoImg;
   function logoHtml(s,size){
     // IU: never cream/linen plate — crimson mark on dark like GT. Others honor logo.background.
-    var bg;
+    var bg, sz, cls, mono, src, fitAttr;
     if(isIUSchool(s))bg='dark';
     else bg=s.logo&&s.logo.background==='light'?'light':'dark';
-    var sz=size==='lg'?'lg':(size==='pop'?'pop':'sm');
-    var cls='logo logo-'+sz+(bg==='light'?' on-light':' on-dark');
-    var mono='<span class="mono">'+esc(monogram(s))+'</span>';
+    sz=size==='lg'?'lg':(size==='pop'?'pop':'sm');
+    cls='logo logo-'+sz+(bg==='light'?' on-light':' on-dark');
+    mono='<span class="mono">'+esc(monogram(s))+'</span>';
     if(!s.logo)return '<div class="'+cls+' mono-only" aria-hidden="true">'+mono+'</div>';
-    var src='logos/'+encodeURIComponent(s.logo.file);
+    src='logos/'+encodeURIComponent(s.logo.file);
+    fitAttr=(sz==='lg'||sz==='pop')?' onload="fitLogoImg(this)"':'';
     return '<div class="'+cls+'" aria-hidden="true">'+mono+
-      '<img src="'+esc(src)+'" alt="" onerror="this.onerror=null;this.parentNode.className+=\' mono-only\';if(this.parentNode)this.parentNode.removeChild(this);">'+
+      '<img src="'+esc(src)+'" alt=""'+fitAttr+
+      ' onerror="this.onerror=null;this.parentNode.className+=\' mono-only\';if(this.parentNode)this.parentNode.removeChild(this);">'+
       '</div>';
   }
   // Parentheticals only (CDS notes) — no colon-lead highlighting.
@@ -1730,6 +1758,7 @@
     if(head){
       head.className='d-pop-h'+(logo?' has-logo':'');
       head.innerHTML='<div class="d-pop-h-text">'+titleHtml+'</div>'+logo;
+      fitLogoImgsIn(head);
     }
     if(body){
       body.innerHTML=(content&&content.bodyHtml)||'';
@@ -1741,7 +1770,7 @@
     pop.style.setProperty('--accent', accent);
     state.popupOpen=true;
     layoutPopup();
-    setTimeout(layoutPopup, 0);
+    setTimeout(function(){fitLogoImgsIn(pop);layoutPopup();}, 0);
     setHints();
   }
   function shiftPopupCard(dir){
@@ -1794,9 +1823,10 @@
       trim=steps[si];
       secs=buildDetailBody(s, trim);
       $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
+      fitLogoImgsIn($('detail'));
       if(layoutDetail())break;
     }
-    setTimeout(function(){layoutDetail();paintCardFocus();}, 0);
+    setTimeout(function(){fitLogoImgsIn($('detail'));layoutDetail();paintCardFocus();}, 0);
     paintCardFocus();
     setHints();
   }
