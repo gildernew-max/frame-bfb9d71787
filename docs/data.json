@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T00:00:15.362Z",
+ "generatedAt": "2026-11-23T00:15:12.101Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,10 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T00:00:15.362Z",
+  "at": "2026-11-23T00:15:12.101Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13682,62 +13683,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T00:00:15.362Z",
-  "lastAttempt": "2026-11-23T00:00:15.362Z",
+  "asOf": "2026-11-23T00:15:12.101Z",
+  "lastAttempt": "2026-11-23T00:15:12.101Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7039.25,
-    "lastTime": 1795391415,
-    "settle": 6943.5,
+    "last": 7066.75,
+    "lastTime": 1795392319,
+    "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 95.75,
-    "changePct": 1.3789875423057536,
-    "expectedOpen": 7005.683417224742,
+    "change": 123,
+    "changePct": 1.7713771377137713,
+    "expectedOpen": 7032.79906858686,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25713.75,
-    "lastTime": 1795391415,
+    "last": 25795.5,
+    "lastTime": 1795392321,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 571.75,
-    "changePct": 2.27408320738207,
-    "expectedOpen": 23132.078045302682,
+    "change": 653.5,
+    "changePct": 2.5992363376024183,
+    "expectedOpen": 23205.62030888553,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48681,
-    "lastTime": 1795391414,
-    "settle": 48240,
+    "last": 48815,
+    "lastTime": 1795392315,
+    "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 441,
-    "changePct": 0.914179104477612,
-    "expectedOpen": 48587.48283022389,
+    "change": 581,
+    "changePct": 1.2045445121698388,
+    "expectedOpen": 48727.286021271306,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2621.2,
-    "lastTime": 1795391413,
+    "last": 2629.5,
+    "lastTime": 1795392313,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 32.80009765624982,
-    "changePct": 1.267195908427825,
+    "change": 41.10009765625,
+    "changePct": 1.587857332981453,
     "expectedOpen": null,
     "valid": true
    }
@@ -13761,16 +13762,16 @@
     "id": "401873069",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q4 12:53",
+    "status": "Q4 11:02",
     "period": 4,
-    "clock": "12:53",
+    "clock": "11:02",
     "completed": false,
     "away": {
      "name": "Jacksonville Jaguars",
      "short": "Jaguars",
      "id": "30",
      "abbrev": "JAX",
-     "score": "6",
+     "score": "9",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
      "record": "7-2",
      "winner": false,
@@ -13794,9 +13795,9 @@
     "id": "401873075",
     "start": "2026-11-22T21:25Z",
     "state": "in",
-    "status": "Q4 12:12",
+    "status": "Q4 6:35",
     "period": 4,
-    "clock": "12:12",
+    "clock": "6:35",
     "completed": false,
     "away": {
      "name": "Las Vegas Raiders",
@@ -13815,7 +13816,7 @@
      "short": "Broncos",
      "id": "7",
      "abbrev": "DEN",
-     "score": "24",
+     "score": "31",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
      "record": "7-2",
      "winner": false,
@@ -14187,8 +14188,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T00:00:15.362Z",
-  "lastAttempt": "2026-11-23T00:00:15.362Z",
+  "asOf": "2026-11-23T00:15:12.101Z",
+  "lastAttempt": "2026-11-23T00:15:12.101Z",
   "lastError": null
  },
  "alerts": {
@@ -14199,8 +14200,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T00:00:15.362Z",
-  "lastAttempt": "2026-11-23T00:00:15.362Z",
+  "asOf": "2026-11-23T00:15:12.101Z",
+  "lastAttempt": "2026-11-23T00:15:12.101Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14876,7 +14877,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T00:00:15.362Z",
+  "lastAttempt": "2026-11-23T00:15:12.101Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15884,6 +15885,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Iranian president turns out office lights to urge citizens to save energy",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
+    "pub": "2026-11-23T00:02:36.000Z",
+    "sum": "Iran has some of the world's largest oil and natural gas reserves but is facing an energy crisis because of U.S. economic sanctions and a naval blockade."
+   },
+   {
     "hd": "Russian Ships Struck in Attacks Far From Ukraine as War’s Fallout Spreads",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQNUVkazV3eVU0VlliLUJtY3hUY3J0djVGelpZTGY4R3dqZ2U5dTB1SXo4Y3JoSEFvRjF3Y2ZwVVZ0elJRTkI5WElHcHlZVFFaSTBzaWEwN1BINjBJQlJSaGpyYnRubkJ3VkVGNF9ZVS1LX2xCczdFZ1BaQ2QwWTBXOURrc1NUOHdvWm9TQ3NlWTRRTUNrLWRGY1BxNXNERjBya3pKUFR0d2xKY1lqNENEQXlGVGE?oc=5",
@@ -15903,13 +15911,6 @@
     "url": "https://www.npr.org/2026/11/22/nx-s1-6050236/ukraine-war-spilling-into-nato-territory",
     "pub": "2026-11-22T22:40:22.000Z",
     "sum": "The war between Russia and Ukraine once again creeps onto European territory – from attacks on ships to missiles in Poland and fresh allegations of Russian operations inside Denmark."
-   },
-   {
-    "hd": "Iranian president turns out office lights to urge citizens to save energy",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
-    "pub": "2026-11-22T22:32:36.000Z",
-    "sum": "Iran has some of the world's largest oil and natural gas reserves but is facing an energy crisis because of U.S. economic sanctions and a naval blockade."
    },
    {
     "hd": "Trump says he wants \"permanent\" deal with Iran",
@@ -16100,6 +16101,7 @@
    "Reuters",
    "WSJ",
    "The New York Times",
+   "The Washington Post",
    "NPR",
    "BBC News",
    "Politico",
@@ -16108,11 +16110,9 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [
-   "The Washington Post: fetch failed"
-  ],
-  "asOf": "2026-11-22T23:45:11.269Z",
-  "lastAttempt": "2026-11-22T23:45:11.269Z",
+  "feedErrors": [],
+  "asOf": "2026-11-23T00:15:12.101Z",
+  "lastAttempt": "2026-11-23T00:15:12.101Z",
   "lastError": null
  }
 }
