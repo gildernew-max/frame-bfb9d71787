@@ -208,6 +208,18 @@
     letter-spacing:.02em;line-height:1.35;overflow-wrap:break-word}
   .marist-totals b{font-weight:700;color:var(--accent,var(--gold));margin-right:4px}
   .marist-tot-sep{color:var(--dim);font-weight:400}
+  /* Creative-school card/popup: single full-width column (no label/value grid) */
+  .ncs-body{display:flex;flex-direction:column;gap:10px;min-width:0;width:100%}
+  .ncs-body .prose{margin:0}
+  .ncs-body .why-bullets{margin:0}
+  .ncs-subhead{margin:4px 0 0;font-size:var(--t1);font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--accent,var(--gold));line-height:1.2}
+  .ncs-para{margin:0;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
+    overflow-wrap:break-word}
+  .ncs-sources{display:flex;flex-direction:column;gap:6px;min-width:0;width:100%}
+  .ncs-source{margin:0;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
+    overflow-wrap:break-word;word-break:normal}
+  .ncs-source b{font-weight:700;color:var(--ink)}
 
   /* Padding + visible overflow so focused card scale/ring/glow are not clipped by columns */
   .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:visible;padding:20px 16px;box-sizing:border-box}
@@ -266,6 +278,11 @@
   .d-pop-body .marist-totals{font-size:var(--pop-line);line-height:1.35;color:var(--pop-ink)}
   .d-pop-body .marist-year b,.d-pop-body .marist-totals b{color:var(--accent,var(--focus-ring))}
   .d-pop-body .marist-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55)}
+  .d-pop-body .ncs-body{gap:16px}
+  .d-pop-body .ncs-subhead{font-size:var(--pop-lab);letter-spacing:.1em;color:var(--accent,var(--focus-ring));margin-top:8px}
+  .d-pop-body .ncs-para,.d-pop-body .ncs-source{font-size:var(--pop-line);line-height:1.4;color:var(--pop-ink)}
+  .d-pop-body .ncs-source b{color:var(--pop-ink)}
+  .d-pop-body .ncs-sources{gap:10px}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -1085,8 +1102,9 @@
   }
   var NCS_CARD_TITLE='New: School of Arts, Entertainment & Creative Tech';
   function newCreativeSchoolBodyHtml(ncs, limits){
+    // Full-width stack: summary → facts → For CoCo → Sources (no label-column grid).
     if(!ncs)return '';
-    var body='', i, facts=ncs.facts||[], arts=ncs.articles||[], fLim, aLim, parts, dDisp, line;
+    var body='', i, facts=ncs.facts||[], arts=ncs.articles||[], fLim, aLim, dDisp, bits;
     if(ncs.summary)body+='<p class="prose">'+esc(ncs.summary)+'</p>';
     fLim=limits&&limits.facts!=null?limits.facts:facts.length;
     if(facts.length&&fLim>0){
@@ -1096,25 +1114,24 @@
       body+='</ul>';
     }
     if(ncs.why_it_matters_for_coco){
-      body+='<div class="d-lines"><div class="line"><span class="lab">For Coco</span>'+
-        '<span class="txt">'+esc(ncs.why_it_matters_for_coco)+'</span></div></div>';
+      body+='<div class="ncs-subhead">For CoCo</div>'+
+        '<p class="ncs-para">'+esc(ncs.why_it_matters_for_coco)+'</p>';
     }
     aLim=limits&&limits.articles!=null?limits.articles:arts.length;
     if(arts.length&&aLim>0){
-      body+='<div class="d-lines">';
+      body+='<div class="ncs-subhead">Sources</div><div class="ncs-sources">';
       for(i=0;i<arts.length&&i<aLim;i++){
         dDisp=arts[i].date&&DATE_RE.test(arts[i].date)?fmtDate(arts[i].date,true):arts[i].date;
-        parts=[];
-        if(arts[i].outlet)parts.push(arts[i].outlet);
-        if(dDisp)parts.push(dDisp);
-        if(arts[i].title)parts.push(arts[i].title);
-        line=parts.join(' \u00b7 ');
-        if(line)body+='<div class="line nolab"><span class="txt">'+esc(line)+'</span></div>';
+        bits='';
+        if(arts[i].outlet)bits+='<b>'+esc(arts[i].outlet)+'</b>';
+        if(dDisp)bits+=(bits?' \u00b7 ':'')+esc(dDisp);
+        if(arts[i].title)bits+=(bits?' \u00b7 ':'')+esc(arts[i].title);
+        if(bits)body+='<p class="ncs-source">'+bits+'</p>';
       }
-      if(arts.length>aLim)body+='<div class="line nolab"><span class="txt">\u2026</span></div>';
+      if(arts.length>aLim)body+='<p class="ncs-source">\u2026</p>';
       body+='</div>';
     }
-    return body;
+    return body?'<div class="ncs-body">'+body+'</div>':'';
   }
   function popupContentForKey(s, key){
     var d=s&&s.detail?s.detail:{}, snap=[], acad, title='', body='', next;
