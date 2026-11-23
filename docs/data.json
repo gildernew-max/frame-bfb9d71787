@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T01:00:11.054Z",
+ "generatedAt": "2026-11-23T01:15:12.317Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7012,10 +7012,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T01:00:11.054Z",
+  "at": "2026-11-23T01:15:12.317Z",
   "ran": [
    "alerts",
    "nflScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13375,62 +13376,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T01:00:11.054Z",
-  "lastAttempt": "2026-11-23T01:00:11.054Z",
+  "asOf": "2026-11-23T01:15:12.317Z",
+  "lastAttempt": "2026-11-23T01:15:12.317Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7078,
-    "lastTime": 1795395010,
-    "settle": 6943.75,
+    "last": 7087.75,
+    "lastTime": 1795395918,
+    "settle": 6943.5,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 134.25,
-    "changePct": 1.9333933393339335,
-    "expectedOpen": 7043.995019981999,
+    "change": 144.25,
+    "changePct": 2.077482537625117,
+    "expectedOpen": 7053.952145531793,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25812,
-    "lastTime": 1795395011,
+    "last": 25825.25,
+    "lastTime": 1795395918,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 670,
-    "changePct": 2.6648635748945986,
-    "expectedOpen": 23220.46370153528,
+    "change": 683.25,
+    "changePct": 2.71756423514438,
+    "expectedOpen": 23232.383395632805,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48883,
-    "lastTime": 1795395006,
-    "settle": 48234,
+    "last": 48954,
+    "lastTime": 1795395918,
+    "settle": 48240,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 649,
-    "changePct": 1.3455239042998715,
-    "expectedOpen": 48795.16383443215,
+    "change": 714,
+    "changePct": 1.480099502487562,
+    "expectedOpen": 48859.95839179104,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2633.1,
-    "lastTime": 1795395009,
+    "last": 2636.2,
+    "lastTime": 1795395919,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 44.70009765624991,
-    "changePct": 1.726939396643261,
+    "change": 47.80009765624982,
+    "changePct": 1.8467045070187063,
     "expectedOpen": null,
     "valid": true
    }
@@ -13880,8 +13881,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T01:00:11.054Z",
-  "lastAttempt": "2026-11-23T01:00:11.054Z",
+  "asOf": "2026-11-23T01:15:12.317Z",
+  "lastAttempt": "2026-11-23T01:15:12.317Z",
   "lastError": null
  },
  "alerts": {
@@ -13892,8 +13893,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T01:00:11.054Z",
-  "lastAttempt": "2026-11-23T01:00:11.054Z",
+  "asOf": "2026-11-23T01:15:12.317Z",
+  "lastAttempt": "2026-11-23T01:15:12.317Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14569,8 +14570,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T01:00:11.054Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-23T01:15:12.317Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15577,6 +15578,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Is Mexico Stepping Up in the War on Drugs?",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/22/world/americas/mexico-us-cartel-arrests.html",
+    "pub": "2026-11-23T01:07:44.000Z",
+    "sum": "With several powerful drug kingpins recently taken down by Mexican forces, some experts see what may be a new chapter beginning in Mexico."
+   },
+   {
     "hd": "Iranian president turns out office lights to urge citizens to save energy",
     "src": "The Washington Post",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
@@ -15724,6 +15732,13 @@
     "sum": ""
    },
    {
+    "hd": "Trump warns of new strikes against Iran after new year, calls negotiators ‘professional tap dancers’",
+    "src": "Fox News",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQTWlUTXBfYUZwTTVPcllIRkpMZ29FM2lHa25PdkJEZ3F4cXpYLVdpcV9zLVFEdmhKRkE5MUE4alNSZEFDZjQ3Y1JiWlNqQmctXzdTN1UtblpFWmJKRzZwbGNMWWthbUFXSEd6ZV80cWNhb1RNYkRzdElmNGJtLTExZkhvUzg1QkZhY3B5azhKRW1NU3RwVXFWdVk0Q18tZGprV3JVRXd0RnZRUURuOFBOMjBpSWxFMkh5eFl2TElOczBkY0l6c0E?oc=5",
+    "pub": "2026-11-22T17:52:35.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Lebanese villagers return to wrecked homes as the Israeli army pulls back",
     "src": "NPR",
     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxORll3ZkNWTTRuZ19vOTViOVlJZXlXczJUa0ZOWmN6M3JSVVlQbmhhZ0FsTTFrQUE4VDhDbjV6cGNyTVNOSnZxTUF2Z1p2NmE0MmhweGlLelliRnY2RkhUalpwWTgybUdsYWljc200MmFoWEFlbF9JWUJGZXBlREdJdTg3Q1Etdw?oc=5",
@@ -15771,20 +15786,6 @@
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPV0dYbG15VGlQaUxBOGJXQkhMem1ZTEJVSWE3QkJHT0FaaVo3Tk5iai1LcHd0NEVPRm1EYldUR1pHNENaa3dYTmpfOUpsVHJnTGtXa2VvRXNLaHc0bjNBZWNXTVowT3FWRTk0MzgtNXktN2hUNFhnUlVYSjFXRVBNNUt5bDcyNXMyb3pQV2pCbWphUGItclFzeDVKV1pTT0xUQzVZQ2xrVUZ0UWtoZEo0?oc=5",
     "pub": "2026-11-22T16:53:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Russia starts towing ship hit by drones in Baltic, Finland says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTXUxa0FLT1o3Tzh4MUR0MV9ZenU1LU9PZl9QSzhsQXlOQThFNUxWbWFXRXZTOHFpb1lJdG1GTV9hOUZsc2x4YzBOSzV3ZHZkV2pyNjNIaTVWZEViQ2lLb3JkcjJsbGhVNXFmWXQ5c0pDTkVXeG9IbmlKV3AxYUtfNE5DVnhWX3lvNmg0SF9SZ1lHQzEtSnY1REsycUlvWFVEOFlBSXR3?oc=5",
-    "pub": "2026-11-22T16:01:29.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "At least 4 killed in Russian drone attacks on Kyiv region, officials say",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUmFwN2pYTHZEVndFX2hfN3VOQnduN3pEYnZXa2tfT1d1UGZDejk3ZU11dkwwLTdsUTltdm0taU8wTnpNTkZVV045Z3pkc0czd2FSS1lEZDhyLVVCNFJvNk9xUHR2ZUxydnAyYTJDVzd3RWIwQ1E0YjAyc2R6bkpkbkt1aThfVldjUGRKbkhXanhraVo3SkJHcHBuMmxBcXJreDhQSEx1QV9ZUXhDOHdhbmZMRkZoeVBOXzJ5ag?oc=5",
-    "pub": "2026-11-22T15:56:55.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -15803,8 +15804,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T00:45:13.091Z",
-  "lastAttempt": "2026-11-23T00:45:13.091Z",
+  "asOf": "2026-11-23T01:15:12.317Z",
+  "lastAttempt": "2026-11-23T01:15:12.317Z",
   "lastError": null
  }
 }
