@@ -18,7 +18,7 @@
   body{font-family:Inter,"SF Pro Display",system-ui,sans-serif;color:var(--ink);
     font-feature-settings:"tnum" 1,"lnum" 1;-webkit-font-smoothing:antialiased}
   #stage{position:absolute;left:50%;top:50%;width:3840px;height:2160px;transform-origin:center center;
-    display:flex;flex-direction:column;gap:20px;padding:56px 100px 36px;overflow:hidden;
+    display:flex;flex-direction:column;gap:16px;padding:40px 72px 28px;overflow:hidden;
     background:
       radial-gradient(1400px 800px at 17% 4%,rgba(201,168,106,.09),transparent 72%),
       radial-gradient(1300px 880px at 84% 100%,rgba(91,105,119,.075),transparent 76%),
@@ -28,7 +28,7 @@
 
   /* Header + compact counts */
   .head{display:flex;align-items:flex-end;justify-content:space-between;gap:48px;flex:none}
-  .head h1{margin:8px 0 0;font:300 84px/.98 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.035em}
+  .head h1{margin:6px 0 0;font:300 78px/.98 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.035em}
   .head-r{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
   .updated{font-size:36px;font-weight:300;color:var(--muted);white-space:nowrap}
   .updated b{font-weight:500;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:var(--hint);margin-right:14px}
@@ -40,45 +40,45 @@
   .count.admitted .l{color:var(--up)} .count.pending .l{color:var(--gold)} .count.denied .l{color:#A9A49C}
   .count.denied .n{color:#C9C4BB}
 
-  /* Tier columns — dense cards (~5 visible per column on the 3840 stage). */
-  .cols{flex:1;min-height:0;display:grid;gap:18px}
-  .col{min-width:0;min-height:0;display:flex;flex-direction:column;gap:10px}
-  .col-head{flex:none;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-radius:14px;
-    background:rgba(var(--t),.13);border:1px solid rgba(var(--t),.30);box-shadow:inset 0 5px 0 rgba(var(--t),.55)}
-  .col-head .t{font-size:32px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--t))}
-  .col-head .c{font-size:26px;font-weight:500;letter-spacing:.12em;color:var(--hint)}
-  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:10px;overflow:hidden}
-  .col-cue{flex:none;height:34px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:26px}
+  /* Tier columns: dense, edge-to-edge. Cards grow to fill a short column. */
+  .cols{flex:1;min-height:0;display:grid;gap:14px}
+  .col{min-width:0;min-height:0;display:flex;flex-direction:column;gap:8px}
+  .col-head{flex:none;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;border-radius:12px;
+    background:rgba(var(--t),.13);border:1px solid rgba(var(--t),.30);box-shadow:inset 0 4px 0 rgba(var(--t),.55)}
+  .col-head .t{font-size:28px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--t))}
+  .col-head .c{font-size:24px;font-weight:500;letter-spacing:.12em;color:var(--hint)}
+  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+  .col-cue{flex:none;height:28px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:24px}
 
-  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:6px;padding:12px 18px 10px 24px;border-radius:12px;
+  .card{flex:1 1 0;min-height:0;position:relative;display:flex;flex-direction:column;gap:5px;padding:10px 16px 8px 22px;border-radius:12px;
     border:1px solid var(--hair);background:rgba(255,255,255,.032);box-shadow:inset 0 1px 0 rgba(255,255,255,.028);cursor:pointer;outline:none}
-  .card::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:5px;border-radius:0 3px 3px 0;background:var(--c)}
+  .card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:5px;border-radius:0 3px 3px 0;background:var(--c)}
   .card.denied,.card.withdrawn{background:rgba(255,255,255,.016)}
   .card.denied .name,.card.withdrawn .name{color:#B4AFA6}
   .card.denied .step,.card.withdrawn .step,.card.denied .tags,.card.withdrawn .tags,.card.denied .lines,.card.withdrawn .lines{opacity:.75}
   .card.focus{background-color:rgba(201,168,106,.06);
     box-shadow:inset 0 0 0 6px rgba(201,168,106,.95),inset 0 0 40px rgba(201,168,106,.18)}
-  .name{font:400 34px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em;
-    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;max-height:calc(1 * 1.1em)}
+  .name{flex:none;font:400 32px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.015em;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .name .prog{color:var(--muted);font-weight:300}
-  .tags{display:flex;flex-wrap:wrap;gap:6px}
-  .tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:100px;white-space:nowrap;
-    font-size:26px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  .tags{flex:none;display:flex;flex-wrap:wrap;gap:5px}
+  .tag{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:100px;white-space:nowrap;
+    font-size:24px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
     color:var(--c);border:1px solid var(--cb);background:var(--cf)}
   .tag.plain{--c:rgba(240,237,230,.8);--cb:rgba(240,237,230,.22);--cf:rgba(240,237,230,.05)}
   .tag.date{--c:var(--gold);--cb:rgba(201,168,106,.38);--cf:rgba(201,168,106,.08)}
-  .lines{display:flex;flex-direction:column;gap:2px;min-width:0}
-  .line{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px;align-items:start;min-width:0}
-  .line .lab{font-size:22px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hint);padding-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .line .txt{font-size:26px;line-height:1.22;font-weight:300;color:#D8D2C8;overflow-wrap:anywhere;word-break:break-word;
-    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;max-height:calc(1 * 1.22em)}
+  .lines{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:1px;min-width:0;overflow:hidden}
+  .line{display:grid;grid-template-columns:148px minmax(0,1fr);gap:10px;align-items:baseline;min-width:0}
+  .line .lab{font-size:22px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--hint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .line .txt{font-size:24px;line-height:1.2;font-weight:300;color:#D8D2C8;overflow-wrap:anywhere;word-break:break-word;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .line.good .txt{color:#99C7A6}.line.warn .txt{color:#D4A574}.line.muted .txt{color:#A9A49C}
   .line.nolab{grid-template-columns:minmax(0,1fr)}
-  .step{margin-top:2px;padding-top:6px;border-top:1px solid var(--hair);font-size:26px;line-height:1.2;font-weight:300;color:var(--muted);
+  .step{flex:none;margin-top:auto;padding-top:5px;border-top:1px solid var(--hair);font-size:24px;line-height:1.2;font-weight:300;color:var(--muted);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .step b{font-weight:500;color:var(--hint);font-size:22px;letter-spacing:.12em;text-transform:uppercase;margin-right:10px}
+  .step b{font-weight:500;color:var(--hint);font-size:20px;letter-spacing:.12em;text-transform:uppercase;margin-right:10px}
 
-  .also{flex:none;display:flex;align-items:baseline;gap:18px;padding:10px 20px;border:1px dashed var(--hair);border-radius:12px;
+  .also{flex:none;display:flex;align-items:baseline;gap:16px;padding:8px 16px;border:1px dashed var(--hair);border-radius:10px;
     background:rgba(255,255,255,.02);min-width:0}
   .also[hidden]{display:none!important}
   .also .k{flex:none;font-size:26px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
@@ -332,7 +332,7 @@
   function cleanCardLines(raw){
     if(!Array.isArray(raw))return [];
     var out=[], i;
-    for(i=0;i<raw.length&&out.length<8;i++){
+    for(i=0;i<raw.length&&out.length<10;i++){
       var x=raw[i];
       if(!x||typeof x!=='object'||!str(x.text))continue;
       var tone=x.tone==='good'||x.tone==='warn'||x.tone==='muted'?x.tone:'';
@@ -441,21 +441,33 @@
     return one('admitted','Admitted')+one('pending','Pending')+one('denied','Denied');
   }
 
-  // Whole cards only: each column shows the run of cards from col.first that fits, nudged to keep the focus visible.
+  // Whole cards only. If every card fits, show them all and let flex grow fill the column;
+  // otherwise window from col.first and keep the focused card visible.
   function layoutCol(ci){
     var col=state.cols[ci], body=$('col-body-'+ci), cue=$('col-cue-'+ci);
     if(!body)return;
-    var cards=body.querySelectorAll('.card'), i;
-    for(i=0;i<cards.length;i++)cards[i].style.display='';
-    var avail=body.clientHeight, gap=10, hs=[];
+    var cards=body.querySelectorAll('.card'), i, gap=8;
+    for(i=0;i<cards.length;i++){cards[i].style.display='';cards[i].style.flex='none';}
+    var avail=body.clientHeight, hs=[];
     for(i=0;i<cards.length;i++)hs.push(cards[i].offsetHeight);
     function fits(from){var h=0,n=0;for(var j=from;j<hs.length;j++){var add=hs[j]+(n?gap:0);if(h+add>avail&&n)break;h+=add;n++;}return n;}
-    var f=state.focus&&state.focus.col===ci?state.focus.idx:-1;
+    var allH=0;
+    for(i=0;i<hs.length;i++)allH+=hs[i]+(i?gap:0);
+    if(hs.length&&allH<=avail){
+      col.first=0;
+      for(i=0;i<cards.length;i++){cards[i].style.display='';cards[i].style.flex='1 1 0';}
+      cue.textContent='';cue.style.visibility='hidden';
+      return;
+    }
+    var f=state.focus&&state.focus.col===ci&&!state.chipFocus?state.focus.idx:-1;
     if(f>=0&&f<col.first)col.first=f;
     while(f>=0&&f>=col.first+fits(col.first)&&col.first<f)col.first++;
     if(col.first>Math.max(0,hs.length-1))col.first=Math.max(0,hs.length-1);
     var n=fits(col.first);
-    for(i=0;i<cards.length;i++)cards[i].style.display=i>=col.first&&i<col.first+n?'':'none';
+    for(i=0;i<cards.length;i++){
+      if(i>=col.first&&i<col.first+n){cards[i].style.display='';cards[i].style.flex='1 1 0';}
+      else{cards[i].style.display='none';cards[i].style.flex='none';}
+    }
     var above=col.first, below=hs.length-col.first-n;
     cue.textContent=(above?'\u25b2 '+above+' above':'')+(above&&below?'  \u00b7  ':'')+(below?'\u25bc '+below+' more':'');
     cue.style.visibility=above||below?'visible':'hidden';

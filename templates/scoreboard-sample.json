@@ -12,37 +12,6 @@
       "status": "in_review",
       "decision_expected": "2026-12-15",
       "next_step": "Send midyear report after first semester",
-      "detail": {
-        "history": [
-          {
-            "date": "2026-11-01",
-            "event": "Application submitted (ED)"
-          },
-          {
-            "date": "2026-11-04",
-            "event": "Portal account activated"
-          },
-          {
-            "date": "2026-11-12",
-            "event": "All materials marked complete"
-          },
-          {
-            "date": "2026-11-20",
-            "event": "Status changed to in review"
-          }
-        ],
-        "odds": "Long shot \u2014 about 1 in 8",
-        "sticker_price_per_year": "$89,500",
-        "counselor_name": "Counselor A",
-        "counselor_take": "Strong fit for the program and the essays are some of the best in this list. Early decision helps here, but the admit rate is still very low, so plan the regular-round list as if this one does not come through. Placeholder text for layout testing: this paragraph is deliberately long so the detail view can show how a longer counselor note wraps and, if it runs past the space available, ends with an ellipsis instead of spilling off the screen. More placeholder sentences follow to make sure the clamp is exercised on a 4K stage at couch distance.",
-        "why": "Placeholder reason: hands-on design studio from the first year and a strong co-op program.",
-        "why_not": "Placeholder concern: large intro classes and a long way from home.",
-        "aid_forms_open": [
-          "CSS Profile",
-          "Noncustodial parent form",
-          "Institutional aid form"
-        ]
-      },
       "card_lines": [
         {
           "label": "MSRP",
@@ -66,58 +35,52 @@
         },
         {
           "label": "Thackston",
-          "text": "Essays are among the strongest on this list",
+          "text": "Essays among the strongest on this list",
           "tone": "good"
+        },
+        {
+          "label": "Marist data",
+          "text": "Admit ~12% ED \u00b7 eng. yield high",
+          "tone": "muted"
         },
         {
           "label": "Why",
           "text": "Design studio from year one; co-op network",
-          "tone": null
+          "tone": "good"
         },
         {
           "label": "Why not",
           "text": "Large intros; far from home",
           "tone": "muted"
-        }
-      ]
-    },
-    {
-      "id": "sample-b",
-      "school": "Sample College B",
-      "program": null,
-      "tier": "reach",
-      "round": "RD",
-      "submitted": null,
-      "status": "not_submitted",
-      "decision_expected": "2027-01-01",
-      "next_step": "Finish supplemental essay draft 2",
-      "detail": {
-        "odds": "Reach",
-        "sticker_price_per_year": "$91,200",
-        "why": "Placeholder reason: small seminars and an open curriculum."
-      },
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$91,200 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Deadline",
-          "text": "RD due Jan 1 \u2014 essay draft 2 open",
-          "tone": "warn"
         },
         {
           "label": "Confirm",
-          "text": "Portal account not created yet",
-          "tone": "warn"
-        },
-        {
-          "label": "Why",
-          "text": "Open curriculum; small seminars",
+          "text": "Portal complete \u00b7 interview waived",
           "tone": "good"
         }
-      ]
+      ],
+      "detail": {
+        "history": [
+          {
+            "date": "2026-11-01",
+            "event": "Application submitted (ED)"
+          },
+          {
+            "date": "2026-11-20",
+            "event": "Status changed to in review"
+          }
+        ],
+        "odds": "Long shot \u2014 about 1 in 8",
+        "sticker_price_per_year": "$89,500",
+        "counselor_name": "Counselor A",
+        "counselor_take": "Strong fit. Plan the rest of the list as if this one does not come through.",
+        "why": "Hands-on design studio from year one.",
+        "why_not": "Large intro classes.",
+        "aid_forms_open": [
+          "CSS Profile",
+          "Noncustodial parent form"
+        ]
+      }
     },
     {
       "id": "sample-c",
@@ -129,6 +92,48 @@
       "status": "deferred",
       "decision_expected": "2027-03-28",
       "next_step": "Write letter of continued interest",
+      "card_lines": [
+        {
+          "label": "MSRP",
+          "text": "$88,400 / yr",
+          "tone": "muted"
+        },
+        {
+          "label": "Deadline",
+          "text": "Deferred to RD \u00b7 decision Mar 28",
+          "tone": "warn"
+        },
+        {
+          "label": "Scholarship",
+          "text": "Need-based only; no early merit",
+          "tone": "muted"
+        },
+        {
+          "label": "Aid forms",
+          "text": "CSS Profile still open",
+          "tone": "warn"
+        },
+        {
+          "label": "Thackston",
+          "text": "One short LOCI with new grades",
+          "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "CS research labs + co-op pipeline",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Very low REA yield historically",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "LOCI draft due this Friday",
+          "tone": "warn"
+        }
+      ],
       "detail": {
         "history": [
           {
@@ -141,66 +146,11 @@
           }
         ],
         "counselor_name": "Counselor A",
-        "counselor_take": "A deferral is not a no. Send one short update with new results.",
+        "counselor_take": "A deferral is not a no.",
         "aid_forms_open": [
           "CSS Profile"
         ]
-      },
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$88,400 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Deadline",
-          "text": "Deferred \u00b7 RD decision Mar 28",
-          "tone": "warn"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Need-based; no early merit letter",
-          "tone": "muted"
-        },
-        {
-          "label": "Thackston",
-          "text": "Send one short LOCI with new grades",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Very low REA yield historically",
-          "tone": "muted"
-        }
-      ]
-    },
-    {
-      "id": "sample-d",
-      "school": "Sample University D",
-      "program": "Economics",
-      "tier": "reach",
-      "round": "RD",
-      "submitted": null,
-      "status": null,
-      "decision_expected": "2027-03-30",
-      "next_step": "Confirm with counselor whether to apply",
-      "card_lines": [
-        {
-          "label": "Confirm",
-          "text": "Counselor still deciding whether to apply",
-          "tone": "warn"
-        },
-        {
-          "label": "Deadline",
-          "text": "RD expected late March if filed",
-          "tone": "muted"
-        },
-        {
-          "label": "MSRP",
-          "text": "~$86K / yr (catalog)",
-          "tone": "muted"
-        }
-      ]
+      }
     },
     {
       "id": "sample-e",
@@ -212,16 +162,6 @@
       "status": "submitted",
       "decision_expected": "2027-01-31",
       "next_step": "Schedule alumni interview",
-      "detail": {
-        "history": [
-          {
-            "date": "2026-11-01",
-            "event": "Application submitted (EA)"
-          }
-        ],
-        "odds": "About 1 in 6",
-        "sticker_price_per_year": "$86,000"
-      },
       "card_lines": [
         {
           "label": "MSRP",
@@ -231,7 +171,12 @@
         {
           "label": "Deadline",
           "text": "EA decision window ends Jan 31",
-          "tone": null
+          "tone": "warn"
+        },
+        {
+          "label": "Scholarship",
+          "text": "Need-based; no automatic merit",
+          "tone": "muted"
         },
         {
           "label": "Aid forms",
@@ -239,79 +184,94 @@
           "tone": "good"
         },
         {
-          "label": "Why",
-          "text": "Alumni interview scheduled Dec 4",
+          "label": "Thackston",
+          "text": "Interview can tip a borderline file",
           "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "Policy clinic + DC semester",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Less quantitative than preferred",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "Alumni interview not booked",
+          "tone": "warn"
         }
-      ]
-    },
-    {
-      "id": "sample-f",
-      "school": "Sample College F",
-      "program": null,
-      "tier": "reach",
-      "round": "RD",
-      "submitted": "2026-11-15",
-      "status": "withdrawn",
-      "decision_expected": null,
-      "next_step": "",
+      ],
       "detail": {
         "history": [
           {
-            "date": "2026-11-15",
-            "event": "Application submitted (RD)"
-          },
-          {
-            "date": "2026-11-21",
-            "event": "Withdrew after early acceptance elsewhere"
+            "date": "2026-11-01",
+            "event": "Application submitted (EA)"
           }
-        ]
-      },
+        ],
+        "odds": "About 1 in 6",
+        "sticker_price_per_year": "$86,000"
+      }
+    },
+    {
+      "id": "sample-b",
+      "school": "Sample College B",
+      "program": null,
+      "tier": "reach",
+      "round": "RD",
+      "submitted": null,
+      "status": "not_submitted",
+      "decision_expected": "2027-01-01",
+      "next_step": "Finish supplemental essay draft 2",
       "card_lines": [
         {
-          "label": "Confirm",
-          "text": "Withdrawn after early accept elsewhere",
+          "label": "MSRP",
+          "text": "$91,200 / yr",
           "tone": "muted"
         },
         {
-          "label": "MSRP",
-          "text": "$79,500 / yr (was)",
-          "tone": "muted"
-        }
-      ]
-    },
-    {
-      "id": "sample-g",
-      "school": "Sample University G",
-      "program": "Architecture",
-      "tier": "reach",
-      "round": "ED2",
-      "submitted": null,
-      "status": "not_submitted",
-      "decision_expected": "2027-01-05",
-      "next_step": "Upload portfolio by Jan 5",
-      "card_lines": [
-        {
           "label": "Deadline",
-          "text": "ED2 + portfolio due Jan 5",
+          "text": "RD due Jan 1 \u2014 essay draft 2 open",
           "tone": "warn"
         },
         {
-          "label": "MSRP",
-          "text": "$84,200 / yr",
-          "tone": "muted"
+          "label": "Scholarship",
+          "text": "Competitive merit; apply by Jan 1",
+          "tone": "warn"
         },
         {
-          "label": "Why",
-          "text": "Architecture studio match",
+          "label": "Aid forms",
+          "text": "Not started",
+          "tone": "warn"
+        },
+        {
+          "label": "Thackston",
+          "text": "Worth the RD slot if essay lands",
           "tone": "good"
         },
         {
+          "label": "Why",
+          "text": "Open curriculum; small seminars",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Cold winters; limited CS depth",
+          "tone": "muted"
+        },
+        {
           "label": "Confirm",
-          "text": "Portfolio not uploaded",
+          "text": "Portal account not created yet",
           "tone": "warn"
         }
-      ]
+      ],
+      "detail": {
+        "odds": "Reach",
+        "sticker_price_per_year": "$91,200",
+        "why": "Small seminars and an open curriculum."
+      }
     },
     {
       "id": "sample-h",
@@ -323,32 +283,15 @@
       "status": "admitted",
       "decision_expected": "2026-11-20",
       "next_step": "Compare aid offer by Dec 10",
-      "detail": {
-        "history": [
-          {
-            "date": "2026-10-15",
-            "event": "Application submitted (EA)"
-          },
-          {
-            "date": "2026-11-20",
-            "event": "Accepted to the honors college"
-          }
-        ],
-        "odds": "Accepted",
-        "sticker_price_per_year": "$34,800 in-state",
-        "counselor_name": "Counselor A",
-        "counselor_take": "A great result. Wait for the merit letter before deciding anything.",
-        "why": "Placeholder reason: honors housing and guaranteed research spot.",
-        "why_not": "Placeholder concern: very large campus.",
-        "aid_forms_open": [
-          "Scholarship essay",
-          "Honors housing form"
-        ]
-      },
       "card_lines": [
         {
           "label": "MSRP",
           "text": "$34,800 in-state / yr",
+          "tone": "good"
+        },
+        {
+          "label": "Deadline",
+          "text": "Accepted \u00b7 deposit May 1",
           "tone": "good"
         },
         {
@@ -373,10 +316,42 @@
         },
         {
           "label": "Why",
-          "text": "Honors housing + research seat",
+          "text": "Honors housing + guaranteed research",
           "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Very large campus",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "Merit letter not in portal yet",
+          "tone": "warn"
         }
-      ]
+      ],
+      "detail": {
+        "history": [
+          {
+            "date": "2026-10-15",
+            "event": "Application submitted (EA)"
+          },
+          {
+            "date": "2026-11-20",
+            "event": "Accepted to the honors college"
+          }
+        ],
+        "odds": "Accepted",
+        "sticker_price_per_year": "$34,800 in-state",
+        "counselor_name": "Counselor A",
+        "counselor_take": "Wait for the merit letter before deciding.",
+        "why": "Honors housing and research.",
+        "why_not": "Very large campus.",
+        "aid_forms_open": [
+          "Scholarship essay",
+          "Honors housing form"
+        ]
+      }
     },
     {
       "id": "sample-i",
@@ -388,14 +363,6 @@
       "status": "submitted",
       "decision_expected": "2027-03-15",
       "next_step": "Send updated test scores",
-      "detail": {
-        "odds": "Even odds",
-        "sticker_price_per_year": "$71,400",
-        "aid_forms_open": [
-          "FAFSA",
-          "CSS Profile"
-        ]
-      },
       "card_lines": [
         {
           "label": "MSRP",
@@ -408,16 +375,44 @@
           "tone": "warn"
         },
         {
+          "label": "Scholarship",
+          "text": "Auto-merit bands by GPA/test",
+          "tone": "good"
+        },
+        {
           "label": "Aid forms",
           "text": "FAFSA + CSS incomplete",
           "tone": "warn"
         },
         {
+          "label": "Marist data",
+          "text": "Bio research match rate ~40%",
+          "tone": "muted"
+        },
+        {
+          "label": "Thackston",
+          "text": "Solid target if scores update",
+          "tone": "good"
+        },
+        {
           "label": "Why",
           "text": "Biology research track",
-          "tone": null
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Suburban / less urban energy",
+          "tone": "muted"
         }
-      ]
+      ],
+      "detail": {
+        "odds": "Even odds",
+        "sticker_price_per_year": "$71,400",
+        "aid_forms_open": [
+          "FAFSA",
+          "CSS Profile"
+        ]
+      }
     },
     {
       "id": "sample-j",
@@ -429,23 +424,6 @@
       "status": "waitlisted",
       "decision_expected": "2027-05-01",
       "next_step": "Reply to waitlist offer",
-      "detail": {
-        "history": [
-          {
-            "date": "2026-09-30",
-            "event": "Application submitted (rolling)"
-          },
-          {
-            "date": "2026-11-10",
-            "event": "Placed on waitlist"
-          },
-          {
-            "date": "2026-11-12",
-            "event": "Waitlist reply form opened"
-          }
-        ],
-        "why_not": "Placeholder concern: limited aid for waitlisted students."
-      },
       "card_lines": [
         {
           "label": "MSRP",
@@ -459,85 +437,48 @@
         },
         {
           "label": "Scholarship",
-          "text": "Limited aid for waitlisted admits",
+          "text": "Limited aid if later admitted",
           "tone": "warn"
+        },
+        {
+          "label": "Aid forms",
+          "text": "FAFSA on file",
+          "tone": "good"
+        },
+        {
+          "label": "Thackston",
+          "text": "Keep warm but do not bank on it",
+          "tone": "muted"
+        },
+        {
+          "label": "Why",
+          "text": "Rolling admit was a fast path",
+          "tone": "muted"
         },
         {
           "label": "Why not",
           "text": "Aid outlook weak if offered",
-          "tone": "muted"
-        }
-      ]
-    },
-    {
-      "id": "sample-k",
-      "school": "Sample College K",
-      "program": "Liberal Arts",
-      "tier": "target",
-      "round": "EA",
-      "submitted": null,
-      "status": null,
-      "decision_expected": null,
-      "next_step": "Check portal for confirmation email",
-      "card_lines": [
-        {
-          "label": "Confirm",
-          "text": "No portal confirmation email yet",
           "tone": "warn"
         },
         {
-          "label": "Deadline",
-          "text": "EA window \u2014 date not confirmed",
-          "tone": "muted"
-        },
-        {
-          "label": "MSRP",
-          "text": "$68K / yr (est.)",
-          "tone": "muted"
+          "label": "Confirm",
+          "text": "Waitlist form opened Nov 12",
+          "tone": "warn"
         }
-      ]
-    },
-    {
-      "id": "sample-l",
-      "school": "Sample University L",
-      "program": "Nursing",
-      "tier": "target",
-      "round": "EA",
-      "submitted": "2026-11-01",
-      "status": "denied",
-      "decision_expected": "2026-11-21",
-      "next_step": "",
+      ],
       "detail": {
         "history": [
           {
-            "date": "2026-11-01",
-            "event": "Application submitted (EA)"
+            "date": "2026-09-30",
+            "event": "Application submitted (rolling)"
           },
           {
-            "date": "2026-11-21",
-            "event": "Decision released"
+            "date": "2026-11-10",
+            "event": "Placed on waitlist"
           }
         ],
-        "counselor_name": "Counselor A",
-        "counselor_take": "Program capacity was cut this year; this says nothing about the rest of the list."
-      },
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$74,800 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Denied \u2014 program capacity cut",
-          "tone": "muted"
-        },
-        {
-          "label": "Thackston",
-          "text": "Says nothing about the rest of the list",
-          "tone": "good"
-        }
-      ]
+        "why_not": "Limited aid for waitlisted students."
+      }
     },
     {
       "id": "sample-m",
@@ -549,6 +490,53 @@
       "status": "admitted",
       "decision_expected": "2026-10-20",
       "next_step": "Submit housing deposit by May 1",
+      "card_lines": [
+        {
+          "label": "MSRP",
+          "text": "$29,900 in-state / yr",
+          "tone": "good"
+        },
+        {
+          "label": "Deadline",
+          "text": "Accepted \u00b7 housing deposit May 1",
+          "tone": "warn"
+        },
+        {
+          "label": "Scholarship",
+          "text": "Merit award on file",
+          "tone": "good"
+        },
+        {
+          "label": "Aid forms",
+          "text": "FAFSA complete",
+          "tone": "good"
+        },
+        {
+          "label": "Marist data",
+          "text": "In-state net ~$18K after merit",
+          "tone": "good"
+        },
+        {
+          "label": "Thackston",
+          "text": "True safety \u2014 keep the deposit date",
+          "tone": "good"
+        },
+        {
+          "label": "Why",
+          "text": "Strong value; known campus",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Less selective peer group",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "Housing portal opens March",
+          "tone": "muted"
+        }
+      ],
       "detail": {
         "history": [
           {
@@ -565,34 +553,7 @@
         "aid_forms_open": [
           "FAFSA"
         ]
-      },
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$29,900 in-state / yr",
-          "tone": "good"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Merit award on file",
-          "tone": "good"
-        },
-        {
-          "label": "Deadline",
-          "text": "Housing deposit by May 1",
-          "tone": "warn"
-        },
-        {
-          "label": "Aid forms",
-          "text": "FAFSA complete",
-          "tone": "good"
-        },
-        {
-          "label": "Marist data",
-          "text": "In-state net ~$18K after merit",
-          "tone": "good"
-        }
-      ]
+      }
     },
     {
       "id": "sample-n",
@@ -616,13 +577,38 @@
           "tone": null
         },
         {
-          "label": "Confirm",
-          "text": "Nothing due \u2014 wait",
+          "label": "Scholarship",
+          "text": "Engineering dean's scholarship likely",
+          "tone": "good"
+        },
+        {
+          "label": "Aid forms",
+          "text": "FAFSA submitted",
+          "tone": "good"
+        },
+        {
+          "label": "Marist data",
+          "text": "Admit ~64% \u00b7 eng. retention strong",
+          "tone": "muted"
+        },
+        {
+          "label": "Thackston",
+          "text": "Comfortable safety with co-op",
           "tone": "good"
         },
         {
           "label": "Why",
-          "text": "Engineering safety with co-op",
+          "text": "Engineering co-op from year two",
+          "tone": "good"
+        },
+        {
+          "label": "Why not",
+          "text": "Fewer research labs than reaches",
+          "tone": "muted"
+        },
+        {
+          "label": "Confirm",
+          "text": "Nothing due \u2014 wait",
           "tone": "good"
         }
       ]
@@ -637,11 +623,6 @@
       "status": "not_submitted",
       "decision_expected": "2027-02-01",
       "next_step": "Request transcript from school office",
-      "detail": {
-        "odds": "Likely",
-        "sticker_price_per_year": "$41,000",
-        "why": "Placeholder reason: strong business co-op and close to home."
-      },
       "card_lines": [
         {
           "label": "MSRP",
@@ -654,179 +635,60 @@
           "tone": "warn"
         },
         {
-          "label": "Why",
-          "text": "Business co-op; close to home",
-          "tone": "good"
+          "label": "Scholarship",
+          "text": "Business school merit by Feb 1",
+          "tone": "warn"
         },
         {
           "label": "Aid forms",
           "text": "Not started",
           "tone": "warn"
-        }
-      ]
-    },
-    {
-      "id": "sample-p",
-      "school": "Sample Tech P",
-      "program": null,
-      "tier": "safety",
-      "round": "Rolling",
-      "submitted": "2026-10-01",
-      "status": "admitted",
-      "decision_expected": "2026-10-28",
-      "next_step": "Decide on honors invite",
-      "card_lines": [
-        {
-          "label": "MSRP",
-          "text": "$32,400 / yr",
-          "tone": "good"
-        },
-        {
-          "label": "Scholarship",
-          "text": "Honors invite pending decision",
-          "tone": "warn"
-        },
-        {
-          "label": "Confirm",
-          "text": "Accepted \u00b7 rolling",
-          "tone": "good"
-        }
-      ]
-    },
-    {
-      "id": "sample-q",
-      "school": "Sample College Q",
-      "program": "Marine Science",
-      "round": "RD",
-      "submitted": null,
-      "status": "not_submitted",
-      "decision_expected": "2027-01-15",
-      "next_step": "Decide tier with counselor",
-      "card_lines": [
-        {
-          "label": "Confirm",
-          "text": "Tier not set with counselor yet",
-          "tone": "warn"
-        },
-        {
-          "label": "Deadline",
-          "text": "RD due Jan 15",
-          "tone": "warn"
-        },
-        {
-          "label": "MSRP",
-          "text": "$58K / yr (est.)",
-          "tone": "muted"
-        },
-        {
-          "label": "Why",
-          "text": "Marine science field station",
-          "tone": null
-        }
-      ]
-    },
-    {
-      "id": "sample-r",
-      "school": "Sample University R",
-      "program": null,
-      "tier": null,
-      "round": "EA",
-      "submitted": "2026-11-01",
-      "status": null,
-      "decision_expected": "2027-01-20",
-      "next_step": "Confirm application was received",
-      "detail": {
-        "history": [
-          {
-            "date": "2026-11-01",
-            "event": "Submitted through the common portal"
-          }
-        ],
-        "counselor_take": "Placeholder note: no confirmation yet; call admissions if nothing arrives this week."
-      },
-      "card_lines": [
-        {
-          "label": "Confirm",
-          "text": "Submitted \u2014 no confirmation yet",
-          "tone": "warn"
-        },
-        {
-          "label": "Deadline",
-          "text": "EA decision Jan 20",
-          "tone": null
         },
         {
           "label": "Thackston",
-          "text": "Call admissions if quiet this week",
-          "tone": "warn"
-        },
-        {
-          "label": "MSRP",
-          "text": "$72K / yr",
-          "tone": "muted"
-        }
-      ]
-    },
-    {
-      "id": "sample-s",
-      "school": "Sample Academy S",
-      "program": "Music",
-      "tier": "other",
-      "round": "ED",
-      "submitted": "2026-11-01",
-      "status": "submitted",
-      "decision_expected": "2026-12-18",
-      "next_step": "Prepare audition recording",
-      "card_lines": [
-        {
-          "label": "Deadline",
-          "text": "ED + audition recording",
-          "tone": "warn"
-        },
-        {
-          "label": "MSRP",
-          "text": "$81,000 / yr",
-          "tone": "muted"
-        },
-        {
-          "label": "Why",
-          "text": "Conservatory-level music faculty",
+          "text": "File if H does not clear aid",
           "tone": "good"
         },
         {
-          "label": "Confirm",
-          "text": "Audition not recorded",
-          "tone": "warn"
-        }
-      ]
-    },
-    {
-      "id": "sample-t",
-      "school": "Sample College T",
-      "program": "Data Science",
-      "tier": "target",
-      "round": "RD",
-      "submitted": null,
-      "status": "not_submitted",
-      "decision_expected": null,
-      "next_step": "Look up the application deadline",
-      "card_lines": [
-        {
-          "label": "Confirm",
-          "text": "Deadline still unknown",
-          "tone": "warn"
+          "label": "Why",
+          "text": "Business co-op; close to home",
+          "tone": "good"
         },
         {
-          "label": "MSRP",
-          "text": "$69K / yr (catalog)",
+          "label": "Why not",
+          "text": "Less of a stretch academically",
           "tone": "muted"
         },
         {
-          "label": "Why",
-          "text": "Data science major option",
-          "tone": null
+          "label": "Confirm",
+          "text": "Transcript not requested",
+          "tone": "warn"
+        },
+        {
+          "label": "Marist data",
+          "text": "Regional business placement solid",
+          "tone": "muted"
         }
-      ]
+      ],
+      "detail": {
+        "odds": "Likely",
+        "sticker_price_per_year": "$41,000",
+        "why": "Strong business co-op and close to home."
+      }
+    }
+  ],
+  "also_active": [
+    {
+      "school": "Sample Community College U",
+      "note": "Dual-enrollment spring term only"
+    },
+    {
+      "school": "Sample Online University V",
+      "note": "Backup online BS if aid falls through"
+    },
+    {
+      "school": "Sample Gap Year W",
+      "note": "Counselor exploring a deferred start"
     }
   ],
   "roi": {
@@ -843,26 +705,6 @@
         "biz_earnings": 72000,
         "earnings_proxy": false,
         "roi": 4.0,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample Tech P",
-        "tier": "likely",
-        "net_cost_per_year": 21400,
-        "admit_odds_pct": 78,
-        "biz_earnings": 81000,
-        "earnings_proxy": false,
-        "roi": 3.8,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample University H",
-        "tier": "target",
-        "net_cost_per_year": 26800,
-        "admit_odds_pct": 54,
-        "biz_earnings": 88000,
-        "earnings_proxy": false,
-        "roi": 3.3,
         "cost_estimated": false
       },
       {
@@ -886,6 +728,16 @@
         "cost_estimated": false
       },
       {
+        "school": "Sample State University H",
+        "tier": "target",
+        "net_cost_per_year": 26800,
+        "admit_odds_pct": 54,
+        "biz_earnings": 88000,
+        "earnings_proxy": false,
+        "roi": 3.3,
+        "cost_estimated": false
+      },
+      {
         "school": "Sample College I",
         "tier": "target",
         "net_cost_per_year": 34200,
@@ -893,6 +745,16 @@
         "biz_earnings": 91000,
         "earnings_proxy": false,
         "roi": 2.7,
+        "cost_estimated": false
+      },
+      {
+        "school": "Sample University J",
+        "tier": "target",
+        "net_cost_per_year": 36500,
+        "admit_odds_pct": 33,
+        "biz_earnings": 78000,
+        "earnings_proxy": false,
+        "roi": 2.1,
         "cost_estimated": false
       },
       {
@@ -904,16 +766,6 @@
         "earnings_proxy": false,
         "roi": 2.5,
         "cost_estimated": false
-      },
-      {
-        "school": "Sample College F",
-        "tier": "target",
-        "net_cost_per_year": 40100,
-        "admit_odds_pct": 36,
-        "biz_earnings": 94000,
-        "earnings_proxy": true,
-        "roi": 2.3,
-        "cost_estimated": true
       },
       {
         "school": "Sample University A",
@@ -944,36 +796,6 @@
         "earnings_proxy": true,
         "roi": 2.2,
         "cost_estimated": true
-      },
-      {
-        "school": "Sample University J",
-        "tier": "target",
-        "net_cost_per_year": 36500,
-        "admit_odds_pct": 33,
-        "biz_earnings": 78000,
-        "earnings_proxy": false,
-        "roi": 2.1,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample University R",
-        "tier": "target",
-        "net_cost_per_year": 42200,
-        "admit_odds_pct": 28,
-        "biz_earnings": 86000,
-        "earnings_proxy": false,
-        "roi": 2.0,
-        "cost_estimated": false
-      },
-      {
-        "school": "Sample Academy S",
-        "tier": "reach",
-        "net_cost_per_year": 55600,
-        "admit_odds_pct": 7,
-        "biz_earnings": 105000,
-        "earnings_proxy": true,
-        "roi": 1.9,
-        "cost_estimated": true
       }
     ],
     "footnotes": [
@@ -981,19 +803,5 @@
       "Net cost is sticker price minus average need-based aid only \u2014 merit awards are ignored.",
       "Ceiling line marks a household soft budget of $45K per year before aid stacking."
     ]
-  },
-  "also_active": [
-    {
-      "school": "Sample Community College U",
-      "note": "Dual-enrollment spring term only"
-    },
-    {
-      "school": "Sample Online University V",
-      "note": "Backup online BS if aid falls through"
-    },
-    {
-      "school": "Sample Gap Year W",
-      "note": "Counselor exploring a deferred start"
-    }
-  ]
+  }
 }
