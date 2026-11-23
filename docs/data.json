@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T02:00:19.361Z",
+ "generatedAt": "2026-11-23T02:15:11.474Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T02:00:19.361Z",
+  "at": "2026-11-23T02:15:11.474Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "cfbScoreboard",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13683,62 +13683,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T02:00:19.361Z",
-  "lastAttempt": "2026-11-23T02:00:19.361Z",
+  "asOf": "2026-11-23T02:15:11.474Z",
+  "lastAttempt": "2026-11-23T02:15:11.474Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7083,
-    "lastTime": 1795398618,
+    "last": 7081.75,
+    "lastTime": 1795399518,
     "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 139.25,
-    "changePct": 2.0054005400540054,
-    "expectedOpen": 7048.970998379838,
+    "change": 138,
+    "changePct": 1.9873987398739874,
+    "expectedOpen": 7047.727003780378,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25830,
-    "lastTime": 1795398618,
+    "last": 25809.75,
+    "lastTime": 1795399518,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 688,
-    "changePct": 2.7364569246678863,
-    "expectedOpen": 23236.656493516824,
+    "change": 667.75,
+    "changePct": 2.655914406172938,
+    "expectedOpen": 23218.439602537586,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49000,
-    "lastTime": 1795398615,
+    "last": 48999,
+    "lastTime": 1795399518,
     "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 766,
-    "changePct": 1.5880913878177219,
-    "expectedOpen": 48911.95360119418,
+    "change": 765,
+    "changePct": 1.5860181614628686,
+    "expectedOpen": 48910.95539805946,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2636.4,
-    "lastTime": 1795398614,
+    "last": 2635.9,
+    "lastTime": 1795399516,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 48.00009765625009,
-    "changePct": 1.8544312883332617,
+    "change": 47.50009765625009,
+    "changePct": 1.835114335046899,
     "expectedOpen": null,
     "valid": true
    }
@@ -13762,9 +13762,9 @@
     "id": "401873077",
     "start": "2026-11-23T01:20Z",
     "state": "in",
-    "status": "Q1 1:13",
-    "period": 1,
-    "clock": "1:13",
+    "status": "Q2 10:53",
+    "period": 2,
+    "clock": "10:53",
     "completed": false,
     "away": {
      "name": "Minnesota Vikings",
@@ -13783,7 +13783,7 @@
      "short": "49ers",
      "id": "25",
      "abbrev": "SF",
-     "score": "7",
+     "score": "14",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/sf.png",
      "record": "8-1",
      "winner": false,
@@ -14188,8 +14188,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T02:00:19.361Z",
-  "lastAttempt": "2026-11-23T02:00:19.361Z",
+  "asOf": "2026-11-23T02:15:11.474Z",
+  "lastAttempt": "2026-11-23T02:15:11.474Z",
   "lastError": null
  },
  "alerts": {
@@ -14200,8 +14200,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T02:00:19.361Z",
-  "lastAttempt": "2026-11-23T02:00:19.361Z",
+  "asOf": "2026-11-23T02:15:11.474Z",
+  "lastAttempt": "2026-11-23T02:15:11.474Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14877,7 +14877,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T02:00:19.361Z",
+  "lastAttempt": "2026-11-23T02:15:11.474Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15885,6 +15885,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "U.N. climate summit ends without deal after contentious fossil fuel debate",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/",
+    "pub": "2026-11-23T01:57:22.000Z",
+    "sum": "COP31, the latest installment of the United Nations' annual climate conference, ended Sunday without a final agreement after days of contentious talks collapsed."
+   },
+   {
+    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
+    "pub": "2026-11-23T01:49:01.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Iranian president turns out office lights to urge citizens to save energy",
     "src": "The Washington Post",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
@@ -15974,13 +15988,6 @@
     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSHNFQ2hvQUxyR05zYXIyVjczNjE3eEVLWWhMdk1mS01BQV91dy03OU5SSzVzbzlvVk1ManQ2TFhqU2xkRkhZcGthVlZad0E1aVRKU1E5ZWxJTWRQVG5UYmFYYmcxZGJ1TFc1YzE0a2E4XzQ4SGJLNjNlc0otTGhGRnRWTHpmeW1mWnVBLTNhYmFLU3JOUTVfSTliN19fMG9rRWlmeFdKNHFSU1JVTTdnQUNhUlBUWmRSTDVXUUJuUW9fNEV2cjNWdTlPZw?oc=5",
     "pub": "2026-11-22T21:44:25.000Z",
     "sum": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
-   },
-   {
-    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
-    "pub": "2026-11-22T21:19:01.000Z",
-    "sum": ""
    },
    {
     "hd": "Russian warship struck by suspected Ukrainian drones at Libya naval base",
@@ -16086,13 +16093,6 @@
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNM1VMUS1oUkxlYzRWaDg5WjNPbGJoV2t1LTlRNkVMWnF6a3Q3aUljXzlCal9hWmdhWnlkYzdKNjdFVGdwVk1WUFFucGdfbUlnY3RtUjBsdFBxVTdmTGNjcnJ1a0VDNnk5eFh5NDdWaGNWcjNWcFI2WkoxZnFUbkI5UHZ6YTdYZUVMa19Ldk5YTERtX3ZialpvbjI4eFVoQ0Eyd2l0NGxoVQ?oc=5",
     "pub": "2026-11-22T17:19:43.000Z",
     "sum": ""
-   },
-   {
-    "hd": "US intelligence chief says Putin is 'not America's friend in Ukraine'",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNlR0aUswLUVNUWNuMk05NmJBSElCMzV6RWxDV2V4TmFicUFZWUFJR2pzQnd2VmNvQzhQTWtHTXZsMkkzcGMweEUyRE1FUlU1aXk5QkZCTk0tRE5fX1k2aU9jMmtOTndlTlVkaU5rT011UGgyMU1XX0JBQ3ZCb05qcEZYV3U2c003c3F3ZkRZamtvb3lDak8zR2o0dnJueWl6UkJ5RzBhTV9yUkpoaFVDVg?oc=5",
-    "pub": "2026-11-22T17:16:03.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16111,8 +16111,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T01:45:10.807Z",
-  "lastAttempt": "2026-11-23T01:45:10.807Z",
+  "asOf": "2026-11-23T02:15:11.474Z",
+  "lastAttempt": "2026-11-23T02:15:11.474Z",
   "lastError": null
  }
 }
