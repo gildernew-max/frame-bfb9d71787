@@ -54,23 +54,20 @@
   .line.nolab{grid-template-columns:minmax(0,1fr)}
   .lines,.d-lines{display:flex;flex-direction:column;gap:8px;min-width:0}
 
-  /* Logos — dark plate by default; light plates use warm linen (not bright cream). */
-  .logo{flex:none;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  /* Logos — dark plate by default; light plates use warm linen (not bright cream).
+     Plate boxes hug the rendered logo aspect (wide wordmarks stay short; square marks stay ~100px tall). */
+  .logo{flex:none;position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;
     border-radius:10px;background:#1E2128;border:1px solid var(--hair);box-sizing:border-box}
   .logo.on-light{background:#E8E6E0;border:1px solid rgba(255,255,255,.08);border-radius:10px}
   .logo.on-dark{background:#1E2128;border:1px solid var(--hair)}
-  .logo-sm{width:84px;height:28px;border-radius:8px;padding:3px 6px}
-  /* Detail logo: hug natural aspect (wide wordmarks stay short — no tall empty plate). */
-  .logo-lg{width:720px;max-width:720px;height:auto;max-height:220px;border-radius:10px;padding:12px 18px}
-  /* Popup header logo: height ~100px viewport (min 90), width auto, max ~360px viewport (stage 2×). */
-  .logo-pop{width:auto;max-width:720px;height:200px;min-height:180px;border-radius:10px;padding:10px 14px;
-    display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+  .logo-sm{width:84px;height:28px;border-radius:8px;padding:3px 6px;display:flex}
+  /* Detail + popup: width/height auto from the image; max ~360×100 viewport (stage 2×). */
+  .logo-lg,.logo-pop{width:auto;max-width:720px;height:auto;min-height:0;border-radius:10px;padding:10px 14px;
+    align-self:flex-start;flex:none}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-  .logo-lg img{width:100%;height:auto;max-height:196px;object-fit:contain;object-position:center}
-  .logo-pop img{height:100%;width:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
+  .logo-lg img,.logo-pop img{width:auto;height:auto;max-width:692px;max-height:200px;object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
-  .logo-lg .mono{font-size:64px;letter-spacing:.1em}
-  .logo-pop .mono{font-size:52px;letter-spacing:.08em}
+  .logo-lg .mono,.logo-pop .mono{font-size:56px;letter-spacing:.08em;line-height:1;padding:8px 4px}
   .logo.on-light .mono{color:#1A1C20}
   .logo:not(.mono-only) .mono{display:none}
   .logo.mono-only .mono{display:block}
@@ -96,24 +93,24 @@
     border-bottom:2px solid rgba(var(--t),.55)}
   .col-head .t{font-size:var(--t1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--t))}
   .col-head .c{font-size:var(--t1);font-weight:500;letter-spacing:.1em;color:var(--dim)}
-  /* Tight column density so 5 Safety tiles fit one 1920×1080 screen with no overflow cue */
-  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:4px;overflow:visible;padding:8px 8px;box-sizing:border-box}
-  .col-cue{flex:none;height:16px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:16px;color:var(--dim)}
+  /* Couch-readable density: fill most of 1920×1080; layoutBoard shrinks if Safety would overflow */
+  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:visible;padding:12px 10px;box-sizing:border-box}
+  .col-cue{flex:none;height:18px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:16px;color:var(--dim)}
 
-  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:3px;padding:8px 10px 8px 14px;border-radius:8px;
+  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:6px;padding:12px 14px 14px 18px;border-radius:8px;
     border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none;z-index:0;
     transform:scale(1);transform-origin:center center;
     transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
-  .card::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:0 2px 2px 0;background:var(--c)}
+  .card::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 2px 2px 0;background:var(--c)}
   /* Admitted tiles: crisp green left bar so accepts pop at a glance from the couch */
-  .card.admitted::before{background:var(--admit-bar);width:4px;top:4px;bottom:4px}
+  .card.admitted::before{background:var(--admit-bar);width:4px;top:6px;bottom:6px}
   .card.denied,.card.withdrawn{opacity:.78}
   /* Warm Daybreak gold ring + subtle lift — neighbors stay fully readable (no dimming) */
   .card.focus{border-color:var(--focus-ring);opacity:1;filter:none;z-index:6;
     transform:scale(1.02) translateY(-4px);
     box-shadow:0 0 0 12px var(--focus-ring),0 0 28px 8px rgba(230,184,76,.35),0 12px 22px rgba(0,0,0,.4)}
-  .name-row{flex:none;display:flex;align-items:center;gap:8px;min-width:0}
-  .name{flex:1;min-width:0;font:400 26px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
+  .name-row{flex:none;display:flex;align-items:center;gap:10px;min-width:0}
+  .name{flex:1;min-width:0;font:400 30px/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .name .prog{color:var(--muted);font-weight:400}
   .rank-pill{flex:none;font-size:var(--t1);font-weight:500;letter-spacing:.08em;color:var(--muted);
@@ -128,18 +125,20 @@
   .tag.new-marist{--c:#1A1508;--cb:rgba(255,210,74,.95);--cf:#FFD24A;font-weight:700;letter-spacing:.14em}
   .tag.new-marist-who{--c:#FFD24A;--cb:rgba(255,210,74,.4);--cf:rgba(255,210,74,.1);
     max-width:46%;overflow:hidden;text-overflow:ellipsis}
-  #cols{--line-size:18px;--lab-size:16px}
-  #cols .lab{font-size:var(--lab-size);-webkit-line-clamp:1;max-height:1.2em;line-height:1.2}
-  #cols .txt{font-size:var(--line-size);-webkit-line-clamp:1;max-height:1.25em;line-height:1.25}
-  #cols .lines{gap:2px}
-  #cols .line{gap:6px}
-  #cols .tags{gap:4px}
-  #cols .tag{padding:1px 7px;font-size:16px}
-  #cols .rank-pill{font-size:16px;padding:2px 8px}
-  #cols .logo-sm{width:72px;height:24px;padding:2px 5px}
-  .step{flex:none;margin-top:0;padding-top:4px;border-top:1px solid var(--hair);font-size:17px;line-height:1.2;font-weight:400;color:var(--muted);
-    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;max-height:1.2em}
-  .step b{font-weight:500;color:var(--dim);font-size:14px;letter-spacing:.12em;text-transform:uppercase;margin-right:6px}
+  #cols{--line-size:22px;--lab-size:18px}
+  #cols .lab{font-size:var(--lab-size);-webkit-line-clamp:1;max-height:1.25em;line-height:1.25}
+  /* One couch-readable line per row keeps 5 Safety tiles on-screen at the larger type size */
+  #cols .txt{font-size:var(--line-size);-webkit-line-clamp:1;max-height:1.35em;line-height:1.35}
+  #cols .lines{gap:5px}
+  #cols .line{gap:8px}
+  #cols .tags{gap:6px}
+  #cols .tag{padding:3px 9px;font-size:18px}
+  #cols .rank-pill{font-size:18px;padding:3px 9px}
+  #cols .logo-sm{width:78px;height:26px;padding:2px 6px}
+  /* Extra breathing room above NEXT so it does not hug the card bottom edge */
+  .step{flex:none;margin-top:6px;padding:12px 0 2px;border-top:1px solid var(--hair);font-size:20px;line-height:1.3;font-weight:400;color:var(--muted);
+    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden;max-height:1.3em}
+  .step b{font-weight:500;color:var(--dim);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-right:8px}
 
   .also{flex:none;display:flex;align-items:baseline;gap:16px;padding:8px 0;border-top:1px solid var(--hair);min-width:0}
   .also[hidden]{display:none!important}
@@ -161,12 +160,13 @@
 
   /* Detail */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:200px;position:relative;overflow:visible}
-  /* Hero: logo (~360×150) | name+program+rank+chips | inline Aug–May weather table */
-  .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
-    min-height:300px}
+  /* Hero: logo (aspect-hugging plate) | name+program+rank+chips | inline Aug–May weather table.
+     align-items:flex-start so the logo plate is never stretched tall by the weather column. */
+  .d-hero{flex:none;display:flex;align-items:flex-start;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
+    min-height:0}
   /* ~420px min on the 1920 viewport (stage is 2×). Weather flexes to fill the rest. */
   .d-hero-main{flex:0 1 auto;min-width:840px;max-width:48%;display:flex;flex-direction:column;justify-content:center;gap:10px;
-    border-left:4px solid var(--accent,var(--gold));padding-left:14px}
+    border-left:4px solid var(--accent,var(--gold));padding-left:14px;align-self:stretch}
   .d-hero-title{min-width:0}
   /* School ~44px viewport; wrap allowed, never clipped. Underline under the school name only. */
   .d-hero h2{margin:0;font:300 88px/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;min-width:0;
@@ -180,7 +180,7 @@
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
   /* Inline monthly weather — fills remaining hero width; columns shrink slightly vs name block. */
-  .wx-month-band{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;
+  .wx-month-band{flex:1 1 0;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;
     padding:6px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);box-sizing:border-box}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
   .wx-month-table th,.wx-month-table td{padding:2px 2px;text-align:center;vertical-align:middle;
@@ -1179,7 +1179,7 @@
   function layoutCol(ci){
     var col=state.cols[ci], body=$('col-body-'+ci), cue=$('col-cue-'+ci);
     if(!body)return;
-    var cards=body.querySelectorAll('.card'), i, gap=4, avail=body.clientHeight;
+    var cards=body.querySelectorAll('.card'), i, gap=8, avail=body.clientHeight;
     for(i=0;i<cards.length;i++){cards[i].style.display='';cards[i].style.flex='none';}
     var hs=[], allH=0;
     for(i=0;i<cards.length;i++){hs.push(cards[i].offsetHeight);allH+=hs[i]+(i?gap:0);}
@@ -1200,7 +1200,7 @@
     cue.style.visibility=above||below?'visible':'hidden';
   }
   function layoutBoard(){
-    var i, gap=4, sizes=[18,16,15,14], si, needShrink;
+    var i, gap=8, sizes=[22,20,18,17], si, needShrink;
     for(si=0;si<sizes.length;si++){
       setBoardLineSize(sizes[si]);
       needShrink=false;
