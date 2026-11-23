@@ -51,17 +51,17 @@
 
   /* Logos */
   .logo{flex:none;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
-    border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--hair)}
-  .logo.on-light{background:#F4F1EA;border-color:rgba(0,0,0,.06)}
-  .logo-sm{width:28px;height:28px;border-radius:6px}
-  .logo-lg{width:96px;height:96px;border-radius:12px}
-  .logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4px;display:block}
-  .logo-lg img{padding:8px}
-  .logo .mono{font-size:11px;font-weight:600;letter-spacing:.06em;color:var(--ink);line-height:1}
-  .logo-lg .mono{font-size:28px;letter-spacing:.08em}
+    border-radius:8px;background:#1E2128;border:1px solid var(--hair);box-sizing:border-box}
+  .logo.on-light{background:#F4F1EA;border-color:transparent}
+  .logo.on-dark{background:#1E2128;border:1px solid var(--hair)}
+  .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
+  .logo-lg{width:220px;height:96px;border-radius:10px;padding:12px 16px}
+  .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+  .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
+  .logo-lg .mono{font-size:28px;letter-spacing:.1em}
   .logo.on-light .mono{color:#1A1C20}
-  .logo:not(.mono-only) .mono{opacity:0}
-  .logo.mono-only .mono{opacity:1}
+  .logo:not(.mono-only) .mono{display:none}
+  .logo.mono-only .mono{display:block}
   .logo.mono-only img{display:none!important}
 
   /* Header */
@@ -131,33 +131,35 @@
 
   /* Detail */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px;--line-size:24px;--lab-size:20px}
-  .d-hero{flex:none;display:flex;align-items:stretch;gap:24px;min-width:0;padding-bottom:16px;border-bottom:1px solid var(--hair)}
-  .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:12px}
-  .d-hero-top{display:flex;align-items:center;gap:16px;min-width:0}
-  .d-hero h2{margin:0;font:300 var(--t4)/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
+  /* One compact hero band: logo | name+rank+chips (centered) | weather */
+  .d-hero{flex:none;display:flex;align-items:center;gap:20px;min-width:0;padding-bottom:12px;border-bottom:1px solid var(--hair)}
+  .d-hero-main{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px}
+  .d-hero-top{display:flex;align-items:baseline;gap:12px;min-width:0}
+  .d-hero h2{margin:0;font:300 44px/1.1 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;flex:1;min-width:0;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .d-hero h2 .prog{color:var(--muted)}
+  .d-hero .rank-pill{flex:none;align-self:center}
   .d-hero .tags{gap:8px}
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
   /* Big weather panel — room-readable, top-right of detail hero */
-  .wx-panel{flex:none;width:720px;display:flex;flex-direction:column;gap:12px;padding:16px 20px;border:1px solid var(--hair);
+  .wx-panel{flex:none;width:640px;display:flex;flex-direction:column;gap:8px;padding:12px 16px;border:1px solid var(--hair);
     border-radius:8px;background:var(--panel);min-width:0}
-  .wx-live{display:flex;align-items:center;gap:20px;min-width:0}
+  .wx-live{display:flex;align-items:center;gap:16px;min-width:0}
   .wx-live[hidden]{display:none!important}
   .wx-icon{flex:none;width:120px;height:120px;color:var(--gold)}
   .wx-icon svg{display:block;width:100%;height:100%}
-  .wx-now{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+  .wx-now{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
   .wx-temp{font:200 72px/.9 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.04em;color:var(--ink);
     font-feature-settings:"tnum" 1,"lnum" 1}
-  .wx-temp span{font-size:36px;font-weight:300;margin-left:2px;color:var(--muted)}
-  .wx-cond{font-size:var(--t3);font-weight:400;color:var(--ink);letter-spacing:-.01em}
-  .wx-range{font-size:var(--t2);font-weight:400;color:var(--muted)}
+  .wx-temp span{font-size:32px;font-weight:300;margin-left:2px;color:var(--muted)}
+  .wx-cond{font-size:var(--t2);font-weight:400;color:var(--ink);letter-spacing:-.01em}
+  .wx-range{font-size:var(--t1);font-weight:400;color:var(--muted)}
   .wx-place{font-size:var(--t1);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
-  .wx-normals{display:flex;flex-direction:column;gap:6px;padding-top:8px;border-top:1px solid var(--hair)}
-  .wx-normals .line{grid-template-columns:100px minmax(0,1fr);gap:10px}
+  .wx-normals{display:flex;flex-direction:column;gap:4px;padding-top:8px;border-top:1px solid var(--hair)}
+  .wx-normals .line{grid-template-columns:72px minmax(0,1fr);gap:8px}
   .wx-normals .lab{font-size:var(--t1);text-align:right}
-  .wx-normals .txt{font-size:var(--t2);-webkit-line-clamp:2;max-height:calc(2 * 1.35em)}
+  .wx-normals .txt{font-size:var(--t1);line-height:1.3;-webkit-line-clamp:1;max-height:1.3em}
   .wx-panel.wx-waiting .wx-live{opacity:.35}
 
   .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
@@ -336,7 +338,7 @@
     if(!d)return false;
     if(d.history&&d.history.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
-    var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points'], i;
+    var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
   }
@@ -360,9 +362,11 @@
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
-    out.weather=cleanLabeled(d.weather);
+    out.weather=cleanLabeled(d.weather,4);
     out.why_points=cleanLabeled(d.why_points,8);
     out.why_not_points=cleanLabeled(d.why_not_points,8);
+    out.student_likes=cleanLabeled(d.student_likes,8);
+    out.student_dislikes=cleanLabeled(d.student_dislikes,8);
     out.scattergram_url=str(d.scattergram_url)||null;
     return out;
   }
@@ -493,8 +497,8 @@
     return (a+b).toUpperCase();
   }
   function logoHtml(s,size){
-    var light=s.logo&&s.logo.background==='light';
-    var cls='logo logo-'+(size==='lg'?'lg':'sm')+(light?' on-light':'');
+    var bg=s.logo&&s.logo.background==='light'?'light':'dark';
+    var cls='logo logo-'+(size==='lg'?'lg':'sm')+(bg==='light'?' on-light':' on-dark');
     var mono='<span class="mono">'+esc(monogram(s))+'</span>';
     if(!s.logo)return '<div class="'+cls+' mono-only" aria-hidden="true">'+mono+'</div>';
     var src='logos/'+encodeURIComponent(s.logo.file);
@@ -681,8 +685,22 @@
     if(prose)return '<p class="prose">'+esc(prose)+'</p>';
     return '';
   }
+  function weatherNormals(rows){
+    // Prefer Jan / Jul / Rain / Snow when present; otherwise first four rows.
+    if(!rows||!rows.length)return [];
+    var want=['jan','jul','rain','snow'], picked=[], used={}, i, j, lab, key;
+    for(i=0;i<want.length;i++){
+      for(j=0;j<rows.length;j++){
+        lab=String(rows[j].label||'').toLowerCase();
+        if(lab.indexOf(want[i])===0||lab===want[i]){picked.push(rows[j]);used[j]=1;break;}
+      }
+    }
+    if(picked.length>=4)return picked.slice(0,4);
+    for(j=0;j<rows.length&&picked.length<4;j++)if(!used[j])picked.push(rows[j]);
+    return picked.slice(0,4);
+  }
   function wxPanelHtml(s){
-    var d=s.detail||{}, hasNorm=d.weather&&d.weather.length, hasLoc=!!s.location;
+    var d=s.detail||{}, norms=weatherNormals(d.weather), hasNorm=norms.length>0, hasLoc=!!s.location;
     if(!hasNorm&&!hasLoc)return '';
     var place='';
     if(s.location)place=(s.location.city||'')+(s.location.city&&s.location.state?', ':'')+(s.location.state||'');
@@ -696,7 +714,7 @@
           (place?'<div class="wx-place">'+esc(place)+'</div>':'')+
         '</div>'+
       '</div>'+
-      (hasNorm?'<div class="wx-normals">'+dLines(d.weather)+'</div>':'')+
+      (hasNorm?'<div class="wx-normals">'+dLines(norms)+'</div>':'')+
     '</aside>';
   }
   function renderDetail(s){
@@ -725,6 +743,13 @@
       parts.push('<section class="d-sec why-pair"><div class="why-cols">'+
         '<div class="why-col"><div class="sec-h"><span>Why</span></div>'+(whyL||'<p class="prose">\u2014</p>')+'</div>'+
         '<div class="why-col"><div class="sec-h"><span>Why not</span></div>'+(whyR||'<p class="prose">\u2014</p>')+'</div>'+
+        '</div></section>');
+    }
+    var love=whyBody(d.student_likes,null), gripe=whyBody(d.student_dislikes,null);
+    if(love||gripe){
+      parts.push('<section class="d-sec why-pair"><div class="why-cols">'+
+        '<div class="why-col"><div class="sec-h"><span>Students love</span></div>'+(love||'<p class="prose">\u2014</p>')+'</div>'+
+        '<div class="why-col"><div class="sec-h"><span>Students gripe</span></div>'+(gripe||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
     if(d.counselor_take)parts.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
