@@ -175,12 +175,7 @@
   .wx-normals-fallback .lab{font-size:20px}
   .wx-normals-fallback .txt{font-size:24px;-webkit-line-clamp:1;max-height:1.2em}
   .card .line.wx-line .lab{color:var(--gold)}
-  .d-page-ind{position:absolute;right:8px;bottom:0;z-index:2;font-size:var(--t1);font-weight:500;
-    letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:6px 12px;border-radius:6px;
-    border:1px solid var(--hair);background:rgba(12,13,16,.85);pointer-events:none}
-  .d-page-ind b{font-weight:600;color:var(--accent,var(--gold));margin:0 6px}
-
-  .marist-body{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .marist-body{display:flex;flex-direction:column;gap:8px;min-width:0}
   .marist-year{font-size:var(--line-size,var(--t2));font-weight:600;color:var(--ink);letter-spacing:.02em}
   .marist-year b{font-weight:700;color:var(--accent,var(--gold));margin-right:8px}
   .marist-names{display:grid;grid-template-columns:1fr;gap:4px 16px;margin:4px 0 0;font-size:var(--line-size,var(--t2));
@@ -192,19 +187,25 @@
   .marist-empty{margin:0;font-size:var(--line-size,var(--t2));font-weight:400;color:var(--muted)}
   .marist-note{margin:4px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.3}
 
-  .d-body{flex:1;min-height:0;column-count:4;column-gap:16px;overflow:hidden}
-  .d-body.page-fit-2{column-count:3}
-  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 12px;
+  .d-body{flex:1;min-height:0;column-count:4;column-gap:12px;overflow:hidden}
+  .d-sec{display:inline-block;width:100%;vertical-align:top;box-sizing:border-box;margin:0 0 8px;
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
-    padding:12px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
+    padding:8px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
   #detail .lab{font-size:var(--lab-size)}
   #detail .txt{font-size:var(--line-size)}
-  .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink)}
-  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0}
+  /* Section titles stay clearly larger than body (≥18px floor). */
+  #detail .sec-h{margin:0 0 6px;padding-bottom:3px;gap:8px}
+  #detail .sec-h::before{width:18px;height:3px}
+  #detail .sec-h span{font-size:28px}
+  #detail .d-lines{gap:4px}
+  #detail .line{gap:8px}
+  .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.3;font-weight:400;color:var(--ink);
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;max-height:calc(5 * 1.3em)}
+  .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
   .why-pair .why-col{min-width:0}
-  .why-pair .why-col .sec-h{margin-bottom:6px}
-  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+  .why-pair .why-col .sec-h{margin-bottom:4px}
+  .why-bullets{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
   .why-bullets li{position:relative;padding:0 0 0 16px;font-size:var(--line-size,var(--t2));line-height:1.35;font-weight:400;color:var(--ink);
     overflow-wrap:break-word;word-break:normal;display:block;-webkit-line-clamp:unset;max-height:none;overflow:visible}
   .why-bullets li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
@@ -777,13 +778,7 @@
   function setHints(){
     var h;
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
-    else if(state.view==='detail'){
-      h='<span><b>Back</b>Board</span>';
-      if(state.detailPages>1){
-        if(state.detailPage<state.detailPages)h+='<span><b>\u25b6\u25bc</b>Page '+(state.detailPage+1)+'</span>';
-        if(state.detailPage>1)h+='<span><b>\u25c0\u25b2</b>Page '+(state.detailPage-1)+'</span>';
-      }
-    }
+    else if(state.view==='detail')h='<span><b>Back</b>Board</span>';
     else if(state.chipFocus)h='<span><b>OK</b>ROI Ladder</span><span><b>\u25bc</b>Schools</span><span><b>Back</b>Daybreak</span>';
     else h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Move</span>'+(focusedSchool()&&focusedSchool().hasDetail?'<span><b>OK</b>Details</span>':'')+(state.roi?'<span><b>\u25b2</b>ROI</span>':'')+'<span><b>Back</b>Daybreak</span>';
     $('hints').innerHTML=h;
@@ -947,8 +942,9 @@
         '<div class="tags">'+tagsHtml(s,true)+'</div>'+
       '</div>'+(wxBand||'')+'</div>';
   }
-  function maristHtml(m){
+  function maristHtml(m, nameLimit){
     if(!m)return '';
+    var lim=nameLimit!=null?nameLimit:6;
     var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
     var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
     var body='', names='', i, shown, extra, cols;
@@ -956,7 +952,7 @@
       body='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
     }else{
       if(c27.length){
-        shown=c27.slice(0,8); extra=c27.length-shown.length; cols=shown.length>4?' cols-2':'';
+        shown=c27.slice(0,lim); extra=c27.length-shown.length; cols=shown.length>4?' cols-2':'';
         names='';
         for(i=0;i<shown.length;i++){
           names+='<div>'+esc(shown[i].name)+(shown[i].major?' \u2014 '+esc(shown[i].major):'')+'</div>';
@@ -973,121 +969,111 @@
     else if(m.source)body+='<p class="marist-note">'+esc(m.source)+'</p>';
     return dSec('marist','Marist classmates','<div class="marist-body">'+body+'</div>');
   }
-  function renderDetail(s){
-    var d=s.detail||{}, page1=[], page2=[], i, snap=[], li='', whyL, whyR, acad, accent, wxBand='';
-    var page, ind='', usePages;
-    accent=readableAccent(s.accent||'#C9A86A');
-    // Page 1: Snapshot, On the board, Why/Why not, students, Deadlines, Marist (fill right column)
-    // Page 2: About, Academics, Internships, Alumni, Facts, Housing, Costs, Counselor, Status history
-    // Weather sits in the hero row (logo | name | table) on both pages.
+  function trimRows(rows, limit){
+    if(!rows||!rows.length)return [];
+    if(rows.length<=limit)return rows.slice();
+    var out=rows.slice(0,Math.max(0,limit));
+    if(limit>0)out.push({label:'',text:'\u2026',tone:'muted'});
+    return out;
+  }
+  function whyBodyLimited(points, prose, limit){
+    if(points&&points.length&&limit!=null&&points.length>limit){
+      return whyBody(points.slice(0,limit).concat([{label:'',text:'\u2026'}]), null);
+    }
+    return whyBody(points, prose);
+  }
+  function buildDetailBody(s, trim){
+    var d=s.detail||{}, secs=[], i, snap=[], li='', whyL, whyR, acad;
+    var histN=trim.hist, factsN=trim.facts, listN=trim.list, whyN=trim.why, maristN=trim.marist;
     if(s.step)snap.push({label:'Next',text:s.step,tone:''});
     if(d.odds)snap.push({label:'Odds',text:d.odds,tone:''});
     if(d.sticker_price_per_year)snap.push({label:'Sticker',text:d.sticker_price_per_year+' / yr',tone:'muted'});
-    if(snap.length)page1.push(dSec('next','Snapshot',dLines(snap)));
-    if(s.lines&&s.lines.length)page1.push(dSec('board','On the board',dLines(s.lines)));
-    whyL=whyBody(d.why_points,d.why);
-    whyR=whyBody(d.why_not_points,d.why_not);
+    if(snap.length)secs.push(dSec('next','Snapshot',dLines(snap)));
+    if(s.lines&&s.lines.length)secs.push(dSec('board','On the board',dLines(trimRows(s.lines, listN))));
+    whyL=whyBodyLimited(d.why_points,d.why,whyN);
+    whyR=whyBodyLimited(d.why_not_points,d.why_not,whyN);
     if(whyL||whyR){
-      page1.push('<section class="d-sec why-pair"><div class="why-cols">'+
+      secs.push('<section class="d-sec why-pair"><div class="why-cols">'+
         '<div class="why-col"><div class="sec-h"><span>Why</span></div>'+(whyL||'<p class="prose">\u2014</p>')+'</div>'+
         '<div class="why-col"><div class="sec-h"><span>Why not</span></div>'+(whyR||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
-    var like=whyBody(d.student_likes,null), dislike=whyBody(d.student_dislikes,null);
+    var like=whyBodyLimited(d.student_likes,null,whyN), dislike=whyBodyLimited(d.student_dislikes,null,whyN);
     if(like||dislike){
-      page1.push('<section class="d-sec why-pair"><div class="why-cols">'+
+      secs.push('<section class="d-sec why-pair"><div class="why-cols">'+
         '<div class="why-col"><div class="sec-h"><span>What students like</span></div>'+(like||'<p class="prose">\u2014</p>')+'</div>'+
         '<div class="why-col"><div class="sec-h"><span>What students don\u2019t</span></div>'+(dislike||'<p class="prose">\u2014</p>')+'</div>'+
         '</div></section>');
     }
-    // Prefer Deadlines + Marist on page 1's right column; fall back to page 2 if they overflow.
-    var deadHtml=d.deadlines&&d.deadlines.length?dSec('','Deadlines',dLines(d.deadlines)):'';
-    var maristSec=d.marist_classmates?maristHtml(d.marist_classmates):'';
-    if(deadHtml)page1.push(deadHtml);
-    if(maristSec)page1.push(maristSec);
-    if(d.about&&d.about.length)page2.push(dSec('','About',dLines(d.about)));
+    if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN))));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-    if(acad.length)page2.push(dSec('','Academics',dLines(acad)));
-    if(d.internships&&d.internships.length)page2.push(dSec('','Internships',dLines(d.internships)));
-    if(d.alumni&&d.alumni.length)page2.push(dSec('','Alumni',dLines(d.alumni)));
-    if(d.facts&&d.facts.length)page2.push(dSec('','Facts',dLines(d.facts)));
-    if(d.housing&&d.housing.length)page2.push(dSec('','Housing',dLines(d.housing)));
-    if(d.costs&&d.costs.length)page2.push(dSec('','Costs',dLines(d.costs)));
-    if(d.counselor_take)page2.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
-    if(d.history&&d.history.length){
-      for(i=0;i<d.history.length&&i<10;i++)li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
-      page2.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
+    if(acad.length)secs.push(dSec('','Academics',dLines(trimRows(acad, listN))));
+    if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN))));
+    if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN))));
+    if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN))));
+    if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN))));
+    if(d.costs&&d.costs.length)secs.push(dSec('','Costs',dLines(trimRows(d.costs, listN))));
+    if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN))));
+    if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN));
+    if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>'));
+    if(d.history&&d.history.length&&histN>0){
+      li='';
+      for(i=0;i<d.history.length&&i<histN;i++){
+        li+='<li><span class="d">'+esc(fmtDate(d.history[i].date,true))+'</span><span class="e">'+esc(d.history[i].event)+'</span></li>';
+      }
+      if(d.history.length>histN)li+='<li><span class="d"></span><span class="e">\u2026</span></li>';
+      secs.push(dSec('','Status history','<ul class="tl">'+li+'</ul>'));
     }
+    return secs;
+  }
+  function renderDetail(s){
+    var d=s.detail||{}, accent, wxBand='', secs, trim, steps, si;
+    accent=readableAccent(s.accent||'#C9A86A');
+    // Single screen: hero (logo | name | inline weather) + all sections in a dense column grid.
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
-    // Two pages when both sides have content; never drop page2 if page1 is empty.
-    usePages=page2.length>0&&page1.length>0;
-    state.detailPages=usePages?2:1;
-    if(state.detailPage<1||state.detailPage>state.detailPages)state.detailPage=1;
-    page=state.detailPage;
+    state.detailPages=1;
+    state.detailPage=1;
     $('detail').style.setProperty('--accent', accent);
-    if(usePages){
-      ind='<div class="d-page-ind">'+(page===1
-        ?('Page <b>1</b> of 2 \u25b6')
-        :('\u25c0 Page <b>2</b> of 2'))+'</div>';
+    // Prefer full content; if it won't fit at ≥18px, shorten Status history / Facts first, then lists.
+    trim={hist:5, facts:6, list:8, why:5, marist:6};
+    steps=[
+      {hist:5, facts:6, list:8, why:5, marist:6},
+      {hist:3, facts:4, list:8, why:5, marist:6},
+      {hist:2, facts:3, list:6, why:4, marist:4},
+      {hist:1, facts:2, list:5, why:3, marist:3},
+      {hist:0, facts:0, list:4, why:3, marist:2}
+    ];
+    for(si=0;si<steps.length;si++){
+      trim=steps[si];
+      secs=buildDetailBody(s, trim);
+      $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
+      if(layoutDetail())break;
     }
-    if(usePages){
-      if(page===1){
-        $('detail').innerHTML=heroHtml(s,wxBand)+'<div class="d-body">'+page1.join('')+'</div>'+ind;
-      }else{
-        $('detail').innerHTML=heroHtml(s,wxBand)+'<div class="d-body page-fit-2">'+page2.join('')+'</div>'+ind;
-      }
-    }else{
-      var only=page1.length?page1:page2;
-      $('detail').innerHTML=heroHtml(s,wxBand)+
-        (only.length?'<div class="d-body">'+only.join('')+'</div>':'')+ind;
-    }
-    layoutDetail();
-    // If Deadlines/Marist made page 1 overflow at the 20px floor, move them to page 2.
-    if(usePages&&page===1&&(deadHtml||maristSec)&&detailBodyOverflows()){
-      if(deadHtml){page1=page1.filter(function(x){return x!==deadHtml;}); page2.unshift(deadHtml);}
-      if(maristSec){page1=page1.filter(function(x){return x!==maristSec;}); page2.push(maristSec);}
-      usePages=page2.length>0&&page1.length>0;
-      state.detailPages=usePages?2:1;
-      ind=usePages?'<div class="d-page-ind">Page <b>1</b> of 2 \u25b6</div>':'';
-      $('detail').innerHTML=heroHtml(s,wxBand)+
-        (page1.length?'<div class="d-body">'+page1.join('')+'</div>':'')+ind;
-      layoutDetail();
-    }
-    setTimeout(layoutDetail, 0);
+    setTimeout(function(){layoutDetail();}, 0);
     setHints();
   }
   function detailBodyOverflows(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
     if(!body)return false;
-    var line=parseFloat(getComputedStyle(root).getPropertyValue('--line-size'))||0;
-    if(line>20.5)return false;
     return body.scrollHeight>body.clientHeight+4||body.scrollWidth>body.clientWidth+4;
   }
   function layoutDetail(){
     var root=$('detail'), body=root?root.querySelector('.d-body'):null;
-    if(!root||!body)return;
-    // Floor at 20px — never shrink body text below the readable size. Prefer layout over truncation.
-    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20], cols, i, c;
-    cols=n<=3?[2]:n<=6?[3,2]:[4,3,2];
-    if(body.className.indexOf('page-fit-2')>=0)cols=[3,2];
+    if(!root||!body)return true;
+    // Floor at 18px — TV-readable. Prefer more/tighter columns over shrinking text.
+    var n=body.querySelectorAll('.d-sec').length, sizes=[24,22,20,18], cols, i, c;
+    cols=n<=3?[2]:n<=8?[4,3,2]:[5,4,3];
     for(c=0;c<cols.length;c++){
       body.style.columnCount=String(cols[c]);
       for(i=0;i<sizes.length;i++){
         root.style.setProperty('--line-size', sizes[i]+'px');
-        root.style.setProperty('--lab-size', Math.max(18, sizes[i]-2)+'px');
-        if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return;
+        root.style.setProperty('--lab-size', Math.max(16, sizes[i]-2)+'px');
+        if(body.scrollHeight<=body.clientHeight+4&&body.scrollWidth<=body.clientWidth+4)return true;
       }
     }
-  }
-  function setDetailPage(p){
-    if(state.view!=='detail'||!state.detail)return;
-    if(p<1||p>state.detailPages)return;
-    if(p===state.detailPage)return;
-    state.detailPage=p;
-    var s=focusedSchool();
-    if(s&&s.id===state.detail)renderDetail(s);
+    return false;
   }
   function fmtK(n){
     var a=Math.abs(n), sign=n<0?'-':'';
@@ -1272,9 +1258,8 @@
     }
     if(state.view==='roi')return;
     if(state.view==='detail'){
-      // Right/Down → page 2; Left/Up → page 1. Back already handled above.
-      if(code===39||code===40){e.preventDefault();setDetailPage(Math.min(state.detailPages,state.detailPage+1));return;}
-      if(code===37||code===38){e.preventDefault();setDetailPage(Math.max(1,state.detailPage-1));return;}
+      // Single-screen detail: arrows are no-ops. Back already handled above.
+      if(code===37||code===38||code===39||code===40)e.preventDefault();
       return;
     }
     if(code===13||e.key==='Enter'){
