@@ -3,7 +3,7 @@
   "updated": "2026-11-23T09:41:00-05:00",
   "schools": [
     {
-      "id": "r1",
+      "id": "georgia-tech",
       "school": "Georgia Tech",
       "program": "AECT",
       "tier": "reach",
@@ -37,34 +37,6 @@
           "label": "Marist data",
           "text": "Historical ED admit rate for this major sits near 12 percent; yield among admits is high, so a deferral or denial should not be read as a signal about the rest of the list.",
           "tone": "muted"
-        },
-        {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Likelihood",
-          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -386,24 +358,28 @@
         "scattergram_url": "https://example.edu/scattergram/r1",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -412,24 +388,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -601,10 +581,22 @@
           "name": "Sample School of Arts, Entertainment & Creative Tech",
           "summary": "Placeholder announcement: a new creative-tech school is planned on this campus, combining studio practice with computing and production tracks. Fixture text only — not a real program description.",
           "facts": [
-            "Placeholder fact: shared maker labs open to first-years in sample year one.",
-            "Placeholder fact: sample curriculum blends design, media, and applied computing.",
-            "Placeholder fact: sample industry partners listed for co-op rotations.",
-            "Placeholder fact: sample building timeline targets a phased opening."
+            {
+              "label": "Launch",
+              "text": "Placeholder fact: shared maker labs open to first-years in sample year one."
+            },
+            {
+              "label": "Studio",
+              "text": "Placeholder fact: sample curriculum blends design, media, and applied computing."
+            },
+            {
+              "label": "Faculty",
+              "text": "Placeholder fact: sample industry partners listed for co-op rotations."
+            },
+            {
+              "label": "Facilities",
+              "text": "Placeholder fact: sample building timeline targets a phased opening."
+            }
           ],
           "why_it_matters_for_coco": "Placeholder counseling note: if the creative-tech school lands, it could align with Coco's studio-plus-tech interests better than the generic major path on this card.",
           "articles": [
@@ -631,11 +623,26 @@
         "wish_i_knew": {
           "title": "Things I wish I'd known as a freshman",
           "tips": [
-            "Housing: Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes.",
-            "Classes: Placeholder tip — sample first-year seminars fill fast; watch the portal the night they open.",
-            "Join one club in week one so the campus feels smaller (placeholder tip with no label).",
-            "Dining: Placeholder tip — late-night window hours matter more than the sample brochure admits.",
-            "Weather: Placeholder tip — pack layers; swing seasons are the hard part in the sample climate."
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — sample first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller (placeholder tip with no label)."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the sample brochure admits."
+            },
+            {
+              "label": "Weather",
+              "text": "Placeholder tip — pack layers; swing seasons are the hard part in the sample climate."
+            }
           ],
           "sources": [
             {
@@ -674,14 +681,14 @@
       },
       "logo": {
         "file": "logos/sample-a.svg",
-        "source_url": "https://example.edu/brand/r1",
+        "source_url": "",
         "format": "svg",
-        "background": "light"
+        "background": "dark"
       },
       "accent": "#B3A369"
     },
     {
-      "id": "r2",
+      "id": "iu-bloomington",
       "school": "Indiana University Bloomington",
       "program": "Kelley",
       "tier": "reach",
@@ -715,33 +722,6 @@
           "label": "Why",
           "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Undergrad",
-          "text": "Undergraduate research is available from sophomore year if the student joins a lab early; qualitative methods seminars fill quickly, so register in the first advising window.",
-          "tone": "muted"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -838,7 +818,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -846,19 +826,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -1055,24 +1035,28 @@
         "scattergram_url": "https://example.edu/scattergram/r2",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -1081,24 +1065,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -1246,9 +1234,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#18",
+      "rank": "#48",
       "location": {
         "city": "Pasadena",
         "state": "CA",
@@ -1256,21 +1273,21 @@
         "lon": -118.1445
       },
       "logo": {
-        "file": "logos/sample-c.svg",
-        "source_url": "https://example.edu/brand/r2",
+        "file": "logos/placeholder-square-mark.svg",
+        "source_url": "",
         "format": "svg",
         "background": "light"
       },
-      "accent": "#A7C7E7"
+      "accent": "#F5424E"
     },
     {
-      "id": "t1",
-      "school": "Sample State University H",
-      "program": "Honors College",
+      "id": "northeastern",
+      "school": "Northeastern University",
+      "program": "Engineering",
       "tier": "target",
       "round": "EA",
       "submitted": "2026-10-15",
-      "status": "admitted",
+      "status": "submitted",
       "decision_expected": "2026-11-20",
       "next_step": "Compare aid offer by Dec 10",
       "card_lines": [
@@ -1298,33 +1315,6 @@
           "label": "Thackston",
           "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -1424,7 +1414,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -1432,19 +1422,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -1612,24 +1602,28 @@
         "scattergram_url": "https://example.edu/scattergram/t1",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -1638,24 +1632,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -1803,9 +1801,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#72",
+      "rank": "#53",
       "location": {
         "city": "Ann Arbor",
         "state": "MI",
@@ -1814,20 +1841,20 @@
       },
       "logo": {
         "file": "logos/sample-h.svg",
-        "source_url": "https://example.edu/brand/t1",
+        "source_url": "",
         "format": "svg",
         "background": "light"
       },
-      "accent": "#C4785A"
+      "accent": "#F24444"
     },
     {
-      "id": "t2",
-      "school": "Sample College I",
-      "program": "Biology",
+      "id": "tcu",
+      "school": "Texas Christian University",
+      "program": "Business",
       "tier": "target",
       "round": "RD",
       "submitted": "2026-11-18",
-      "status": "submitted",
+      "status": "admitted",
       "decision_expected": "2027-03-15",
       "next_step": "Send updated test scores",
       "card_lines": [
@@ -1855,33 +1882,6 @@
           "label": "Thackston",
           "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "More help",
-          "text": "More help needed from home on the CSS verification documents — last year two families lost aid because W-2 uploads were late and the school closed the file.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -1979,7 +1979,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -1987,19 +1987,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -2165,24 +2165,28 @@
         "scattergram_url": "https://example.edu/scattergram/t2",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -2191,24 +2195,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -2356,9 +2364,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#55",
+      "rank": "#80",
       "location": {
         "city": "Chapel Hill",
         "state": "NC",
@@ -2366,17 +2403,17 @@
         "lon": -79.0558
       },
       "logo": {
-        "file": "logos/sample-i.svg",
-        "source_url": "https://example.edu/brand/t2",
+        "file": "logos/placeholder-square-mark.svg",
+        "source_url": "",
         "format": "svg",
         "background": "light"
       },
-      "accent": "#7BA17B"
+      "accent": "#A875F8"
     },
     {
-      "id": "t3",
-      "school": "Sample University J",
-      "program": null,
+      "id": "rice",
+      "school": "Rice University",
+      "program": "Engineering",
       "tier": "target",
       "round": "Rolling",
       "submitted": "2026-09-30",
@@ -2408,33 +2445,6 @@
           "label": "Why",
           "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Likelihood",
-          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -2531,7 +2541,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -2539,19 +2549,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -2726,24 +2736,28 @@
         "scattergram_url": "https://example.edu/scattergram/t3",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -2752,24 +2766,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -2917,9 +2935,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#89",
+      "rank": "#17",
       "location": {
         "city": "Madison",
         "state": "WI",
@@ -2928,16 +2975,16 @@
       },
       "logo": {
         "file": "logos/sample-j.svg",
-        "source_url": "https://example.edu/brand/t3",
+        "source_url": "",
         "format": "svg",
         "background": "light"
       },
-      "accent": "#9B8EC4"
+      "accent": "#4D9AD4"
     },
     {
-      "id": "s1",
-      "school": "Sample State University M",
-      "program": null,
+      "id": "fsu",
+      "school": "Florida State University",
+      "program": "Engineering",
       "tier": "safety",
       "round": "Rolling",
       "submitted": "2026-09-15",
@@ -2969,32 +3016,6 @@
           "label": "Thackston",
           "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -3092,7 +3113,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -3100,19 +3121,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -3282,24 +3303,28 @@
         "scattergram_url": "https://example.edu/scattergram/s1",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -3308,24 +3333,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -3473,9 +3502,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#140",
+      "rank": "#55",
       "location": {
         "city": "State College",
         "state": "PA",
@@ -3484,16 +3542,16 @@
       },
       "logo": {
         "file": "logos/sample-m.svg",
-        "source_url": "https://example.edu/brand/s1",
+        "source_url": "",
         "format": "svg",
         "background": "light"
       },
-      "accent": "#D4A574"
+      "accent": "#CEB888"
     },
     {
-      "id": "s2",
-      "school": "Sample College N",
-      "program": "Engineering",
+      "id": "uga",
+      "school": "University of Georgia",
+      "program": "Business",
       "tier": "safety",
       "round": "EA",
       "submitted": "2026-11-01",
@@ -3527,38 +3585,11 @@
           "tone": "good"
         },
         {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
           "label": "Weather",
           "text": "Damp winters, humid summers; pack layers for swing seasons."
         }
       ],
-      "rank": "#112",
+      "rank": "#47",
       "detail": {
         "about": [
           {
@@ -3648,7 +3679,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -3656,19 +3687,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -3836,24 +3867,28 @@
         "scattergram_url": "https://example.edu/scattergram/s2",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -3862,24 +3897,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -4027,6 +4066,35 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
       "location": {
@@ -4036,15 +4104,15 @@
         "lon": -86.5264
       },
       "logo": {
-        "file": "logos/sample-n.svg",
-        "source_url": "https://example.edu/brand/s2",
+        "file": "logos/placeholder-wide-wordmark.svg",
+        "source_url": "",
         "format": "svg",
-        "background": "dark"
+        "background": "light"
       },
-      "accent": "#6FA8DC"
+      "accent": "#F23D4C"
     },
     {
-      "id": "s3",
+      "id": "case-western",
       "school": "Case Western Reserve University",
       "program": "Engineering",
       "tier": "safety",
@@ -4078,33 +4146,6 @@
           "label": "Why",
           "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "More help",
-          "text": "More help needed from home on the CSS verification documents — last year two families lost aid because W-2 uploads were late and the school closed the file.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -4396,24 +4437,28 @@
         "scattergram_url": "https://example.edu/scattergram/s3",
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -4422,24 +4467,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -4587,6 +4636,35 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
       "rank": "#44",
@@ -4602,16 +4680,16 @@
         "format": "svg",
         "background": "light"
       },
-      "accent": "#0A5046"
+      "accent": "#4A9BE8"
     },
     {
-      "id": "s4",
-      "school": "Sample Tech P",
-      "program": "Data Science",
+      "id": "smu",
+      "school": "Southern Methodist University",
+      "program": "Engineering",
       "tier": "safety",
       "round": "Rolling",
       "submitted": "2026-10-01",
-      "status": "admitted",
+      "status": "submitted",
       "decision_expected": "2026-10-28",
       "next_step": "Decide on honors invite",
       "card_lines": [
@@ -4639,32 +4717,6 @@
           "label": "Thackston",
           "text": "Counselor notes say the essays and recommendations are among the strongest on this list, and the interview (if offered) should emphasize the studio work from junior year.",
           "tone": "good"
-        },
-        {
-          "label": "Why",
-          "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
-          "tone": "good"
-        },
-        {
-          "label": "Undergrad",
-          "text": "Undergraduate research is available from sophomore year if the student joins a lab early; qualitative methods seminars fill quickly, so register in the first advising window.",
-          "tone": "muted"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -4760,7 +4812,7 @@
         "academics": [
           {
             "label": "USNWR",
-            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year."
+            "text": "National universities band roughly #30–#40 in the latest cycle; peer assessment is the main mover year to year (CDS 2025-26 placeholder)."
           },
           {
             "label": "Program",
@@ -4768,19 +4820,19 @@
           },
           {
             "label": "Admit rate",
-            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics."
+            "text": "Overall admit rate about 14% last cycle; ED rate roughly double RD for similar academics (CDS 2025-26 placeholder)."
           },
           {
             "label": "Mid 50%",
-            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027."
+            "text": "SAT 1450–1540 / ACT 33–35 among enrolled; test-optional still available through 2027 (CDS 2025-26 placeholder)."
           },
           {
             "label": "GPA",
-            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review."
+            "text": "Admitted unweighted mid-50% roughly 3.85–4.0; rigor of schedule weighted heavily in review (CDS 2025-26 placeholder)."
           },
           {
             "label": "Yield",
-            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot."
+            "text": "Yield near 48%; waitlist usually moves in May if deposits undershoot (CDS 2025-26 placeholder)."
           }
         ],
         "alumni": [
@@ -4928,24 +4980,28 @@
         "scattergram_url": null,
         "student_likes": [
           {
+            "label": "Culture",
             "text": "Late-night dining until 1 a.m. and a real coffee bar in the engineering quad.",
             "sources": [
               "https://example.com/reviews/food"
             ]
           },
           {
+            "label": "Transit",
             "text": "Maker spaces stay open 24/7 during finals; students leave projects locked overnight.",
             "sources": [
               "https://example.com/reviews/space"
             ]
           },
           {
+            "label": "Housing",
             "text": "Collaborative shop culture — people share tools and tips instead of gatekeeping.",
             "sources": [
               "https://example.com/reviews/peers"
             ]
           },
           {
+            "label": "Classes",
             "text": "Free shuttle every 12 minutes and a light-rail stop seven minutes downhill.",
             "sources": [
               "https://example.com/reviews/transit"
@@ -4954,24 +5010,28 @@
         ],
         "student_dislikes": [
           {
+            "label": "Culture",
             "text": "Sophomore housing lottery is stressful; living-learning pulls early and open pool is thin.",
             "sources": [
               "https://example.com/reviews/housing"
             ]
           },
           {
+            "label": "Transit",
             "text": "Required large lectures before declaration feel generic after the visit-day studio pitch.",
             "sources": [
               "https://example.com/reviews/intros"
             ]
           },
           {
+            "label": "Housing",
             "text": "Aid appeals move slowly; families wait on March packaging even when CSS was early.",
             "sources": [
               "https://example.com/reviews/admin"
             ]
           },
           {
+            "label": "Classes",
             "text": "February grey wears people down; short breaks are flights, not drives, for most.",
             "sources": [
               "https://example.com/reviews/winter"
@@ -5119,9 +5179,38 @@
               "Political Science"
             ]
           }
+        },
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
         }
       },
-      "rank": "#121",
+      "rank": "#89",
       "location": {
         "city": "Tucson",
         "state": "AZ",
@@ -5130,14 +5219,14 @@
       },
       "logo": {
         "file": "logos/sample-p.svg",
-        "source_url": "https://example.edu/brand/s4",
+        "source_url": "",
         "format": "svg",
-        "background": "dark"
+        "background": "light"
       },
-      "accent": "#8FBF9A"
+      "accent": "#5B8DF0"
     },
     {
-      "id": "s5",
+      "id": "auburn",
       "school": "Auburn University",
       "program": "Engineering",
       "tier": "safety",
@@ -5171,34 +5260,6 @@
           "label": "Why",
           "text": "Design studio from the first year, a structured co-op network with local firms, and faculty who actually place students into paid summer roles that count for credit.",
           "tone": "good"
-        },
-        {
-          "label": "Why not",
-          "text": "Intro sequences are large, the campus is a long flight from home, and winters are hard if the student wants an urban weekend culture every month.",
-          "tone": "muted"
-        },
-        {
-          "label": "Confirm",
-          "text": "Portal shows all supplements received and the interview was waived; double-check that the midyear report request was sent to the school counseling office.",
-          "tone": "warn"
-        },
-        {
-          "label": "Likelihood",
-          "text": "Counselor likelihood note: still a reach even with ED, but the academic match is real and the portfolio pieces already on file are stronger than last year's admits.",
-          "tone": "warn"
-        },
-        {
-          "label": "More help",
-          "text": "More help needed from home on the CSS verification documents — last year two families lost aid because W-2 uploads were late and the school closed the file.",
-          "tone": "warn"
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
-        },
-        {
-          "label": "Note",
-          "text": "Placeholder counseling note for board density / Weather pin."
         },
         {
           "label": "Weather",
@@ -5267,7 +5328,38 @@
             "label": "Marist near me",
             "text": "2 classmates in 2027"
           }
-        ]
+        ],
+        "wish_i_knew": {
+          "title": "Things I wish I'd known as a freshman",
+          "tips": [
+            {
+              "label": "Housing",
+              "text": "Placeholder tip — tour dorms before ranking; north quad is quieter in the sample notes."
+            },
+            {
+              "label": "Classes",
+              "text": "Placeholder tip — first-year seminars fill fast; watch the portal the night they open."
+            },
+            {
+              "label": "Clubs",
+              "text": "Join one club in week one so the campus feels smaller."
+            },
+            {
+              "label": "Dining",
+              "text": "Placeholder tip — late-night window hours matter more than the brochure admits."
+            }
+          ],
+          "sources": [
+            {
+              "subreddit": "SampleCollege",
+              "thread_title": "Placeholder freshman tip thread",
+              "year": 2022,
+              "url": "https://example.com/r/sample"
+            }
+          ]
+        },
+        "student_likes": [],
+        "student_dislikes": []
       },
       "location": {
         "city": "Gainesville",
@@ -5276,7 +5368,7 @@
         "lon": -82.3248
       },
       "logo": {
-        "file": "logos/placeholder-auburn.svg",
+        "file": "logos/placeholder-wide-wordmark.svg",
         "source_url": "",
         "format": "svg",
         "background": "dark"

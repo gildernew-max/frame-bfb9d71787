@@ -21,8 +21,9 @@
     --ink:#E8E4DC; --muted:#9A958C; --dim:rgba(232,228,220,.55);
     --hair:rgba(255,255,255,.08); --rule:rgba(255,255,255,.12);
     --gold:#C9A86A; --up:#8FBF9A; --panel:rgba(255,255,255,.03);
-    /* TV remote focus — bright gold, readable across the room (stage coords; ~½ on 1920 viewport). */
-    --focus-ring:#FFD24A;
+    /* TV remote focus — warm Daybreak gold (not neon), readable across the room. */
+    --focus-ring:#E6B84C;
+    --admit-bar:#3DCF7A;
   }
   *{box-sizing:border-box}
   html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#0B0C0E}
@@ -53,23 +54,22 @@
   .line.nolab{grid-template-columns:minmax(0,1fr)}
   .lines,.d-lines{display:flex;flex-direction:column;gap:8px;min-width:0}
 
-  /* Logos */
-  .logo{flex:none;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
-    border-radius:8px;background:#1E2128;border:1px solid var(--hair);box-sizing:border-box}
-  .logo.on-light{background:#F4F1EA;border-color:transparent}
+  /* Logos — dark plate by default; light plates use warm linen (not bright cream).
+     Plate boxes hug the rendered logo aspect (wide wordmarks stay short; square marks stay ~100px tall). */
+  .logo{flex:none;position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden;
+    border-radius:10px;background:#1E2128;border:1px solid var(--hair);box-sizing:border-box}
+  .logo.on-light{background:#E8E6E0;border:1px solid rgba(255,255,255,.08);border-radius:10px}
   .logo.on-dark{background:#1E2128;border:1px solid var(--hair)}
-  .logo-sm{width:84px;height:28px;border-radius:6px;padding:4px 8px}
-  /* Detail logo plate: ~360×150 on the 1920 viewport (stage is 2×; object-fit contain). */
-  .logo-lg{width:720px;height:300px;border-radius:16px;padding:28px 36px}
-  /* Popup header logo: size by height (~100px viewport / min 90), width auto, max ~360px viewport.
-     Stage is 2×; ultra-wide wordmarks hit max-width and shrink height instead of becoming thin strips. */
-  .logo-pop{width:auto;max-width:720px;height:200px;min-height:180px;border-radius:14px;padding:16px 22px;
-    display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+  .logo-sm{width:84px;height:28px;border-radius:8px;padding:3px 6px;display:flex}
+  /* Detail + popup plates hug the image; JS fitLogoImg sets explicit px from naturalWidth/Height
+     so viewBox-only SVGs (0×0 with width/height:auto) and small-pixel marks both scale into 680×200 stage. */
+  .logo-lg,.logo-pop{width:auto;max-width:720px;height:auto;min-height:0;border-radius:10px;padding:10px 14px;
+    align-self:flex-start;flex:none}
   .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-  .logo-pop img{height:100%;width:auto;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
+  .logo-lg img,.logo-pop img{display:block;width:auto;height:auto;max-width:none;max-height:none;
+    object-fit:contain;object-position:center}
   .logo .mono{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--ink);line-height:1}
-  .logo-lg .mono{font-size:72px;letter-spacing:.1em}
-  .logo-pop .mono{font-size:56px;letter-spacing:.08em}
+  .logo-lg .mono,.logo-pop .mono{font-size:56px;letter-spacing:.08em;line-height:1;padding:8px 4px}
   .logo.on-light .mono{color:#1A1C20}
   .logo:not(.mono-only) .mono{display:none}
   .logo.mono-only .mono{display:block}
@@ -95,25 +95,24 @@
     border-bottom:2px solid rgba(var(--t),.55)}
   .col-head .t{font-size:var(--t1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgb(var(--t))}
   .col-head .c{font-size:var(--t1);font-weight:500;letter-spacing:.1em;color:var(--dim)}
-  /* overflow visible + padding so focus scale/ring/glow are not clipped */
-  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:visible;padding:18px 14px;box-sizing:border-box}
-  .col-cue{flex:none;height:24px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:var(--t1);color:var(--dim)}
+  /* Couch-readable density: fill most of 1920×1080; layoutBoard shrinks if Safety would overflow */
+  .col-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;overflow:visible;padding:12px 10px;box-sizing:border-box}
+  .col-cue{flex:none;height:18px;display:flex;align-items:center;justify-content:center;visibility:hidden;font-size:16px;color:var(--dim)}
 
-  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:8px;padding:16px 16px 16px 20px;border-radius:8px;
-    border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none;z-index:0;
-    transform:scale(1);transform-origin:center center;
+  .card{flex:none;position:relative;display:flex;flex-direction:column;gap:6px;padding:10px 14px 18px 18px;border-radius:8px;
+    border:1px solid var(--hair);background:var(--panel);cursor:pointer;outline:none;z-index:0;overflow:visible;
+    transform:scale(1);transform-origin:top center;
     transition:transform .15s ease,box-shadow .15s ease,opacity .15s ease,filter .15s ease,border-color .15s ease}
-  .card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:3px;border-radius:0 2px 2px 0;background:var(--c)}
-  .card.denied,.card.withdrawn{opacity:.72}
-  /* Thick ring via box-shadow (no layout shift) + glow + scale; z-index above neighbors */
+  .card::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:0 2px 2px 0;background:var(--c)}
+  /* Admitted tiles: crisp green left bar so accepts pop at a glance from the couch */
+  .card.admitted::before{background:var(--admit-bar);width:4px;top:6px;bottom:6px}
+  .card.denied,.card.withdrawn{opacity:.78}
+  /* Warm Daybreak gold ring + subtle lift — neighbors stay fully readable (no dimming) */
   .card.focus{border-color:var(--focus-ring);opacity:1;filter:none;z-index:6;
-    transform:scale(1.04);
-    box-shadow:0 0 0 20px var(--focus-ring),0 0 64px 22px rgba(255,210,74,.6),0 22px 44px rgba(0,0,0,.55)}
-  #cols.cards-focused .card:not(.focus){opacity:.7;filter:brightness(.75)}
-  #cols.cards-focused .card.denied:not(.focus),
-  #cols.cards-focused .card.withdrawn:not(.focus){opacity:.55}
-  .name-row{flex:none;display:flex;align-items:center;gap:12px;min-width:0}
-  .name{flex:1;min-width:0;font:400 var(--t3)/1.15 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
+    transform:scale(1.02) translateY(-4px);
+    box-shadow:0 0 0 12px var(--focus-ring),0 0 28px 8px rgba(230,184,76,.35),0 12px 22px rgba(0,0,0,.4)}
+  .name-row{flex:none;display:flex;align-items:center;gap:10px;min-width:0}
+  .name{flex:1;min-width:0;font:400 30px/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .name .prog{color:var(--muted);font-weight:400}
   .rank-pill{flex:none;font-size:var(--t1);font-weight:500;letter-spacing:.08em;color:var(--muted);
@@ -128,12 +127,21 @@
   .tag.new-marist{--c:#1A1508;--cb:rgba(255,210,74,.95);--cf:#FFD24A;font-weight:700;letter-spacing:.14em}
   .tag.new-marist-who{--c:#FFD24A;--cb:rgba(255,210,74,.4);--cf:rgba(255,210,74,.1);
     max-width:46%;overflow:hidden;text-overflow:ellipsis}
-  #cols{--line-size:24px;--lab-size:20px}
-  #cols .lab{font-size:var(--lab-size)}
-  #cols .txt{font-size:var(--line-size);max-height:calc(3 * 1.35em)}
-  .step{flex:none;margin-top:0;padding-top:8px;border-top:1px solid var(--hair);font-size:var(--t2);line-height:1.3;font-weight:400;color:var(--muted);
-    white-space:normal;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.3em)}
-  .step b{font-weight:500;color:var(--dim);font-size:var(--t1);letter-spacing:.12em;text-transform:uppercase;margin-right:8px}
+  #cols{--line-size:22px;--lab-size:18px}
+  #cols .lab{font-size:var(--lab-size);-webkit-line-clamp:1;max-height:1.25em;line-height:1.25}
+  /* One couch-readable line per row keeps 5 Safety tiles on-screen at the larger type size */
+  #cols .txt{font-size:var(--line-size);-webkit-line-clamp:1;max-height:1.35em;line-height:1.35}
+  #cols .lines{gap:5px}
+  #cols .line{gap:8px}
+  #cols .tags{gap:6px}
+  #cols .tag{padding:3px 9px;font-size:18px}
+  #cols .rank-pill{font-size:18px;padding:3px 9px}
+  #cols .logo-sm{width:78px;height:26px;padding:2px 6px}
+  /* NEXT line: full unclipped glyphs. Overflow hidden was slicing descenders under border-radius;
+     clean() already truncates step text to 60 chars, so ellipsis here is unnecessary. */
+  .step{flex:none;margin-top:4px;padding:8px 0 0;border-top:1px solid var(--hair);font-size:20px;line-height:1.45;font-weight:400;color:var(--muted);
+    display:block;white-space:nowrap;overflow:visible}
+  .step b{font-weight:500;color:var(--dim);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-right:8px}
 
   .also{flex:none;display:flex;align-items:baseline;gap:16px;padding:8px 0;border-top:1px solid var(--hair);min-width:0}
   .also[hidden]{display:none!important}
@@ -155,12 +163,13 @@
 
   /* Detail */
   #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:200px;position:relative;overflow:visible}
-  /* Hero: logo (~360×150) | name+program+rank+chips | inline Aug–May weather table */
-  .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
-    min-height:300px}
+  /* Hero: logo (aspect-hugging plate) | name+program+rank+chips | inline Aug–May weather table.
+     align-items:flex-start so the logo plate is never stretched tall by the weather column. */
+  .d-hero{flex:none;display:flex;align-items:flex-start;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
+    min-height:0}
   /* ~420px min on the 1920 viewport (stage is 2×). Weather flexes to fill the rest. */
   .d-hero-main{flex:0 1 auto;min-width:840px;max-width:48%;display:flex;flex-direction:column;justify-content:center;gap:10px;
-    border-left:4px solid var(--accent,var(--gold));padding-left:14px}
+    border-left:4px solid var(--accent,var(--gold));padding-left:14px;align-self:stretch}
   .d-hero-title{min-width:0}
   /* School ~44px viewport; wrap allowed, never clipped. Underline under the school name only. */
   .d-hero h2{margin:0;font:300 88px/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.025em;min-width:0;
@@ -174,7 +183,7 @@
   .d-hero .tag{font-size:var(--t1);padding:4px 10px}
 
   /* Inline monthly weather — fills remaining hero width; columns shrink slightly vs name block. */
-  .wx-month-band{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;
+  .wx-month-band{flex:1 1 0;min-width:0;align-self:stretch;display:flex;flex-direction:column;justify-content:center;
     padding:6px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel);box-sizing:border-box}
   .wx-month-table{width:100%;border-collapse:collapse;table-layout:fixed}
   .wx-month-table th,.wx-month-table td{padding:2px 2px;text-align:center;vertical-align:middle;
@@ -263,7 +272,8 @@
   .d-pop-h{flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:28px;min-width:0;
     padding-bottom:14px;border-bottom:3px solid var(--accent,var(--focus-ring))}
   .d-pop-h-text{flex:1;min-width:0;display:flex;align-items:center;gap:14px;padding-right:8px}
-  .d-pop-h-text::before{content:"";flex:none;width:28px;height:4px;border-radius:2px;background:var(--accent,var(--focus-ring))}
+  /* No leading dash/marker before popup titles (was floating awkwardly on wrapped titles) */
+  .d-pop-h-text::before{display:none;content:none}
   /* Reserve max logo width (~360px viewport / 720 stage) + gap so title never runs under it */
   .d-pop-h.has-logo .d-pop-h-text{padding-right:28px;max-width:calc(100% - 760px)}
   .d-pop-h .logo-pop{flex:none;flex-shrink:0;align-self:flex-start;margin:0}
@@ -497,19 +507,32 @@
     }
     return out;
   }
-  // Real shape: [{text, sources:[urls]}] (no label, ≤4, ≤140 chars). Also accept {label,text}.
-  // Sources are never rendered.
+  // Shape: {label?, text, sources?} — also accept plain strings. Sources never rendered on TV.
   function cleanStudentNotes(raw){
     if(!Array.isArray(raw))return [];
-    var out=[], i, t, lab;
-    for(i=0;i<raw.length&&out.length<4;i++){
-      var x=raw[i];
+    var out=[], i, t, lab, x, srcs, j, u;
+    for(i=0;i<raw.length&&out.length<8;i++){
+      x=raw[i];
+      if(typeof x==='string'){
+        t=str(x);
+        if(!t)continue;
+        if(t.length>160)t=t.slice(0,160);
+        out.push({label:'', text:t, sources:[]});
+        continue;
+      }
       if(!x||typeof x!=='object')continue;
       t=str(x.text);
       if(!t)continue;
-      if(t.length>140)t=t.slice(0,140);
+      if(t.length>160)t=t.slice(0,160);
       lab=str(x.label);
-      out.push({label:lab, text:t});
+      srcs=[];
+      if(Array.isArray(x.sources)){
+        for(j=0;j<x.sources.length&&srcs.length<8;j++){
+          u=str(x.sources[j]);
+          if(u)srcs.push(u);
+        }
+      }
+      out.push({label:lab, text:t, sources:srcs});
     }
     return out;
   }
@@ -526,14 +549,23 @@
     return false;
   }
   // Optional school announcement card. URLs are kept for data fidelity but never rendered (TV).
+  // facts: {label, text} (plain strings still accepted).
   function cleanNewCreativeSchool(raw){
     if(!raw||typeof raw!=='object')return null;
     var name=str(raw.name), summary=str(raw.summary), why=str(raw.why_it_matters_for_coco);
-    var facts=[], articles=[], i, t, a, title, outlet, date, url;
+    var facts=[], articles=[], i, t, a, title, outlet, date, url, lab, fx;
     if(Array.isArray(raw.facts)){
       for(i=0;i<raw.facts.length&&facts.length<12;i++){
-        t=typeof raw.facts[i]==='string'?str(raw.facts[i]):str(raw.facts[i]&&raw.facts[i].text);
-        if(t)facts.push(t);
+        fx=raw.facts[i];
+        if(typeof fx==='string'){
+          t=str(fx);
+          if(t)facts.push({label:'', text:t});
+          continue;
+        }
+        if(!fx||typeof fx!=='object')continue;
+        t=str(fx.text); lab=str(fx.label);
+        if(!t&&!lab)continue;
+        if(t)facts.push({label:lab, text:t});
       }
     }
     if(Array.isArray(raw.articles)){
@@ -706,14 +738,22 @@
     out.wish_i_knew=cleanWishIKnew(d.wish_i_knew);
     return out;
   }
-  // Optional "wish I'd known" tips. URLs kept but never rendered on TV.
+  // Optional "wish I'd known" tips: {label, text} (plain strings still accepted). URLs never on TV.
   function cleanWishIKnew(raw){
     if(!raw||typeof raw!=='object')return null;
-    var title=str(raw.title), tips=[], sources=[], i, t, s, sub, thr, y, url;
+    var title=str(raw.title), tips=[], sources=[], i, t, s, sub, thr, y, url, lab, tip;
     if(Array.isArray(raw.tips)){
       for(i=0;i<raw.tips.length&&tips.length<16;i++){
-        t=typeof raw.tips[i]==='string'?str(raw.tips[i]):str(raw.tips[i]&&raw.tips[i].text);
-        if(t)tips.push(t);
+        tip=raw.tips[i];
+        if(typeof tip==='string'){
+          t=str(tip);
+          if(t)tips.push({label:'', text:t});
+          continue;
+        }
+        if(!tip||typeof tip!=='object')continue;
+        t=str(tip.text); lab=str(tip.label);
+        if(!t&&!lab)continue;
+        if(t)tips.push({label:lab, text:t});
       }
     }
     if(Array.isArray(raw.sources)){
@@ -762,11 +802,18 @@
   }
   function wishIKnewBodyHtml(w, tipLimit){
     if(!w)return '';
-    var body='', tips=w.tips||[], lim, i, src;
+    var body='', tips=w.tips||[], lim, i, src, tip, lab, txt;
     lim=tipLimit!=null?tipLimit:tips.length;
     if(tips.length&&lim>0){
       body+='<ul class="why-bullets">';
-      for(i=0;i<tips.length&&i<lim;i++)body+='<li>'+accentLeadHtml(tips[i])+'</li>';
+      for(i=0;i<tips.length&&i<lim;i++){
+        tip=tips[i];
+        if(tip&&typeof tip==='object'){lab=tip.label; txt=tip.text;}
+        else{lab=''; txt=tip;}
+        // Labeled tip: accent <b> only — never accentLeadHtml (avoids double-highlight).
+        if(lab)body+='<li><b>'+esc(lab)+'</b> '+esc(txt)+'</li>';
+        else body+='<li>'+accentLeadHtml(txt)+'</li>';
+      }
       if(tips.length>lim)body+='<li>\u2026</li>';
       body+='</ul>';
     }
@@ -813,42 +860,61 @@
     if(!c)return false;
     return contrastRatio(c,backdrop)>=4.5;
   }
-  // When primary is too dark for the popup, prefer a known secondary (e.g. Auburn orange)
-  // if the school record has no secondary/alt field of its own.
-  var POPUP_ACCENT_SECONDARY={
+  // Brand-approved high-chroma accents (≥4.5:1 on #16181F). Same map for detail pages + popups.
+  var SCHOOL_ACCENTS={
     auburn:'#E87722',
-    'auburn university':'#E87722',
-    'auburn university placeholder':'#E87722'
+    'georgia-tech':'#B3A369',
+    fsu:'#CEB888',
+    uga:'#F23D4C',
+    'iu-bloomington':'#F5424E',
+    northeastern:'#F24444',
+    tcu:'#A875F8',
+    rice:'#4D9AD4',
+    'case-western':'#4A9BE8',
+    smu:'#5B8DF0'
   };
-  function popupSecondaryOverride(s){
-    var id, name, key;
-    if(!s)return null;
-    id=String(s.id||'').replace(/^\s+|\s+$/g,'').toLowerCase();
-    name=String(s.school||'').replace(/^\s+|\s+$/g,'').toLowerCase();
-    if(id&&POPUP_ACCENT_SECONDARY[id])return POPUP_ACCENT_SECONDARY[id];
-    if(name&&POPUP_ACCENT_SECONDARY[name])return POPUP_ACCENT_SECONDARY[name];
-    for(key in POPUP_ACCENT_SECONDARY){
-      if(Object.prototype.hasOwnProperty.call(POPUP_ACCENT_SECONDARY,key)&&name.indexOf(key)>=0)
-        return POPUP_ACCENT_SECONDARY[key];
-    }
+  function schoolAccentFromName(name){
+    var n=String(name||'').toLowerCase();
+    if(!n)return null;
+    if(n.indexOf('auburn')>=0)return SCHOOL_ACCENTS.auburn;
+    if(n.indexOf('georgia tech')>=0||n.indexOf('georgia institute')>=0)return SCHOOL_ACCENTS['georgia-tech'];
+    if(n.indexOf('florida state')>=0||/\bfsu\b/.test(n))return SCHOOL_ACCENTS.fsu;
+    if(n.indexOf('georgia')>=0&&(n.indexOf('athens')>=0||/\buga\b/.test(n)||n.indexOf('university of georgia')>=0))
+      return SCHOOL_ACCENTS.uga;
+    if(n.indexOf('indiana')>=0||n.indexOf('iu bloomington')>=0||n.indexOf('iu kelley')>=0||/\bkelley\b/.test(n))
+      return SCHOOL_ACCENTS['iu-bloomington'];
+    if(n.indexOf('northeastern')>=0)return SCHOOL_ACCENTS.northeastern;
+    if(/\btcu\b/.test(n)||n.indexOf('texas christian')>=0)return SCHOOL_ACCENTS.tcu;
+    if(/\brice\b/.test(n))return SCHOOL_ACCENTS.rice;
+    if(n.indexOf('case western')>=0||n.indexOf('case reserve')>=0)return SCHOOL_ACCENTS['case-western'];
+    if(/\bsmu\b/.test(n)||n.indexOf('southern methodist')>=0)return SCHOOL_ACCENTS.smu;
     return null;
   }
-  // Popup accent: use primary if ≥4.5:1 on #16181F; else a passing secondary/alt (data or override);
-  // else lighten the primary. Same color drives title, rule, labels, and leads.
-  function resolvePopupAccent(s){
-    var bg={r:0x16,g:0x18,b:0x1F}, primary, secondary, c;
-    primary=(s&&s.accent)||'#FFD24A';
-    if(accentPassesOn(primary,bg)){
-      c=parseHexColor(primary);
-      return c?hexFromRgb(c):popupReadableAccent(primary);
-    }
+  // Shared accent for detail headers AND popups. Palette by id, then name, then data secondary/primary AA.
+  function resolveSchoolAccent(s){
+    var bg={r:0x16,g:0x18,b:0x1F}, id, hex, secondary, c;
+    id=String(s&&s.id!=null?s.id:'').replace(/^\s+|\s+$/g,'').toLowerCase();
+    if(id&&SCHOOL_ACCENTS[id])return SCHOOL_ACCENTS[id];
+    hex=schoolAccentFromName(s&&s.school);
+    if(hex)return hex;
     secondary=(s&&(s.accent_secondary||s.secondary||s.accent_alt))||null;
-    if(!secondary)secondary=popupSecondaryOverride(s);
     if(secondary&&accentPassesOn(secondary,bg)){
       c=parseHexColor(secondary);
       return c?hexFromRgb(c):popupReadableAccent(secondary);
     }
-    return popupReadableAccent(primary);
+    hex=(s&&s.accent)||'#E6B84C';
+    if(accentPassesOn(hex,bg)){
+      c=parseHexColor(hex);
+      return c?hexFromRgb(c):popupReadableAccent(hex);
+    }
+    return popupReadableAccent(hex);
+  }
+  function resolvePopupAccent(s){return resolveSchoolAccent(s);}
+  function isIUSchool(s){
+    var id=String(s&&s.id||'').toLowerCase(), name=String(s&&s.school||'').toLowerCase();
+    if(id==='iu-bloomington')return true;
+    if(name.indexOf('indiana university')>=0||name.indexOf('iu bloomington')>=0||name.indexOf('iu kelley')>=0)return true;
+    return false;
   }
   function cleanAccent(raw){
     var c=parseHexColor(raw);
@@ -966,18 +1032,25 @@
         accent_secondary:cleanAccent(s.accent_secondary||s.secondary||s.accent_alt),
         secondary:cleanAccent(s.secondary||s.accent_secondary||s.accent_alt),
         accent_alt:cleanAccent(s.accent_alt||s.accent_secondary||s.secondary),
-        lines:cleanCardLines(s.card_lines, 10),
+        lines:cleanCardLines(s.card_lines, 6),
         linesAll:cleanCardLines(s.card_lines, 0),
         detail:cleanDetail(s.detail)
       });
       out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0;
     }
+    // Admitted first within the board (and thus at the top of each tier column), then pending, denied, withdrawn.
     out.sort(function(a,b){
-      var ga=STATUS[a.status].group, gb=STATUS[b.status].group;
-      if(ga!==gb)return ga-gb;
+      function rank(s){
+        if(s.status==='admitted')return 0;
+        if(STATUS[s.status].group===0)return 1;
+        if(s.status==='denied')return 2;
+        return 3;
+      }
+      var ra=rank(a), rb=rank(b);
+      if(ra!==rb)return ra-rb;
       var ua=a.status==='unconfirmed'?1:0, ub=b.status==='unconfirmed'?1:0;
       if(ua!==ub)return ua-ub;
-      if(ga===0&&a.expected!==b.expected){
+      if(ra===1&&a.expected!==b.expected){
         if(!a.expected)return 1;
         if(!b.expected)return -1;
         return a.expected<b.expected?-1:1;
@@ -1000,18 +1073,52 @@
     else if((parts[0]||'').length>1)b=parts[0].charAt(1);
     return (a+b).toUpperCase();
   }
+  // Fit detail/popup logos from naturalWidth/Height into 680×200 stage (~340×100 viewport).
+  // Required for viewBox-only SVGs (Chromium reports natural size from viewBox but CSS auto → 0×0)
+  // and to upscale small-pixel SVGs (IU 129×150, TCU, Northeastern) to couch-readable size.
+  function fitLogoImg(img){
+    var maxW=680, maxH=200, nw, nh, s;
+    if(!img)return;
+    nw=img.naturalWidth; nh=img.naturalHeight;
+    if(!nw||!nh)return;
+    s=Math.min(maxW/nw, maxH/nh);
+    if(!(s>0)||!isFinite(s))return;
+    img.style.width=Math.round(nw*s)+'px';
+    img.style.height=Math.round(nh*s)+'px';
+  }
+  function fitLogoImgsIn(root){
+    var imgs, i, img;
+    if(!root)return;
+    imgs=root.querySelectorAll('.logo-lg img, .logo-pop img');
+    for(i=0;i<imgs.length;i++){
+      img=imgs[i];
+      if(img.complete&&img.naturalWidth>0)fitLogoImg(img);
+    }
+  }
+  // Inline onload needs a global; keep ES5/Tizen-safe.
+  window.fitLogoImg=fitLogoImg;
   function logoHtml(s,size){
-    var bg=s.logo&&s.logo.background==='light'?'light':'dark';
-    var sz=size==='lg'?'lg':(size==='pop'?'pop':'sm');
-    var cls='logo logo-'+sz+(bg==='light'?' on-light':' on-dark');
-    var mono='<span class="mono">'+esc(monogram(s))+'</span>';
+    // IU: never cream/linen plate — crimson mark on dark like GT. Others honor logo.background.
+    var bg, sz, cls, mono, src, fitAttr;
+    if(isIUSchool(s))bg='dark';
+    else bg=s.logo&&s.logo.background==='light'?'light':'dark';
+    sz=size==='lg'?'lg':(size==='pop'?'pop':'sm');
+    cls='logo logo-'+sz+(bg==='light'?' on-light':' on-dark');
+    mono='<span class="mono">'+esc(monogram(s))+'</span>';
     if(!s.logo)return '<div class="'+cls+' mono-only" aria-hidden="true">'+mono+'</div>';
-    var src='logos/'+encodeURIComponent(s.logo.file);
+    src='logos/'+encodeURIComponent(s.logo.file);
+    fitAttr=(sz==='lg'||sz==='pop')?' onload="fitLogoImg(this)"':'';
     return '<div class="'+cls+'" aria-hidden="true">'+mono+
-      '<img src="'+esc(src)+'" alt="" onerror="this.onerror=null;this.parentNode.className+=\' mono-only\';if(this.parentNode)this.parentNode.removeChild(this);">'+
+      '<img src="'+esc(src)+'" alt=""'+fitAttr+
+      ' onerror="this.onerror=null;this.parentNode.className+=\' mono-only\';if(this.parentNode)this.parentNode.removeChild(this);">'+
       '</div>';
   }
+  // Parentheticals only (CDS notes) — no colon-lead highlighting.
+  function srcNotesHtml(raw){
+    return esc(String(raw==null?'':raw)).replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
+  }
   // Wrap a short leading "Label: / Label — / Label -" in .pop-lead (accent in popup CSS).
+  // Do NOT use on already-labeled rows (Academics .lab + value) — that doubles the lead.
   function accentLeadHtml(raw){
     var s=String(raw==null?'':raw), m, lab, sep, rest, out;
     m=/^(.{1,40}?)(\s*:\s*|\s+[\u2014\u2013-]\s+)([\s\S]+)$/.exec(s);
@@ -1024,11 +1131,11 @@
         return out.replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
       }
     }
-    return esc(s).replace(/\(([^)]{0,120})\)/g,'<span class="src">($1)</span>');
+    return srcNotesHtml(s);
   }
-  function richText(text){
-    // Parentheticals render muted/smaller so source notes do not compete with the value.
-    // Also accent a short leading label when the text is "Label: rest" / "Label — rest".
+  function richText(text, alreadyLabeled){
+    // Already-labeled rows: value text only (no second accent lead from colon regex).
+    if(alreadyLabeled)return srcNotesHtml(text);
     return accentLeadHtml(text);
   }
   function tagsHtml(s,withTier){
@@ -1049,13 +1156,14 @@
   function rgbHex(rgb){return '#'+rgb.split(',').map(function(n){var h=(+n).toString(16);return h.length<2?'0'+h:h;}).join('');}
   function linesHtml(lines){
     if(!lines||!lines.length)return '';
-    var h='<div class="lines">', i, isWx;
+    var h='<div class="lines">', i, isWx, hasLab;
     for(i=0;i<lines.length;i++){
       var x=lines[i];
       isWx=/^weather$/i.test(x.label||'');
-      var cls='line'+(x.tone?' '+x.tone:'')+(x.label?'':' nolab')+(isWx?' wx-line':'');
-      h+='<div class="'+cls+'">'+(x.label?'<span class="lab">'+esc(x.label)+'</span>':'')+
-        '<span class="txt">'+richText(x.text)+'</span></div>';
+      hasLab=!!x.label;
+      var cls='line'+(x.tone?' '+x.tone:'')+(hasLab?'':' nolab')+(isWx?' wx-line':'');
+      h+='<div class="'+cls+'">'+(hasLab?'<span class="lab">'+esc(x.label)+'</span>':'')+
+        '<span class="txt">'+richText(x.text, hasLab)+'</span></div>';
     }
     return h+'</div>';
   }
@@ -1090,12 +1198,12 @@
   }
 
   // One shared line size for every column so Reach and Safety keep the same rhythm.
-  // Short columns simply end early (no stretched gaps). Long columns shrink to 22px, then scroll.
+  // Target: 5 Safety tiles with 6 lines each fit one 1920×1080 couch view with no overflow cue.
   function setBoardLineSize(px){
     var cols=$('cols');
     if(!cols)return;
     cols.style.setProperty('--line-size', px+'px');
-    cols.style.setProperty('--lab-size', Math.max(20, px-2)+'px');
+    cols.style.setProperty('--lab-size', Math.max(16, px-2)+'px');
   }
   function layoutCol(ci){
     var col=state.cols[ci], body=$('col-body-'+ci), cue=$('col-cue-'+ci);
@@ -1121,16 +1229,19 @@
     cue.style.visibility=above||below?'visible':'hidden';
   }
   function layoutBoard(){
-    var i, gap=8, minPx=22, basePx=24, needMin=false;
-    setBoardLineSize(basePx);
-    for(i=0;i<state.cols.length;i++){
-      var body=$('col-body-'+i); if(!body)continue;
-      var cards=body.querySelectorAll('.card'), j, h=0;
-      for(j=0;j<cards.length;j++){cards[j].style.display='';cards[j].style.flex='none';}
-      for(j=0;j<cards.length;j++)h+=cards[j].offsetHeight+(j?gap:0);
-      if(cards.length&&h>body.clientHeight)needMin=true;
+    var i, gap=8, sizes=[22,20,18,17], si, needShrink;
+    for(si=0;si<sizes.length;si++){
+      setBoardLineSize(sizes[si]);
+      needShrink=false;
+      for(i=0;i<state.cols.length;i++){
+        var body=$('col-body-'+i); if(!body)continue;
+        var cards=body.querySelectorAll('.card'), j, h=0;
+        for(j=0;j<cards.length;j++){cards[j].style.display='';cards[j].style.flex='none';}
+        for(j=0;j<cards.length;j++)h+=cards[j].offsetHeight+(j?gap:0);
+        if(cards.length&&h>body.clientHeight)needShrink=true;
+      }
+      if(!needShrink)break;
     }
-    if(needMin)setBoardLineSize(minPx);
     for(i=0;i<state.cols.length;i++)layoutCol(i);
   }
   function paintFocus(){
@@ -1260,7 +1371,13 @@
     fLim=limits&&limits.facts!=null?limits.facts:facts.length;
     if(facts.length&&fLim>0){
       body+='<ul class="why-bullets">';
-      for(i=0;i<facts.length&&i<fLim;i++)body+='<li>'+accentLeadHtml(facts[i])+'</li>';
+      for(i=0;i<facts.length&&i<fLim;i++){
+        var fx=facts[i], flab, ftxt;
+        if(fx&&typeof fx==='object'){flab=fx.label; ftxt=fx.text;}
+        else{flab=''; ftxt=fx;}
+        if(flab)body+='<li><b>'+esc(flab)+'</b> '+esc(ftxt)+'</li>';
+        else body+='<li>'+accentLeadHtml(ftxt)+'</li>';
+      }
       if(facts.length>fLim)body+='<li>\u2026</li>';
       body+='</ul>';
     }
@@ -1341,21 +1458,24 @@
   }
   function dLines(rows){
     if(!rows||!rows.length)return '';
-    var h='<div class="d-lines">', i;
+    var h='<div class="d-lines">', i, hasLab;
     for(i=0;i<rows.length;i++){
-      var x=rows[i], cls='line'+(x.tone?' '+x.tone:'')+(x.label?'':' nolab');
-      h+='<div class="'+cls+'">'+(x.label?'<span class="lab">'+esc(x.label)+'</span>':'')+
-        '<span class="txt">'+richText(x.text)+'</span></div>';
+      var x=rows[i];
+      hasLab=!!x.label;
+      var cls='line'+(x.tone?' '+x.tone:'')+(hasLab?'':' nolab');
+      // Labeled Academics/etc: .lab is the only accent lead — never accentLeadHtml on value.
+      h+='<div class="'+cls+'">'+(hasLab?'<span class="lab">'+esc(x.label)+'</span>':'')+
+        '<span class="txt">'+richText(x.text, hasLab)+'</span></div>';
     }
     return h+'</div>';
   }
   function whyBody(points, prose){
     // Prefer counselor point lists; when they exist, ignore the old one-line why/why_not strings.
+    // Same path for student likes/dislikes — labeled items get accent <b>, never double-highlight.
     if(points&&points.length){
       var h='<ul class="why-bullets">', i, lab, txt;
       for(i=0;i<points.length;i++){
         lab=points[i].label; txt=points[i].text;
-        // <b> so the shared #d-pop b accent rule always catches Why/Why-not lead-ins.
         if(lab)h+='<li><b>'+esc(lab)+'</b> '+esc(txt)+'</li>';
         else h+='<li>'+accentLeadHtml(txt)+'</li>';
       }
@@ -1639,6 +1759,7 @@
     if(head){
       head.className='d-pop-h'+(logo?' has-logo':'');
       head.innerHTML='<div class="d-pop-h-text">'+titleHtml+'</div>'+logo;
+      fitLogoImgsIn(head);
     }
     if(body){
       body.innerHTML=(content&&content.bodyHtml)||'';
@@ -1650,7 +1771,7 @@
     pop.style.setProperty('--accent', accent);
     state.popupOpen=true;
     layoutPopup();
-    setTimeout(layoutPopup, 0);
+    setTimeout(function(){fitLogoImgsIn(pop);layoutPopup();}, 0);
     setHints();
   }
   function shiftPopupCard(dir){
@@ -1681,7 +1802,7 @@
   }
   function renderDetail(s){
     var d=s.detail||{}, accent, wxBand='', secs, trim, steps, si;
-    accent=readableAccent(s.accent||'#FFD24A');
+    accent=resolveSchoolAccent(s);
     // Single screen: hero (logo | name | inline weather) + all sections in a dense column grid.
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
     else if(d.weather&&d.weather.length)wxBand=weatherFallbackHtml(d.weather);
@@ -1703,9 +1824,10 @@
       trim=steps[si];
       secs=buildDetailBody(s, trim);
       $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
+      fitLogoImgsIn($('detail'));
       if(layoutDetail())break;
     }
-    setTimeout(function(){layoutDetail();paintCardFocus();}, 0);
+    setTimeout(function(){fitLogoImgsIn($('detail'));layoutDetail();paintCardFocus();}, 0);
     paintCardFocus();
     setHints();
   }
