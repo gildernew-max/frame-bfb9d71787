@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T11:00:11.993Z",
+ "generatedAt": "2026-11-23T11:15:11.867Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7319,11 +7319,11 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T11:00:11.993Z",
+  "at": "2026-11-23T11:15:11.867Z",
   "ran": [
    "alerts",
-   "nfl",
-   "rates",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13684,62 +13684,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T11:00:11.993Z",
-  "lastAttempt": "2026-11-23T11:00:11.993Z",
+  "asOf": "2026-11-23T11:15:11.867Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7131,
-    "lastTime": 1795431010,
+    "last": 7133.25,
+    "lastTime": 1795431921,
     "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 187.25,
-    "changePct": 2.6966696669666965,
-    "expectedOpen": 7096.7403909991,
+    "change": 189.5,
+    "changePct": 2.729072907290729,
+    "expectedOpen": 7098.979581278128,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26017.75,
-    "lastTime": 1795431013,
+    "last": 26016,
+    "lastTime": 1795431922,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 875.75,
-    "changePct": 3.4832153368864844,
-    "expectedOpen": 23405.556309879885,
+    "change": 874,
+    "changePct": 3.476254872325193,
+    "expectedOpen": 23403.982010659452,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49203,
-    "lastTime": 1795431003,
+    "last": 49206,
+    "lastTime": 1795431915,
     "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 969,
-    "changePct": 2.008956337852967,
-    "expectedOpen": 49114.58883754198,
+    "change": 972,
+    "changePct": 2.0151760169175272,
+    "expectedOpen": 49117.58344694613,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2647.8,
-    "lastTime": 1795431006,
+    "last": 2648.3,
+    "lastTime": 1795431920,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 59.40009765625018,
-    "changePct": 2.2948578232623347,
+    "change": 59.90009765625018,
+    "changePct": 2.3141747765486977,
     "expectedOpen": null,
     "valid": true
    }
@@ -14201,8 +14201,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T11:00:11.993Z",
-  "lastAttempt": "2026-11-23T11:00:11.993Z",
+  "asOf": "2026-11-23T11:15:11.867Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14845,7 +14845,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T11:00:11.993Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15056,44 +15056,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T11:00:11.993Z",
-  "lastAttempt": "2026-11-23T11:00:11.993Z",
+  "asOf": "2026-11-23T11:15:11.867Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 136.28,
-    "time": 1795431613,
+    "price": 136,
+    "time": 1795432517,
     "ref": 125.53,
     "refTime": 1795208401,
-    "change": 10.75,
-    "changePct": 8.563689954592528
+    "change": 10.469999999999999,
+    "changePct": 8.340635704612442
    },
    "TSLA": {
     "session": "pre",
-    "price": 360.2,
-    "time": 1795431608,
+    "price": 360.2588,
+    "time": 1795432512,
     "ref": 345.82,
     "refTime": 1795208401,
-    "change": 14.379999999999995,
-    "changePct": 4.1582326065583235
+    "change": 14.438800000000015,
+    "changePct": 4.175235671736746
    },
    "SPCX": {
     "session": "pre",
-    "price": 131.59,
-    "time": 1795431610,
+    "price": 131.4,
+    "time": 1795432501,
     "ref": 127.79,
     "refTime": 1795208400,
-    "change": 3.799999999999997,
-    "changePct": 2.973628609437356
+    "change": 3.6099999999999994,
+    "changePct": 2.8249471789654894
    },
    "ANT": {
     "session": "pre",
-    "price": 92.77,
-    "time": 1795431609,
+    "price": 92.59,
+    "time": 1795432519,
     "ref": 88.91,
     "refTime": 1795208402,
-    "change": 3.8599999999999994,
-    "changePct": 4.341468901135979
+    "change": 3.680000000000007,
+    "changePct": 4.139016983466435
    }
   }
  },
@@ -15104,6 +15104,48 @@
    "NVDA": {
     "items": [
      {
+      "hd": "ETFs Are Net Sellers of NVIDIA (NVDA) on Nov. 19",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/etfs-net-sellers-nvidia-nvda-110240187.html?.tsrc=rss",
+      "pub": "2026-11-23T11:02:40.000Z",
+      "sum": "ETFs sold $90.8 million in NVIDIA stock on Nov. 19, extending a three-day selling streak."
+     },
+     {
+      "hd": "Market Chatter: Nvidia's California Investigation Includes Potential Criminal Law Violations",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-nvidia-apos-california-105609381.html?.tsrc=rss",
+      "pub": "2026-11-23T10:56:09.000Z",
+      "sum": "Nvidia (NVDA) is being probed for potential criminal violations of California state law as part of a"
+     },
+     {
+      "hd": "Nvidia's Slide, Bitcoin's Sell-Off, Oil's Fed Impact: 3 Charts To Watch This Week",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-slide-bitcoin-sell-off-oil-fed-impact-3-charts-to-watch-this-week/cNbYyeSR9Ss?.tsrc=rss",
+      "pub": "2026-11-23T10:53:49.000Z",
+      "sum": "The Nasdaq-100 is nearing a 20% drop from its October peak, putting the index close to bear-market territory."
+     },
+     {
+      "hd": "Market Chatter: Nvidia-Backed Firmus Grid Considers $1.5 Billion Bond Offering by Year-end",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-nvidia-backed-firmus-104916854.html?.tsrc=rss",
+      "pub": "2026-11-23T10:49:16.000Z",
+      "sum": "Nvidia (NVDA)-backed Firmus Grid is considering a bond offering of around $1.5 billion by year-end a"
+     },
+     {
+      "hd": "Kevin O’Leary Says “The Bank Of Nvidia Is Closed,” As Wall Street’s $500 Billion AI Data Center Pledge Reportedly Sits Undeployed",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/23/kevin-oleary-says-the-bank-of-nvidia-is-closed-as-wall-streets-500-billion-ai-data-center-pledge-reportedly-sits-undeployed/?.tsrc=rss",
+      "pub": "2026-11-23T10:46:43.000Z",
+      "sum": "Wall Street promised hundreds of billions to keep AI customers buying NVIDIA chips, yet the money reportedly hasn't moved. Meanwhile, NVIDIA's own credit is quietly filling the gap, and an investor on Shark Tank fame says that era is ending."
+     },
+     {
+      "hd": "Anthropic Is Worth $1.2 Trillion. Is It a Better Buy Than Nvidia?",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/anthropic-is-worth-usd1-2-trillion-is-it-a-better-buy-than-nvidia/?.tsrc=rss",
+      "pub": "2026-11-23T10:35:02.000Z",
+      "sum": "Anthropic just completed the largest initial public offering of all time, and investors are piling into the stock."
+     },
+     {
       "hd": "The Morning Risk Report: China’s AI Firms Are Hooked on Nvidia Chips. Now Comes the Withdrawal.",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOMHEyLWU1cHVQOEsyMWdfSkhfaV90MldNcl9JVjdtTmdRVXp2dU1xeUN3MF8yeVlnV21Ga01fbGJDWEVTNjR3YUdQcXpoWlBCOThDNjRGNktGaFB4S3BvRXZjcjl1Qkl2OEl4NDlYWWdTSUN3Vm1wOEJPU0dWSlRDN0JWME1vWXE0UXpZUHphcEYzYUNzS2FkY2l3aTNZVEFoLWxIcndrNERMTGN5ckU3NXkzMVRMOEEwMTlaNW90Uk5EZTViWDg4MERnR01zcTNKVk8tSmlBcmpKdlFo?oc=5",
@@ -15113,7 +15155,7 @@
      {
       "hd": "Market Chatter: Nvidia's Alice Huang Scandal Draws Fresh Scrutiny Over China Intelligence Links",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-nvidia-apos-alice-095535152.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8460a03674a68a8353dcb5ded0122bfc6f41daa643ed2ed729de1a1d74c97ce8",
       "pub": "2026-11-23T09:55:35.000Z",
       "sum": "Nvidia (NVDA) faces renewed scrutiny after Alice Huang, at the center of a recent scandal involving"
      },
@@ -15127,16 +15169,9 @@
      {
       "hd": "US Stock Futures Rebound After AI Sell-Off as Nvidia Investigation and Fed Outlook Remain in Focus: Dow Jones, S&P, Nasdaq, Wall Street",
       "src": "Yahoo Finance",
-      "url": "https://investorshub.advfn.com/market-news/article/40488/us-stock-futures-rebound-after-ai-sell-off-as-nvidia-investigation-and-fed-outlook-remain-in-focus-dow-jones-sp-nasdaq-wall-street?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=5b4c736496dfb43b1de67f4bb8d4d482b3fc301a4b7a780470fa48a21c58e315",
       "pub": "2026-11-23T09:41:19.000Z",
       "sum": "US stock futures rallied sharply on Monday as investors attempted to recover from last week’s technology-led sell-off, while concerns surrounding Nvidia (NASDAQ:NVDA), tighter semiconductor export restrictions and the Federal Reserve’s interest rate outlook continued to influence market sentiment. The recovery comes ahead of a holiday-shortened trading week, with investors assessing the implications of the recent correction in artificial intelligence-related stocks and renewed scrutiny of Nvidia"
-     },
-     {
-      "hd": "Michael Burry Sees 1929’s and 2000’s “Lack of a Proximate Cause in Earnings.” Nvidia’s Estimates Keep Rising",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/michael-burry-sees-1929s-and-2000s-lack-of-a-proximate-cause-in-earnings-nvidias-estimates-keep-rising?ref=yahoofinance&tlnk=yf-261123-rg89fg6v&.tsrc=rss",
-      "pub": "2026-11-23T09:35:24.000Z",
-      "sum": "Key TakeawaysMichael Burry says the AI selloff shares 1929’s and 2000’s “lack of a proximate cause in earnings,” and Nvidia fits. The whole drop has come from Nvidia’s multiple, now 8."
      },
      {
       "hd": "Anthropic, Nvidia shares rise in premarket trading after major tech selloff",
@@ -15144,48 +15179,6 @@
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBJVmhYR3dCSjgwTWZWTGJGUGE1S0NKbkxQUDhzODNkU2lSRFU3dk5LeENVUjI0RS0zYnJ6LWFCMFZZaEpUWmdzSUFwQzRzOFM4VWNpSU9JTHo2c3o5U3NXcUpkNEdoSFdtbkdoatIBckFVX3lxTE9TTG1paDhMMG81cTlpOHdVOVRUMmVhTnRMOXR2MFd3ZHBvY3BTX1d6NVBZOVV4cDdVQ1dfRUs5YW95cmpieTdNZzlkWmFqUVNUR05EOGQ0SEk5a1RMZDdBaU1VdGlkdXN1cXFCM2RwN1d4QQ?oc=5",
       "pub": "2026-11-23T09:17:42.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia-Backed AI Company Firmus Mulls $1.5 Billion Bond Offering",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNOHRmWW5qdm1WVTJOY3dlQmd2bFMwZ016dUMzbG5pWDZKZzdvWHZvUXdpUlpLQXNxVlg4ZmJRNXZ2QVNTRGxzZGQteFVabXhIOVBFS3k5OElFUFZvcGxudzlRN2VTdTBGd3NvSm5pLWs3ZXE4VHFVODVwWUlUUlZQTTlxZHRTR2huZ1UwOF9maTh0NVFOOVAwSHFDZjFJUnRHa3I2MXluaDRRd2plV0k5TlNoRHk?oc=5",
-      "pub": "2026-11-23T08:49:27.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia vs. SpaceX: Here's Which Stock I'd Put $1,000 Towards Right Now",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=cf2dcab981007dec97742d228de8a7109f4f2e9774b89dfabe3eb4bd3f3374ea",
-      "pub": "2026-11-23T08:38:02.000Z",
-      "sum": "Both AI stocks come with risks, but one has a clear edge over the other."
-     },
-     {
-      "hd": "Futures bounce after AI selloff; Bessent on Nvidia probe - what’s moving markets",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=60b416f92eba5b832e75d044e36ffe6ab61aa530bd42342ef08ec83004ce2746",
-      "pub": "2026-11-23T07:13:06.000Z",
-      "sum": "Investing.com - Futures linked to the main U.S. stock averages rally, ahead of a holiday-shortened trading week that will likely be overshadowed by anxieties over the artificial intelligence trade that triggered a steep selloff in technology stocks last week. Treasury Secretary Scott Bessent says the U.S. is looking for answers about Nvidia’s sale of chips to China under former CEO Jensen Huang, while Wall Street strategist Ed Yardeni once again slashes his year-end forecast for the S&P 500."
-     },
-     {
-      "hd": "Nvidia (NVDA) Stock Looks Below Fair Value After Recent Turmoil",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5eec39d2709fd45a0f15d2a3031a6d9920cfcf202f7c1341da9b4fa3bd001d24",
-      "pub": "2026-11-23T07:07:52.000Z",
-      "sum": "NVIDIA has dropped sharply in recent weeks after a long multi year climb, and with leadership turmoil and regulatory probes now in the mix, the key issue for investors is whether the current share price still lines up with what its earnings can reasonably support. Over the past 5 years the stock has returned about 300.2%, which puts a lot of long term gains on the line if that earnings story no longer backs the price you see today. Record profitability, heavy AI infrastructure demand and..."
-     },
-     {
-      "hd": "Nvidia News Has Investors Rethinking These U.S. AI Chip Stocks",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=898d907f8d88289a5f1cbe9208fa2bfe9801378018fb9bda83e42ea5e48c9d41",
-      "pub": "2026-11-23T07:07:51.000Z",
-      "sum": "AI chip stocks just came through a sharp sentiment swing, with Nvidia’s leadership drama, export control worries and U.S.–China security concerns colliding with a sudden rebound in futures. That mix of anxiety and optimism can reset prices quickly, which matters if you care about where capital flows next. This article walks through 3 U.S. AI-chip and GPU designers exposed to these headlines and explains why their stories deserve a closer look. The stocks covered below are a small sample of..."
-     },
-     {
-      "hd": "Alice Huang’s Contacts With Chinese Spy Agency Reportedly Tracked by US Intelligence: Nvidia Stock Climbs Over 7% on Robinhood’s Platform",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=61e5ce3449f4cf22b8099be5e9849dbafe424fea5688589a348cbb0406173771",
-      "pub": "2026-11-23T06:44:11.000Z",
-      "sum": "U.S. intelligence reportedly tracked contacts between Alice Huang and an officer of a Chinese spy agency during her relationship with Jensen Huang, former CEO of Nvidia Corp. (NASDAQ:NVDA), whose shares rose more than 7% overnight early Monday. Contacts Spanned More Than a Year Alice Huang was in touch with an officer of China’s Ministry of State Security from spring 2025 until this fall, The New York Times reported Sunday, citing multiple people familiar with U.S. intelligence reports. That per"
      },
      {
       "hd": "Wall Street Pledged $500 Billion for Nvidia. Not a Dollar Has Been Deployed.",
@@ -15277,18 +15270,32 @@
       "url": "https://finnhub.io/api/news?id=c2569cf160c8172e4f01c23e667fab9bd4ea701cfdfcd38b6b149bcd70f63f05",
       "pub": "2026-11-22T09:55:00.000Z",
       "sum": "The S&P 500 fell more than 8% in a brutal week. Its return to record highs looks doubtful without a revival in AI leaders."
+     },
+     {
+      "hd": "Nvidia's Crash, Gold's China Boost and Gensler's AI Bubble Warning: This Week in Economics",
+      "src": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=1828ca7d2fa0d98ebe9d8ae311fe4603c1bb399e3e9ea7c57afe640ff24be669",
+      "pub": "2026-11-22T07:00:10.000Z",
+      "sum": "Wall Street faced a semiconductor selloff as gold demand persisted, while Social Security and AI bubble concerns dominated headlines."
      }
     ],
     "fetched": {
-     "Finnhub": 73,
-     "Yahoo": 3,
-     "Google News": 68,
+     "Finnhub": 74,
+     "Yahoo": 6,
+     "Google News": 61,
      "Nasdaq": 11,
      "Seeking Alpha": 24
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Bought: Tesla Leads on Thursday",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110438349.html?.tsrc=rss",
+      "pub": "2026-11-23T11:04:38.000Z",
+      "sum": "ARKQ added to all 33 of its increased positions on Thursday, with $410.8 million in gross purchases and no sales."
+     },
      {
       "hd": "Musk Says Cybercab “Would Win Even at Price Parity.” That’s a Problem for Uber and Lyft",
       "src": "Yahoo Finance",
@@ -15344,13 +15351,6 @@
       "url": "https://finnhub.io/api/news?id=dab64c9b423438e8f1ead9360722ec081b1a3e98bcbf9874fb403d9971127eb0",
       "pub": "2026-11-22T19:43:56.000Z",
       "sum": "ARK Invest's Q3 2026 13F portfolio rose from $15.40B to $17.37B as holdings fell to 182; Tesla and NVIDIA stakes both grew."
-     },
-     {
-      "hd": "Top bank resets Tesla stock target, yet standalone value is alarming",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7f1ac1685a49f9e81226b49171fad5358e84580813970e450f42a4deb3af6ad0",
-      "pub": "2026-11-22T18:47:00.000Z",
-      "sum": "One big upgrade comes with a catch."
      },
      {
       "hd": "Pony AI Results Show Just How Big Tesla’s Robo-Taxi Fleet Needs to Get",
@@ -15467,7 +15467,7 @@
     ],
     "fetched": {
      "Finnhub": 155,
-     "Yahoo": 15,
+     "Yahoo": 14,
      "Google News": 15,
      "Nasdaq": 11,
      "Seeking Alpha": 12
@@ -15653,7 +15653,7 @@
     ],
     "fetched": {
      "Finnhub": 158,
-     "Yahoo": 16,
+     "Yahoo": 15,
      "Google News": 22,
      "Nasdaq": 0,
      "Seeking Alpha": 24
@@ -15661,6 +15661,20 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "What Capital Group Growth ETF (CGGR) Bought: Anthropic Leads on Nov. 19",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/capital-group-growth-etf-cggr-110412881.html?.tsrc=rss",
+      "pub": "2026-11-23T11:04:12.000Z",
+      "sum": "Capital Group Growth ETF (CGGR) bought $741.5 million of Anthropic as gross trading reached $1.02 billion against $24.49 billion in assets."
+     },
+     {
+      "hd": "Anthropic Is Worth $1.2 Trillion. Is It a Better Buy Than Nvidia?",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/anthropic-is-worth-usd1-2-trillion-is-it-a-better-buy-than-nvidia/?.tsrc=rss",
+      "pub": "2026-11-23T10:35:02.000Z",
+      "sum": "Anthropic just completed the largest initial public offering of all time, and investors are piling into the stock."
+     },
      {
       "hd": "Anthropic’s IPO Is a Win for Venture. Its Success Could Reshape the Industry.",
       "src": "WSJ",
@@ -15674,6 +15688,20 @@
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBJVmhYR3dCSjgwTWZWTGJGUGE1S0NKbkxQUDhzODNkU2lSRFU3dk5LeENVUjI0RS0zYnJ6LWFCMFZZaEpUWmdzSUFwQzRzOFM4VWNpSU9JTHo2c3o5U3NXcUpkNEdoSFdtbkdoatIBckFVX3lxTE9TTG1paDhMMG81cTlpOHdVOVRUMmVhTnRMOXR2MFd3ZHBvY3BTX1d6NVBZOVV4cDdVQ1dfRUs5YW95cmpieTdNZzlkWmFqUVNUR05EOGQ0SEk5a1RMZDdBaU1VdGlkdXN1cXFCM2RwN1d4QQ?oc=5",
       "pub": "2026-11-23T09:17:42.000Z",
       "sum": ""
+     },
+     {
+      "hd": "Market Chatter: Anthropic, SpaceX Imposed Restrictions on Underwriters During IPOs",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-anthropic-spacex-imposed-091716635.html?.tsrc=rss",
+      "pub": "2026-11-23T09:17:16.000Z",
+      "sum": "Anthropic (ANT) required some of the 22 financial institutions underwriting its IPO to cap the numbe"
+     },
+     {
+      "hd": "ANUU, ANDD, and ANSS Now Trading: Leverage Shares by Themes Launches 2X Leveraged & Short Anthropic (ANT) ETFs on Cboe",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/options/articles/anuu-andd-anss-now-trading-090000363.html?.tsrc=rss",
+      "pub": "2026-11-23T09:00:00.000Z",
+      "sum": "Leverage Shares by Themes today announced the launch of ANUU, ANDD and ANSS, three single-stock ETFs providing leveraged and inverse daily exposure to Anthropic common stock."
      },
      {
       "hd": "A New Wave Of Anthropic ETFs Is Coming — What’s On Offer",
@@ -15730,34 +15758,6 @@
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOZGJyNGh6cktKS0FsM3FIbF9LbjFqVThfY3MyRURJREVmd1JqVGtVX3pTV1FuQzBUUUI3VDdXVHdUYkpKTDk1Ml9vZzdoN1p5T0pVZ3g1eGpwQ1NfVFp6VlhJX1FSXzZ6ajVDYjVKazF5N2FGbXVHLUdjN05YRzVQZnRYaVZtMkE?oc=5",
       "pub": "2026-11-23T01:31:41.000Z",
       "sum": ""
-     },
-     {
-      "hd": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/notable-capital-gic-baillie-gifford-012553645.html?.tsrc=rss",
-      "pub": "2026-11-23T01:25:53.000Z",
-      "sum": "Three significant backers share what gave them conviction to bet billions on Anthropic."
-     },
-     {
-      "hd": "Anthropic’s business model is creating a new kind of debt — comprehension debt",
-      "src": "Yahoo Finance",
-      "url": "https://www.americanbanker.com/news/anthropic-s-business-model-is-creating-a-new-kind-of-debt-comprehension-debt?.tsrc=rss",
-      "pub": "2026-11-23T00:30:00.000Z",
-      "sum": "While CEO Dario Amodei spins metaphors of fast cars, an Anthropic engineer is warning that AI is creating code faster than we can evaluate it."
-     },
-     {
-      "hd": "Does Anthropic Have a Competitive Advantage? These are the Four Big Ones",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=2653a99a4a2d5e6065228eb2131bc26bc3a7cda90932d2f5083fb8bb66f9b238",
-      "pub": "2026-11-22T20:50:02.000Z",
-      "sum": "Anthropic is officially public, and there's plenty of uncertainty about where the stock goes from here."
-     },
-     {
-      "hd": "Anthropic Stock Could Soar by 72%, According to This Wall Street Analyst",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9987f74c58f7019135f2adf2f4e9cb14fd0472eebe63ce3aca35479e0354d9b1",
-      "pub": "2026-11-22T20:36:01.000Z",
-      "sum": "Needham sees Anthropic soaring to $150, but is that realistic?"
      },
      {
       "hd": "SA Asks: How much of a threat is Anthropic's multi-chip strategy to Nvidia?",
@@ -15839,19 +15839,33 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 0,
-     "Google News": 97,
+     "Yahoo": 8,
+     "Google News": 95,
      "Nasdaq": 13,
      "Seeking Alpha": 26
     }
    }
   },
-  "asOf": "2026-11-23T10:45:13.486Z",
-  "lastAttempt": "2026-11-23T10:45:13.486Z",
+  "asOf": "2026-11-23T11:15:11.867Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Netanyahu Wants to Attack Iran. Does That Serve Israel or Him?",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/23/world/middleeast/netanyahu-israel-iran.html",
+    "pub": "2026-11-23T11:09:36.000Z",
+    "sum": "The Israeli prime minister, Benjamin Netanyahu calls renewing strikes a matter of national security. Military analysts and opposition leaders say he’s prioritizing his own interests."
+   },
+   {
+    "hd": "Ukraine sinks Russian warship off Libya in latest expansion of the war",
+    "src": "NBC News",
+    "url": "https://www.nbcnews.com/world/ukraine/ukraine-sinks-russian-warship-merkury-libya-naval-drones-war-rcna610822",
+    "pub": "2026-11-23T10:40:45.000Z",
+    "sum": "Ukraine has taken its fight against Russia to the shores of North Africa, claiming to have sunk a warship off the coast of Libya in its latest bold expansion of the war."
+   },
    {
     "hd": "Ukrainian drones hit a Russian warship at a naval base in Libya, Zelenskyy says",
     "src": "NPR",
@@ -15909,10 +15923,24 @@
     "sum": "Despite rising tension, President Trump told an Israeli outlet he may not make a decision on his next move in the Iran war until 2027."
    },
    {
+    "hd": "Ukrainian Drones Set Russian Oil Infrastructure Ablaze in Twin Strikes Deep Inside Russia",
+    "src": "Kyiv Post",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5HbjljbWplWThFbmROc0VZV3BiYXZqQTYxM25sMV9lbFY0RENNU09OYTZhay11UGExTks0S084Z2xVUVduWTAxeUNlNA?oc=5",
+    "pub": "2026-11-23T06:49:34.000Z",
+    "sum": ""
+   },
+   {
     "hd": "North Korea leader highlights security after Trump talks no-show",
     "src": "Euronews",
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQmVZUmdDYm5vM2ZBYTlIT1NoSzFyYXduS2FNNURBbjE3MHRySkJacW5SUV9vMXdSYndzaWtzVHByQllFYVl0R1lHMEh2d19IaWI3MjhudzR1Y1hSQTJHR0F2emx2Mk1UcFo3SEF1WHhNTHZyUEMtNmh2Ymo0T1loS3ByamEwbUduMkc0N1Y4M2JrMW9NLUI1eWNZSktYMlpra0FhNGZWQThteE1hTW5NN01wbWNJb1U?oc=5",
     "pub": "2026-11-23T06:45:53.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "South Korea president nominates new foreign minister, spy chief amid US worries",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQU25qTWZidFNXLXNpRGRNajlHQlAxS0pFYzdMb2FYUnBYdlpEU1k3dE9aZG0wa282a1hwTWt4eTI2azNjdlpKLTNuRm9pSVR0RTl4SmZTMXFLVEFfdVN1Y3lLRF9uR0ZUdHU0SXlEU3FQNG5BOV8zeUpmUHphcTZ2Tk5iRklKOHZjYzlDRHpJNHZMOTYtY0Ziakg1Z0xFaDNReWdueVVwcTZuNXNvSWkyeEx6QUhLby1CdUpUMQ?oc=5",
+    "pub": "2026-11-23T06:42:00.000Z",
     "sum": ""
    },
    {
@@ -15921,6 +15949,13 @@
     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQMnhjMGhWTE9jLTJuMUZkRHVRS0t5cjVhZHlsNklGWlM3bG1ydUFpM0QtMGQzdHFGUVZMYXR1VkxOWm5DMThqSWY1WlBsZWw1Y2RRX3RKYUM4RHhIU3R6Q2x3dTB3ald3SloydzVtME0wamRkSjBjNE15QkhhUmg3TjRNdi1LMGxzM1F2RG1pRjZVYWI5WTFQUFBiMlBEZHI1ekxvcVd3bDh0bjQzUDBCZWI3cnFndkk?oc=5",
     "pub": "2026-11-23T06:30:00.000Z",
     "sum": "Iran has some of the world's largest oil and natural gas reserves but is facing an energy crisis because of U.S. economic sanctions and a naval blockade."
+   },
+   {
+    "hd": "Russian attack on Ukraine's Dymer in Kyiv region kills 11, official says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdlU4RTQwUF9vS2lzZ0ZWRkJiOUdrRWNUc2Y3eXlhWXBVWllFdHNwTXlnaFQ3ZXQtWmg1TlVRT3NISXhjSWd4VUZ0VV9wc01rLWFyenZRNEdrMkpVMjltM1ZSdFRmbUc2WlZpLXJLZlFMb0NMeldDdlpDRjcwb2ZadHQ0dlJGeGhJU2Q3OUNNZ2R1T1p3ODZJQ0kwdWtkdUZKazNfbEFBc1lDUQ?oc=5",
+    "pub": "2026-11-23T06:24:00.000Z",
+    "sum": ""
    },
    {
     "hd": "UN urges probe after Russian ship attacked by drones off Libya",
@@ -16026,41 +16061,6 @@
     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNaHluYU5vZmlyZEg4cWxyMFRNRGdxZk5RX3BFeDUzV0Y0UXZDYnRvTkVPYWI5eV9pU0RFbk9xa0lZMmhXcEpuSWs0dlhmZWhpSUR4LUNzZDU1aHJiNVRRTWFUc1J0QjE3MDZ5SGZya2RsVmwzS2paX1VNM2RCdlNRU2ZRemdNZ0dtcG02RFVWc0NSOTlKOFJRLTQ1VHlHSFg5cURNdWkwNkE?oc=5",
     "pub": "2026-11-22T23:39:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
-    "pub": "2026-11-22T23:04:32.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukraine war spilling into NATO territory",
-    "src": "NPR",
-    "url": "https://www.npr.org/2026/11/22/nx-s1-6050236/ukraine-war-spilling-into-nato-territory",
-    "pub": "2026-11-22T22:40:22.000Z",
-    "sum": "The war between Russia and Ukraine once again creeps onto European territory – from attacks on ships to missiles in Poland and fresh allegations of Russian operations inside Denmark."
-   },
-   {
-    "hd": "Russian vessel hit by suspected Ukrainian drone at Libya’s Benghazi port | Russia-Ukraine war News",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQZzU3ZEZYME5lS0ROc3NoTHNrNlpjVlUyd2xjVnRLREpzSWlZWXMyS1E3OTJMZmxZNHZJV1BpbGM1U045c3JTc2p2dlFTYTNTSU9qdnVZamZZN29zR0JBY3ZpYjZ0Z1FpVXc2cDViTFZRMHNwejhPcTBrUHVqdFhZZG5XTTFSYi1Yc3AxaVlLc09VcTdyVzdFaA?oc=5",
-    "pub": "2026-11-22T22:14:33.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Tehran threatens to 'break legs' as 'Trump corridor' prepares to launch on Iran's border",
-    "src": "Fox News",
-    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMzJEdmVaWERGRkpBVTRSSUlMN2EtdUVIdHZTdGZsRHp2bERPRGQyMUJPYlc4TEVBd1l6QXNOMHVDTnVrU3djbHVHYUxDTGY2S1BwSVdXMkFUM2ltV1NFNU9VZDlHSktQRmM5Z3V5cEJsUDR3WThRUjdKd1g1a3ZkR0pqSDEzTVJUZzFZd2xLMVN5TFdYYmpOVjlYWVBPcENteEdN0gGoAUFVX3lxTE1Cdi1ZaFdLVWItZzhQRzFjUmpUNHpOZEJRWmFzbkItTVBnV3FvaDdtTGRGblBpMGNyd3VQT2VudnRFVzhCTTJKZkwxbU9Qc3hZbXowOFVnX3RiT2R1R2NvZUh1SFQwRGYwM3p5N3lGWk5mM3BlRTktS1NaSDg3a0tVakVndEdaNDVCOXB5R1J0R1RRWFNkbjlsQ05ZaUpDZ2oyOFE1M2IzNQ?oc=5",
-    "pub": "2026-11-22T22:13:15.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Israel's Eisenkot condemns arson attacks by Jewish settlers in West Bank",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPV0NtOW83bnNaeXNoY0g0REh2Ym8yMU52U0FCaGVTRy1oeTRrM1dPclNpZTF4QWVtVE95eG9TUXJkT3JBZldRWDNjejBRcFpiWTVPV1ZqeEVZdS1qMVZ6QzVvNUtSRXY0RUxLX05pdlB3V0tvLXA1Nk0wQXhxT1dQYVNyMm1YYTZtX0pRZFI4VWNDTHctYVk2NnJMdDlWSmhxbWlzbVg5OWFacVhQUzdHSU5lNDdJTlBRZVhlVXZaUQ?oc=5",
-    "pub": "2026-11-22T21:54:56.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16079,8 +16079,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T10:45:13.486Z",
-  "lastAttempt": "2026-11-23T10:45:13.486Z",
+  "asOf": "2026-11-23T11:15:11.867Z",
+  "lastAttempt": "2026-11-23T11:15:11.867Z",
   "lastError": null
  }
 }
