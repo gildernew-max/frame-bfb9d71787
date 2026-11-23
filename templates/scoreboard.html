@@ -133,7 +133,7 @@
   .roi-chip.focus{box-shadow:0 0 0 2px rgba(201,168,106,.9)}
 
   /* Detail */
-  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:240px;position:relative}
+  #detail{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;--line-size:24px;--lab-size:20px;--lab-w:200px;position:relative}
   /* Hero: logo (~360×150) | name+program+rank+chips | inline Aug–May weather table */
   .d-hero{flex:none;display:flex;align-items:stretch;gap:16px;min-width:0;padding-bottom:10px;border-bottom:1px solid var(--hair);
     min-height:300px}
@@ -192,15 +192,16 @@
     break-inside:avoid;-webkit-column-break-inside:avoid;page-break-inside:avoid;
     padding:8px 10px;border:1px solid var(--hair);border-radius:8px;background:var(--panel)}
   .d-sec.next{border-color:rgba(201,168,106,.35)}
-  #detail .lab{font-size:var(--lab-size);overflow-wrap:break-word;word-break:break-word;
-    white-space:normal;-webkit-line-clamp:3;max-height:calc(3 * 1.25em)}
+  #detail .lab{font-size:var(--lab-size);letter-spacing:.06em;overflow-wrap:break-word;word-break:break-word;
+    white-space:normal;-webkit-line-clamp:3;max-height:calc(3 * 1.25em);hyphens:auto}
   #detail .txt{font-size:var(--line-size);min-width:0}
   /* Section titles stay clearly larger than body (≥18px floor); wrap instead of clipping. */
   #detail .sec-h{margin:0 0 6px;padding-bottom:3px;gap:8px;align-items:flex-start}
   #detail .sec-h::before{width:18px;height:3px;margin-top:.55em}
   #detail .sec-h span{font-size:28px;white-space:normal;overflow-wrap:break-word;line-height:1.15}
   #detail .d-lines{gap:4px}
-  #detail .line{gap:8px;grid-template-columns:minmax(0,var(--lab-w)) minmax(0,1fr)}
+  /* Label column wraps long names (SAT mid-50, Marist near me); keep a clear gap before values. */
+  #detail .line{gap:14px;grid-template-columns:minmax(120px,44%) minmax(0,1fr)}
   .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.3;font-weight:400;color:var(--ink);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;max-height:calc(5 * 1.3em)}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
