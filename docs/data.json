@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T00:45:13.091Z",
+ "generatedAt": "2026-11-23T01:00:11.054Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7012,15 +7012,10 @@
   "closeFetchedFor": "2026-11-20"
  },
  "lastRun": {
-  "at": "2026-11-23T00:45:13.091Z",
+  "at": "2026-11-23T01:00:11.054Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13380,62 +13375,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T00:45:13.091Z",
-  "lastAttempt": "2026-11-23T00:45:13.091Z",
+  "asOf": "2026-11-23T01:00:11.054Z",
+  "lastAttempt": "2026-11-23T01:00:11.054Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7076.25,
-    "lastTime": 1795394146,
-    "settle": 6943.5,
+    "last": 7078,
+    "lastTime": 1795395010,
+    "settle": 6943.75,
     "settleDate": "2026-11-20",
     "indexClose": 6910.39,
-    "change": 132.75,
-    "changePct": 1.911860012961763,
-    "expectedOpen": 7042.506983149708,
+    "change": 134.25,
+    "changePct": 1.9333933393339335,
+    "expectedOpen": 7043.995019981999,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25830,
-    "lastTime": 1795394149,
+    "last": 25812,
+    "lastTime": 1795395011,
     "settle": 25142,
     "settleDate": "2026-11-20",
     "indexClose": 22617.732,
-    "change": 688,
-    "changePct": 2.7364569246678863,
-    "expectedOpen": 23236.656493516824,
+    "change": 670,
+    "changePct": 2.6648635748945986,
+    "expectedOpen": 23220.46370153528,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 48895,
-    "lastTime": 1795394145,
-    "settle": 48240,
+    "last": 48883,
+    "lastTime": 1795395006,
+    "settle": 48234,
     "settleDate": "2026-11-20",
     "indexClose": 48147.33,
-    "change": 655,
-    "changePct": 1.3577943615257049,
-    "expectedOpen": 48801.071731965174,
+    "change": 649,
+    "changePct": 1.3455239042998715,
+    "expectedOpen": 48795.16383443215,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2633.6,
-    "lastTime": 1795394145,
+    "last": 2633.1,
+    "lastTime": 1795395009,
     "settle": 2588.39990234375,
     "settleDate": "2026-11-20",
     "indexClose": null,
-    "change": 45.20009765624991,
-    "changePct": 1.7462563499296238,
+    "change": 44.70009765624991,
+    "changePct": 1.726939396643261,
     "expectedOpen": null,
     "valid": true
    }
@@ -13455,72 +13450,6 @@
    "SEA"
   ],
   "games": [
-   {
-    "id": "401873069",
-    "start": "2026-11-22T21:25Z",
-    "state": "in",
-    "status": "Q4 3:40",
-    "period": 4,
-    "clock": "3:40",
-    "completed": false,
-    "away": {
-     "name": "Jacksonville Jaguars",
-     "short": "Jaguars",
-     "id": "30",
-     "abbrev": "JAX",
-     "score": "18",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
-     "record": "7-2",
-     "winner": false,
-     "color": "#007487",
-     "rank": null
-    },
-    "home": {
-     "name": "New York Giants",
-     "short": "Giants",
-     "id": "19",
-     "abbrev": "NYG",
-     "score": "23",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
-     "record": "5-3-1",
-     "winner": false,
-     "color": "#003c7f",
-     "rank": null
-    }
-   },
-   {
-    "id": "401873075",
-    "start": "2026-11-22T21:25Z",
-    "state": "in",
-    "status": "Q4 0:10",
-    "period": 4,
-    "clock": "0:10",
-    "completed": false,
-    "away": {
-     "name": "Las Vegas Raiders",
-     "short": "Raiders",
-     "id": "13",
-     "abbrev": "LV",
-     "score": "24",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
-     "record": "4-6",
-     "winner": false,
-     "color": "#000000",
-     "rank": null
-    },
-    "home": {
-     "name": "Denver Broncos",
-     "short": "Broncos",
-     "id": "7",
-     "abbrev": "DEN",
-     "score": "38",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
-     "record": "7-2",
-     "winner": false,
-     "color": "#0a2343",
-     "rank": null
-    }
-   },
    {
     "id": "401873077",
     "start": "2026-11-23T01:20Z",
@@ -13883,10 +13812,76 @@
      "color": "#0080c6",
      "rank": null
     }
+   },
+   {
+    "id": "401873069",
+    "start": "2026-11-22T21:25Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Jacksonville Jaguars",
+     "short": "Jaguars",
+     "id": "30",
+     "abbrev": "JAX",
+     "score": "18",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/jax.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#007487",
+     "rank": null
+    },
+    "home": {
+     "name": "New York Giants",
+     "short": "Giants",
+     "id": "19",
+     "abbrev": "NYG",
+     "score": "23",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/nyg.png",
+     "record": "6-3-1",
+     "winner": true,
+     "color": "#003c7f",
+     "rank": null
+    }
+   },
+   {
+    "id": "401873075",
+    "start": "2026-11-22T21:25Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Las Vegas Raiders",
+     "short": "Raiders",
+     "id": "13",
+     "abbrev": "LV",
+     "score": "24",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lv.png",
+     "record": "4-7",
+     "winner": false,
+     "color": "#000000",
+     "rank": null
+    },
+    "home": {
+     "name": "Denver Broncos",
+     "short": "Broncos",
+     "id": "7",
+     "abbrev": "DEN",
+     "score": "38",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+     "record": "8-2",
+     "winner": true,
+     "color": "#0a2343",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-23T00:45:13.091Z",
-  "lastAttempt": "2026-11-23T00:45:13.091Z",
+  "asOf": "2026-11-23T01:00:11.054Z",
+  "lastAttempt": "2026-11-23T01:00:11.054Z",
   "lastError": null
  },
  "alerts": {
@@ -13897,8 +13892,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T00:45:13.091Z",
-  "lastAttempt": "2026-11-23T00:45:13.091Z",
+  "asOf": "2026-11-23T01:00:11.054Z",
+  "lastAttempt": "2026-11-23T01:00:11.054Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14574,8 +14569,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T00:45:13.091Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-23T01:00:11.054Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
