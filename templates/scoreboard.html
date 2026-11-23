@@ -358,6 +358,7 @@
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function str(v){return typeof v==='string'&&v.trim()?v.trim():'';}
+  // Only known keys are read; extra query params (e.g. cache-buster v=) are ignored.
   function param(name){
     var m=new RegExp('[?&]'+name+'=([^&#]*)').exec(location.search);
     if(!m)return '';
