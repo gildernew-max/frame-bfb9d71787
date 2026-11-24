@@ -391,32 +391,43 @@
   .roi-notes{flex:none;font-size:var(--t1);line-height:1.35;font-weight:400;color:var(--muted);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.35em)}
 
-  /* Korean Watch mode — five filled rank cards, reuses board focus ring + existing popup */
+  /* Korean Watch mode — up to 10 picks in 1-2 rows of 5; genre icon chips */
   .kw-sub{margin:8px 0 0;font-size:28px;font-weight:400;color:var(--muted);letter-spacing:.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48vw}
-  #cols.kw-cols{display:flex;flex-direction:column;gap:16px;min-height:0;overflow:hidden;
-    --kw-title:72px;--kw-meta:32px;--kw-plot:34px;--kw-score:36px}
-  .kw-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;align-items:stretch}
-  .kw-card{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;min-height:0;height:100%;
-    padding:28px 26px 30px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
+  #cols.kw-cols{display:flex;flex-direction:column;gap:12px;min-height:0;overflow:hidden;
+    --kw-title:48px;--kw-meta:26px;--kw-score:28px;--kw-icon:44px}
+  .kw-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+    grid-template-rows:1fr;gap:14px;align-items:stretch}
+  .kw-grid.kw-rows-2{grid-template-rows:1fr 1fr}
+  .kw-card{position:relative;display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0;height:100%;
+    padding:18px 18px 20px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
     outline:none;overflow:hidden;transform:scale(1);transform-origin:center center;
     transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-  .kw-card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 2px 2px 0;background:var(--gold)}
+  .kw-card::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:4px;border-radius:0 2px 2px 0;background:var(--gold)}
   .kw-card.focus{border-color:var(--focus-ring);z-index:6;transform:scale(1.02);
-    box-shadow:0 0 0 12px var(--focus-ring),0 0 28px 8px rgba(230,184,76,.35),0 12px 22px rgba(0,0,0,.4)}
-  .kw-rank{flex:none;font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+    box-shadow:0 0 0 10px var(--focus-ring),0 0 24px 6px rgba(230,184,76,.35),0 10px 18px rgba(0,0,0,.4)}
+  .kw-rank{flex:none;font-size:20px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
   .kw-title{flex:none;font:400 var(--kw-title)/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.12em);
     overflow-wrap:break-word;word-break:normal}
-  .kw-meta{flex:none;display:flex;flex-direction:column;gap:8px;min-width:0}
-  .kw-meta .kw-line{font-size:var(--kw-meta);line-height:1.3;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .kw-meta{flex:none;display:flex;flex-direction:column;gap:4px;min-width:0}
+  .kw-meta .kw-line{font-size:var(--kw-meta);line-height:1.25;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .kw-meta .kw-line b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:10px;font-size:.92em}
-  .kw-plot{flex:1;min-height:0;overflow:hidden;font-size:var(--kw-plot);line-height:1.35;font-weight:400;color:var(--ink);
-    overflow-wrap:break-word;word-break:normal}
-  .kw-scores{flex:none;margin-top:4px;padding-top:16px;border-top:1px solid var(--hair);
-    font-size:var(--kw-score);line-height:1.3;font-weight:500;color:var(--ink)}
-  .kw-scores .kw-imdb{display:block;margin-top:4px;color:var(--gold);font-weight:600}
-  .kw-foot{flex:none;font-size:22px;font-weight:400;color:var(--dim);letter-spacing:.06em;text-align:center;padding-top:2px}
+  .kw-genres{flex:1;min-height:0;display:flex;align-items:flex-end;justify-content:flex-start;gap:14px;flex-wrap:nowrap;
+    overflow:hidden;padding-top:4px}
+  .kw-g{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;width:calc(var(--kw-icon) + 12px);color:var(--ink)}
+  .kw-g svg{width:var(--kw-icon);height:var(--kw-icon);display:block;flex:none}
+  .kw-g span{font-size:18px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center;line-height:1.1}
+  .kw-scores{flex:none;margin-top:2px;padding-top:12px;border-top:1px solid var(--hair);
+    font-size:var(--kw-score);line-height:1.25;font-weight:500;color:var(--ink)}
+  .kw-scores .kw-imdb{display:block;margin-top:2px;color:var(--gold);font-weight:600}
+  .kw-foot{flex:none;font-size:20px;font-weight:400;color:var(--dim);letter-spacing:.06em;text-align:center;padding-top:2px}
+  /* Larger genre chips inside the shared detail popup */
+  .d-pop-body .kw-genres-pop{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;margin:4px 0 18px;color:var(--pop-ink)}
+  .d-pop-body .kw-genres-pop .kw-g{width:96px;color:var(--pop-ink)}
+  .d-pop-body .kw-genres-pop .kw-g svg{width:72px;height:72px}
+  .d-pop-body .kw-genres-pop .kw-g span{font-size:var(--pop-lab);color:rgba(245,241,232,.7);max-width:96px}
 </style>
 </head>
 <body>
@@ -2214,12 +2225,73 @@
     }
     return rows;
   }
+  // Fixed genre_tags set — cream stroke icons (currentColor) for Tizen-safe inline SVG.
+  var KW_GENRE={
+    drama:{label:'Drama', paths:['M4.5 9c0-1.7 1.4-2.8 3-2.4.9.2 1.5.8 1.8 1.6L12 14l2.7-5.8c.3-.8.9-1.4 1.8-1.6 1.6-.4 3 .7 3 2.4 0 2.5-3.5 5.8-7.5 9.2C8 14.8 4.5 11.5 4.5 9z']},
+    romance:{label:'Romance', paths:['M12 20.2S5 15.6 5 10.6C5 8.2 6.9 6.4 9.2 6.4c1.4 0 2.6.8 2.8 1.9.2-1.1 1.4-1.9 2.8-1.9 2.3 0 4.2 1.8 4.2 4.2 0 5-7 9.6-7 9.6z']},
+    comedy:{label:'Comedy', paths:['M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18z','M8 14.2c1.2 1.6 2.6 2.3 4 2.3s2.8-.7 4-2.3'], dots:[[9,10],[15,10]]},
+    thriller:{label:'Thriller', paths:['M13 2L5.5 13.2H11l-1.2 8.8L18.5 10H13V2z']},
+    mystery:{label:'Mystery', paths:['M10.8 16.8a6.2 6.2 0 1 1 4.2-1.7L19 19l-1.8 1.8-4-4.1a6.1 6.1 0 0 1-2.4.1z','M10.8 14a3.4 3.4 0 1 0 0-6.8 3.4 3.4 0 0 0 0 6.8z']},
+    horror:{label:'Horror', paths:['M12 3.2c-4 1.9-6.8 5.2-6.8 9.2 0 4.1 2.7 7.4 6.8 8.4 4.1-1 6.8-4.3 6.8-8.4 0-4-2.8-7.3-6.8-9.2z','M9.2 15.6c.9 1 2 1.5 2.8 1.5s1.9-.5 2.8-1.5'], dots:[[8.2,11],[15.8,11]]},
+    action:{label:'Action', paths:['M12 2.5l1.5 4.9L18.5 9l-5 1.5L12 15.5l-1.5-5L5.5 9l5-1.6L12 2.5z','M18.2 14.5l.7 2.2 2.2.6-2.2.7-.7 2.2-.6-2.2-2.2-.7 2.2-.6.6-2.2z']},
+    historical:{label:'History', paths:['M5 20V9.2L12 4.5l7 4.7V20','M9 20v-5.5h6V20','M3.5 20h17','M10 12h4']},
+    fantasy:{label:'Fantasy', paths:['M12 2.8v10.2','M9.8 13h4.4l1.6 8.2H8.2L9.8 13z','M12 6.2l2.4-2.3','M12 6.2L9.6 3.9','M15.2 8l2.5-.3','M8.8 8l-2.5-.3']},
+    crime:{label:'Crime', paths:['M8.2 11.2V8.6A3.8 3.8 0 0 1 12 4.8a3.8 3.8 0 0 1 3.8 3.8v2.6','M6.8 11.2h10.4V20H6.8z','M10 15h4']},
+    family:{label:'Family', paths:['M3.2 20V11.2L12 4.2l8.8 7V20','M9 20v-5.8h6V20']},
+    'sci-fi':{label:'Sci-Fi', paths:['M12 15c1.5 0 2.7-1.7 2.7-3.8S13.5 7.4 12 7.4 9.3 9.1 9.3 11.2 10.5 15 12 15z','M12 3v2','M12 19v2','M5 7.5l1.6 1.2','M17.4 15.3l1.6 1.2','M5 16.5l1.6-1.2','M17.4 8.7l1.6-1.2','M6.8 12H4','M20 12h-2.8']},
+    documentary:{label:'Docs', paths:['M3.8 6.8h11.2v10.4H3.8z','M15 10.2l5.2-2.6v9L15 14z','M6.5 10h4.5','M6.5 13h3.5']},
+    reality:{label:'Reality', paths:['M3.8 5.8h16.4v10.4H3.8z','M8 20h8','M12 16.2V20','M7 9.2h2.4','M7 12h4']}
+  };
+  function normKwGenreTag(raw){
+    var t=String(raw==null?'':raw).toLowerCase().replace(/_/g,'-').replace(/\s+/g,'-').trim();
+    if(t==='scifi'||t==='science-fiction')t='sci-fi';
+    if(t==='doc'||t==='docs')t='documentary';
+    if(t==='history')t='historical';
+    return KW_GENRE[t]?t:'';
+  }
+  function cleanKwGenreTags(raw){
+    var out=[], seen={}, i, t, src;
+    src=Array.isArray(raw)?raw:[];
+    for(i=0;i<src.length&&out.length<3;i++){
+      t=normKwGenreTag(src[i]);
+      if(!t||seen[t])continue;
+      seen[t]=1;
+      out.push(t);
+    }
+    return out;
+  }
+  function kwGenreIconSvg(tag){
+    var g=KW_GENRE[tag], h, i, d;
+    if(!g)return '';
+    h='<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">';
+    if(g.paths){
+      for(i=0;i<g.paths.length;i++)h+='<path d="'+g.paths[i]+'"/>';
+    }
+    if(g.dots){
+      for(i=0;i<g.dots.length;i++){
+        d=g.dots[i];
+        h+='<circle cx="'+d[0]+'" cy="'+d[1]+'" r="1.15" fill="currentColor" stroke="none"/>';
+      }
+    }
+    return h+'</svg>';
+  }
+  function kwGenreChipsHtml(tags, pop){
+    var h='', i, t, g;
+    if(!tags||!tags.length)return '';
+    h='<div class="'+(pop?'kw-genres-pop':'kw-genres')+'">';
+    for(i=0;i<tags.length;i++){
+      t=tags[i]; g=KW_GENRE[t];
+      if(!g)continue;
+      h+='<div class="kw-g">'+kwGenreIconSvg(t)+'<span>'+esc(g.label)+'</span></div>';
+    }
+    return h+'</div>';
+  }
   function cleanKoreanWatch(raw){
-    var picks=[], i, p, genres, g, j, rt, imdb, win, label;
+    var picks=[], i, p, genres, g, j, rt, imdb, win, label, tags;
     if(!isKoreanWatchRaw(raw))return null;
     win=raw.window&&typeof raw.window==='object'?raw.window:{};
     label=capStr(win.label, 80);
-    for(i=0;i<raw.picks.length&&picks.length<5;i++){
+    for(i=0;i<raw.picks.length&&picks.length<10;i++){
       p=raw.picks[i];
       if(!p||typeof p!=='object')continue;
       genres=[];
@@ -2227,6 +2299,14 @@
         for(j=0;j<p.genre.length&&genres.length<4;j++){
           g=capStr(p.genre[j], 40);
           if(g)genres.push(g);
+        }
+      }
+      tags=cleanKwGenreTags(p.genre_tags);
+      // Fall back to mapping free-text genre labels when genre_tags omitted.
+      if(!tags.length&&genres.length){
+        for(j=0;j<genres.length&&tags.length<3;j++){
+          g=normKwGenreTag(genres[j]);
+          if(g&&tags.indexOf(g)<0)tags.push(g);
         }
       }
       rt=p.rt&&typeof p.rt==='object'?p.rt:{};
@@ -2242,6 +2322,7 @@
         runtime:capStr(p.runtime, 40),
         episodes:capStr(p.episodes, 16),
         genre:genres,
+        genre_tags:tags,
         plot:capStr(p.plot, 320),
         rt:{
           tomatometer:typeof rt.tomatometer==='number'&&isFinite(rt.tomatometer)?rt.tomatometer:null,
@@ -2267,26 +2348,19 @@
     };
   }
   function kwCardHtml(pick, idx){
-    var hasRt=(pick.rt.tomatometer!=null)||(pick.rt.popcornmeter!=null), scoresHtml, meta='', release;
+    var hasRt=(pick.rt.tomatometer!=null)||(pick.rt.popcornmeter!=null), scoresHtml, meta='';
     if(!hasRt&&pick.imdb.rating!=null){
       scoresHtml=esc('no RT score')+'<span class="kw-imdb">IMDb '+esc(String(pick.imdb.rating))+'</span>';
     }else{
       scoresHtml=esc(kwScoresCardLine(pick.rt, pick.imdb));
     }
-    meta+='<div class="kw-line"><b>Type</b>'+esc(pick.type==='series'?'Series':'Movie')+'</div>';
     if(pick.service)meta+='<div class="kw-line"><b>Service</b>'+esc(pick.service)+'</div>';
-    if(pick.us_release){
-      release=fmtDate(pick.us_release, true);
-      meta+='<div class="kw-line"><b>Release</b>'+esc(release)+'</div>';
-    }
-    if(pick.genre&&pick.genre.length){
-      meta+='<div class="kw-line"><b>Genre</b>'+esc(pick.genre.join(', '))+'</div>';
-    }
+    meta+='<div class="kw-line"><b>Type</b>'+esc(pick.type==='series'?'Series':'Movie')+'</div>';
     return '<button type="button" class="kw-card" data-kw="'+idx+'" tabindex="-1">'+
       '<div class="kw-rank">#'+esc(String(pick.rank))+'</div>'+
       '<div class="kw-title">'+esc(pick.title)+'</div>'+
       '<div class="kw-meta">'+meta+'</div>'+
-      (pick.plot?'<div class="kw-plot" data-full="'+esc(pick.plot)+'">'+esc(pick.plot)+'</div>':'<div class="kw-plot" data-full=""></div>')+
+      kwGenreChipsHtml(pick.genre_tags, false)+
       '<div class="kw-scores">'+scoresHtml+'</div>'+
     '</button>';
   }
@@ -2301,7 +2375,7 @@
     }
   }
   function fitKwTitleSize(cards, root){
-    var sizes=[72,64,56,48,44,40,36,32], i, j, t, lh, ok, cs;
+    var sizes=[52,48,44,40,36,32,28], i, j, t, lh, ok, cs;
     for(i=0;i<sizes.length;i++){
       root.style.setProperty('--kw-title', sizes[i]+'px');
       ok=true;
@@ -2323,55 +2397,31 @@
       }
       if(ok)return sizes[i];
     }
-    root.style.setProperty('--kw-title', '32px');
-    return 32;
-  }
-  function fitKwPlotTeaser(el){
-    var full, lo, hi, mid, best, cs, lh, maxLines, budget;
-    if(!el)return;
-    full=el.getAttribute('data-full')||'';
-    el.style.maxHeight='';
-    if(!full){el.textContent='';return;}
-    cs=window.getComputedStyle(el);
-    lh=parseFloat(cs.lineHeight);
-    if(!(lh>0))lh=parseFloat(cs.fontSize)*1.35||34;
-    // Whole lines only — never leave a clipped half-line at the bottom of the card.
-    maxLines=Math.max(1, Math.floor(el.clientHeight/lh));
-    budget=Math.floor(maxLines*lh);
-    el.style.maxHeight=budget+'px';
-    el.textContent=full;
-    if(el.clientHeight<=0)return;
-    if(el.scrollHeight<=el.clientHeight+1)return;
-    lo=0; hi=full.length; best=0;
-    while(lo<=hi){
-      mid=(lo+hi)>>1;
-      el.textContent=full.slice(0, mid)+(mid<full.length?'\u2026':'');
-      if(el.scrollHeight<=el.clientHeight+1){best=mid;lo=mid+1;}
-      else hi=mid-1;
-    }
-    if(best<=0)el.textContent='\u2026';
-    else if(best>=full.length)el.textContent=full;
-    else el.textContent=full.slice(0, best)+'\u2026';
+    root.style.setProperty('--kw-title', '28px');
+    return 28;
   }
   function layoutKwBoard(){
-    var root=$('cols'), grid=root?root.querySelector('.kw-grid'):null, cards, i, typeSizes, si, ok;
+    var root=$('cols'), grid=root?root.querySelector('.kw-grid'):null, cards, i, typeSizes, si, ok, twoRows;
     if(!root||!grid)return;
     cards=grid.querySelectorAll('.kw-card');
     if(!cards.length)return;
-    // Prefer large couch-readable type; step down only if a card overflows.
-    typeSizes=[
-      {meta:34, plot:36, score:38},
-      {meta:32, plot:34, score:36},
-      {meta:30, plot:32, score:34},
-      {meta:28, plot:30, score:32},
-      {meta:26, plot:28, score:30}
+    twoRows=cards.length>5;
+    typeSizes=twoRows?[
+      {meta:26, score:28, icon:44},
+      {meta:24, score:26, icon:40},
+      {meta:22, score:24, icon:36},
+      {meta:20, score:22, icon:32}
+    ]:[
+      {meta:30, score:34, icon:48},
+      {meta:28, score:32, icon:44},
+      {meta:26, score:30, icon:40},
+      {meta:24, score:28, icon:36}
     ];
     for(si=0;si<typeSizes.length;si++){
       root.style.setProperty('--kw-meta', typeSizes[si].meta+'px');
-      root.style.setProperty('--kw-plot', typeSizes[si].plot+'px');
       root.style.setProperty('--kw-score', typeSizes[si].score+'px');
+      root.style.setProperty('--kw-icon', typeSizes[si].icon+'px');
       fitKwTitleSize(cards, root);
-      for(i=0;i<cards.length;i++)fitKwPlotTeaser(cards[i].querySelector('.kw-plot'));
       ok=root.scrollHeight<=root.clientHeight+4&&root.scrollWidth<=root.clientWidth+4;
       if(ok){
         for(i=0;i<cards.length;i++){
@@ -2381,7 +2431,6 @@
       if(ok)return;
     }
     fitKwTitleSize(cards, root);
-    for(i=0;i<cards.length;i++)fitKwPlotTeaser(cards[i].querySelector('.kw-plot'));
   }
   function focusedKwPick(){
     var d=state.data;
@@ -2391,8 +2440,9 @@
     return d.picks[i];
   }
   function kwPopupBodyHtml(pick){
-    var rows=[], release, note, runtimeBits, scores, i;
+    var rows=[], release, note, runtimeBits, scores, i, chips;
     if(!pick)return '';
+    chips=kwGenreChipsHtml(pick.genre_tags, true);
     rows.push({label:'Type', text:pick.type==='series'?'Series':'Movie'});
     if(pick.service)rows.push({label:'Service', text:pick.service});
     release='';
@@ -2409,7 +2459,7 @@
     if(pick.plot)rows.push({label:'Plot', text:pick.plot});
     scores=kwScoresPopupRows(pick.rt, pick.imdb);
     for(i=0;i<scores.length;i++)rows.push(scores[i]);
-    return dLines(rows);
+    return chips+dLines(rows);
   }
   function layoutKwPopup(){
     var pop=$('d-pop'), body=$('d-pop-body'), start=88, floor, size;
@@ -2452,18 +2502,39 @@
     openKwPopup();
   }
   function moveKw(dir){
-    var n, i;
+    var n, i, cols, row, col, rowStart, rowEnd, next;
     if(!state.data||!state.data.picks)return;
     n=state.data.picks.length;
     if(!n)return;
+    cols=5;
     i=state.kwFocus|0;
-    if(dir==='left'||dir==='up')i=(i-1+n)%n;
-    else if(dir==='right'||dir==='down')i=(i+1)%n;
-    state.kwFocus=i;
+    if(i<0||i>=n)i=0;
+    row=Math.floor(i/cols);
+    col=i%cols;
+    rowStart=row*cols;
+    rowEnd=Math.min(n-1, rowStart+cols-1);
+    if(dir==='left'){
+      next=i>rowStart?i-1:i;
+    }else if(dir==='right'){
+      next=i<rowEnd?i+1:i;
+    }else if(dir==='up'){
+      if(row<=0)next=i;
+      else next=(row-1)*cols+Math.min(col, cols-1);
+    }else if(dir==='down'){
+      next=rowStart+cols+col;
+      if(next>=n){
+        // Clamp to last row, same column when possible.
+        next=Math.min(n-1, Math.floor((n-1)/cols)*cols+col);
+        if(next<rowStart+cols)next=i;
+      }
+    }else next=i;
+    if(next<0)next=0;
+    if(next>=n)next=n-1;
+    state.kwFocus=next;
     paintKwFocus();
   }
   function renderKoreanWatch(d){
-    var i, cards='', headL, sub;
+    var i, cards='', headL, sub, rowsClass;
     state.mode='kw';
     state.data=d;
     state.view='board';
@@ -2493,12 +2564,12 @@
     sub.textContent=d.windowLabel||'';
     sub.hidden=!d.windowLabel;
     for(i=0;i<d.picks.length;i++)cards+=kwCardHtml(d.picks[i], i);
+    rowsClass=d.picks.length>5?' kw-rows-2':'';
     $('cols').className='cols kw-cols';
     $('cols').style.gridTemplateColumns='';
-    $('cols').innerHTML='<div class="kw-grid">'+cards+'</div>'+
+    $('cols').innerHTML='<div class="kw-grid'+rowsClass+'">'+cards+'</div>'+
       '<div class="kw-foot">Sources: Rotten Tomatoes, IMDb</div>';
     layoutKwBoard();
-    // Second pass after flex/grid heights settle so plot teasers measure real space.
     setTimeout(function(){layoutKwBoard();paintKwFocus();}, 0);
     paintKwFocus();
     setHints();

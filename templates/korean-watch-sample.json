@@ -9,173 +9,152 @@
     "label": "Sample week · Nov 17–24"
   },
   "region": "US",
-  "services": [
-    "Netflix",
-    "Hulu",
-    "Prime"
-  ],
+  "services": ["Netflix", "Hulu", "Prime", "Viki"],
   "picks": [
     {
       "rank": 1,
-      "id": "sample-harbor-lights",
-      "title": "Harbor Lights",
-      "type": "movie",
+      "id": "possible-love",
+      "title": "Possible Love",
+      "type": "series",
       "service": "Netflix",
       "us_release": "2026-11-18",
-      "us_release_note": "Streaming premiere",
-      "runtime": "118 min",
-      "genre": [
-        "Drama",
-        "Romance"
-      ],
-      "plot": "A fictional harbor-city florist and a night-shift ferry captain trade letters across one rainy autumn, discovering what they left unsaid.",
-      "rt": {
-        "tomatometer": 92,
-        "tomatometer_reviews": 84,
-        "popcornmeter": 88,
-        "popcornmeter_ratings": 4200,
-        "url": null
-      },
-      "imdb": {
-        "rating": 7.9,
-        "votes": 15200,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "Both RT meters high",
-      "rank_reason": "Fixture: both RT scores"
+      "episodes": "12 episodes",
+      "genre": ["Drama"],
+      "genre_tags": ["drama"],
+      "plot": "Sample drama about two coworkers who keep almost dating while pretending the office romance rule does not apply to them.",
+      "rt": { "tomatometer": 92, "tomatometer_reviews": 40, "popcornmeter": 88, "popcornmeter_ratings": 2100 },
+      "imdb": { "rating": 7.8, "votes": 9200 }
     },
     {
       "rank": 2,
-      "id": "sample-midnight-clinic",
-      "title": "Midnight Clinic",
+      "id": "dead-end-job",
+      "title": "Dead-End Job",
       "type": "series",
       "service": "Hulu",
-      "us_release": "2026-11-20",
-      "runtime": null,
-      "episodes": "8 episodes · ~55 min",
-      "genre": [
-        "Medical",
-        "Mystery"
-      ],
-      "plot": "Placeholder series about a fictional overnight ER where every case arrives with a sealed envelope and a countdown clock.",
-      "rt": {
-        "tomatometer": 81,
-        "tomatometer_reviews": 42,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 8.1,
-        "votes": 9800,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "Critics only",
-      "rank_reason": "Fixture: only critics score"
+      "us_release": "2026-11-19",
+      "us_release_note": "Limited series premiere",
+      "episodes": "8 episodes",
+      "genre": ["Mystery", "Horror", "Drama"],
+      "genre_tags": ["mystery", "horror", "drama"],
+      "plot": "A night-shift clerk discovers every late return to the office leaves a new locked door that should not exist.",
+      "rt": { "tomatometer": 81, "tomatometer_reviews": 33, "popcornmeter": null, "popcornmeter_ratings": null },
+      "imdb": { "rating": 6.9, "votes": 1840, "note": "Placeholder note that must stay hidden whenever a rating is present so the popup does not overflow on dense picks." }
     },
     {
       "rank": 3,
-      "id": "sample-paper-crane-relay",
-      "title": "Paper Crane Relay",
-      "type": "movie",
-      "service": "Prime",
-      "us_release": "2026-11-21",
-      "runtime": "104 min",
-      "genre": [
-        "Comedy",
-        "Family"
-      ],
-      "plot": "Fictional road-trip comedy: three cousins deliver a thousand origami cranes before a wedding that may not happen.",
-      "rt": {
-        "tomatometer": null,
-        "tomatometer_reviews": null,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 8.5,
-        "votes": 6400,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "IMDb only",
-      "rank_reason": "Fixture: no RT + IMDb"
+      "id": "remarried-empress",
+      "title": "The Remarried Empress",
+      "type": "series",
+      "service": "Viki",
+      "us_release": "2026-11-20",
+      "episodes": "16 episodes",
+      "genre": ["Romance", "Fantasy"],
+      "genre_tags": ["romance", "fantasy"],
+      "plot": "An empress rebuilds her court and her heart after a public betrayal, with palace intrigue and a second chance at love.",
+      "rt": { "tomatometer": 94, "tomatometer_reviews": 28, "popcornmeter": 91, "popcornmeter_ratings": 5600 },
+      "imdb": { "rating": 8.2, "votes": 14000 }
     },
     {
       "rank": 4,
-      "id": "sample-rating-over-note",
-      "title": "Quiet Signal",
+      "id": "100-days-of-deception",
+      "title": "100 Days of Deception",
       "type": "series",
-      "service": "Netflix",
-      "us_release": "2026-11-22",
-      "us_release_note": "Limited drop with a longer sample note that should truncate in the popup to about one hundred twenty characters so the modal stays compact on the Frame TV.",
-      "episodes": "6 episodes",
-      "genre": [
-        "Sci-Fi",
-        "Drama"
-      ],
-      "plot": "Placeholder sci-fi: a coastal town hears a radio tone that only children can decode, and the adults pretend not to notice.",
-      "rt": {
-        "tomatometer": null,
-        "tomatometer_reviews": null,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 6.9,
-        "votes": 1840,
-        "url": null,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
-      },
-      "status": "new",
-      "card_text": "Rating hides note",
-      "rank_reason": "Fixture: imdb.rating present so note is omitted"
+      "service": "Prime",
+      "us_release": "2026-11-21",
+      "episodes": "10 episodes",
+      "genre": ["Action", "Romance", "Historical"],
+      "genre_tags": ["action", "romance", "historical"],
+      "plot": "A bodyguard and a crown prince swap identities for one hundred days to root out a conspiracy inside the palace walls.",
+      "rt": { "tomatometer": 87, "tomatometer_reviews": 22, "popcornmeter": 84, "popcornmeter_ratings": 1900 },
+      "imdb": { "rating": 7.6, "votes": 6100 }
     },
     {
       "rank": 5,
-      "id": "sample-max-fit",
-      "title": "Dead-End Sample Fixture",
+      "id": "take-charge-of-my-heart",
+      "title": "Take Charge of My Heart",
+      "type": "series",
+      "service": "Netflix",
+      "us_release": "2026-11-22",
+      "episodes": "12 episodes",
+      "genre": ["Romance", "Comedy", "Fantasy"],
+      "genre_tags": ["romance", "comedy", "fantasy"],
+      "plot": "A chaotic cupid internship assigns a mortal fixer to pair impossible couples before the season wish quota fails.",
+      "rt": { "tomatometer": 79, "tomatometer_reviews": 19, "popcornmeter": 90, "popcornmeter_ratings": 3400 },
+      "imdb": { "rating": 7.4, "votes": 4500 }
+    },
+    {
+      "rank": 6,
+      "id": "mousetrap",
+      "title": "Mousetrap",
+      "type": "series",
+      "service": "Netflix",
+      "us_release": "2026-11-23",
+      "episodes": "8 episodes",
+      "genre": ["Mystery", "Thriller"],
+      "genre_tags": ["mystery", "thriller"],
+      "plot": "A retired detective is pulled back into a sealed-room case when a childhood board game starts predicting real murders.",
+      "rt": { "tomatometer": 80, "tomatometer_reviews": 25, "popcornmeter": null, "popcornmeter_ratings": null },
+      "imdb": { "rating": 6.8, "votes": 2700 }
+    },
+    {
+      "rank": 7,
+      "id": "four-hands-two-sonatas",
+      "title": "Four Hands, Two Sonatas",
       "type": "movie",
       "service": "Hulu",
-      "us_release": "2026-11-06",
-      "us_release_note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove th",
-      "runtime": "131 min",
-      "episodes": "Episodes: 16 max",
-      "genre": [
-        "Drama",
-        "Adventure",
-        "Fantasy",
-        "Mystery"
-      ],
-      "plot": "A deliberately long placeholder plot used to prove popup layout under dense copy: an apprentice mapmaker inherits a brass compass that redraws city streets whenever it rains, forcing her to choose between preserving the old alleys her neighbors love and finishing a commission for a fictional transit authority th",
-      "rt": {
-        "tomatometer": 74,
-        "tomatometer_reviews": 55,
-        "popcornmeter": 91,
-        "popcornmeter_ratings": 2100,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch pop",
-        "url": null
-      },
-      "imdb": {
-        "rating": null,
-        "votes": null,
-        "url": null,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
-      },
-      "status": "new",
-      "card_text": "Max-length popup stress",
-      "rank_reason": "Fixture: 23 title / 313 plot / 249 note / 4 genres / 273 imdb note"
+      "us_release": "2026-11-18",
+      "runtime": "118 min",
+      "genre": ["Romance", "Drama"],
+      "genre_tags": ["romance", "drama"],
+      "plot": "Two rival pianists share a practice room for one semester and rewrite the ending of a sonata neither can finish alone.",
+      "rt": { "tomatometer": null, "popcornmeter": null },
+      "imdb": { "rating": 8.5, "votes": 8300 }
+    },
+    {
+      "rank": 8,
+      "id": "love-in-disguise",
+      "title": "Love in Disguise",
+      "type": "series",
+      "service": "Viki",
+      "us_release": "2026-11-19",
+      "episodes": "14 episodes",
+      "genre": ["Romance", "Comedy", "Crime"],
+      "genre_tags": ["romance", "comedy", "crime"],
+      "plot": "An undercover auditor pretends to be a bakery intern and falls for the owner she is supposed to investigate.",
+      "rt": { "tomatometer": 85, "tomatometer_reviews": 17, "popcornmeter": 89, "popcornmeter_ratings": 2200 },
+      "imdb": { "rating": 7.7, "votes": 3900 }
+    },
+    {
+      "rank": 9,
+      "id": "make-me-tingle",
+      "title": "Make Me Tingle",
+      "type": "series",
+      "service": "Netflix",
+      "us_release": "2026-11-20",
+      "episodes": "10 episodes",
+      "genre": ["Romance", "Comedy"],
+      "genre_tags": ["romance", "comedy"],
+      "plot": "A fragrance chemist loses her sense of smell and hires a blunt food critic as her temporary nose.",
+      "rt": { "tomatometer": 76, "tomatometer_reviews": 14, "popcornmeter": 92, "popcornmeter_ratings": 4100 },
+      "imdb": { "rating": 7.3, "votes": 5100 }
+    },
+    {
+      "rank": 10,
+      "id": "doctor-x-mafia-in-white",
+      "title": "Doctor X: Mafia in White",
+      "type": "series",
+      "service": "Prime",
+      "us_release": "2026-11-21",
+      "episodes": "12 episodes",
+      "genre": ["Drama", "Thriller"],
+      "genre_tags": ["drama", "thriller"],
+      "plot": "A hospital fixer balances surgical politics and a secret ledger that could topple the entire medical board.",
+      "rt": { "tomatometer": 88, "tomatometer_reviews": 21, "popcornmeter": 83, "popcornmeter_ratings": 1800 },
+      "imdb": { "rating": 7.9, "votes": 6700 }
     }
   ],
   "runners_up": [
-    {
-      "title": "Ignored Runner Up",
-      "note": "Not rendered on TV"
-    }
+    { "title": "Ignored Runner Up", "note": "Not rendered on TV" }
   ],
   "sources": {
     "rt": "Rotten Tomatoes",
