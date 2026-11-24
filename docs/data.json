@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T11:00:15.030Z",
+ "generatedAt": "2026-11-24T11:15:12.440Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -10,15 +10,15 @@
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 47,
+     "temp": 46,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 4,
-     "windDir": "N",
-     "observed": "2026-11-24T05:15"
+     "windMph": 5,
+     "windDir": "NNW",
+     "observed": "2026-11-24T06:15"
     },
     "today": {
-     "h": 60,
+     "h": 59,
      "l": 45,
      "sunrise": "07:18",
      "sunset": "17:30"
@@ -56,11 +56,11 @@
      {
       "date": "2026-11-24",
       "d": "Tue",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 60,
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 59,
       "l": 45,
-      "pop": 7
+      "pop": 6
      },
      {
       "date": "2026-11-25",
@@ -119,45 +119,38 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-24T06:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 46,
-      "pop": 0
-     },
-     {
       "t": "2026-11-24T07:00",
       "i": "sun",
-      "text": "Clear",
+      "text": "Mostly clear",
       "temp": 46,
       "pop": 0
      },
      {
       "t": "2026-11-24T08:00",
       "i": "sun",
-      "text": "Clear",
+      "text": "Mostly clear",
       "temp": 47,
       "pop": 0
      },
      {
       "t": "2026-11-24T09:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 54,
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 53,
       "pop": 0
      },
      {
       "t": "2026-11-24T10:00",
       "i": "sun",
-      "text": "Clear",
-      "temp": 58,
+      "text": "Mostly clear",
+      "temp": 57,
       "pop": 0
      },
      {
       "t": "2026-11-24T11:00",
-      "i": "partly",
-      "text": "Partly cloudy",
-      "temp": 60,
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 59,
       "pop": 0
      },
      {
@@ -192,14 +185,21 @@
       "t": "2026-11-24T16:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 56,
-      "pop": 1
+      "temp": 57,
+      "pop": 2
      },
      {
       "t": "2026-11-24T17:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 56,
+      "temp": 55,
+      "pop": 2
+     },
+     {
+      "t": "2026-11-24T18:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 54,
       "pop": 2
      }
     ]
@@ -209,11 +209,11 @@
     "tz": "America/Chicago",
     "now": {
      "temp": 16,
-     "i": "partly",
-     "cond": "Partly cloudy",
-     "windMph": 2,
-     "windDir": "WNW",
-     "observed": "2026-11-24T04:15"
+     "i": "sun",
+     "cond": "Mostly clear",
+     "windMph": 1,
+     "windDir": "SW",
+     "observed": "2026-11-24T05:15"
     },
     "today": {
      "h": 31,
@@ -317,17 +317,10 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-24T05:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 16,
-      "pop": 0
-     },
-     {
       "t": "2026-11-24T06:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 15,
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 16,
       "pop": 0
      },
      {
@@ -348,7 +341,7 @@
       "t": "2026-11-24T09:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 19,
+      "temp": 20,
       "pop": 0
      },
      {
@@ -377,7 +370,7 @@
       "i": "cloud",
       "text": "Overcast",
       "temp": 30,
-      "pop": 2
+      "pop": 1
      },
      {
       "t": "2026-11-24T14:00",
@@ -397,14 +390,21 @@
       "t": "2026-11-24T16:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 30,
+      "temp": 31,
+      "pop": 4
+     },
+     {
+      "t": "2026-11-24T17:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 27,
       "pop": 4
      }
     ]
    }
   },
-  "asOf": "2026-11-24T10:15:11.087Z",
-  "lastAttempt": "2026-11-24T10:15:11.087Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "lastError": null
  },
  "nfl": {
@@ -473,18 +473,53 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "Gold Holds Gain After Nvidia’s Rehiring of Huang Sparks Rally",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPdmx6UDZKMVladVJKQ1lxa3lSaU1BR3h2VGcwUVpJNW8yVmpyaTIxTTctWUZ2VV9ZX1ppbDNhTEIyYVBrckJ1Sm1YMUZBLWVXLXZFMkNnRXJoMWZndzhwcHVmYWRWSjlHRUJVWUhIZnl3QnZrYWJWU1dIWTF1Mm1pYzV0YlFxWE9RU1NyazhrbU56a1hGTDJ4RTY3ZkVZVFRWaTdsa2Jrdm02d3NyRWNYbEZR?oc=5",
+    "pub": "2026-11-24T10:58:15.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Jensen Huang is ‘too big to fire,’ putting Nvidia’s governance in focus: analysts",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-governance.html",
+    "pub": "2026-11-24T10:56:56.000Z",
+    "sum": "Jensen Huang’s return has underscored Nvidia’s deep reliance on its founder, putting the company's board oversight and corporate governance under scrutiny."
+   },
+   {
+    "hd": "Nvidia shares fall over 5% in premarket after Huang comeback rally",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
+    "pub": "2026-11-24T10:45:52.000Z",
+    "sum": "Jensen Huang was reinstated as CEO of Nvidia after he resigned following an acknowledgement of an extramarital affair."
+   },
+   {
+    "hd": "Don’t Bring Up AI if You Want to Enjoy Your Thanksgiving",
+    "src": "Wired",
+    "url": "https://www.wired.com/story/dont-bring-up-ai-if-you-want-to-enjoy-your-thanksgiving/",
+    "pub": "2026-11-24T10:45:00.000Z",
+    "sum": "Young people anxious about their futures say they’re increasingly frustrated with their pro-AI parents. They’re worried it’s going to make holiday gatherings very tense."
+   },
+   {
+    "hd": "Jensen Huang’s Return Sparks Rally in Asia, but Concerns Remain",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQV0pBT3BvcTJqUGdDbUlRYkdJRV9qNjZTdkVtQndVSWpSMmxSMVJqT3VQdy1BcWJDZTRkRGotMUJpdlRiT25NUXZhdC1KZXhjUFh4VUZaMGNZSE1xMlNOMDZYOVJqTmNjeUpqcjlSYW9JdE9uMkp1VlpnMVVGd1Y3S2tVSC1BZmhsY1dIVEp1TExsUWVXcWNTclh4QVkwV3EwU2o5WkhLQlpsUWdUT3FsOQ?oc=5",
+    "pub": "2026-11-24T10:41:15.000Z",
+    "sum": "Welcome, Weekenders! Jensen Huang wants a mulligan, and a good number of people seem keen to let him have one. On Tuesday, just days after the longtime Nvidia CEO resigned the job, Huang said in a statement he’d be open to taking back the job. Depending on your perspective, that suggestion is akin to letting a skunked dog back into bed—or a veritable Second Coming. For now, Nvidia’s board is holding firm and has continued to insist it won’t rehire Huang. One of the most prominent calls for Huang’s return came on Friday, with President Donald Trump saying he thought Nvidia should give Huang…"
+   },
+   {
+    "hd": "AI Solved Math’s Most Famous Problem. Now Humans Are Struggling to Understand It",
+    "src": "Wired",
+    "url": "https://www.wired.com/story/ai-solved-maths-most-famous-problem/",
+    "pub": "2026-11-24T10:15:00.000Z",
+    "sum": "It will take mathematicians months to understand the “alien” 17-million-line solution an Anthropic researcher produced for the Riemann hypothesis."
+   },
+   {
     "hd": "Nvidia's one-man board: How Trump inherited Jensen Huang's scandal",
     "src": "Axios",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOVMyYmcwWmcwTmsySTB5ZjMwWnd0WlBKbVV4TThUX29CMzMwNnd6eF9tWl9zQXZ3TkFvQVVpUlZFYkNkWDJOMTg4RHREeVRsSkRqdWdlY1NCRThMeVZPNzlLd0pmZFFXc0h0VGdTUjUzWVN3dTh1SkFQVzd4bXNzc0t2T1hmTEVQa0JQV1RRSndNQUR4QXUxeGY3cDE?oc=5",
     "pub": "2026-11-24T10:13:29.000Z",
     "sum": "If Jensen Huang was a tough taskmaster at Nvidia before, just imagine what he’s going to be like now! President Donald Trump has proclaimed Huang’s reinstatement, announced Monday morning, was vital to America’s “success and prosperity.” In other words, Huang may feel he’s untouchable. His only problem is that he now owes his job to Trump. Just imagine what the newly restored CEO’s relations with the president will be like in the future. What will Trump ask for in return? You know he’ll want his pound of flesh. Will Trump ask Huang to give the government an equity stake in Nvidia? Trump has…"
-   },
-   {
-    "hd": "Nvidia shares fall 4% in premarket after Huang comeback rally",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
-    "pub": "2026-11-24T09:49:11.000Z",
-    "sum": "Jensen Huang was reinstated as CEO of Nvidia after he resigned following an acknowledgement of an extramarital affair."
    },
    {
     "hd": "Asian tech stocks recover from ‘collateral damage’ of Jensen Huang’s departure",
@@ -501,11 +536,11 @@
     "sum": ""
    },
    {
-    "hd": "Jensen Huang is ‘too big to fire,’ putting Nvidia’s governance in focus: analysts",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-governance.html",
-    "pub": "2026-11-24T08:35:16.000Z",
-    "sum": "Jensen Huang’s return has underscored Nvidia’s deep reliance on its founder, putting the company's board oversight and corporate governance under scrutiny."
+    "hd": "What Jensen Huang's Stunning Return Means for the AI Trade",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNM2M1WjVja3FaWmtVZjVFZk1SWlVaeXhaWFoyc0FXSS15WXhOTXI5Q0xMSmNsVW5GdkNsMk1pc2s0dUlkSDRsVXlBR2pqbTRtVms0ZDhZSVREV1NWUTRvM3BtVXkzOEVfUURYY2Y0ZXhUV0FWNFBlOW9nb3B0TnpSQm9jMGJyV3N4RFZnV0xTbTc3VzZ1REludEQtRHViYjJpUjZGbEk0dzhlbFZGUVE?oc=5",
+    "pub": "2026-11-24T09:00:11.000Z",
+    "sum": "Kress steered the company through billions in AI financing deals and during Huang's sudden departure. Now she's back to full-time CFO."
    },
    {
     "hd": "AI Bulls in Asia Get Huang Back But the Harder Questions Remain",
@@ -527,6 +562,13 @@
     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNc2hMdW1ld1ZLcS1NQk9hNjN3Q3BrMFc2WUZvelRPS2dTMmNUYXVqbFkwOUJoei1URzV5WTNvalhfRUdxQldmcVdsV2F5VzUzdzhZR08wMFVlREVsZV9rcFNTel9SYkNMWk1EbW82ZGlyQjlCbjVOVExWeVJZOXpfckRGMEJTdUE3QkJvWTA0dERBOUVmakRfbzFfNG5tYlJqUnMteUJaWlE5NjA2cFVjejZYcw?oc=5",
     "pub": "2026-11-24T08:06:01.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Taiwan is psyched that Jensen Huang is back in the driver's seat at Nvidia",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNaTZ6TUZYZWVkRjE2bWxnV3RrVlZlLVhmUkJCYkNzZzhkNGJ0cUZuTFNTY3ktRFB0X252eVpXdmxVTHhVbm9zOC1mcXVfcDJ5Q1RWMFdqOFBwWWNtazJfV0prNXhpUHRLZHJLSXlzTVR0eTdKZG9yRWxYdGE2SnJPT1Fwd2VYNlhXclRaQjJvTVRFTXg2Z0MzUGc3bkp6SXVDT1ZKMV9DX044UzZRQjRpZ2pHbmwxcDBjTnc?oc=5",
+    "pub": "2026-11-24T07:29:00.000Z",
+    "sum": "Jensen Huang is back at Nvidia, with the board announcing his restatement as CEO on Monday morning. He was gone for just 11 days, initially resigning as CEO on Nov. 12 after acknowledging an affair with a woman who U.S. authorities think might’ve been a Chinese spy. His relationship with the woman goes back years, part of Nvidia’s deep network in Asia that has allowed its chips to end up in the hands of Chinese companies. Huang has advocated against America’s chip export ban and struck a deep relationship with President Donald Trump, who was a major force in convincing Nvidia’s board to…"
    },
    {
     "hd": "Signal joins United Airlines, banks in limiting AI agents over customer risks",
@@ -564,20 +606,6 @@
     "sum": ""
    },
    {
-    "hd": "Emerging Market Stocks Rally as Huang’s Return Revives AI Trade",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbl9tOWRvMDhVMFR5RW1QeEhJMG1IOVhkNEdRUGdjYmtIbUpLbTV2dnltRXAwWEgxb2pObDRiRlJlLWx0d1VQdXNXdTc2MWFBeHBBTm9fTTVEOWVXcUJOcmRQQWN5Mk9iNXBPV19WcDI5R0FDZERHR25qSC1fc1lnOURmTmlvU1NRTUNSOWZFODhKZFFPLWZlY3JiTll1NVVQR0V4UzFSNS1hM28tWG5nN3Y3TGQ?oc=5",
-    "pub": "2026-11-24T06:26:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Copper Resumes Decline as Investors Look Beyond Drama at Nvidia",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORmkwMElFUWtfQlhMcVNNY010SXlpbm12cW1IT3BEWExiOTkyMWU5Ulk2T0tva1lkMnd5R2d5LXFJbW9jNDFMOS0tOVZmdG9rYnFrWGhybmNfaHVOaGRIYzRuMEJ3S2lQa0R1YWl1R2JvRTI4b2k4YkdFWjV2QnF4bnl3VlUzSkdySHZJVmtMU2x0bk9vNmUxS2JPb3RPZjl5OHNEa1BkOHNaM3JDdklPVDU0MWI?oc=5",
-    "pub": "2026-11-24T06:13:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "\"Too big to fail\": The economic fear behind Jensen Huang's Nvidia comeback",
     "src": "Axios",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQmpfT215c0NIWmRWZjlaU3Y3Ri1vMXU0WnlIbnNPMW5ETG1SVC1rbkY4WVgtWnMweGJocW42SmF5SXpYZGVYc2ZkQnlaWEkxSVN0T3ZPYjRxNG9ZdUJSVDIyb1FqSmhkUDBEYVIwZnFwTTUtTHBrb3hUZjFuQVdDOA?oc=5",
@@ -606,24 +634,10 @@
     "sum": ""
    },
    {
-    "hd": "The Most Famous Problem in Math Was Just Solved by AI—and This Human",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQZ0x4ejFTYkxaVjZTM3hTS0o5b2IteVFjczV3UHlJa0pzZjg5bmlGY1k3UXU5My1zamU5VnNBUXdtOWJ3aHBReFMtNDJhQktiVTJpMFBjN1daM1lMMGRGTzItRi12T0VxaTAxV3ZocUhRUG00RWxWc0k5S05qYmtJT1ZvMlNjWjZiNndZTA?oc=5",
-    "pub": "2026-11-24T02:00:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "OpenAI engineer possessed dozens of meeting recordings, say US prosecutors",
     "src": "Financial Times",
     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNWklVb3A0eXZnN2dQZUdlenZIMEVtbXhvOFA0d3djTUF0ZVU3RXZkbG1CckZOY3JxZmg1dTdFdlVoOV82M0VOQ1p0UTkxU2JXSHBKcTFDNFgwNWNTQUJiUXVXVzJwbV8taTBSZkxKdUxyc3dmazdQQVJjOGptMUo1bWVMZFo?oc=5",
     "pub": "2026-11-24T01:32:14.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Jensen Huang joins the small club of ousted founders who got their jobs back",
-    "src": "Business Insider",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNeFNpUXZDUlY2Z080NUxEcjRjaFlVRmRFSS1icTlsWFY0NnlqdzhoZ0RQVUR3ZHp4X25HbnRta0ZydFdSWV8wQXY5c182RG5vLU13a2lweHB4el9INU1Ic2x2SWFFYlQtZVo1TjJ1NWJfSDUwREZ2bjA3NFB0VWt6RFVZeVBzZTU0aktkQnFxeXZSbEh3T28taw?oc=5",
-    "pub": "2026-11-24T00:51:00.000Z",
     "sum": ""
    },
    {
@@ -667,20 +681,6 @@
     "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
     "pub": "2026-11-23T22:05:50.000Z",
     "sum": "As AI-generated code piles up, Anthropic's new developer tools aim to eliminate another bottleneck by letting agents handle routine approvals."
-   },
-   {
-    "hd": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
-    "src": "TechCrunch",
-    "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
-    "pub": "2026-11-23T22:02:05.000Z",
-    "sum": "Think you know where the market is headed? A startup called Supertake lets you put money behind your ideas without having to pick the stocks yourself."
-   },
-   {
-    "hd": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
-    "src": "TechCrunch",
-    "url": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
-    "pub": "2026-11-23T21:47:41.000Z",
-    "sum": "\"The mistake has been corrected,\" Elon Musk chimed in."
    }
   ],
   "feeds": [
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-24T10:15:11.087Z",
-  "lastAttempt": "2026-11-24T10:15:11.087Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -7417,13 +7417,12 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T11:00:15.030Z",
+  "at": "2026-11-24T11:15:12.440Z",
   "ran": [
+   "weather",
    "alerts",
-   "nfl",
-   "stockNews",
-   "worldNews",
-   "rates",
+   "news",
+   "world",
    "extended",
    "futures",
    "usTempGrid"
@@ -13776,62 +13775,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T11:00:15.030Z",
-  "lastAttempt": "2026-11-24T11:00:15.030Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7189.5,
-    "lastTime": 1795517423,
+    "last": 7196.5,
+    "lastTime": 1795518312,
     "settle": 7257.75,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": -68.25,
-    "changePct": -0.9403740828769247,
-    "expectedOpen": 7169.113528986256,
+    "change": -61.25,
+    "changePct": -0.8439254589921119,
+    "expectedOpen": 7176.09367985946,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26329.75,
-    "lastTime": 1795517423,
+    "last": 26364.25,
+    "lastTime": 1795518313,
     "settle": 26818.25,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": -488.5,
-    "changePct": -1.8215207927437471,
-    "expectedOpen": 23650.76267393473,
+    "change": -454,
+    "changePct": -1.6928770520074947,
+    "expectedOpen": 23681.752383759194,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49437,
-    "lastTime": 1795517423,
+    "last": 49499,
+    "lastTime": 1795518303,
     "settle": 49691,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": -254,
-    "changePct": -0.5111589623875551,
-    "expectedOpen": 49341.7991280111,
+    "change": -192,
+    "changePct": -0.3863878770803566,
+    "expectedOpen": 49403.67973455958,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2660.9,
-    "lastTime": 1795517422,
+    "last": 2663.2,
+    "lastTime": 1795518313,
     "settle": 2675.699951171875,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": -14.799951171874909,
-    "changePct": -0.5531244699314279,
+    "change": -12.499951171875182,
+    "changePct": -0.4671656538469713,
     "expectedOpen": null,
     "valid": true
    }
@@ -14293,8 +14292,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T11:00:15.030Z",
-  "lastAttempt": "2026-11-24T11:00:15.030Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14937,30 +14936,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T11:00:15.030Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
-    "src": "NPR",
-    "hd": "Fighting between Russia and Ukraine has expanded geographically, drawing concerns",
-    "pub": "2026-11-24T09:52:03.000Z"
-   },
-   {
     "src": "Reuters",
-    "hd": "Norway and Ukraine to expand cooperation on anti-drone system",
-    "pub": "2026-11-24T09:32:54.000Z"
+    "hd": "Israeli airstrike kills senior Hamas security official in Gaza, Hamas sources say",
+    "pub": "2026-11-24T10:59:07.000Z"
    },
    {
     "src": "BBC News",
-    "hd": "DR Congo says aircraft missing as rebels claim to shoot down plane",
-    "pub": "2026-11-24T08:35:41.000Z"
+    "hd": "Nato chief vows defence against space threat after Russian nuclear satellite reports",
+    "pub": "2026-11-24T10:58:51.000Z"
+   },
+   {
+    "src": "NPR",
+    "hd": "Fighting between Russia and Ukraine has expanded geographically, drawing concerns",
+    "pub": "2026-11-24T09:52:03.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-24T10:15:11.087Z",
-  "lastAttempt": "2026-11-24T10:15:11.087Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "lastError": null
  },
  "movers": {
@@ -15148,44 +15147,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T11:00:15.030Z",
-  "lastAttempt": "2026-11-24T11:00:15.030Z",
+  "asOf": "2026-11-24T11:15:12.440Z",
+  "lastAttempt": "2026-11-24T11:15:12.440Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 156.26,
-    "time": 1795518018,
+    "price": 155.47,
+    "time": 1795518913,
     "ref": 165.05,
     "refTime": 1795467601,
-    "change": -8.79000000000002,
-    "changePct": -5.325658891245089
+    "change": -9.580000000000013,
+    "changePct": -5.804301726749477
    },
    "TSLA": {
     "session": "pre",
-    "price": 379.0321,
-    "time": 1795518017,
+    "price": 378.77,
+    "time": 1795518906,
     "ref": 385.46,
     "refTime": 1795467600,
-    "change": -6.4278999999999655,
-    "changePct": -1.6675919680381794
+    "change": -6.689999999999998,
+    "changePct": -1.7355886473304618
    },
    "SPCX": {
     "session": "pre",
-    "price": 131.62,
-    "time": 1795518000,
+    "price": 131.13,
+    "time": 1795518903,
     "ref": 133.35,
     "refTime": 1795467600,
-    "change": -1.7299999999999898,
-    "changePct": -1.297337832770896
+    "change": -2.219999999999999,
+    "changePct": -1.6647919010123726
    },
    "ANT": {
     "session": "pre",
-    "price": 83.69,
-    "time": 1795518023,
+    "price": 81.86,
+    "time": 1795518913,
     "ref": 87.64,
     "refTime": 1795467601,
-    "change": -3.950000000000003,
-    "changePct": -4.507074395253312
+    "change": -5.780000000000001,
+    "changePct": -6.5951620264719315
    }
   }
  },
