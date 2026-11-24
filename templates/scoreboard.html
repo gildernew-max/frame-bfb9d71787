@@ -391,30 +391,32 @@
   .roi-notes{flex:none;font-size:var(--t1);line-height:1.35;font-weight:400;color:var(--muted);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.35em)}
 
-  /* Korean Watch mode — five rank cards, reuses board focus ring + existing popup */
-  .kw-sub{margin:8px 0 0;font-size:var(--t2);font-weight:400;color:var(--muted);letter-spacing:.02em;
+  /* Korean Watch mode — five filled rank cards, reuses board focus ring + existing popup */
+  .kw-sub{margin:8px 0 0;font-size:28px;font-weight:400;color:var(--muted);letter-spacing:.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48vw}
-  #cols.kw-cols{display:flex;flex-direction:column;gap:20px;min-height:0;overflow:hidden}
-  .kw-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px;align-content:stretch}
-  .kw-card{flex:none;position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;min-height:0;
-    padding:28px 26px 32px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
+  #cols.kw-cols{display:flex;flex-direction:column;gap:16px;min-height:0;overflow:hidden;
+    --kw-title:56px;--kw-meta:28px;--kw-plot:30px;--kw-score:32px}
+  .kw-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;align-items:stretch}
+  .kw-card{position:relative;display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0;height:100%;
+    padding:26px 24px 28px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
     outline:none;overflow:hidden;transform:scale(1);transform-origin:center center;
     transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-  .kw-card::before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:4px;border-radius:0 2px 2px 0;background:var(--gold)}
+  .kw-card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 2px 2px 0;background:var(--gold)}
   .kw-card.focus{border-color:var(--focus-ring);z-index:6;transform:scale(1.02);
     box-shadow:0 0 0 12px var(--focus-ring),0 0 28px 8px rgba(230,184,76,.35),0 12px 22px rgba(0,0,0,.4)}
-  .kw-rank{flex:none;font-size:var(--t1);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-  .kw-title{flex:none;font:400 var(--kw-title,40px)/1.15 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink);
-    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;max-height:calc(3 * 1.15em);
+  .kw-rank{flex:none;font-size:22px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .kw-title{flex:none;font:400 var(--kw-title)/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink);
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.12em);
     overflow-wrap:break-word;word-break:normal}
-  .kw-meta{flex:none;display:flex;flex-direction:column;gap:8px;min-width:0}
-  .kw-meta .kw-line{font-size:var(--t2);line-height:1.3;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .kw-meta .kw-line b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:10px}
-  .kw-scores{flex:1;min-height:0;margin-top:auto;padding-top:12px;border-top:1px solid var(--hair);
-    font-size:var(--t2);line-height:1.35;color:var(--ink);display:-webkit-box;-webkit-box-orient:vertical;
-    -webkit-line-clamp:3;overflow:hidden;max-height:calc(3 * 1.35em)}
-  .kw-scores .kw-imdb{display:block;margin-top:6px;color:var(--gold);font-weight:500}
-  .kw-foot{flex:none;font-size:var(--t1);font-weight:400;color:var(--dim);letter-spacing:.06em;text-align:center;padding-top:4px}
+  .kw-meta{flex:none;display:flex;flex-direction:column;gap:6px;min-width:0}
+  .kw-meta .kw-line{font-size:var(--kw-meta);line-height:1.3;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .kw-meta .kw-line b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:10px;font-size:.92em}
+  .kw-plot{flex:1;min-height:0;overflow:hidden;font-size:var(--kw-plot);line-height:1.35;font-weight:400;color:var(--ink);
+    overflow-wrap:break-word;word-break:normal}
+  .kw-scores{flex:none;margin-top:4px;padding-top:14px;border-top:1px solid var(--hair);
+    font-size:var(--kw-score);line-height:1.3;font-weight:500;color:var(--ink)}
+  .kw-scores .kw-imdb{display:block;margin-top:4px;color:var(--gold);font-weight:600}
+  .kw-foot{flex:none;font-size:22px;font-weight:400;color:var(--dim);letter-spacing:.06em;text-align:center;padding-top:2px}
 </style>
 </head>
 <body>
@@ -495,7 +497,7 @@
     var s=Math.min(w/3840,h/2160);
     if(!(s>0)){setTimeout(fit,500);return;}
     $('stage').style.transform='translate(-50%,-50%) scale('+s+')';
-    if(state.mode==='kw'){layoutKwBoard();if(state.popupOpen)layoutPopup();return;}
+    if(state.mode==='kw'){layoutKwBoard();if(state.popupOpen)layoutKwPopup();return;}
     if(state.view==='detail')layoutDetail();
     else if(state.view==='board')layoutBoard();
   }
@@ -2188,7 +2190,7 @@
     return parts.join(' \u00b7 ');
   }
   function kwScoresPopupRows(rt, imdb){
-    var rows=[], t, p, tr, pr, bits, note;
+    var rows=[], t, p, tr, pr, bits, note, rtNote;
     rt=rt||{}; imdb=imdb||{};
     t=rt.tomatometer; p=rt.popcornmeter;
     if((typeof t==='number'&&isFinite(t))||(typeof p==='number'&&isFinite(p))){
@@ -2199,12 +2201,15 @@
     }else{
       rows.push({label:'RT', text:'no RT score'});
     }
+    rtNote=capStr(rt.note, 81);
+    if(rtNote)rows.push({label:'RT note', text:rtNote});
+    // When a rating exists, never also dump imdb.note (avoids Dead-End Job overflow).
     if(typeof imdb.rating==='number'&&isFinite(imdb.rating)){
-      bits='IMDb '+String(imdb.rating);
-      if(typeof imdb.votes==='number'&&isFinite(imdb.votes))bits+=' \u00b7 '+Math.round(imdb.votes).toLocaleString('en-US')+' votes';
+      bits=String(imdb.rating);
+      if(typeof imdb.votes==='number'&&isFinite(imdb.votes))bits+=' ('+Math.round(imdb.votes).toLocaleString('en-US')+' votes)';
       rows.push({label:'IMDb', text:bits});
     }else{
-      note=capStr(imdb.note, 180);
+      note=capStr(imdb.note, 273);
       if(note)rows.push({label:'IMDb', text:note});
     }
     return rows;
@@ -2219,7 +2224,7 @@
       if(!p||typeof p!=='object')continue;
       genres=[];
       if(Array.isArray(p.genre)){
-        for(j=0;j<p.genre.length&&genres.length<8;j++){
+        for(j=0;j<p.genre.length&&genres.length<4;j++){
           g=capStr(p.genre[j], 40);
           if(g)genres.push(g);
         }
@@ -2233,21 +2238,22 @@
         type:p.type==='series'?'series':'movie',
         service:capStr(p.service, 40),
         us_release:typeof p.us_release==='string'&&DATE_RE.test(p.us_release)?p.us_release:'',
-        us_release_note:capStr(p.us_release_note, 120),
+        us_release_note:capStr(p.us_release_note, 249),
         runtime:capStr(p.runtime, 40),
-        episodes:capStr(p.episodes, 40),
+        episodes:capStr(p.episodes, 16),
         genre:genres,
-        plot:capStr(p.plot, 900),
+        plot:capStr(p.plot, 320),
         rt:{
           tomatometer:typeof rt.tomatometer==='number'&&isFinite(rt.tomatometer)?rt.tomatometer:null,
           tomatometer_reviews:typeof rt.tomatometer_reviews==='number'&&isFinite(rt.tomatometer_reviews)?rt.tomatometer_reviews:null,
           popcornmeter:typeof rt.popcornmeter==='number'&&isFinite(rt.popcornmeter)?rt.popcornmeter:null,
-          popcornmeter_ratings:typeof rt.popcornmeter_ratings==='number'&&isFinite(rt.popcornmeter_ratings)?rt.popcornmeter_ratings:null
+          popcornmeter_ratings:typeof rt.popcornmeter_ratings==='number'&&isFinite(rt.popcornmeter_ratings)?rt.popcornmeter_ratings:null,
+          note:capStr(rt.note, 81)
         },
         imdb:{
           rating:typeof imdb.rating==='number'&&isFinite(imdb.rating)?imdb.rating:null,
           votes:typeof imdb.votes==='number'&&isFinite(imdb.votes)?imdb.votes:null,
-          note:capStr(imdb.note, 180)
+          note:capStr(imdb.note, 273)
         }
       });
     }
@@ -2261,19 +2267,26 @@
     };
   }
   function kwCardHtml(pick, idx){
-    var hasRt=(pick.rt.tomatometer!=null)||(pick.rt.popcornmeter!=null), scoresHtml;
+    var hasRt=(pick.rt.tomatometer!=null)||(pick.rt.popcornmeter!=null), scoresHtml, meta='', release;
     if(!hasRt&&pick.imdb.rating!=null){
       scoresHtml=esc('no RT score')+'<span class="kw-imdb">IMDb '+esc(String(pick.imdb.rating))+'</span>';
     }else{
       scoresHtml=esc(kwScoresCardLine(pick.rt, pick.imdb));
     }
+    meta+='<div class="kw-line"><b>Type</b>'+esc(pick.type==='series'?'Series':'Movie')+'</div>';
+    if(pick.service)meta+='<div class="kw-line"><b>Service</b>'+esc(pick.service)+'</div>';
+    if(pick.us_release){
+      release=fmtDate(pick.us_release, true);
+      meta+='<div class="kw-line"><b>Release</b>'+esc(release)+'</div>';
+    }
+    if(pick.genre&&pick.genre.length){
+      meta+='<div class="kw-line"><b>Genre</b>'+esc(pick.genre.join(', '))+'</div>';
+    }
     return '<button type="button" class="kw-card" data-kw="'+idx+'" tabindex="-1">'+
       '<div class="kw-rank">#'+esc(String(pick.rank))+'</div>'+
       '<div class="kw-title">'+esc(pick.title)+'</div>'+
-      '<div class="kw-meta">'+
-        '<div class="kw-line"><b>Type</b>'+esc(pick.type==='series'?'Series':'Movie')+'</div>'+
-        (pick.service?'<div class="kw-line"><b>Service</b>'+esc(pick.service)+'</div>':'')+
-      '</div>'+
+      '<div class="kw-meta">'+meta+'</div>'+
+      (pick.plot?'<div class="kw-plot" data-full="'+esc(pick.plot)+'">'+esc(pick.plot)+'</div>':'<div class="kw-plot" data-full=""></div>')+
       '<div class="kw-scores">'+scoresHtml+'</div>'+
     '</button>';
   }
@@ -2287,18 +2300,79 @@
       else cards[i].classList.remove('focus');
     }
   }
+  function fitKwTitleSize(cards, root){
+    var sizes=[64,56,48,44,40,36,32,28], i, j, t, lh, ok, cs;
+    for(i=0;i<sizes.length;i++){
+      root.style.setProperty('--kw-title', sizes[i]+'px');
+      ok=true;
+      for(j=0;j<cards.length;j++){
+        t=cards[j].querySelector('.kw-title');
+        if(!t)continue;
+        cs=window.getComputedStyle(t);
+        lh=parseFloat(cs.lineHeight);
+        if(!(lh>0))lh=sizes[i]*1.12;
+        t.style.display='block';
+        t.style.webkitLineClamp='unset';
+        t.style.maxHeight='none';
+        t.style.overflow='visible';
+        if(t.scrollHeight>lh*2+3)ok=false;
+        t.style.display='';
+        t.style.webkitLineClamp='';
+        t.style.maxHeight='';
+        t.style.overflow='';
+      }
+      if(ok)return sizes[i];
+    }
+    root.style.setProperty('--kw-title', '28px');
+    return 28;
+  }
+  function fitKwPlotTeaser(el){
+    var full, lo, hi, mid, best;
+    if(!el)return;
+    full=el.getAttribute('data-full')||'';
+    if(!full){el.textContent='';return;}
+    el.textContent=full;
+    if(el.clientHeight<=0)return;
+    if(el.scrollHeight<=el.clientHeight+1)return;
+    lo=0; hi=full.length; best=0;
+    while(lo<=hi){
+      mid=(lo+hi)>>1;
+      el.textContent=full.slice(0, mid)+(mid<full.length?'\u2026':'');
+      if(el.scrollHeight<=el.clientHeight+1){best=mid;lo=mid+1;}
+      else hi=mid-1;
+    }
+    if(best<=0)el.textContent='\u2026';
+    else if(best>=full.length)el.textContent=full;
+    else el.textContent=full.slice(0, best)+'\u2026';
+  }
   function layoutKwBoard(){
-    var root=$('cols'), grid=root?root.querySelector('.kw-grid'):null, cards, i, sizes, s;
+    var root=$('cols'), grid=root?root.querySelector('.kw-grid'):null, cards, i, typeSizes, si, ok;
     if(!root||!grid)return;
     cards=grid.querySelectorAll('.kw-card');
-    sizes=[40,36,32,28,24];
-    for(i=0;i<sizes.length;i++){
-      s=sizes[i];
-      root.style.setProperty('--kw-title', s+'px');
-      for(var j=0;j<cards.length;j++)cards[j].style.fontSize='';
-      // Title size via CSS var if needed; clamp already handles overflow.
-      if(root.scrollHeight<=root.clientHeight+4&&root.scrollWidth<=root.clientWidth+4)return;
+    if(!cards.length)return;
+    // Scale meta/plot/score together toward admissions-readable sizes; title auto-shrinks to 2 lines.
+    typeSizes=[
+      {meta:30, plot:32, score:34},
+      {meta:28, plot:30, score:32},
+      {meta:26, plot:28, score:30},
+      {meta:24, plot:26, score:28}
+    ];
+    for(si=0;si<typeSizes.length;si++){
+      root.style.setProperty('--kw-meta', typeSizes[si].meta+'px');
+      root.style.setProperty('--kw-plot', typeSizes[si].plot+'px');
+      root.style.setProperty('--kw-score', typeSizes[si].score+'px');
+      fitKwTitleSize(cards, root);
+      for(i=0;i<cards.length;i++)fitKwPlotTeaser(cards[i].querySelector('.kw-plot'));
+      ok=root.scrollHeight<=root.clientHeight+4&&root.scrollWidth<=root.clientWidth+4;
+      if(ok){
+        for(i=0;i<cards.length;i++){
+          if(cards[i].scrollHeight>cards[i].clientHeight+4){ok=false;break;}
+        }
+      }
+      if(ok)return;
     }
+    fitKwTitleSize(cards, root);
+    for(i=0;i<cards.length;i++)fitKwPlotTeaser(cards[i].querySelector('.kw-plot'));
   }
   function focusedKwPick(){
     var d=state.data;
@@ -2308,13 +2382,15 @@
     return d.picks[i];
   }
   function kwPopupBodyHtml(pick){
-    var rows=[], release, runtimeBits, scores, i;
+    var rows=[], release, note, runtimeBits, scores, i;
     if(!pick)return '';
     rows.push({label:'Type', text:pick.type==='series'?'Series':'Movie'});
     if(pick.service)rows.push({label:'Service', text:pick.service});
     release='';
     if(pick.us_release)release=fmtDate(pick.us_release, true);
-    if(pick.us_release_note)release+=(release?' \u00b7 ':'')+pick.us_release_note;
+    // Popup: keep release note short (~120) so long HA notes do not blow the modal.
+    note=capStr(pick.us_release_note, 120);
+    if(note)release+=(release?' \u00b7 ':'')+note;
     if(release)rows.push({label:'US release', text:release});
     runtimeBits=[];
     if(pick.runtime)runtimeBits.push(pick.runtime);
@@ -2325,6 +2401,19 @@
     scores=kwScoresPopupRows(pick.rt, pick.imdb);
     for(i=0;i<scores.length;i++)rows.push(scores[i]);
     return dLines(rows);
+  }
+  function layoutKwPopup(){
+    var pop=$('d-pop'), body=$('d-pop-body'), start=88, floor, size;
+    if(!pop||!body||pop.hidden)return;
+    floor=Math.round(start*0.7);
+    size=start;
+    while(size>=floor){
+      pop.style.setProperty('--pop-line', size+'px');
+      pop.style.setProperty('--pop-lab', Math.max(28, Math.round(size*0.72))+'px');
+      pop.style.setProperty('--pop-title', Math.max(48, Math.round(size*1.45))+'px');
+      if(body.scrollHeight<=body.clientHeight+8)return;
+      size-=4;
+    }
   }
   function openKwPopup(){
     var pop=$('d-pop'), head, body=$('d-pop-body'), pick=focusedKwPick(), titleHtml;
@@ -2339,8 +2428,8 @@
     pop.hidden=false;
     pop.style.setProperty('--accent', 'var(--gold)');
     state.popupOpen=true;
-    layoutPopup();
-    setTimeout(layoutPopup, 0);
+    layoutKwPopup();
+    setTimeout(layoutKwPopup, 0);
     setHints();
   }
   function shiftKwPopup(dir){

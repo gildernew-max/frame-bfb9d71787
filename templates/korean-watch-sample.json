@@ -9,7 +9,11 @@
     "label": "Sample week · Nov 17–24"
   },
   "region": "US",
-  "services": ["Netflix", "Hulu", "Prime"],
+  "services": [
+    "Netflix",
+    "Hulu",
+    "Prime"
+  ],
   "picks": [
     {
       "rank": 1,
@@ -20,7 +24,10 @@
       "us_release": "2026-11-18",
       "us_release_note": "Streaming premiere",
       "runtime": "118 min",
-      "genre": ["Drama", "Romance"],
+      "genre": [
+        "Drama",
+        "Romance"
+      ],
       "plot": "A fictional harbor-city florist and a night-shift ferry captain trade letters across one rainy autumn, discovering what they left unsaid.",
       "rt": {
         "tomatometer": 92,
@@ -47,7 +54,10 @@
       "us_release": "2026-11-20",
       "runtime": null,
       "episodes": "8 episodes · ~55 min",
-      "genre": ["Medical", "Mystery"],
+      "genre": [
+        "Medical",
+        "Mystery"
+      ],
       "plot": "Placeholder series about a fictional overnight ER where every case arrives with a sealed envelope and a countdown clock.",
       "rt": {
         "tomatometer": 81,
@@ -73,7 +83,10 @@
       "service": "Prime",
       "us_release": "2026-11-21",
       "runtime": "104 min",
-      "genre": ["Comedy", "Family"],
+      "genre": [
+        "Comedy",
+        "Family"
+      ],
       "plot": "Fictional road-trip comedy: three cousins deliver a thousand origami cranes before a wedding that may not happen.",
       "rt": {
         "tomatometer": null,
@@ -93,15 +106,18 @@
     },
     {
       "rank": 4,
-      "id": "sample-quiet-signal",
+      "id": "sample-rating-over-note",
       "title": "Quiet Signal",
       "type": "series",
       "service": "Netflix",
       "us_release": "2026-11-22",
-      "us_release_note": "Limited drop",
+      "us_release_note": "Limited drop with a longer sample note that should truncate in the popup to about one hundred twenty characters so the modal stays compact on the Frame TV.",
       "episodes": "6 episodes",
-      "genre": ["Sci-Fi"],
-      "plot": "Placeholder sci-fi: a coastal town hears a radio tone that only children can decode.",
+      "genre": [
+        "Sci-Fi",
+        "Drama"
+      ],
+      "plot": "Placeholder sci-fi: a coastal town hears a radio tone that only children can decode, and the adults pretend not to notice.",
       "rt": {
         "tomatometer": null,
         "tomatometer_reviews": null,
@@ -110,44 +126,56 @@
         "url": null
       },
       "imdb": {
-        "rating": null,
-        "votes": null,
+        "rating": 6.9,
+        "votes": 1840,
         "url": null,
-        "note": "IMDb page not yet listed for this sample title."
+        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
       },
       "status": "new",
-      "card_text": "No scores",
-      "rank_reason": "Fixture: no RT + no IMDb"
+      "card_text": "Rating hides note",
+      "rank_reason": "Fixture: imdb.rating present so note is omitted"
     },
     {
       "rank": 5,
-      "id": "sample-long-title",
-      "title": "The Extraordinary Cartography of Rainy Tuesday Mornings and Other Soft Disasters",
+      "id": "sample-max-fit",
+      "title": "Dead-End Sample Fixture",
       "type": "movie",
       "service": "Hulu",
-      "us_release": "2026-11-23",
+      "us_release": "2026-11-06",
+      "us_release_note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove th",
       "runtime": "131 min",
-      "genre": ["Drama", "Adventure", "Fantasy"],
-      "plot": "A deliberately long placeholder plot used to prove popup layout under dense copy: an apprentice mapmaker inherits a brass compass that redraws city streets whenever it rains, forcing her to choose between preserving the old alleys her neighbors love and finishing a commission for a fictional transit authority that wants every block squared to a grid. Along the way she meets a street-food cart duo, a librarian who archives faded bus routes, and a rival cartographer who believes nostalgia is a civic hazard. The story stretches through monsoon season, night markets, and one silent tram ride that never quite ends, leaving room to verify that Korean Watch cards and the shared detail popup clamp or size down without clipping at 1920 by 1080.",
+      "episodes": "Episodes: 16 max",
+      "genre": [
+        "Drama",
+        "Adventure",
+        "Fantasy",
+        "Mystery"
+      ],
+      "plot": "A deliberately long placeholder plot used to prove popup layout under dense copy: an apprentice mapmaker inherits a brass compass that redraws city streets whenever it rains, forcing her to choose between preserving the old alleys her neighbors love and finishing a commission for a fictional transit authority th",
       "rt": {
         "tomatometer": 74,
         "tomatometer_reviews": 55,
         "popcornmeter": 91,
         "popcornmeter_ratings": 2100,
+        "note": "A fictional sample note used only to stress layout and prove the Korean Watch pop",
         "url": null
       },
       "imdb": {
-        "rating": 7.4,
-        "votes": 3100,
-        "url": null
+        "rating": null,
+        "votes": null,
+        "url": null,
+        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
       },
       "status": "new",
-      "card_text": "Long title + plot",
-      "rank_reason": "Fixture: long title + long plot"
+      "card_text": "Max-length popup stress",
+      "rank_reason": "Fixture: 23 title / 313 plot / 249 note / 4 genres / 273 imdb note"
     }
   ],
   "runners_up": [
-    {"title": "Ignored Runner Up", "note": "Not rendered on TV"}
+    {
+      "title": "Ignored Runner Up",
+      "note": "Not rendered on TV"
+    }
   ],
   "sources": {
     "rt": "Rotten Tomatoes",
