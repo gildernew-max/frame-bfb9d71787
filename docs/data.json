@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T08:15:13.405Z",
+ "generatedAt": "2026-11-24T08:30:19.911Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,13 +7417,10 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T08:15:13.405Z",
+  "at": "2026-11-24T08:30:19.911Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "world",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13783,62 +13780,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T08:15:13.405Z",
-  "lastAttempt": "2026-11-24T08:15:13.405Z",
+  "asOf": "2026-11-24T08:30:19.911Z",
+  "lastAttempt": "2026-11-24T08:30:19.911Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7266,
-    "lastTime": 1795507516,
-    "settle": 7257.5,
+    "last": 7266.5,
+    "lastTime": 1795508435,
+    "settle": 7257.75,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": 8.5,
-    "changePct": 0.11712022046159146,
-    "expectedOpen": 7245.64618945918,
+    "change": 8.75,
+    "changePct": 0.12056077985601599,
+    "expectedOpen": 7245.895188591505,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26840.5,
-    "lastTime": 1795507516,
-    "settle": 26816.5,
+    "last": 26842.25,
+    "lastTime": 1795508435,
+    "settle": 26818.25,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
     "change": 24,
-    "changePct": 0.08949713795610911,
-    "expectedOpen": 24111.11846585125,
+    "changePct": 0.08949129790347991,
+    "expectedOpen": 24111.117059008324,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49759,
-    "lastTime": 1795507509,
-    "settle": 49693,
+    "last": 49753,
+    "lastTime": 1795508436,
+    "settle": 49691,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": 66,
-    "changePct": 0.13281548709073712,
-    "expectedOpen": 49661.180252550665,
+    "change": 62,
+    "changePct": 0.12477108530719848,
+    "expectedOpen": 49657.190606548465,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2679.1,
-    "lastTime": 1795507515,
-    "settle": 2675.800048828125,
+    "last": 2678.2,
+    "lastTime": 1795508433,
+    "settle": 2675.699951171875,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": 3.299951171874909,
-    "changePct": 0.1233257759046732,
+    "change": 2.500048828124818,
+    "changePct": 0.0934353206169426,
     "expectedOpen": null,
     "valid": true
    }
@@ -14300,8 +14297,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T08:15:13.405Z",
-  "lastAttempt": "2026-11-24T08:15:13.405Z",
+  "asOf": "2026-11-24T08:30:19.911Z",
+  "lastAttempt": "2026-11-24T08:30:19.911Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14944,7 +14941,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T08:15:13.405Z",
+  "lastAttempt": "2026-11-24T08:30:19.911Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15954,6 +15951,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "North Korea reviews Switzerland relations after sanctions on youth camp linked to war",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/north-korea-reviews-switzerland-relations-after-sanctions-youth-138402640",
+    "pub": "2026-11-24T08:20:29.000Z",
+    "sum": "North Korea has threatened to close a Swiss diplomatic office that opened in Pyongyang last month"
+   },
+   {
     "hd": "Chinese official sentenced to death for spying",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/china-spy-sentence-death-ma/",
@@ -16155,20 +16159,9 @@
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
     "pub": "2026-11-23T22:11:22.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Cocaine Gangs Batter Colombian Security Forces in Wave of Attacks",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcDFIWlh3ZS05UXg1NmwyTzI5U1B3LUt3YnlxOVNfSEZKZkdpbVNEZ1ZoaEhrakhpV0FETEQ0UVdFSXBTZTRnQ01ZQkozazU3S2tENGpxN3VlSlpzOU40OUYwWWlGa0VCSWtuVFg1MXp0dnQxMDloM0xXNEpxMlljbl9wNk9odTB5MTgyZFVzbnVzeTIwWnlQV0cxNEtibjFJZkJuSnRNb2o5engxOVE?oc=5",
-    "pub": "2026-11-23T21:54:46.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16179,9 +16172,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-24T07:30:22.009Z",
-  "lastAttempt": "2026-11-24T07:30:22.009Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-24T08:30:19.911Z",
+  "lastAttempt": "2026-11-24T08:30:19.911Z",
   "lastError": null
  }
 }
