@@ -309,6 +309,12 @@
   .d-pop-body .ncs-para,.d-pop-body .ncs-source{font-size:var(--pop-line);line-height:1.4;color:var(--pop-ink)}
   .d-pop-body .ncs-sources{gap:10px}
   .d-pop-body .wish-src{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
+  /* K-Food Index: accent leads + Tizen-safe star glyph + muted footer */
+  .kf-star{display:inline-block;width:.82em;height:.82em;vertical-align:-.06em;margin-left:.08em;flex:none}
+  #detail .kf-star,.d-pop-body .kf-star{color:inherit}
+  .d-pop-body .kfood-list{gap:14px}
+  .d-pop-body .kfood-list li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
+  .d-pop-body .kfood-footer{margin-top:16px;padding-top:4px}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -543,6 +549,7 @@
     if(d.marist_classmates)return true;
     if(d.new_creative_school)return true;
     if(d.wish_i_knew)return true;
+    if(d.k_food_index)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
@@ -736,7 +743,78 @@
     out.scattergram_url=str(d.scattergram_url)||null;
     out.new_creative_school=cleanNewCreativeSchool(d.new_creative_school);
     out.wish_i_knew=cleanWishIKnew(d.wish_i_knew);
+    out.k_food_index=cleanKFoodIndex(d.k_food_index);
     return out;
+  }
+  // Optional K-Food Index card/popup. card_rows/popup_items normalize value↔text to {label,text}.
+  function cleanKFoodIndex(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var title=str(raw.title)||'K-FOOD INDEX', card_rows=[], popup_items=[], footer=str(raw.footer);
+    var i, x, lab, txt, rank, total, tier, kg, pag, kr, capped, hlab, hmi;
+    function rowFrom(item){
+      if(!item||typeof item!=='object')return null;
+      lab=str(item.label);
+      txt=str(item.text)||str(item.value);
+      if(!lab&&!txt)return null;
+      return {label:lab, text:txt};
+    }
+    if(Array.isArray(raw.card_rows)){
+      for(i=0;i<raw.card_rows.length&&card_rows.length<8;i++){
+        x=rowFrom(raw.card_rows[i]);
+        if(x)card_rows.push(x);
+      }
+    }
+    if(Array.isArray(raw.popup_items)){
+      for(i=0;i<raw.popup_items.length&&popup_items.length<12;i++){
+        x=rowFrom(raw.popup_items[i]);
+        if(x)popup_items.push(x);
+      }
+    }
+    if(!card_rows.length&&!popup_items.length)return null;
+    rank=num(raw.rank); total=num(raw.total_schools); tier=str(raw.tier);
+    kg=num(raw.korean_groceries_3mi); pag=num(raw.pan_asian_groceries_3mi);
+    kr=num(raw.korean_restaurants_3mi); capped=!!raw.restaurant_count_capped;
+    hlab=str(raw.nearest_hmart_label);
+    hmi=raw.nearest_hmart_mi==null?null:num(raw.nearest_hmart_mi);
+    return {
+      title:title, card_rows:card_rows, popup_items:popup_items, footer:footer,
+      rank:rank, total_schools:total, tier:tier,
+      korean_groceries_3mi:kg, pan_asian_groceries_3mi:pag, korean_restaurants_3mi:kr,
+      restaurant_count_capped:capped, nearest_hmart_label:hlab, nearest_hmart_mi:hmi
+    };
+  }
+  // Escape then swap ★ (U+2605) for an inline SVG — Inter lacks this glyph on Tizen 10.
+  var KF_STAR_SVG='<svg class="kf-star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.4l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.3l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z"/></svg>';
+  function fmtKFoodText(s){
+    return esc(String(s==null?'':s)).replace(/\u2605/g, KF_STAR_SVG);
+  }
+  function kFoodCardHtml(kf){
+    var rows, h='', i;
+    if(!kf)return '';
+    rows=kf.card_rows||[];
+    if(!rows.length)return '';
+    h='<div class="d-lines">';
+    for(i=0;i<rows.length;i++){
+      h+='<div class="line'+(rows[i].label?'':' nolab')+'">'+
+        (rows[i].label?'<span class="lab">'+esc(rows[i].label)+'</span>':'')+
+        '<span class="txt">'+fmtKFoodText(rows[i].text)+'</span></div>';
+    }
+    return h+'</div>';
+  }
+  function kFoodPopupBodyHtml(kf){
+    var items, h='', i, foot;
+    if(!kf)return '';
+    items=kf.popup_items||[];
+    if(items.length){
+      h+='<ul class="why-bullets kfood-list">';
+      for(i=0;i<items.length;i++){
+        h+='<li><b>'+esc(items[i].label||'')+':</b> '+fmtKFoodText(items[i].text)+'</li>';
+      }
+      h+='</ul>';
+    }
+    foot=str(kf.footer);
+    if(foot)h+='<p class="wish-src kfood-footer">'+esc(foot)+'</p>';
+    return h;
   }
   // Optional "wish I'd known" tips: {label, text} (plain strings still accepted). URLs never on TV.
   function cleanWishIKnew(raw){
@@ -1453,6 +1531,9 @@
     }else if(key==='wish_i_knew'){
       title=esc(wishIKnewTitle(d.wish_i_knew));
       body=wishIKnewBodyHtml(d.wish_i_knew, null)||'<p class="prose">\u2014</p>';
+    }else if(key==='k_food_index'){
+      title=esc((d.k_food_index&&d.k_food_index.title)||'K-FOOD INDEX');
+      body=kFoodPopupBodyHtml(d.k_food_index)||'<p class="prose">\u2014</p>';
     }
     return {titleHtml:'<span>'+title+'</span>', bodyHtml:body||''};
   }
@@ -1664,6 +1745,10 @@
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
     if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
+    // K-Food Index: standalone 4-row card beside Housing/Facts (multi-column packs into open room).
+    if(d.k_food_index&&d.k_food_index.card_rows&&d.k_food_index.card_rows.length){
+      secs.push(dSec('',esc(d.k_food_index.title||'K-FOOD INDEX'),kFoodCardHtml(d.k_food_index),'k_food_index'));
+    }
     if(d.costs&&d.costs.length)secs.push(dSec('','Costs',dLines(trimRows(d.costs, listN)),'costs'));
     if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN)),'deadlines'));
     if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN));
