@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T05:15:12.704Z",
+ "generatedAt": "2026-11-24T05:30:17.796Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,13 +7417,10 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T05:15:12.704Z",
+  "at": "2026-11-24T05:30:17.796Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "world",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13783,62 +13780,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T05:15:12.704Z",
-  "lastAttempt": "2026-11-24T05:15:12.704Z",
+  "asOf": "2026-11-24T05:30:17.796Z",
+  "lastAttempt": "2026-11-24T05:30:17.796Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7267,
-    "lastTime": 1795496398,
-    "settle": 7257.75,
+    "last": 7275,
+    "lastTime": 1795497623,
+    "settle": 7257.5,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": 9.25,
-    "changePct": 0.12744996727635977,
-    "expectedOpen": 7246.393770796734,
+    "change": 17.5,
+    "changePct": 0.24112986565621772,
+    "expectedOpen": 7254.6209782983115,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26823.25,
-    "lastTime": 1795496389,
-    "settle": 26818.25,
+    "last": 26867,
+    "lastTime": 1795497623,
+    "settle": 26816.5,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": 5,
-    "changePct": 0.018644020396558315,
-    "expectedOpen": 24094.0502622934,
+    "change": 50.5,
+    "changePct": 0.18831689444931293,
+    "expectedOpen": 24134.923709395338,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49779,
-    "lastTime": 1795496712,
-    "settle": 49691,
+    "last": 49802,
+    "lastTime": 1795497623,
+    "settle": 49693,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": 88,
-    "changePct": 0.1770944436618301,
-    "expectedOpen": 49683.14053832686,
+    "change": 109,
+    "changePct": 0.21934678928621737,
+    "expectedOpen": 49704.09572012154,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2678.4,
-    "lastTime": 1795496389,
-    "settle": 2675.699951171875,
+    "last": 2681.1,
+    "lastTime": 1795497623,
+    "settle": 2675.800048828125,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": 2.700048828125091,
-    "changePct": 0.10091000027647166,
+    "change": 5.299951171874909,
+    "changePct": 0.19806977633459716,
     "expectedOpen": null,
     "valid": true
    }
@@ -14300,8 +14297,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T05:15:12.704Z",
-  "lastAttempt": "2026-11-24T05:15:12.704Z",
+  "asOf": "2026-11-24T05:30:17.796Z",
+  "lastAttempt": "2026-11-24T05:30:17.796Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14944,8 +14941,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T05:15:12.704Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-24T05:30:17.796Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15952,6 +15949,20 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html",
+    "pub": "2026-11-24T05:01:05.000Z",
+    "sum": "What seem like frontline Russian radio stations are actually a Ukrainian psychological operation, hoping to sow despair among the Kremlin’s soldiers."
+   },
+   {
+    "hd": "US flew drone over Mexican territory to help capture drug lord in Sinaloa",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ1ViUXNjOFFGd2Z6UHY0bEthV2ZtZG9wOV9NQnYxU3ZMTG5uMmttZjNTMnpraXZDVjRXbGlRWHN6blBYbzBneDJNM05veEVYYXJTcmtSdl9yUjZBRVUyWmpfNExVSThYM2t3YlQ5UXNheXpLR2ZSM1BPa0JSbG9kdkg4SnFTT1ZSa0VWSE1vQXRmN1RldnRmalltNmU4NmY1Y21IcHJn?oc=5",
+    "pub": "2026-11-24T04:11:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "A spokesperson says ousted Bangladeshi Prime Minister Sheikh Hasina plans to return home from exile in India on Dec. 16",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/spokesperson-ousted-bangladeshi-prime-minister-sheikh-hasina-plans-138398785",
@@ -16127,13 +16138,6 @@
     "sum": "The UK is joined by several other nations in recognising an ICJ ruling that Myanmar carried out genocide."
    },
    {
-    "hd": "US flew drone over Mexican territory to help capture drug lord in Sinaloa",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ1ViUXNjOFFGd2Z6UHY0bEthV2ZtZG9wOV9NQnYxU3ZMTG5uMmttZjNTMnpraXZDVjRXbGlRWHN6blBYbzBneDJNM05veEVYYXJTcmtSdl9yUjZBRVUyWmpfNExVSThYM2t3YlQ5UXNheXpLR2ZSM1BPa0JSbG9kdkg4SnFTT1ZSa0VWSE1vQXRmN1RldnRmalltNmU4NmY1Y21IcHJn?oc=5",
-    "pub": "2026-11-23T20:51:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "What strike on Russian ship in Libya says about spread of Ukraine war",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/cm894p88jzxpo?at_medium=RSS&at_campaign=rss",
@@ -16153,13 +16157,6 @@
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVFFFcW1iUGhkYkV4U1hiY3lnTjAxMVlSQk9FLWllSHVkSm9OaGlFUlU3bHZtekNidThUWFBLOXVtUjJwa0p4NWhnT3dNSjA4UGRUQ1hZTlFKV1J5Z2c5dzRYRmpNMDREZTZCdC1ZSnozVnpwR3dXX0h2Q0JYNG1CdjdvUVBoNGtaNXZReGpWNnNrdzcwcXVNQVV4TkJZUzg?oc=5",
     "pub": "2026-11-23T20:31:52.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Ukraine confirms it used naval drones to strike two Russian ships off Libya",
-    "src": "The Guardian",
-    "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONjlYcEJxcWh6djFUeEhBbnR4eHJKWHdqOVNOVHhwc2ZGM3QtWGtDNUN3bHA2eUN0WEV3SkxwRVVyNXgzZzVlVHU5YXBZVm5CQmRoNUQ5ck00Rk1lOGFGc3FLRUFFelRnckhkaF9oVmplSE9UR2lEdEFQbFBNRjMya2l0WmFsTVR3bDM4SjNGS0FwOGJhblBsRmNKTQ?oc=5",
-    "pub": "2026-11-23T20:26:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16178,8 +16175,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-24T04:30:12.697Z",
-  "lastAttempt": "2026-11-24T04:30:12.697Z",
+  "asOf": "2026-11-24T05:30:17.796Z",
+  "lastAttempt": "2026-11-24T05:30:17.796Z",
   "lastError": null
  }
 }
