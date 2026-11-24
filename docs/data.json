@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T04:15:11.212Z",
+ "generatedAt": "2026-11-24T04:30:12.697Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,14 +7417,11 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T04:15:11.212Z",
+  "at": "2026-11-24T04:30:12.697Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
-   "news",
-   "stockNews",
-   "world",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13784,62 +13781,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T04:15:11.212Z",
-  "lastAttempt": "2026-11-24T04:15:11.212Z",
+  "asOf": "2026-11-24T04:30:12.697Z",
+  "lastAttempt": "2026-11-24T04:30:12.697Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7271.25,
-    "lastTime": 1795493114,
-    "settle": 7257.75,
+    "last": 7270,
+    "lastTime": 1795494018,
+    "settle": 7257.5,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": 13.5,
-    "changePct": 0.1860080603492818,
-    "expectedOpen": 7250.631719541179,
+    "change": 12.5,
+    "changePct": 0.17223561832586978,
+    "expectedOpen": 7249.634984498794,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26847,
-    "lastTime": 1795493110,
-    "settle": 26818.25,
+    "last": 26826,
+    "lastTime": 1795494020,
+    "settle": 26816.5,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": 28.75,
-    "changePct": 0.10720311728021031,
-    "expectedOpen": 24115.383758187058,
+    "change": 9.5,
+    "changePct": 0.03542595044095986,
+    "expectedOpen": 24098.09295523279,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49748,
-    "lastTime": 1795493107,
-    "settle": 49691,
+    "last": 49758,
+    "lastTime": 1795494020,
+    "settle": 49693,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": 57,
-    "changePct": 0.11470890100823086,
-    "expectedOpen": 49652.200235052616,
+    "change": 65,
+    "changePct": 0.13080313122572595,
+    "expectedOpen": 49660.182218421105,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2679.4,
-    "lastTime": 1795493110,
-    "settle": 2675.699951171875,
+    "last": 2679.2,
+    "lastTime": 1795493967,
+    "settle": 2675.800048828125,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": 3.700048828125091,
-    "changePct": 0.1382833985740659,
+    "change": 3.399951171874818,
+    "changePct": 0.12706297592616597,
     "expectedOpen": null,
     "valid": true
    }
@@ -13859,39 +13856,6 @@
    "SEA"
   ],
   "games": [
-   {
-    "id": "401873078",
-    "start": "2026-11-24T01:15Z",
-    "state": "in",
-    "status": "Q4 0:46",
-    "period": 4,
-    "clock": "0:46",
-    "completed": false,
-    "away": {
-     "name": "Cincinnati Bengals",
-     "short": "Bengals",
-     "id": "4",
-     "abbrev": "CIN",
-     "score": "20",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
-     "record": "7-2",
-     "winner": false,
-     "color": "#fb4f14",
-     "rank": null
-    },
-    "home": {
-     "name": "Washington Commanders",
-     "short": "Commanders",
-     "id": "28",
-     "abbrev": "WSH",
-     "score": "19",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
-     "record": "3-5-1",
-     "winner": false,
-     "color": "#5a1414",
-     "rank": null
-    }
-   },
    {
     "id": "401873066",
     "start": "2026-11-20T01:15Z",
@@ -14287,10 +14251,43 @@
      "color": "#aa0000",
      "rank": null
     }
+   },
+   {
+    "id": "401873078",
+    "start": "2026-11-24T01:15Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Cincinnati Bengals",
+     "short": "Bengals",
+     "id": "4",
+     "abbrev": "CIN",
+     "score": "20",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/cin.png",
+     "record": "7-3",
+     "winner": false,
+     "color": "#fb4f14",
+     "rank": null
+    },
+    "home": {
+     "name": "Washington Commanders",
+     "short": "Commanders",
+     "id": "28",
+     "abbrev": "WSH",
+     "score": "22",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/wsh.png",
+     "record": "4-5-1",
+     "winner": true,
+     "color": "#5a1414",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-24T04:15:11.212Z",
-  "lastAttempt": "2026-11-24T04:15:11.212Z",
+  "asOf": "2026-11-24T04:30:12.697Z",
+  "lastAttempt": "2026-11-24T04:30:12.697Z",
   "lastError": null
  },
  "alerts": {
@@ -14301,8 +14298,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T04:15:11.212Z",
-  "lastAttempt": "2026-11-24T04:15:11.212Z",
+  "asOf": "2026-11-24T04:30:12.697Z",
+  "lastAttempt": "2026-11-24T04:30:12.697Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14945,8 +14942,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T04:15:11.212Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-24T04:30:12.697Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15953,11 +15950,32 @@
  "worldNews": {
   "items": [
    {
+    "hd": "A spokesperson says ousted Bangladeshi Prime Minister Sheikh Hasina plans to return home from exile in India on Dec. 16",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/spokesperson-ousted-bangladeshi-prime-minister-sheikh-hasina-plans-138398785",
+    "pub": "2026-11-24T03:50:32.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
+    "pub": "2026-11-24T03:34:41.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Russia’s war dead: the hidden toll of the Ukraine conflict",
     "src": "The Guardian",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcHEzaFFZSHUwdzN0LS1RbTVLRlF1MFpWblFUV2l1eUtybk9fOHJzNmQzeW8zSi13TEdMWGtYTE9UTFNHbGx4UUZ6Z2UyRlJQUU1kY3hKNmtsV3V1ZkVsWWR3UmxvdDlud0NQa2VRRldnWFQwdV85R0RNZTVKaTJKbko0UV9Qa3FLR0J1S1FNSkZxM01k?oc=5",
     "pub": "2026-11-24T02:30:00.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Nato chief vows defence against space threat after Russian nuclear satellite reports",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c9x2er1ry2mzo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-24T02:15:59.000Z",
+    "sum": "German media said Russia planned to launch a satellite with a nuclear warhead into space in coming weeks."
    },
    {
     "hd": "Pentagon sharply rebukes Canada over defense spending and the F-35 fighter jet review",
@@ -15993,6 +16011,13 @@
     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQVExRXR2RWtYa0VYeVJad1JyanJJWTNvUXVFcGY2TnhtMS1ZS1dkLW9vV0FneklNMDV2d2dIWEpfeUpoMFB6TkZuQnJPbm1GWTRwLXh4TUF1QTctV2JjaUpkQnFhWENLMGlwaU1aVFhQcXh4NC1rUHFNVmVvZTVfN0FkVVZPVU8tREsyRDF1SQ?oc=5",
     "pub": "2026-11-24T01:27:00.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Ukraine sinks Russian warship Merkury off Libya, damages sanctioned Russian cargo ship",
+    "src": "CBS News",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFAxeHBZeVU0VUJqbTZMY3JYZlVwcFVqak05aURsLTZOYU5uUEMzc2VvX2djLUhhWFJ5YlBUQ1pHX1laYzViNFRreFd2VEdiX1B2TnZrcEFaenhCdl90RWkyb0JobUtoUm5BLThhclo1YXptenlrWTVhaw?oc=5",
+    "pub": "2026-11-24T01:20:55.000Z",
+    "sum": "Ukraine has taken its fight against Russia to the shores of North Africa, claiming to have sunk a warship off the coast of Libya in its latest expansion of the war."
    },
    {
     "hd": "NATO warns Putin could strike before European army responds, points to US as military model",
@@ -16034,6 +16059,13 @@
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
     "pub": "2026-11-23T22:11:22.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Russian cargo ship under tow after being hit by drones arrives in St Petersburg",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbWEtbTJSQnAySDRBUUhIYkZMdFBILXZkQlptS08xUGdBVnFxTjBrWE0xWlBld1Z2dG1nUUE5bDhrZUlqU01VcnZhVXZVQ1lZay11RTNYYWZOeUtKMUp3UDM2eUdUNDgyNnJuWUJxOENiZVRuRmlsUlAwWkpSdWZ6T2JpMGM3ZmNqRmk3NGx6OVhsekJRS2EydnZ3eVBabktYWU1qWVFwTXBrMDk4eEZyR0IzcDVzRUgxT0E?oc=5",
+    "pub": "2026-11-23T21:58:48.000Z",
     "sum": ""
    },
    {
@@ -16126,41 +16158,6 @@
     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONjlYcEJxcWh6djFUeEhBbnR4eHJKWHdqOVNOVHhwc2ZGM3QtWGtDNUN3bHA2eUN0WEV3SkxwRVVyNXgzZzVlVHU5YXBZVm5CQmRoNUQ5ck00Rk1lOGFGc3FLRUFFelRnckhkaF9oVmplSE9UR2lEdEFQbFBNRjMya2l0WmFsTVR3bDM4SjNGS0FwOGJhblBsRmNKTQ?oc=5",
     "pub": "2026-11-23T20:26:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "How the Myanmar Genocide Ruling Raises the Stakes for Israel",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVjN0dk4ycW8xekFvcVR1OTFuOGFHdTBBRjdNa0FWeEZ1czQ5bG1Qckx6N1NENEh5dm9yOEJYTjVtc2Y5b2hNM2RhVnptVGdhaS10al9RVkJmVWM1YW5UYW9KUWVWdE54WmRpaEs5X0lzWEFVWTJnUmNROEdJSTVRVTVPVnhFd2hSWUVjeVBDOFJXUjlnTTA1d0ttMDloZHFIZzg3ekRheDNFSmc?oc=5",
-    "pub": "2026-11-23T20:24:55.000Z",
-    "sum": "The ruling by the International Court of Justice deals with issues relevant to the case brought against Israel alleging genocide in Gaza. Israel has rejected the charge."
-   },
-   {
-    "hd": "NATO calls urgent meeting as string of incidents escalates Russia tensions",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeTBzUEtPZ3RHS2tpdjlJNXRLMmVneUVHeWNmRC1IRWUzb3RCUk15alZwc1hvZ1Z2czFOZDV0YldySll3N1dLQU84YjlqN2VvVTVzeHY3TDRLbjM2dkNGZGxkSkpBb1Y0a0NTWlgtQmtvSVcyS1Q3NUZaZmwzd1NYd25JNUdneER3N181RUJzUzU1Zm80R0w5VjdieFRDTUtpalhHVWgzWjZCLXJwbUpZUVRkVUExajNy?oc=5",
-    "pub": "2026-11-23T20:02:48.000Z",
-    "sum": "“We are not in war, but we are certainly not in peace anymore, either,” Germany’s foreign minister said after Russian missiles crashed onto Polish territory."
-   },
-   {
-    "hd": "Zelenskyy hails Ukraine's attack on a Russian warship docked at a naval base in Libya",
-    "src": "NPR",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQS2RQU25hVGVUaGQ1cEM3WmFqLVphcjhqTHBMcUllODNJcFBzNy1oRWZUZXdsSXQ5aWZpQjY2UEw1ODJXRnRXSjlPT1RtVlZKRVJBUG5JOV9LOXZ4UG8xdWNSTVFDb2pSdVh0QnZLQWhIdUV0ZF9qN1dOYWFhTlpxcENJY1VFdw?oc=5",
-    "pub": "2026-11-23T19:57:59.000Z",
-    "sum": "The Kremlin warns of an \"escalation of tensions in the region\", but declines to comment directly on the attacks in Libya."
-   },
-   {
-    "hd": "Poland to get NATO early-warning aircraft after Russian missiles hit country",
-    "src": "NBC News",
-    "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNMEV3R09aQWhXWERGUjZxM3kzdURrdktKUU92VFhpcWVPUmRzQXdRVUgxdWdnbjBIVEpOYUgwTEs3Vzd1UjNOVXN1bXJoSHoxNTBhNFVGcEJXUzRHUTFYR1g3VEtCclNDZEZQZEYzX2NLUEJtMUd2YTYtSURTTEVLN1RsVlozSDRkZ3dISzVwTmZqS09jYVIyV2tyQW9PODdyVVRjcFBnaWRtSHk0SDg5Uw?oc=5",
-    "pub": "2026-11-23T19:22:31.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Russia threatens ‘hostile’ Estonia with ‘open war’",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOT2tuUzB4em5zWEgwZUpEZ0szQ0R2ajRaWmgtN0JoX0RhOVFtcFUtWm13b2k5a083bjdjRTJnUVlLTEtadUFYRm5HQlh3aXFFWkNhT2JCaUJPWTJIWm1jcmJiUW4wakYyd3EzZHhOenBUX1lud0JvWVN4YmIyQURaVTBQUnRkeG1hd09OT3YzRzlmd9IBlwFBVV95cUxQZ3JmTVA1Q3FTaTBjMUZldjgwTHJpcXRYSHhoTXlUbnNNVTg3UUltZzd1eTNhc3hDYlZCOHdjdFluaUpRTlVuc1E2XzBKMmFwQVBFT2pqNDhPc1BDUG4xLUhhX2VIOHpWTnB0cm9heEthblZmemhjQ2U3WHExWS02WlRCc2JTQVlDVXpiMDBKcE1HTkk0YWVF?oc=5",
-    "pub": "2026-11-23T19:20:49.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16179,8 +16176,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-24T03:30:15.906Z",
-  "lastAttempt": "2026-11-24T03:30:15.906Z",
+  "asOf": "2026-11-24T04:30:12.697Z",
+  "lastAttempt": "2026-11-24T04:30:12.697Z",
   "lastError": null
  }
 }
