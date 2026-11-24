@@ -395,25 +395,25 @@
   .kw-sub{margin:8px 0 0;font-size:28px;font-weight:400;color:var(--muted);letter-spacing:.02em;
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:48vw}
   #cols.kw-cols{display:flex;flex-direction:column;gap:16px;min-height:0;overflow:hidden;
-    --kw-title:56px;--kw-meta:28px;--kw-plot:30px;--kw-score:32px}
+    --kw-title:72px;--kw-meta:32px;--kw-plot:34px;--kw-score:36px}
   .kw-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;align-items:stretch}
-  .kw-card{position:relative;display:flex;flex-direction:column;gap:12px;min-width:0;min-height:0;height:100%;
-    padding:26px 24px 28px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
+  .kw-card{position:relative;display:flex;flex-direction:column;gap:14px;min-width:0;min-height:0;height:100%;
+    padding:28px 26px 30px;border-radius:12px;border:1px solid var(--hair);background:var(--panel);cursor:pointer;
     outline:none;overflow:hidden;transform:scale(1);transform-origin:center center;
     transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
   .kw-card::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;border-radius:0 2px 2px 0;background:var(--gold)}
   .kw-card.focus{border-color:var(--focus-ring);z-index:6;transform:scale(1.02);
     box-shadow:0 0 0 12px var(--focus-ring),0 0 28px 8px rgba(230,184,76,.35),0 12px 22px rgba(0,0,0,.4)}
-  .kw-rank{flex:none;font-size:22px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .kw-rank{flex:none;font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
   .kw-title{flex:none;font:400 var(--kw-title)/1.12 Inter,"SF Pro Display",system-ui,sans-serif;letter-spacing:-.02em;color:var(--ink);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;max-height:calc(2 * 1.12em);
     overflow-wrap:break-word;word-break:normal}
-  .kw-meta{flex:none;display:flex;flex-direction:column;gap:6px;min-width:0}
+  .kw-meta{flex:none;display:flex;flex-direction:column;gap:8px;min-width:0}
   .kw-meta .kw-line{font-size:var(--kw-meta);line-height:1.3;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .kw-meta .kw-line b{font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:10px;font-size:.92em}
   .kw-plot{flex:1;min-height:0;overflow:hidden;font-size:var(--kw-plot);line-height:1.35;font-weight:400;color:var(--ink);
     overflow-wrap:break-word;word-break:normal}
-  .kw-scores{flex:none;margin-top:4px;padding-top:14px;border-top:1px solid var(--hair);
+  .kw-scores{flex:none;margin-top:4px;padding-top:16px;border-top:1px solid var(--hair);
     font-size:var(--kw-score);line-height:1.3;font-weight:500;color:var(--ink)}
   .kw-scores .kw-imdb{display:block;margin-top:4px;color:var(--gold);font-weight:600}
   .kw-foot{flex:none;font-size:22px;font-weight:400;color:var(--dim);letter-spacing:.06em;text-align:center;padding-top:2px}
@@ -2301,7 +2301,7 @@
     }
   }
   function fitKwTitleSize(cards, root){
-    var sizes=[64,56,48,44,40,36,32,28], i, j, t, lh, ok, cs;
+    var sizes=[72,64,56,48,44,40,36,32], i, j, t, lh, ok, cs;
     for(i=0;i<sizes.length;i++){
       root.style.setProperty('--kw-title', sizes[i]+'px');
       ok=true;
@@ -2323,14 +2323,22 @@
       }
       if(ok)return sizes[i];
     }
-    root.style.setProperty('--kw-title', '28px');
-    return 28;
+    root.style.setProperty('--kw-title', '32px');
+    return 32;
   }
   function fitKwPlotTeaser(el){
-    var full, lo, hi, mid, best;
+    var full, lo, hi, mid, best, cs, lh, maxLines, budget;
     if(!el)return;
     full=el.getAttribute('data-full')||'';
+    el.style.maxHeight='';
     if(!full){el.textContent='';return;}
+    cs=window.getComputedStyle(el);
+    lh=parseFloat(cs.lineHeight);
+    if(!(lh>0))lh=parseFloat(cs.fontSize)*1.35||34;
+    // Whole lines only — never leave a clipped half-line at the bottom of the card.
+    maxLines=Math.max(1, Math.floor(el.clientHeight/lh));
+    budget=Math.floor(maxLines*lh);
+    el.style.maxHeight=budget+'px';
     el.textContent=full;
     if(el.clientHeight<=0)return;
     if(el.scrollHeight<=el.clientHeight+1)return;
@@ -2350,12 +2358,13 @@
     if(!root||!grid)return;
     cards=grid.querySelectorAll('.kw-card');
     if(!cards.length)return;
-    // Scale meta/plot/score together toward admissions-readable sizes; title auto-shrinks to 2 lines.
+    // Prefer large couch-readable type; step down only if a card overflows.
     typeSizes=[
+      {meta:34, plot:36, score:38},
+      {meta:32, plot:34, score:36},
       {meta:30, plot:32, score:34},
       {meta:28, plot:30, score:32},
-      {meta:26, plot:28, score:30},
-      {meta:24, plot:26, score:28}
+      {meta:26, plot:28, score:30}
     ];
     for(si=0;si<typeSizes.length;si++){
       root.style.setProperty('--kw-meta', typeSizes[si].meta+'px');
@@ -2489,6 +2498,8 @@
     $('cols').innerHTML='<div class="kw-grid">'+cards+'</div>'+
       '<div class="kw-foot">Sources: Rotten Tomatoes, IMDb</div>';
     layoutKwBoard();
+    // Second pass after flex/grid heights settle so plot teasers measure real space.
+    setTimeout(function(){layoutKwBoard();paintKwFocus();}, 0);
     paintKwFocus();
     setHints();
   }
