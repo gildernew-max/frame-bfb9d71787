@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-23T23:45:13.004Z",
+ "generatedAt": "2026-11-24T00:00:12.719Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,11 +7417,12 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-23T23:45:13.004Z",
+  "at": "2026-11-24T00:00:12.719Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13782,62 +13783,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T23:45:13.004Z",
-  "lastAttempt": "2026-11-23T23:45:13.004Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7247.75,
-    "lastTime": 1795476912,
-    "settle": 7257.5,
+    "last": 7244.5,
+    "lastTime": 1795477830,
+    "settle": 7257.75,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": -9.75,
-    "changePct": -0.13434378229417845,
-    "expectedOpen": 7227.447312090941,
+    "change": -13.25,
+    "changePct": -0.1825634666391099,
+    "expectedOpen": 7223.957571561435,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26709.25,
-    "lastTime": 1795476909,
-    "settle": 26816.5,
+    "last": 26701.5,
+    "lastTime": 1795477832,
+    "settle": 26818.25,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": -107.25,
-    "changePct": -0.3999403352413626,
-    "expectedOpen": 23993.215136977233,
+    "change": -116.75,
+    "changePct": -0.4353378762596366,
+    "expectedOpen": 23984.68802544909,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49668,
-    "lastTime": 1795476890,
-    "settle": 49693,
+    "last": 49617,
+    "lastTime": 1795477830,
+    "settle": 49691,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": -25,
-    "changePct": -0.050308896625279216,
-    "expectedOpen": 49570.35914676111,
+    "change": -74,
+    "changePct": -0.14892032762472077,
+    "expectedOpen": 49521.4525018615,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2670,
-    "lastTime": 1795476913,
-    "settle": 2675.800048828125,
+    "last": 2668.4,
+    "lastTime": 1795477829,
+    "settle": 2675.699951171875,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": -5.800048828125,
-    "changePct": -0.21675942605147758,
+    "change": -7.299951171874909,
+    "changePct": -0.27282398269947095,
     "expectedOpen": null,
     "valid": true
    }
@@ -14287,8 +14288,8 @@
     }
    }
   ],
-  "asOf": "2026-11-23T23:45:13.004Z",
-  "lastAttempt": "2026-11-23T23:45:13.004Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "lastError": null
  },
  "alerts": {
@@ -14299,8 +14300,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-23T23:45:13.004Z",
-  "lastAttempt": "2026-11-23T23:45:13.004Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14943,7 +14944,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-23T23:45:13.004Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15154,44 +15155,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-23T23:45:13.004Z",
-  "lastAttempt": "2026-11-23T23:45:13.004Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 164.78,
-    "time": 1795477506,
+    "price": 165.21,
+    "time": 1795478431,
     "ref": 165.05,
     "refTime": 1795467601,
-    "change": -0.27000000000001023,
-    "changePct": -0.1635867918812543
+    "change": 0.1599999999999966,
+    "changePct": 0.09694032111481163
    },
    "TSLA": {
     "session": "post",
-    "price": 385.3,
-    "time": 1795477477,
+    "price": 385.35,
+    "time": 1795478425,
     "ref": 385.46,
     "refTime": 1795467600,
-    "change": -0.15999999999996817,
-    "changePct": -0.0415088465729176
+    "change": -0.1099999999999568,
+    "changePct": -0.028537332018875317
    },
    "SPCX": {
     "session": "post",
-    "price": 133.62,
-    "time": 1795477469,
+    "price": 133.9139,
+    "time": 1795478422,
     "ref": 133.35,
     "refTime": 1795467600,
-    "change": 0.27000000000001023,
-    "changePct": 0.2024746906636747
+    "change": 0.563900000000018,
+    "changePct": 0.4228721409823908
    },
    "ANT": {
     "session": "post",
-    "price": 87.01,
-    "time": 1795477498,
+    "price": 87.12,
+    "time": 1795478411,
     "ref": 87.64,
     "refTime": 1795467601,
-    "change": -0.6299999999999955,
-    "changePct": -0.7188498402555858
+    "change": -0.519999999999996,
+    "changePct": -0.5933363760839754
    }
   }
  },
@@ -15201,6 +15202,48 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "S&P 500, Nasdaq End Best Session Since April Last Year On Optimism Led By Jensen Huang’s Reinstatement — NVDA, NASA, TTWO, AMZN In Focus",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-session-since-april-on-optimism-led-by-jensen-huang-s-reinstatement-nvda-nasa-ttwo-amzn-in-focus/cNbpKSnR9jY?.tsrc=rss",
+      "pub": "2026-11-23T23:33:25.000Z",
+      "sum": "Nvidia’s board reinstated Jensen Huang as Nvidia’s CEO following pressure from President Donald Trump."
+     },
+     {
+      "hd": "Huang's return at Nvidia puts spotlight on chipmaker's board",
+      "src": "Yahoo Finance",
+      "url": "https://www.cbsnews.com/news/nvidia-board-reinstates-ceo-jensen-huang/?.tsrc=rss",
+      "pub": "2026-11-23T23:33:02.000Z",
+      "sum": "Nvidia directors' decision to rehire Jensen Huang shows a \"lack of courage,\" according to one prominent governance expert."
+     },
+     {
+      "hd": "Retirees: Is Now the Time to Ditch S&P 500 Funds?",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/23/retirees-is-now-the-time-to-ditch-s-and-p-500-funds/?.tsrc=rss",
+      "pub": "2026-11-23T23:33:02.000Z",
+      "sum": "The recent Nvidia scandal underscores just how vulnerable the broad index can be to tech stocks."
+     },
+     {
+      "hd": "Stocks Rebound Sharply as Nvidia Reinstates CEO Huang",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/stocks-rebound-sharply-nvidia-reinstates-ceo-huang",
+      "pub": "2026-11-23T23:28:29.000Z",
+      "sum": "The S&P 500 Index ($SPX ) (SPY ) is up +5.15%, the Dow Jones Industrial Average ($DOWI ) (DIA ) is up +3.05%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) is up +7.34%. December E-mini S&P futures (ESZ26 ) are up +4.85%, and December E-mini Nasdaq futures (NQZ26..."
+     },
+     {
+      "hd": "Jensen Huang Is Back and Nvidia Just Soared 31%. Here’s What 6 Giant Stocks Did the Week and the Year After a Day Like This",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/23/jensen-huang-is-back-and-nvidia-just-soared-31-heres-what-6-giant-stocks-did-the-week-and-the-year-after-a-day-like-this/?.tsrc=rss",
+      "pub": "2026-11-23T23:22:00.000Z",
+      "sum": "Nvidia rose 31% on Jensen Huang's return. Only six times since 2007 had a company worth $500 billion or more gained 20% in a day. Five of the six stocks were lower a week later and five were higher a year later."
+     },
+     {
+      "hd": "Fastly Stock and Asia Pacific AI Infrastructure Names Outside U.S. Sanctions",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/fastly-stock-asia-pacific-ai-231750500.html?.tsrc=rss",
+      "pub": "2026-11-23T23:17:50.000Z",
+      "sum": "U.S. sanctions are tightening around Megaspeed and Nvidia, and that is quietly rearranging who gets to sell the next wave of AI and cloud capacity. When one major buyer is hit with export controls, capital and workloads often look for a new home. This article walks through three Asia Pacific stocks exposed to that shift, drawn from our cloud and data center screener, and explains how each might be helped or hurt by the fallout. The three stocks covered next are just a sample, and the full..."
+     },
      {
       "hd": "Nasdaq gains 6.5% after Huang reinstated as Nvidia CEO",
       "src": "Yahoo Finance",
@@ -15213,7 +15256,7 @@
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4971214-nvidia-after-huang-return-rubin-carries-buy-case?source=feed_symbol_NVDA",
       "pub": "2026-11-23T23:12:14.000Z",
-      "sum": ""
+      "sum": "Analyst rates Nvidia Corporation a Buy: Rubin sales of nearly $20 billion support 70%-75% FY2028 growth, though governance concerns favor a smaller position."
      },
      {
       "hd": "Why Digital Realty Trust Stock Moved Over 3% Higher on Monday",
@@ -15223,13 +15266,6 @@
       "sum": "The Nvidia Effect was strong that trading session."
      },
      {
-      "hd": "Stocks Rebound Sharply as Nvidia Reinstates CEO Huang",
-      "src": "Nasdaq",
-      "url": "https://www.nasdaq.com/articles/stocks-rebound-sharply-nvidia-reinstates-ceo-huang-0",
-      "pub": "2026-11-23T23:03:15.000Z",
-      "sum": "The S&P 500 Index ($SPX ) (SPY ) on Monday rose by +4.84%, the Dow Jones Industrial Average ($DOWI ) (DIA ) rose +3.01%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) rose +6.91%. December E-mini S&P futures (ESZ26 ) rose +4.74%, and December E-mini Nasdaq futures (NQZ26 )..."
-     },
-     {
       "hd": "President Trump Claims Nvidia’s Jensen Huang and Wife ‘Worked It Out’ After Affair Scandal",
       "src": "Yahoo Finance",
       "url": "https://firstformoney.com/president-trump-claims-nvidias-jensen-huang-and-wife-worked-it-out-after-affair-scandal/?.tsrc=rss",
@@ -15237,39 +15273,32 @@
       "sum": "Nvidia CEO Jensen Huang and his wife Lori Mills have “worked it out” following his affair scandal, at least according to President Donald Trump. As First for Money previously reported, the billionaire, 63, admitted he was “unfaithful” to his wife in an email to staff on November 8. The admission came amid allegations he cheated"
      },
      {
-      "hd": "Why NYT's Multiple Fell As Its Stock Rose",
-      "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/nyt/articles/627685/why-nyt-s-multiple-fell-as-its-stock-rose/2026-11-23?.tsrc=rss",
-      "pub": "2026-11-23T22:52:03.000Z",
-      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
-     },
-     {
-      "hd": "President Trump Says He Convinced Nvidia’s Board to Bring Back Jensen Huang",
-      "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/23/president-trump-says-he-convinced-nvidia-s-board-to-bring-back-jensen-huang/?.tsrc=rss",
-      "pub": "2026-11-23T22:40:02.000Z",
+      "hd": "Inside the ‘war room’ that lobbied Donald Trump to bring back Nvidia’s Jensen Huang",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQWWxydFBUdkFaUF9Ec3hwRDhHZEhzLUt2TWdSYXVLaU5KWkhJUUdwZWk0RUxMWjFoeTNZWGk3QnkyVHZwZk1CTEdqVGY1Z3BraUJSd2djdjJ5VHI2bDE5M3RRRmdUMW5pejg3N0o5UXFCSmM2TWRuZ2U3NU5zbXBmOGxmb0o?oc=5",
+      "pub": "2026-11-23T22:46:14.000Z",
       "sum": "Nvidia's board brought Jensen Huang back after \"input from senior U.S. government officials.\""
      },
      {
-      "hd": "Jensen Huang’s Return Gives NVDA Stock Biggest Single-Day Gain Since 2003: Nvidia Senior Leaders Were Reportedly Not Consulted On Reinstatement",
-      "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/jensen-huang-s-return-gives-nvda-stock-biggest-single-day-gain-since-2003-nvidia-senior-leaders-were-reportedly-not-consulted-on-reinstatement/cNbpiRXR9jo?.tsrc=rss",
-      "pub": "2026-11-23T22:38:22.000Z",
-      "sum": "NVDA stock closed up 31% on Monday, clocking its best day since May 2003, while S&P 500 edged up 5% and the tech heavy Nasdaq Composite 7%."
+      "hd": "Why Jensen Huang and Nvidia Matter So Much to Markets",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNT3U4bjRCajFkbkxFcEZJU0NGNTVBZ3hBcm1WSEdwT0dJeGoxUHp0U3F6TERhVmtyajhTcDM5U2VmUFFWUnQ1a2lUSzU5NzdpQWF4T2pHU3FHcjlMUnhCUTgxSlRDUGgwTnhnZ3BfOXF5SDRfbDBYWVJKQmI3OExlajhDNmJYNFJ6b0xpWWdyUVJRclM3TXhOSDd3UHdqSXk4QlhSdzNNYnR6NDB2V2wxeDZ0NXc?oc=5",
+      "pub": "2026-11-23T22:37:22.000Z",
+      "sum": ""
      },
      {
-      "hd": "Own Gold As A Hedge? BND Rose More Often",
-      "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/bnd/articles/627661/own-gold-as-a-hedge-bnd-rose-more-often/2026-11-23?.tsrc=rss",
-      "pub": "2026-11-23T22:38:05.000Z",
-      "sum": "Today's big story: Reported SEC Probe: Could Nvidia Stock Fall To $92."
+      "hd": "Trump engineered a risky comeback for Jensen Huang",
+      "src": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRFBCeDdBWW5hTkFCOWNFYkZnSGJXWTRERUlBY0pzVVNfREhneVY3ekdNMnpLUXZaNGN1MHJ2TU9FUHNJTFBWTEpfVl9mYnhmZHBYWm9STnRJaFotYUplMGROWEpnekhnX3AwX1JSNy1fNEh4M1kwT3NoVEU2bEpfZEJYYjJUR21RVzQyVnBlTjFxNFJfN1g0TXNJdE4?oc=5",
+      "pub": "2026-11-23T22:25:12.000Z",
+      "sum": ""
      },
      {
-      "hd": "Why ASML Stock Popped Today",
-      "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/23/why-asml-stock-popped-today/?.tsrc=rss",
-      "pub": "2026-11-23T22:36:24.000Z",
-      "sum": "The AI sector soared as Jensen Huang returned to Nvidia."
+      "hd": "Trump Engineered Huang’s Reinstatement as Nvidia CEO | What’s News for Nov. 23",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbmdBNktQMVFfeXdBb0o1SmdqRkd4TkE0ZjJMWmtod0IxYUUtcVNYQkNMWnNmb2lrN1hyaFJzZzRaQ0lSbG9HVF9NYjFwUmo0UVFDV0MyNWk3Zk1zV19OaEhFcl93ak5sYWpzaVpobUJ2QXV0Rm91SE9PeTJLckJyYlhyYW1TdzJ3Q2p1elF4Yy1VT2s?oc=5",
+      "pub": "2026-11-23T22:25:00.000Z",
+      "sum": ""
      },
      {
       "hd": "US stocks surge and recover half of last week’s plunge after Jensen Huang returns as Nvidia’s CEO",
@@ -15283,6 +15312,13 @@
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbUItRm03cUFicjFvYnJycUY2MXNGNl9rVUxCS2t2dzQxV2JFYTdMUG1ZYWdocGJOMFBMTG9fTGhQZXBWdU93TU9sa3FwbTg3OHZIYTVuSWtDaGVoZXJsVXAxQ3dEVG1yN1JHbHgySVNLQjJNUWhHX1dfQWNWcEhQcmM4Ml9YbUFMZmZmeFhRUnlkWTFFdTE4NFFGZEVGU3hEcFc1dnNDYTZhSWs?oc=5",
       "pub": "2026-11-23T22:15:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "COMMENTARY: TRADING DAY Market euphoria as Huang returns to Nvidia",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaWxfZ0U4bk9qMWhWTEFrVXUxWTdneGlOaDJaQ0lya0JPMFkxbmZEbW91Q0xTSjFQS3lpWmpuVC0yMTc3TlZIdURWSmQzcTBxY1BhOTYtUDFKSXhZMHZ6QUxwOU9aaHhOUDF5NzFEOUpvVWtjcVgyLVpkMDU3Wm1fZ2JHVzBENm9OVEdPWVg1Zi1tNDVOOU1WaFZFMWJvSjBoWFZkOEF3?oc=5",
+      "pub": "2026-11-23T22:07:16.000Z",
       "sum": ""
      },
      {
@@ -15340,48 +15376,13 @@
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9fN3hxWUc4RGwweVk4bk9Kak9VT21rd0czY1V3bzQ4anFGUERTYlJNRzk5eUozQ2dPU0oxMzk4Xzk0akJrQU8ya2w5clZWYnlFNHJ1amhkenU1QUt5T3BseGlueHZBNHVFTjNkajJzQnpwTkk?oc=5",
       "pub": "2026-11-23T21:13:00.000Z",
       "sum": "Nvidia opened 30% higher after Jensen Huang's return. A retiree who trims $100,000 owes about $15,000 in a brokerage account and nothing on the sale inside an IRA."
-     },
-     {
-      "hd": "Nvidia shares surge more than 30%, add $1T in market cap, as Jensen Huang returns",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-23T21:05:43.000Z",
-      "sum": "In the Loop, host Ejaaz Ahamadeem examines Jensen Huang's influence on Nvidia (NVDA) and the broader stock market amid reports of his return as CEO. From investor confidence in the AI trade to Nvidia's outsized role in market momentum."
-     },
-     {
-      "hd": "Nvidia’s Rally Ripples Across Markets",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPbmRrWGlNNEhKN1FYMEt2NmxkREM3N2toWEt1QW9NOW5ULUt5MHpuRmdjMnI2MnpzbnFIdVdTcFhXMEJDZkNFenAxSWM5aWdaYVZyLVFwTjhFODJ0dUNIWGdmdkZ2ZFhBSnE4YjJZYXFDSWRZc3NTcHJSb0FvcEduX3Y4M1JINDZRaDlKMEZLbkJjLXRMMGM0Skt6V2FXZXlTZFV3bE93?oc=5",
-      "pub": "2026-11-23T20:16:25.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Stocks Soar as Huang’s Nvidia Return Fuels AI Bets: Markets Wrap",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNMFVRM2J2cTZ6eU02Qzk1TF83UmhsSEN3SlpHYjJuc2lDeXBVM0h6WkN2bEJCUlk5RnZNOFMta05FOXFqeTZQQWZnbFl2RG1WTWVNSXYwVWhZRFZxRkx6SDlhTWtUWk92UVBJa2FGWVk3ak9rOUVJYjZ6RDBqcUZCOEpiWmFVWGxvVmM1Y2prdDk2N19EZG0xWjU3aFV5QkJ6MjF4eExGSkd3TWxaWGRBVzhB?oc=5",
-      "pub": "2026-11-23T20:12:20.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Dow Jones Top Gainers Today: NVDA, CAT, GOOGL Lead",
-      "src": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=8bafd04d062dc134173abbf5dd1aeaa1fc02b00f990aa74f29a319f51606d0a5",
-      "pub": "2026-11-23T20:10:51.000Z",
-      "sum": "Dow Jones components NVDA, CAT, GOOGL, CSCO and GS were among today's top gainers, with NVIDIA up 31.37% and Caterpillar up 6.68%."
-     },
-     {
-      "hd": "Gold Futures Rebound as Nvidia News Lifts Markets",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQQ1lDUDJKYnppMTFtNDdCYUoyWkVjdTBJYWpOaWY3OHFRUTMxT0VSUTR0UWN4SEFQVVZJUlhqNjU4OFlDeXdHZkh4ZUFFSTNzWXhEcWpRQ0h0eVk3Q1ZmU2I5OURqdnhEc1hlQmRDcGVVLXZ5YW8yTWQ4dWYwRHE4V0dLTGZhd0p2S3A1V0l6MUs4M3RXaFh0TlJDZUdQYkdPRWNoclFEMl9sY2JTQzNZcDJn?oc=5",
-      "pub": "2026-11-23T20:10:00.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 141,
      "Yahoo": 8,
-     "Google News": 71,
-     "Nasdaq": 13,
+     "Google News": 75,
+     "Nasdaq": 12,
      "Seeking Alpha": 27
     }
    },
@@ -15574,6 +15575,27 @@
    "SPCX": {
     "items": [
      {
+      "hd": "Forget AT&T and Verizon: Crown Castle Has More to Lose From Starlink’s 40x Upgrade",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/forget-att-and-verizon-crown-castle-has-more-to-lose-from-starlinks-40x-upgrade?ref=yahoofinance&tlnk=yf-261123-rrg4f5hj&.tsrc=rss",
+      "pub": "2026-11-23T23:28:41.000Z",
+      "sum": "Key TakeawaysElon Musk said SpaceX’s next direct-to-cell satellites will have 40x the bandwidth of today’s, and that AT&T and Verizon may lose some revenue. Crown Castle has more at stake than either carrier, since AT&T and Verizon pay 51% of its tower rent."
+     },
+     {
+      "hd": "SpaceX Is “Following the Exact Same Pattern That Meta Followed” After Its IPO, per Steve Jurvetson. Time to Buy?",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/spacex-is-following-the-exact-same-pattern-that-meta-followed-after-its-ipo-per-steve-jurvetson-time-to-buy?ref=yahoofinance&tlnk=yf-261123-gjp9pmgx&.tsrc=rss",
+      "pub": "2026-11-23T23:27:25.000Z",
+      "sum": "Key TakeawaysSteve Jurvetson compared SpaceX to Meta, which fell below its IPO price after peaking and then came back. Meta’s slump ended in July 2013, when a quarterly report showed mobile ads had grown to 41% of its ad revenue."
+     },
+     {
+      "hd": "Anthropic options post solid debut, trailing SpaceX record",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZzZBTkVsVXo2NVo5WmF4NXlRZnpidUVLNE1ZX25XbHFLUm1RamtHODdMRWJYTWJDSVlFRmlfSDI5dGVGVEQ1ZHItNVhoLWFhX0M2eGxVTHdtUExfMUxEc1p2S3ZTVkJuTVd0TUYxXy04UEJnOXFldDE2ZHMzMDEyeXcyMkNpdlpHamVDRmtpVQ?oc=5",
+      "pub": "2026-11-23T23:24:52.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Tesla (TSLA) Is Advancing Toward A $3.5 Trillion Merger",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-tsla-advancing-toward-3-220707866.html?.tsrc=rss",
@@ -15614,27 +15636,6 @@
       "url": "https://finnhub.io/api/news?id=e998a74ff4c3c15872c4ec8c3433ecf7ba8c38b4aaf0bf6c730d090478236c95",
       "pub": "2026-11-23T21:14:07.000Z",
       "sum": "BlackRock (NYSE: BLK) served as an anchor investor in SpaceX's record $44b GPU financing, alongside Apollo and Goldman Sachs. The GPU funding is tied to SpaceX's buildout of advanced computing capacity for AI and space-related applications. BlackRock's role centers on providing cornerstone capital to support one of the largest private technology infrastructure financings to date. BlackRock's anchor role in SpaceX's $44b GPU financing is important, but investors should weigh it alongside..."
-     },
-     {
-      "hd": "Anthropic options post solid debut, trailing SpaceX record",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZzZBTkVsVXo2NVo5WmF4NXlRZnpidUVLNE1ZX25XbHFLUm1RamtHODdMRWJYTWJDSVlFRmlfSDI5dGVGVEQ1ZHItNVhoLWFhX0M2eGxVTHdtUExfMUxEc1p2S3ZTVkJuTVd0TUYxXy04UEJnOXFldDE2ZHMzMDEyeXcyMkNpdlpHamVDRmtpVQ?oc=5",
-      "pub": "2026-11-23T20:38:10.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "“No Synergies” in a SpaceX-Tesla Merger? Really? Starlink Just Showed Up in a Cybercab Roof",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c9c6e4054ae86969d274e0023e8d1a12d053249d186dd7c745f6b2abcfc3f11f",
-      "pub": "2026-11-23T20:23:19.000Z",
-      "sum": "Key TakeawaysJim Chanos says a SpaceX-Tesla merger has “no synergies” and would cut SpaceX’s 2027 EPS by almost 40%. Tesla has built a Starlink dish into the Cybercab’s roof, so “no synergies” goes too far."
-     },
-     {
-      "hd": "Nebius & CoreWeave Jump 21% While Oracle Sees 12% Gains on Monday Following Jensen’s Return",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ae1d79a6722f12eb6ab68f314c9f071e8a0a60f18f80c55aceae5fac4f053799",
-      "pub": "2026-11-23T20:16:14.000Z",
-      "sum": "Eric Bleeker, Chief Investment Officer at 24/7 Wall St., says neocloud stocks rallied Monday on the return of Jensen Huang to NVIDIA. At 1:30 p.m. Eastern, Nebius Group (NASDAQ: NBIS) and CoreWeave (NASDAQ: CRWV) were each up 21%, IREN (NASDAQ: IREN) was up 25%, TeraWulf (NASDAQ: WULF) was up 13% and Oracle (NYSE: ORCL) was up 12%. Leading ETFs showed software up closer to 4% and semiconductors up 13%. Bleeker also pointed to two company-specific items. The New York Times reported that Anthropic's demand is so large that SpaceX needs new data centers by October to fill its orders. On Friday…"
      },
      {
       "hd": "Britain says SpaceX restrictions in Ukraine 'dented confidence and trust'",
@@ -15751,14 +15752,21 @@
     ],
     "fetched": {
      "Finnhub": 166,
-     "Yahoo": 12,
-     "Google News": 22,
+     "Yahoo": 13,
+     "Google News": 23,
      "Nasdaq": 0,
      "Seeking Alpha": 17
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Anthropic options post solid debut, trailing SpaceX record",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZzZBTkVsVXo2NVo5WmF4NXlRZnpidUVLNE1ZX25XbHFLUm1RamtHODdMRWJYTWJDSVlFRmlfSDI5dGVGVEQ1ZHItNVhoLWFhX0M2eGxVTHdtUExfMUxEc1p2S3ZTVkJuTVd0TUYxXy04UEJnOXFldDE2ZHMzMDEyeXcyMkNpdlpHamVDRmtpVQ?oc=5",
+      "pub": "2026-11-23T23:24:52.000Z",
+      "sum": ""
+     },
      {
       "hd": "Scott Galloway Calls Anthropic the AI Selloff's 'Big Winner,' but Prediction Traders See Trouble Ahead",
       "src": "Yahoo Finance",
@@ -15800,13 +15808,6 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNM3FZMk45aHRWV3NIaWg3cWoxX1A3WDYwbnJlelBOZTR5emJTOU1NOFJNbWJFTC1STmNXT1ExMlRnc3BHQWRLRzNIMnJ1eWpSRG1LSWNfanpDY0xDekl4a3NINm9jTzRyVjRzUFpEMDFwc0toMllDYlNaZkwxYXB6djBKT0FyWi1pZmROZzRjaEJGeEhMaWNJWUllWGZBVndiU1FVNnV2RmlkN2ZrTFJ3cHc4WVU?oc=5",
       "pub": "2026-11-23T21:12:21.000Z",
       "sum": "Anthropic PBC shares struggled for direction in early Monday trading, with the artificial intelligence lab lagging behind the rest of the sector’s rebound following the reinstatement of Nvidia Corp.’s Jensen Huang."
-     },
-     {
-      "hd": "Anthropic options post solid debut, trailing SpaceX record",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZzZBTkVsVXo2NVo5WmF4NXlRZnpidUVLNE1ZX25XbHFLUm1RamtHODdMRWJYTWJDSVlFRmlfSDI5dGVGVEQ1ZHItNVhoLWFhX0M2eGxVTHdtUExfMUxEc1p2S3ZTVkJuTVd0TUYxXy04UEJnOXFldDE2ZHMzMDEyeXcyMkNpdlpHamVDRmtpVQ?oc=5",
-      "pub": "2026-11-23T20:38:10.000Z",
-      "sum": ""
      },
      {
       "hd": "Anthropic unveils Claude Ship, aimed at pull requests",
@@ -15938,14 +15939,14 @@
     "fetched": {
      "Finnhub": 147,
      "Yahoo": 6,
-     "Google News": 96,
+     "Google News": 95,
      "Nasdaq": 10,
      "Seeking Alpha": 25
     }
    }
   },
-  "asOf": "2026-11-23T23:30:12.606Z",
-  "lastAttempt": "2026-11-23T23:30:12.606Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "lastError": null
  },
  "worldNews": {
@@ -15963,6 +15964,13 @@
     "url": "https://www.npr.org/2026/11/23/nx-s1-6051013/russian-incursions-into-nato-territory-are-increasing",
     "pub": "2026-11-23T23:08:51.000Z",
     "sum": "NATO Secretary General Mark Rutte is seeking to reassure the alliance's eastern European members after three Russian cruise missiles landed in Poland on Friday."
+   },
+   {
+    "hd": "Russia’s war dead: the hidden toll of the Ukraine conflict",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcHEzaFFZSHUwdzN0LS1RbTVLRlF1MFpWblFUV2l1eUtybk9fOHJzNmQzeW8zSi13TEdMWGtYTE9UTFNHbGx4UUZ6Z2UyRlJQUU1kY3hKNmtsV3V1ZkVsWWR3UmxvdDlud0NQa2VRRldnWFQwdV85R0RNZTVKaTJKbko0UV9Qa3FLR0J1S1FNSkZxM01k?oc=5",
+    "pub": "2026-11-23T23:08:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Canada and China Draw Closer with Expanded Trade Pact",
@@ -16028,6 +16036,13 @@
     "sum": ""
    },
    {
+    "hd": "US flew drone over Mexican territory to help capture drug lord in Sinaloa",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPZ1ViUXNjOFFGd2Z6UHY0bEthV2ZtZG9wOV9NQnYxU3ZMTG5uMmttZjNTMnpraXZDVjRXbGlRWHN6blBYbzBneDJNM05veEVYYXJTcmtSdl9yUjZBRVUyWmpfNExVSThYM2t3YlQ5UXNheXpLR2ZSM1BPa0JSbG9kdkg4SnFTT1ZSa0VWSE1vQXRmN1RldnRmalltNmU4NmY1Y21IcHJn?oc=5",
+    "pub": "2026-11-23T20:51:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "What strike on Russian ship in Libya says about spread of Ukraine war",
     "src": "BBC",
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFA4Nkh0dF9ndTRBVjktYnQtQWh4clVUZVlwcmtIdjFLa0dfeW5Wb3NFVlhuYXJ4d0Y0c2ZLZG5zaTd0TEdnNHFFVzhUV3VYS1lXWnYyZHFzSjUzdTg?oc=5",
@@ -16054,13 +16069,6 @@
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNVjN0dk4ycW8xekFvcVR1OTFuOGFHdTBBRjdNa0FWeEZ1czQ5bG1Qckx6N1NENEh5dm9yOEJYTjVtc2Y5b2hNM2RhVnptVGdhaS10al9RVkJmVWM1YW5UYW9KUWVWdE54WmRpaEs5X0lzWEFVWTJnUmNROEdJSTVRVTVPVnhFd2hSWUVjeVBDOFJXUjlnTTA1d0ttMDloZHFIZzg3ekRheDNFSmc?oc=5",
     "pub": "2026-11-23T20:24:55.000Z",
     "sum": "The ruling by the International Court of Justice deals with issues relevant to the case brought against Israel alleging genocide in Gaza. Israel has rejected the charge."
-   },
-   {
-    "hd": "Russia’s war dead: the hidden toll of the Ukraine conflict",
-    "src": "The Guardian",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcHEzaFFZSHUwdzN0LS1RbTVLRlF1MFpWblFUV2l1eUtybk9fOHJzNmQzeW8zSi13TEdMWGtYTE9UTFNHbGx4UUZ6Z2UyRlJQUU1kY3hKNmtsV3V1ZkVsWWR3UmxvdDlud0NQa2VRRldnWFQwdV85R0RNZTVKaTJKbko0UV9Qa3FLR0J1S1FNSkZxM01k?oc=5",
-    "pub": "2026-11-23T20:16:00.000Z",
-    "sum": ""
    },
    {
     "hd": "NATO calls urgent meeting as string of incidents escalates Russia tensions",
@@ -16128,7 +16136,7 @@
    {
     "hd": "Drone Attack Hits Colombian City as Unmanned Explosives Transform Conflict",
     "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPX3RKNmswZ0hZN0VZTXhBd1Q2bTg4clBBaWZhSXA4N1pHNEZrd3hLNlNRTGR1RnV3MUQ3dXIwYVZ0SXNwZVFkZGFsMmdSR3ZKSi1oUmZhenE2ZS11X2RENzZXWnEtbHU3ckc0NlNCR2Vrc0JqczlSYXdjUHBTSmV1dmliNThwSlZ4SEtJ?oc=5",
+    "url": "https://www.nytimes.com/2026/11/23/world/americas/colombia-drone-attack-cucuta.html",
     "pub": "2026-11-23T18:05:31.000Z",
     "sum": "At least three people were injured. The United Nations has reported a 445 percent increase in drone bombings in the country."
    },
@@ -16152,13 +16160,6 @@
     "url": "https://www.nytimes.com/2026/11/22/world/middleeast/israeli-political-leaders-decry-jewish-terrorism-after-west-bank-attacks.html",
     "pub": "2026-11-23T17:15:17.000Z",
     "sum": "Extremist settlers carried out a spate of violent raids in Palestinian villages over the weekend, spurring opponents of the Netanyahu government to demand a forceful response."
-   },
-   {
-    "hd": "Comedian impersonates Trump's dance moves, mocks trade talks at Canada press dinner",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cr930y92dyx4o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-23T17:14:50.000Z",
-    "sum": "The impersonator, Canadian comedian Mark Critch, poked fun at the US president's search for a new press secretary and US-Canada trade talks."
    }
   ],
   "feeds": [
@@ -16177,8 +16178,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-23T23:30:12.606Z",
-  "lastAttempt": "2026-11-23T23:30:12.606Z",
+  "asOf": "2026-11-24T00:00:12.719Z",
+  "lastAttempt": "2026-11-24T00:00:12.719Z",
   "lastError": null
  }
 }
