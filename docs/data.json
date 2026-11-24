@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T07:15:13.657Z",
+ "generatedAt": "2026-11-24T07:30:22.009Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,13 +7417,10 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T07:15:13.657Z",
+  "at": "2026-11-24T07:30:22.009Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "world",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13783,62 +13780,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T07:15:13.657Z",
-  "lastAttempt": "2026-11-24T07:15:13.657Z",
+  "asOf": "2026-11-24T07:30:22.009Z",
+  "lastAttempt": "2026-11-24T07:30:22.009Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7281,
-    "lastTime": 1795503914,
+    "last": 7267.25,
+    "lastTime": 1795504820,
     "settle": 7257.5,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": 23.5,
-    "changePct": 0.3238029624526352,
-    "expectedOpen": 7260.604170857734,
+    "change": 9.75,
+    "changePct": 0.13434378229417845,
+    "expectedOpen": 7246.8926879090595,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26926.5,
-    "lastTime": 1795503917,
+    "last": 26829.5,
+    "lastTime": 1795504821,
     "settle": 26816.5,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": 110,
-    "changePct": 0.4101952156321667,
-    "expectedOpen": 24188.37321848489,
+    "change": 13,
+    "changePct": 0.048477616392892435,
+    "expectedOpen": 24101.23704400276,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49824,
-    "lastTime": 1795503914,
+    "last": 49762,
+    "lastTime": 1795504812,
     "settle": 49693,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": 131,
-    "changePct": 0.2636186183164631,
-    "expectedOpen": 49726.05247097176,
+    "change": 69,
+    "changePct": 0.13885255468577062,
+    "expectedOpen": 49664.17435493933,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2682.1,
-    "lastTime": 1795503917,
+    "last": 2678.9,
+    "lastTime": 1795504820,
     "settle": 2675.800048828125,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": 6.299951171874909,
-    "changePct": 0.23544177654955917,
+    "change": 3.099951171875091,
+    "changePct": 0.11585137586168759,
     "expectedOpen": null,
     "valid": true
    }
@@ -14300,8 +14297,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T07:15:13.657Z",
-  "lastAttempt": "2026-11-24T07:15:13.657Z",
+  "asOf": "2026-11-24T07:30:22.009Z",
+  "lastAttempt": "2026-11-24T07:30:22.009Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14944,7 +14941,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T07:15:13.657Z",
+  "lastAttempt": "2026-11-24T07:30:22.009Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15952,11 +15949,32 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Chinese official sentenced to death for spying",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/china-spy-sentence-death-ma/",
+    "pub": "2026-11-24T07:15:30.000Z",
+    "sum": "According to state-affiliated media, the official received monthly payments in exchange for intelligence."
+   },
+   {
     "hd": "US flew drone over Mexican territory to help capture drug lord in Sinaloa",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/us-flew-drone-mexican-territory-capture-drug-lord-138385870",
     "pub": "2026-11-24T06:21:58.000Z",
     "sum": "Mexican security officials say the United States flew a surveillance drone over Mexican territory to help the government track down and capture a top drug lord over the weekend in Sinaloa"
+   },
+   {
+    "hd": "Missile on truck in Llangollen goes viral on TikTok",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9CSTBJV1doemtsNl91amR6MXgydmRGNldiMFp2Yi1kVXdlTWJPYjloa1JEWU1vTFFNRXdXRkZteC1qdGZxaEQ4Z1o0NkFpbHowY1RfOXpsTFZqS2c?oc=5",
+    "pub": "2026-11-24T06:00:43.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Pentagon delays Patriot missile shipments to Ukraine",
+    "src": "Financial Times",
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPNEhpUFlQemw4aFRzcE80SmNCQWMySWJMd1dhRjR0ZWo1ZXBDS19Hc3paUEY2OUstOG84cFo1S3BGWmVHVDVrS29wcVRVVTlUYTQwd2R0Nkl6dnBsd1NLc0hUZUNhSE90TS05NzdQV3lXZFo4dm94akNrU0Mzcy16SFdqODQ?oc=5",
+    "pub": "2026-11-24T05:01:20.000Z",
+    "sum": ""
    },
    {
     "hd": "Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender",
@@ -15973,6 +15991,13 @@
     "sum": "The Pentagon has accused Canada of falling short as a credible partner in defending North America, delivering a sharp rebuke to its longtime ally over military spending and its reconsideration of American-made F-35 fighter jets"
    },
    {
+    "hd": "Malaysia to continue working with Myanmar on refugee repatriation, PM says after genocide ruling",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPc2g1ZFlkOUVKUkNtc2tfVzgzbmRfZEljdVRGY3FZMVRWY082YWZMRGFIM0pmRXVqT3lrd0F6SmRzVmxmRENsVnVQUm8wcl9nakVEMWdIeGNWbmd3OHFpbWdxcDEyWGprWGhMWlVxaFFfdFJBZ3Ywc05MTnpiVkNxQ2RYUE4tRWVETDh5enZGVWtNRW9YX3B5S3BIN05sZ2ZxcmJpRXJuSll5eGhxRmRXTjlHc2RLMHV6WXBRcjZrQTZhNUlram84?oc=5",
+    "pub": "2026-11-24T04:15:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Taiwan's elections not about China, but Beijing has a lot to say",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdXc2SkZYZGtLT242LWZweUpSekkzc1RPc3dpTENTSEVRMmhOTVl6MzlJYUVNekNINlZHNDVSMVRpbm5WM3ZnZFdvUnJlN1k4cWRGUlZkYXZpT0dETVpieGRoSlAwb1JsTUZoWHY4SUY0ZEtmb3V2dExicXJaVGhKTWNUem8zY1dTWWhFd3FQdWZtYmZYVjB1ZHdLQ3NXaUVaZ05N?oc=5",
@@ -15984,6 +16009,13 @@
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/spokesperson-ousted-bangladeshi-prime-minister-sheikh-hasina-plans-138398785",
     "pub": "2026-11-24T03:50:32.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Russian Offensive Campaign Assessment, November 23, 2026",
+    "src": "Institute for the Study of War",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQRDMwdjdWRXU2aEVmSVRTMmxFWWxWc2JsUDE5d1pDdlNsSWh6YWpJNHpsb2dHSENvd2Y5Q1JRVmx6T1hJSTlhVzFVYkl6MmdwZVZWZHRIdjNPMURyQ0sxZFlhaGJxRzM4a2dIb1hySlFjcmFQRmNUTEtqcGFYNnotT0N3azJTOVpuQks1NkotSlM0S2hmVURBZlNPX1BnbUUtTk85N0NtTW0wNXQ5?oc=5",
+    "pub": "2026-11-24T03:48:25.000Z",
     "sum": ""
    },
    {
@@ -15999,6 +16031,13 @@
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
     "pub": "2026-11-24T03:34:41.000Z",
     "sum": ""
+   },
+   {
+    "hd": "NATO calls urgent meeting as string of incidents escalates Russia tensions",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeTBzUEtPZ3RHS2tpdjlJNXRLMmVneUVHeWNmRC1IRWUzb3RCUk15alZwc1hvZ1Z2czFOZDV0YldySll3N1dLQU84YjlqN2VvVTVzeHY3TDRLbjM2dkNGZGxkSkpBb1Y0a0NTWlgtQmtvSVcyS1Q3NUZaZmwzd1NYd25JNUdneER3N181RUJzUzU1Zm80R0w5VjdieFRDTUtpalhHVWgzWjZCLXJwbUpZUVRkVUExajNy?oc=5",
+    "pub": "2026-11-24T02:58:51.000Z",
+    "sum": "“We are not in war, but we are certainly not in peace anymore, either,” Germany’s foreign minister said after Russian missiles crashed onto Polish territory."
    },
    {
     "hd": "Russia’s war dead: the hidden toll of the Ukraine conflict",
@@ -16113,52 +16152,10 @@
     "sum": ""
    },
    {
-    "hd": "Russian cargo ship under tow after being hit by drones arrives in St Petersburg",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPbWEtbTJSQnAySDRBUUhIYkZMdFBILXZkQlptS08xUGdBVnFxTjBrWE0xWlBld1Z2dG1nUUE5bDhrZUlqU01VcnZhVXZVQ1lZay11RTNYYWZOeUtKMUp3UDM2eUdUNDgyNnJuWUJxOENiZVRuRmlsUlAwWkpSdWZ6T2JpMGM3ZmNqRmk3NGx6OVhsekJRS2EydnZ3eVBabktYWU1qWVFwTXBrMDk4eEZyR0IzcDVzRUgxT0E?oc=5",
-    "pub": "2026-11-23T21:58:48.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Cocaine Gangs Batter Colombian Security Forces in Wave of Attacks",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcDFIWlh3ZS05UXg1NmwyTzI5U1B3LUt3YnlxOVNfSEZKZkdpbVNEZ1ZoaEhrakhpV0FETEQ0UVdFSXBTZTRnQ01ZQkozazU3S2tENGpxN3VlSlpzOU40OUYwWWlGa0VCSWtuVFg1MXp0dnQxMDloM0xXNEpxMlljbl9wNk9odTB5MTgyZFVzbnVzeTIwWnlQV0cxNEtibjFJZkJuSnRNb2o5engxOVE?oc=5",
     "pub": "2026-11-23T21:54:46.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump orders the Army not to detonate bomb-making chemicals in Iowa without court approval",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYnFzVFZqMjBjY2Y1cll0UUxLU2VQMktTZDQ5QmFpaENUUzBXeHJJRS1nQUtpLUdhYVFVbnUxaGI1d1lWc0lwSUM1MWVNcGY0MlVEY3dDbFRXbGxMX3BvRzMzYnFhcTZFUG1xcTh6bDRlQVNhR1JlVmxxVEJ6S2xCZjZxRDgtcGFZWndwUUJ3RkdGLWFDakE?oc=5",
-    "pub": "2026-11-23T21:50:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Inside the Ukrainian Attack That Sank Russian Warship Docked in Libya",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOU2ZRZ0J1X2hWMzkyNUpLWHE2WUFZY01aMGJDdlVFSEN6ZnYtWFRVV09ISE9CT1JoaHowWF9Bc3BUT0tsVzgzaW1mSXhoMXhNTmJVVU5KWUtJTHg3MWlnbWhmWG02ekFKcThKTzZMaG1mYU9PRzJQOWlkdk1GUWlHc0RtcDJ0ektBTjZGWDhibWxycE9nUThiQkFhOWNoRzNsc1hWYjVkdw?oc=5",
-    "pub": "2026-11-23T21:46:14.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukrainian naval drones strike a new Russian warship in Libya, and other Mideast news",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNkttSjlveXdrMHJKLVNYMWNTMFh3YlJtLXRtTXcwUnI2Z3VMOWJPajRpelJzRDk0ZG0xekVqSlpoM1dac1RwU045bjdjREd3NENUYTdHcHFiMEt3WWdVcDA4S3JMOVBfR2hNdV9YLXpiNTd6OC01QzctQmxaX2I4TmNmLXd4MVJxZkZ5T09NT01uZHhpYVNKQ052YVUybll3SHl1MTBNMGx2Um1vekdPTVptQU1XUQ?oc=5",
-    "pub": "2026-11-23T21:23:00.000Z",
-    "sum": "The Kremlin warns of an \"escalation of tensions in the region\", but declines to comment directly on the attacks in Libya."
-   },
-   {
-    "hd": "Phumzile Mlambo-Ngcuka, South Africa’s First Female Deputy President, Has Died",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/23/world/africa/phumzile-mlambo-ngcuka-dead.html",
-    "pub": "2026-11-23T21:12:03.000Z",
-    "sum": "A champion of women’s rights and education, she led the U.N.’s gender equality and empowerment organization after leaving political office. She died at 71."
-   },
-   {
-    "hd": "Russia warns of 'preventive nuclear attack' as Medvedev claims Ukraine, NATO crossed line",
-    "src": "Fox News",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQLWFfSFY3aHR5WjRmRDN6eXY0OUdlVVQ2WlNNMmhMcS10R0M5eEJwZjBoUmJwYlhvdmRKTDhsVHZ6R1FsMWdVaEF2WXRCWVNNanBxbG5jcF9sSlJ6UXZMSGdpU2M3VnlqNWJTUTVnVDlhVVRSY2xVQk4xLS1rd0R3UjR1SWFNUEpsdVVzVmZiXzFKdTZWd2s1UHY4YWxGOE1FMnQ2WFBMVDhPY1dnSFhv0gG0AUFVX3lxTE1uOFhCRHZ1XzlkRzQ4cmxNYWRULW04TEtrLTdiMk5sNUQ3TWY5LVNoN19VU3A5MmtSRE1lYkVTdllzVkYtOURwM09DY1pFOUVmdFhxMFgwSl9STWtOLVFDa0t5SlpfMjJWTEZXTWlEV0hSdzU3S0ljWjlEVExZaXpiVUprbm1VYnJSUGhiSEctN3J2QWRzaS14cEJfb25wNU4xeEk2eDBWd3RTT3AxY05BU0RiZA?oc=5",
-    "pub": "2026-11-23T21:11:06.000Z",
     "sum": ""
    }
   ],
@@ -16178,8 +16175,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-24T06:30:12.335Z",
-  "lastAttempt": "2026-11-24T06:30:12.335Z",
+  "asOf": "2026-11-24T07:30:22.009Z",
+  "lastAttempt": "2026-11-24T07:30:22.009Z",
   "lastError": null
  }
 }
