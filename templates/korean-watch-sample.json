@@ -6,14 +6,10 @@
     "start": "2026-11-17",
     "end": "2026-11-24",
     "days": 7,
-    "label": "Sample week · Nov 17–24"
+    "label": "Sample week - Nov 17-24"
   },
   "region": "US",
-  "services": [
-    "Netflix",
-    "Hulu",
-    "Prime"
-  ],
+  "services": ["Netflix", "Hulu", "Prime", "Viki"],
   "picks": [
     {
       "rank": 1,
@@ -22,28 +18,12 @@
       "type": "movie",
       "service": "Netflix",
       "us_release": "2026-11-18",
-      "us_release_note": "Streaming premiere",
       "runtime": "118 min",
-      "genre": [
-        "Drama",
-        "Romance"
-      ],
-      "plot": "A fictional harbor-city florist and a night-shift ferry captain trade letters across one rainy autumn, discovering what they left unsaid.",
-      "rt": {
-        "tomatometer": 92,
-        "tomatometer_reviews": 84,
-        "popcornmeter": 88,
-        "popcornmeter_ratings": 4200,
-        "url": null
-      },
-      "imdb": {
-        "rating": 7.9,
-        "votes": 15200,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "Both RT meters high",
-      "rank_reason": "Fixture: both RT scores"
+      "genre": ["Drama", "Romance"],
+      "genre_tags": ["drama", "romance"],
+      "plot": "Fictional harbor florist and ferry captain trade letters across one rainy autumn in this placeholder romance-drama.",
+      "rt": { "tomatometer": 92, "tomatometer_reviews": 40, "popcornmeter": 88, "popcornmeter_ratings": 2100 },
+      "imdb": { "rating": 7.8, "votes": 9200 }
     },
     {
       "rank": 2,
@@ -51,131 +31,129 @@
       "title": "Midnight Clinic",
       "type": "series",
       "service": "Hulu",
-      "us_release": "2026-11-20",
-      "runtime": null,
-      "episodes": "8 episodes · ~55 min",
-      "genre": [
-        "Medical",
-        "Mystery"
-      ],
-      "plot": "Placeholder series about a fictional overnight ER where every case arrives with a sealed envelope and a countdown clock.",
-      "rt": {
-        "tomatometer": 81,
-        "tomatometer_reviews": 42,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 8.1,
-        "votes": 9800,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "Critics only",
-      "rank_reason": "Fixture: only critics score"
+      "us_release": "2026-11-19",
+      "episodes": "8 episodes",
+      "genre": ["Mystery", "Horror", "Drama"],
+      "genre_tags": ["mystery", "horror", "drama"],
+      "plot": "Placeholder overnight ER where every case arrives with a sealed envelope and a countdown clock nobody can ignore.",
+      "rt": { "tomatometer": 81, "tomatometer_reviews": 33, "popcornmeter": null, "popcornmeter_ratings": null },
+      "imdb": { "rating": 6.9, "votes": 1840 }
     },
     {
       "rank": 3,
-      "id": "sample-paper-crane-relay",
+      "id": "sample-paper-crane",
       "title": "Paper Crane Relay",
       "type": "movie",
       "service": "Prime",
-      "us_release": "2026-11-21",
+      "us_release": "2026-11-20",
       "runtime": "104 min",
-      "genre": [
-        "Comedy",
-        "Family"
-      ],
-      "plot": "Fictional road-trip comedy: three cousins deliver a thousand origami cranes before a wedding that may not happen.",
-      "rt": {
-        "tomatometer": null,
-        "tomatometer_reviews": null,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 8.5,
-        "votes": 6400,
-        "url": null
-      },
-      "status": "new",
-      "card_text": "IMDb only",
-      "rank_reason": "Fixture: no RT + IMDb"
+      "genre": ["Comedy", "Family"],
+      "genre_tags": ["comedy", "family"],
+      "plot": "Three cousins deliver a thousand origami cranes before a wedding that may not happen in this fictional road-trip comedy.",
+      "rt": { "tomatometer": 79, "tomatometer_reviews": 19, "popcornmeter": 90, "popcornmeter_ratings": 3400 },
+      "imdb": { "rating": 7.4, "votes": 4500 }
     },
     {
       "rank": 4,
-      "id": "sample-rating-over-note",
+      "id": "sample-quiet-signal",
       "title": "Quiet Signal",
       "type": "series",
       "service": "Netflix",
-      "us_release": "2026-11-22",
-      "us_release_note": "Limited drop with a longer sample note that should truncate in the popup to about one hundred twenty characters so the modal stays compact on the Frame TV.",
+      "us_release": "2026-11-21",
       "episodes": "6 episodes",
-      "genre": [
-        "Sci-Fi",
-        "Drama"
-      ],
-      "plot": "Placeholder sci-fi: a coastal town hears a radio tone that only children can decode, and the adults pretend not to notice.",
-      "rt": {
-        "tomatometer": null,
-        "tomatometer_reviews": null,
-        "popcornmeter": null,
-        "popcornmeter_ratings": null,
-        "url": null
-      },
-      "imdb": {
-        "rating": 6.9,
-        "votes": 1840,
-        "url": null,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
-      },
-      "status": "new",
-      "card_text": "Rating hides note",
-      "rank_reason": "Fixture: imdb.rating present so note is omitted"
+      "genre": ["Sci-Fi", "Thriller"],
+      "genre_tags": ["sci-fi", "thriller"],
+      "plot": "A coastal town hears a radio tone only children can decode in this fictional sci-fi thriller sample.",
+      "rt": { "tomatometer": 80, "tomatometer_reviews": 25, "popcornmeter": null, "popcornmeter_ratings": null },
+      "imdb": { "rating": 6.8, "votes": 2700 }
     },
     {
       "rank": 5,
-      "id": "sample-max-fit",
-      "title": "Dead-End Sample Fixture",
-      "type": "movie",
+      "id": "sample-glass-crown",
+      "title": "Glass Crown",
+      "type": "series",
+      "service": "Viki",
+      "us_release": "2026-11-22",
+      "episodes": "12 episodes",
+      "genre": ["Historical", "Action", "Romance"],
+      "genre_tags": ["historical", "action", "romance"],
+      "plot": "Placeholder palace intrigue where a bodyguard and a prince swap duties for one hundred days to expose a forged decree.",
+      "rt": { "tomatometer": 87, "tomatometer_reviews": 22, "popcornmeter": 84, "popcornmeter_ratings": 1900 },
+      "imdb": { "rating": 7.6, "votes": 6100 }
+    },
+    {
+      "rank": 6,
+      "id": "sample-wand-hour",
+      "title": "The Wand Hour",
+      "type": "series",
       "service": "Hulu",
-      "us_release": "2026-11-06",
-      "us_release_note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove th",
-      "runtime": "131 min",
-      "episodes": "Episodes: 16 max",
-      "genre": [
-        "Drama",
-        "Adventure",
-        "Fantasy",
-        "Mystery"
-      ],
-      "plot": "A deliberately long placeholder plot used to prove popup layout under dense copy: an apprentice mapmaker inherits a brass compass that redraws city streets whenever it rains, forcing her to choose between preserving the old alleys her neighbors love and finishing a commission for a fictional transit authority th",
-      "rt": {
-        "tomatometer": 74,
-        "tomatometer_reviews": 55,
-        "popcornmeter": 91,
-        "popcornmeter_ratings": 2100,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch pop",
-        "url": null
-      },
-      "imdb": {
-        "rating": null,
-        "votes": null,
-        "url": null,
-        "note": "A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup autofit. A fictional sample note used only to stress layout and prove the Korean Watch popup aut"
-      },
-      "status": "new",
-      "card_text": "Max-length popup stress",
-      "rank_reason": "Fixture: 23 title / 313 plot / 249 note / 4 genres / 273 imdb note"
+      "us_release": "2026-11-18",
+      "episodes": "10 episodes",
+      "genre": ["Fantasy", "Comedy", "Romance"],
+      "genre_tags": ["fantasy", "comedy", "romance"],
+      "plot": "A fictional cupid internship assigns a mortal fixer to pair impossible couples before the season wish quota fails.",
+      "rt": { "tomatometer": 76, "tomatometer_reviews": 14, "popcornmeter": 92, "popcornmeter_ratings": 4100 },
+      "imdb": { "rating": 7.3, "votes": 5100 }
+    },
+    {
+      "rank": 7,
+      "id": "sample-badge-and-bun",
+      "title": "Badge and Bun",
+      "type": "series",
+      "service": "Prime",
+      "us_release": "2026-11-19",
+      "episodes": "14 episodes",
+      "genre": ["Crime", "Comedy", "Romance"],
+      "genre_tags": ["crime", "comedy", "romance"],
+      "plot": "An undercover auditor pretends to be a bakery intern in this fictional crime-comedy sample.",
+      "rt": { "tomatometer": 85, "tomatometer_reviews": 17, "popcornmeter": 89, "popcornmeter_ratings": 2200 },
+      "imdb": { "rating": 7.7, "votes": 3900 }
+    },
+    {
+      "rank": 8,
+      "id": "sample-four-hands",
+      "title": "Four Hands Studio",
+      "type": "movie",
+      "service": "Netflix",
+      "us_release": "2026-11-20",
+      "runtime": "118 min",
+      "genre": ["Romance", "Drama"],
+      "genre_tags": ["romance", "drama"],
+      "plot": "Two rival pianists share a practice room for one semester in this fictional music romance.",
+      "rt": { "tomatometer": null, "popcornmeter": null },
+      "imdb": { "rating": 8.5, "votes": 8300 }
+    },
+    {
+      "rank": 9,
+      "id": "sample-lens-truth",
+      "title": "Lens of Truth",
+      "type": "series",
+      "service": "Hulu",
+      "us_release": "2026-11-21",
+      "episodes": "8 episodes",
+      "genre": ["Documentary", "Mystery"],
+      "genre_tags": ["documentary", "mystery"],
+      "plot": "Placeholder documentary crew films a cold case and finds their own footage rewritten overnight.",
+      "rt": { "tomatometer": 88, "tomatometer_reviews": 21, "popcornmeter": 83, "popcornmeter_ratings": 1800 },
+      "imdb": { "rating": 7.9, "votes": 6700 }
+    },
+    {
+      "rank": 10,
+      "id": "sample-live-vote",
+      "title": "Live Vote Tonight",
+      "type": "series",
+      "service": "Viki",
+      "us_release": "2026-11-22",
+      "episodes": "10 episodes",
+      "genre": ["Reality", "Comedy"],
+      "genre_tags": ["reality", "comedy"],
+      "plot": "A fictional reality competition where contestants cook blindfolded while the audience votes in real time.",
+      "rt": { "tomatometer": 74, "tomatometer_reviews": 12, "popcornmeter": 91, "popcornmeter_ratings": 5200 },
+      "imdb": { "rating": 7.1, "votes": 2400 }
     }
   ],
   "runners_up": [
-    {
-      "title": "Ignored Runner Up",
-      "note": "Not rendered on TV"
-    }
+    { "title": "Ignored Sample Runner", "note": "Not rendered on TV" }
   ],
   "sources": {
     "rt": "Rotten Tomatoes",
