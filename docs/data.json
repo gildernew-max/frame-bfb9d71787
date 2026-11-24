@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T12:15:13.289Z",
+ "generatedAt": "2026-11-24T12:30:11.736Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,12 +7417,11 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T12:15:13.289Z",
+  "at": "2026-11-24T12:30:11.736Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13775,62 +13774,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T12:15:13.289Z",
-  "lastAttempt": "2026-11-24T12:15:13.289Z",
+  "asOf": "2026-11-24T12:30:11.736Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7193.5,
-    "lastTime": 1795521913,
-    "settle": 7257.5,
+    "last": 7187.75,
+    "lastTime": 1795522813,
+    "settle": 7257.75,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": -64,
-    "changePct": -0.8818463658284533,
-    "expectedOpen": 7173.349279366173,
+    "change": -70,
+    "changePct": -0.9644862388481279,
+    "expectedOpen": 7167.368491267955,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26377.75,
-    "lastTime": 1795521912,
-    "settle": 26816.5,
+    "last": 26332.75,
+    "lastTime": 1795522821,
+    "settle": 26818.25,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": -438.75,
-    "changePct": -1.6361195532601198,
-    "expectedOpen": 23695.42501490687,
+    "change": -485.5,
+    "changePct": -1.810334380505812,
+    "expectedOpen": 23653.45743131077,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49480,
-    "lastTime": 1795521912,
-    "settle": 49693,
+    "last": 49445,
+    "lastTime": 1795522821,
+    "settle": 49691,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": -213,
-    "changePct": -0.42863179924737893,
-    "expectedOpen": 49382.728730404684,
+    "change": -246,
+    "changePct": -0.49505946750920693,
+    "expectedOpen": 49349.783722404456,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2663.9,
-    "lastTime": 1795521914,
-    "settle": 2675.800048828125,
+    "last": 2662.2,
+    "lastTime": 1795522823,
+    "settle": 2675.699951171875,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": -11.900048828124909,
-    "changePct": -0.4447286273627424,
+    "change": -13.499951171875182,
+    "changePct": -0.5045390521445656,
     "expectedOpen": null,
     "valid": true
    }
@@ -14292,8 +14291,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T12:15:13.289Z",
-  "lastAttempt": "2026-11-24T12:15:13.289Z",
+  "asOf": "2026-11-24T12:30:11.736Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14936,7 +14935,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T12:15:13.289Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15149,40 +15148,40 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T12:15:13.289Z",
-  "lastAttempt": "2026-11-24T12:15:13.289Z",
+  "asOf": "2026-11-24T12:30:11.736Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 156.1096,
-    "time": 1795522511,
+    "price": 155.6398,
+    "time": 1795523423,
     "ref": 165.05,
     "refTime": 1795467601,
-    "change": -8.940400000000011,
-    "changePct": -5.416782793093009
+    "change": -9.410200000000003,
+    "changePct": -5.701423810966375
    },
    "TSLA": {
     "session": "pre",
-    "price": 384.2,
-    "time": 1795522483,
+    "price": 383.3,
+    "time": 1795523422,
     "ref": 385.46,
     "refTime": 1795467600,
-    "change": -1.259999999999991,
-    "changePct": -0.3268821667617888
+    "change": -2.159999999999968,
+    "changePct": -0.5603694287344908
    },
    "SPCX": {
     "session": "pre",
-    "price": 131,
-    "time": 1795522513,
+    "price": 130.92,
+    "time": 1795523410,
     "ref": 133.35,
     "refTime": 1795467600,
-    "change": -2.3499999999999943,
-    "changePct": -1.7622797150356164
+    "change": -2.430000000000007,
+    "changePct": -1.8222722159730087
    },
    "ANT": {
     "session": "pre",
     "price": 83.09,
-    "time": 1795522508,
+    "time": 1795523424,
     "ref": 87.64,
     "refTime": 1795467601,
     "change": -4.549999999999997,
@@ -15197,25 +15196,60 @@
    "NVDA": {
     "items": [
      {
-      "hd": "Nvidia staff chant, holler and hug at Huang's triumphant return",
+      "hd": "Premarket movers: Nvidia slips; HPE, Semtech fall",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-staff-chant-holler-hug-114950207.html?.tsrc=rss",
-      "pub": "2026-11-24T11:49:50.000Z",
-      "sum": "Nvidia staff have given their returning boss Jensen Huang a rapturous welcome, chanting his name and crowding around as the AI pioneer told them: \"I'm going to be a better CEO the second time around.\"As the crowd chants \"Jensen!"
+      "url": "https://finance.yahoo.com/markets/stocks/articles/premarket-movers-nvidia-slips-hpe-122424595.html?.tsrc=rss",
+      "pub": "2026-11-24T12:24:24.000Z",
+      "sum": "Investing.com - U.S. stock futures turned lower on Tuesday following a sharp rally on Wall Street driven by Nvidia’s decision to reinstate founder Jensen Huang as chief executive."
      },
      {
-      "hd": "Stocks Rebound Sharply as Nvidia Reinstates CEO Huang",
-      "src": "Nasdaq",
-      "url": "https://www.nasdaq.com/articles/stocks-rebound-sharply-nvidia-reinstates-ceo-huang-0",
-      "pub": "2026-11-24T11:41:00.000Z",
-      "sum": "The S&P 500 Index ($SPX ) (SPY ) on Monday rose by +4.84%, the Dow Jones Industrial Average ($DOWI ) (DIA ) rose +3.01%, and the Nasdaq 100 Index ($IUXX ) (QQQ ) rose +6.91%. December E-mini S&P futures (ESZ26 ) rose +4.74%, and December E-mini Nasdaq futures (NQZ26 )..."
+      "hd": "NVIDIA Added About $1 Trillion in Minutes on Huang’s Return. Where Does the Price Target Go Now?",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/24/nvidia-added-about-1-trillion-in-minutes-on-huangs-return-where-does-the-price-target-go-now/?.tsrc=rss",
+      "pub": "2026-11-24T12:17:32.000Z",
+      "sum": "A CEO reversal sent NVIDIA soaring in a single morning, but the rally may have already priced in the good news. Margin pressure, a lingering board probe, and a $390 billion supply bill could decide what comes next."
      },
      {
-      "hd": "Nvidia Added $954 Billion In A Day. Is Jensen Huang Too Big To Fire?",
+      "hd": "U.S. chip stocks fall premarket after Nvidia-led rally on Huang’s return",
       "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/nvda/articles/628204/nvidia-added-954-billion-in-a-day-is-jensen-huang-too-big-to-fire/2026-11-24?.tsrc=rss",
-      "pub": "2026-11-24T11:39:29.000Z",
-      "sum": "After the 2008 financial crisis, Washington decided that some banks were too big to fail. Between Nov 12 and Nov 23, the White House showed it holds the same view about at least one person. He is Jensen Huang, the co-founder and chief executive of Nvidia."
+      "url": "https://finance.yahoo.com/markets/stocks/articles/u-chip-stocks-fall-premarket-121456516.html?.tsrc=rss",
+      "pub": "2026-11-24T12:14:56.000Z",
+      "sum": "Investing.com -- U.S. chip stocks slid in premarket trading Tuesday, giving back part of a sharp rally a day earlier that was sparked by Nvidia’s decision to reinstate Jensen Huang as chief executive."
+     },
+     {
+      "hd": "Nvidia reinstates Jensen Huang as CEO and president",
+      "src": "Yahoo Finance",
+      "url": "https://www.verdict.co.uk/nvidia-brings-back-jensen-huang-ceo/?.tsrc=rss",
+      "pub": "2026-11-24T12:14:53.000Z",
+      "sum": "The decision to reinstate Huang followed a series of meetings between himself and the board, as well as pressure from industry figures including Elon Musk."
+     },
+     {
+      "hd": "Nvidia's Role as AI Industry Advocate Likely to Continue Following Huang's Return Amid Focus on Regulatory Policy, Wedbush Says",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-apos-role-ai-industry-121020908.html?.tsrc=rss",
+      "pub": "2026-11-24T12:10:20.000Z",
+      "sum": "Nvidia's (NVDA) role as a strong advocate for the artificial intelligence industry with access to se"
+     },
+     {
+      "hd": "OpenAI’s Greg Brockman: “The World Is Not Building Enough Compute.” Wall Street Just Stopped Raising Capex Forecasts",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/openais-greg-brockman-the-world-is-not-building-enough-compute-wall-street-just-stopped-raising-capex-forecasts?ref=yahoofinance&tlnk=yf-261124-777pg8fq&.tsrc=rss",
+      "pub": "2026-11-24T12:05:04.000Z",
+      "sum": "Key TakeawaysOpenAI President Greg Brockman says the world is short on compute, but analysts didn’t raise their capex forecasts for Amazon, Alphabet, Microsoft or Meta during third-quarter earnings season. Analysts expect Nvidia’s revenue to grow 71% in the fiscal year ending January 2028, faster than its biggest customers’ capex."
+     },
+     {
+      "hd": "HPE Expects Thinner AI Margins. Is Dell Next?",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/hpe/articles/628212/hpe-expects-thinner-ai-margins-is-dell-next/2026-11-24?.tsrc=rss",
+      "pub": "2026-11-24T12:02:29.000Z",
+      "sum": "Today's big story: Nvidia Added $954 Billion In A Day. Is Jensen Huang Too Big To Fire."
+     },
+     {
+      "hd": "Nvidia Regains Nearly $1 Trillion in Value -- Apple Still Holds the Top Spot",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-regains-nearly-1-trillion-120207012.html?.tsrc=rss",
+      "pub": "2026-11-24T12:02:07.000Z",
+      "sum": "Nvidia Stock Stages a Historic Rebound. What Huang's Return Means for the Chip Giant"
      },
      {
       "hd": "Nvidia slips 5%: Boardroom reversal shows who really holds the power",
@@ -15225,60 +15259,11 @@
       "sum": ""
      },
      {
-      "hd": "How Jensen Huang's return to Nvidia made the world trillions richer",
-      "src": "Yahoo Finance",
-      "url": "https://www.euronews.com/2026/11/24/how-jensen-huangs-return-to-nvidia-made-the-world-trillions-richer?.tsrc=rss",
-      "pub": "2026-11-24T11:37:15.000Z",
-      "sum": "Jensen Huang's return as Nvidia CEO made him about $34 billion (€31bn) richer and added roughly $950 billion (€871bn) to the chipmaker's value in a single day. US President Donald Trump, Nvidia's staff and stock markets from New York to Seoul gained too, while Europe got a smaller lift.View on euronews"
-     },
-     {
-      "hd": "Tech firms fuel global rally on Huang's shock Nvidia return",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/tech-firms-soar-huangs-return-023753159.html?.tsrc=rss",
-      "pub": "2026-11-24T11:34:24.000Z",
-      "sum": "Technology shares across Asia posted sharp gains Tuesday, helping the region catch up with major rallies on US and European stock markets after AI giant Nvidia rehired its scandal-hit CEO Jensen Huang following pressure from US President Donald Trump.Asia, which had started the week on the back foot, followed suit Tuesday."
-     },
-     {
-      "hd": "Nvidia Shares Fall 5% in Premarket Trading as Goldman Sachs Highlights Lingering Uncertainty Following Huang’s Return",
-      "src": "Yahoo Finance",
-      "url": "https://investorshub.advfn.com/market-news/article/40601/nvidia-shares-fall-5-in-premarket-trading-as-goldman-sachs-highlights-lingering-uncertainty-following-huangs-return?.tsrc=rss",
-      "pub": "2026-11-24T11:23:03.000Z",
-      "sum": "Nvidia (NASDAQ:NVDA) shares fell approximately 5% in premarket trading on Tuesday as investors reassessed the semiconductor company’s outlook following the reinstatement of Jensen Huang as president and chief executive officer. At 10:49 GMT, the stock was trading lower after gaining 31."
-     },
-     {
-      "hd": "Most Of Nvidia's Drop Came Before Huang Left",
-      "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/nvda/articles/628268/most-of-nvidia-s-drop-came-before-huang-left/2026-11-24?.tsrc=rss",
-      "pub": "2026-11-24T11:18:15.000Z",
-      "sum": "Today's big story: Nvidia Added $954 Billion In A Day. Is Jensen Huang Too Big To Fire."
-     },
-     {
-      "hd": "Stocks climb as Huang's return to Nvidia lifts investor optimism",
-      "src": "Yahoo Finance",
-      "url": "https://www.euronews.com/2026/11/24/stocks-climb-as-huangs-return-to-nvidia-lifts-investor-optimism?.tsrc=rss",
-      "pub": "2026-11-24T11:16:59.000Z",
-      "sum": "Shares in AI chip behemoth Nvidia rocketed 30% higher on Monday after the shock reinstatement of its CEO Jensen Huang, which sparked a recovery across markets after a technology-led rout last week.View on euronews"
-     },
-     {
-      "hd": "Former Elon Musk Adviser: 'Nvidia Now Intertwined With Washington'",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/former-elon-musk-adviser-nvidia-111337443.html?.tsrc=rss",
-      "pub": "2026-11-24T11:13:37.000Z",
-      "sum": "Nvidia's board already faced criticism for lacking the gravitas required to oversee the AI chip powerhouse and that was before President Donald Trump chose to moonlight as a director. Dex Hunter-Torricke tells Bloomberg Radio \"Nvidia has been deemed too big to fail\" by the White House. He's the founder of The Center For Tomorrow and once worked for Elon Musk and Mark Zuckerberg and has been discussing the future of the AI sector Bloomberg's Caroline Hepker and Jack Sidders."
-     },
-     {
       "hd": "Bitcoin Fails to Hold Nvidia Bump With Crypto Headwinds in Focus",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPOEJWNUpxV1pydU9OT3Z4VnpWc2Q3dThJb1pwZXg5RjlBeGZBRE9SaDdqYmlMS3ZIWlBBNFdDckp0bTZRT1FDajNVV0dGZ1pRLTdFdi1mbjJxUG9PVGlWUXJxOEpqWWpaMkhadUJTVFVLRDBBOGFwWHJCQmYxaGtfSDJqUlpjWFRQN1dUakdjNEhaM2g3amVXZ05kVU9IbmMzNVJsNVNEb2M2Ul9Cd3ZybHRJbTdzZw?oc=5",
       "pub": "2026-11-24T11:02:25.000Z",
       "sum": ""
-     },
-     {
-      "hd": "At AI speed, Nvidia's Jensen Huang finds exoneration",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPRlhOYUV1dThCM2pOcWh3OGZpMXdEckVSTTRWRU5jTlBNX01jcnpFSnljTU1qYWhrQS0zZzBWUHE2dmZoaFprbmN3MzYyUW9xRDhGRnZkX29PWkVTNEtLWnJnMTc1WW81T01QR1ppTUNkR3hSZGF4bm84RkF2QWd3cEFSR29IOFVLWFloLUFZbVluY1ZyUnQ2akRmMnp6Vk42cTRES2ZB?oc=5",
-      "pub": "2026-11-24T11:01:43.000Z",
-      "sum": "Chips designed by Nvidia push the boundaries of artificial intelligence, and its leather-jacket-wearing co-founder Jensen Huang built the company into one of the world's most important brands over his 33 years at the helm.- Meteoric rise - California-based Nvidia has catapulted to become one of the world's most valuable companies due to the insatiable appetite for chips known as Graphics Processing Units (GPUs) that it designs."
      },
      {
       "hd": "Gold Holds Gain After Nvidia’s Rehiring of Huang Sparks Rally",
@@ -15302,13 +15287,6 @@
       "sum": ""
      },
      {
-      "hd": "China warns Jensen Huang Nvidia comeback won't end 'malicious' US risks",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-24T06:47:27.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Copper Resumes Decline as Investors Look Beyond Drama at Nvidia",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORmkwMElFUWtfQlhMcVNNY010SXlpbm12cW1IT3BEWExiOTkyMWU5Ulk2T0tva1lkMnd5R2d5LXFJbW9jNDFMOS0tOVZmdG9rYnFrWGhybmNfaHVOaGRIYzRuMEJ3S2lQa0R1YWl1R2JvRTI4b2k4YkdFWjV2QnF4bnl3VlUzSkdySHZJVmtMU2x0bk9vNmUxS2JPb3RPZjl5OHNEa1BkOHNaM3JDdklPVDU0MWI?oc=5",
@@ -15321,34 +15299,6 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMU85QnkyODhXZWxwenBBNWVKaElURnNWbDVVd2FtRlQ3N0F1d3A2YXYyLW5zUnJCQzdXZHRreXhDeWpZNTcyT2hVcHlrMHJqVUt2bUUwR2JEdUxUMFk4LWFQenp5TGY0RTJFUXFUN1hPSGtfcTZvZmRGc0MyWkhUTmtzQnh3My04UTJaVVN4dVNSVWtRc0tpaEoxeGd3QnA3UTZ1Wl91SGhfTmxpQVNIVDE2WjRuM2tES284?oc=5",
       "pub": "2026-11-24T05:01:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia’s comeback bet: Why Jensen Huang’s return calmed markets, for now",
-      "src": "AP News",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQUVQVndZcFVCS0N6M3plQS16cWctMi1ia2s3S0FqdDZoQzZwS3BZX3FZQUF3ZzZMMXdyLVd4WDM3cE9wMGMwd0RZSDJLekF4SUJaZ2VsQ1R3bXV1c0JhZWh6QnBkdERwNUo4VGQybHdGSkRSckZiTFAyMHM1aXlWYVI3TzF4OXR3WTYyZTJTaW9kaC1UTmZYbTRqa3djc2dGb19ZTG0xbw?oc=5",
-      "pub": "2026-11-24T05:01:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Does Jensen Huang’s return to Nvidia mean the chip group is too big to fail?",
-      "src": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQNmc0bG5LSmRJLWtldy03VUs4ODFpM0ozbFZzS0VQcmpqMWhKUGVZVy1JYUMyRkpUQVBSZWc5MDA1U0h4NnpKbVZEUmE3ZTV4RHgwbV9uZEJQdTg5R2F6TURRa1VhZVcyOGZWOGRNN2xqZ0Fndm9kV1p2OHNxX3JwazR2blk?oc=5",
-      "pub": "2026-11-24T05:00:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "The Danger of Jensen Huang’s Handshake Deals at Nvidia",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1fdkZ5R1J5S3R5UjEzbTdiVW1OTl9RRkFkcFdyYTJNVHpOMVR0TTlQM0YxUUI3VFZwdVEzSFdKMmdCTDVla3VBY3dtOGVxTnEwWFdyeFJneFEwTkZTb3FQQkZveUdGNUI2allxaUNZcVI?oc=5",
-      "pub": "2026-11-24T04:31:44.000Z",
-      "sum": "Chips designed by Nvidia push the boundaries of artificial intelligence, and its leather-jacket-wearing co-founder Jensen Huang built the company into one of the world's most important brands over his 33 years at the helm.- Meteoric rise - California-based Nvidia has catapulted to become one of the world's most valuable companies due to the insatiable appetite for chips known as Graphics Processing Units (GPUs) that it designs."
-     },
-     {
-      "hd": "TSMC, SK Hynix, and Asian tech surge after Jensen Huang's return as Nvidia CEO",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-24T04:15:11.000Z",
-      "sum": "NVDA stock rallied over 31 after the company reinstated Huang as CEO."
      },
      {
       "hd": "Reaction to Nvidia’s Huang Scandal Changes the AI Race",
@@ -15370,50 +15320,106 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPc2ItQmQwVDh3N0RBcExzLXhjZTd2NkpzcXRYZS1pUVJLRzU4dXpNTW9mYkZReWpPTUxLR3VWZ1h5QjJSWUtaZlJjLXkteGxvQzdpTW1uNE5wbi1PekdNb3V3cFIxb3ViMDZxSlRTb05mcUZCV29PbWwtaWstR1BIZzBsX3hHYWhoc2VHSTd2Z3lJYnlueThLY3lFVmtVeEpfUEE?oc=5",
       "pub": "2026-11-24T02:33:00.000Z",
       "sum": ""
+     },
+     {
+      "hd": "Asian tech stocks recover from ‘collateral damage’ of Jensen Huang’s departure",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5Fc3pvRnEzR2JoN2tPM1FUWU1mNDhzclAtTVU5SVpuWnhMeXdISWxMUFR4V2YtZnhDTmc5NGlSVGtiOFFoR2tDMi1wN2Z5SUhyNG5iMEFTalliNnNhM1pfYTFUU2gxS2NKX0taNDlVRXFjY1Z0czkwU2xId1AtZ9IBgwFBVV95cUxNWTJaTF9ScnRsa3RmSE9CVTJ6ZjItbF9fZ0pDRU9hR1Jrc1gzUldGU3hCRExZblBWQUJsRkVjZ1hNOFFMSkFGZGpwVUNRNWNaZzBKNHJiWkxfX2ZybklERS1JaHhBekU1N0d5enJYcktzZ2JSUl9mWUowOUY2NVUzMkJQaw?oc=5",
+      "pub": "2026-11-24T00:24:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Bernstein Upgrades NVIDIA to Outperform from Market Perform",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/bernstein-upgrades-nvidia-outperform-market-perform",
+      "pub": "2026-11-24T00:09:24.000Z",
+      "sum": "Fintel reports that on November 23, 2026, Bernstein upgraded their outlook for NVIDIA (NASDAQGS:NVDA) (SWX:NVDA) from Market Perform to Outperform."
+     },
+     {
+      "hd": "‘National Treasure’ Jensen Huang and the Rise of the Too-Big-to-Fail CEO",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQa1J4RnQ3QS1xUmRHZjdIdk84Zm1KM0ZGZ2E5Z1VuVFRQYWlQMThSeFdlWEFjZTVHWmpFT21kX0lTTEpTQlppRjliazBNNmt3a3B5TEx5LWg4REtMSU9xT05BNzlyTkRGZnhheDVJcHd2V09rTmRTWWVwUjdqYWhnS3BNTWc4czBkX3NPT1V2c1FEblFZZUJhZzlDWQ?oc=5",
+      "pub": "2026-11-23T23:20:08.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia After Huang's Return: Rubin Carries The Buy Case",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4971214-nvidia-after-huang-return-rubin-carries-buy-case?source=feed_symbol_NVDA",
+      "pub": "2026-11-23T23:12:14.000Z",
+      "sum": "Analyst rates Nvidia Corporation a Buy: Rubin sales of nearly $20 billion support 70%-75% FY2028 growth, though governance concerns favor a smaller position."
+     },
+     {
+      "hd": "Opinion | Nvidia and Trump’s State Capitalism",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1kcy1iQnVwZXNxZXEtQ1VEUDJxNm41cmh2bUtxcGg0ZC1TUlhFbE1PeVNPVzJ0azI1QzQ2cVFIWnRsS0duZXhvRndmcDFkY2pKWTBKdzdCQ3lfQXFqbEVVZ3pmQmYxUWUwQ3pUQkpsU0xjWEs5a0w5eQ?oc=5",
+      "pub": "2026-11-23T23:00:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "If Nvidia Is So Funny, Why Isn’t Anyone Laughing?",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcEo3VzMzZWVIRG1PUUZOZ1JYa3lvOGl0WnNLbDlWcS1faFNzaUdxdHBaaTZmMDVQVkdOdldDRGh2dlI1LTJRZzZEb2w2ekFJTTg5THpaZ3hobzNtbXNZMEZ0dmNKWFhEOFNuXy1fYUlFdGM0aHJJR0VEYjFxbzJZdHZJMUloeGFhS2p2N0w3dnZmbVB2TjhSRVAzR0NDdVdCX0JzNEgxb1o4T2s?oc=5",
+      "pub": "2026-11-23T22:42:18.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Trump engineered a risky comeback for Jensen Huang",
+      "src": "The Verge",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRFBCeDdBWW5hTkFCOWNFYkZnSGJXWTRERUlBY0pzVVNfREhneVY3ekdNMnpLUXZaNGN1MHJ2TU9FUHNJTFBWTEpfVl9mYnhmZHBYWm9STnRJaFotYUplMGROWEpnekhnX3AwX1JSNy1fNEh4M1kwT3NoVEU2bEpfZEJYYjJUR21RVzQyVnBlTjFxNFJfN1g0TXNJdE4?oc=5",
+      "pub": "2026-11-23T22:25:12.000Z",
+      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 172,
-     "Yahoo": 8,
-     "Google News": 80,
-     "Nasdaq": 12,
+     "Yahoo": 11,
+     "Google News": 79,
+     "Nasdaq": 11,
      "Seeking Alpha": 26
     }
    },
    "TSLA": {
     "items": [
      {
-      "hd": "SpaceX and Tesla Directors Hold Talks Over Potential US$3.5 Trillion Merger",
+      "hd": "Tesla, SpaceX Name Five Directors for Potential $3.5 Trillion Merger",
       "src": "Yahoo Finance",
-      "url": "https://investorshub.advfn.com/market-news/article/40597/spacex-and-tesla-directors-hold-talks-over-potential-us3-5-trillion-merger?.tsrc=rss",
-      "pub": "2026-11-24T11:19:30.000Z",
-      "sum": "Space Exploration Technologies (NASDAQ:SPCX) and Tesla Inc (NASDAQ:TSLA) are exploring a potential US$3. 5 trillion merger, with five directors appointed to negotiate the terms of a proposed all-stock transaction, according to a report by the Financial Times on Tuesday."
+      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-name-five-directors-120918069.html?.tsrc=rss",
+      "pub": "2026-11-24T12:09:18.000Z",
+      "sum": "The companies are reportedly advancing negotiations for a potential all-stock merger that could face regulatory hurdles."
+     },
+     {
+      "hd": "Tesla Jumped 11% on FSD v15. Wall Street Still Sees $418",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/tesla-jumped-11-on-fsd-v15-wall-street-still-sees-418?ref=yahoofinance&tlnk=yf-261124-55wvcq4q&.tsrc=rss",
+      "pub": "2026-11-24T11:55:56.000Z",
+      "sum": "Key TakeawaysTesla jumped 11. 5% on Monday, Nov."
      },
      {
       "hd": "Tesla Leads Goldman's Hedge Fund Short List With $26.4 Billion in Bearish Bets",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-leads-goldmans-hedge-fund-110429117.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a6675af294f06b6a01bf0ffa495822b88499d3f756dde70235c39b7bc0b1aa5c",
       "pub": "2026-11-24T11:04:29.000Z",
       "sum": "Palantir and Walmart follow as Goldman identifies the largest short positions among S&P 500 companies."
      },
      {
       "hd": "ARK Autonomous Tech & Robotics (ARKQ) Buys $214.9 Million More Tesla on Nov. 20",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-tech-robotics-arkq-110308252.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=7d63ec74981a99aff9a92e30309305571d85a6fd60176c48dea140932f2e40df",
       "pub": "2026-11-24T11:03:08.000Z",
       "sum": "The fund bought $1.43 billion of stock and sold nothing, lifting 31 positions and leaving none lower."
      },
      {
       "hd": "47 ETFs Add to Tesla (TSLA) Holdings on Nov. 20",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/47-etfs-add-tesla-tsla-110102533.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=0147c808ae252477467061c8731db1ae492f09afa48a575216a91258872b52a4",
       "pub": "2026-11-24T11:01:02.000Z",
       "sum": "ETFs bought $400.0 million of Tesla stock in Friday's session."
      },
      {
       "hd": "Jim Chanos: A Tesla Deal Would “Cut SpaceX’s Growth Rate by Over 60%.” Bad News for SpaceX Holders",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/jim-chanos-a-tesla-deal-would-cut-spacexs-growth-rate-by-over-60-bad-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261124-2jm2c2pw&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=849806dca0719b12b4610e32198cc3e038aaf4b753a0377bf569ccd0962640e7",
       "pub": "2026-11-24T10:46:17.000Z",
       "sum": "Key TakeawaysJim Chanos says a Tesla merger would cut SpaceX’s growth rate by over 60% and its 2027 EPS by almost 40%. Analysts’ estimates back him on growth: SpaceX alone is expected to grow revenue about 272% in 2027, against about 94% combined with Tesla."
      },
@@ -15437,20 +15443,6 @@
       "url": "https://finnhub.io/api/news?id=b7acd7a32e566638b0c51534d4029f1b7196e1fad4490bd9bbc84e83d0d07805",
       "pub": "2026-11-24T08:36:59.000Z",
       "sum": "Key TakeawaysGM’s board sees Sterling Anderson, its product chief and Tesla’s former Autopilot head, as a strong contender to succeed CEO Mary Barra. Jason Calacanis says GM has no future without autonomy, and Ford faces the same question."
-     },
-     {
-      "hd": "Brad Gerstner Just Bought $680 Million of Tesla. His Range: “$420 a Share and Let’s Call It $520 or $550”",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/brad-gerstner-just-bought-680-million-of-tesla-his-range-420-a-share-and-lets-call-it-520-or-550?ref=yahoofinance&tlnk=yf-261124-3p7mcrp3&.tsrc=rss",
-      "pub": "2026-11-24T08:08:27.000Z",
-      "sum": "Key TakeawaysBrad Gerstner’s Altimeter Capital reported a new Tesla position worth $680 million at Sept. 30, its fourth-largest 13F holding."
-     },
-     {
-      "hd": "SpaceX, Tesla appoint five directors to guide merger talks, FT reports",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQXlLNG9FZFJ0SjJ6YmxybS03UEdTTDZuMUpzQ1pHdmZQUG1WRVdMRktKZ3ptRVVCNXkxdm92eEVBZ0N5c0pDemw5M3NOLUpxWV9tZHdQRWtJM2NnQnZZZVljOEtaRjQzdlRDR2hjM2VIWU9MZS12QmkwbDkyUl9mNGxRRUk4WW5IVm1QVWJuQWhyYS1jN1FMQzBmOHdhLWhTMjRHUnJhOVplSnY4Nm9YMmNfUHdqbms?oc=5",
-      "pub": "2026-11-24T05:20:00.000Z",
-      "sum": ""
      },
      {
       "hd": "We are the ‘Tesla’ of ratings, says tiny agency behind private credit boom",
@@ -15556,12 +15548,19 @@
       "url": "https://www.nasdaq.com/articles/hsbc-upgrades-tesla-hold-reduce",
       "pub": "2026-11-21T00:42:00.000Z",
       "sum": "Fintel reports that on November 20, 2026, HSBC upgraded their outlook for Tesla (NASDAQGS:TSLA) (WSE:TSLA) from Reduce to Hold."
+     },
+     {
+      "hd": "Tesla sees limited hedge fund activity in Q3",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/TSLA/news?source=feed_symbol_TSLA",
+      "pub": "2026-11-20T15:30:29.000Z",
+      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 155,
-     "Yahoo": 13,
-     "Google News": 11,
+     "Finnhub": 158,
+     "Yahoo": 14,
+     "Google News": 10,
      "Nasdaq": 10,
      "Seeking Alpha": 9
     }
@@ -15569,44 +15568,51 @@
    "SPCX": {
     "items": [
      {
-      "hd": "SpaceX and Tesla Directors Hold Talks Over Potential US$3.5 Trillion Merger",
+      "hd": "Tesla, SpaceX Name Five Directors for Potential $3.5 Trillion Merger",
       "src": "Yahoo Finance",
-      "url": "https://investorshub.advfn.com/market-news/article/40597/spacex-and-tesla-directors-hold-talks-over-potential-us3-5-trillion-merger?.tsrc=rss",
-      "pub": "2026-11-24T11:19:30.000Z",
-      "sum": "Space Exploration Technologies (NASDAQ:SPCX) and Tesla Inc (NASDAQ:TSLA) are exploring a potential US$3. 5 trillion merger, with five directors appointed to negotiate the terms of a proposed all-stock transaction, according to a report by the Financial Times on Tuesday."
+      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-name-five-directors-120918069.html?.tsrc=rss",
+      "pub": "2026-11-24T12:09:18.000Z",
+      "sum": "The companies are reportedly advancing negotiations for a potential all-stock merger that could face regulatory hurdles."
+     },
+     {
+      "hd": "Cathie Wood Just Made $74 Million Bet on This Red-Hot Space Stock",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=5e266564e9cfd23634812d4b2ee8a9fe093d08764a1fc685debadd896048917a",
+      "pub": "2026-11-24T11:57:06.000Z",
+      "sum": "Cathie Wood Makes a Massive SpaceX Bet as Starlink and Orbital AI Fuel Her Vision"
+     },
+     {
+      "hd": "SpaceX Stock Got a New Buy Rating—Sort Of. Why Shares Can Soar 90%.",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/6962cb9f-deeb-3d0c-a590-458a639cb58e/spacex-stock-got-a-new-buy.html?.tsrc=rss",
+      "pub": "2026-11-24T11:37:00.000Z",
+      "sum": "Monday, Mizuho analyst Greg Konrad launched coverage of SpaceX stock with a Buy rating and $205 price target."
      },
      {
       "hd": "First Trust Alerian NextGen Infra (FTQI) Buys $22 Million More Walmart on Nov. 20",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/first-trust-alerian-nextgen-infra-110348918.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a182dcc3d2e6387c3d2fb9039006567a104c0be0073086e05ef85fd788692dd8",
       "pub": "2026-11-24T11:03:48.000Z",
       "sum": "The fund added $22.0 million of Walmart and $21.9 million of SpaceX, while exiting Microsoft and Palo Alto Networks, on $43.6 million in net buying."
      },
      {
       "hd": "SpaceX (SPCX) Sees $201.9 Million in Net ETF Buying on Friday",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-spcx-sees-201-9-110137547.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8a4ac2f1e1a14c277ccc556fc890b631e0377651b65a7ba4833efdb25f44191a",
       "pub": "2026-11-24T11:01:37.000Z",
       "sum": "ETFs bought $201.9 million of SpaceX Class A stock last Friday, with 25 funds adding shares against 12 trimming."
      },
      {
       "hd": "Jim Chanos: A Tesla Deal Would “Cut SpaceX’s Growth Rate by Over 60%.” Bad News for SpaceX Holders",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/jim-chanos-a-tesla-deal-would-cut-spacexs-growth-rate-by-over-60-bad-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261124-2jm2c2pw&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=849806dca0719b12b4610e32198cc3e038aaf4b753a0377bf569ccd0962640e7",
       "pub": "2026-11-24T10:46:17.000Z",
       "sum": "Key TakeawaysJim Chanos says a Tesla merger would cut SpaceX’s growth rate by over 60% and its 2027 EPS by almost 40%. Analysts’ estimates back him on growth: SpaceX alone is expected to grow revenue about 272% in 2027, against about 94% combined with Tesla."
      },
      {
-      "hd": "Tesla And SpaceX Reportedly Name 5 Directors To Lead Merger Discussions — Investor Says Talks Are Moving At ‘Warp Speed’",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f8de3b98215a26c7efb2ed8adcd92ecd36268746169924a357f192585b69896c",
-      "pub": "2026-11-24T08:00:14.000Z",
-      "sum": "After Nvidia reinstated Jensen Huang, New Street’s Pierre Ferragu called a Tesla-SpaceX merger the “next move.”"
-     },
-     {
       "hd": "Engineer, saleswoman, Elon Musk whisperer: Meet Gwynne Shotwell, the billionaire who really runs SpaceX",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/engineer-saleswoman-elon-musk-whisperer-080000847.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=bfb6f80057575747f6ec7d53e59221da02c99ee40d8b6f5430ebe1b760ebfe01",
       "pub": "2026-11-24T08:00:00.000Z",
       "sum": "The quiet billionaire who turns Elon Musk's wildest ideas into revenue is facing her toughest test yet."
      },
@@ -15618,25 +15624,11 @@
       "sum": "Key TakeawaysJefferies initiated coverage of SpaceX with a Buy rating and a $210 target, 57% above a stock that sits 34% below its June closing high. The target asks for a lower multiple than SpaceX trades at today, so the upside depends on earnings roughly doubling by 2028."
      },
      {
-      "hd": "SpaceX, Tesla appoint five directors to guide merger talks, FT reports",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQXlLNG9FZFJ0SjJ6YmxybS03UEdTTDZuMUpzQ1pHdmZQUG1WRVdMRktKZ3ptRVVCNXkxdm92eEVBZ0N5c0pDemw5M3NOLUpxWV9tZHdQRWtJM2NnQnZZZVljOEtaRjQzdlRDR2hjM2VIWU9MZS12QmkwbDkyUl9mNGxRRUk4WW5IVm1QVWJuQWhyYS1jN1FMQzBmOHdhLWhTMjRHUnJhOVplSnY4Nm9YMmNfUHdqbms?oc=5",
-      "pub": "2026-11-24T05:20:00.000Z",
-      "sum": ""
-     },
-     {
       "hd": "SpaceX-Tesla: the directors negotiating the biggest merger ever",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeEdHa3JaV1FnaExBWDEtY1FaT0hubE5OcXZHSDNFNlRWYkw4Nk5YbWtmRkxIaTVUMHRLZ042V1llZlV2VWRaZ2pieEpKbXFpNlZtNHNWY0tWWDI2YWNrMjFPd1EySzVXWnh2ZGJqRzNIbDZXUUE1Wnc3ZFI0dFlhWHR4N3k?oc=5",
       "pub": "2026-11-24T05:01:20.000Z",
       "sum": ""
-     },
-     {
-      "hd": "SpaceX Stock Is Down 39% From Its High. Here's What Has to Happen Before I'd Buy.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ef714c6bf2b32eb0086efd87c46c783d68c844eacbec701df9a712cdb98060aa",
-      "pub": "2026-11-24T03:20:02.000Z",
-      "sum": "SpaceX's business is thriving -- but something needs to happen before it becomes a buy in my book."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15742,6 +15734,13 @@
       "url": "https://finnhub.io/api/news?id=a99d249ed252126f5a47ee60dfd784d6e14b0b7c2d5f598e4850384dfb296be1",
       "pub": "2026-11-23T01:59:20.000Z",
       "sum": "Grant Cardone predicts Elon Musk could buy 50% of chipmaker Nvidia and bring back ousted CEO Jensen Huang."
+     },
+     {
+      "hd": "This Week in TSLA: Cybercab's Deliveries, SpaceX-Tesla Merger Talk, Model Y Without Steering Wheel and More",
+      "src": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=74bab9f0ac1ef59ca77737a3073d193a39ccde13795642b86fffff3116bc2bc9",
+      "pub": "2026-11-22T09:50:28.000Z",
+      "sum": "This week, Tesla plans a $3.3 billion Berlin production expansion, Elon Musk touts autonomous Model Ys and SpaceX merger talks re-emerge."
      }
     ],
     "fetched": {
@@ -15754,6 +15753,13 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Anthropic's Post-IPO Dip Is A Long-Term Buying Opportunity",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4971393-anthropic-post-ipo-dip-is-a-long-term-buying-opportunity?source=feed_symbol_ANT",
+      "pub": "2026-11-24T12:16:42.000Z",
+      "sum": "Anthropic earns a speculative Buy, with a $152 twelve-month target predicated on sustained growth and a premium valuation."
+     },
      {
       "hd": "Anthropic stock breaks below $83 IPO price in premarket trading",
       "src": "Seeking Alpha",
@@ -15809,13 +15815,6 @@
       "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-drops-further-despite-tech-rally-why-this-analyst-thinks-jensen-huang-s-return-as-nvidia-ceo-is-a-threat-to-anthropic/cNbsciDR9ka?.tsrc=rss",
       "pub": "2026-11-24T09:03:05.000Z",
       "sum": "Nvidia CEO Jensen Huang's return could accelerate the push for open-source AI models, posing a threat to the Claude maker, analyst Patrick Moorhead said."
-     },
-     {
-      "hd": "Anthropic: My Post-IPO Playbook",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4971329-anthropic-my-post-ipo-playbook?source=feed_symbol_ANT",
-      "pub": "2026-11-24T08:37:12.000Z",
-      "sum": "Anthropic earns a speculative Buy, with a $152 twelve-month target predicated on sustained growth and a premium valuation."
      },
      {
       "hd": "Jim Cramer Calls Nvidia’s Quarter “Fabulous” but Says Buy Anthropic Instead. I’ll Take the Other Side",
@@ -15909,6 +15908,13 @@
       "sum": ""
      },
      {
+      "hd": "Anthropic options post solid debut, trailing SpaceX record",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQZzZBTkVsVXo2NVo5WmF4NXlRZnpidUVLNE1ZX25XbHFLUm1RamtHODdMRWJYTWJDSVlFRmlfSDI5dGVGVEQ1ZHItNVhoLWFhX0M2eGxVTHdtUExfMUxEc1p2S3ZTVkJuTVd0TUYxXy04UEJnOXFldDE2ZHMzMDEyeXcyMkNpdlpHamVDRmtpVQ?oc=5",
+      "pub": "2026-11-23T16:24:00.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Anthropic Committed to Spend $900 Billion. Wall Street Expects Its Debt to Be Junk.",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNHFQOEdMZm5FNmNuNWo3WHNuNHhBVkprTmplTktaZ1J5Ni0wN0NBdHF5YWg5X2pfc09rZldBYU80NWVCNTRRZDVsb1RfVkRHdFBseWh5VmZieU45WnhMb0JpNEFkZHlCRXp1Y1FMb1M0WjNEWGk0MjBJb3V5eGRtQmVaVzBWaWtPeUhOX1hleHkteHRNN2JUekRTMGpTYmtuMTNKNUdZZG8xWF9iSzYzT3kzaUEzbkYzZ0NsT281aHl6U1FDWUE?oc=5",
@@ -15921,30 +15927,30 @@
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNY1VUWGl6cjBEeFMzaGFfMllKYWJZVDlVNkk5RW9MajFyWlFjTTZNQzAySDNISGZXRUZvMlFVN0I0M2JkQzJONHhDbWdjbGx2d3BRZC1XajE2T29oUm1tV1VZU1lnWGRmVXN1eUx2d0dSb042am1aRnRxRHZaNG9ldHM5TVZzNWxmWnNNdw?oc=5",
       "pub": "2026-11-23T11:28:00.000Z",
       "sum": ""
-     },
-     {
-      "hd": "CrowdStrike Strikes $43.9 Billion Zscaler Deal in Cybersecurity Shake-Up",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=28c4ee5d71a6d1abd0f99d582640bf6a333bfc919bbfb8a2845bef617492c1cf",
-      "pub": "2026-11-23T09:21:37.000Z",
-      "sum": "CrowdStrike is reportedly in talks to acquire Zscaler in a potential cybersecurity mega-deal. Zscaler Partners With Anthropic and Mistral."
      }
     ],
     "fetched": {
-     "Finnhub": 157,
-     "Yahoo": 10,
-     "Google News": 94,
+     "Finnhub": 158,
+     "Yahoo": 0,
+     "Google News": 87,
      "Nasdaq": 9,
      "Seeking Alpha": 24
     }
    }
   },
-  "asOf": "2026-11-24T12:00:13.389Z",
-  "lastAttempt": "2026-11-24T12:00:13.389Z",
+  "asOf": "2026-11-24T12:30:11.736Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Car bomb tears through Colombian city wounding more than 20",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cjqlq2n4np7do?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-24T11:45:52.000Z",
+    "sum": "The explosion is the latest in a string of attacks on buildings housing the security forces and government offices."
+   },
    {
     "hd": "Nato chief vows defence against space threat after Russian nuclear satellite reports",
     "src": "BBC News",
@@ -16044,9 +16050,9 @@
     "sum": "Huang being back at the helm of Nvidia is no guarantee of relief for Beijing."
    },
    {
-    "hd": "Chinese official sentenced to death for spying and leaking \"top secret\" information, state media reports",
+    "hd": "Chinese official sentenced to death for spying",
     "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9zcEhJeWFvdDhjUVFFYUw5dklpLV9JeXA0eWFxSjgyclZWRW8tWnpNNzZTcExiQTFZSlB6V0JDdkJwbVZ0STZJNTY3MWNkdkpNeXpFd2U4VXl2dC1nTGZCd0w4a1B0Yjdy?oc=5",
+    "url": "https://www.cbsnews.com/news/china-spy-sentence-death-ma/",
     "pub": "2026-11-24T07:15:30.000Z",
     "sum": "According to state-affiliated media, the official received monthly payments in exchange for intelligence."
    },
@@ -16147,13 +16153,6 @@
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQcHEzaFFZSHUwdzN0LS1RbTVLRlF1MFpWblFUV2l1eUtybk9fOHJzNmQzeW8zSi13TEdMWGtYTE9UTFNHbGx4UUZ6Z2UyRlJQUU1kY3hKNmtsV3V1ZkVsWWR3UmxvdDlud0NQa2VRRldnWFQwdV85R0RNZTVKaTJKbko0UV9Qa3FLR0J1S1FNSkZxM01k?oc=5",
     "pub": "2026-11-24T02:30:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "The Russian Exile Behind the Missiles That Helped Destroy the Crimea Bridge",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNR2x2YmcxbUxhczFBaXBfV0FObk9oYkJRREJSa0Y2OU5rVF9ES2FlUGVTZzZsd2JwSTBSU3RFLXg2VlRGVDNjRVczcEo1eDdSTGU4XzVPYmFfR1BSejJLS180Rm1CMXRFMjZreU5HUjhlcmxzLU1ocWhSVEtXNFRhN1ZBakg0cHVIdG9oMTctWi1IVk8zRWZBbERCdUZKb21IeVhBNFRXaWVNQmdRQ0U4?oc=5",
-    "pub": "2026-11-24T02:01:56.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16172,8 +16171,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-24T12:00:13.389Z",
-  "lastAttempt": "2026-11-24T12:00:13.389Z",
+  "asOf": "2026-11-24T12:30:11.736Z",
+  "lastAttempt": "2026-11-24T12:30:11.736Z",
   "lastError": null
  }
 }
