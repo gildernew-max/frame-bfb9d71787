@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-24T09:15:16.695Z",
+ "generatedAt": "2026-11-24T09:30:12.245Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7417,15 +7417,10 @@
   "closeFetchedFor": "2026-11-23"
  },
  "lastRun": {
-  "at": "2026-11-24T09:15:16.695Z",
+  "at": "2026-11-24T09:30:12.245Z",
   "ran": [
-   "weather",
    "alerts",
-   "news",
-   "stockNews",
-   "world",
-   "movers",
-   "sectors",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13786,62 +13781,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T09:15:16.695Z",
-  "lastAttempt": "2026-11-24T09:15:16.695Z",
+  "asOf": "2026-11-24T09:30:12.245Z",
+  "lastAttempt": "2026-11-24T09:30:12.245Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7230,
-    "lastTime": 1795511119,
-    "settle": 7257.5,
+    "last": 7232.25,
+    "lastTime": 1795512020,
+    "settle": 7257.75,
     "settleDate": "2026-11-23",
     "indexClose": 7237.17,
-    "change": -27.5,
-    "changePct": -0.37891836031691356,
-    "expectedOpen": 7209.747034102652,
+    "change": -25.5,
+    "changePct": -0.3513485584375323,
+    "expectedOpen": 7211.742307533326,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26559.5,
-    "lastTime": 1795511121,
-    "settle": 26816.5,
+    "last": 26579.5,
+    "lastTime": 1795512021,
+    "settle": 26818.25,
     "settleDate": "2026-11-23",
     "indexClose": 24089.559,
-    "change": -257,
-    "changePct": -0.9583651856133351,
-    "expectedOpen": 23858.69305317622,
+    "change": -238.75,
+    "changePct": -0.8902519739356595,
+    "expectedOpen": 23875.101225490103,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49664,
-    "lastTime": 1795511117,
-    "settle": 49693,
+    "last": 49647,
+    "lastTime": 1795512020,
+    "settle": 49691,
     "settleDate": "2026-11-23",
     "indexClose": 49595.31,
-    "change": -29,
-    "changePct": -0.05835832008532389,
-    "expectedOpen": 49566.36701024289,
+    "change": -44,
+    "changePct": -0.08854722183091505,
+    "expectedOpen": 49551.39473083657,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2672.1,
-    "lastTime": 1795511117,
-    "settle": 2675.800048828125,
+    "last": 2670.1,
+    "lastTime": 1795512020,
+    "settle": 2675.699951171875,
     "settleDate": "2026-11-23",
     "indexClose": null,
-    "change": -3.700048828125091,
-    "changePct": -0.13827822560006078,
+    "change": -5.599951171875091,
+    "changePct": -0.2092892055935675,
     "expectedOpen": null,
     "valid": true
    }
@@ -14303,8 +14298,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-24T09:15:16.695Z",
-  "lastAttempt": "2026-11-24T09:15:16.695Z",
+  "asOf": "2026-11-24T09:30:12.245Z",
+  "lastAttempt": "2026-11-24T09:30:12.245Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14947,7 +14942,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-24T09:15:16.695Z",
+  "lastAttempt": "2026-11-24T09:30:12.245Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15158,44 +15153,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-24T09:15:16.695Z",
-  "lastAttempt": "2026-11-24T09:15:16.695Z",
+  "asOf": "2026-11-24T09:30:12.245Z",
+  "lastAttempt": "2026-11-24T09:30:12.245Z",
   "items": {
    "NVDA": {
     "session": "pre",
-    "price": 158.64,
-    "time": 1795511719,
+    "price": 158.87,
+    "time": 1795512621,
     "ref": 165.05,
     "refTime": 1795467601,
-    "change": -6.410000000000025,
-    "changePct": -3.883671614662238
+    "change": -6.180000000000007,
+    "changePct": -3.7443199030596825
    },
    "TSLA": {
     "session": "pre",
-    "price": 383.56,
-    "time": 1795511700,
+    "price": 383.79,
+    "time": 1795512591,
     "ref": 385.46,
     "refTime": 1795467600,
-    "change": -1.8999999999999773,
-    "changePct": -0.49291755305348867
+    "change": -1.669999999999959,
+    "changePct": -0.433248586104903
    },
    "SPCX": {
     "session": "pre",
-    "price": 132.55,
-    "time": 1795511717,
+    "price": 132.44,
+    "time": 1795512620,
     "ref": 133.35,
     "refTime": 1795467600,
-    "change": -0.799999999999983,
-    "changePct": -0.5999250093738155
+    "change": -0.9099999999999966,
+    "changePct": -0.6824146981627272
    },
    "ANT": {
     "session": "pre",
-    "price": 84.24,
-    "time": 1795511711,
+    "price": 84.28,
+    "time": 1795512608,
     "ref": 87.64,
     "refTime": 1795467601,
-    "change": -3.4000000000000057,
-    "changePct": -3.8795070743952595
+    "change": -3.3599999999999994,
+    "changePct": -3.833865814696485
    }
   }
  },
@@ -15955,11 +15950,60 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
+    "pub": "2026-11-24T09:19:12.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Global land mine casualties hit a 5-year high, driven by Myanmar’s brutal civil war and Syria",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/global-land-mine-casualties-hit-5-year-high-138403128",
+    "pub": "2026-11-24T09:13:37.000Z",
+    "sum": "Casualties from land mines and unexploded ordnance reached a five-year high in 2025, with Southeast Asia seeing a significant number of those killed or wounded"
+   },
+   {
+    "hd": "Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html",
+    "pub": "2026-11-24T09:08:32.000Z",
+    "sum": "What seem like frontline Russian radio stations are actually a Ukrainian psychological operation, hoping to sow despair among the Kremlin’s soldiers."
+   },
+   {
     "hd": "North Korea reviews Switzerland relations after sanctions on youth camp linked to war",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/north-korea-reviews-switzerland-relations-after-sanctions-youth-138402640",
-    "pub": "2026-11-24T08:20:29.000Z",
+    "pub": "2026-11-24T09:06:20.000Z",
     "sum": "North Korea has threatened to close a Swiss diplomatic office that opened in Pyongyang last month"
+   },
+   {
+    "hd": "DR Congo says aircraft missing as rebels claim to shoot down plane",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cwy7r5z8gg65o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-24T08:35:41.000Z",
+    "sum": "A South African fighter pilot and a Ugandan officer are reportedly among those aboard the downed plane."
+   },
+   {
+    "hd": "Iraqi PM orders ministry to manage oilfields in areas under Kurdish security control",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQT0ttY1ZZa0d3ajhmMUVZYmhrdHNGd0E4aC0wQWswZzc0UkFrcndsZ3pJUkJQMVF3Rlp0cjdGdkc2bG5XY093OWx6QWdtQVlJMVpRN2QzUUZicGRBZEROT2JUZEdQUTRpWHBpYzNXMVVwN1FQbmZpVmZfTm1leHQzclpZSkdsRk9MWHBzZEpaSlFoVjd0QzZQMnl2SDladHhlTzFmYkhmT2xPSlRTc2o2VmY2ZThoQ0dxbl94NXAxaXFWTHBNb1V6bzhXRTFPQQ?oc=5",
+    "pub": "2026-11-24T08:34:45.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
+    "pub": "2026-11-24T08:04:44.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "What Jensen Huang's return teaches China's Xi about Trump",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c63rgpy50x98o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-24T07:26:27.000Z",
+    "sum": "Huang being back at the helm of Nvidia is no guarantee of relief for Beijing."
    },
    {
     "hd": "Chinese official sentenced to death for spying",
@@ -15967,6 +16011,13 @@
     "url": "https://www.cbsnews.com/news/china-spy-sentence-death-ma/",
     "pub": "2026-11-24T07:15:30.000Z",
     "sum": "According to state-affiliated media, the official received monthly payments in exchange for intelligence."
+   },
+   {
+    "hd": "China sentences official to death for passing state secrets to foreign spy",
+    "src": "CNN",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTHR0aDZZX1djSUdCWXdjWVJEZnRRcjhwSWtjQ2xjelZocGIxOXdmb0dKUWhmWUtpSzk0Yy1IaDhKT1Ztb1ZQUXcxcWJuMTdRSTBnQlk5SUU3cGgxUGw1WGp2OGlUUXJvYVAteklDUWo3akRKM0FEcFo2YklLbW8wQkhTMV94aXdndjAyME91VlI3VTE3RFhxelBGVjR1LWZQU1hmX3pJZEFYMm9rTFhqaHIyWVp2U3NUSXNYRA?oc=5",
+    "pub": "2026-11-24T07:07:04.000Z",
+    "sum": ""
    },
    {
     "hd": "US flew drone over Mexican territory to help capture drug lord in Sinaloa",
@@ -15990,18 +16041,25 @@
     "sum": ""
    },
    {
-    "hd": "Radio Offers Russian Troops Classic Rock, Nostalgia — and Pleas to Surrender",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/24/world/europe/ukraine-russia-psyops-radio-izium.html",
-    "pub": "2026-11-24T05:01:05.000Z",
-    "sum": "What seem like frontline Russian radio stations are actually a Ukrainian psychological operation, hoping to sow despair among the Kremlin’s soldiers."
-   },
-   {
     "hd": "Pentagon sharply rebukes Canada over defense spending and the F-35 fighter jet review",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/pentagon-sharply-rebukes-canada-defense-spending-35-fighter-138393777",
     "pub": "2026-11-24T04:58:14.000Z",
     "sum": "The Pentagon has accused Canada of falling short as a credible partner in defending North America, delivering a sharp rebuke to its longtime ally over military spending and its reconsideration of American-made F-35 fighter jets"
+   },
+   {
+    "hd": "Solomon Islands plans to replace China security pact with Australia treaty, report says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPdFNLbGx2cFNYcnJoRU9LLUIwRUpVUVktaTRNeDBJbDJCT3BoelRQWEdYcGJwZXJTQVE3eG1RX0JuQVVVelotVjJxdzVmcWliSUhxUVlqQ0hoSDJzeE5OTjlYVWdGZTZOT2ZtNldqeTd4aVlaRHVEczlvN2h4Wk5JUGNTVWtreTJVeFNqOVF2R252dHI5ZWI5RXp0VXk5MXdJNFQwOFdQYktYbENvZHBNeDJGY24teFZVd1VrWWJ3eEp3ZS1n?oc=5",
+    "pub": "2026-11-24T04:48:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Russian attack kills 2 people in Ukraine's Zaporizhzhia, governor says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQRl9vM3Z6UzJTZlZjU3JmcDhQem1tVS1rMS1yemtlVjFicVlnZjVqTFRBUGlrWG1LTWU1b29waVI2NEthUnZFZ0VzMVRaclZDaURJNWk0MDNOdWtaQnJwU2RteUhISWdqYXg0R2VoSEd0S0ZKM01hVUxTS2pwbWZSOHdVNkRYUmVkRURSRTN6RmtvemF1bmFFZnUtZXZwU1JkV0hha3lLSGVoaGR2cE5hSTdIZ2pibk1W?oc=5",
+    "pub": "2026-11-24T04:18:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Malaysia to continue working with Myanmar on refugee repatriation, PM says after genocide ruling",
@@ -16039,13 +16097,6 @@
     "sum": ""
    },
    {
-    "hd": "European Defense Chief Snaps at Pentagon Official Over Ukraine Criticism",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRHNzdmd2QWUxaUJvZm1kaU1EVWNUdmtDWUp6SHljdmZwZDUxM2ZYX1hmY0xQWXhvcFZlZDRqODJJWUI3aE53cDJBTG1ldDNoNHVaaHNnOVlEUW5fYU1SZU5qMlJFMEZTR0ZDcTEyN3l2WWRfUmZZSktIV1FZaVU4NDJTeUpoS3NZdkdJc01TNkV5YkZKTXE2d2xDTjZmLURXX0xESjFYVE42S3R2SlJfdC1GTGI?oc=5",
-    "pub": "2026-11-24T03:34:41.000Z",
-    "sum": ""
-   },
-   {
     "hd": "NATO calls urgent meeting as string of incidents escalates Russia tensions",
     "src": "The Washington Post",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOeTBzUEtPZ3RHS2tpdjlJNXRLMmVneUVHeWNmRC1IRWUzb3RCUk15alZwc1hvZ1Z2czFOZDV0YldySll3N1dLQU84YjlqN2VvVTVzeHY3TDRLbjM2dkNGZGxkSkpBb1Y0a0NTWlgtQmtvSVcyS1Q3NUZaZmwzd1NYd25JNUdneER3N181RUJzUzU1Zm80R0w5VjdieFRDTUtpalhHVWgzWjZCLXJwbUpZUVRkVUExajNy?oc=5",
@@ -16074,13 +16125,6 @@
     "sum": ""
    },
    {
-    "hd": "Canada and China Draw Closer with Expanded Trade Pact",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNmRUVkxHN0s2YlBRdWN1TElodk1UaVlzcG5ETFM2OS1HRlFIMUdWd1ZaYm9JYkNzUXZHc2N1d2xGVV95U19BWWpIejRXWWRBaUZPTHNCaF9DSm9faWdSWmVSVXdWY3hwNG1meUtkLUpCSjU2OTNsVVJ4ZUVpd05oZnZfTEpOcHZ6UGFkRlRWMWZnZw?oc=5",
-    "pub": "2026-11-24T01:49:10.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Federal appeals court clears way for US Army to detonate degraded bomb-making material in Iowa",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYnFzVFZqMjBjY2Y1cll0UUxLU2VQMktTZDQ5QmFpaENUUzBXeHJJRS1nQUtpLUdhYVFVbnUxaGI1d1lWc0lwSUM1MWVNcGY0MlVEY3dDbFRXbGxMX3BvRzMzYnFhcTZFUG1xcTh6bDRlQVNhR1JlVmxxVEJ6S2xCZjZxRDgtcGFZWndwUUJ3RkdGLWFDakE?oc=5",
@@ -16102,17 +16146,10 @@
     "sum": "Ukraine has taken its fight against Russia to the shores of North Africa, claiming to have sunk a warship off the coast of Libya in its latest expansion of the war."
    },
    {
-    "hd": "Israeli airstrike kills at least three Palestinians in southern Gaza, medics say",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNQzdHQ2gzSWhrMmF1X2lxVWVyTVdvQXg1QTVjcUJ6bXVxd0htbC1qSV9HbGg1aU4xdzlwaE41TlNWd3dDRng2NllYN1BMaktmX1JaU1A2RURQa0h5OHlBMS15Um1vRVlIVjRmY3F5RVhJXy1IWUpPbTJGNG4zV3ZJOHp6NTE3UG1wUUJDeWJJbVlUSEpBcHE0bF94UHhNT0ZpVVVIUWdscUZXSDJFT3QxZHQyaU45bGdDTnVmTEhjQnM4UUpLX0E?oc=5",
-    "pub": "2026-11-24T00:20:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "What to know about US Army plans to blow up a stockpile of lead azide in Iowa",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOZDc4MFQwYl9iZU5vMFhmSE9Odnp0NURNNWJDNXFtS3hDV3l4a2dhY2ZpQUNlRG83d3JZRDZmbWMxZ2JMOFNrVmZxeXppWjEzSzJLS1lXR0pPcEtnNW51Y01kOVE2VVZoSTlrVVhtc20xMnpjRExqMmRqX3RZN3BxMS1oYV9tQjUyV0YwaEhWemJXc1JNUnRaMTdfcVhISFotUHN0b2ZOQnpWRFA1?oc=5",
-    "pub": "2026-11-23T23:57:36.000Z",
+    "hd": "The Russian Exile Behind the Missiles That Helped Destroy the Crimea Bridge",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNR2x2YmcxbUxhczFBaXBfV0FObk9oYkJRREJSa0Y2OU5rVF9ES2FlUGVTZzZsd2JwSTBSU3RFLXg2VlRGVDNjRVczcEo1eDdSTGU4XzVPYmFfR1BSejJLS180Rm1CMXRFMjZreU5HUjhlcmxzLU1ocWhSVEtXNFRhN1ZBakg0cHVIdG9oMTctWi1IVk8zRWZBbERCdUZKb21IeVhBNFRXaWVNQmdRQ0U4?oc=5",
+    "pub": "2026-11-24T00:01:53.000Z",
     "sum": ""
    },
    {
@@ -16121,51 +16158,13 @@
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQamoyVG5YYks5dkM5VURsYk9VcWxLYkJsQ0lITDJmUS1ubTNzZ1hCdWtDdmowejNfXzdWRE5rWXpNVng3MU9ZTGMwaExCbENIR2RBdjhZLWlfLUU2c3FOS0g3Qk1uSnlzZlh6MUJSdFVqWGZ0QjdJeXY3dERqbDdiYUtfRFludjJGNW95dndTZWlGcWVjVURraF9hYVhkdm9WMEdhaENiaDBNLXfSAbABQVVfeXFMUFdYR2tIYkczdVNmci03REZEVU9wSlF1VlpzOTctZVl1X0NPNDJiM2p4OHcwY1M2NmNrQmhiUThfVE9kNk1HeWFpSkFqYUlGaF9yRzd2d1g2ZV9EZTJNRTZlWTlIRS1XYXR5clBPSS1XTVFHNGxyUXljY1RXT0E0VXR3SF9TSDV1VXA3SE52X21Ub1NtdGRwNnRGWEViUnMyeVI0SVg3eFJiaWVrVzZVM0E?oc=5",
     "pub": "2026-11-23T23:37:35.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Mexico used U.S. drones to arrest alleged drug trafficker ‘El Chapo Isidro’",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/23/mexico-used-us-drones-arrest-alleged-drug-trafficker-el-chapo-isidro/",
-    "pub": "2026-11-23T23:18:29.000Z",
-    "sum": "Mexico and the United States have long worked together against drug trafficking, but such collaboration can be controversial."
-   },
-   {
-    "hd": "Russian incursions into NATO territory are increasing",
-    "src": "NPR",
-    "url": "https://www.npr.org/2026/11/23/nx-s1-6051013/russian-incursions-into-nato-territory-are-increasing",
-    "pub": "2026-11-23T23:08:51.000Z",
-    "sum": "NATO Secretary General Mark Rutte is seeking to reassure the alliance's eastern European members after three Russian cruise missiles landed in Poland on Friday."
-   },
-   {
-    "hd": "EU Demands Russia Accept Ceasefire, Warns of Black Sea Crisis",
-    "src": "Kyiv Post",
-    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBwYWRROENueEpSZ3NwdmI0TzZ6d3poaS1rWWdFUnp4NmxKem5CRG9SUzhLRmtNc3RFb0wyVTJ6RHBsNjhjQmsyYU9hUQ?oc=5",
-    "pub": "2026-11-23T23:00:13.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Collapse of U.N. summit intensifies calls for new approach to climate talks",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/23/collapse-un-summit-intensifies-calls-new-approach-climate-talks/",
-    "pub": "2026-11-23T22:21:28.000Z",
-    "sum": "The failure of COP31 after a dispute about whether a fossil fuel phaseout could even be mentioned has prompted calls for a system that relies less heavily on consensus."
-   },
-   {
-    "hd": "North Korea to consider shutting down Swiss diplomatic office in Pyongyang, KCNA says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOaWtkOGd3MzlTdUM5d1ZnTlNuU1FGVDhJcFd6YlZaYzVBeEtSZDBmUjVzbzdnY0JfVEJ5UkFzN3p1RFMzWGFad3l4c1FsdjUtY1NyeG1LOHB3N2VVNlFmMXlVQXNISmEtd3hNbEVjS3BlVElXMWFKLWhpb2ZMY3QtZUticm1pQXFtV3B4RFY3ZDBtUHp2dnVnLXdZdmxDNzA1THdfRmJiRGdENGRoVXdJcC1SLVgwNjFSQ2x1eG03NlhDVHpJTS16bUV5YkZkQQ?oc=5",
-    "pub": "2026-11-23T22:18:09.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
-    "pub": "2026-11-23T22:11:22.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
+   "Google News",
+   "AP",
+   "Reuters",
+   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16176,14 +16175,9 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [
-   "Google News: HTTP 503 from news.google.com",
-   "AP (Google News): HTTP 503 from news.google.com",
-   "Reuters (Google News): HTTP 503 from news.google.com",
-   "WSJ (Google News): HTTP 503 from news.google.com"
-  ],
-  "asOf": "2026-11-24T08:30:19.911Z",
-  "lastAttempt": "2026-11-24T08:30:19.911Z",
+  "feedErrors": [],
+  "asOf": "2026-11-24T09:30:12.245Z",
+  "lastAttempt": "2026-11-24T09:30:12.245Z",
   "lastError": null
  }
 }
