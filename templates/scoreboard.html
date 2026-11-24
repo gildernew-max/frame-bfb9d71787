@@ -550,6 +550,7 @@
     if(d.new_creative_school)return true;
     if(d.wish_i_knew)return true;
     if(d.k_food_index)return true;
+    if(d.costs_band)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
@@ -744,7 +745,51 @@
     out.new_creative_school=cleanNewCreativeSchool(d.new_creative_school);
     out.wish_i_knew=cleanWishIKnew(d.wish_i_knew);
     out.k_food_index=cleanKFoodIndex(d.k_food_index);
+    out.costs_band=cleanCostsBand(d.costs_band);
     return out;
+  }
+  // Optional marching-band note inside Costs. Schools without costs_band behave as before.
+  function cleanCostsBand(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var card=null, popup=[], i, x, lab, txt, c;
+    c=raw.card;
+    if(c&&typeof c==='object'){
+      txt=str(c.text)||str(c.value);
+      if(txt)card={label:str(c.label)||'Band', text:txt};
+    }
+    if(Array.isArray(raw.popup)){
+      for(i=0;i<raw.popup.length&&popup.length<12;i++){
+        x=raw.popup[i];
+        if(!x||typeof x!=='object')continue;
+        lab=str(x.label); txt=str(x.text)||str(x.value);
+        if(!lab&&!txt)continue;
+        popup.push({label:lab, text:txt});
+      }
+    }
+    if(!card&&!popup.length)return null;
+    return {card:card, popup:popup};
+  }
+  // Costs card rows: reserve the final slot for costs_band.card so Band is never trimmed away.
+  function costsCardRows(d, listN){
+    var base=(d&&d.costs&&d.costs.length)?d.costs.slice():[], band=null, lim;
+    if(d&&d.costs_band&&d.costs_band.card)band=d.costs_band.card;
+    if(!band)return trimRows(base, listN);
+    lim=listN==null?base.length+1:listN;
+    if(lim<=0)return [band];
+    if(base.length+1<=lim)return base.concat([band]);
+    return trimRows(base, Math.max(0, lim-1)).concat([band]);
+  }
+  // Costs popup: append costs_band.popup after costs; fall back to card only when popup empty.
+  function costsPopupRows(d){
+    var rows=(d&&d.costs&&d.costs.length)?d.costs.slice():[], band, i;
+    if(!d||!d.costs_band)return rows;
+    band=d.costs_band;
+    if(band.popup&&band.popup.length){
+      for(i=0;i<band.popup.length;i++)rows.push(band.popup[i]);
+    }else if(band.card){
+      rows.push(band.card);
+    }
+    return rows;
   }
   // Optional K-Food Index card/popup. card_rows/popup_items normalize value↔text to {label,text}.
   function cleanKFoodIndex(raw){
@@ -1515,7 +1560,7 @@
     }else if(key==='housing'){
       title='Housing'; body=dLines(d.housing||[]);
     }else if(key==='costs'){
-      title='Costs'; body=dLines(d.costs||[]);
+      title='Costs'; body=dLines(costsPopupRows(d));
     }else if(key==='deadlines'){
       title='Deadlines'; body=dLines(d.deadlines||[]);
     }else if(key==='marist'){
@@ -1749,7 +1794,9 @@
     if(d.k_food_index&&d.k_food_index.card_rows&&d.k_food_index.card_rows.length){
       secs.push(dSec('',esc(d.k_food_index.title||'K-FOOD INDEX'),kFoodCardHtml(d.k_food_index),'k_food_index'));
     }
-    if(d.costs&&d.costs.length)secs.push(dSec('','Costs',dLines(trimRows(d.costs, listN)),'costs'));
+    if((d.costs&&d.costs.length)||(d.costs_band&&d.costs_band.card)){
+      secs.push(dSec('','Costs',dLines(costsCardRows(d, listN)),'costs'));
+    }
     if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN)),'deadlines'));
     if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN));
     if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>','take'));
