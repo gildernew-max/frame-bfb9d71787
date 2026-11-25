@@ -1041,16 +1041,58 @@
     return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes, rows:rows};
   }
   function cleanCocoPoint(raw, gpaScale, sourceId){
-    var range, g, s, lab;
+    var range, g, s, lab, note;
     if(!raw||typeof raw!=='object')return null;
     range=sgGpaRange(gpaScale, sourceId);
-    g=sgNum(raw.gpa,range.lo,range.hi); s=sgNum(raw.sat,400,1600); lab=str(raw.label)||'CoCo';
+    // gpa_scale 4 / U.S. News: accept 0-4.0. Marist weighted stays 40-120.
+    // Root coco_point (no scale): accept either so 4.0 charts can draw the star.
+    if(range.four||gpaScale===4||gpaScale===4.0||sourceId==='usnews'){
+      g=sgNum(raw.gpa,0,4);
+    }else if(gpaScale!=null){
+      g=sgNum(raw.gpa,range.lo,range.hi);
+    }else{
+      g=sgNum(raw.gpa,0,4);
+      if(g==null)g=sgNum(raw.gpa,40,120);
+    }
+    s=sgNum(raw.sat,400,1600);
+    lab=str(raw.label)||'CoCo';
+    note=str(raw.note);
+    if(lab.length>48)lab=lab.slice(0,48);
+    if(note.length>64)note=note.slice(0,64);
     if(g==null||s==null)return null;
-    if(lab.length>16)lab=lab.slice(0,16);
-    return {gpa:g, sat:s, label:lab};
+    return {gpa:g, sat:s, label:lab, note:note};
   }
   function cocoPoint(){
     return state.data&&state.data.coco_point?state.data.coco_point:null;
+  }
+  // Plot/legend CoCo only when the point's GPA matches this chart's scale.
+  function cocoForChart(sg){
+    var c=cocoPoint();
+    if(!c||c.gpa==null||c.sat==null)return null;
+    if(sgIsFourScale(sg)){
+      if(c.gpa>=0&&c.gpa<=4)return c;
+      return null;
+    }
+    // Marist charts unchanged: ignore 4.0-scale points.
+    if(c.gpa>4&&c.gpa<=120)return c;
+    return null;
+  }
+  function cocoLegendText(c){
+    var lab, note;
+    if(!c)return '';
+    lab=c.label||'CoCo'; note=c.note||'';
+    if(note){
+      if(lab&&note.indexOf(lab)===0)return note;
+      return lab+': '+note;
+    }
+    return lab;
+  }
+  function cocoStarLabel(c){
+    var lab;
+    if(!c)return 'CoCo';
+    lab=c.label||'CoCo';
+    if(lab.length>10)return 'CoCo';
+    return lab;
   }
   function sgBandHasCoco(band, coco){
     var g, p;
@@ -1109,8 +1151,8 @@
   }
   function sgPlotSvg(sg, W, H, fs, rad){
     var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9,
-      // CoCo's 4.0 GPA is unknown: never plot the star on national 4.0 charts.
-      coco=sgIsFourScale(sg)?null:cocoPoint(),
+      // Draw CoCo when coco_point GPA matches this chart (0-4 on gpa_scale 4; Marist weighted otherwise).
+      coco=cocoForChart(sg),
       L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
       R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
       h, byO={}, lab, sw, anyEd, tickN;
@@ -1208,7 +1250,7 @@
       y=Y(sg.avg.sat);
       h+='<line x1="'+L+'" y1="'+f1(y)+'" x2="'+(L+pw)+'" y2="'+f1(y)+'" stroke="#F5F1E8" stroke-width="'+Math.max(3,Math.round(fs/10))+'" stroke-dasharray="14 10"/>';
     }
-    if(coco)h+=sgCocoStar(X(coco.gpa),Y(coco.sat),fs,coco.label||'CoCo',L,T,pw,ph,f1);
+    if(coco)h+=sgCocoStar(X(coco.gpa),Y(coco.sat),fs,cocoStarLabel(coco),L,T,pw,ph,f1);
     return h+'</svg>';
   }
   function sgStarPath(cx, cy, r){
@@ -1246,7 +1288,7 @@
     if(other>0)h+=key(SG_COL.U,'Other',other);
     // National U.S. News charts have empty rounds: hide the ED-ring legend.
     if(!sgIsUsNews(sg))h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
-    if(cocoPoint()&&!sgIsFourScale(sg))h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
+    if(cocoForChart(sg))h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoLegendText(cocoForChart(sg)))+'</span>';
     return '<div class="sg-legend">'+h+'</div>';
   }
   function sgNoteHtml(sg){
@@ -1337,7 +1379,7 @@
     return h;
   }
   function sgRowsHtml(t, sg){
-    var rows, h, i, r, coco=sgIsFourScale(sg)?null:cocoPoint(), inserted=false, lab, satTxt, key, dir, dash, who;
+    var rows, h, i, r, coco=cocoForChart(sg), inserted=false, lab, satTxt, key, dir, dash, who;
     dash=function(v){return v==null||v===''?'-':String(v);};
     if(!t||!t.rows||!t.rows.length)return '';
     key=state.sgSortKey==='sat'?'sat':'gpa';
