@@ -336,10 +336,17 @@
   .d-pop-body .kfood-footer{margin-top:16px;padding-top:4px}
   /* Marist scattergram card + popup */
   .d-sec.sg .sg-svg{display:block;width:100%;height:auto}
-  .sg-legend{display:flex;flex-wrap:wrap;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink)}
+  .sg-legend{display:flex;flex-wrap:wrap;align-items:flex-start;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink);min-width:0;max-width:100%}
   .sg-key{white-space:nowrap}
-  .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em}
+  .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em;flex:none}
   .sg-key-ed i{background:transparent;border:.18em solid #CFCAC0;box-sizing:border-box}
+  /* Long CoCo notes: own block under color keys, wrap in card width, never cover the plot. */
+  .sg-coco-note{display:block;margin:4px 0 0;padding:0;font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);
+    white-space:normal;overflow-wrap:break-word;word-break:normal;min-width:0;max-width:100%;box-sizing:border-box}
+  .sg-coco-note i{display:inline-block;width:1em;height:1em;vertical-align:-.1em;margin-right:.35em;flex:none;
+    background:none;border-radius:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E6B84C' stroke='%230B0C0E' stroke-width='1.6' stroke-linejoin='round' d='M12 2.4l2.7 6.4 6.9.6-5.2 4.6 1.6 6.7L12 16.9 5.99 20.7l1.61-6.7L2.4 9.4l6.9-.6z'/%3E%3C/svg%3E");
+    background-size:contain;background-repeat:no-repeat}
   .sg-key b,.sg-facts b{font-weight:700}
   .sg-facts{font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);margin-top:2px}
   .sg-foot{font-size:calc(var(--lab-size,20px) * .85);line-height:1.3;color:var(--muted);margin-top:4px}
@@ -353,7 +360,8 @@
   .d-pop-body .sg-pop-top{display:flex;gap:48px;align-items:flex-start}
   .d-pop-body .sg-pop-top .sg-svg{flex:none;width:2000px;height:auto;display:block}
   .d-pop-body .sg-pop-side{flex:1;min-width:0}
-  .d-pop-body .sg-legend{font-size:44px;gap:6px 32px;margin:0 0 18px;color:var(--pop-ink)}
+  .d-pop-body .sg-legend{font-size:44px;gap:6px 32px;margin:0 0 18px;color:var(--pop-ink);min-width:0}
+  .d-pop-body .sg-coco-note{font-size:40px;line-height:1.35;margin-top:10px;color:var(--pop-ink)}
   .d-pop-body .sg-facts{font-size:44px;line-height:1.3;margin-top:14px;color:var(--pop-ink)}
   .d-pop-body .sg-foot{font-size:34px;margin-top:14px;color:rgba(245,241,232,.6)}
   .d-pop-body .sg-table{font-size:46px;margin-top:28px;max-width:2000px;color:var(--pop-ink)}
@@ -362,9 +370,6 @@
   .d-pop-body .sg-table thead th{color:rgba(245,241,232,.65)}
   .sg-table tr.sg-coco th,.sg-table tr.sg-coco td{background:rgba(230,184,76,.2);box-shadow:inset 0 0 0 2px rgba(230,184,76,.7)}
   .sg-coco-tag{margin-left:.4em;color:#E6B84C;font-weight:700;letter-spacing:.04em}
-  .sg-key-coco i{background:none;width:1em;height:1em;vertical-align:-.1em;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E6B84C' stroke='%230B0C0E' stroke-width='1.6' stroke-linejoin='round' d='M12 2.4l2.7 6.4 6.9.6-5.2 4.6 1.6 6.7L12 16.9 5.99 20.7l1.61-6.7L2.4 9.4l6.9-.6z'/%3E%3C/svg%3E");
-    background-size:contain;background-repeat:no-repeat;border-radius:0}
   .d-pop-body .sg-rows{width:100%;border-collapse:separate;border-spacing:0;margin-top:36px;font-size:40px;color:var(--pop-ink)}
   .d-pop-body .sg-rows th,.d-pop-body .sg-rows td{padding:10px 14px;border-bottom:1px solid var(--rule);text-align:center;font-weight:400;color:var(--pop-ink);white-space:nowrap}
   .d-pop-body .sg-rows thead th{position:-webkit-sticky;position:sticky;top:0;z-index:1;background:#0E1014;color:rgba(245,241,232,.7);font-weight:700;letter-spacing:.04em;padding-top:14px;padding-bottom:14px;white-space:normal;box-shadow:0 2px 0 #0E1014,0 3px 0 rgba(255,255,255,.12)}
@@ -1058,7 +1063,7 @@
     lab=str(raw.label)||'CoCo';
     note=str(raw.note);
     if(lab.length>48)lab=lab.slice(0,48);
-    if(note.length>64)note=note.slice(0,64);
+    if(note.length>160)note=note.slice(0,160);
     if(g==null||s==null)return null;
     return {gpa:g, sat:s, label:lab, note:note};
   }
@@ -1282,7 +1287,7 @@
     return h;
   }
   function sgLegendHtml(sg){
-    var c=sg.counts, h='', other;
+    var c=sg.counts, h='', other, coco;
     if(!c)return '';
     function key(col,label,n){return '<span class="sg-key"><i style="background:'+col+'"></i>'+esc(label)+' <b>'+n+'</b></span>';}
     h+=key(SG_COL.A,'Accepted',c.acc);
@@ -1292,8 +1297,11 @@
     if(other>0)h+=key(SG_COL.U,'Other',other);
     // National U.S. News charts have empty rounds: hide the ED-ring legend.
     if(!sgIsUsNews(sg))h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
-    if(cocoForChart(sg))h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoLegendText(cocoForChart(sg)))+'</span>';
-    return '<div class="sg-legend">'+h+'</div>';
+    h='<div class="sg-legend">'+h+'</div>';
+    // CoCo note is its own wrapping block under the color keys (never overlaps the plot).
+    coco=cocoForChart(sg);
+    if(coco)h+='<div class="sg-coco-note"><i></i>'+esc(cocoLegendText(coco))+'</div>';
+    return h;
   }
   function sgNoteHtml(sg){
     if(!sg||!sg.note)return '';
