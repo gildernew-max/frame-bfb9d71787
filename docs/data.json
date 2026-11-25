@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-25T07:30:11.703Z",
+ "generatedAt": "2026-11-25T07:45:18.206Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -473,6 +473,13 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "AI debt worries grow as Nvidia rebound masks Big Tech spending squeeze",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/25/ai-debt-big-tech-spending-nvidia.html",
+    "pub": "2026-11-25T06:29:46.000Z",
+    "sum": "Big Tech could find it increasingly tough to secure funding from debt markets critical to the AI build-out, as lenders become pickier over corporate bonds."
+   },
+   {
     "hd": "Crypto talent will return ‘when AI implodes,’ Arthur Hayes says",
     "src": "CNBC",
     "url": "https://www.cnbc.com/2026/11/25/talents-crypto-ai-investment.html",
@@ -669,13 +676,6 @@
     "sum": "The company's overall sales more than doubled on an annual basis during the third quarter, driven by AI server demand."
    },
    {
-    "hd": "AI debt markets shudder as Nvidia's top 'banker' returns",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-ai-credit-markets.html",
-    "pub": "2026-11-24T21:52:05.000Z",
-    "sum": "Fears about some companies' AI debt ramped higher Tuesday, a day after Jensen Huang's return as Nvidia CEO."
-   },
-   {
     "hd": "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy",
     "src": "TechCrunch",
     "url": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
@@ -690,18 +690,18 @@
    "Ars Technica",
    "CNBC",
    "The Information",
-   "Wired",
-   "Google News",
-   "Reuters",
-   "Bloomberg",
-   "Axios"
+   "Wired"
   ],
   "feedErrors": [
-   "VentureBeat: HTTP 429 from venturebeat.com"
+   "VentureBeat: HTTP 429 from venturebeat.com",
+   "Google News: HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "Bloomberg (Google News): HTTP 503 from news.google.com",
+   "Axios (Google News): HTTP 503 from news.google.com"
   ],
-  "asOf": "2026-11-25T06:45:14.767Z",
-  "lastAttempt": "2026-11-25T06:45:14.767Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired",
   "lastError": null
  },
  "stocks": {
@@ -7488,9 +7488,13 @@
   "closeFetchedFor": "2026-11-24"
  },
  "lastRun": {
-  "at": "2026-11-25T07:30:11.703Z",
+  "at": "2026-11-25T07:45:18.206Z",
   "ran": [
    "alerts",
+   "news",
+   "stockNews",
+   "worldNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13842,62 +13846,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-25T07:30:11.703Z",
-  "lastAttempt": "2026-11-25T07:30:11.703Z",
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7147.5,
-    "lastTime": 1795591209,
+    "last": 7121.75,
+    "lastTime": 1795592255,
     "settle": 7220.25,
     "settleDate": "2026-11-24",
     "indexClose": 7201.09,
-    "change": -72.75,
-    "changePct": -1.0075828399293654,
-    "expectedOpen": 7128.533052872131,
+    "change": -98.5,
+    "changePct": -1.3642186904885565,
+    "expectedOpen": 7102.851384301098,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 25801.25,
-    "lastTime": 1795591210,
+    "last": 25644.25,
+    "lastTime": 1795592255,
     "settle": 26284,
     "settleDate": "2026-11-24",
     "indexClose": 23733.535,
-    "change": -482.75,
-    "changePct": -1.8366686957845078,
-    "expectedOpen": 23297.628592251942,
+    "change": -639.75,
+    "changePct": -2.433990260234363,
+    "expectedOpen": 23155.863069690688,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 49825,
-    "lastTime": 1795591201,
+    "last": 49702,
+    "lastTime": 1795592255,
     "settle": 50077,
     "settleDate": "2026-11-24",
     "indexClose": 50018.7,
-    "change": -252,
-    "changePct": -0.5032250334484893,
-    "expectedOpen": 49766.9933801945,
+    "change": -375,
+    "changePct": -0.7488467759650139,
+    "expectedOpen": 49644.13657767038,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2671.2,
-    "lastTime": 1795591211,
+    "last": 2663.5,
+    "lastTime": 1795592255,
     "settle": 2689.800048828125,
     "settleDate": "2026-11-24",
     "indexClose": null,
-    "change": -18.600048828125182,
-    "changePct": -0.6915030296110201,
+    "change": -26.300048828125,
+    "changePct": -0.9777696613390738,
     "expectedOpen": null,
     "valid": true
    }
@@ -14359,8 +14363,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-25T07:30:11.703Z",
-  "lastAttempt": "2026-11-25T07:30:11.703Z",
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15003,30 +15007,33 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-25T07:30:11.703Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
-    "src": "Reuters",
-    "hd": "EU plans €50 billion tech fund to challenge US and China, FT reports",
-    "pub": "2026-11-25T05:19:00.000Z"
+    "src": "BBC News",
+    "hd": "Moment Chinese space mission lifts off with first Pakistan astronaut aboard",
+    "pub": "2026-11-25T03:28:37.000Z"
    },
    {
-    "src": "Al Jazeera",
-    "hd": "Putin says retaliation ‘inevitable’ after Ukraine hit Russian oil plants",
-    "pub": "2026-11-25T05:05:46.000Z"
+    "src": "BBC News",
+    "hd": "Clashing political visions reflect a divided Spain ahead of election",
+    "pub": "2026-11-25T00:58:34.000Z"
    },
    {
-    "src": "BBC",
-    "hd": "Shenzhou 24: Pakistan's first astronaut goes to space aboard Chinese rocket",
-    "pub": "2026-11-25T03:46:38.000Z"
+    "src": "BBC News",
+    "hd": "Russia's own figures show almost 500,000 deaths in war in Ukraine",
+    "pub": "2026-11-25T00:56:51.000Z"
    }
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-25T06:45:14.767Z",
-  "lastAttempt": "2026-11-25T06:45:14.767Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "Reuters: HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "lastError": null
  },
  "movers": {
@@ -15262,6 +15269,41 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Tech firms back in crosshairs as Huang rally reverses",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
+      "pub": "2026-11-25T07:31:13.000Z",
+      "sum": "Technology firms once again tumbled Wednesday as the euphoria that greeted the return of Nvidia's Jensen Huang was washed away by the now-common panic and uncertainty over the AI boom.He said \"professional investors (were) apparently using the opening provided by the Jensen Huang comeback to unload technology exposure rather than rebuild it\"."
+     },
+     {
+      "hd": "SK hynix (NasdaqGS:SKHY) Sell Off Puts Undervalued Narrative Back In Focus",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/sk-hynix-nasdaqgs-skhy-sell-070941477.html?.tsrc=rss",
+      "pub": "2026-11-25T07:09:41.000Z",
+      "sum": "SK hynix (NasdaqGS:SKHY) is back in focus after Nvidia’s board reversed course and reinstated Jensen Huang as CEO, a decision that sparked sharp moves across AI linked memory suppliers. SK hynix has been pulled into the broader AI sell off, with the share price down 9.90% over the last day and 18.27% over 30 days. This has contributed to a 33.35% year to date share price decline that signals fading momentum despite recent rallies around buyback plans and Nvidia linked headlines. Spot..."
+     },
+     {
+      "hd": "Nvidia’s spying scandal is backfiring on China",
+      "src": "Yahoo Finance",
+      "url": "https://uk.finance.yahoo.com/news/nvidia-spying-scandal-backfiring-china-070000166.html?.tsrc=rss",
+      "pub": "2026-11-25T07:00:00.000Z",
+      "sum": "The resurrection of Jensen Huang, the Nvidia boss, has restored some calm to Silicon Valley and Wall Street. But Beijing’s worries may be only just beginning."
+     },
+     {
+      "hd": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+      "pub": "2026-11-25T06:56:18.000Z",
+      "sum": "Jensen Huang’s return as Nvidia CEO, the continued slide in Anthropic shares, and Democrats’ midterm election win have each added a new dimension to the AI trade."
+     },
+     {
+      "hd": "NVDA Eyes Worst Month Since 2022 — Dip Buyers Are ‘Still Fighting To Break Even’ After Huang’s Return, Analyst Says",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvda-dip-buyers-still-fighting-break-even-after-huang-return-analyst-says/cNbHEckR9lm?.tsrc=rss",
+      "pub": "2026-11-25T06:52:33.000Z",
+      "sum": "Last week’s buyers fared better. At an average entry of $148.40, they went from a 15% loss on Friday to an 11% gain on Monday, then a 5% gain on Tuesday."
+     },
+     {
       "hd": "Jensen Huang is worth $1T to the value of Nvidia, Dan Ives says; raises price target to $250",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -15304,20 +15346,6 @@
       "sum": "Nvidia's stronger revenue outlook and support from major customers and suppliers, including TSMC, reinforce confidence in the underlying business."
      },
      {
-      "hd": "The Semiconductor ETF Kept Falling After Nvidia Raised Its Forecast. Time to Buy?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f02cb1ef3345033625acdb73e43df61709ca2f371ad1c9d85dc6282eec435b48",
-      "pub": "2026-11-25T04:57:02.000Z",
-      "sum": "The chip fund kept falling after its top holding raised its sales forecast."
-     },
-     {
-      "hd": "COHR Stock Swings After Nvidia-Led AI Rally: $15M Insider Buy Draws Attention",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e0500c32fdfaebd4176969edc06743f868ead5d6c1243cf48a90766d4e792d6c",
-      "pub": "2026-11-25T04:40:37.000Z",
-      "sum": "AI stock swings, growing demand for infrastructure keep Coherent in investors' spotlight."
-     },
-     {
       "hd": "Burry says Nvidia's 'short thesis' still valid; adds to JD.com, Tencent, BYD",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -15325,32 +15353,11 @@
       "sum": ""
      },
      {
-      "hd": "Jim Cramer resets Nvidia stock target as Jensen Huang returns as CEO",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f26afa7b6f2ba407fd5f2d192fa96c2bdbb5e0664b2d61764ff4b8d9d1947bf8",
-      "pub": "2026-11-25T04:33:00.000Z",
-      "sum": "Wall Street is missing a crucial valuation detail."
-     },
-     {
-      "hd": "Le Monde details suspected Nvidia chip diversion network through Southeast Asia",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=41e4ef12a256616f137b9674a036894a4f317516900f7e589c5a1f8ff2eaf795",
-      "pub": "2026-11-25T04:22:39.000Z",
-      "sum": "Investing.com -- A network of companies and intermediaries may have helped move restricted Nvidia AI servers through Singapore and Malaysia and potentially into China, according to a new investigation by French newspaper Le Monde."
-     },
-     {
       "hd": "Trump says a pardon for Jensen Huang was \"always an option\": NY Post",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-25T04:17:11.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Dow Jones Futures Fall; Trump Says 'Not Too Late' For U.S. To Take Nvidia Stake",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3B-trump.html?.tsrc=rss",
-      "pub": "2026-11-25T04:04:33.000Z",
-      "sum": "Futures fell after AI stocks tumbled but medicals, retailers and more rose. President Trump mused about an Nvidia stake. Fed inflation data looms."
      },
      {
       "hd": "Jensen Huang’s Comeback Collides With Furious Lawmakers Demanding Answers",
@@ -15439,11 +15446,13 @@
     ],
     "fetched": {
      "Finnhub": 153,
-     "Yahoo": 6,
-     "Google News": 88,
+     "Yahoo": 7,
      "Nasdaq": 10,
      "Seeking Alpha": 25
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "TSLA": {
     "items": [
@@ -15626,13 +15635,22 @@
     "fetched": {
      "Finnhub": 170,
      "Yahoo": 17,
-     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=0ac599c6404e881c0a4503e8042450bb20ce30c035d91e8b872505b947450078",
+      "pub": "2026-11-25T06:56:18.000Z",
+      "sum": "Jensen Huang’s return as Nvidia CEO, the continued slide in Anthropic shares, and Democrats’ midterm election win have each added a new dimension to the AI trade."
+     },
      {
       "hd": "SpaceX, Anthropic IPOs Shut Out Retail Investors, Says Coinbase CEO — Brian Armstrong Resumes Buying Back COIN Shares",
       "src": "Yahoo Finance",
@@ -15681,13 +15699,6 @@
       "url": "https://finnhub.io/api/news?id=436ac2151e04a0db77e45ce0c02297f4d62b4eebe07c066ee6892b22072531c3",
       "pub": "2026-11-24T22:12:39.000Z",
       "sum": "Tesla and SpaceX have both formed special committees to weigh a merger, and both sit on Bitcoin bought at very different times. Combine the stashes and a single board could hold a decision that rattles a market already under pressure."
-     },
-     {
-      "hd": "RBC Expects SpaceX-Tesla Deal Announcement By Early 2027 — Notes TSLA Shareholders May Accept Combination Without Large Premium",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9ba4c2c8bc8e2489925f42ad91ee66c967dda6281a483601d516417f328bfc0f",
-      "pub": "2026-11-24T21:55:33.000Z",
-      "sum": "RBC Capital Markets analyst Ken Herbert said on Tuesday that he expects a deal announcement earlier than previously expected."
      },
      {
       "hd": "SpaceX, Tesla appoint five directors to negotiate on possible deal - FT",
@@ -15810,15 +15821,24 @@
      }
     ],
     "fetched": {
-     "Finnhub": 167,
+     "Finnhub": 166,
      "Yahoo": 12,
-     "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 15
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "ANT": {
     "items": [
+     {
+      "hd": "AI Concerns Resurface? ORCL, GOOGL, SPCX, CRWV Credit Default Swap Spreads Hit Records As NVDA, ANT Tumble",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/ai-concerns-resurface-orcl-googl-spcx-crwv-credit-default-swap-spreads-hit-records-as-nvda-ant-tumble/cNbHEEAR9lZ?.tsrc=rss",
+      "pub": "2026-11-25T06:56:18.000Z",
+      "sum": "Jensen Huang’s return as Nvidia CEO, the continued slide in Anthropic shares, and Democrats’ midterm election win have each added a new dimension to the AI trade."
+     },
      {
       "hd": "SpaceX, Anthropic IPOs Shut Out Retail Investors, Says Coinbase CEO — Brian Armstrong Resumes Buying Back COIN Shares",
       "src": "Yahoo Finance",
@@ -15888,13 +15908,6 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNU0xZQzZCR0pyRUpraGZFLWVNWk5TOEc0R1pTNnZQNXBKWk9GRFBBTTFpQnhIUGFyWTZRVG00ZmVTU2RDZTloRFc2S000MWNFN2xCN0JHTDdfSV9NM0NFWEdjT3BWWHR3VnM3elJPc0dobnRMdnZ1UF9jRlA2VU50ak1TYkd2Q1JVbi1sc1lyQnRvai10NlBFV3FmWFp3eFVIclk0MWdn?oc=5",
       "pub": "2026-11-24T23:04:09.000Z",
       "sum": ""
-     },
-     {
-      "hd": "AI Pullback Raises the Cost of Data Center Financing",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=27c37b2368fd40513b486ca9a9da1e412b7ce57ff542652c6e046a8679bef209",
-      "pub": "2026-11-24T22:41:16.000Z",
-      "sum": "The recent pullback in AI stocks is spilling into credit markets, making some data center financing more expensive even as demand for computing power remains strong. MUFG Americas CFO Mark Thumser says lenders are becoming more selective and investors are demanding wider spreads and better terms. He also argues the massive AI infrastructure buildout remains a long-term, transformational trend. He joins Bloomberg Businessweek Daily to discuss financing demand following Anthropic's IPO, the outlook for global credit markets, and growing public resistance to data center development."
      },
      {
       "hd": "What Comes Next After Anthropic’s Historic IPO",
@@ -15997,19 +16010,35 @@
     ],
     "fetched": {
      "Finnhub": 163,
-     "Yahoo": 9,
-     "Google News": 66,
-     "Nasdaq": 12,
+     "Yahoo": 8,
+     "Nasdaq": 11,
      "Seeking Alpha": 23
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    }
   },
-  "asOf": "2026-11-25T06:45:14.767Z",
-  "lastAttempt": "2026-11-25T06:45:14.767Z",
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iraq’s Prime Minister Aims to Wrest More Power From Kurdistan Region",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/24/world/middleeast/iraq-prime-minister-kurdistan-control.html",
+    "pub": "2026-11-25T07:36:48.000Z",
+    "sum": "Ali al-Zaidi, who just scored a symbolic victory against a powerful Iran-backed militia, has now moved to assert control over Kurdish border crossings and oil resources."
+   },
+   {
+    "hd": "North Korea Kicks Out Swiss Diplomats in Spat Linked to Ukraine War",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/25/world/asia/north-korea-switzerland-diplomats.html",
+    "pub": "2026-11-25T07:29:43.000Z",
+    "sum": "The move followed Switzerland’s decision to impose sanctions on an international youth camp in North Korea, which is accused of hosting Ukrainian children for indoctrination."
+   },
    {
     "hd": "Solomon Islands Enters Security Treaty With Australia, in a Blow to China",
     "src": "The New York Times",
@@ -16089,8 +16118,8 @@
    },
    {
     "hd": "Russia's own figures show almost 500,000 deaths in war in Ukraine",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE52ekxuU3VuendQQVpId1BlX21DeXpnMW9teFNfV1A3Nng0ODhEblNKSmRVd0dHcjFpY2xfVjh5cVg2bnd5LTRaaWNQQlF3bGVDbE9rUGw5My1lSE0?oc=5",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cmx27g533zwyo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-25T00:56:51.000Z",
     "sum": "Leaked data reveal how the full-scale invasion of Ukraine has fundamentally changed mortality patterns in Russia."
    },
@@ -16103,17 +16132,10 @@
    },
    {
     "hd": "My family died in Ukraine. My mum blamed Zelensky's troops - the truth is complicated",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8zZU8wbUhnVkxIc1ZwTTdnM1BmNUFybWJTcDhCQ1BZZEU5Njhtek52cVdnN0hsRllhTlJqeVloeFBzbk9pWGItYW1uT2gwNVFsX3RrWHR1QlVUYUU?oc=5",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cw24e17v9e51o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-25T00:54:13.000Z",
     "sum": "BBC journalist Anastasiya Gribanova investigates who killed her father and grandparents in the war."
-   },
-   {
-    "hd": "Iraq’s Prime Minister Aims to Wrest More Power from Kurdistan Region",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/24/world/middleeast/iraq-prime-minister-kurdistan-control.html",
-    "pub": "2026-11-25T00:38:35.000Z",
-    "sum": "Ali al-Zaidi, who just scored a symbolic victory against a powerful Iran-backed militia, has now moved to assert control over Kurdish border crossings and oil resources."
    },
    {
     "hd": "Armed men take hostages at supermarket in Cartagena, Colombia",
@@ -16145,8 +16167,8 @@
    },
    {
     "hd": "These North Koreans say they were spied on, beaten and jailed for being Christian",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9iME9xdXFIWk1GQTZEMW15Z1pjWTVXeG9rVFF0b3lOdE1uQW1NT0t1U0lVbDF0bjhjWF85VVhhLWpZZW9zU2RyNktaeVUxbnc3ejNUTEJCR3Rfa2c?oc=5",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cqgkv8kp7145o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-24T23:03:59.000Z",
     "sum": "A new report has testimonies from hundreds of defectors who say they were persecuted because of their faith."
    },
@@ -16212,20 +16234,9 @@
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaTByYzdJY0NFeVJ5RTRTdDU3YjFpUVBGcEk0VnRMcm1jbkljS2h6UUozVW9uRGVBSEk0dVpSNEhLOVhQZktUUXNxNlNiUjV2MTVSMWJFLUtlTENWOV9uMzNOR1paeEttdnVIZldrNy1TTVVoNzV6UGlQYjBfQ2YxME5TRkxCSTBla1pSdTJicGFyY2Q4NlVUSVJiZ3ZMTnNq0gGmAUFVX3lxTE5KQjFVMVJWdloxcWVfZ3lFNnZPX2JZY2VUN2V3b0pNOEhkVGVRa1pCTjRYRk9zVlVHMmY0b3ItMHhHRk04aHNPeGhOcHFYYjR2THhvaGRMWWtfTDYwbUNESzBMajlpQV9GSnBRLXFjbnZ3R3gyMWIwSlB4WGw5cTdvVzQzbkpVUnJ3aV9zQnJSWmswc3hJc3AtQjM3NlktSnFoR0llM2c?oc=5",
     "pub": "2026-11-24T20:56:51.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
-    "pub": "2026-11-24T20:47:29.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16236,9 +16247,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-25T06:45:14.767Z",
-  "lastAttempt": "2026-11-25T06:45:14.767Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-25T07:45:18.206Z",
+  "lastAttempt": "2026-11-25T07:45:18.206Z",
   "lastError": null
  }
 }
