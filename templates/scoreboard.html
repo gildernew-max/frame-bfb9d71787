@@ -417,11 +417,26 @@
   .ai-counselor-lab{margin:0 0 4px;font-size:var(--lab-size,var(--t1));font-weight:500;letter-spacing:.08em;
     text-transform:uppercase;color:var(--dim)}
   .ai-counselor .prose{margin:0;-webkit-line-clamp:8;max-height:calc(8 * 1.3em)}
+  .ai-counselor .why-bullets{gap:6px;margin:0}
+  .ai-counselor .why-bullets li{font-size:var(--line-size,var(--t2));line-height:1.35;overflow-wrap:break-word;
+    word-break:normal;-webkit-line-clamp:unset;max-height:none;overflow:visible}
   .ai-counselor-upd{margin-top:4px;font-size:var(--t1);font-weight:500;letter-spacing:.06em;color:var(--dim)}
   #d-pop .ai-counselor{border-top-color:rgba(255,255,255,.14);margin-top:18px;padding-top:14px}
   #d-pop .ai-counselor-lab{font-size:calc(var(--pop-lab,28px));color:rgba(245,241,232,.75)}
   #d-pop .ai-counselor .prose{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  #d-pop .ai-counselor .why-bullets{gap:12px}
+  #d-pop .ai-counselor .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
+  #d-pop .ai-counselor .why-bullets li::before{width:8px;height:8px;top:.6em;background:var(--accent,var(--focus-ring))}
   #d-pop .ai-counselor-upd{font-size:calc(var(--pop-lab,28px) * 0.85);color:rgba(245,241,232,.65)}
+  /* Marist-now: one row per class with a long major mix — wrap fully, no 3-line clamp. */
+  #detail .d-card[data-ckey="marist_now"] .txt{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;
+    overflow-wrap:break-word;word-break:normal;white-space:normal}
+  #detail .d-card[data-ckey="marist_now"] .lab{-webkit-line-clamp:3;max-height:calc(3 * 1.25em);overflow-wrap:break-word;
+    word-break:break-word}
+  #detail .d-card[data-ckey="marist_now"] .line{align-items:start}
+  .marist-now-note{margin:6px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.35;
+    overflow-wrap:break-word;word-break:normal}
+  .d-pop-body .marist-now-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .sec-h{margin-bottom:4px}
@@ -701,6 +716,7 @@
     if(d.costs_band)return true;
     if(d.marist_scattergram)return true;
     if(d.marist_now&&d.marist_now.length)return true;
+    if(d.counselor_points&&d.counselor_points.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.counselor_take_updated||d.why||d.why_not||d.scattergram_url)return true;
     if(d.test_submit_pct)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
@@ -905,6 +921,8 @@
     ['odds','sticker_price_per_year','counselor_name','counselor_take','why','why_not'].forEach(function(k){out[k]=str(d[k]);});
     // Optional YYYY-MM-DD; ignore anything else so bad data never paints.
     out.counselor_take_updated=(typeof d.counselor_take_updated==='string'&&DATE_RE.test(d.counselor_take_updated))?d.counselor_take_updated:'';
+    // Prefer short bullet points (3-5 typical, hard cap 6) over the prose take when present.
+    out.counselor_points=cleanCounselorPoints(d.counselor_points);
     out.test_submit_pct=cleanTestSubmitPct(d.test_submit_pct);
     out.about=cleanLabeled(d.about);
     out.costs=cleanLabeled(d.costs);
@@ -914,6 +932,7 @@
     // Marist alumni currently on campus: {label: class year, text: name/major}, up to 14.
     out.marist_now=cleanLabeled(d.marist_now, 14);
     out.marist_now_total=(typeof d.marist_now_total==='number'&&isFinite(d.marist_now_total)&&d.marist_now_total>0)?Math.round(d.marist_now_total):0;
+    out.marist_now_note=str(d.marist_now_note);
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
@@ -2515,7 +2534,7 @@
     }else if(key==='alumni'){
       title='Alumni'; body=dLines(d.alumni||[]);
     }else if(key==='marist_now'){
-      title=esc(maristNowTitle(d)); body=dLines(d.marist_now||[]);
+      title=esc(maristNowTitle(d)); body=maristNowBodyHtml(d, d.marist_now||[]);
     }else if(key==='facts'){
       title='Facts'; body=dLines(d.facts||[]);
     }else if(key==='housing'){
@@ -2556,15 +2575,30 @@
     }
     return h+'</div>';
   }
-  // Academics footer: plain escaped prose only (never trust HTML from JSON).
+  // Prefer counselor_points (escaped bullets); fall back to counselor_take prose. Never trust HTML.
+  function cleanCounselorPoints(raw){
+    var out=[], i, t;
+    if(!Array.isArray(raw))return [];
+    for(i=0;i<raw.length&&out.length<6;i++){
+      t=str(raw[i]);
+      if(t)out.push(t);
+    }
+    return out;
+  }
   function aiCounselorHtml(d){
-    var take, upd, h;
+    var take, pts, upd, h, body='', i;
     if(!d)return '';
+    pts=d.counselor_points||[];
     take=str(d.counselor_take);
-    if(!take)return '';
+    if(pts.length){
+      body='<ul class="why-bullets">';
+      for(i=0;i<pts.length;i++)body+='<li>'+esc(pts[i])+'</li>';
+      body+='</ul>';
+    }else if(take){
+      body='<p class="prose">'+esc(take)+'</p>';
+    }else return '';
     h='<div class="ai-counselor">'+
-      '<div class="ai-counselor-lab">AI Admissions Counselor</div>'+
-      '<p class="prose">'+esc(take)+'</p>';
+      '<div class="ai-counselor-lab">AI Admissions Counselor</div>'+body;
     upd=str(d.counselor_take_updated);
     if(upd&&DATE_RE.test(upd)){
       h+='<div class="ai-counselor-upd">Updated '+esc(upd)+'</div>';
@@ -2800,6 +2834,12 @@
     if(n>(d.marist_now&&d.marist_now.length?d.marist_now.length:0))title+=' ('+n+' total)';
     return title;
   }
+  function maristNowBodyHtml(d, rows){
+    var h=dLines(rows||[]), note;
+    note=d&&d.marist_now_note?str(d.marist_now_note):'';
+    if(note)h+='<p class="marist-now-note">'+esc(note)+'</p>';
+    return h;
+  }
   function whyBodyLimited(points, prose, limit){
     if(points&&points.length&&limit!=null&&points.length>limit){
       return whyBody(points.slice(0,limit).concat([{label:'',text:'\u2026'}]), null);
@@ -2852,7 +2892,7 @@
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
     if(d.marist_now&&d.marist_now.length){
-      secs.push(dSec('',esc(maristNowTitle(d)),dLines(trimRows(d.marist_now, listN)),'marist_now'));
+      secs.push(dSec('',esc(maristNowTitle(d)),maristNowBodyHtml(d, trimRows(d.marist_now, listN)),'marist_now'));
     }
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
     if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
