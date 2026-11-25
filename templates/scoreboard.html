@@ -442,6 +442,28 @@
   .marist-now-note{margin:6px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.35;
     overflow-wrap:break-word;word-break:normal}
   .d-pop-body .marist-now-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
+  /* Campus map: TV-readable numbered pins + legend; no anchors (board remote opens the popup). */
+  .cmap{min-width:0;-webkit-user-select:none;user-select:none}
+  .cmap-frame{position:relative;width:100%;border-radius:8px;overflow:hidden;background:#12141A;border:1px solid var(--hair)}
+  .cmap-frame img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;object-position:center;
+    pointer-events:none;-webkit-user-drag:none}
+  .cmap-pin{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;
+    background:var(--accent,var(--gold));color:#0B0C0E;font-size:18px;font-weight:800;letter-spacing:0;
+    display:flex;align-items:center;justify-content:center;border:2px solid #0B0C0E;box-shadow:0 2px 8px rgba(0,0,0,.55);
+    line-height:1;pointer-events:none}
+  .cmap-meta{margin-top:6px;font-size:var(--lab-size,20px);line-height:1.3;color:var(--dim)}
+  .cmap-meta b{font-weight:700;color:var(--ink);margin-right:6px}
+  .cmap-legend{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+  .cmap-legend li{display:flex;align-items:flex-start;gap:10px;font-size:var(--line-size,22px);line-height:1.3;color:var(--ink);
+    overflow-wrap:break-word;word-break:normal}
+  .cmap-legend .n{flex:none;width:1.4em;font-weight:800;color:var(--accent,var(--gold));text-align:right}
+  .d-pop-body .cmap-frame img{max-height:none;width:100%}
+  .d-pop-body .cmap-pin{width:56px;height:56px;font-size:30px;border-width:3px}
+  .d-pop-body .cmap-meta{font-size:var(--pop-lab);margin-top:12px;color:rgba(245,241,232,.65)}
+  .d-pop-body .cmap-meta b{color:var(--pop-ink)}
+  .d-pop-body .cmap-legend{gap:10px;margin-top:14px}
+  .d-pop-body .cmap-legend li{font-size:var(--pop-line);line-height:1.35;color:var(--pop-ink)}
+  .d-pop-body .cmap-legend .n{color:var(--accent,var(--focus-ring));width:1.6em}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .sec-h{margin-bottom:4px}
@@ -721,6 +743,7 @@
     if(d.costs_band)return true;
     if(d.marist_scattergram)return true;
     if(d.marist_now&&d.marist_now.length)return true;
+    if(d.campus_map)return true;
     if(d.counselor_points&&d.counselor_points.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.counselor_take_updated||d.why||d.why_not||d.scattergram_url)return true;
     if(d.test_submit_pct)return true;
@@ -938,6 +961,7 @@
     out.marist_now=cleanLabeled(d.marist_now, 14);
     out.marist_now_total=(typeof d.marist_now_total==='number'&&isFinite(d.marist_now_total)&&d.marist_now_total>0)?Math.round(d.marist_now_total):0;
     out.marist_now_note=str(d.marist_now_note);
+    out.campus_map=cleanCampusMap(d.campus_map);
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
@@ -2616,6 +2640,8 @@
     }else if(key==='k_food_index'){
       title=esc((d.k_food_index&&d.k_food_index.title)||'K-FOOD INDEX');
       body=kFoodPopupBodyHtml(d.k_food_index)||'<p class="prose">\u2014</p>';
+    }else if(key==='campus_map'){
+      title='Campus map'; body=campusMapHtml(d.campus_map, true)||'<p class="prose">\u2014</p>';
     }
     return {titleHtml:'<span>'+title+'</span>', bodyHtml:body||''};
   }
@@ -2631,6 +2657,54 @@
         '<span class="txt">'+richText(x.text, hasLab)+'</span></div>';
     }
     return h+'</div>';
+  }
+  // Campus map card (GT/UGA test): {image:'maps/<file>.png', caption, drive, pins:[{label,x,y}]}.
+  // x/y are 0-1 fractions of the image. Display-only — no links or click handlers inside.
+  function cleanCampusMap(raw){
+    var image, file, caption, drive, pins=[], i, p, lab, x, y;
+    if(!raw||typeof raw!=='object')return null;
+    image=str(raw.image);
+    if(!image||image.indexOf('..')>=0)return null;
+    if(image.indexOf('maps/')===0)file=image.slice(5);
+    else file=image;
+    if(!file||file.indexOf('/')>=0||file.indexOf('\\')>=0)return null;
+    if(!/\.png$/i.test(file))return null;
+    caption=str(raw.caption); drive=str(raw.drive);
+    if(Array.isArray(raw.pins)){
+      for(i=0;i<raw.pins.length&&pins.length<12;i++){
+        p=raw.pins[i];
+        if(!p||typeof p!=='object')continue;
+        lab=str(p.label);
+        x=typeof p.x==='number'&&isFinite(p.x)?p.x:null;
+        y=typeof p.y==='number'&&isFinite(p.y)?p.y:null;
+        if(!lab||x==null||y==null)continue;
+        if(x<0)x=0; if(x>1)x=1; if(y<0)y=0; if(y>1)y=1;
+        pins.push({label:lab, x:x, y:y});
+      }
+    }
+    if(!pins.length)return null;
+    return {image:'maps/'+file, caption:caption, drive:drive, pins:pins};
+  }
+  function campusMapHtml(cm, large){
+    var h, i, pin, pctX, pctY, meta='', leg='';
+    if(!cm||!cm.pins||!cm.pins.length)return '';
+    h='<div class="cmap'+(large?' cmap-lg':'')+'"><div class="cmap-frame">'+
+      '<img src="'+esc(cm.image)+'" alt="" draggable="false">';
+    for(i=0;i<cm.pins.length;i++){
+      pin=cm.pins[i];
+      pctX=(pin.x*100).toFixed(2); pctY=(pin.y*100).toFixed(2);
+      h+='<span class="cmap-pin" style="left:'+pctX+'%;top:'+pctY+'%">'+(i+1)+'</span>';
+    }
+    h+='</div>';
+    if(cm.caption)meta+='<div class="cmap-meta"><b>Campus</b>'+esc(cm.caption)+'</div>';
+    if(cm.drive)meta+='<div class="cmap-meta"><b>Drive</b>'+esc(cm.drive)+'</div>';
+    h+=meta;
+    leg='<ol class="cmap-legend">';
+    for(i=0;i<cm.pins.length;i++){
+      leg+='<li><span class="n">'+(i+1)+'</span><span>'+esc(cm.pins[i].label)+'</span></li>';
+    }
+    leg+='</ol>';
+    return h+leg+'</div>';
   }
   // Prefer counselor_points (escaped bullets); fall back to counselor_take prose. Never trust HTML.
   function cleanCounselorPoints(raw){
@@ -2951,6 +3025,7 @@
     if(d.marist_now&&d.marist_now.length){
       secs.push(dSec('',esc(maristNowTitle(d)),maristNowBodyHtml(d, trimRows(d.marist_now, listN)),'marist_now'));
     }
+    if(d.campus_map)secs.push(dSec('','Campus map',campusMapHtml(d.campus_map, false),'campus_map'));
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
     if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
     // K-Food Index: standalone 4-row card beside Housing/Facts (multi-column packs into open room).
