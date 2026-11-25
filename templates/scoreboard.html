@@ -408,6 +408,16 @@
   #detail .line{gap:14px;grid-template-columns:minmax(120px,44%) minmax(0,1fr)}
   .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.3;font-weight:400;color:var(--ink);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;max-height:calc(5 * 1.3em)}
+  /* AI Admissions Counselor: end of Academics; couch-readable, same type scale. */
+  .ai-counselor{margin-top:10px;padding-top:8px;border-top:1px solid var(--rule);min-width:0}
+  .ai-counselor-lab{margin:0 0 4px;font-size:var(--lab-size,var(--t1));font-weight:500;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--dim)}
+  .ai-counselor .prose{margin:0;-webkit-line-clamp:8;max-height:calc(8 * 1.3em)}
+  .ai-counselor-upd{margin-top:4px;font-size:var(--t1);font-weight:500;letter-spacing:.06em;color:var(--dim)}
+  #d-pop .ai-counselor{border-top-color:rgba(255,255,255,.14);margin-top:18px;padding-top:14px}
+  #d-pop .ai-counselor-lab{font-size:calc(var(--pop-lab,28px));color:rgba(245,241,232,.75)}
+  #d-pop .ai-counselor .prose{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  #d-pop .ai-counselor-upd{font-size:calc(var(--pop-lab,28px) * 0.85);color:rgba(245,241,232,.65)}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .sec-h{margin-bottom:4px}
@@ -874,6 +884,8 @@
       out.history.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0;});
     }
     ['odds','sticker_price_per_year','counselor_name','counselor_take','why','why_not'].forEach(function(k){out[k]=str(d[k]);});
+    // Optional YYYY-MM-DD; ignore anything else so bad data never paints.
+    out.counselor_take_updated=(typeof d.counselor_take_updated==='string'&&DATE_RE.test(d.counselor_take_updated))?d.counselor_take_updated:'';
     out.about=cleanLabeled(d.about);
     out.costs=cleanLabeled(d.costs);
     out.deadlines=cleanLabeled(d.deadlines);
@@ -2358,7 +2370,7 @@
       title='Academics';
       acad=(d.academics&&d.academics.length)?d.academics.slice():[];
       if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-      body=dLines(acad);
+      body=dLines(acad)+aiCounselorHtml(d);
     }else if(key==='scattergram'){
       title='Marist scattergram'; body=sgPopupHtml(d.marist_scattergram);
     }else if(key==='internships'){
@@ -2402,6 +2414,21 @@
       // Labeled Academics/etc: .lab is the only accent lead — never accentLeadHtml on value.
       h+='<div class="'+cls+'">'+(hasLab?'<span class="lab">'+esc(x.label)+'</span>':'')+
         '<span class="txt">'+richText(x.text, hasLab)+'</span></div>';
+    }
+    return h+'</div>';
+  }
+  // Academics footer: plain escaped prose only (never trust HTML from JSON).
+  function aiCounselorHtml(d){
+    var take, upd, h;
+    if(!d)return '';
+    take=str(d.counselor_take);
+    if(!take)return '';
+    h='<div class="ai-counselor">'+
+      '<div class="ai-counselor-lab">AI Admissions Counselor</div>'+
+      '<p class="prose">'+esc(take)+'</p>';
+    upd=str(d.counselor_take_updated);
+    if(upd&&DATE_RE.test(upd)){
+      h+='<div class="ai-counselor-upd">Updated '+esc(upd)+'</div>';
     }
     return h+'</div>';
   }
@@ -2619,7 +2646,13 @@
     if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-    if(acad.length)secs.push(dSec('','Academics',dLines(trimRows(acad, listN)),'academics'));
+    // AI counselor lives at the end of Academics; section appears if rows or take exist.
+    (function(){
+      var ai=aiCounselorHtml(d), body;
+      if(!acad.length&&!ai)return;
+      body=dLines(trimRows(acad, listN))+ai;
+      secs.push(dSec('','Academics',body,'academics'));
+    })();
     if(d.marist_scattergram)secs.push(dSec('sg','Marist scattergram',sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
@@ -2634,7 +2667,7 @@
     }
     if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN)),'deadlines'));
     if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN, s));
-    if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>','take'));
+    // counselor_take now renders inside Academics (AI Admissions Counselor); no separate take card.
     if(d.history&&d.history.length&&histN>0){
       li='';
       for(i=0;i<d.history.length&&i<histN;i++){
