@@ -335,6 +335,7 @@
   .sg-legend{display:flex;flex-wrap:wrap;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink)}
   .sg-key{white-space:nowrap}
   .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em}
+  .sg-key-ed i{background:transparent;border:.18em solid #CFCAC0;box-sizing:border-box}
   .sg-key b,.sg-facts b{font-weight:700}
   .sg-facts{font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);margin-top:2px}
   .sg-foot{font-size:calc(var(--lab-size,20px) * .85);line-height:1.3;color:var(--muted);margin-top:4px}
@@ -370,6 +371,7 @@
   .d-pop-sort[hidden]{display:none!important}
   .d-pop-sort .sg-sort-lab{font-size:32px;font-weight:600;color:var(--pop-ink);letter-spacing:.04em;min-width:0}
   .d-pop-sort .sg-sort-chips{display:flex;gap:16px;flex:none}
+  .d-pop-sort .sg-sort-chips + .sg-sort-chips{margin-left:8px;padding-left:24px;border-left:2px solid rgba(255,255,255,.18)}
   .sg-sort-chip{display:inline-block;padding:8px 22px;border:2px solid rgba(255,255,255,.18);border-radius:8px;font-size:32px;font-weight:700;letter-spacing:.06em;color:rgba(245,241,232,.7);background:transparent;cursor:pointer}
   .sg-sort-chip.on{color:#F5E6B0;border-color:rgba(230,184,76,.55);background:rgba(230,184,76,.14)}
   .sg-sort-chip.sg-sort-focus,.sg-sort-chip:focus{outline:none;border-color:var(--focus-ring);box-shadow:0 0 0 8px var(--focus-ring),0 0 28px 8px rgba(255,210,74,.45);color:#F5E6B0;z-index:2}
@@ -564,7 +566,7 @@
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
   // cardFocus: index into detail .d-card nodes; popupOpen: detail section overlay.
   var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null};
+    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -893,7 +895,7 @@
     return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD), med:sgNum(b.median_sat_admits,400,1600)};
   }
   function cleanSgRow(r){
-    var g,s,a,rnd,outc,to,maj;
+    var g,s,a,rnd,outc,to,maj,mg;
     if(!Array.isArray(r)||r.length<6)return null;
     rnd=str(r[0]); outc=str(r[1]);
     a=sgNum(r[2],1,36); s=sgNum(r[3],400,1600); g=sgNum(r[4],40,120);
@@ -903,8 +905,13 @@
       maj=str(r[6]);
       if(maj.length>200)maj=maj.slice(0,200);
     }
+    mg='none';
+    if(r.length>7&&typeof r[7]==='string'){
+      mg=str(r[7]);
+      if(mg!=='stem'&&mg!=='business'&&mg!=='other'&&mg!=='none')mg='none';
+    }
     if(!rnd&&!outc&&g==null)return null;
-    return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to, major:maj};
+    return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to, major:maj, majorGroup:mg};
   }
   function cleanSgTable(raw){
     if(!raw||typeof raw!=='object'||!Array.isArray(raw.bands))return null;
@@ -954,7 +961,7 @@
   function cleanMaristScattergram(raw){
     if(!raw||typeof raw!=='object')return null;
     var out={hasData:raw.has_data===true, note:str(raw.note), source:str(raw.source), asOf:str(raw.as_of),
-      avg:null, pub:null, counts:null, points:[], table:null}, c, i, p, g, s, o, r, pts;
+      avg:null, pub:null, counts:null, points:[], table:null}, c, i, p, g, s, o, r, pts, mg, rnd;
     if(!out.hasData){
       if(!out.note)out.note='Scoir: not enough Marist data';
       return out;
@@ -975,7 +982,17 @@
       if(!Array.isArray(p))continue;
       g=sgNum(p[0],40,120); s=sgNum(p[1],400,1600); o=p[2];
       if(g==null||s==null||typeof o!=='string'||!SG_COL[o])continue;
-      out.points.push([g,s,o]);
+      mg='none';
+      if(p.length>6&&typeof p[6]==='string'){
+        mg=str(p[6]);
+        if(mg!=='stem'&&mg!=='business'&&mg!=='other'&&mg!=='none')mg='none';
+      }
+      rnd='';
+      if(p.length>3&&typeof p[3]==='string'){
+        rnd=str(p[3]);
+        if(rnd.length>8)rnd=rnd.slice(0,8);
+      }
+      out.points.push([g,s,o,mg,rnd]);
     }
     out.table=cleanSgTable(raw.table);
     return out;
@@ -984,16 +1001,24 @@
     var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9, coco=cocoPoint(),
       L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
       R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
-      h, byO={}, lab;
+      h, byO={}, lab, sw, anyEd;
     function X(g){return L+(g-xmin)/(xmax-xmin)*pw;}
     function Y(s){return T+(ymax-s)/(ymax-ymin)*ph;}
     function f1(n){return String(Math.round(n*10)/10);}
-    if(!pts.length)return '';
-    for(i=0;i<pts.length;i++){
-      p=pts[i];
-      if(p[0]<minG)minG=p[0];
-      if(p[0]>maxG)maxG=p[0];
-      if(p[1]<minS)minS=p[1];
+    if(!pts.length){
+      if(coco){minG=coco.gpa;maxG=coco.gpa;minS=coco.sat;}
+      else if(sg.avg&&(sg.avg.gpa!=null||sg.avg.sat!=null)){
+        minG=sg.avg.gpa!=null?sg.avg.gpa:90;
+        maxG=minG;
+        minS=sg.avg.sat!=null?sg.avg.sat:1000;
+      }else return '';
+    }else{
+      for(i=0;i<pts.length;i++){
+        p=pts[i];
+        if(p[0]<minG)minG=p[0];
+        if(p[0]>maxG)maxG=p[0];
+        if(p[1]<minS)minS=p[1];
+      }
     }
     if(sg.avg&&sg.avg.gpa!=null){minG=Math.min(minG,sg.avg.gpa);maxG=Math.max(maxG,sg.avg.gpa);}
     if(sg.avg&&sg.avg.sat!=null)minS=Math.min(minS,sg.avg.sat);
@@ -1023,13 +1048,30 @@
       if(!byO[p[2]])byO[p[2]]=[];
       byO[p[2]].push(p);
     }
+    function isEd(pt){var rd=pt&&pt[4]; return rd==='ED'||rd==='ED2';}
     for(k=0;k<SG_ORDER.length;k++){
       lab=SG_ORDER[k];
       if(!byO[lab])continue;
       h+='<g fill="'+SG_COL[lab]+'" fill-opacity="0.72">';
       for(i=0;i<byO[lab].length;i++){
         p=byO[lab][i];
+        if(isEd(p))continue;
         h+='<circle cx="'+f1(X(p[0]))+'" cy="'+f1(Y(p[1]))+'" r="'+rad+'"/>';
+      }
+      h+='</g>';
+    }
+    sw=Math.max(2, Math.round(rad*0.42));
+    for(k=0;k<SG_ORDER.length;k++){
+      lab=SG_ORDER[k];
+      if(!byO[lab])continue;
+      anyEd=0;
+      for(i=0;i<byO[lab].length;i++)if(isEd(byO[lab][i]))anyEd=1;
+      if(!anyEd)continue;
+      h+='<g fill="none" stroke="'+SG_COL[lab]+'" stroke-width="'+sw+'" stroke-opacity="0.95">';
+      for(i=0;i<byO[lab].length;i++){
+        p=byO[lab][i];
+        if(!isEd(p))continue;
+        h+='<circle class="sg-ed" cx="'+f1(X(p[0]))+'" cy="'+f1(Y(p[1]))+'" r="'+rad+'"/>';
       }
       h+='</g>';
     }
@@ -1077,6 +1119,7 @@
     h+=key(SG_COL.W,'Deferred/waitlisted',c.dwx);
     other=c.unk+c.gt;
     if(other>0)h+=key(SG_COL.U,'Other',other);
+    h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
     if(cocoPoint())h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
     return '<div class="sg-legend">'+h+'</div>';
   }
@@ -1133,12 +1176,14 @@
   function sgPopupHtml(sg){
     if(!sg)return '';
     if(!sg.hasData)return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
-    var h='<div class="sg-pop-top">'+sgPlotSvg(sg, 2000, 900, 42, 9)+'<div class="sg-pop-side">'+
-      sgLegendHtml(sg)+sgAvgLine('Dashed lines = Marist admits avg:',sg.avg)+sgAvgLine('School-wide:',sg.pub)+sgFootHtml(sg)+'</div></div>';
-    if(sg.table){
-      h+=sgTableHtml(sg.table);
-      h+=sgRowsHtml(sg.table);
+    var view=sg.table?sgFilteredView(sg):sg, h;
+    h='<div class="sg-pop-top">'+sgPlotSvg(view, 2000, 900, 42, 9)+'<div class="sg-pop-side">'+
+      sgLegendHtml(view)+sgAvgLine('Dashed lines = Marist admits avg:',view.avg)+sgAvgLine('School-wide:',view.pub)+sgFootHtml(view)+'</div></div>';
+    if(view.table){
+      h+=sgTableHtml(view.table);
+      h+=sgRowsHtml(view.table);
     }
+    if(sg.table)h='<div class="sg-full">'+h+'</div>';
     return h;
   }
   function sgRowsHtml(t){
@@ -1225,21 +1270,172 @@
     var key=state.sgSortKey==='sat'?'SAT':'GPA', dir=state.sgSortDir==='asc'?'low to high':'high to low';
     return 'Sorted: '+key+' '+dir;
   }
+  function sgFilterKey(){
+    var f=state.sgFilter;
+    if(f==='stem'||f==='business'||f==='other'||f==='none')return f;
+    return 'all';
+  }
+  function sgFilterName(f){
+    if(f==='stem')return 'STEM';
+    if(f==='business')return 'Business';
+    if(f==='other')return 'Other';
+    if(f==='none')return 'No major';
+    return 'All';
+  }
+  function sgFilterLabel(n){
+    return 'Showing: '+sgFilterName(sgFilterKey())+' ('+n+')';
+  }
+  function sgFilterRows(rows){
+    var f=sgFilterKey(), out=[], i, r;
+    if(!rows)return out;
+    if(f==='all')return rows.slice();
+    for(i=0;i<rows.length;i++){
+      r=rows[i];
+      if((r.majorGroup||'none')===f)out.push(r);
+    }
+    return out;
+  }
+  function sgFilterPoints(pts){
+    var f=sgFilterKey(), out=[], i, p;
+    if(!pts)return out;
+    if(f==='all')return pts.slice();
+    for(i=0;i<pts.length;i++){
+      p=pts[i];
+      if((p[3]||'none')===f)out.push(p);
+    }
+    return out;
+  }
+  function sgRowGroup(r){
+    var t=r&&r.outcome?r.outcome:'';
+    if(t.indexOf('(')>=0)return 'W';
+    if(t==='Accepted')return 'A';
+    if(t==='Denied')return 'D';
+    if(t.indexOf('Guaranteed Transfer')===0)return 'T';
+    return 'U';
+  }
+  function sgCountsFromRows(rows){
+    var c={total:0,admitted:0,acc:0,den:0,dwx:0,unk:0,gt:0,noscore:0,conv:0}, i, r, g;
+    rows=rows||[];
+    c.total=rows.length;
+    for(i=0;i<rows.length;i++){
+      r=rows[i];
+      if(sgDecisionTone(r.outcome)==='acc')c.admitted++;
+      g=sgRowGroup(r);
+      if(g==='A')c.acc++;
+      else if(g==='D')c.den++;
+      else if(g==='W')c.dwx++;
+      else if(g==='T')c.gt++;
+      else c.unk++;
+      if(r.sat==null&&r.act==null)c.noscore++;
+      else if(r.sat==null&&r.act!=null)c.conv++;
+    }
+    return c;
+  }
+  function sgMedianSat(vals){
+    var a, mid, v;
+    if(!vals||!vals.length)return null;
+    a=vals.slice().sort(function(x,y){return x-y;});
+    mid=Math.floor(a.length/2);
+    v=(a.length%2)?a[mid]:(a[mid-1]+a[mid])/2;
+    return Math.round(v/10)*10;
+  }
+  function sgBandOfRows(label, rows, allRows){
+    var sub=allRows?rows:[], i, r, ea=[], rd=[], med=[], v;
+    if(!allRows){
+      for(i=0;i<rows.length;i++){
+        r=rows[i];
+        if(r.gpa!=null)sub.push(r);
+      }
+    }
+    function cellOf(list){
+      var a=0, j;
+      for(j=0;j<list.length;j++)if(sgDecisionTone(list[j].outcome)==='acc')a++;
+      return {a:a, n:list.length};
+    }
+    for(i=0;i<sub.length;i++){
+      r=sub[i];
+      if(r.round==='EA')ea.push(r);
+      else if(r.round==='RD')rd.push(r);
+      if(sgDecisionTone(r.outcome)==='acc'){
+        v=sgSatValue(r);
+        if(v!=null)med.push(v);
+      }
+    }
+    return {band:label, ea:cellOf(ea), rd:cellOf(rd), med:sgMedianSat(med)};
+  }
+  function sgInBand(label, g){
+    if(g==null)return false;
+    if(label==='>=100')return g>=100;
+    if(label==='98-99.99')return g>=98&&g<100;
+    if(label==='96-97.99')return g>=96&&g<98;
+    if(label==='94-95.99')return g>=94&&g<96;
+    if(label==='<94')return g<94;
+    return false;
+  }
+  function sgBandsFromRows(rows){
+    var labels=['>=100','98-99.99','96-97.99','94-95.99','<94'], bands=[], i, lab, sub, j, r;
+    for(i=0;i<labels.length;i++){
+      lab=labels[i]; sub=[];
+      for(j=0;j<rows.length;j++){
+        r=rows[j];
+        if(sgInBand(lab, r.gpa))sub.push(r);
+      }
+      bands.push(sgBandOfRows(lab, sub, true));
+    }
+    return bands;
+  }
+  function sgFilteredView(sg){
+    var rows=sgFilterRows(sg.table&&sg.table.rows), view={
+      hasData:sg.hasData, note:sg.note, source:sg.source, asOf:sg.asOf,
+      avg:sg.avg, pub:sg.pub, points:sgFilterPoints(sg.points),
+      counts:sgCountsFromRows(rows), table:null
+    };
+    if(sg.table){
+      view.table={
+        bands:sgBandsFromRows(rows),
+        total:sgBandOfRows('All', rows, true),
+        major:sg.table.major,
+        notes:sg.table.notes,
+        rows:rows
+      };
+    }
+    return view;
+  }
+  var SG_CHIPS=['gpa','sat','all','stem','business','other','none'];
+  function sgMoveFocus(dir){
+    var i=SG_CHIPS.indexOf(state.sgSortFocus);
+    if(i<0)i=0;
+    i=(i+dir+SG_CHIPS.length)%SG_CHIPS.length;
+    state.sgSortFocus=SG_CHIPS[i];
+  }
+  function sgActivateChip(id){
+    if(id==='gpa'||id==='sat'){sgToggleSort(id);return;}
+    if(id==='stem'||id==='business'||id==='other'||id==='none')state.sgFilter=id;
+    else state.sgFilter='all';
+    sgRefreshRows();
+  }
+  function sgCurrentFilterCount(){
+    var s=focusedSchool(), sg=s&&s.detail?s.detail.marist_scattergram:null;
+    if(!sg||!sg.table||!sg.table.rows)return 0;
+    return sgFilterRows(sg.table.rows).length;
+  }
   function sgHeadCell(key, label, cur, dir){
     var on=cur===key, arrow=on?(dir==='asc'?' \u25b4':' \u25be'):'';
     return '<th class="sg-sort-h'+(on?' on':'')+'" data-sg-sort="'+key+'">'+label+arrow+'</th>';
   }
   function sgHasRows(){
     var body=$('d-pop-body');
-    return !!(body&&body.querySelector('.sg-rows'));
+    return !!(body&&(body.querySelector('.sg-full')||body.querySelector('.sg-rows')));
   }
   function sgSortBarHtml(){
-    var key=state.sgSortKey==='sat'?'sat':'gpa', dir=state.sgSortDir==='asc'?'asc':'desc';
-    function chip(k,lab){
-      var on=key===k, arrow=on?(dir==='asc'?' \u25b4':' \u25be'):'', foc=state.sgSortFocus===k?' sg-sort-focus':'';
-      return '<span class="sg-sort-chip'+(on?' on':'')+foc+'" tabindex="-1" data-sg-sort="'+k+'">'+lab+arrow+'</span>';
+    var key=state.sgSortKey==='sat'?'sat':'gpa', dir=state.sgSortDir==='asc'?'asc':'desc', f=sgFilterKey();
+    function chip(k,lab,kind){
+      var on=kind==='sort'?key===k:f===k, arrow=(kind==='sort'&&on)?(dir==='asc'?' \u25b4':' \u25be'):'', foc=state.sgSortFocus===k?' sg-sort-focus':'';
+      return '<span class="sg-sort-chip'+(on?' on':'')+foc+'" tabindex="-1" data-sg-chip="'+k+'"'+(kind==='sort'?' data-sg-sort="'+k+'"':'')+'>'+lab+arrow+'</span>';
     }
-    return '<div class="sg-sort-lab">'+esc(sgSortLabel())+'</div><div class="sg-sort-chips">'+chip('gpa','GPA')+chip('sat','SAT')+'</div>';
+    return '<div class="sg-sort-lab">'+esc(sgSortLabel())+' \u00b7 '+esc(sgFilterLabel(sgCurrentFilterCount()))+'</div>'+
+      '<div class="sg-sort-chips">'+chip('gpa','GPA','sort')+chip('sat','SAT','sort')+'</div>'+
+      '<div class="sg-sort-chips">'+chip('all','All','filter')+chip('stem','STEM','filter')+chip('business','Business','filter')+chip('other','Other','filter')+chip('none','No major','filter')+'</div>';
   }
   function syncSgSortBar(){
     var bar=$('d-pop-sort'), hint=$('d-pop-hint'), has=sgHasRows();
@@ -1248,7 +1444,7 @@
       else{bar.hidden=true;bar.innerHTML='';state.sgSortFocus=null;}
     }
     if(hint){
-      if(has&&state.sgSortFocus)hint.innerHTML='\u25c0 \u25b6 GPA / SAT \u00b7 OK Sort \u00b7 \u25bc List \u00b7 Back Close';
+      if(has&&state.sgSortFocus)hint.innerHTML='\u25c0 \u25b6 Sort / Filter \u00b7 OK \u00b7 \u25bc List \u00b7 Back Close';
       else if(has)hint.innerHTML='\u25c0 \u25b6 Cards \u00b7 \u25b2\u25bc Scroll \u00b7 OK / Back Close \u00b7 \u25b2 (top) Sort';
       else hint.innerHTML='\u25c0 \u25b6 Cards \u00b7 \u25b2\u25bc Scroll \u00b7 OK / Back Close';
     }
@@ -1258,7 +1454,7 @@
     if(!bar)return;
     chips=bar.querySelectorAll('.sg-sort-chip');
     for(i=0;i<chips.length;i++){
-      k=chips[i].getAttribute('data-sg-sort');
+      k=chips[i].getAttribute('data-sg-chip')||chips[i].getAttribute('data-sg-sort');
       if(state.sgSortFocus===k)chips[i].classList.add('sg-sort-focus');
       else chips[i].classList.remove('sg-sort-focus');
     }
@@ -1968,7 +2164,7 @@
       $('hints').innerHTML=h;return;
     }
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
-    else if(state.view==='detail'&&state.popupOpen&&sgHasRows()&&state.sgSortFocus)h='<span><b>\u25c0\u25b6</b>GPA / SAT</span><span><b>OK</b>Sort</span><span><b>\u25bc</b>List</span><span><b>Back</b>Close</span>';
+    else if(state.view==='detail'&&state.popupOpen&&sgHasRows()&&state.sgSortFocus)h='<span><b>\u25c0\u25b6</b>Sort / Filter</span><span><b>OK</b>Choose</span><span><b>\u25bc</b>List</span><span><b>Back</b>Close</span>';
     else if(state.view==='detail'&&state.popupOpen&&sgHasRows())h='<span><b>\u25c0\u25b6</b>Cards</span><span><b>\u25b2\u25bc</b>Scroll</span><span><b>OK</b>Close</span><span><b>Back</b>Close</span><span><b>\u25b2</b>(top) Sort</span>';
     else if(state.view==='detail'&&state.popupOpen)h='<span><b>\u25c0\u25b6</b>Cards</span><span><b>\u25b2\u25bc</b>Scroll</span><span><b>OK</b>Close</span><span><b>Back</b>Close</span>';
     else if(state.view==='detail'&&updateBtnFocused())h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Cards</span><span><b>OK</b>Update</span><span><b>Back</b>Board</span>';
@@ -2555,6 +2751,7 @@
     state.sgSortKey='gpa';
     state.sgSortDir='desc';
     state.sgSortFocus=null;
+    state.sgFilter='all';
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
     titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
@@ -2817,7 +3014,7 @@
   }
   function blank(){
     state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null};
+      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
     closeCardPopup();
     $('stage').hidden=true;
     $('cols').innerHTML='';$('cols').className='cols';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
@@ -3354,16 +3551,17 @@
       return;
     }
     // Detail popup: Left/Right switch cards; Up/Down scroll; Back / Esc / Enter closes.
-    // When a UGA/GT list is open, Up at the top of the scroll focuses GPA/SAT sort chips;
-    // then Left/Right pick a column, OK toggles sort, Down returns to the list. Back still closes.
+    // When a UGA/GT list is open, Up at the top of the scroll focuses the sort/filter chips;
+    // then Left/Right move across chips, OK chooses (toggles sort or sets the major filter),
+    // Down returns to the list. Back still closes.
     if(state.view==='detail'&&state.popupOpen){
       e.preventDefault();
       if(isBack){closeCardPopup();return;}
       if(sgHasRows()){
         if(state.sgSortFocus){
-          if(code===13||e.key==='Enter'){sgToggleSort(state.sgSortFocus);return;}
-          if(code===37){state.sgSortFocus='gpa';syncSgSortBar();setHints();return;}
-          if(code===39){state.sgSortFocus='sat';syncSgSortBar();setHints();return;}
+          if(code===13||e.key==='Enter'){sgActivateChip(state.sgSortFocus);return;}
+          if(code===37){sgMoveFocus(-1);syncSgSortBar();setHints();return;}
+          if(code===39){sgMoveFocus(1);syncSgSortBar();setHints();return;}
           if(code===40){state.sgSortFocus=null;syncSgSortBar();setHints();return;}
           return;
         }
@@ -3420,12 +3618,12 @@
         else shiftPopupCard(nav.getAttribute('data-pop-nav')==='left'?'left':'right');
         return;
       }
-      sortEl=e.target.closest?e.target.closest('[data-sg-sort]'):null;
+      sortEl=e.target.closest?e.target.closest('[data-sg-chip],[data-sg-sort]'):null;
       if(sortEl&&pop&&pop.contains(sortEl)){
         e.preventDefault();
         e.stopPropagation();
-        state.sgSortFocus=sortEl.getAttribute('data-sg-sort');
-        sgToggleSort(state.sgSortFocus);
+        state.sgSortFocus=sortEl.getAttribute('data-sg-chip')||sortEl.getAttribute('data-sg-sort');
+        sgActivateChip(state.sgSortFocus);
         return;
       }
       if(pop&&pop.contains(e.target)){e.preventDefault();closeCardPopup();return;}
