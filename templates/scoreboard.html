@@ -910,12 +910,27 @@
     out.marist_scattergram=cleanMaristScattergram(d.marist_scattergram);
     return out;
   }
-  // ---- Marist scattergram (Scoir). Data-only: never plots or shows CoCo's own GPA/SAT. ----
+  // ---- Marist scattergram (Scoir) + national U.S. News (gpa_scale 4 / source_id usnews). ----
   var SG_COL={A:'#3DCF7A',D:'#E5534B',W:'#E6B84C',U:'#9A958C',T:'#9A958C'};
   var SG_ORDER=['U','T','D','W','A'];
   function sgNum(v,lo,hi){
     if(typeof v!=='number'||!isFinite(v)||v<lo||v>hi)return null;
     return v;
+  }
+  function sgGpaRange(gpaScale, sourceId){
+    // Marist default 40-120; national U.S. News 4.0 scale is 0-4.
+    if(gpaScale===4||gpaScale===4.0||sourceId==='usnews')return {lo:0,hi:4,four:true};
+    return {lo:40,hi:120,four:false};
+  }
+  function sgIsFourScale(sg){return !!(sg&&sg.gpaScale===4);}
+  function sgIsUsNews(sg){return !!(sg&&(sg.sourceId==='usnews'||sg.gpaScale===4));}
+  function sgChartTitle(sg){return sgIsUsNews(sg)?'U.S. News (national)':'Marist scattergram';}
+  function sgAriaLabel(sg){
+    return sgIsUsNews(sg)?'U.S. News national GPA versus SAT by outcome':'Marist GPA versus SAT by outcome';
+  }
+  function sgDashedAvgLabel(sg, longForm){
+    if(sgIsUsNews(sg))return longForm?'Dashed lines = U.S. News (national) admits avg:':'Dashed = U.S. News (national) admits avg:';
+    return longForm?'Dashed lines = Marist admits avg:':'Dashed = Marist admits avg:';
   }
   function cleanSgCell(c){
     var a, n;
@@ -923,21 +938,27 @@
     a=sgNum(c.admitted,0,100000); n=sgNum(c.applied,0,100000);
     return {a:a==null?0:a, n:n==null?0:n};
   }
-  function cleanSgAvg(raw){
+  function cleanSgAvg(raw, gpaScale, sourceId){
+    var range, o;
     if(!raw||typeof raw!=='object')return null;
-    var o={gpa:sgNum(raw.gpa,0,120), sat:sgNum(raw.sat,400,1600), act:sgNum(raw.act,1,36), pct:sgNum(raw.accept_pct,0,100)};
+    range=sgGpaRange(gpaScale, sourceId);
+    o={gpa:sgNum(raw.gpa,range.lo,range.hi), sat:sgNum(raw.sat,400,1600), act:sgNum(raw.act,1,36), pct:sgNum(raw.accept_pct,0,100)};
+    // Marist avgs historically allowed 0-120; keep that when not on the 4.0 path.
+    if(!range.four&&o.gpa==null)o.gpa=sgNum(raw.gpa,0,120);
     if(o.gpa==null&&o.sat==null&&o.act==null&&o.pct==null)return null;
     return o;
   }
   function cleanSgBand(b){
     if(!b||typeof b!=='object'||!str(b.band))return null;
-    return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD), med:sgNum(b.median_sat_admits,400,1600)};
+    return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD),
+      all:cleanSgCell(b.All||b.all), med:sgNum(b.median_sat_admits,400,1600)};
   }
-  function cleanSgRow(r){
-    var g,s,a,rnd,outc,to,maj,mg;
+  function cleanSgRow(r, gpaScale, sourceId){
+    var g,s,a,rnd,outc,to,maj,mg,range;
     if(!Array.isArray(r)||r.length<6)return null;
+    range=sgGpaRange(gpaScale, sourceId);
     rnd=str(r[0]); outc=str(r[1]);
-    a=sgNum(r[2],1,36); s=sgNum(r[3],400,1600); g=sgNum(r[4],40,120);
+    a=sgNum(r[2],1,36); s=sgNum(r[3],400,1600); g=sgNum(r[4],range.lo,range.hi);
     to=str(r[5]);
     maj='';
     if(r.length>6&&typeof r[6]==='string'){
@@ -952,7 +973,7 @@
     if(!rnd&&!outc&&g==null)return null;
     return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to, major:maj, majorGroup:mg};
   }
-  function cleanSgTable(raw){
+  function cleanSgTable(raw, gpaScale, sourceId){
     if(!raw||typeof raw!=='object'||!Array.isArray(raw.bands))return null;
     var bands=[], notes=[], rows=[], i, b, t, r;
     for(i=0;i<raw.bands.length&&bands.length<8;i++){
@@ -965,7 +986,7 @@
     }
     if(Array.isArray(raw.rows)){
       for(i=0;i<raw.rows.length&&rows.length<700;i++){
-        r=cleanSgRow(raw.rows[i]);
+        r=cleanSgRow(raw.rows[i], gpaScale, sourceId);
         if(r)rows.push(r);
       }
       rows.sort(function(a,b){
@@ -977,9 +998,11 @@
     }
     return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes, rows:rows};
   }
-  function cleanCocoPoint(raw){
+  function cleanCocoPoint(raw, gpaScale, sourceId){
+    var range, g, s, lab;
     if(!raw||typeof raw!=='object')return null;
-    var g=sgNum(raw.gpa,40,120), s=sgNum(raw.sat,400,1600), lab=str(raw.label)||'CoCo';
+    range=sgGpaRange(gpaScale, sourceId);
+    g=sgNum(raw.gpa,range.lo,range.hi); s=sgNum(raw.sat,400,1600); lab=str(raw.label)||'CoCo';
     if(g==null||s==null)return null;
     if(lab.length>16)lab=lab.slice(0,16);
     return {gpa:g, sat:s, label:lab};
@@ -999,14 +1022,20 @@
   }
   function cleanMaristScattergram(raw){
     if(!raw||typeof raw!=='object')return null;
+    var sourceId=str(raw.source_id), scope=str(raw.scope), gpaScale=null, range, c, i, p, g, s, o, pts, mg, rnd;
     var out={hasData:raw.has_data===true, note:str(raw.note), source:str(raw.source), asOf:str(raw.as_of),
-      avg:null, pub:null, counts:null, points:[], table:null}, c, i, p, g, s, o, r, pts, mg, rnd;
+      avg:null, pub:null, counts:null, points:[], table:null, gpaScale:null, sourceId:sourceId, scope:scope};
+    if(raw.gpa_scale===4||raw.gpa_scale===4.0)gpaScale=4;
+    else if(typeof raw.gpa_scale==='number'&&isFinite(raw.gpa_scale))gpaScale=raw.gpa_scale;
+    range=sgGpaRange(gpaScale, sourceId);
+    if(range.four)out.gpaScale=4;
+    else if(gpaScale!=null)out.gpaScale=gpaScale;
     if(!out.hasData){
-      if(!out.note)out.note='Scoir: not enough Marist data';
+      if(!out.note)out.note=sgIsUsNews(out)?'U.S. News: not enough national data':'Scoir: not enough Marist data';
       return out;
     }
-    out.avg=cleanSgAvg(raw.accepted_from_marist);
-    out.pub=cleanSgAvg(raw.published_school_wide);
+    out.avg=cleanSgAvg(raw.accepted_from_marist, out.gpaScale, sourceId);
+    out.pub=cleanSgAvg(raw.published_school_wide, out.gpaScale, sourceId);
     c=raw.counts;
     if(c&&typeof c==='object'){
       out.counts={total:sgNum(c.total,0,100000)||0, admitted:sgNum(c.admitted,0,100000)||0,
@@ -1019,7 +1048,7 @@
     for(i=0;i<pts.length&&out.points.length<700;i++){
       p=pts[i];
       if(!Array.isArray(p))continue;
-      g=sgNum(p[0],40,120); s=sgNum(p[1],400,1600); o=p[2];
+      g=sgNum(p[0],range.lo,range.hi); s=sgNum(p[1],400,1600); o=p[2];
       if(g==null||s==null||typeof o!=='string'||!SG_COL[o])continue;
       mg='none';
       if(p.length>6&&typeof p[6]==='string'){
@@ -1033,21 +1062,23 @@
       }
       out.points.push([g,s,o,mg,rnd]);
     }
-    out.table=cleanSgTable(raw.table);
+    out.table=cleanSgTable(raw.table, out.gpaScale, sourceId);
     return out;
   }
   function sgPlotSvg(sg, W, H, fs, rad){
-    var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9, coco=cocoPoint(),
+    var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9,
+      // CoCo's 4.0 GPA is unknown: never plot the star on national 4.0 charts.
+      coco=sgIsFourScale(sg)?null:cocoPoint(),
       L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
       R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
-      h, byO={}, lab, sw, anyEd;
+      h, byO={}, lab, sw, anyEd, tickN;
     function X(g){return L+(g-xmin)/(xmax-xmin)*pw;}
     function Y(s){return T+(ymax-s)/(ymax-ymin)*ph;}
     function f1(n){return String(Math.round(n*10)/10);}
     if(!pts.length){
       if(coco){minG=coco.gpa;maxG=coco.gpa;minS=coco.sat;}
       else if(sg.avg&&(sg.avg.gpa!=null||sg.avg.sat!=null)){
-        minG=sg.avg.gpa!=null?sg.avg.gpa:90;
+        minG=sg.avg.gpa!=null?sg.avg.gpa:(sgIsFourScale(sg)?3.5:90);
         maxG=minG;
         minS=sg.avg.sat!=null?sg.avg.sat:1000;
       }else return '';
@@ -1062,18 +1093,31 @@
     if(sg.avg&&sg.avg.gpa!=null){minG=Math.min(minG,sg.avg.gpa);maxG=Math.max(maxG,sg.avg.gpa);}
     if(sg.avg&&sg.avg.sat!=null)minS=Math.min(minS,sg.avg.sat);
     if(coco){minG=Math.min(minG,coco.gpa);maxG=Math.max(maxG,coco.gpa);minS=Math.min(minS,coco.sat);}
-    xmin=Math.floor(minG/2)*2; xmax=Math.ceil(maxG/2)*2;
-    if(xmax-xmin<4){xmin-=2;xmax+=2;}
+    if(sgIsFourScale(sg)){
+      xmin=2.5; xmax=4.0; xs=0.25;
+    }else{
+      xmin=Math.floor(minG/2)*2; xmax=Math.ceil(maxG/2)*2;
+      if(xmax-xmin<4){xmin-=2;xmax+=2;}
+      xs=(xmax-xmin)>14?4:2;
+    }
     ymin=Math.floor(minS/100)*100; ymax=1600;
     if(ymax-ymin<300)ymin=ymax-300;
-    xs=(xmax-xmin)>14?4:2;
     ys=(ymax-ymin)>600?200:100;
-    h='<svg class="sg-svg" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marist GPA versus SAT by outcome">';
+    h='<svg class="sg-svg" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+esc(sgAriaLabel(sg))+'">';
     h+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>';
-    for(v=Math.ceil(xmin/xs)*xs;v<=xmax;v+=xs){
-      x=X(v);
-      h+='<line x1="'+f1(x)+'" y1="'+T+'" x2="'+f1(x)+'" y2="'+(T+ph)+'" stroke="rgba(255,255,255,.08)" stroke-width="2"/>';
-      h+='<text x="'+f1(x)+'" y="'+(T+ph+fs*1.2)+'" fill="#CFCAC0" font-size="'+fs+'" text-anchor="middle">'+v+'</text>';
+    if(sgIsFourScale(sg)){
+      for(tickN=0;tickN<=6;tickN++){
+        v=Math.round((2.5+tickN*0.25)*100)/100;
+        x=X(v);
+        h+='<line x1="'+f1(x)+'" y1="'+T+'" x2="'+f1(x)+'" y2="'+(T+ph)+'" stroke="rgba(255,255,255,.08)" stroke-width="2"/>';
+        h+='<text x="'+f1(x)+'" y="'+(T+ph+fs*1.2)+'" fill="#CFCAC0" font-size="'+fs+'" text-anchor="middle">'+String(v)+'</text>';
+      }
+    }else{
+      for(v=Math.ceil(xmin/xs)*xs;v<=xmax;v+=xs){
+        x=X(v);
+        h+='<line x1="'+f1(x)+'" y1="'+T+'" x2="'+f1(x)+'" y2="'+(T+ph)+'" stroke="rgba(255,255,255,.08)" stroke-width="2"/>';
+        h+='<text x="'+f1(x)+'" y="'+(T+ph+fs*1.2)+'" fill="#CFCAC0" font-size="'+fs+'" text-anchor="middle">'+v+'</text>';
+      }
     }
     for(v=Math.ceil(ymin/ys)*ys;v<=ymax;v+=ys){
       y=Y(v);
@@ -1158,9 +1202,14 @@
     h+=key(SG_COL.W,'Deferred/waitlisted',c.dwx);
     other=c.unk+c.gt;
     if(other>0)h+=key(SG_COL.U,'Other',other);
-    h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
-    if(cocoPoint())h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
+    // National U.S. News charts have empty rounds: hide the ED-ring legend.
+    if(!sgIsUsNews(sg))h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
+    if(cocoPoint()&&!sgIsFourScale(sg))h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
     return '<div class="sg-legend">'+h+'</div>';
+  }
+  function sgNoteHtml(sg){
+    if(!sg||!sg.note)return '';
+    return '<p class="prose sg-note">'+esc(sg.note)+'</p>';
   }
   function sgAvgLine(label,a){
     var parts=[];
@@ -1186,14 +1235,34 @@
     var rate=c.n>0?c.a/c.n:0, bg=c.n>0?'rgba(61,207,122,'+(Math.round((0.06+rate*0.34)*100)/100)+')':'transparent';
     return '<td style="background:'+bg+'"><b>'+c.a+'</b>/'+c.n+'</td>';
   }
-  function sgTableHtml(t){
-    var h, i, b, rows=t.bands.slice();
+  function sgBandAllCell(b){
+    if(!b)return {a:0,n:0};
+    if(b.all&&(b.all.n>0||b.all.a>0))return b.all;
+    return {a:(b.ea?b.ea.a:0)+(b.rd?b.rd.a:0), n:(b.ea?b.ea.n:0)+(b.rd?b.rd.n:0)};
+  }
+  function sgTableHtml(t, sg){
+    var h, i, b, rows, cocoMark, four=sgIsFourScale(sg);
+    if(!t)return '';
+    rows=t.bands.slice();
     if(t.total)rows.push(t.total);
+    if(four){
+      h='<table class="sg-table"><thead><tr><th>GPA</th><th>All</th><th>Median SAT</th></tr></thead><tbody>';
+      for(i=0;i<rows.length;i++){
+        b=rows[i];
+        h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+'">'+
+          '<th>'+esc(b.band)+'</th>'+sgCellHtml(sgBandAllCell(b))+
+          '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
+      }
+      h+='</tbody></table>';
+      h+='<div class="sg-foot">Cells = admitted/applied. Median SAT is for admits (ACT converted).</div>';
+      return h;
+    }
     h='<table class="sg-table"><thead><tr><th>GPA</th><th>EA</th><th>RD</th><th>Median SAT</th></tr></thead><tbody>';
     for(i=0;i<rows.length;i++){
       b=rows[i];
-      h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(sgBandHasCoco(b.band,cocoPoint())?' sg-coco':'')+'">'+
-        '<th>'+esc(b.band)+(sgBandHasCoco(b.band,cocoPoint())?'<span class="sg-coco-tag">'+esc((cocoPoint().label||'CoCo'))+'</span>':'')+'</th>'+
+      cocoMark=sgBandHasCoco(b.band,cocoPoint());
+      h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(cocoMark?' sg-coco':'')+'">'+
+        '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc((cocoPoint().label||'CoCo'))+'</span>':'')+'</th>'+
         sgCellHtml(b.ea)+sgCellHtml(b.rd)+
         '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
     }
@@ -1205,28 +1274,28 @@
   function sgCardHtml(sg, withTable, plotH){
     if(!sg)return '';
     if(!sg.hasData){
-      return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
+      return '<p class="prose sg-nodata">'+esc(sg.note||(sgIsUsNews(sg)?'U.S. News: not enough national data':'Scoir: not enough Marist data'))+'</p>'+sgFootHtml(sg);
     }
-    var h=sgPlotSvg(sg, 900, plotH||460, 30, 6)+sgLegendHtml(sg)+sgAvgLine('Dashed = Marist admits avg:',sg.avg);
+    var h=sgPlotSvg(sg, 900, plotH||460, 30, 6)+sgNoteHtml(sg)+sgLegendHtml(sg)+sgAvgLine(sgDashedAvgLabel(sg,false),sg.avg);
     h+=sgAvgLine('School-wide:',sg.pub);
-    if(withTable&&sg.table)h+=sgTableHtml(sg.table);
+    if(withTable&&sg.table)h+=sgTableHtml(sg.table, sg);
     return h+sgFootHtml(sg);
   }
   function sgPopupHtml(sg){
     if(!sg)return '';
-    if(!sg.hasData)return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
+    if(!sg.hasData)return '<p class="prose sg-nodata">'+esc(sg.note||(sgIsUsNews(sg)?'U.S. News: not enough national data':'Scoir: not enough Marist data'))+'</p>'+sgFootHtml(sg);
     var view=sg.table?sgFilteredView(sg):sg, h;
     h='<div class="sg-pop-top">'+sgPlotSvg(view, 2000, 900, 42, 9)+'<div class="sg-pop-side">'+
-      sgLegendHtml(view)+sgAvgLine('Dashed lines = Marist admits avg:',view.avg)+sgAvgLine('School-wide:',view.pub)+sgFootHtml(view)+'</div></div>';
+      sgNoteHtml(view)+sgLegendHtml(view)+sgAvgLine(sgDashedAvgLabel(view,true),view.avg)+sgAvgLine('School-wide:',view.pub)+sgFootHtml(view)+'</div></div>';
     if(view.table){
-      h+=sgTableHtml(view.table);
-      h+=sgRowsHtml(view.table);
+      h+=sgTableHtml(view.table, view);
+      h+=sgRowsHtml(view.table, view);
     }
     if(sg.table)h='<div class="sg-full">'+h+'</div>';
     return h;
   }
-  function sgRowsHtml(t){
-    var rows, h, i, r, coco=cocoPoint(), inserted=false, lab, satTxt, key, dir, dash;
+  function sgRowsHtml(t, sg){
+    var rows, h, i, r, coco=sgIsFourScale(sg)?null:cocoPoint(), inserted=false, lab, satTxt, key, dir, dash, who;
     dash=function(v){return v==null||v===''?'-':String(v);};
     if(!t||!t.rows||!t.rows.length)return '';
     key=state.sgSortKey==='sat'?'sat':'gpa';
@@ -1247,7 +1316,8 @@
     }
     if(coco&&!inserted)h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
     h+='</tbody></table>';
-    h+='<div class="sg-foot">'+rows.length+' Marist applicants. '+esc(sgSortLabel())+'. ACT-only SAT marked (ACT).</div>';
+    who=sgIsUsNews(sg)?'U.S. News (national) applicants':'Marist applicants';
+    h+='<div class="sg-foot">'+rows.length+' '+who+'. '+esc(sgSortLabel())+'. ACT-only SAT marked (ACT).</div>';
     return h;
   }
   // Official 2018 ACT/College Board concordance, Table A2 (ACT composite -> single SAT total).
@@ -1378,7 +1448,7 @@
     v=(a.length%2)?a[mid]:(a[mid-1]+a[mid])/2;
     return Math.round(v/10)*10;
   }
-  function sgBandOfRows(label, rows, allRows){
+  function sgBandOfRows(label, rows, allRows, four){
     var sub=allRows?rows:[], i, r, ea=[], rd=[], med=[], v;
     if(!allRows){
       for(i=0;i<rows.length;i++){
@@ -1400,26 +1470,43 @@
         if(v!=null)med.push(v);
       }
     }
-    return {band:label, ea:cellOf(ea), rd:cellOf(rd), med:sgMedianSat(med)};
+    // 4.0 national tables: empty rounds count in All, not EA/RD.
+    if(four)return {band:label, ea:{a:0,n:0}, rd:{a:0,n:0}, all:cellOf(sub), med:sgMedianSat(med)};
+    return {band:label, ea:cellOf(ea), rd:cellOf(rd), all:{a:0,n:0}, med:sgMedianSat(med)};
   }
   function sgInBand(label, g){
-    if(g==null)return false;
+    var p, lo, hi;
+    if(g==null||!label)return false;
     if(label==='>=100')return g>=100;
     if(label==='98-99.99')return g>=98&&g<100;
     if(label==='96-97.99')return g>=96&&g<98;
     if(label==='94-95.99')return g>=94&&g<96;
     if(label==='<94')return g<94;
+    // Generic labels for national 4.0 bands (e.g. 3.50-3.74, >=3.75, <3.00).
+    if(label.indexOf('>=')===0){lo=parseFloat(label.slice(2)); return isFinite(lo)&&g>=lo;}
+    if(label.charAt(0)==='<'){hi=parseFloat(label.slice(1)); return isFinite(hi)&&g<hi;}
+    p=label.split('-');
+    if(p.length>=2){
+      lo=parseFloat(p[0]); hi=parseFloat(p[1]);
+      if(isFinite(lo)&&isFinite(hi))return g>=lo&&g<=hi;
+    }
     return false;
   }
-  function sgBandsFromRows(rows){
-    var labels=['>=100','98-99.99','96-97.99','94-95.99','<94'], bands=[], i, lab, sub, j, r;
+  function sgBandsFromRows(rows, sg){
+    var labels, bands=[], i, lab, sub, j, r, four=sgIsFourScale(sg);
+    if(four&&sg.table&&sg.table.bands&&sg.table.bands.length){
+      labels=[];
+      for(i=0;i<sg.table.bands.length;i++)labels.push(sg.table.bands[i].band);
+    }else{
+      labels=['>=100','98-99.99','96-97.99','94-95.99','<94'];
+    }
     for(i=0;i<labels.length;i++){
       lab=labels[i]; sub=[];
       for(j=0;j<rows.length;j++){
         r=rows[j];
         if(sgInBand(lab, r.gpa))sub.push(r);
       }
-      bands.push(sgBandOfRows(lab, sub, true));
+      bands.push(sgBandOfRows(lab, sub, true, four));
     }
     return bands;
   }
@@ -1427,12 +1514,13 @@
     var rows=sgFilterRows(sg.table&&sg.table.rows), view={
       hasData:sg.hasData, note:sg.note, source:sg.source, asOf:sg.asOf,
       avg:sg.avg, pub:sg.pub, points:sgFilterPoints(sg.points),
-      counts:sgCountsFromRows(rows), table:null
+      counts:sgCountsFromRows(rows), table:null,
+      gpaScale:sg.gpaScale, sourceId:sg.sourceId, scope:sg.scope
     };
     if(sg.table){
       view.table={
-        bands:sgBandsFromRows(rows),
-        total:sgBandOfRows('All', rows, true),
+        bands:sgBandsFromRows(rows, sg),
+        total:sgBandOfRows('All', rows, true, sgIsFourScale(sg)),
         major:sg.table.major,
         notes:sg.table.notes,
         rows:rows
@@ -1440,12 +1528,26 @@
     }
     return view;
   }
-  var SG_CHIPS=['gpa','sat','all','stem','business','other','none'];
+  function sgHasMajorData(sg){
+    var rows=sg&&sg.table&&sg.table.rows, i, r;
+    if(!rows||!rows.length)return false;
+    for(i=0;i<rows.length;i++){
+      r=rows[i];
+      if(r.majorGroup&&r.majorGroup!=='none')return true;
+      if(r.major&&r.major!=='-')return true;
+    }
+    return false;
+  }
+  function sgChipList(){
+    var s=focusedSchool(), sg=s&&s.detail?s.detail.marist_scattergram:null;
+    if(sgHasMajorData(sg))return ['gpa','sat','all','stem','business','other','none'];
+    return ['gpa','sat'];
+  }
   function sgMoveFocus(dir){
-    var i=SG_CHIPS.indexOf(state.sgSortFocus);
+    var chips=sgChipList(), i=chips.indexOf(state.sgSortFocus);
     if(i<0)i=0;
-    i=(i+dir+SG_CHIPS.length)%SG_CHIPS.length;
-    state.sgSortFocus=SG_CHIPS[i];
+    i=(i+dir+chips.length)%chips.length;
+    state.sgSortFocus=chips[i];
   }
   function sgActivateChip(id){
     if(id==='gpa'||id==='sat'){sgToggleSort(id);return;}
@@ -1468,13 +1570,18 @@
   }
   function sgSortBarHtml(){
     var key=state.sgSortKey==='sat'?'sat':'gpa', dir=state.sgSortDir==='asc'?'asc':'desc', f=sgFilterKey();
+    var s=focusedSchool(), sg=s&&s.detail?s.detail.marist_scattergram:null, majors=sgHasMajorData(sg), h;
     function chip(k,lab,kind){
       var on=kind==='sort'?key===k:f===k, arrow=(kind==='sort'&&on)?(dir==='asc'?' \u25b4':' \u25be'):'', foc=state.sgSortFocus===k?' sg-sort-focus':'';
       return '<span class="sg-sort-chip'+(on?' on':'')+foc+'" tabindex="-1" data-sg-chip="'+k+'"'+(kind==='sort'?' data-sg-sort="'+k+'"':'')+'>'+lab+arrow+'</span>';
     }
-    return '<div class="sg-sort-lab">'+esc(sgSortLabel())+' \u00b7 '+esc(sgFilterLabel(sgCurrentFilterCount()))+'</div>'+
-      '<div class="sg-sort-chips">'+chip('gpa','GPA','sort')+chip('sat','SAT','sort')+'</div>'+
-      '<div class="sg-sort-chips">'+chip('all','All','filter')+chip('stem','STEM','filter')+chip('business','Business','filter')+chip('other','Other','filter')+chip('none','No major','filter')+'</div>';
+    h='<div class="sg-sort-lab">'+esc(sgSortLabel())+(majors?' \u00b7 '+esc(sgFilterLabel(sgCurrentFilterCount())):'')+'</div>'+
+      '<div class="sg-sort-chips">'+chip('gpa','GPA','sort')+chip('sat','SAT','sort')+'</div>';
+    // Hide STEM/Business/Other when no row carries a major (national U.S. News).
+    if(majors){
+      h+='<div class="sg-sort-chips">'+chip('all','All','filter')+chip('stem','STEM','filter')+chip('business','Business','filter')+chip('other','Other','filter')+chip('none','No major','filter')+'</div>';
+    }
+    return h;
   }
   function syncSgSortBar(){
     var bar=$('d-pop-sort'), hint=$('d-pop-hint'), has=sgHasRows();
@@ -2372,7 +2479,7 @@
       if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
       body=dLines(acad)+aiCounselorHtml(d);
     }else if(key==='scattergram'){
-      title='Marist scattergram'; body=sgPopupHtml(d.marist_scattergram);
+      title=esc(sgChartTitle(d.marist_scattergram)); body=sgPopupHtml(d.marist_scattergram);
     }else if(key==='internships'){
       title='Internships'; body=dLines(d.internships||[]);
     }else if(key==='alumni'){
@@ -2653,7 +2760,7 @@
       body=dLines(trimRows(acad, listN))+ai;
       secs.push(dSec('','Academics',body,'academics'));
     })();
-    if(d.marist_scattergram)secs.push(dSec('sg','Marist scattergram',sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
+    if(d.marist_scattergram)secs.push(dSec('sg',esc(sgChartTitle(d.marist_scattergram)),sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
