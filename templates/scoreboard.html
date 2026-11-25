@@ -123,10 +123,14 @@
     color:var(--c);border:1px solid var(--cb);background:var(--cf)}
   .tag.plain{--c:var(--muted);--cb:var(--hair);--cf:transparent}
   .tag.date{--c:var(--gold);--cb:rgba(201,168,106,.3);--cf:rgba(201,168,106,.06)}
-  /* New Marist classmate flag on board tiles — bright gold, readable across the room */
+  /* New Marist classmate flag on board tiles - bright gold, readable across the room */
   .tag.new-marist{--c:#1A1508;--cb:rgba(255,210,74,.95);--cf:#FFD24A;font-weight:700;letter-spacing:.14em}
   .tag.new-marist-who{--c:#FFD24A;--cb:rgba(255,210,74,.4);--cf:rgba(255,210,74,.1);
     max-width:46%;overflow:hidden;text-overflow:ellipsis}
+  /* Detail Marist row badge reuses .tag.new-marist gold. */
+  .marist-name-row{display:flex;align-items:baseline;gap:8px;min-width:0}
+  .marist-name-row .marist-name-text{min-width:0;overflow-wrap:break-word}
+  .marist-name-row .tag.new-marist{flex:none;padding:3px 10px;font-size:18px}
   #cols{--line-size:22px;--lab-size:18px}
   #cols .lab{font-size:var(--lab-size);-webkit-line-clamp:1;max-height:1.25em;line-height:1.25}
   /* One couch-readable line per row keeps 5 Safety tiles on-screen at the larger type size */
@@ -544,6 +548,14 @@
   var UPDATE_WEBHOOK='/api/webhook/daybreak_marist_refresh';
   var UPDATE_DEBOUNCE_MS=60*1000;
   var updateUi={lastPress:0, status:'', timers:[]};
+  // Self-reload when daybreak-scoreboard.html bytes change. ?reloadtest=1 shortens timers.
+  var RELOAD_POLL_MS=5*60*1000;
+  var RELOAD_IDLE_MS=2*60*1000;
+  var lastKeyMs=Date.now();
+  var htmlHashBaseline=null;
+  var htmlReloadPending=false;
+  // Detail-row NEW: if never opened, added_at within 48h; else added_at after last open.
+  var NEW_ROW_MS=48*60*60*1000;
   var ROUNDS={ED:1,ED2:1,EA:1,REA:1,RD:1,Rolling:1};
   var STATUS={
     not_submitted:{label:'Not yet submitted',c:'#CFCAC1',group:0},
@@ -566,7 +578,8 @@
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
   // cardFocus: index into detail .d-card nodes; popupOpen: detail section overlay.
   var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
+    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all',
+    detailOpenBaselineMs:null};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -810,6 +823,20 @@
       if(t>bestT){bestT=t;best=list[i];}
     }
     return bestT>=0&&best&&best.name?best.name:'';
+  }
+  // Detail-row NEW uses last-opened captured before this visit (state.detailOpenBaselineMs).
+  // Never opened: added_at within 48h. Rows without added_at are never NEW.
+  function isMaristRowNew(person){
+    var added, opened, age;
+    if(!person||!person.added_at)return false;
+    added=parseIsoMs(person.added_at);
+    if(added==null)return false;
+    opened=state.detailOpenBaselineMs;
+    if(opened==null){
+      age=Date.now()-added;
+      return age>=0&&age<NEW_ROW_MS;
+    }
+    return added>opened;
   }
   var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
   function cleanWeatherMonthly(raw){
@@ -2236,7 +2263,12 @@
     if(y24&&y24.note)html+='<p class="marist-note">2024: '+esc(y24.note)+'</p>';
     return html;
   }
-  function maristBodyHtml(m){
+  function maristNameRowHtml(person){
+    var badge=isMaristRowNew(person)?'<span class="tag new-marist">NEW</span>':'';
+    return '<div class="marist-name-row">'+badge+
+      '<span class="marist-name-text">'+esc(person.name)+(person.major?' \u2014 '+esc(person.major):'')+'</span></div>';
+  }
+  function maristBodyHtml(m, s){
     if(!m)return '';
     var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
     var empty=!c27.length&&!(c26.count>0)&&!(c25.count>0)&&!(c26.majors&&c26.majors.length)&&!(c25.majors&&c25.majors.length);
@@ -2248,7 +2280,7 @@
         cols=c27.length>4?' cols-2':'';
         names='';
         for(i=0;i<c27.length;i++){
-          names+='<div>'+esc(c27[i].name)+(c27[i].major?' \u2014 '+esc(c27[i].major):'')+'</div>';
+          names+=maristNameRowHtml(c27[i]);
         }
         body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
       }
@@ -2342,7 +2374,7 @@
     }else if(key==='deadlines'){
       title='Deadlines'; body=dLines(d.deadlines||[]);
     }else if(key==='marist'){
-      title='Marist classmates'; body=maristBodyHtml(d.marist_classmates);
+      title='Marist classmates'; body=maristBodyHtml(d.marist_classmates, s);
     }else if(key==='take'){
       title='Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':'');
       body=d.counselor_take?'<p class="prose">'+esc(d.counselor_take)+'</p>':'';
@@ -2501,7 +2533,7 @@
         updateBarHtml()+
       '</div>'+(wxBand||'')+'</div>';
   }
-  function maristHtml(m, nameLimit){
+  function maristHtml(m, nameLimit, s){
     if(!m)return '';
     var lim=nameLimit!=null?nameLimit:6;
     var c27=m.class_2027||[], c26=m.class_2026||{count:0,majors:[]}, c25=m.class_2025||{count:0,majors:[]};
@@ -2511,10 +2543,22 @@
       body+='<p class="marist-empty">No Marist students in 2025\u20132027 classes</p>';
     }else{
       if(c27.length){
-        shown=c27.slice(0,lim); extra=c27.length-shown.length; cols=shown.length>4?' cols-2':'';
+        // Prefer NEW rows in the visible slice so fit-trim does not hide badges.
+        shown=[]; extra=0;
+        (function(){
+          var neu=[], old=[], k, merged;
+          for(k=0;k<c27.length;k++){
+            if(isMaristRowNew(c27[k]))neu.push(c27[k]);
+            else old.push(c27[k]);
+          }
+          merged=neu.concat(old);
+          shown=merged.slice(0, lim);
+          extra=merged.length-shown.length;
+        })();
+        cols=shown.length>4?' cols-2':'';
         names='';
         for(i=0;i<shown.length;i++){
-          names+='<div>'+esc(shown[i].name)+(shown[i].major?' \u2014 '+esc(shown[i].major):'')+'</div>';
+          names+=maristNameRowHtml(shown[i]);
         }
         if(extra>0)names+='<div class="more">+'+extra+' more</div>';
         body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
@@ -2589,7 +2633,7 @@
       secs.push(dSec('','Costs',dLines(costsCardRows(d, listN)),'costs'));
     }
     if(d.deadlines&&d.deadlines.length)secs.push(dSec('','Deadlines',dLines(trimRows(d.deadlines, listN)),'deadlines'));
-    if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN));
+    if(d.marist_classmates)secs.push(maristHtml(d.marist_classmates, maristN, s));
     if(d.counselor_take)secs.push(dSec('take','Counselor\u2019s take'+(d.counselor_name?' <em>'+esc(d.counselor_name)+'</em>':''),'<p class="prose">'+esc(d.counselor_take)+'</p>','take'));
     if(d.history&&d.history.length&&histN>0){
       li='';
@@ -2962,10 +3006,15 @@
     if(on&&!(s&&s.hasDetail))return;
     if(on){
       state.chipFocus=false;state.view='detail';state.detailPage=1;state.cardFocus=0;
+      // Capture last-opened BEFORE recording this visit so detail-row NEW stays correct.
+      state.detailOpenBaselineMs=getSchoolLastOpenedMs(s);
       // Persist last-opened so the board NEW flag clears after return / reload.
       markSchoolOpened(s);
     }
-    else{state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();}
+    else{
+      state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();
+      state.detailOpenBaselineMs=null;
+    }
     state.detail=s?s.id:null;
     if(s)renderDetail(s);else{$('detail').innerHTML='';closeCardPopup();}
     $('detail').hidden=!s;
@@ -3014,7 +3063,8 @@
   }
   function blank(){
     state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
+      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all',
+      detailOpenBaselineMs:null};
     closeCardPopup();
     $('stage').hidden=true;
     $('cols').innerHTML='';$('cols').className='cols';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
@@ -3495,6 +3545,63 @@
       .catch(function(){blank();});
   }
 
+  function reloadTestMode(){
+    return param('reloadtest')==='1';
+  }
+  function reloadPollMs(){
+    return reloadTestMode()?2000:RELOAD_POLL_MS;
+  }
+  function reloadIdleMs(){
+    return reloadTestMode()?3000:RELOAD_IDLE_MS;
+  }
+  function cheapHash(s){
+    var h=5381, i;
+    if(!s)return '0';
+    for(i=0;i<s.length;i++)h=((h<<5)+h)^s.charCodeAt(i);
+    return String(h>>>0);
+  }
+  function pageHtmlPollUrl(){
+    var path=location.pathname||'';
+    if(!path||path.charAt(path.length-1)==='/')path=(path||'/')+'daybreak-scoreboard.html';
+    return path+'?v='+Date.now();
+  }
+  function tryHtmlReload(){
+    if(!htmlReloadPending)return;
+    if(state.popupOpen)return;
+    if((Date.now()-lastKeyMs)<reloadIdleMs())return;
+    htmlReloadPending=false;
+    location.reload();
+  }
+  function pollHtmlVersion(){
+    var xhr, text, h;
+    try{
+      xhr=new XMLHttpRequest();
+      xhr.open('GET', pageHtmlPollUrl(), true);
+      xhr.onreadystatechange=function(){
+        if(xhr.readyState!==4)return;
+        if(xhr.status!==200)return;
+        text=xhr.responseText||'';
+        if(text.length<=10000)return;
+        h=cheapHash(text);
+        if(!h)return;
+        if(htmlHashBaseline==null){htmlHashBaseline=h;return;}
+        if(h!==htmlHashBaseline){
+          htmlReloadPending=true;
+          tryHtmlReload();
+        }
+      };
+      xhr.onerror=function(){};
+      xhr.send(null);
+    }catch(e){}
+  }
+  function startHtmlReloadWatch(){
+    pollHtmlVersion();
+    setInterval(function(){
+      pollHtmlVersion();
+      tryHtmlReload();
+    }, reloadPollMs());
+  }
+
   function move(dir){
     if(state.chipFocus){
       if(dir==='down'||dir==='left'||dir==='right'){
@@ -3529,6 +3636,7 @@
   }
 
   document.addEventListener('keydown',function(e){
+    lastKeyMs=Date.now();
     if(!state.data)return;
     var code=e.keyCode||e.which;
     var isBack=code===10009||code===27||code===8||e.key==='Escape'||e.key==='Backspace'||e.key==='XF86Back'||e.key==='GoBack';
@@ -3672,6 +3780,7 @@
   fit();
   load();
   setInterval(load,REFRESH_MS);
+  startHtmlReloadWatch();
 })();
 </script>
 </body>
