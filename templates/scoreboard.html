@@ -330,6 +330,31 @@
   .d-pop-body .kfood-list{gap:14px}
   .d-pop-body .kfood-list li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
   .d-pop-body .kfood-footer{margin-top:16px;padding-top:4px}
+  /* Marist scattergram card + popup */
+  .d-sec.sg .sg-svg{display:block;width:100%;height:auto}
+  .sg-legend{display:flex;flex-wrap:wrap;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink)}
+  .sg-key{white-space:nowrap}
+  .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em}
+  .sg-key b,.sg-facts b{font-weight:700}
+  .sg-facts{font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);margin-top:2px}
+  .sg-foot{font-size:calc(var(--lab-size,20px) * .85);line-height:1.3;color:var(--muted);margin-top:4px}
+  .sg-table{width:100%;border-collapse:collapse;margin-top:8px;font-size:var(--lab-size,20px);color:var(--ink)}
+  .sg-table th,.sg-table td{padding:2px 8px;border-bottom:1px solid var(--rule);text-align:center;font-weight:400}
+  .sg-table thead th{color:var(--muted);font-weight:600;letter-spacing:.06em}
+  .sg-table tbody th{text-align:left;font-weight:600}
+  .sg-table td b{font-weight:700}
+  .sg-table .sg-all th,.sg-table .sg-all td{border-top:2px solid var(--rule);font-weight:700}
+  .sg-nodata{color:var(--muted)}
+  .d-pop-body .sg-pop-top{display:flex;gap:48px;align-items:flex-start}
+  .d-pop-body .sg-pop-top .sg-svg{flex:none;width:2000px;height:auto;display:block}
+  .d-pop-body .sg-pop-side{flex:1;min-width:0}
+  .d-pop-body .sg-legend{font-size:44px;gap:6px 32px;margin:0 0 18px;color:var(--pop-ink)}
+  .d-pop-body .sg-facts{font-size:44px;line-height:1.3;margin-top:14px;color:var(--pop-ink)}
+  .d-pop-body .sg-foot{font-size:34px;margin-top:14px;color:rgba(245,241,232,.6)}
+  .d-pop-body .sg-table{font-size:46px;margin-top:28px;max-width:2000px;color:var(--pop-ink)}
+  .d-pop-body .sg-table th,.d-pop-body .sg-table td{padding:6px 14px;color:var(--pop-ink)}
+  .d-pop-body .sg-key b,.d-pop-body .sg-table td b{color:var(--pop-ink)}
+  .d-pop-body .sg-table thead th{color:rgba(245,241,232,.65)}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -618,6 +643,7 @@
     if(d.wish_i_knew)return true;
     if(d.k_food_index)return true;
     if(d.costs_band)return true;
+    if(d.marist_scattergram)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
@@ -813,7 +839,202 @@
     out.wish_i_knew=cleanWishIKnew(d.wish_i_knew);
     out.k_food_index=cleanKFoodIndex(d.k_food_index);
     out.costs_band=cleanCostsBand(d.costs_band);
+    out.marist_scattergram=cleanMaristScattergram(d.marist_scattergram);
     return out;
+  }
+  // ---- Marist scattergram (Scoir). Data-only: never plots or shows CoCo's own GPA/SAT. ----
+  var SG_COL={A:'#3DCF7A',D:'#E5534B',W:'#E6B84C',U:'#9A958C',T:'#9A958C'};
+  var SG_ORDER=['U','T','D','W','A'];
+  function sgNum(v,lo,hi){
+    if(typeof v!=='number'||!isFinite(v)||v<lo||v>hi)return null;
+    return v;
+  }
+  function cleanSgCell(c){
+    var a, n;
+    if(!c||typeof c!=='object')return {a:0,n:0};
+    a=sgNum(c.admitted,0,100000); n=sgNum(c.applied,0,100000);
+    return {a:a==null?0:a, n:n==null?0:n};
+  }
+  function cleanSgAvg(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var o={gpa:sgNum(raw.gpa,0,120), sat:sgNum(raw.sat,400,1600), act:sgNum(raw.act,1,36), pct:sgNum(raw.accept_pct,0,100)};
+    if(o.gpa==null&&o.sat==null&&o.act==null&&o.pct==null)return null;
+    return o;
+  }
+  function cleanSgBand(b){
+    if(!b||typeof b!=='object'||!str(b.band))return null;
+    return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD), med:sgNum(b.median_sat_admits,400,1600)};
+  }
+  function cleanSgTable(raw){
+    if(!raw||typeof raw!=='object'||!Array.isArray(raw.bands))return null;
+    var bands=[], notes=[], i, b, t;
+    for(i=0;i<raw.bands.length&&bands.length<8;i++){
+      b=cleanSgBand(raw.bands[i]);
+      if(b)bands.push(b);
+    }
+    if(!bands.length)return null;
+    if(Array.isArray(raw.notes)){
+      for(i=0;i<raw.notes.length&&notes.length<4;i++){t=str(raw.notes[i]); if(t)notes.push(t);}
+    }
+    // Full row list (raw.rows) stays in the JSON for future use; the TV never reads it.
+    return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes};
+  }
+  function cleanMaristScattergram(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var out={hasData:raw.has_data===true, note:str(raw.note), source:str(raw.source), asOf:str(raw.as_of),
+      avg:null, pub:null, counts:null, points:[], table:null}, c, i, p, g, s, o, r, pts;
+    if(!out.hasData){
+      if(!out.note)out.note='Scoir: not enough Marist data';
+      return out;
+    }
+    out.avg=cleanSgAvg(raw.accepted_from_marist);
+    out.pub=cleanSgAvg(raw.published_school_wide);
+    c=raw.counts;
+    if(c&&typeof c==='object'){
+      out.counts={total:sgNum(c.total,0,100000)||0, admitted:sgNum(c.admitted,0,100000)||0,
+        acc:sgNum(c['Accepted'],0,100000)||0, den:sgNum(c['Denied'],0,100000)||0,
+        dwx:sgNum(c['Deferred/Waitlisted-then-X'],0,100000)||0, unk:sgNum(c['Unknown'],0,100000)||0,
+        gt:sgNum(c['Guaranteed Transfer'],0,100000)||0, noscore:sgNum(c.no_score,0,100000)||0,
+        conv:sgNum(c.act_converted,0,100000)||0};
+    }
+    pts=Array.isArray(raw.points)?raw.points:[];
+    for(i=0;i<pts.length&&out.points.length<700;i++){
+      p=pts[i];
+      if(!Array.isArray(p))continue;
+      g=sgNum(p[0],40,120); s=sgNum(p[1],400,1600); o=p[2];
+      if(g==null||s==null||typeof o!=='string'||!SG_COL[o])continue;
+      out.points.push([g,s,o]);
+    }
+    out.table=cleanSgTable(raw.table);
+    return out;
+  }
+  function sgPlotSvg(sg, W, H, fs, rad){
+    var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9, L=Math.round(fs*4.2), B=Math.round(fs*2.7),
+      T=Math.round(fs*0.8), R=Math.round(fs*0.8), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
+      h, byO={}, lab;
+    function X(g){return L+(g-xmin)/(xmax-xmin)*pw;}
+    function Y(s){return T+(ymax-s)/(ymax-ymin)*ph;}
+    function f1(n){return String(Math.round(n*10)/10);}
+    if(!pts.length)return '';
+    for(i=0;i<pts.length;i++){
+      p=pts[i];
+      if(p[0]<minG)minG=p[0];
+      if(p[0]>maxG)maxG=p[0];
+      if(p[1]<minS)minS=p[1];
+    }
+    if(sg.avg&&sg.avg.gpa!=null){minG=Math.min(minG,sg.avg.gpa);maxG=Math.max(maxG,sg.avg.gpa);}
+    if(sg.avg&&sg.avg.sat!=null)minS=Math.min(minS,sg.avg.sat);
+    xmin=Math.floor(minG/2)*2; xmax=Math.ceil(maxG/2)*2;
+    if(xmax-xmin<4){xmin-=2;xmax+=2;}
+    ymin=Math.floor(minS/100)*100; ymax=1600;
+    if(ymax-ymin<300)ymin=ymax-300;
+    xs=(xmax-xmin)>14?4:2;
+    ys=(ymax-ymin)>600?200:100;
+    h='<svg class="sg-svg" viewBox="0 0 '+W+' '+H+'" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marist GPA versus SAT by outcome">';
+    h+='<rect x="'+L+'" y="'+T+'" width="'+pw+'" height="'+ph+'" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.18)" stroke-width="2"/>';
+    for(v=Math.ceil(xmin/xs)*xs;v<=xmax;v+=xs){
+      x=X(v);
+      h+='<line x1="'+f1(x)+'" y1="'+T+'" x2="'+f1(x)+'" y2="'+(T+ph)+'" stroke="rgba(255,255,255,.08)" stroke-width="2"/>';
+      h+='<text x="'+f1(x)+'" y="'+(T+ph+fs*1.2)+'" fill="#CFCAC0" font-size="'+fs+'" text-anchor="middle">'+v+'</text>';
+    }
+    for(v=Math.ceil(ymin/ys)*ys;v<=ymax;v+=ys){
+      y=Y(v);
+      h+='<line x1="'+L+'" y1="'+f1(y)+'" x2="'+(L+pw)+'" y2="'+f1(y)+'" stroke="rgba(255,255,255,.08)" stroke-width="2"/>';
+      h+='<text x="'+(L-fs*0.4)+'" y="'+f1(y+fs*0.35)+'" fill="#CFCAC0" font-size="'+fs+'" text-anchor="end">'+v+'</text>';
+    }
+    h+='<text x="'+f1(L+pw/2)+'" y="'+(H-fs*0.2)+'" fill="#E8E4DC" font-size="'+fs+'" font-weight="600" text-anchor="middle">GPA</text>';
+    h+='<text transform="translate('+f1(fs*0.8)+' '+f1(T+ph/2)+') rotate(-90)" fill="#E8E4DC" font-size="'+fs+'" font-weight="600" text-anchor="middle">SAT</text>';
+    for(i=0;i<pts.length;i++){
+      p=pts[i];
+      if(!byO[p[2]])byO[p[2]]=[];
+      byO[p[2]].push(p);
+    }
+    for(k=0;k<SG_ORDER.length;k++){
+      lab=SG_ORDER[k];
+      if(!byO[lab])continue;
+      h+='<g fill="'+SG_COL[lab]+'" fill-opacity="0.72">';
+      for(i=0;i<byO[lab].length;i++){
+        p=byO[lab][i];
+        h+='<circle cx="'+f1(X(p[0]))+'" cy="'+f1(Y(p[1]))+'" r="'+rad+'"/>';
+      }
+      h+='</g>';
+    }
+    if(sg.avg&&sg.avg.gpa!=null){
+      x=X(sg.avg.gpa);
+      h+='<line x1="'+f1(x)+'" y1="'+T+'" x2="'+f1(x)+'" y2="'+(T+ph)+'" stroke="#F5F1E8" stroke-width="'+Math.max(3,Math.round(fs/10))+'" stroke-dasharray="14 10"/>';
+    }
+    if(sg.avg&&sg.avg.sat!=null){
+      y=Y(sg.avg.sat);
+      h+='<line x1="'+L+'" y1="'+f1(y)+'" x2="'+(L+pw)+'" y2="'+f1(y)+'" stroke="#F5F1E8" stroke-width="'+Math.max(3,Math.round(fs/10))+'" stroke-dasharray="14 10"/>';
+    }
+    return h+'</svg>';
+  }
+  function sgLegendHtml(sg){
+    var c=sg.counts, h='', other;
+    if(!c)return '';
+    function key(col,label,n){return '<span class="sg-key"><i style="background:'+col+'"></i>'+esc(label)+' <b>'+n+'</b></span>';}
+    h+=key(SG_COL.A,'Accepted',c.acc);
+    h+=key(SG_COL.D,'Denied',c.den);
+    h+=key(SG_COL.W,'Deferred/waitlisted',c.dwx);
+    other=c.unk+c.gt;
+    if(other>0)h+=key(SG_COL.U,'Other',other);
+    return '<div class="sg-legend">'+h+'</div>';
+  }
+  function sgAvgLine(label,a){
+    var parts=[];
+    if(!a)return '';
+    if(a.gpa!=null)parts.push('GPA '+a.gpa);
+    if(a.sat!=null)parts.push('SAT '+a.sat);
+    if(a.act!=null)parts.push('ACT '+a.act);
+    if(a.pct!=null)parts.push(a.pct+'% admitted');
+    return '<div class="sg-facts"><b>'+esc(label)+'</b> '+esc(parts.join(' \u00b7 '))+'</div>';
+  }
+  function sgFootHtml(sg){
+    var c=sg.counts, bits=[], h='';
+    if(c){
+      bits.push('n='+c.total);
+      if(c.conv>0)bits.push(c.conv+' ACT-only scores converted to SAT');
+      if(c.noscore>0)bits.push(c.noscore+' with no score not plotted');
+      h+='<div class="sg-foot">'+esc(bits.join(' \u00b7 '))+'</div>';
+    }
+    h+='<div class="sg-foot">Source: '+esc(sg.source||'Scoir')+(sg.asOf?' \u00b7 as of '+esc(sg.asOf):'')+'</div>';
+    return h;
+  }
+  function sgCellHtml(c){
+    var rate=c.n>0?c.a/c.n:0, bg=c.n>0?'rgba(61,207,122,'+(Math.round((0.06+rate*0.34)*100)/100)+')':'transparent';
+    return '<td style="background:'+bg+'"><b>'+c.a+'</b>/'+c.n+'</td>';
+  }
+  function sgTableHtml(t){
+    var h, i, b, rows=t.bands.slice();
+    if(t.total)rows.push(t.total);
+    h='<table class="sg-table"><thead><tr><th>GPA</th><th>EA</th><th>RD</th><th>Median SAT</th></tr></thead><tbody>';
+    for(i=0;i<rows.length;i++){
+      b=rows[i];
+      h+='<tr'+(i===rows.length-1&&t.total?' class="sg-all"':'')+'><th>'+esc(b.band)+'</th>'+sgCellHtml(b.ea)+sgCellHtml(b.rd)+
+        '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
+    }
+    h+='</tbody></table>';
+    h+='<div class="sg-foot">Cells = admitted/applied. Median SAT is for admits (ACT converted). '+
+      (t.major?'Major: '+esc(t.major)+'.':'')+'</div>';
+    return h;
+  }
+  function sgCardHtml(sg, withTable, plotH){
+    if(!sg)return '';
+    if(!sg.hasData){
+      return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
+    }
+    var h=sgPlotSvg(sg, 900, plotH||460, 30, 6)+sgLegendHtml(sg)+sgAvgLine('Dashed = Marist admits avg:',sg.avg);
+    h+=sgAvgLine('School-wide:',sg.pub);
+    if(withTable&&sg.table)h+=sgTableHtml(sg.table);
+    return h+sgFootHtml(sg);
+  }
+  function sgPopupHtml(sg){
+    if(!sg)return '';
+    if(!sg.hasData)return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
+    var h='<div class="sg-pop-top">'+sgPlotSvg(sg, 2000, 900, 42, 9)+'<div class="sg-pop-side">'+
+      sgLegendHtml(sg)+sgAvgLine('Dashed lines = Marist admits avg:',sg.avg)+sgAvgLine('School-wide:',sg.pub)+sgFootHtml(sg)+'</div></div>';
+    if(sg.table)h+=sgTableHtml(sg.table);
+    return h;
   }
   // Optional marching-band note inside Costs. Schools without costs_band behave as before.
   function cleanCostsBand(raw){
@@ -1662,8 +1883,10 @@
     }else if(key==='academics'){
       title='Academics';
       acad=(d.academics&&d.academics.length)?d.academics.slice():[];
-      if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
+      if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
       body=dLines(acad);
+    }else if(key==='scattergram'){
+      title='Marist scattergram'; body=sgPopupHtml(d.marist_scattergram);
     }else if(key==='internships'){
       title='Internships'; body=dLines(d.internships||[]);
     }else if(key==='alumni'){
@@ -1909,8 +2132,9 @@
     }
     if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
-    if(d.scattergram_url)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
+    if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
     if(acad.length)secs.push(dSec('','Academics',dLines(trimRows(acad, listN)),'academics'));
+    if(d.marist_scattergram)secs.push(dSec('sg','Marist scattergram',sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
@@ -2150,22 +2374,39 @@
     // Prefer full content; if it won't fit at >=18px, shorten Status history / Facts first, then lists.
     trim={hist:5, facts:6, list:8, why:5, marist:6};
     steps=[
-      {hist:5, facts:6, list:8, why:5, marist:6},
-      {hist:3, facts:4, list:8, why:5, marist:6},
-      {hist:2, facts:3, list:6, why:4, marist:4},
-      {hist:1, facts:2, list:5, why:3, marist:3},
-      {hist:0, facts:0, list:4, why:3, marist:2}
+      {hist:5, facts:6, list:8, why:5, marist:6, sg:true, sgh:420},
+      {hist:3, facts:4, list:8, why:5, marist:6, sg:true, sgh:400},
+      {hist:2, facts:3, list:6, why:4, marist:4, sg:true, sgh:380},
+      {hist:1, facts:2, list:5, why:3, marist:3, sg:true, sgh:330},
+      {hist:0, facts:2, list:5, why:3, marist:3, sg:true, sgh:300},
+      {hist:1, facts:2, list:5, why:3, marist:3, sg:false, sgh:360},
+      {hist:0, facts:0, list:4, why:3, marist:2, sg:false, sgh:340}
     ];
-    for(si=0;si<steps.length;si++){
-      trim=steps[si];
-      secs=buildDetailBody(s, trim);
-      $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
-      fitLogoImgsIn($('detail'));
-      if(layoutDetail())break;
+    function fitFrom(start){
+      var k;
+      for(k=start;k<steps.length;k++){
+        trim=steps[k];
+        secs=buildDetailBody(s, trim);
+        $('detail').innerHTML=heroHtml(s,wxBand)+(secs.length?'<div class="d-body">'+secs.join('')+'</div>':'');
+        fitLogoImgsIn($('detail'));
+        if(layoutDetail())return k;
+      }
+      return steps.length-1;
     }
+    si=fitFrom(0);
     // Land on the first section card (skip Update) so D-pad Enter still expands by default.
     state.cardFocus=firstDetailCardFocus();
-    setTimeout(function(){fitLogoImgsIn($('detail'));layoutDetail();paintCardFocus();}, 0);
+    setTimeout(function(){
+      var keep;
+      fitLogoImgsIn($('detail'));
+      // Logos/fonts can settle after the first pass; if it no longer fits, trim one step further.
+      if(!layoutDetail()&&si<steps.length-1&&state.view==='detail'&&!state.popupOpen&&state.detail===s.id){
+        keep=state.cardFocus;
+        si=fitFrom(si+1);
+        state.cardFocus=keep;
+      }
+      paintCardFocus();
+    }, 0);
     paintCardFocus();
     setHints();
   }
