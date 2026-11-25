@@ -365,6 +365,18 @@
   .d-pop-body .sg-rows thead th{position:-webkit-sticky;position:sticky;top:0;z-index:1;background:#0E1014;color:rgba(245,241,232,.7);font-weight:700;letter-spacing:.04em;padding-top:14px;padding-bottom:14px;white-space:normal;box-shadow:0 2px 0 #0E1014,0 3px 0 rgba(255,255,255,.12)}
   .d-pop-body .sg-rows tbody th{text-align:left}
   .d-pop-body .sg-coco-div td{background:rgba(230,184,76,.28);color:#F5E6B0;font-weight:800;letter-spacing:.08em;text-align:center;padding:16px 14px}
+  .d-pop-sort{flex:none;display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:20px 28px;min-width:0;margin-top:-8px}
+.d-pop-h.has-logo + .d-pop-sort{padding-right:760px;box-sizing:border-box}
+  .d-pop-sort[hidden]{display:none!important}
+  .d-pop-sort .sg-sort-lab{font-size:32px;font-weight:600;color:var(--pop-ink);letter-spacing:.04em;min-width:0}
+  .d-pop-sort .sg-sort-chips{display:flex;gap:16px;flex:none}
+  .sg-sort-chip{display:inline-block;padding:8px 22px;border:2px solid rgba(255,255,255,.18);border-radius:8px;font-size:32px;font-weight:700;letter-spacing:.06em;color:rgba(245,241,232,.7);background:transparent;cursor:pointer}
+  .sg-sort-chip.on{color:#F5E6B0;border-color:rgba(230,184,76,.55);background:rgba(230,184,76,.14)}
+  .sg-sort-chip.sg-sort-focus,.sg-sort-chip:focus{outline:none;border-color:var(--focus-ring);box-shadow:0 0 0 8px var(--focus-ring),0 0 28px 8px rgba(255,210,74,.45);color:#F5E6B0;z-index:2}
+  .d-pop-body .sg-rows thead th.sg-sort-h{cursor:pointer}
+  .d-pop-body .sg-rows thead th.sg-sort-h.on{color:#F5E6B0}
+  .sg-act{font-size:.72em;letter-spacing:.04em;color:rgba(245,241,232,.6);font-weight:600;margin-left:.25em}
+  .d-pop-body .sg-rows td.sg-major,.d-pop-body .sg-rows thead th.sg-major{max-width:26em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -506,8 +518,9 @@
     <button type="button" class="d-pop-edge d-pop-edge-r" data-pop-nav="right" aria-label="Next card">&#9654;</button>
     <div class="d-pop-panel" role="dialog" aria-modal="true">
       <div class="d-pop-h"><span id="d-pop-title"></span></div>
+      <div class="d-pop-sort" id="d-pop-sort" hidden></div>
       <div class="d-pop-body" id="d-pop-body"></div>
-      <div class="d-pop-hint">&#9664; &#9654; Cards &middot; &#9650;&#9660; Scroll &middot; OK / Back Close</div>
+      <div class="d-pop-hint" id="d-pop-hint">&#9664; &#9654; Cards &middot; &#9650;&#9660; Scroll &middot; OK / Back Close</div>
     </div>
   </div>
   <div id="roi" hidden></div>
@@ -547,7 +560,7 @@
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
   // cardFocus: index into detail .d-card nodes; popupOpen: detail section overlay.
   var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0};
+    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -876,13 +889,18 @@
     return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD), med:sgNum(b.median_sat_admits,400,1600)};
   }
   function cleanSgRow(r){
-    var g,s,a,rnd,outc,to;
+    var g,s,a,rnd,outc,to,maj;
     if(!Array.isArray(r)||r.length<6)return null;
     rnd=str(r[0]); outc=str(r[1]);
     a=sgNum(r[2],1,36); s=sgNum(r[3],400,1600); g=sgNum(r[4],40,120);
     to=str(r[5]);
+    maj='';
+    if(r.length>6&&typeof r[6]==='string'){
+      maj=str(r[6]);
+      if(maj.length>200)maj=maj.slice(0,200);
+    }
     if(!rnd&&!outc&&g==null)return null;
-    return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to};
+    return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to, major:maj};
   }
   function cleanSgTable(raw){
     if(!raw||typeof raw!=='object'||!Array.isArray(raw.bands))return null;
@@ -1120,23 +1138,131 @@
     return h;
   }
   function sgRowsHtml(t){
-    var rows, h, i, r, coco=cocoPoint(), inserted=false, lab, dash=function(v){return v==null||v===''?'-':String(v);};
+    var rows, h, i, r, coco=cocoPoint(), inserted=false, lab, satTxt, key, dir, dash;
+    dash=function(v){return v==null||v===''?'-':String(v);};
     if(!t||!t.rows||!t.rows.length)return '';
-    rows=t.rows;
+    key=state.sgSortKey==='sat'?'sat':'gpa';
+    dir=state.sgSortDir==='asc'?'asc':'desc';
+    rows=t.rows.slice().sort(function(a,b){return sgCmpRows(a,b,key,dir);});
     if(coco)lab=(coco.label||'CoCo')+' '+coco.gpa+' / '+coco.sat;
-    h='<table class="sg-rows"><thead><tr><th>GPA</th><th>SAT</th><th>ACT</th><th>Test Optional</th><th>Round</th><th>Decision</th><th>Major (not in Scoir)</th></tr></thead><tbody>';
+    h='<table class="sg-rows"><thead><tr>'+
+      sgHeadCell('gpa','GPA',key,dir)+sgHeadCell('sat','SAT',key,dir)+
+      '<th>ACT</th><th>Test Optional</th><th>Round</th><th>Decision</th><th class="sg-major">Major</th></tr></thead><tbody>';
     for(i=0;i<rows.length;i++){
       r=rows[i];
-      if(coco&&!inserted&&(r.gpa==null||r.gpa<=coco.gpa)){
+      if(coco&&!inserted&&sgCmpRows(r,coco,key,dir)>=0){
         h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
         inserted=true;
       }
-      h+='<tr><td>'+dash(r.gpa)+'</td><td>'+dash(r.sat)+'</td><td>'+dash(r.act)+'</td><td>'+esc(r.to||'-')+'</td><td>'+esc(r.round||'-')+'</td><td>'+esc(r.outcome||'-')+'</td><td>-</td></tr>';
+      satTxt=sgSatCell(r);
+      h+='<tr><td>'+dash(r.gpa)+'</td><td>'+satTxt+'</td><td>'+dash(r.act)+'</td><td>'+esc(r.to||'-')+'</td><td>'+esc(r.round||'-')+'</td><td>'+esc(r.outcome||'-')+'</td><td class="sg-major">'+esc(sgMajorDisplay(r.major))+'</td></tr>';
     }
     if(coco&&!inserted)h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
     h+='</tbody></table>';
-    h+='<div class="sg-foot">'+rows.length+' Marist applicants, sorted by GPA. Major is not shown by Scoir. Up/Down to scroll.</div>';
+    h+='<div class="sg-foot">'+rows.length+' Marist applicants. '+esc(sgSortLabel())+'. ACT-only SAT marked (ACT).</div>';
     return h;
+  }
+  // Official 2018 ACT/College Board concordance, Table A2 (ACT composite -> single SAT total).
+  var ACT_TO_SAT={36:1590,35:1540,34:1500,33:1460,32:1430,31:1400,30:1370,29:1340,28:1310,27:1280,26:1240,25:1210,24:1180,23:1140,22:1110,21:1080,20:1040,19:1010,18:970,17:930,16:890,15:850,14:800,13:760,12:710,11:670,10:630,9:590};
+  function sgSatValue(r){
+    if(!r)return null;
+    if(r.sat!=null)return r.sat;
+    if(r.act!=null&&ACT_TO_SAT[r.act]!=null)return ACT_TO_SAT[r.act];
+    return null;
+  }
+  function sgRowScore(r, key){
+    if(key==='gpa')return r&&r.gpa!=null?r.gpa:null;
+    return sgSatValue(r);
+  }
+  function sgCmpRows(a, b, key, dir){
+    var other=key==='gpa'?'sat':'gpa', sign=dir==='asc'?1:-1, va=sgRowScore(a,key), vb=sgRowScore(b,key);
+    if(va==null&&vb==null){
+      va=sgRowScore(a,other); vb=sgRowScore(b,other);
+      if(va==null&&vb==null)return 0;
+      if(va==null)return 1;
+      if(vb==null)return -1;
+      return va===vb?0:sign*(va<vb?-1:1);
+    }
+    if(va==null)return 1;
+    if(vb==null)return -1;
+    if(va!==vb)return sign*(va<vb?-1:1);
+    va=sgRowScore(a,other); vb=sgRowScore(b,other);
+    if(va==null&&vb==null)return 0;
+    if(va==null)return 1;
+    if(vb==null)return -1;
+    return va===vb?0:sign*(va<vb?-1:1);
+  }
+  function sgMajorDisplay(raw){
+    var t=typeof raw==='string'?raw:'';
+    t=t.replace(/^\s+|\s+$/g,'');
+    if(!t||t==='-')return '-';
+    if(t.length>=6&&t.slice(t.length-6)===' (All)')t=t.slice(0,t.length-6).replace(/^\s+|\s+$/g,'');
+    if(!t)return '-';
+    if(t.length>40)t=t.slice(0,39)+'\u2026';
+    return t;
+  }
+  function sgSatCell(r){
+    if(r&&r.sat!=null)return String(r.sat);
+    if(r&&r.act!=null&&ACT_TO_SAT[r.act]!=null)return ACT_TO_SAT[r.act]+'<span class="sg-act">(ACT)</span>';
+    return '-';
+  }
+  function sgSortLabel(){
+    var key=state.sgSortKey==='sat'?'SAT':'GPA', dir=state.sgSortDir==='asc'?'low to high':'high to low';
+    return 'Sorted: '+key+' '+dir;
+  }
+  function sgHeadCell(key, label, cur, dir){
+    var on=cur===key, arrow=on?(dir==='asc'?' \u25b4':' \u25be'):'';
+    return '<th class="sg-sort-h'+(on?' on':'')+'" data-sg-sort="'+key+'">'+label+arrow+'</th>';
+  }
+  function sgHasRows(){
+    var body=$('d-pop-body');
+    return !!(body&&body.querySelector('.sg-rows'));
+  }
+  function sgSortBarHtml(){
+    var key=state.sgSortKey==='sat'?'sat':'gpa', dir=state.sgSortDir==='asc'?'asc':'desc';
+    function chip(k,lab){
+      var on=key===k, arrow=on?(dir==='asc'?' \u25b4':' \u25be'):'', foc=state.sgSortFocus===k?' sg-sort-focus':'';
+      return '<span class="sg-sort-chip'+(on?' on':'')+foc+'" tabindex="-1" data-sg-sort="'+k+'">'+lab+arrow+'</span>';
+    }
+    return '<div class="sg-sort-lab">'+esc(sgSortLabel())+'</div><div class="sg-sort-chips">'+chip('gpa','GPA')+chip('sat','SAT')+'</div>';
+  }
+  function syncSgSortBar(){
+    var bar=$('d-pop-sort'), hint=$('d-pop-hint'), has=sgHasRows();
+    if(bar){
+      if(has){bar.hidden=false;bar.innerHTML=sgSortBarHtml();}
+      else{bar.hidden=true;bar.innerHTML='';state.sgSortFocus=null;}
+    }
+    if(hint){
+      if(has&&state.sgSortFocus)hint.innerHTML='\u25c0 \u25b6 GPA / SAT \u00b7 OK Sort \u00b7 \u25bc List \u00b7 Back Close';
+      else if(has)hint.innerHTML='\u25c0 \u25b6 Cards \u00b7 \u25b2\u25bc Scroll \u00b7 OK / Back Close \u00b7 \u25b2 (top) Sort';
+      else hint.innerHTML='\u25c0 \u25b6 Cards \u00b7 \u25b2\u25bc Scroll \u00b7 OK / Back Close';
+    }
+  }
+  function paintSgSortFocus(){
+    var bar=$('d-pop-sort'), chips, i, k;
+    if(!bar)return;
+    chips=bar.querySelectorAll('.sg-sort-chip');
+    for(i=0;i<chips.length;i++){
+      k=chips[i].getAttribute('data-sg-sort');
+      if(state.sgSortFocus===k)chips[i].classList.add('sg-sort-focus');
+      else chips[i].classList.remove('sg-sort-focus');
+    }
+  }
+  function sgToggleSort(col){
+    if(col!=='gpa'&&col!=='sat')return;
+    if(state.sgSortKey===col)state.sgSortDir=state.sgSortDir==='desc'?'asc':'desc';
+    else{state.sgSortKey=col;state.sgSortDir='desc';}
+    sgRefreshRows();
+  }
+  function sgRefreshRows(){
+    var s=focusedSchool(), body=$('d-pop-body'), top, content;
+    if(!s||!body||!sgHasRows())return;
+    top=body.scrollTop;
+    content=popupContentForKey(s,'scattergram');
+    body.innerHTML=(content&&content.bodyHtml)||'';
+    body.scrollTop=top;
+    syncSgSortBar();
+    setHints();
   }
   // Optional marching-band note inside Costs. Schools without costs_band behave as before.
   function cleanCostsBand(raw){
@@ -1827,6 +1953,8 @@
       $('hints').innerHTML=h;return;
     }
     if(state.view==='roi')h='<span><b>Back</b>Board</span>';
+    else if(state.view==='detail'&&state.popupOpen&&sgHasRows()&&state.sgSortFocus)h='<span><b>\u25c0\u25b6</b>GPA / SAT</span><span><b>OK</b>Sort</span><span><b>\u25bc</b>List</span><span><b>Back</b>Close</span>';
+    else if(state.view==='detail'&&state.popupOpen&&sgHasRows())h='<span><b>\u25c0\u25b6</b>Cards</span><span><b>\u25b2\u25bc</b>Scroll</span><span><b>OK</b>Close</span><span><b>Back</b>Close</span><span><b>\u25b2</b>(top) Sort</span>';
     else if(state.view==='detail'&&state.popupOpen)h='<span><b>\u25c0\u25b6</b>Cards</span><span><b>\u25b2\u25bc</b>Scroll</span><span><b>OK</b>Close</span><span><b>Back</b>Close</span>';
     else if(state.view==='detail'&&updateBtnFocused())h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Cards</span><span><b>OK</b>Update</span><span><b>Back</b>Board</span>';
     else if(state.view==='detail')h='<span><b>\u25b2\u25bc\u25c0\u25b6</b>Cards</span><span><b>OK</b>Expand</span><span><b>Back</b>Board</span>';
@@ -2409,6 +2537,9 @@
     if(!pop||!card)return;
     s=focusedSchool();
     key=card.getAttribute('data-ckey')||'';
+    state.sgSortKey='gpa';
+    state.sgSortDir='desc';
+    state.sgSortFocus=null;
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
     titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
@@ -2423,6 +2554,7 @@
       body.innerHTML=(content&&content.bodyHtml)||'';
       body.scrollTop=0;
     }
+    syncSgSortBar();
     pop.hidden=false;
     // Popup accent: primary if it passes; else secondary/alt (or Auburn override); else lightened primary.
     accent=resolvePopupAccent(s);
@@ -2452,6 +2584,9 @@
     if(pop)pop.hidden=true;
     if(body)body.innerHTML='';
     state.popupOpen=false;
+    state.sgSortFocus=null;
+    if($('d-pop-sort')){$('d-pop-sort').hidden=true;$('d-pop-sort').innerHTML='';}
+    if($('d-pop-hint'))$('d-pop-hint').innerHTML='\u25c0 \u25b6 Cards \u00b7 \u25b2\u25bc Scroll \u00b7 OK / Back Close';
     paintCardFocus();
     setHints();
   }
@@ -2667,7 +2802,7 @@
   }
   function blank(){
     state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0};
+      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null};
     closeCardPopup();
     $('stage').hidden=true;
     $('cols').innerHTML='';$('cols').className='cols';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
@@ -3204,9 +3339,31 @@
       return;
     }
     // Detail popup: Left/Right switch cards; Up/Down scroll; Back / Esc / Enter closes.
+    // When a UGA/GT list is open, Up at the top of the scroll focuses GPA/SAT sort chips;
+    // then Left/Right pick a column, OK toggles sort, Down returns to the list. Back still closes.
     if(state.view==='detail'&&state.popupOpen){
       e.preventDefault();
-      if(isBack||code===13||e.key==='Enter'){closeCardPopup();return;}
+      if(isBack){closeCardPopup();return;}
+      if(sgHasRows()){
+        if(state.sgSortFocus){
+          if(code===13||e.key==='Enter'){sgToggleSort(state.sgSortFocus);return;}
+          if(code===37){state.sgSortFocus='gpa';syncSgSortBar();setHints();return;}
+          if(code===39){state.sgSortFocus='sat';syncSgSortBar();setHints();return;}
+          if(code===40){state.sgSortFocus=null;syncSgSortBar();setHints();return;}
+          return;
+        }
+        if(code===13||e.key==='Enter'){closeCardPopup();return;}
+        if(code===38){
+          var popBody=$('d-pop-body');
+          if(popBody&&popBody.scrollTop<=2){state.sgSortFocus=state.sgSortKey||'gpa';syncSgSortBar();setHints();return;}
+          scrollPopup('up');return;
+        }
+        if(code===37){shiftPopupCard('left');return;}
+        if(code===39){shiftPopupCard('right');return;}
+        if(code===40){scrollPopup('down');return;}
+        return;
+      }
+      if(code===13||e.key==='Enter'){closeCardPopup();return;}
       if(code===37){shiftPopupCard('left');return;}
       if(code===39){shiftPopupCard('right');return;}
       if(code===38){scrollPopup('up');return;}
@@ -3236,7 +3393,7 @@
     if(dir){e.preventDefault();move(dir);}
   });
   document.addEventListener('click',function(e){
-    var chip, el, card, pop, cards, i, nav, kw, btn, items;
+    var chip, el, card, pop, cards, i, nav, kw, btn, items, sortEl;
     // Popup open: edge arrows switch cards; any other click on the overlay closes it.
     if(state.popupOpen){
       pop=$('d-pop');
@@ -3246,6 +3403,14 @@
         e.stopPropagation();
         if(state.mode==='kw')shiftKwPopup(nav.getAttribute('data-pop-nav')==='left'?'left':'right');
         else shiftPopupCard(nav.getAttribute('data-pop-nav')==='left'?'left':'right');
+        return;
+      }
+      sortEl=e.target.closest?e.target.closest('[data-sg-sort]'):null;
+      if(sortEl&&pop&&pop.contains(sortEl)){
+        e.preventDefault();
+        e.stopPropagation();
+        state.sgSortFocus=sortEl.getAttribute('data-sg-sort');
+        sgToggleSort(state.sgSortFocus);
         return;
       }
       if(pop&&pop.contains(e.target)){e.preventDefault();closeCardPopup();return;}
