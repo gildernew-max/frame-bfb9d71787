@@ -700,6 +700,7 @@
     if(d.k_food_index)return true;
     if(d.costs_band)return true;
     if(d.marist_scattergram)return true;
+    if(d.marist_now&&d.marist_now.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.counselor_take_updated||d.why||d.why_not||d.scattergram_url)return true;
     if(d.test_submit_pct)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
@@ -910,6 +911,9 @@
     out.deadlines=cleanLabeled(d.deadlines);
     out.academics=cleanLabeled(d.academics);
     out.alumni=cleanLabeled(d.alumni);
+    // Marist alumni currently on campus: {label: class year, text: name/major}, up to 14.
+    out.marist_now=cleanLabeled(d.marist_now, 14);
+    out.marist_now_total=(typeof d.marist_now_total==='number'&&isFinite(d.marist_now_total)&&d.marist_now_total>0)?Math.round(d.marist_now_total):0;
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
@@ -2510,6 +2514,8 @@
       title='Internships'; body=dLines(d.internships||[]);
     }else if(key==='alumni'){
       title='Alumni'; body=dLines(d.alumni||[]);
+    }else if(key==='marist_now'){
+      title=esc(maristNowTitle(d)); body=dLines(d.marist_now||[]);
     }else if(key==='facts'){
       title='Facts'; body=dLines(d.facts||[]);
     }else if(key==='housing'){
@@ -2788,6 +2794,12 @@
     if(limit>0)out.push({label:'',text:'\u2026',tone:'muted'});
     return out;
   }
+  function maristNowTitle(d){
+    var n, title='Marist alumni there now';
+    n=d&&d.marist_now_total?d.marist_now_total:0;
+    if(n>(d.marist_now&&d.marist_now.length?d.marist_now.length:0))title+=' ('+n+' total)';
+    return title;
+  }
   function whyBodyLimited(points, prose, limit){
     if(points&&points.length&&limit!=null&&points.length>limit){
       return whyBody(points.slice(0,limit).concat([{label:'',text:'\u2026'}]), null);
@@ -2839,6 +2851,9 @@
     if(d.marist_scattergram)secs.push(dSec('sg',esc(sgChartTitle(d.marist_scattergram)),sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
+    if(d.marist_now&&d.marist_now.length){
+      secs.push(dSec('',esc(maristNowTitle(d)),dLines(trimRows(d.marist_now, listN)),'marist_now'));
+    }
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
     if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
     // K-Food Index: standalone 4-row card beside Housing/Facts (multi-column packs into open room).
