@@ -2056,7 +2056,8 @@
           test_submit_pct:tsp,
           detail:det
         });
-        out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0;
+        // School-level test_submit_pct (optional/missing policy) is enough to open detail.
+        out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0||testSubmitPctVisible(tsp);
       })();
     }
     // Admitted first within the board (and thus at the top of each tier column), then pending, denied, withdrawn.
