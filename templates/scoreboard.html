@@ -2732,8 +2732,13 @@
       el.hidden=true;
     }
   }
+  function updateRefreshDelays(){
+    // reloadtest=1 shortens Update re-fetches for headless verification.
+    if(reloadTestMode())return [1500, 3000, 5000];
+    return [2*60*1000, 5*60*1000, 10*60*1000];
+  }
   function scheduleUpdateRefreshes(){
-    var delays=[2*60*1000, 5*60*1000, 10*60*1000], i;
+    var delays=updateRefreshDelays(), i;
     clearUpdateTimers();
     for(i=0;i<delays.length;i++){
       updateUi.timers.push(setTimeout(function(){ load(); }, delays[i]));
@@ -2787,15 +2792,19 @@
     step=Math.max(48, Math.round(body.clientHeight*0.25));
     body.scrollTop=body.scrollTop+(dir==='down'?step:-step);
   }
-  function openCardPopup(card){
+  function openCardPopup(card, opts){
     var pop=$('d-pop'), head, body=$('d-pop-body'), s, key, content, accent, titleHtml, logo;
+    opts=opts||{};
     if(!pop||!card)return;
     s=focusedSchool();
     key=card.getAttribute('data-ckey')||'';
-    state.sgSortKey='gpa';
-    state.sgSortDir='desc';
-    state.sgSortFocus=null;
-    state.sgFilter='all';
+    // Soft refresh keeps scattergram sort/filter/focus; user opens reset to defaults.
+    if(!opts.preserveSg){
+      state.sgSortKey='gpa';
+      state.sgSortDir='desc';
+      state.sgSortFocus=null;
+      state.sgFilter='all';
+    }
     content=(s&&key)?popupContentForKey(s, key):null;
     head=pop.querySelector('.d-pop-h');
     titleHtml=(content&&content.titleHtml)||'<span>Details</span>';
@@ -2808,7 +2817,7 @@
     }
     if(body){
       body.innerHTML=(content&&content.bodyHtml)||'';
-      body.scrollTop=0;
+      body.scrollTop=opts.preserveScroll!=null?opts.preserveScroll:0;
     }
     syncSgSortBar();
     pop.hidden=false;
@@ -2854,8 +2863,9 @@
     if(el&&el.getAttribute('data-update')==='1'){activateUpdateBtn();return;}
     if(el&&el.classList.contains('d-card'))openCardPopup(el);
   }
-  function renderDetail(s){
+  function renderDetail(s, opts){
     var d=s.detail||{}, accent, wxBand='', secs, trim, steps, si;
+    opts=opts||{};
     accent=resolveSchoolAccent(s);
     // Single screen: hero (logo | name | inline weather) + all sections in a dense column grid.
     if(d.weather_monthly)wxBand=weatherMonthlyHtml(d.weather_monthly);
@@ -2863,7 +2873,8 @@
     state.detailPages=1;
     state.detailPage=1;
     state.cardFocus=0;
-    closeCardPopup();
+    // Soft data refresh keeps an open popup; user navigation still closes it.
+    if(!opts.skipClosePopup)closeCardPopup();
     $('detail').style.setProperty('--accent', accent);
     // Prefer full content; if it won't fit at >=18px, shorten Status history / Facts first, then lists.
     trim={hist:5, facts:6, list:8, why:5, marist:6};
@@ -2888,8 +2899,9 @@
       return steps.length-1;
     }
     si=fitFrom(0);
-    // Land on the first section card (skip Update) so D-pad Enter still expands by default.
-    state.cardFocus=firstDetailCardFocus();
+    // Soft refresh restores prior card focus; user open lands on first section card.
+    if(opts.keepFocus!=null&&opts.keepFocus>=0)state.cardFocus=opts.keepFocus;
+    else state.cardFocus=firstDetailCardFocus();
     setTimeout(function(){
       var keep;
       fitLogoImgsIn($('detail'));
@@ -2902,6 +2914,94 @@
       paintCardFocus();
     }, 0);
     paintCardFocus();
+    setHints();
+  }
+  function isUiBusy(){
+    var pop;
+    // Any open overlay (scattergram, KW title, other section popups) blocks auto navigation.
+    if(state.popupOpen)return true;
+    pop=$('d-pop');
+    if(pop&&!pop.hidden)return true;
+    return false;
+  }
+  function findSchoolById(id){
+    var i, schools=state.data&&state.data.schools;
+    if(!id||!schools)return null;
+    for(i=0;i<schools.length;i++)if(schools[i].id===id)return schools[i];
+    return null;
+  }
+  function focusSchoolById(id){
+    var i, j;
+    if(!id)return;
+    for(i=0;i<state.cols.length;i++){
+      for(j=0;j<state.cols[i].items.length;j++){
+        if(state.cols[i].items[j].id===id){state.focus={col:i,idx:j};return;}
+      }
+    }
+  }
+  function detailFocusCkey(){
+    var items=detailNavItems(), el;
+    if(!items.length)return '';
+    el=items[state.cardFocus|0];
+    return el?String(el.getAttribute('data-ckey')||''):'';
+  }
+  function restoreCardFocusByCkey(ckey, fallbackIdx){
+    var items=detailNavItems(), i;
+    if(ckey){
+      for(i=0;i<items.length;i++){
+        if(String(items[i].getAttribute('data-ckey')||'')===ckey){
+          state.cardFocus=i;
+          paintCardFocus();
+          return items[i];
+        }
+      }
+    }
+    if(fallbackIdx!=null&&fallbackIdx>=0&&fallbackIdx<items.length)state.cardFocus=fallbackIdx;
+    else state.cardFocus=firstDetailCardFocus();
+    paintCardFocus();
+    return items[state.cardFocus|0]||null;
+  }
+  // Soft remount after data refresh: keep screen + popup; do not rewrite last-opened.
+  function softRestoreDetail(schoolId, opts){
+    var s, el, keepCkey, keepScroll, keepFocus, wasPopup;
+    opts=opts||{};
+    keepCkey=opts.ckey||'';
+    keepScroll=opts.scroll;
+    keepFocus=opts.focusIdx;
+    wasPopup=!!opts.popup;
+    s=findSchoolById(schoolId);
+    focusSchoolById(schoolId);
+    if(!s||!s.hasDetail){
+      state.view='board';
+      state.detail=null;
+      state.detailOpenBaselineMs=null;
+      closeCardPopup();
+      $('detail').hidden=true;
+      $('detail').innerHTML='';
+      $('cols').hidden=false;
+      document.querySelector('.head-r').style.visibility='';
+      $('title').style.display='';
+      paintFocus();
+      setHints();
+      return;
+    }
+    state.chipFocus=false;
+    state.view='detail';
+    state.detail=s.id;
+    renderDetail(s, {skipClosePopup:wasPopup, keepFocus:keepFocus});
+    $('detail').hidden=false;
+    $('cols').hidden=true;
+    if($('roi'))$('roi').hidden=true;
+    if($('also'))$('also').hidden=true;
+    document.querySelector('.head-r').style.visibility='hidden';
+    $('title').style.display='none';
+    el=restoreCardFocusByCkey(keepCkey, keepFocus);
+    if(wasPopup&&el&&el.classList.contains('d-card')){
+      openCardPopup(el, {preserveSg:true, preserveScroll:keepScroll!=null?keepScroll:0});
+    }else if(wasPopup){
+      closeCardPopup();
+    }
+    syncRoiChip();
     setHints();
   }
   function detailBodyOverflows(){
@@ -3032,10 +3132,20 @@
   }
 
   function render(d){
+    var wasView=state.view, wasDetail=state.detail, keepChip=state.chipFocus;
+    var wasPopup=isUiBusy(), keepCkey='', keepScroll=0, keepFocus=state.cardFocus|0;
+    var kwSub, also, alsoList;
+    // Capture popup/detail UI state before board rebuild tears down cards.
+    if(wasView==='detail'){
+      keepCkey=detailFocusCkey();
+      if(wasPopup){
+        keepScroll=$('d-pop-body')?$('d-pop-body').scrollTop:0;
+      }
+    }
     state.mode='admissions';
     state.data=d;
     state.roi=d.roi||null;
-    var kwSub=document.getElementById('kw-sub');
+    kwSub=document.getElementById('kw-sub');
     if(kwSub){kwSub.hidden=true;kwSub.textContent='';}
     $('cols').className='cols';
     $('title').textContent='College Application Board';
@@ -3043,25 +3153,35 @@
     $('stage').hidden=false;
     $('updated').textContent=fmtUpdated(d.updated)||'\u2014';
     $('counts').innerHTML=countsHtml(d.schools);
-    var also=$('also'), alsoList=d.also||[];
+    also=$('also'); alsoList=d.also||[];
     if(also){
       if(alsoList.length&&state.view==='board'){also.hidden=false;also.innerHTML=alsoHtml(alsoList);}
       else{also.hidden=true;also.innerHTML='';}
     }
-    var wasView=state.view, wasDetail=state.detail, keepChip=state.chipFocus;
-    if(wasView==='roi'||wasView==='detail'){$('cols').hidden=false;$('detail').hidden=true;$('roi').hidden=true;$('roi').innerHTML='';}
+    // Keep detail+popup visible during soft restore so nothing flashes closed.
+    if(wasView==='roi'||(wasView==='detail'&&!wasPopup)){
+      $('cols').hidden=false;$('detail').hidden=true;$('roi').hidden=true;$('roi').innerHTML='';
+    }else if(wasView==='detail'&&wasPopup){
+      if($('roi')){$('roi').hidden=true;$('roi').innerHTML='';}
+    }
     syncRoiChip();
     renderBoard();
     if(wasView==='roi'&&state.roi)showRoi(true);
     else if(wasView==='detail'&&wasDetail){
-      var s=focusedSchool();
-      showDetail(!!(s&&s.id===wasDetail));
+      softRestoreDetail(wasDetail, {
+        ckey:keepCkey,
+        scroll:keepScroll,
+        focusIdx:keepFocus,
+        popup:wasPopup
+      });
     }else{
       state.chipFocus=!!(keepChip&&state.roi);
       paintFocus();
     }
   }
   function blank(){
+    // Never wipe the screen while a popup is open (failed refresh stays put).
+    if(isUiBusy())return;
     state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
       cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all',
       detailOpenBaselineMs:null};
@@ -3429,8 +3549,9 @@
       size-=4;
     }
   }
-  function openKwPopup(){
+  function openKwPopup(opts){
     var pop=$('d-pop'), head, body=$('d-pop-body'), pick=focusedKwPick(), titleHtml;
+    opts=opts||{};
     if(!pop||!pick)return;
     head=pop.querySelector('.d-pop-h');
     titleHtml='<span>'+esc(pick.title)+'</span>';
@@ -3438,7 +3559,10 @@
       head.className='d-pop-h';
       head.innerHTML='<div class="d-pop-h-text">'+titleHtml+'</div>';
     }
-    if(body){body.innerHTML=kwPopupBodyHtml(pick);body.scrollTop=0;}
+    if(body){
+      body.innerHTML=kwPopupBodyHtml(pick);
+      body.scrollTop=opts.preserveScroll!=null?opts.preserveScroll:0;
+    }
     pop.hidden=false;
     pop.style.setProperty('--accent', 'var(--gold)');
     state.popupOpen=true;
@@ -3488,8 +3612,53 @@
     state.kwFocus=next;
     paintKwFocus();
   }
+  function softRenderKoreanWatch(d){
+    var i, cards='', headL, sub, rowsClass, scroll=0, body=$('d-pop-body'), keepFocus=state.kwFocus|0;
+    if(body)scroll=body.scrollTop;
+    state.mode='kw';
+    state.data=d;
+    state.kwFocus=Math.min(keepFocus, Math.max(0, d.picks.length-1));
+    $('stage').hidden=false;
+    $('title').textContent=d.title||'Korean Watch';
+    document.title='Daybreak \u00b7 '+(d.title||'Korean Watch');
+    $('updated').textContent=fmtUpdated(d.updated)||'\u2014';
+    $('counts').innerHTML='';
+    if($('roi-chip')){$('roi-chip').hidden=true;$('roi-chip').classList.remove('focus');}
+    if($('roi')){$('roi').hidden=true;$('roi').innerHTML='';}
+    if($('also')){$('also').hidden=true;$('also').innerHTML='';}
+    // Keep popup open; do not clear detail chrome that KW does not use.
+    $('cols').hidden=false;
+    document.querySelector('.head-r').style.visibility='';
+    $('title').style.display='';
+    headL=$('title').parentNode;
+    sub=document.getElementById('kw-sub');
+    if(!sub){
+      sub=document.createElement('div');
+      sub.id='kw-sub';
+      sub.className='kw-sub';
+      headL.appendChild(sub);
+    }
+    sub.textContent=d.windowLabel||'';
+    sub.hidden=!d.windowLabel;
+    for(i=0;i<d.picks.length;i++)cards+=kwCardHtml(d.picks[i], i);
+    rowsClass=d.picks.length>5?' kw-rows-2':'';
+    $('cols').className='cols kw-cols';
+    $('cols').style.gridTemplateColumns='';
+    $('cols').innerHTML='<div class="kw-grid'+rowsClass+'">'+cards+'</div>'+
+      '<div class="kw-foot">Sources: Rotten Tomatoes, IMDb</div>';
+    layoutKwBoard();
+    paintKwFocus();
+    if(state.popupOpen)openKwPopup({preserveScroll:scroll});
+    setTimeout(function(){layoutKwBoard();paintKwFocus();}, 0);
+    setHints();
+  }
   function renderKoreanWatch(d){
     var i, cards='', headL, sub, rowsClass;
+    // Soft path: data refresh while a KW title popup is open.
+    if(state.mode==='kw'&&isUiBusy()){
+      softRenderKoreanWatch(d);
+      return;
+    }
     state.mode='kw';
     state.data=d;
     state.view='board';
@@ -3548,6 +3717,10 @@
   function reloadTestMode(){
     return param('reloadtest')==='1';
   }
+  function dataRefreshMs(){
+    // Same test flag shortens periodic JSON re-fetch for headless checks.
+    return reloadTestMode()?4000:REFRESH_MS;
+  }
   function reloadPollMs(){
     return reloadTestMode()?2000:RELOAD_POLL_MS;
   }
@@ -3567,7 +3740,8 @@
   }
   function tryHtmlReload(){
     if(!htmlReloadPending)return;
-    if(state.popupOpen)return;
+    // Any open popup/modal (scattergram, KW, section cards) counts as busy.
+    if(isUiBusy())return;
     if((Date.now()-lastKeyMs)<reloadIdleMs())return;
     htmlReloadPending=false;
     location.reload();
@@ -3635,12 +3809,100 @@
     paintFocus();
   }
 
+  // Flat board order: columns left-to-right, tiles top-to-bottom within each column.
+  function boardSchoolSlots(){
+    var out=[], ci, i, col;
+    for(ci=0;ci<state.cols.length;ci++){
+      col=state.cols[ci];
+      for(i=0;i<col.items.length;i++)out.push({col:ci, idx:i, school:col.items[i]});
+    }
+    return out;
+  }
+  function currentBoardIndex(){
+    var slots=boardSchoolSlots(), f=state.focus, i;
+    if(!slots.length)return 0;
+    if(f){
+      for(i=0;i<slots.length;i++){
+        if(slots[i].col===f.col&&slots[i].idx===f.idx)return i;
+      }
+    }
+    if(state.detail){
+      for(i=0;i<slots.length;i++)if(slots[i].school.id===state.detail)return i;
+    }
+    return 0;
+  }
+  function openScattergramIfPresent(){
+    var items=detailNavItems(), j;
+    for(j=0;j<items.length;j++){
+      if(items[j].getAttribute('data-ckey')==='scattergram'){
+        state.cardFocus=j;
+        paintCardFocus();
+        openCardPopup(items[j]);
+        return true;
+      }
+    }
+    return false;
+  }
+  function schoolHasScattergram(s){
+    return !!(s&&s.detail&&s.detail.marist_scattergram);
+  }
+  // ChannelUp (-1) / ChannelDown (+1): wrap through board tile order.
+  // Detail or scattergram stays on that view type; board only moves the highlight.
+  function channelStep(dir){
+    var slots, i, next, keepSg, s, tries, n;
+    if(state.mode==='kw'||state.view==='roi')return false;
+    slots=boardSchoolSlots();
+    if(!slots.length)return false;
+    i=currentBoardIndex();
+    n=slots.length;
+    if(state.view==='detail'){
+      keepSg=!!(state.popupOpen&&detailFocusCkey()==='scattergram');
+      next=i;
+      tries=0;
+      s=null;
+      while(tries<n){
+        next=(next+dir+n*10)%n;
+        tries++;
+        s=slots[next].school;
+        if(!(s&&s.hasDetail))continue;
+        // Keep surfing scattergrams: skip schools with no scattergram card.
+        if(keepSg&&!schoolHasScattergram(s))continue;
+        break;
+      }
+      if(!s||!s.hasDetail||(keepSg&&!schoolHasScattergram(s)))return false;
+      state.chipFocus=false;
+      state.focus={col:slots[next].col, idx:slots[next].idx};
+      layoutCol(slots[next].col);
+      closeCardPopup();
+      showDetail(true);
+      if(keepSg)openScattergramIfPresent();
+      return true;
+    }
+    next=(i+dir+n*10)%n;
+    state.chipFocus=false;
+    state.focus={col:slots[next].col, idx:slots[next].idx};
+    layoutCol(slots[next].col);
+    paintFocus();
+    return true;
+  }
+  function registerChannelKeys(){
+    try{
+      if(typeof tizen!=='undefined'&&tizen.tvinputdevice&&tizen.tvinputdevice.registerKey){
+        tizen.tvinputdevice.registerKey('ChannelUp');
+        tizen.tvinputdevice.registerKey('ChannelDown');
+      }
+    }catch(err){}
+  }
+
   document.addEventListener('keydown',function(e){
     lastKeyMs=Date.now();
     if(!state.data)return;
     var code=e.keyCode||e.which;
     var isBack=code===10009||code===27||code===8||e.key==='Escape'||e.key==='Backspace'||e.key==='XF86Back'||e.key==='GoBack';
     var dir;
+    // TV ChannelUp/Down (427/428); PageUp/PageDown (33/34) for headless tests.
+    if(code===427||code===33){e.preventDefault();channelStep(-1);return;}
+    if(code===428||code===34){e.preventDefault();channelStep(1);return;}
     // Korean Watch: board + existing popup component.
     if(state.mode==='kw'){
       e.preventDefault();
@@ -3778,9 +4040,44 @@
   });
   window.addEventListener('resize',fit);
   fit();
+  registerChannelKeys();
   load();
-  setInterval(load,REFRESH_MS);
+  setInterval(load, dataRefreshMs());
   startHtmlReloadWatch();
+  // Headless hooks only when ?reloadtest=1 (never on the live TV URL).
+  if(reloadTestMode()){
+    try{
+      window.__dbTest={
+        load:load,
+        tryHtmlReload:tryHtmlReload,
+        isUiBusy:isUiBusy,
+        channelStep:channelStep,
+        markReloadPending:function(){htmlReloadPending=true;},
+        stateSnap:function(){
+          return {
+            popupOpen:!!state.popupOpen,
+            view:state.view,
+            detail:state.detail,
+            cardFocus:state.cardFocus|0,
+            sgSortKey:state.sgSortKey,
+            sgSortDir:state.sgSortDir,
+            sgFilter:state.sgFilter,
+            sgSortFocus:state.sgSortFocus,
+            focusCol:state.focus?state.focus.col:-1,
+            focusIdx:state.focus?state.focus.idx:-1
+          };
+        },
+        scrollTop:function(){var b=$('d-pop-body');return b?b.scrollTop:0;},
+        setScroll:function(n){var b=$('d-pop-body');if(b)b.scrollTop=n|0;},
+        popHidden:function(){var p=$('d-pop');return !p||!!p.hidden;},
+        boardIds:function(){
+          var slots=boardSchoolSlots(), out=[], i;
+          for(i=0;i<slots.length;i++)out.push(slots[i].school.id);
+          return out;
+        }
+      };
+    }catch(err){}
+  }
 })();
 </script>
 </body>
