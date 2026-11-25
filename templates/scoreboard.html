@@ -428,7 +428,7 @@
   #d-pop .ai-counselor .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
   #d-pop .ai-counselor .why-bullets li::before{width:8px;height:8px;top:.6em;background:var(--accent,var(--focus-ring))}
   #d-pop .ai-counselor-upd{font-size:calc(var(--pop-lab,28px) * 0.85);color:rgba(245,241,232,.65)}
-  /* Marist-now: one row per class with a long major mix — wrap fully, no 3-line clamp. */
+  /* Marist-now: one row per class with a long major mix - wrap fully, no 3-line clamp. */
   #detail .d-card[data-ckey="marist_now"] .txt{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;
     overflow-wrap:break-word;word-break:normal;white-space:normal}
   #detail .d-card[data-ckey="marist_now"] .lab{-webkit-line-clamp:3;max-height:calc(3 * 1.25em);overflow-wrap:break-word;
@@ -1045,7 +1045,7 @@
     if(!raw||typeof raw!=='object')return null;
     range=sgGpaRange(gpaScale, sourceId);
     // gpa_scale 4 / U.S. News: accept 0-4.0. Marist weighted stays 40-120.
-    // Root coco_point (no scale): accept either so 4.0 charts can draw the star.
+    // Root coco_point (no scale): accept either; cocoForChart picks by chart scale.
     if(range.four||gpaScale===4||gpaScale===4.0||sourceId==='usnews'){
       g=sgNum(raw.gpa,0,4);
     }else if(gpaScale!=null){
@@ -1065,16 +1065,18 @@
   function cocoPoint(){
     return state.data&&state.data.coco_point?state.data.coco_point:null;
   }
-  // Plot/legend CoCo only when the point's GPA matches this chart's scale.
+  // Prefer scattergram.coco_point; else root when GPA matches this chart's scale.
+  function cocoMatchesChart(c, sg){
+    if(!c||c.gpa==null||c.sat==null)return false;
+    if(sgIsFourScale(sg))return c.gpa>=0&&c.gpa<=4;
+    // Marist weighted: ignore 4.0-scale points.
+    return c.gpa>4&&c.gpa<=120;
+  }
   function cocoForChart(sg){
-    var c=cocoPoint();
-    if(!c||c.gpa==null||c.sat==null)return null;
-    if(sgIsFourScale(sg)){
-      if(c.gpa>=0&&c.gpa<=4)return c;
-      return null;
-    }
-    // Marist charts unchanged: ignore 4.0-scale points.
-    if(c.gpa>4&&c.gpa<=120)return c;
+    var c;
+    if(sg&&sg.cocoPoint&&cocoMatchesChart(sg.cocoPoint, sg))return sg.cocoPoint;
+    c=cocoPoint();
+    if(cocoMatchesChart(c, sg))return c;
     return null;
   }
   function cocoLegendText(c){
@@ -1108,12 +1110,14 @@
     if(!raw||typeof raw!=='object')return null;
     var sourceId=str(raw.source_id), scope=str(raw.scope), gpaScale=null, range, c, i, p, g, s, o, pts, mg, rnd;
     var out={hasData:raw.has_data===true, note:str(raw.note), source:str(raw.source), asOf:str(raw.as_of),
-      avg:null, pub:null, counts:null, points:[], table:null, gpaScale:null, sourceId:sourceId, scope:scope};
+      avg:null, pub:null, counts:null, points:[], table:null, gpaScale:null, sourceId:sourceId, scope:scope, cocoPoint:null};
     if(raw.gpa_scale===4||raw.gpa_scale===4.0)gpaScale=4;
     else if(typeof raw.gpa_scale==='number'&&isFinite(raw.gpa_scale))gpaScale=raw.gpa_scale;
     range=sgGpaRange(gpaScale, sourceId);
     if(range.four)out.gpaScale=4;
     else if(gpaScale!=null)out.gpaScale=gpaScale;
+    // Optional per-chart coco_point (e.g. 3.84 unweighted on U.S. News 4.0 charts).
+    out.cocoPoint=cleanCocoPoint(raw.coco_point, out.gpaScale, sourceId);
     if(!out.hasData){
       if(!out.note)out.note=sgIsUsNews(out)?'U.S. News: not enough national data':'Scoir: not enough Marist data';
       return out;
@@ -1151,7 +1155,7 @@
   }
   function sgPlotSvg(sg, W, H, fs, rad){
     var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9,
-      // Draw CoCo when coco_point GPA matches this chart (0-4 on gpa_scale 4; Marist weighted otherwise).
+      // Draw CoCo from per-chart coco_point, else root when scale matches.
       coco=cocoForChart(sg),
       L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
       R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
@@ -1325,7 +1329,7 @@
     return {a:(b.ea?b.ea.a:0)+(b.rd?b.rd.a:0), n:(b.ea?b.ea.n:0)+(b.rd?b.rd.n:0)};
   }
   function sgTableHtml(t, sg){
-    var h, i, b, rows, cocoMark, four=sgIsFourScale(sg);
+    var h, i, b, rows, cocoMark, four=sgIsFourScale(sg), coco=cocoForChart(sg);
     if(!t)return '';
     rows=t.bands.slice();
     if(t.total)rows.push(t.total);
@@ -1333,8 +1337,10 @@
       h='<table class="sg-table"><thead><tr><th>GPA</th><th>All</th><th>Median SAT</th></tr></thead><tbody>';
       for(i=0;i<rows.length;i++){
         b=rows[i];
-        h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+'">'+
-          '<th>'+esc(b.band)+'</th>'+sgCellHtml(sgBandAllCell(b))+
+        cocoMark=sgBandHasCoco(b.band,coco);
+        h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(cocoMark?' sg-coco':'')+'">'+
+          '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc(cocoStarLabel(coco))+'</span>':'')+'</th>'+
+          sgCellHtml(sgBandAllCell(b))+
           '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
       }
       h+='</tbody></table>';
@@ -1344,9 +1350,9 @@
     h='<table class="sg-table"><thead><tr><th>GPA</th><th>EA</th><th>RD</th><th>Median SAT</th></tr></thead><tbody>';
     for(i=0;i<rows.length;i++){
       b=rows[i];
-      cocoMark=sgBandHasCoco(b.band,cocoPoint());
+      cocoMark=sgBandHasCoco(b.band,coco);
       h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(cocoMark?' sg-coco':'')+'">'+
-        '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc((cocoPoint().label||'CoCo'))+'</span>':'')+'</th>'+
+        '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc(cocoStarLabel(coco))+'</span>':'')+'</th>'+
         sgCellHtml(b.ea)+sgCellHtml(b.rd)+
         '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
     }
@@ -1599,7 +1605,8 @@
       hasData:sg.hasData, note:sg.note, source:sg.source, asOf:sg.asOf,
       avg:sg.avg, pub:sg.pub, points:sgFilterPoints(sg.points),
       counts:sgCountsFromRows(rows), table:null,
-      gpaScale:sg.gpaScale, sourceId:sg.sourceId, scope:sg.scope
+      gpaScale:sg.gpaScale, sourceId:sg.sourceId, scope:sg.scope,
+      cocoPoint:sg.cocoPoint||null
     };
     if(sg.table){
       view.table={
