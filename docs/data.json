@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-25T14:15:16.105Z",
+ "generatedAt": "2026-11-25T14:30:12.691Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -709,19 +709,19 @@
   "status": "live",
   "lastError": null,
   "market": {
-   "isOpen": false,
-   "session": "post-market",
+   "isOpen": true,
+   "session": "regular",
    "holiday": null,
-   "checkedAt": "2026-11-24T21:15:14.370Z"
+   "checkedAt": "2026-11-25T14:30:12.691Z"
   },
   "quotes": {
    "NVDA": {
     "s": "NVDA",
     "n": "NVIDIA",
     "kind": "stock",
-    "px": 155.38,
-    "ch": -5.8588,
-    "d": -9.67,
+    "px": 155.41,
+    "ch": -5.8407,
+    "d": -9.64,
     "pc": 165.05,
     "t": 1795554000,
     "vol": null,
@@ -731,9 +731,9 @@
     "s": "TSLA",
     "n": "Tesla",
     "kind": "stock",
-    "px": 384.68,
-    "ch": -0.2024,
-    "d": -0.78,
+    "px": 384.72,
+    "ch": -0.192,
+    "d": -0.74,
     "pc": 385.46,
     "t": 1795554000,
     "vol": null,
@@ -743,9 +743,9 @@
     "s": "SPCX",
     "n": "SpaceX",
     "kind": "stock",
-    "px": 125.81,
-    "ch": -5.6543,
-    "d": -7.54,
+    "px": 125.84,
+    "ch": -5.6318,
+    "d": -7.51,
     "pc": 133.35,
     "t": 1795554000,
     "vol": null,
@@ -759,9 +759,9 @@
     "range": "$70–78",
     "note": "IPO Nov 19 · $70–78 range",
     "upcoming": false,
-    "px": 81.905,
-    "ch": -6.5438,
-    "d": -5.735,
+    "px": 81.93,
+    "ch": -6.5153,
+    "d": -5.71,
     "pc": 87.64,
     "t": 1795554000,
     "vol": null,
@@ -773,13 +773,13 @@
     "kind": "index",
     "symbol": "^DJI",
     "source": "Yahoo Finance",
-    "px": 50018.7,
-    "ch": 0.8536924524819932,
-    "d": 423.3914062499971,
-    "pc": 49595.30859375,
-    "t": 1795554908,
+    "px": 49290.2,
+    "ch": -1.4564537465558838,
+    "d": -728.4992187500029,
+    "pc": 50018.69921875,
+    "t": 1795617010,
     "vol": null,
-    "quoteTime": "2026-11-24T21:15:08.000Z"
+    "quoteTime": "2026-11-25T14:30:10.000Z"
    },
    "SPX": {
     "s": "SPX",
@@ -787,13 +787,13 @@
     "kind": "index",
     "symbol": "^GSPC",
     "source": "Yahoo Finance",
-    "px": 7201.09,
-    "ch": -0.4985363376082276,
-    "d": -36.079921874999854,
-    "pc": 7237.169921875,
-    "t": 1795554915,
+    "px": 7038.99,
+    "ch": -2.2510459842504336,
+    "d": -162.09984375000022,
+    "pc": 7201.08984375,
+    "t": 1795617016,
     "vol": null,
-    "quoteTime": "2026-11-24T21:15:15.000Z"
+    "quoteTime": "2026-11-25T14:30:16.000Z"
    },
    "NASDAQ": {
     "s": "NASDAQ",
@@ -805,9 +805,9 @@
     "ch": -1.4779246229179772,
     "d": -356.02554687500015,
     "pc": 24089.560546875,
-    "t": 1795554913,
+    "t": 1795558559,
     "vol": null,
-    "quoteTime": "2026-11-24T21:15:13.000Z"
+    "quoteTime": "2026-11-24T22:15:59.000Z"
    }
   },
   "history": {
@@ -1130,7 +1130,7 @@
     },
     {
      "t": 1795554000,
-     "c": 155.38
+     "c": 155.41
     }
    ],
    "TSLA": [
@@ -1452,7 +1452,7 @@
     },
     {
      "t": 1795554000,
-     "c": 384.68
+     "c": 384.72
     }
    ],
    "SPCX": [
@@ -1774,14 +1774,10 @@
     },
     {
      "t": 1795554000,
-     "c": 125.81
+     "c": 125.84
     }
    ],
    "DOW": [
-    {
-     "t": 1795186829,
-     "c": 49580.45
-    },
     {
      "t": 1795187730,
      "c": 49477.32
@@ -2097,13 +2093,13 @@
     {
      "t": 1795554908,
      "c": 50018.7
+    },
+    {
+     "t": 1795617010,
+     "c": 49290.2
     }
    ],
    "SPX": [
-    {
-     "t": 1795186821,
-     "c": 7197.48
-    },
     {
      "t": 1795187730,
      "c": 7154.71
@@ -2419,13 +2415,13 @@
     {
      "t": 1795554915,
      "c": 7201.09
+    },
+    {
+     "t": 1795617016,
+     "c": 7038.99
     }
    ],
    "NASDAQ": [
-    {
-     "t": 1795186826,
-     "c": 23828.38
-    },
     {
      "t": 1795187730,
      "c": 23582.514
@@ -2740,6 +2736,10 @@
     },
     {
      "t": 1795554913,
+     "c": 23733.535
+    },
+    {
+     "t": 1795558559,
      "c": 23733.535
     }
    ],
@@ -3062,12 +3062,12 @@
     },
     {
      "t": 1795554000,
-     "c": 81.905
+     "c": 81.93
     }
    ]
   },
-  "lastAttempt": "2026-11-24T21:15:14.370Z",
-  "asOf": "2026-11-24T21:15:14.370Z",
+  "lastAttempt": "2026-11-25T14:30:12.691Z",
+  "asOf": "2026-11-25T14:30:12.691Z",
   "indexSource": "Yahoo Finance",
   "details": {
    "NVDA": {
@@ -3713,41 +3713,41 @@
      {
       "t": 1795530600,
       "c": 155.3800048828125,
-      "v": 379237117
+      "v": 383594200
      }
     ],
-    "volume": 379237117,
+    "volume": 20246318,
     "week52High": 243.37,
     "week52Low": 124.5,
     "peTTM": 17.5806,
     "avgVolume": 439.16685,
-    "marketCap": 3977705.0735470005,
+    "marketCap": 3744658.0692380057,
     "exchange": "NASDAQ NMS - GLOBAL MARKET",
     "news": [
      {
-      "hd": "US Attorney General Praises Nvidia As Questions Swirl Over Huang’s Reinstatement",
+      "hd": "Nvidia, AMD, and Micron stocks sink as investors flee AI trade",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:52:42.000Z"
+      "pub": "2026-11-25T13:45:18.000Z"
      },
      {
-      "hd": "With Jensen Huang Back as CEO, Is It More Likely That Nvidia Will Rebound to $243.37 or Plummet to $100?",
+      "hd": "Stock Market Today: Dow Dives On Surprise Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:49:02.000Z"
+      "pub": "2026-11-25T13:38:27.000Z"
      },
      {
-      "hd": "Nvidia board joins Jensen Huang under scrutiny after reinstating embattled CEO",
+      "hd": "Nvidia’s Top Lawyer Sold $4.5 Million of Nvidia Stock the Day Before Its 14% Plunge",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:31:03.000Z"
+      "pub": "2026-11-25T13:37:45.000Z"
      },
      {
-      "hd": "Jensen Huang’s Nvidia return is a ‘bullish black swan’ and bitcoin is in gold’s ‘doghouse’ era: Eric Balchunas",
+      "hd": "Nvidia Author Stephen Witt Says Huang’s Return Is “Not Great for AMD.” Here’s What AMD Loses",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:25:56.000Z"
+      "pub": "2026-11-25T13:20:26.000Z"
      },
      {
-      "hd": "Nvidia's stock surge is crypto's worst nightmare, Arthur Hayes warns",
+      "hd": "Nvidia, chipmakers slide premarket; Dell falls despite upbeat outlook",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:15:00.000Z"
+      "pub": "2026-11-25T13:16:30.000Z"
      }
     ]
    },
@@ -4394,10 +4394,10 @@
      {
       "t": 1795530600,
       "c": 384.67999267578125,
-      "v": 27776713
+      "v": 28697600
      }
     ],
-    "volume": 27776713,
+    "volume": 1616550,
     "week52High": 498.83,
     "week52Low": 297.38,
     "peTTM": 480.5854,
@@ -4406,29 +4406,29 @@
     "exchange": "NASDAQ NMS - GLOBAL MARKET",
     "news": [
      {
-      "hd": "If SpaceX and Tesla Merge, History Says One Group of Shareholders Usually Wins. Here’s Which Side to Be On.",
+      "hd": "Tesla’s FSD Push In Europe Hits Another Snag As EU Reportedly Delays Approval Talks Yet Again – TSLA Stock Falls Premarket",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:19:54.000Z"
+      "pub": "2026-11-25T12:14:32.000Z"
      },
      {
-      "hd": "Tesla robotaxi business valued at $80B in updated UBS model",
+      "hd": "Tesla (TSLA) Could Be 36% Undervalued Following SpaceX Merger Talks",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:10:00.000Z"
+      "pub": "2026-11-25T12:11:12.000Z"
      },
      {
-      "hd": "Tesla’s Robotaxi Business Could Generate $3-4B In Annual Recurring Revenue By 2027-End, Says Seaport Global",
+      "hd": "Tesla Merger Could Fast-Track SpaceX Into S&P 500, JPMorgan Says",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:16:13.000Z"
+      "pub": "2026-11-25T12:06:11.000Z"
      },
      {
-      "hd": "Here's Why SpaceX Stock Slumped Today, And Why it Could Come Under More Pressure as Tesla Merger Talks Continue",
+      "hd": "Tesla and SpaceX $3.5 Trillion Merger Talks Take a Major Step Forward",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:09:05.000Z"
+      "pub": "2026-11-25T11:11:22.000Z"
      },
      {
-      "hd": "Tesla-SpaceX Talks Are Moving at “Warp Speed.” SpaceX’s IPO Lock-Up Ends Dec. 8",
+      "hd": "ARK Autonomous Technology & Robotics ETF (ARKQ) Sells Tesla and SpaceX on Monday",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:05:26.000Z"
+      "pub": "2026-11-25T11:03:58.000Z"
      }
     ]
    },
@@ -5010,41 +5010,46 @@
      {
       "t": 1795530600,
       "c": 125.80999755859375,
-      "v": 101846021
+      "v": 103453000
+     },
+     {
+      "t": 1795617000,
+      "c": 118.48999786376953,
+      "v": 13789378
      }
     ],
-    "volume": 101846021,
+    "volume": 13789378,
     "week52High": 225.64,
     "week52Low": 104.83,
     "peTTM": 0,
     "avgVolume": 99.58989,
-    "marketCap": 1811034.9015009997,
+    "marketCap": 1708633.677974059,
     "exchange": "NASDAQ NMS - GLOBAL MARKET",
     "news": [
      {
-      "hd": "If SpaceX and Tesla Merge, History Says One Group of Shareholders Usually Wins. Here’s Which Side to Be On.",
+      "hd": "Not SpaceX, Not Anthropic: These Are the 2 AI Stocks I Bought During the Sell-Off",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:19:54.000Z"
+      "pub": "2026-11-25T13:35:02.000Z"
      },
      {
-      "hd": "Why SpaceX Dropped Again Today",
+      "hd": "Tesla (TSLA) Could Be 36% Undervalued Following SpaceX Merger Talks",
       "src": "Yahoo",
-      "pub": "2026-11-24T19:01:36.000Z"
+      "pub": "2026-11-25T12:11:12.000Z"
      },
      {
-      "hd": "SpaceX Falls 4%, CoreWeave Down 13%, Nebius Down 11% as AI Stocks Give Back Nvidia Rally",
+      "hd": "Where Will SpaceX Stock Be in 5 Years?",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:57:58.000Z"
+      "pub": "2026-11-25T11:26:00.000Z"
      },
      {
-      "hd": "Here's Why SpaceX Stock Slumped Today, And Why it Could Come Under More Pressure as Tesla Merger Talks Continue",
+      "hd": "Tesla and SpaceX $3.5 Trillion Merger Talks Take a Major Step Forward",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:09:05.000Z"
+      "pub": "2026-11-25T11:11:22.000Z"
      },
      {
-      "hd": "Tesla-SpaceX Talks Are Moving at “Warp Speed.” SpaceX’s IPO Lock-Up Ends Dec. 8",
+      "hd": "ARK Autonomous Technology & Robotics ETF (ARKQ) Sells Tesla and SpaceX on Monday",
       "src": "Yahoo",
-      "pub": "2026-11-24T18:05:26.000Z"
+      "pub": "2026-11-25T11:03:58.000Z"
      }
     ]
    },
@@ -5070,42 +5075,42 @@
      },
      {
       "t": 1795530600,
-      "c": 81.90499877929688,
-      "v": 311309530
+      "c": 81.91000366210938,
+      "v": 312136500
      }
     ],
-    "volume": 311309530,
+    "volume": 8373014,
     "week52High": 115.1,
     "week52Low": 83.05,
     "peTTM": 0,
     "avgVolume": 628.88634,
-    "marketCap": 1033412.4792417394,
+    "marketCap": 1082754.7937227883,
     "exchange": "NASDAQ NMS - GLOBAL MARKET",
     "news": [
      {
-      "hd": "Jim Cramer Says Anthropic Must Rally ‘Or Else There Will Be No OpenAI’ — and Calls It Key to Stabilizing ‘the World That Jensen Built’",
-      "src": "Benzinga",
-      "pub": "2026-11-24T09:25:57.000Z"
+      "hd": "Anthropic launches Claude Ship beta to support developer workflows",
+      "src": "Yahoo",
+      "pub": "2026-11-25T10:28:50.000Z"
      },
      {
-      "hd": "Amgen, Anthropic, Kimberly-Clark and More on CNBC’s ‘Final Trades’",
-      "src": "Benzinga",
-      "pub": "2026-11-24T09:20:35.000Z"
+      "hd": "Anthropic stock sinks further below IPO price as investors sour on the Amodei AI bet",
+      "src": "Yahoo",
+      "pub": "2026-11-25T10:09:18.000Z"
      },
      {
-      "hd": "Amodei Siblings Each Sell $280 Million In Anthropic Shares After Record IPO, CEO Dario Retains $20.9 Billion Stake",
-      "src": "Benzinga",
-      "pub": "2026-11-24T09:12:39.000Z"
+      "hd": "SpaceX Sinks 11% in a Week on $32 Billion AI Chip Debt as Anthropic Slips Below Its IPO Price",
+      "src": "Yahoo",
+      "pub": "2026-11-25T09:05:21.000Z"
      },
      {
-      "hd": "Anthropic: Valuation Requires Growth We Do Not See, Initiating Coverage At A Sell",
+      "hd": "Prediction: Here’s What Anthropic’s Valuation Will Be in 2027, According to History",
+      "src": "Yahoo",
+      "pub": "2026-11-25T08:58:02.000Z"
+     },
+     {
+      "hd": "Chart Of The Day: The Anthropic Aftermath",
       "src": "SeekingAlpha",
-      "pub": "2026-11-24T08:32:36.000Z"
-     },
-     {
-      "hd": "Anthropic's Post-IPO Dip Is A Long-Term Buying Opportunity",
-      "src": "SeekingAlpha",
-      "pub": "2026-11-24T07:16:42.000Z"
+      "pub": "2026-11-25T08:05:00.000Z"
      }
     ]
    },
@@ -5752,10 +5757,15 @@
      {
       "t": 1795530600,
       "c": 50018.69921875,
-      "v": 711890479
+      "v": 712700000
+     },
+     {
+      "t": 1795617000,
+      "c": 49268.8203125,
+      "v": 44891279
      }
     ],
-    "volume": 711890479,
+    "volume": 44891279,
     "week52High": 54744.33,
     "week52Low": 45057.28
    },
@@ -6402,10 +6412,15 @@
      {
       "t": 1795530600,
       "c": 7201.08984375,
-      "v": 3291650000
+      "v": 5244060000
+     },
+     {
+      "t": 1795617000,
+      "c": 7038.6201171875,
+      "v": 122081807
      }
     ],
-    "volume": 3291650000,
+    "volume": 122081807,
     "week52High": 7844.52,
     "week52Low": 6316.91
    },
@@ -7051,11 +7066,11 @@
      },
      {
       "t": 1795530600,
-      "c": 23733.53515625,
-      "v": 7900499000
+      "c": 23733.5390625,
+      "v": 9222160000
      }
     ],
-    "volume": 7900499000,
+    "volume": 2295564000,
     "week52High": 27722.75,
     "week52Low": 20690.25
    }
@@ -7063,13 +7078,13 @@
   "series": {
    "provider": "Yahoo Finance",
    "mode": "90d",
-   "asOf": "2026-11-24T21:15:14.370Z",
-   "lastAttempt": "2026-11-24T21:15:14.370Z",
+   "asOf": "2026-11-25T14:30:12.691Z",
+   "lastAttempt": "2026-11-25T14:30:12.691Z",
    "items": {
     "NVDA": {
      "mode": "90d",
      "interval": "1d",
-     "session": "2026-11-24",
+     "session": "2026-11-25",
      "t": [
       1787664600,
       1787751000,
@@ -7135,7 +7150,8 @@
       1795098600,
       1795185000,
       1795444200,
-      1795530600
+      1795530600,
+      1795617000
      ],
      "c": [
       213.05,
@@ -7202,13 +7218,14 @@
       145.98,
       125.53,
       165.05,
-      155.38
+      155.38,
+      144.24
      ]
     },
     "TSLA": {
      "mode": "90d",
      "interval": "1d",
-     "session": "2026-11-24",
+     "session": "2026-11-25",
      "t": [
       1787664600,
       1787751000,
@@ -7274,7 +7291,8 @@
       1795098600,
       1795185000,
       1795444200,
-      1795530600
+      1795530600,
+      1795617000
      ],
      "c": [
       350.25,
@@ -7341,13 +7359,14 @@
       374.41,
       345.82,
       385.46,
-      384.68
+      384.68,
+      367.89
      ]
     },
     "SPCX": {
      "mode": "90d",
      "interval": "1d",
-     "session": "2026-11-24",
+     "session": "2026-11-25",
      "t": [
       1787664600,
       1787751000,
@@ -7413,7 +7432,8 @@
       1795098600,
       1795185000,
       1795444200,
-      1795530600
+      1795530600,
+      1795617000
      ],
      "c": [
       137.95,
@@ -7480,7 +7500,8 @@
       138.43,
       127.79,
       133.35,
-      125.81
+      125.81,
+      118.34
      ]
     }
    }
@@ -7488,14 +7509,12 @@
   "closeFetchedFor": "2026-11-24"
  },
  "lastRun": {
-  "at": "2026-11-25T14:15:16.105Z",
+  "at": "2026-11-25T14:30:12.691Z",
   "ran": [
-   "weather",
    "alerts",
-   "stockNews",
-   "worldNews",
+   "stocks:session",
+   "series",
    "extended",
-   "futures",
    "usTempGrid"
   ]
  },
@@ -14471,8 +14490,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-25T14:15:16.105Z",
-  "lastAttempt": "2026-11-25T14:15:16.105Z",
+  "asOf": "2026-11-25T14:30:12.691Z",
+  "lastAttempt": "2026-11-25T14:30:12.691Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15115,8 +15134,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-25T14:15:16.105Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-25T14:30:12.691Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15326,8 +15345,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-25T14:15:16.105Z",
-  "lastAttempt": "2026-11-25T14:15:16.105Z",
+  "asOf": "2026-11-25T14:30:12.691Z",
+  "lastAttempt": "2026-11-25T14:30:12.691Z",
   "items": {
    "NVDA": {
     "session": "pre",
