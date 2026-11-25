@@ -123,17 +123,14 @@
     color:var(--c);border:1px solid var(--cb);background:var(--cf)}
   .tag.plain{--c:var(--muted);--cb:var(--hair);--cf:transparent}
   .tag.date{--c:var(--gold);--cb:rgba(201,168,106,.3);--cf:rgba(201,168,106,.06)}
-  /* New-result markers: gold on dark, dark ink on gold badge (>=4.5:1). Absolute dot avoids layout shift. */
-  .card-new-dot{position:absolute;top:10px;right:12px;z-index:2;display:inline-flex;align-items:center;
-    justify-content:center;min-width:28px;height:28px;padding:0 8px;border-radius:999px;
-    background:var(--focus-ring);color:#1A1508;font-size:16px;font-weight:700;letter-spacing:.04em;
-    line-height:1;pointer-events:none;box-shadow:0 0 0 2px rgba(26,21,8,.35)}
-  .card-new-dot.is-plain{min-width:16px;width:16px;height:16px;padding:0;border-radius:50%}
-  .new-badge{display:inline-block;flex:none;margin:0 10px 0 0;padding:3px 10px;border-radius:5px;
-    background:var(--focus-ring);color:#1A1508;font-size:18px;font-weight:700;letter-spacing:.12em;
-    text-transform:uppercase;line-height:1.15;vertical-align:middle}
-  .marist-name-row{display:flex;align-items:baseline;gap:0;min-width:0}
+  /* New Marist classmate flag on board tiles - bright gold, readable across the room */
+  .tag.new-marist{--c:#1A1508;--cb:rgba(255,210,74,.95);--cf:#FFD24A;font-weight:700;letter-spacing:.14em}
+  .tag.new-marist-who{--c:#FFD24A;--cb:rgba(255,210,74,.4);--cf:rgba(255,210,74,.1);
+    max-width:46%;overflow:hidden;text-overflow:ellipsis}
+  /* Detail Marist row badge reuses .tag.new-marist gold. */
+  .marist-name-row{display:flex;align-items:baseline;gap:8px;min-width:0}
   .marist-name-row .marist-name-text{min-width:0;overflow-wrap:break-word}
+  .marist-name-row .tag.new-marist{flex:none;padding:3px 10px;font-size:18px}
   #cols{--line-size:22px;--lab-size:18px}
   #cols .lab{font-size:var(--lab-size);-webkit-line-clamp:1;max-height:1.25em;line-height:1.25}
   /* One couch-readable line per row keeps 5 Safety tiles on-screen at the larger type size */
@@ -557,11 +554,8 @@
   var lastKeyMs=Date.now();
   var htmlHashBaseline=null;
   var htmlReloadPending=false;
-  // Seen-set for NEW badges on Marist result rows (daybreak_seen_v1).
-  var SEEN_STORE_KEY='daybreak_seen_v1';
-  var NEW_WINDOW_MS=48*60*60*1000;
-  var SEEN_PRUNE_MS=60*24*60*60*1000;
-  var seenMap=null;
+  // Detail-row NEW: if never opened, added_at within 48h; else added_at after last open.
+  var NEW_ROW_MS=48*60*60*1000;
   var ROUNDS={ED:1,ED2:1,EA:1,REA:1,RD:1,Rolling:1};
   var STATUS={
     not_submitted:{label:'Not yet submitted',c:'#CFCAC1',group:0},
@@ -584,7 +578,8 @@
   // cols/focus for school cards; chipFocus for ROI chip; view 'board'|'detail'|'roi'.
   // cardFocus: index into detail .d-card nodes; popupOpen: detail section overlay.
   var state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
+    cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all',
+    detailOpenBaselineMs:null};
 
   function $(id){return document.getElementById(id);}
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
@@ -809,86 +804,39 @@
     if(!s)return;
     try{window.localStorage.setItem(lastOpenedStorageKey(s), String(Date.now()));}catch(e){}
   }
-  function resultEntryKey(school, name, decision){
-    return String(school||'')+'\t'+String(name||'')+'\t'+String(decision||'');
+  function hasNewMaristClassmate(s){
+    var m=s&&s.detail&&s.detail.marist_classmates, neu, opened;
+    if(!m||!m.last_new_at)return false;
+    neu=parseIsoMs(m.last_new_at);
+    if(neu==null)return false;
+    opened=getSchoolLastOpenedMs(s);
+    if(opened==null)return true;
+    return neu>opened;
   }
-  function schoolResultId(s){
-    if(!s)return '';
-    if(s.id!=null&&String(s.id)!=='')return String(s.id);
-    return String(s.school||'');
-  }
-  function collectResultEntries(data){
-    var out=[], i, j, s, list, sid;
-    if(!data||!data.schools)return out;
-    for(i=0;i<data.schools.length;i++){
-      s=data.schools[i];
-      sid=schoolResultId(s);
-      list=s.detail&&s.detail.marist_classmates&&s.detail.marist_classmates.class_2027;
-      if(!list||!list.length)continue;
-      for(j=0;j<list.length;j++){
-        if(!list[j]||!list[j].name)continue;
-        out.push({key:resultEntryKey(sid, list[j].name, 'class_2027'), schoolId:sid});
-      }
-    }
-    return out;
-  }
-  function pruneSeenMap(map, now){
-    var k, cut=now-SEEN_PRUNE_MS;
-    if(!map)return;
-    for(k in map){
-      if(!Object.prototype.hasOwnProperty.call(map, k))continue;
-      if(!(+map[k]>=cut))delete map[k];
-    }
-  }
-  // First run (no store): mark all current entries seen silently. Else record first-seen for new keys.
-  function syncSeenWithData(data){
-    var raw, map, now, entries, i, firstRun, key;
-    try{
-      raw=window.localStorage.getItem(SEEN_STORE_KEY);
-      firstRun=(raw==null||raw==='');
-      if(firstRun)map={};
-      else{
-        map=JSON.parse(raw);
-        if(!map||typeof map!=='object'||map instanceof Array)map={};
-      }
-    }catch(e){seenMap=null;return;}
-    now=Date.now();
-    entries=collectResultEntries(data);
-    for(i=0;i<entries.length;i++){
-      key=entries[i].key;
-      if(map[key]!=null)continue;
-      // First run: seed as already-old so nothing flashes NEW. Later runs: stamp now.
-      map[key]=firstRun?(now-NEW_WINDOW_MS-1000):now;
-    }
-    pruneSeenMap(map, now);
-    try{window.localStorage.setItem(SEEN_STORE_KEY, JSON.stringify(map));}
-    catch(e2){seenMap=null;return;}
-    seenMap=map;
-  }
-  function isResultEntryNew(key){
-    var t, age;
-    if(!seenMap||!key)return false;
-    t=+seenMap[key];
-    if(!isFinite(t))return false;
-    age=Date.now()-t;
-    return age>=0&&age<NEW_WINDOW_MS;
-  }
-  function countNewResultsForSchool(s){
-    var n=0, list, i, sid, key;
-    if(!seenMap||!s)return 0;
-    sid=schoolResultId(s);
-    list=s.detail&&s.detail.marist_classmates&&s.detail.marist_classmates.class_2027;
-    if(!list)return 0;
+  function newestMaristClassmateName(s){
+    var list=s&&s.detail&&s.detail.marist_classmates&&s.detail.marist_classmates.class_2027;
+    var i, best=null, bestT=-1, t;
+    if(!list||!list.length)return '';
     for(i=0;i<list.length;i++){
-      if(!list[i]||!list[i].name)continue;
-      key=resultEntryKey(sid, list[i].name, 'class_2027');
-      if(isResultEntryNew(key))n++;
+      t=list[i].added_at?parseIsoMs(list[i].added_at):-1;
+      if(t==null)t=-1;
+      if(t>bestT){bestT=t;best=list[i];}
     }
-    return n;
+    return bestT>=0&&best&&best.name?best.name:'';
   }
-  function isMaristNameNew(s, name){
-    if(!s||!name)return false;
-    return isResultEntryNew(resultEntryKey(schoolResultId(s), name, 'class_2027'));
+  // Detail-row NEW uses last-opened captured before this visit (state.detailOpenBaselineMs).
+  // Never opened: added_at within 48h. Rows without added_at are never NEW.
+  function isMaristRowNew(person){
+    var added, opened, age;
+    if(!person||!person.added_at)return false;
+    added=parseIsoMs(person.added_at);
+    if(added==null)return false;
+    opened=state.detailOpenBaselineMs;
+    if(opened==null){
+      age=Date.now()-added;
+      return age>=0&&age<NEW_ROW_MS;
+    }
+    return added>opened;
   }
   var WX_MONTH_ORDER=['aug','sep','oct','nov','dec','jan','feb','mar','apr','may'];
   function cleanWeatherMonthly(raw){
@@ -2138,15 +2086,13 @@
     return h+'</div>';
   }
   function cardHtml(s,ci,i){
-    var tags=tagsHtml(s,false), nNew=countNewResultsForSchool(s), dot='';
-    if(nNew>0){
-      // Absolute corner marker so tags/lines do not shift when a school gains NEW results.
-      dot=nNew>1
-        ?'<span class="card-new-dot" aria-hidden="true">'+nNew+'</span>'
-        :'<span class="card-new-dot is-plain" aria-hidden="true"></span>';
+    var tags=tagsHtml(s,false), who;
+    if(hasNewMaristClassmate(s)){
+      who=newestMaristClassmateName(s);
+      tags='<span class="tag new-marist">NEW</span>'+
+        (who?'<span class="tag new-marist-who">'+esc(who)+'</span>':'')+tags;
     }
     return '<div class="card '+s.status+'" data-c="'+ci+'" data-i="'+i+'" data-has-detail="'+(s.hasDetail?1:0)+'" style="--c:'+STATUS[s.status].c+'">'+
-      dot+
       '<div class="name-row">'+logoHtml(s,'sm')+'<div class="name">'+nameHtml(s)+'</div>'+rankPill(s,false)+'</div>'+
       '<div class="tags">'+tags+'</div>'+linesHtml(s.lines)+
       (s.step?'<div class="step"><b>Next</b>'+esc(s.step)+'</div>':'')+'</div>';
@@ -2317,8 +2263,8 @@
     if(y24&&y24.note)html+='<p class="marist-note">2024: '+esc(y24.note)+'</p>';
     return html;
   }
-  function maristNameRowHtml(s, person){
-    var badge=isMaristNameNew(s, person&&person.name)?'<span class="new-badge">NEW</span>':'';
+  function maristNameRowHtml(person){
+    var badge=isMaristRowNew(person)?'<span class="tag new-marist">NEW</span>':'';
     return '<div class="marist-name-row">'+badge+
       '<span class="marist-name-text">'+esc(person.name)+(person.major?' \u2014 '+esc(person.major):'')+'</span></div>';
   }
@@ -2334,7 +2280,7 @@
         cols=c27.length>4?' cols-2':'';
         names='';
         for(i=0;i<c27.length;i++){
-          names+=maristNameRowHtml(s, c27[i]);
+          names+=maristNameRowHtml(c27[i]);
         }
         body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
       }
@@ -2602,7 +2548,7 @@
         (function(){
           var neu=[], old=[], k, merged;
           for(k=0;k<c27.length;k++){
-            if(isMaristNameNew(s, c27[k].name))neu.push(c27[k]);
+            if(isMaristRowNew(c27[k]))neu.push(c27[k]);
             else old.push(c27[k]);
           }
           merged=neu.concat(old);
@@ -2612,7 +2558,7 @@
         cols=shown.length>4?' cols-2':'';
         names='';
         for(i=0;i<shown.length;i++){
-          names+=maristNameRowHtml(s, shown[i]);
+          names+=maristNameRowHtml(shown[i]);
         }
         if(extra>0)names+='<div class="more">+'+extra+' more</div>';
         body+='<div><div class="marist-year"><b>2027</b></div><div class="marist-names'+cols+'">'+names+'</div></div>';
@@ -3060,10 +3006,15 @@
     if(on&&!(s&&s.hasDetail))return;
     if(on){
       state.chipFocus=false;state.view='detail';state.detailPage=1;state.cardFocus=0;
+      // Capture last-opened BEFORE recording this visit so detail-row NEW stays correct.
+      state.detailOpenBaselineMs=getSchoolLastOpenedMs(s);
       // Persist last-opened so the board NEW flag clears after return / reload.
       markSchoolOpened(s);
     }
-    else{state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();}
+    else{
+      state.view='board';state.detailPage=1;state.detailPages=1;state.cardFocus=0;closeCardPopup();
+      state.detailOpenBaselineMs=null;
+    }
     state.detail=s?s.id:null;
     if(s)renderDetail(s);else{$('detail').innerHTML='';closeCardPopup();}
     $('detail').hidden=!s;
@@ -3083,7 +3034,6 @@
   function render(d){
     state.mode='admissions';
     state.data=d;
-    syncSeenWithData(d);
     state.roi=d.roi||null;
     var kwSub=document.getElementById('kw-sub');
     if(kwSub){kwSub.hidden=true;kwSub.textContent='';}
@@ -3113,7 +3063,8 @@
   }
   function blank(){
     state={cols:[],focus:null,detail:null,detailPage:1,detailPages:1,data:null,roi:null,chipFocus:false,view:'board',
-      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all'};
+      cardFocus:0,popupOpen:false,mode:'admissions',kwFocus:0,sgSortKey:'gpa',sgSortDir:'desc',sgSortFocus:null,sgFilter:'all',
+      detailOpenBaselineMs:null};
     closeCardPopup();
     $('stage').hidden=true;
     $('cols').innerHTML='';$('cols').className='cols';$('detail').innerHTML='';$('detail').hidden=true;$('cols').hidden=false;
