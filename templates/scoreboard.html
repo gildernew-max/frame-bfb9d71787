@@ -336,10 +336,17 @@
   .d-pop-body .kfood-footer{margin-top:16px;padding-top:4px}
   /* Marist scattergram card + popup */
   .d-sec.sg .sg-svg{display:block;width:100%;height:auto}
-  .sg-legend{display:flex;flex-wrap:wrap;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink)}
+  .sg-legend{display:flex;flex-wrap:wrap;align-items:flex-start;gap:2px 20px;margin:6px 0 4px;font-size:var(--lab-size,20px);color:var(--ink);min-width:0;max-width:100%}
   .sg-key{white-space:nowrap}
-  .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em}
+  .sg-key i{display:inline-block;width:.7em;height:.7em;border-radius:50%;margin-right:.35em;flex:none}
   .sg-key-ed i{background:transparent;border:.18em solid #CFCAC0;box-sizing:border-box}
+  /* Long CoCo notes: own block under color keys, wrap in card width, never cover the plot. */
+  .sg-coco-note{display:block;margin:4px 0 0;padding:0;font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);
+    white-space:normal;overflow-wrap:break-word;word-break:normal;min-width:0;max-width:100%;box-sizing:border-box}
+  .sg-coco-note i{display:inline-block;width:1em;height:1em;vertical-align:-.1em;margin-right:.35em;flex:none;
+    background:none;border-radius:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E6B84C' stroke='%230B0C0E' stroke-width='1.6' stroke-linejoin='round' d='M12 2.4l2.7 6.4 6.9.6-5.2 4.6 1.6 6.7L12 16.9 5.99 20.7l1.61-6.7L2.4 9.4l6.9-.6z'/%3E%3C/svg%3E");
+    background-size:contain;background-repeat:no-repeat}
   .sg-key b,.sg-facts b{font-weight:700}
   .sg-facts{font-size:var(--lab-size,20px);line-height:1.3;color:var(--ink);margin-top:2px}
   .sg-foot{font-size:calc(var(--lab-size,20px) * .85);line-height:1.3;color:var(--muted);margin-top:4px}
@@ -353,7 +360,8 @@
   .d-pop-body .sg-pop-top{display:flex;gap:48px;align-items:flex-start}
   .d-pop-body .sg-pop-top .sg-svg{flex:none;width:2000px;height:auto;display:block}
   .d-pop-body .sg-pop-side{flex:1;min-width:0}
-  .d-pop-body .sg-legend{font-size:44px;gap:6px 32px;margin:0 0 18px;color:var(--pop-ink)}
+  .d-pop-body .sg-legend{font-size:44px;gap:6px 32px;margin:0 0 18px;color:var(--pop-ink);min-width:0}
+  .d-pop-body .sg-coco-note{font-size:40px;line-height:1.35;margin-top:10px;color:var(--pop-ink)}
   .d-pop-body .sg-facts{font-size:44px;line-height:1.3;margin-top:14px;color:var(--pop-ink)}
   .d-pop-body .sg-foot{font-size:34px;margin-top:14px;color:rgba(245,241,232,.6)}
   .d-pop-body .sg-table{font-size:46px;margin-top:28px;max-width:2000px;color:var(--pop-ink)}
@@ -362,9 +370,6 @@
   .d-pop-body .sg-table thead th{color:rgba(245,241,232,.65)}
   .sg-table tr.sg-coco th,.sg-table tr.sg-coco td{background:rgba(230,184,76,.2);box-shadow:inset 0 0 0 2px rgba(230,184,76,.7)}
   .sg-coco-tag{margin-left:.4em;color:#E6B84C;font-weight:700;letter-spacing:.04em}
-  .sg-key-coco i{background:none;width:1em;height:1em;vertical-align:-.1em;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E6B84C' stroke='%230B0C0E' stroke-width='1.6' stroke-linejoin='round' d='M12 2.4l2.7 6.4 6.9.6-5.2 4.6 1.6 6.7L12 16.9 5.99 20.7l1.61-6.7L2.4 9.4l6.9-.6z'/%3E%3C/svg%3E");
-    background-size:contain;background-repeat:no-repeat;border-radius:0}
   .d-pop-body .sg-rows{width:100%;border-collapse:separate;border-spacing:0;margin-top:36px;font-size:40px;color:var(--pop-ink)}
   .d-pop-body .sg-rows th,.d-pop-body .sg-rows td{padding:10px 14px;border-bottom:1px solid var(--rule);text-align:center;font-weight:400;color:var(--pop-ink);white-space:nowrap}
   .d-pop-body .sg-rows thead th{position:-webkit-sticky;position:sticky;top:0;z-index:1;background:#0E1014;color:rgba(245,241,232,.7);font-weight:700;letter-spacing:.04em;padding-top:14px;padding-bottom:14px;white-space:normal;box-shadow:0 2px 0 #0E1014,0 3px 0 rgba(255,255,255,.12)}
@@ -417,11 +422,26 @@
   .ai-counselor-lab{margin:0 0 4px;font-size:var(--lab-size,var(--t1));font-weight:500;letter-spacing:.08em;
     text-transform:uppercase;color:var(--dim)}
   .ai-counselor .prose{margin:0;-webkit-line-clamp:8;max-height:calc(8 * 1.3em)}
+  .ai-counselor .why-bullets{gap:6px;margin:0}
+  .ai-counselor .why-bullets li{font-size:var(--line-size,var(--t2));line-height:1.35;overflow-wrap:break-word;
+    word-break:normal;-webkit-line-clamp:unset;max-height:none;overflow:visible}
   .ai-counselor-upd{margin-top:4px;font-size:var(--t1);font-weight:500;letter-spacing:.06em;color:var(--dim)}
   #d-pop .ai-counselor{border-top-color:rgba(255,255,255,.14);margin-top:18px;padding-top:14px}
   #d-pop .ai-counselor-lab{font-size:calc(var(--pop-lab,28px));color:rgba(245,241,232,.75)}
   #d-pop .ai-counselor .prose{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block}
+  #d-pop .ai-counselor .why-bullets{gap:12px}
+  #d-pop .ai-counselor .why-bullets li{font-size:var(--pop-line);line-height:1.4;padding-left:28px;color:var(--pop-ink)}
+  #d-pop .ai-counselor .why-bullets li::before{width:8px;height:8px;top:.6em;background:var(--accent,var(--focus-ring))}
   #d-pop .ai-counselor-upd{font-size:calc(var(--pop-lab,28px) * 0.85);color:rgba(245,241,232,.65)}
+  /* Marist-now: one row per class with a long major mix - wrap fully, no 3-line clamp. */
+  #detail .d-card[data-ckey="marist_now"] .txt{-webkit-line-clamp:unset;max-height:none;overflow:visible;display:block;
+    overflow-wrap:break-word;word-break:normal;white-space:normal}
+  #detail .d-card[data-ckey="marist_now"] .lab{-webkit-line-clamp:3;max-height:calc(3 * 1.25em);overflow-wrap:break-word;
+    word-break:break-word}
+  #detail .d-card[data-ckey="marist_now"] .line{align-items:start}
+  .marist-now-note{margin:6px 0 0;font-size:var(--t1);font-weight:400;color:var(--dim);line-height:1.35;
+    overflow-wrap:break-word;word-break:normal}
+  .d-pop-body .marist-now-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
   .why-pair .why-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;min-width:0}
   .why-pair .why-col{min-width:0}
   .why-pair .why-col .sec-h{margin-bottom:4px}
@@ -700,6 +720,8 @@
     if(d.k_food_index)return true;
     if(d.costs_band)return true;
     if(d.marist_scattergram)return true;
+    if(d.marist_now&&d.marist_now.length)return true;
+    if(d.counselor_points&&d.counselor_points.length)return true;
     if(d.odds||d.sticker_price_per_year||d.counselor_take||d.counselor_take_updated||d.why||d.why_not||d.scattergram_url)return true;
     if(d.test_submit_pct)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
@@ -904,12 +926,18 @@
     ['odds','sticker_price_per_year','counselor_name','counselor_take','why','why_not'].forEach(function(k){out[k]=str(d[k]);});
     // Optional YYYY-MM-DD; ignore anything else so bad data never paints.
     out.counselor_take_updated=(typeof d.counselor_take_updated==='string'&&DATE_RE.test(d.counselor_take_updated))?d.counselor_take_updated:'';
+    // Prefer short bullet points (3-5 typical, hard cap 6) over the prose take when present.
+    out.counselor_points=cleanCounselorPoints(d.counselor_points);
     out.test_submit_pct=cleanTestSubmitPct(d.test_submit_pct);
     out.about=cleanLabeled(d.about);
     out.costs=cleanLabeled(d.costs);
     out.deadlines=cleanLabeled(d.deadlines);
     out.academics=cleanLabeled(d.academics);
     out.alumni=cleanLabeled(d.alumni);
+    // Marist alumni currently on campus: {label: class year, text: name/major}, up to 14.
+    out.marist_now=cleanLabeled(d.marist_now, 14);
+    out.marist_now_total=(typeof d.marist_now_total==='number'&&isFinite(d.marist_now_total)&&d.marist_now_total>0)?Math.round(d.marist_now_total):0;
+    out.marist_now_note=str(d.marist_now_note);
     out.facts=cleanLabeled(d.facts);
     out.internships=cleanLabeled(d.internships);
     out.housing=cleanLabeled(d.housing);
@@ -1018,16 +1046,60 @@
     return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes, rows:rows};
   }
   function cleanCocoPoint(raw, gpaScale, sourceId){
-    var range, g, s, lab;
+    var range, g, s, lab, note;
     if(!raw||typeof raw!=='object')return null;
     range=sgGpaRange(gpaScale, sourceId);
-    g=sgNum(raw.gpa,range.lo,range.hi); s=sgNum(raw.sat,400,1600); lab=str(raw.label)||'CoCo';
+    // gpa_scale 4 / U.S. News: accept 0-4.0. Marist weighted stays 40-120.
+    // Root coco_point (no scale): accept either; cocoForChart picks by chart scale.
+    if(range.four||gpaScale===4||gpaScale===4.0||sourceId==='usnews'){
+      g=sgNum(raw.gpa,0,4);
+    }else if(gpaScale!=null){
+      g=sgNum(raw.gpa,range.lo,range.hi);
+    }else{
+      g=sgNum(raw.gpa,0,4);
+      if(g==null)g=sgNum(raw.gpa,40,120);
+    }
+    s=sgNum(raw.sat,400,1600);
+    lab=str(raw.label)||'CoCo';
+    note=str(raw.note);
+    if(lab.length>48)lab=lab.slice(0,48);
+    if(note.length>160)note=note.slice(0,160);
     if(g==null||s==null)return null;
-    if(lab.length>16)lab=lab.slice(0,16);
-    return {gpa:g, sat:s, label:lab};
+    return {gpa:g, sat:s, label:lab, note:note};
   }
   function cocoPoint(){
     return state.data&&state.data.coco_point?state.data.coco_point:null;
+  }
+  // Prefer scattergram.coco_point; else root when GPA matches this chart's scale.
+  function cocoMatchesChart(c, sg){
+    if(!c||c.gpa==null||c.sat==null)return false;
+    if(sgIsFourScale(sg))return c.gpa>=0&&c.gpa<=4;
+    // Marist weighted: ignore 4.0-scale points.
+    return c.gpa>4&&c.gpa<=120;
+  }
+  function cocoForChart(sg){
+    var c;
+    if(sg&&sg.cocoPoint&&cocoMatchesChart(sg.cocoPoint, sg))return sg.cocoPoint;
+    c=cocoPoint();
+    if(cocoMatchesChart(c, sg))return c;
+    return null;
+  }
+  function cocoLegendText(c){
+    var lab, note;
+    if(!c)return '';
+    lab=c.label||'CoCo'; note=c.note||'';
+    if(note){
+      if(lab&&note.indexOf(lab)===0)return note;
+      return lab+': '+note;
+    }
+    return lab;
+  }
+  function cocoStarLabel(c){
+    var lab;
+    if(!c)return 'CoCo';
+    lab=c.label||'CoCo';
+    if(lab.length>10)return 'CoCo';
+    return lab;
   }
   function sgBandHasCoco(band, coco){
     var g, p;
@@ -1043,12 +1115,14 @@
     if(!raw||typeof raw!=='object')return null;
     var sourceId=str(raw.source_id), scope=str(raw.scope), gpaScale=null, range, c, i, p, g, s, o, pts, mg, rnd;
     var out={hasData:raw.has_data===true, note:str(raw.note), source:str(raw.source), asOf:str(raw.as_of),
-      avg:null, pub:null, counts:null, points:[], table:null, gpaScale:null, sourceId:sourceId, scope:scope};
+      avg:null, pub:null, counts:null, points:[], table:null, gpaScale:null, sourceId:sourceId, scope:scope, cocoPoint:null};
     if(raw.gpa_scale===4||raw.gpa_scale===4.0)gpaScale=4;
     else if(typeof raw.gpa_scale==='number'&&isFinite(raw.gpa_scale))gpaScale=raw.gpa_scale;
     range=sgGpaRange(gpaScale, sourceId);
     if(range.four)out.gpaScale=4;
     else if(gpaScale!=null)out.gpaScale=gpaScale;
+    // Optional per-chart coco_point (e.g. 3.84 unweighted on U.S. News 4.0 charts).
+    out.cocoPoint=cleanCocoPoint(raw.coco_point, out.gpaScale, sourceId);
     if(!out.hasData){
       if(!out.note)out.note=sgIsUsNews(out)?'U.S. News: not enough national data':'Scoir: not enough Marist data';
       return out;
@@ -1086,8 +1160,8 @@
   }
   function sgPlotSvg(sg, W, H, fs, rad){
     var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9,
-      // CoCo's 4.0 GPA is unknown: never plot the star on national 4.0 charts.
-      coco=sgIsFourScale(sg)?null:cocoPoint(),
+      // Draw CoCo from per-chart coco_point, else root when scale matches.
+      coco=cocoForChart(sg),
       L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
       R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
       h, byO={}, lab, sw, anyEd, tickN;
@@ -1185,7 +1259,7 @@
       y=Y(sg.avg.sat);
       h+='<line x1="'+L+'" y1="'+f1(y)+'" x2="'+(L+pw)+'" y2="'+f1(y)+'" stroke="#F5F1E8" stroke-width="'+Math.max(3,Math.round(fs/10))+'" stroke-dasharray="14 10"/>';
     }
-    if(coco)h+=sgCocoStar(X(coco.gpa),Y(coco.sat),fs,coco.label||'CoCo',L,T,pw,ph,f1);
+    if(coco)h+=sgCocoStar(X(coco.gpa),Y(coco.sat),fs,cocoStarLabel(coco),L,T,pw,ph,f1);
     return h+'</svg>';
   }
   function sgStarPath(cx, cy, r){
@@ -1213,7 +1287,7 @@
     return h;
   }
   function sgLegendHtml(sg){
-    var c=sg.counts, h='', other;
+    var c=sg.counts, h='', other, coco;
     if(!c)return '';
     function key(col,label,n){return '<span class="sg-key"><i style="background:'+col+'"></i>'+esc(label)+' <b>'+n+'</b></span>';}
     h+=key(SG_COL.A,'Accepted',c.acc);
@@ -1223,8 +1297,11 @@
     if(other>0)h+=key(SG_COL.U,'Other',other);
     // National U.S. News charts have empty rounds: hide the ED-ring legend.
     if(!sgIsUsNews(sg))h+='<span class="sg-key sg-key-ed"><i></i>ED = ring</span>';
-    if(cocoPoint()&&!sgIsFourScale(sg))h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
-    return '<div class="sg-legend">'+h+'</div>';
+    h='<div class="sg-legend">'+h+'</div>';
+    // CoCo note is its own wrapping block under the color keys (never overlaps the plot).
+    coco=cocoForChart(sg);
+    if(coco)h+='<div class="sg-coco-note"><i></i>'+esc(cocoLegendText(coco))+'</div>';
+    return h;
   }
   function sgNoteHtml(sg){
     if(!sg||!sg.note)return '';
@@ -1260,7 +1337,7 @@
     return {a:(b.ea?b.ea.a:0)+(b.rd?b.rd.a:0), n:(b.ea?b.ea.n:0)+(b.rd?b.rd.n:0)};
   }
   function sgTableHtml(t, sg){
-    var h, i, b, rows, cocoMark, four=sgIsFourScale(sg);
+    var h, i, b, rows, cocoMark, four=sgIsFourScale(sg), coco=cocoForChart(sg);
     if(!t)return '';
     rows=t.bands.slice();
     if(t.total)rows.push(t.total);
@@ -1268,8 +1345,10 @@
       h='<table class="sg-table"><thead><tr><th>GPA</th><th>All</th><th>Median SAT</th></tr></thead><tbody>';
       for(i=0;i<rows.length;i++){
         b=rows[i];
-        h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+'">'+
-          '<th>'+esc(b.band)+'</th>'+sgCellHtml(sgBandAllCell(b))+
+        cocoMark=sgBandHasCoco(b.band,coco);
+        h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(cocoMark?' sg-coco':'')+'">'+
+          '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc(cocoStarLabel(coco))+'</span>':'')+'</th>'+
+          sgCellHtml(sgBandAllCell(b))+
           '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
       }
       h+='</tbody></table>';
@@ -1279,9 +1358,9 @@
     h='<table class="sg-table"><thead><tr><th>GPA</th><th>EA</th><th>RD</th><th>Median SAT</th></tr></thead><tbody>';
     for(i=0;i<rows.length;i++){
       b=rows[i];
-      cocoMark=sgBandHasCoco(b.band,cocoPoint());
+      cocoMark=sgBandHasCoco(b.band,coco);
       h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(cocoMark?' sg-coco':'')+'">'+
-        '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc((cocoPoint().label||'CoCo'))+'</span>':'')+'</th>'+
+        '<th>'+esc(b.band)+(cocoMark?'<span class="sg-coco-tag">'+esc(cocoStarLabel(coco))+'</span>':'')+'</th>'+
         sgCellHtml(b.ea)+sgCellHtml(b.rd)+
         '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
     }
@@ -1314,7 +1393,7 @@
     return h;
   }
   function sgRowsHtml(t, sg){
-    var rows, h, i, r, coco=sgIsFourScale(sg)?null:cocoPoint(), inserted=false, lab, satTxt, key, dir, dash, who;
+    var rows, h, i, r, coco=cocoForChart(sg), inserted=false, lab, satTxt, key, dir, dash, who;
     dash=function(v){return v==null||v===''?'-':String(v);};
     if(!t||!t.rows||!t.rows.length)return '';
     key=state.sgSortKey==='sat'?'sat':'gpa';
@@ -1534,7 +1613,8 @@
       hasData:sg.hasData, note:sg.note, source:sg.source, asOf:sg.asOf,
       avg:sg.avg, pub:sg.pub, points:sgFilterPoints(sg.points),
       counts:sgCountsFromRows(rows), table:null,
-      gpaScale:sg.gpaScale, sourceId:sg.sourceId, scope:sg.scope
+      gpaScale:sg.gpaScale, sourceId:sg.sourceId, scope:sg.scope,
+      cocoPoint:sg.cocoPoint||null
     };
     if(sg.table){
       view.table={
@@ -2510,6 +2590,8 @@
       title='Internships'; body=dLines(d.internships||[]);
     }else if(key==='alumni'){
       title='Alumni'; body=dLines(d.alumni||[]);
+    }else if(key==='marist_now'){
+      title=esc(maristNowTitle(d)); body=maristNowBodyHtml(d, d.marist_now||[]);
     }else if(key==='facts'){
       title='Facts'; body=dLines(d.facts||[]);
     }else if(key==='housing'){
@@ -2550,15 +2632,30 @@
     }
     return h+'</div>';
   }
-  // Academics footer: plain escaped prose only (never trust HTML from JSON).
+  // Prefer counselor_points (escaped bullets); fall back to counselor_take prose. Never trust HTML.
+  function cleanCounselorPoints(raw){
+    var out=[], i, t;
+    if(!Array.isArray(raw))return [];
+    for(i=0;i<raw.length&&out.length<6;i++){
+      t=str(raw[i]);
+      if(t)out.push(t);
+    }
+    return out;
+  }
   function aiCounselorHtml(d){
-    var take, upd, h;
+    var take, pts, upd, h, body='', i;
     if(!d)return '';
+    pts=d.counselor_points||[];
     take=str(d.counselor_take);
-    if(!take)return '';
+    if(pts.length){
+      body='<ul class="why-bullets">';
+      for(i=0;i<pts.length;i++)body+='<li>'+esc(pts[i])+'</li>';
+      body+='</ul>';
+    }else if(take){
+      body='<p class="prose">'+esc(take)+'</p>';
+    }else return '';
     h='<div class="ai-counselor">'+
-      '<div class="ai-counselor-lab">AI Admissions Counselor</div>'+
-      '<p class="prose">'+esc(take)+'</p>';
+      '<div class="ai-counselor-lab">AI Admissions Counselor</div>'+body;
     upd=str(d.counselor_take_updated);
     if(upd&&DATE_RE.test(upd)){
       h+='<div class="ai-counselor-upd">Updated '+esc(upd)+'</div>';
@@ -2788,6 +2885,18 @@
     if(limit>0)out.push({label:'',text:'\u2026',tone:'muted'});
     return out;
   }
+  function maristNowTitle(d){
+    var n, title='Marist alumni there now';
+    n=d&&d.marist_now_total?d.marist_now_total:0;
+    if(n>(d.marist_now&&d.marist_now.length?d.marist_now.length:0))title+=' ('+n+' total)';
+    return title;
+  }
+  function maristNowBodyHtml(d, rows){
+    var h=dLines(rows||[]), note;
+    note=d&&d.marist_now_note?str(d.marist_now_note):'';
+    if(note)h+='<p class="marist-now-note">'+esc(note)+'</p>';
+    return h;
+  }
   function whyBodyLimited(points, prose, limit){
     if(points&&points.length&&limit!=null&&points.length>limit){
       return whyBody(points.slice(0,limit).concat([{label:'',text:'\u2026'}]), null);
@@ -2839,6 +2948,9 @@
     if(d.marist_scattergram)secs.push(dSec('sg',esc(sgChartTitle(d.marist_scattergram)),sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
     if(d.internships&&d.internships.length)secs.push(dSec('','Internships',dLines(trimRows(d.internships, listN)),'internships'));
     if(d.alumni&&d.alumni.length)secs.push(dSec('','Alumni',dLines(trimRows(d.alumni, listN)),'alumni'));
+    if(d.marist_now&&d.marist_now.length){
+      secs.push(dSec('',esc(maristNowTitle(d)),maristNowBodyHtml(d, trimRows(d.marist_now, listN)),'marist_now'));
+    }
     if(d.facts&&d.facts.length&&factsN>0)secs.push(dSec('','Facts',dLines(trimRows(d.facts, factsN)),'facts'));
     if(d.housing&&d.housing.length)secs.push(dSec('','Housing',dLines(trimRows(d.housing, listN)),'housing'));
     // K-Food Index: standalone 4-row card beside Housing/Facts (multi-column packs into open room).
