@@ -377,6 +377,10 @@
   .d-pop-body .sg-rows thead th.sg-sort-h.on{color:#F5E6B0}
   .sg-act{font-size:.72em;letter-spacing:.04em;color:rgba(245,241,232,.6);font-weight:600;margin-left:.25em}
   .d-pop-body .sg-rows td.sg-major,.d-pop-body .sg-rows thead th.sg-major{max-width:26em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}
+  .d-pop-body .sg-rows td.sg-dec{font-weight:700}
+  .d-pop-body .sg-rows td.sg-dec-acc{color:#3DCF7A;background:rgba(61,207,122,.14)}
+  .d-pop-body .sg-rows td.sg-dec-den{color:#E5534B;background:rgba(229,83,75,.14)}
+  .d-pop-body .sg-rows td.sg-dec-pend{color:#E6B84C;background:rgba(230,184,76,.14)}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -1155,7 +1159,7 @@
         inserted=true;
       }
       satTxt=sgSatCell(r);
-      h+='<tr><td>'+dash(r.gpa)+'</td><td>'+satTxt+'</td><td>'+dash(r.act)+'</td><td>'+esc(r.to||'-')+'</td><td>'+esc(r.round||'-')+'</td><td>'+esc(r.outcome||'-')+'</td><td class="sg-major">'+esc(sgMajorDisplay(r.major))+'</td></tr>';
+      h+='<tr><td>'+dash(r.gpa)+'</td><td>'+satTxt+'</td><td>'+dash(r.act)+'</td><td>'+esc(r.to||'-')+'</td><td>'+esc(r.round||'-')+'</td><td class="'+sgDecisionClass(r.outcome)+'">'+esc(r.outcome||'-')+'</td><td class="sg-major">'+esc(sgMajorDisplay(r.major))+'</td></tr>';
     }
     if(coco&&!inserted)h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
     h+='</tbody></table>';
@@ -1191,6 +1195,17 @@
     if(va==null)return 1;
     if(vb==null)return -1;
     return va===vb?0:sign*(va<vb?-1:1);
+  }
+  function sgDecisionTone(label){
+    var t=typeof label==='string'?label:'';
+    if(t==='Accepted'||t.indexOf('Accepted (')===0)return 'acc';
+    if(t==='Denied'||t.indexOf('Denied (')===0)return 'den';
+    if(t.indexOf('Outcome Unknown')===0)return 'pend';
+    return '';
+  }
+  function sgDecisionClass(label){
+    var tone=sgDecisionTone(label);
+    return tone?'sg-dec sg-dec-'+tone:'sg-dec';
   }
   function sgMajorDisplay(raw){
     var t=typeof raw==='string'?raw:'';
