@@ -444,9 +444,9 @@
   .d-pop-body .marist-now-note{font-size:var(--pop-lab);color:rgba(245,241,232,.55);margin-top:12px}
   /* Campus map: TV-readable numbered pins + legend; no anchors (board remote opens the popup). */
   .cmap{min-width:0;-webkit-user-select:none;user-select:none}
+  /* Frame hugs the image (width 100%, height auto) so pin % coords match the full map — no cover-crop. */
   .cmap-frame{position:relative;width:100%;border-radius:8px;overflow:hidden;background:#12141A;border:1px solid var(--hair)}
-  .cmap-frame img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover;object-position:center;
-    pointer-events:none;-webkit-user-drag:none}
+  .cmap-frame img{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
   .cmap-pin{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;
     background:var(--accent,var(--gold));color:#0B0C0E;font-size:18px;font-weight:800;letter-spacing:0;
     display:flex;align-items:center;justify-content:center;border:2px solid #0B0C0E;box-shadow:0 2px 8px rgba(0,0,0,.55);
@@ -457,7 +457,6 @@
   .cmap-legend li{display:flex;align-items:flex-start;gap:10px;font-size:var(--line-size,22px);line-height:1.3;color:var(--ink);
     overflow-wrap:break-word;word-break:normal}
   .cmap-legend .n{flex:none;width:1.4em;font-weight:800;color:var(--accent,var(--gold));text-align:right}
-  .d-pop-body .cmap-frame img{max-height:none;width:100%}
   .d-pop-body .cmap-pin{width:56px;height:56px;font-size:30px;border-width:3px}
   .d-pop-body .cmap-meta{font-size:var(--pop-lab);margin-top:12px;color:rgba(245,241,232,.65)}
   .d-pop-body .cmap-meta b{color:var(--pop-ink)}
