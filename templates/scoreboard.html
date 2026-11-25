@@ -2658,7 +2658,7 @@
     return h+'</div>';
   }
   // Campus map card (GT/UGA test): {image:'maps/<file>.png', caption, drive, pins:[{label,x,y}]}.
-  // x/y are 0-1 fractions of the image. Display-only — no links or click handlers inside.
+  // x/y are 0-1 fractions of the image. Display-only - no links or click handlers inside.
   function cleanCampusMap(raw){
     var image, file, caption, drive, pins=[], i, p, lab, x, y;
     if(!raw||typeof raw!=='object')return null;
