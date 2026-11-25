@@ -355,6 +355,16 @@
   .d-pop-body .sg-table th,.d-pop-body .sg-table td{padding:6px 14px;color:var(--pop-ink)}
   .d-pop-body .sg-key b,.d-pop-body .sg-table td b{color:var(--pop-ink)}
   .d-pop-body .sg-table thead th{color:rgba(245,241,232,.65)}
+  .sg-table tr.sg-coco th,.sg-table tr.sg-coco td{background:rgba(230,184,76,.2);box-shadow:inset 0 0 0 2px rgba(230,184,76,.7)}
+  .sg-coco-tag{margin-left:.4em;color:#E6B84C;font-weight:700;letter-spacing:.04em}
+  .sg-key-coco i{background:none;width:1em;height:1em;vertical-align:-.1em;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23E6B84C' stroke='%230B0C0E' stroke-width='1.6' stroke-linejoin='round' d='M12 2.4l2.7 6.4 6.9.6-5.2 4.6 1.6 6.7L12 16.9 5.99 20.7l1.61-6.7L2.4 9.4l6.9-.6z'/%3E%3C/svg%3E");
+    background-size:contain;background-repeat:no-repeat;border-radius:0}
+  .d-pop-body .sg-rows{width:100%;border-collapse:separate;border-spacing:0;margin-top:36px;font-size:40px;color:var(--pop-ink)}
+  .d-pop-body .sg-rows th,.d-pop-body .sg-rows td{padding:10px 14px;border-bottom:1px solid var(--rule);text-align:center;font-weight:400;color:var(--pop-ink);white-space:nowrap}
+  .d-pop-body .sg-rows thead th{position:-webkit-sticky;position:sticky;top:0;z-index:1;background:#0E1014;color:rgba(245,241,232,.7);font-weight:700;letter-spacing:.04em;padding-top:14px;padding-bottom:14px;white-space:normal;box-shadow:0 2px 0 #0E1014,0 3px 0 rgba(255,255,255,.12)}
+  .d-pop-body .sg-rows tbody th{text-align:left}
+  .d-pop-body .sg-coco-div td{background:rgba(230,184,76,.28);color:#F5E6B0;font-weight:800;letter-spacing:.08em;text-align:center;padding:16px 14px}
   .d-pop-hint{flex:none;font-size:22px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
     text-align:center;padding-top:8px}
   .d-pop-edge{position:absolute;top:5%;bottom:5%;z-index:2;width:7%;min-width:72px;max-width:140px;
@@ -865,9 +875,18 @@
     if(!b||typeof b!=='object'||!str(b.band))return null;
     return {band:str(b.band), ea:cleanSgCell(b.EA), rd:cleanSgCell(b.RD), med:sgNum(b.median_sat_admits,400,1600)};
   }
+  function cleanSgRow(r){
+    var g,s,a,rnd,outc,to;
+    if(!Array.isArray(r)||r.length<6)return null;
+    rnd=str(r[0]); outc=str(r[1]);
+    a=sgNum(r[2],1,36); s=sgNum(r[3],400,1600); g=sgNum(r[4],40,120);
+    to=str(r[5]);
+    if(!rnd&&!outc&&g==null)return null;
+    return {round:rnd, outcome:outc, act:a, sat:s, gpa:g, to:to};
+  }
   function cleanSgTable(raw){
     if(!raw||typeof raw!=='object'||!Array.isArray(raw.bands))return null;
-    var bands=[], notes=[], i, b, t;
+    var bands=[], notes=[], rows=[], i, b, t, r;
     for(i=0;i<raw.bands.length&&bands.length<8;i++){
       b=cleanSgBand(raw.bands[i]);
       if(b)bands.push(b);
@@ -876,8 +895,39 @@
     if(Array.isArray(raw.notes)){
       for(i=0;i<raw.notes.length&&notes.length<4;i++){t=str(raw.notes[i]); if(t)notes.push(t);}
     }
-    // Full row list (raw.rows) stays in the JSON for future use; the TV never reads it.
-    return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes};
+    if(Array.isArray(raw.rows)){
+      for(i=0;i<raw.rows.length&&rows.length<700;i++){
+        r=cleanSgRow(raw.rows[i]);
+        if(r)rows.push(r);
+      }
+      rows.sort(function(a,b){
+        if(a.gpa==null&&b.gpa==null)return 0;
+        if(a.gpa==null)return 1;
+        if(b.gpa==null)return -1;
+        return b.gpa-a.gpa;
+      });
+    }
+    return {bands:bands, total:cleanSgBand(raw.total), major:str(raw.major), notes:notes, rows:rows};
+  }
+  function cleanCocoPoint(raw){
+    if(!raw||typeof raw!=='object')return null;
+    var g=sgNum(raw.gpa,40,120), s=sgNum(raw.sat,400,1600), lab=str(raw.label)||'CoCo';
+    if(g==null||s==null)return null;
+    if(lab.length>16)lab=lab.slice(0,16);
+    return {gpa:g, sat:s, label:lab};
+  }
+  function cocoPoint(){
+    return state.data&&state.data.coco_point?state.data.coco_point:null;
+  }
+  function sgBandHasCoco(band, coco){
+    var g, p;
+    if(!coco||coco.gpa==null||!band)return false;
+    g=coco.gpa;
+    if(band.indexOf('>=')===0)return g>=parseFloat(band.slice(2));
+    if(band.charAt(0)==='<')return g<parseFloat(band.slice(1));
+    p=band.split('-');
+    if(p.length<2)return false;
+    return g>=parseFloat(p[0])&&g<=parseFloat(p[1]);
   }
   function cleanMaristScattergram(raw){
     if(!raw||typeof raw!=='object')return null;
@@ -909,8 +959,9 @@
     return out;
   }
   function sgPlotSvg(sg, W, H, fs, rad){
-    var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9, L=Math.round(fs*4.2), B=Math.round(fs*2.7),
-      T=Math.round(fs*0.8), R=Math.round(fs*0.8), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
+    var pts=sg.points, i, k, p, minG=1e9, maxG=-1e9, minS=1e9, coco=cocoPoint(),
+      L=Math.round(fs*4.2), B=Math.round(fs*2.7), T=Math.round(fs*0.8),
+      R=Math.round(fs*(coco?2.6:0.8)), pw=W-L-R, ph=H-T-B, xmin, xmax, ymin, ymax, xs, ys, v, x, y,
       h, byO={}, lab;
     function X(g){return L+(g-xmin)/(xmax-xmin)*pw;}
     function Y(s){return T+(ymax-s)/(ymax-ymin)*ph;}
@@ -924,6 +975,7 @@
     }
     if(sg.avg&&sg.avg.gpa!=null){minG=Math.min(minG,sg.avg.gpa);maxG=Math.max(maxG,sg.avg.gpa);}
     if(sg.avg&&sg.avg.sat!=null)minS=Math.min(minS,sg.avg.sat);
+    if(coco){minG=Math.min(minG,coco.gpa);maxG=Math.max(maxG,coco.gpa);minS=Math.min(minS,coco.sat);}
     xmin=Math.floor(minG/2)*2; xmax=Math.ceil(maxG/2)*2;
     if(xmax-xmin<4){xmin-=2;xmax+=2;}
     ymin=Math.floor(minS/100)*100; ymax=1600;
@@ -967,7 +1019,32 @@
       y=Y(sg.avg.sat);
       h+='<line x1="'+L+'" y1="'+f1(y)+'" x2="'+(L+pw)+'" y2="'+f1(y)+'" stroke="#F5F1E8" stroke-width="'+Math.max(3,Math.round(fs/10))+'" stroke-dasharray="14 10"/>';
     }
+    if(coco)h+=sgCocoStar(X(coco.gpa),Y(coco.sat),fs,coco.label||'CoCo',L,T,pw,ph,f1);
     return h+'</svg>';
+  }
+  function sgStarPath(cx, cy, r){
+    var i, a, inn=r*0.4, d='', f=function(n){return String(Math.round(n*10)/10);};
+    for(i=0;i<5;i++){
+      a=-Math.PI/2+i*2*Math.PI/5;
+      d+=(i?' L':'M')+f(cx+Math.cos(a)*r)+' '+f(cy+Math.sin(a)*r);
+      a+=Math.PI/5;
+      d+=' L'+f(cx+Math.cos(a)*inn)+' '+f(cy+Math.sin(a)*inn);
+    }
+    return d+' Z';
+  }
+  function sgCocoStar(x, y, fs, lab, L, T, pw, ph, f1){
+    var r=Math.max(20, Math.round(fs*0.72)), sw=Math.max(2, Math.round(fs/16)),
+      tfs=Math.round(fs*1.05), lx, ly, anchor='middle', h, tw;
+    tw=tfs*2.4;
+    lx=x; ly=y-r-tfs*0.25;
+    if(ly<T+tfs){ly=y+r+tfs*0.95;}
+    if(lx-tw/2<L+2){lx=L+2+tw/2;}
+    if(lx+tw/2>L+pw-2){lx=L+pw-2-tw/2;}
+    h='<path d="'+sgStarPath(x,y,r*1.3)+'" fill="#0B0C0E"/>';
+    h+='<path d="'+sgStarPath(x,y,r)+'" fill="#F5E6B0" stroke="#0B0C0E" stroke-width="'+sw+'" stroke-linejoin="round"/>';
+    h+='<text x="'+f1(lx)+'" y="'+f1(ly)+'" text-anchor="'+anchor+'" font-size="'+tfs+'" font-weight="700" stroke="#0B0C0E" stroke-width="'+Math.max(6,Math.round(fs/5))+'" fill="#0B0C0E">'+esc(lab)+'</text>';
+    h+='<text x="'+f1(lx)+'" y="'+f1(ly)+'" text-anchor="'+anchor+'" font-size="'+tfs+'" font-weight="700" fill="#F5E6B0">'+esc(lab)+'</text>';
+    return h;
   }
   function sgLegendHtml(sg){
     var c=sg.counts, h='', other;
@@ -978,6 +1055,7 @@
     h+=key(SG_COL.W,'Deferred/waitlisted',c.dwx);
     other=c.unk+c.gt;
     if(other>0)h+=key(SG_COL.U,'Other',other);
+    if(cocoPoint())h+='<span class="sg-key sg-key-coco"><i></i>'+esc(cocoPoint().label||'CoCo')+'</span>';
     return '<div class="sg-legend">'+h+'</div>';
   }
   function sgAvgLine(label,a){
@@ -1010,7 +1088,9 @@
     h='<table class="sg-table"><thead><tr><th>GPA</th><th>EA</th><th>RD</th><th>Median SAT</th></tr></thead><tbody>';
     for(i=0;i<rows.length;i++){
       b=rows[i];
-      h+='<tr'+(i===rows.length-1&&t.total?' class="sg-all"':'')+'><th>'+esc(b.band)+'</th>'+sgCellHtml(b.ea)+sgCellHtml(b.rd)+
+      h+='<tr class="'+(i===rows.length-1&&t.total?'sg-all':'')+(sgBandHasCoco(b.band,cocoPoint())?' sg-coco':'')+'">'+
+        '<th>'+esc(b.band)+(sgBandHasCoco(b.band,cocoPoint())?'<span class="sg-coco-tag">'+esc((cocoPoint().label||'CoCo'))+'</span>':'')+'</th>'+
+        sgCellHtml(b.ea)+sgCellHtml(b.rd)+
         '<td>'+(b.med!=null?b.med:'\u2014')+'</td></tr>';
     }
     h+='</tbody></table>';
@@ -1033,7 +1113,29 @@
     if(!sg.hasData)return '<p class="prose sg-nodata">'+esc(sg.note||'Scoir: not enough Marist data')+'</p>'+sgFootHtml(sg);
     var h='<div class="sg-pop-top">'+sgPlotSvg(sg, 2000, 900, 42, 9)+'<div class="sg-pop-side">'+
       sgLegendHtml(sg)+sgAvgLine('Dashed lines = Marist admits avg:',sg.avg)+sgAvgLine('School-wide:',sg.pub)+sgFootHtml(sg)+'</div></div>';
-    if(sg.table)h+=sgTableHtml(sg.table);
+    if(sg.table){
+      h+=sgTableHtml(sg.table);
+      h+=sgRowsHtml(sg.table);
+    }
+    return h;
+  }
+  function sgRowsHtml(t){
+    var rows, h, i, r, coco=cocoPoint(), inserted=false, lab, dash=function(v){return v==null||v===''?'-':String(v);};
+    if(!t||!t.rows||!t.rows.length)return '';
+    rows=t.rows;
+    if(coco)lab=(coco.label||'CoCo')+' '+coco.gpa+' / '+coco.sat;
+    h='<table class="sg-rows"><thead><tr><th>GPA</th><th>SAT</th><th>ACT</th><th>Test Optional</th><th>Round</th><th>Decision</th><th>Major (not in Scoir)</th></tr></thead><tbody>';
+    for(i=0;i<rows.length;i++){
+      r=rows[i];
+      if(coco&&!inserted&&(r.gpa==null||r.gpa<=coco.gpa)){
+        h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
+        inserted=true;
+      }
+      h+='<tr><td>'+dash(r.gpa)+'</td><td>'+dash(r.sat)+'</td><td>'+dash(r.act)+'</td><td>'+esc(r.to||'-')+'</td><td>'+esc(r.round||'-')+'</td><td>'+esc(r.outcome||'-')+'</td><td>-</td></tr>';
+    }
+    if(coco&&!inserted)h+='<tr class="sg-coco-div"><td colspan="7">'+esc(lab)+'</td></tr>';
+    h+='</tbody></table>';
+    h+='<div class="sg-foot">'+rows.length+' Marist applicants, sorted by GPA. Major is not shown by Scoir. Up/Down to scroll.</div>';
     return h;
   }
   // Optional marching-band note inside Costs. Schools without costs_band behave as before.
@@ -1471,6 +1573,7 @@
     return {
       updated:raw.updated,
       last_manual_check:cleanLastManualCheck(raw.last_manual_check),
+      coco_point:cleanCocoPoint(raw.coco_point),
       schools:out,
       roi:cleanRoi(raw.roi),
       also:cleanAlso(raw.also_active)
