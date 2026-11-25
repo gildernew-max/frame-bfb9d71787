@@ -406,6 +406,10 @@
   #detail .d-lines{gap:4px}
   /* Label column wraps long names (SAT mid-50, Marist near me); keep a clear gap before values. */
   #detail .line{gap:14px;grid-template-columns:minmax(120px,44%) minmax(0,1fr)}
+  /* Test-submit rates next to SAT/ACT bands: couch-weight, not muted. */
+  #detail .line.test-submit{grid-template-columns:minmax(120px,44%) minmax(0,1fr)}
+  #detail .line.test-submit .txt{font-weight:600;color:var(--ink);letter-spacing:.01em}
+  #d-pop .line.test-submit .txt{font-weight:600;color:var(--pop-ink)}
   .d-sec .prose{margin:0;font-size:var(--line-size,var(--t2));line-height:1.3;font-weight:400;color:var(--ink);
     display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;max-height:calc(5 * 1.3em)}
   /* AI Admissions Counselor: end of Academics; couch-readable, same type scale. */
@@ -696,10 +700,23 @@
     if(d.k_food_index)return true;
     if(d.costs_band)return true;
     if(d.marist_scattergram)return true;
-    if(d.odds||d.sticker_price_per_year||d.counselor_take||d.why||d.why_not||d.scattergram_url)return true;
+    if(d.odds||d.sticker_price_per_year||d.counselor_take||d.counselor_take_updated||d.why||d.why_not||d.scattergram_url)return true;
+    if(d.test_submit_pct)return true;
     var keys=['about','costs','deadlines','academics','alumni','facts','internships','housing','weather','why_points','why_not_points','student_likes','student_dislikes'], i;
     for(i=0;i<keys.length;i++)if(d[keys[i]]&&d[keys[i]].length)return true;
     return false;
+  }
+  // {sat?, act?, year?, policy?} — policy optional|required|blind. Percents 0-100.
+  function cleanTestSubmitPct(raw){
+    var sat, act, year, policy;
+    if(!raw||typeof raw!=='object')return null;
+    sat=sgNum(raw.sat,0,100); act=sgNum(raw.act,0,100);
+    year=str(raw.year);
+    if(year.length>12)year=year.slice(0,12);
+    policy=str(raw.policy).toLowerCase();
+    if(policy!=='optional'&&policy!=='required'&&policy!=='blind')policy='';
+    if(sat==null&&act==null)return null;
+    return {sat:sat, act:act, year:year, policy:policy};
   }
   // Optional school announcement card. URLs are kept for data fidelity but never rendered (TV).
   // facts: {label, text} (plain strings still accepted).
@@ -883,9 +900,11 @@
       }
       out.history.sort(function(a,b){return a.date<b.date?1:a.date>b.date?-1:0;});
     }
+    // counselor_take + counselor_take_updated live on school.detail (ASCII prose + YYYY-MM-DD).
     ['odds','sticker_price_per_year','counselor_name','counselor_take','why','why_not'].forEach(function(k){out[k]=str(d[k]);});
     // Optional YYYY-MM-DD; ignore anything else so bad data never paints.
     out.counselor_take_updated=(typeof d.counselor_take_updated==='string'&&DATE_RE.test(d.counselor_take_updated))?d.counselor_take_updated:'';
+    out.test_submit_pct=cleanTestSubmitPct(d.test_submit_pct);
     out.about=cleanLabeled(d.about);
     out.costs=cleanLabeled(d.costs);
     out.deadlines=cleanLabeled(d.deadlines);
@@ -2010,29 +2029,36 @@
       if(!str(s.school)||status==='unconfirmed'&&s.status!=null||!STATUS[status])continue;
       var stepFull=str(s.next_step), step=stepFull;
       if(step.length>60)step=step.slice(0,59)+'\u2026';
-      out.push({
-        id:String(s.id!=null&&s.id!==''?s.id:'#'+i),
-        school:str(s.school),
-        program:str(s.program),
-        rank:str(s.rank),
-        tier:s.tier==='reach'||s.tier==='target'||s.tier==='safety'?s.tier:'unsorted',
-        round:ROUNDS[s.round]?s.round:'',
-        submitted:typeof s.submitted==='string'&&DATE_RE.test(s.submitted)?s.submitted:null,
-        status:status,
-        expected:typeof s.decision_expected==='string'&&DATE_RE.test(s.decision_expected)?s.decision_expected:null,
-        step:step,
-        stepFull:stepFull,
-        location:cleanLocation(s.location),
-        logo:cleanLogo(s.logo),
-        accent:cleanAccent(s.accent),
-        accent_secondary:cleanAccent(s.accent_secondary||s.secondary||s.accent_alt),
-        secondary:cleanAccent(s.secondary||s.accent_secondary||s.accent_alt),
-        accent_alt:cleanAccent(s.accent_alt||s.accent_secondary||s.secondary),
-        lines:cleanCardLines(s.card_lines, 6),
-        linesAll:cleanCardLines(s.card_lines, 0),
-        detail:cleanDetail(s.detail)
-      });
-      out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0;
+      (function(){
+        var det=cleanDetail(s.detail);
+        // Prefer school.test_submit_pct; fall back to detail.test_submit_pct (same shape).
+        var tsp=cleanTestSubmitPct(s.test_submit_pct)||(det&&det.test_submit_pct)||null;
+        out.push({
+          id:String(s.id!=null&&s.id!==''?s.id:'#'+i),
+          school:str(s.school),
+          program:str(s.program),
+          rank:str(s.rank),
+          tier:s.tier==='reach'||s.tier==='target'||s.tier==='safety'?s.tier:'unsorted',
+          round:ROUNDS[s.round]?s.round:'',
+          submitted:typeof s.submitted==='string'&&DATE_RE.test(s.submitted)?s.submitted:null,
+          status:status,
+          expected:typeof s.decision_expected==='string'&&DATE_RE.test(s.decision_expected)?s.decision_expected:null,
+          step:step,
+          stepFull:stepFull,
+          location:cleanLocation(s.location),
+          logo:cleanLogo(s.logo),
+          accent:cleanAccent(s.accent),
+          accent_secondary:cleanAccent(s.accent_secondary||s.secondary||s.accent_alt),
+          secondary:cleanAccent(s.secondary||s.accent_secondary||s.accent_alt),
+          accent_alt:cleanAccent(s.accent_alt||s.accent_secondary||s.secondary),
+          lines:cleanCardLines(s.card_lines, 6),
+          linesAll:cleanCardLines(s.card_lines, 0),
+          test_submit_pct:tsp,
+          detail:det
+        });
+        // School-level test_submit_pct (optional/missing policy) is enough to open detail.
+        out[out.length-1].hasDetail=detailHasContent(out[out.length-1].detail)||out[out.length-1].lines.length>0||out[out.length-1].linesAll.length>0||testSubmitPctVisible(tsp);
+      })();
     }
     // Admitted first within the board (and thus at the top of each tier column), then pending, denied, withdrawn.
     out.sort(function(a,b){
@@ -2477,7 +2503,7 @@
       title='Academics';
       acad=(d.academics&&d.academics.length)?d.academics.slice():[];
       if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-      body=dLines(acad)+aiCounselorHtml(d);
+      body=dLines(enrichAcademicsWithSubmit(acad, s))+aiCounselorHtml(d);
     }else if(key==='scattergram'){
       title=esc(sgChartTitle(d.marist_scattergram)); body=sgPopupHtml(d.marist_scattergram);
     }else if(key==='internships'){
@@ -2538,6 +2564,55 @@
       h+='<div class="ai-counselor-upd">Updated '+esc(upd)+'</div>';
     }
     return h+'</div>';
+  }
+  function schoolTestSubmitPct(s){
+    if(!s)return null;
+    if(s.test_submit_pct)return s.test_submit_pct;
+    if(s.detail&&s.detail.test_submit_pct)return s.detail.test_submit_pct;
+    return null;
+  }
+  // Show submit % only when policy is optional or omitted (hide required/blind).
+  function testSubmitPctVisible(pct){
+    if(!pct)return false;
+    if(pct.policy==='required'||pct.policy==='blind')return false;
+    return pct.sat!=null||pct.act!=null;
+  }
+  function enrichAcademicsWithSubmit(acad, s){
+    var pct=schoolTestSubmitPct(s), out=[], i, row, lab, txt, addedSat=false, addedAct=false;
+    acad=acad||[];
+    if(!testSubmitPctVisible(pct)){
+      for(i=0;i<acad.length;i++)out.push(acad[i]);
+      return out;
+    }
+    function pushSat(){
+      var line;
+      if(addedSat||pct.sat==null)return;
+      line='SAT submitted by '+String(Math.round(pct.sat))+'%';
+      if(pct.year)line+=' ('+pct.year+')';
+      out.push({label:'', text:line, tone:'test-submit'});
+      addedSat=true;
+    }
+    function pushAct(){
+      var line;
+      if(addedAct||pct.act==null)return;
+      line='ACT submitted by '+String(Math.round(pct.act))+'%';
+      if(pct.year)line+=' ('+pct.year+')';
+      out.push({label:'', text:line, tone:'test-submit'});
+      addedAct=true;
+    }
+    for(i=0;i<acad.length;i++){
+      row=acad[i];
+      out.push(row);
+      lab=String(row&&row.label!=null?row.label:'');
+      txt=String(row&&row.text!=null?row.text:'');
+      // Prefer an explicit SAT/ACT label; also Mid 50% rows that mention SAT/ACT in the value.
+      if(/\bSAT\b/i.test(lab)||(/mid[\s-]*50/i.test(lab)&&/\bSAT\b/i.test(txt)))pushSat();
+      if(/\bACT\b/i.test(lab)||(/mid[\s-]*50/i.test(lab)&&/\bACT\b/i.test(txt)))pushAct();
+    }
+    // If the band rows were trimmed off the card, still show rates at the end of Academics.
+    pushSat();
+    pushAct();
+    return out;
   }
   function whyBody(points, prose){
     // Prefer counselor point lists; when they exist, ignore the old one-line why/why_not strings.
@@ -2753,11 +2828,12 @@
     if(d.about&&d.about.length)secs.push(dSec('','About',dLines(trimRows(d.about, listN)),'about'));
     acad=(d.academics&&d.academics.length)?d.academics.slice():[];
     if(d.scattergram_url&&!d.marist_scattergram)acad.push({label:'Scattergram',text:d.scattergram_url,tone:'muted'});
-    // AI counselor lives at the end of Academics; section appears if rows or take exist.
+    // AI counselor + optional test-submit lines live in Academics.
     (function(){
-      var ai=aiCounselorHtml(d), body;
-      if(!acad.length&&!ai)return;
-      body=dLines(trimRows(acad, listN))+ai;
+      var ai=aiCounselorHtml(d), body, rows;
+      rows=enrichAcademicsWithSubmit(trimRows(acad, listN), s);
+      if(!rows.length&&!ai)return;
+      body=dLines(rows)+ai;
       secs.push(dSec('','Academics',body,'academics'));
     })();
     if(d.marist_scattergram)secs.push(dSec('sg',esc(sgChartTitle(d.marist_scattergram)),sgCardHtml(d.marist_scattergram,trim.sg!==false,trim.sgh),'scattergram'));
