@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T23:30:13.057Z",
+ "generatedAt": "2026-11-26T23:45:12.058Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T23:30:13.057Z"
+   "checkedAt": "2026-11-26T23:45:12.058Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,15 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T23:30:13.057Z",
+  "at": "2026-11-26T23:45:12.058Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "stockNews",
-   "worldNews",
-   "movers",
-   "sectors",
    "extended",
    "futures",
    "usTempGrid"
@@ -13900,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T23:30:13.057Z",
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
+  "asOf": "2026-11-26T23:45:12.058Z",
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7239.75,
-    "lastTime": 1795735216,
-    "settle": 7196.75,
+    "last": 7241.25,
+    "lastTime": 1795736110,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 43,
-    "changePct": 0.5974919234376629,
-    "expectedOpen": 7225.6965303782945,
+    "change": 44.75,
+    "changePct": 0.621830056277357,
+    "expectedOpen": 7227.444684916279,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26241,
-    "lastTime": 1795735215,
-    "settle": 26105.75,
+    "last": 26245,
+    "lastTime": 1795736109,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 135.25,
-    "changePct": 0.5180850961952826,
-    "expectedOpen": 23707.99753016098,
+    "change": 140.25,
+    "changePct": 0.5372585449008321,
+    "expectedOpen": 23712.519742000975,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50488,
-    "lastTime": 1795735198,
-    "settle": 50229,
+    "last": 50497,
+    "lastTime": 1795736069,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 259,
-    "changePct": 0.5156383762368353,
-    "expectedOpen": 50441.712548527736,
+    "change": 270,
+    "changePct": 0.5375594799609772,
+    "expectedOpen": 50452.71320504907,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2720.7,
-    "lastTime": 1795735220,
-    "settle": 2705.800048828125,
+    "last": 2721.5,
+    "lastTime": 1795736086,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 14.899951171874818,
-    "changePct": 0.5506671188925416,
+    "change": 15.800048828125,
+    "changePct": 0.5839542119695049,
     "expectedOpen": null,
     "valid": true
    }
@@ -14497,8 +14493,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T23:30:13.057Z",
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
+  "asOf": "2026-11-26T23:45:12.058Z",
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
   "lastError": null
  },
  "alerts": {
@@ -14509,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T23:30:13.057Z",
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
+  "asOf": "2026-11-26T23:45:12.058Z",
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,13 +15144,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-26T23:30:13.057Z",
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
+  "asOf": "2026-11-26T23:45:12.058Z",
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15364,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T23:30:13.057Z",
-  "lastAttempt": "2026-11-26T23:30:13.057Z",
+  "asOf": "2026-11-26T23:45:12.058Z",
+  "lastAttempt": "2026-11-26T23:45:12.058Z",
   "items": {
    "NVDA": {
     "session": "post",
