@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T18:15:11.071Z",
+ "generatedAt": "2026-11-26T18:30:13.441Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T18:15:11.071Z"
+   "checkedAt": "2026-11-26T18:30:13.441Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,11 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T18:15:11.071Z",
+  "at": "2026-11-26T18:30:13.441Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "movers",
    "sectors",
    "usTempGrid"
@@ -13968,9 +13969,9 @@
     "id": "401873081",
     "start": "2026-11-26T18:00Z",
     "state": "in",
-    "status": "Q1 10:09",
+    "status": "Q1 5:03",
     "period": 1,
-    "clock": "10:09",
+    "clock": "5:03",
     "completed": false,
     "away": {
      "name": "Chicago Bears",
@@ -14493,8 +14494,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T18:15:11.071Z",
-  "lastAttempt": "2026-11-26T18:15:11.071Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  },
  "alerts": {
@@ -14505,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T18:15:11.071Z",
-  "lastAttempt": "2026-11-26T18:15:11.071Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15149,7 +15150,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T18:15:11.071Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15266,8 +15267,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-26T18:15:11.071Z",
-  "lastAttempt": "2026-11-26T18:15:11.071Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  },
  "sectors": {
@@ -15354,8 +15355,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-26T18:15:11.071Z",
-  "lastAttempt": "2026-11-26T18:15:11.071Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  },
  "extended": {
@@ -15408,23 +15409,44 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia Stock Has Found Its Next Big Catalyst, Making the Stock a Once-in-a-Decade Buying Opportunity.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/26/nvidia-stock-has-found-its-next-big-catalyst-making-the-stock-a-once-in-a-decade-buying-opportunity/?.tsrc=rss",
+      "pub": "2026-11-26T18:17:02.000Z",
+      "sum": "Nvidia's physical AI revenue is growing at an incredible pace."
+     },
+     {
+      "hd": "Big News For Nvidia Stock Fans",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/big-news-nvidia-stock-fans-181400521.html?.tsrc=rss",
+      "pub": "2026-11-26T18:14:00.000Z",
+      "sum": "Dell and Super Micro buyers in Southeast Asia are told their Nvidia server orders cannot ship"
+     },
+     {
+      "hd": "Billionaire John Overdeck’s former fund, Two Sigma Raised Its Nvidia Stake 67% to $2.39 Billion",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/26/billionaire-john-overdecks-former-fund-two-sigma-raised-its-nvidia-stake-67-to-2-39-billion/?.tsrc=rss",
+      "pub": "2026-11-26T18:05:39.000Z",
+      "sum": "Two Sigma piled into Nvidia last quarter, but its filing also hides calls, puts, and a timeline that has already gone stale. Why the splashy headline may tell retirement investors almost nothing about what the fund believes."
+     },
+     {
       "hd": "NVIDIA Stocks Fall 3.91% as S&P Puts AA Rating on Downgrade Watch",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-fall-3-91-173102633.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=50a2cd416e7b84eb7af0aaac8cdd512637ebfacc4295284966c90b37cdd025fe",
       "pub": "2026-11-26T17:31:02.000Z",
       "sum": "A governance review after Jensen Huang's exit and return now threatens a one-notch cut, while Moody's keeps its Aa1 rating steady."
      },
      {
       "hd": "Nvidia faces credit rating review as S&P flags governance concerns",
       "src": "Yahoo Finance",
-      "url": "https://www.proactiveinvestors.com/companies/news/1102544/nvidia-faces-credit-rating-review-as-s-p-flags-governance-concerns-1102544.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a57513f1874bf235955e61f79943797e673bc5596ec9d994585688f962e663a3",
       "pub": "2026-11-26T17:16:00.000Z",
       "sum": "S&P Global Ratings has placed Nvidia Corp (NASDAQ:NVDA, XETRA:NVD)'s AA credit rating on negative watch, citing concerns over corporate governance, board independence and the company’s reliance on CEO Jensen Huang. The review comes amid scrutiny of Huang’s alleged personal relationship..."
      },
      {
       "hd": "nVent Electric (NVT) Brings AI Data Center Cooling And Power Systems To SC26",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvent-electric-nvt-brings-ai-171331695.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=17ecf398559206799f26d0ffcbd875f03dcdfda15f39b958fe71465bc43898ad",
       "pub": "2026-11-26T17:13:31.000Z",
       "sum": "nVent Electric (NYSE:NVT) introduced new liquid cooling and engineered power distribution products for AI data centers at SC26. The company unveiled its CX121 coolant distribution unit, aimed at supporting higher density AI computing environments. nVent announced collaborations with AMD and NVIDIA, and outlined integration of Maverick Power following its recent acquisition. These liquid cooling, power distribution, and AMD and NVIDIA partnership updates at SC26 are worth weighing against the..."
      },
@@ -15438,37 +15460,16 @@
      {
       "hd": "Did Arm CEO Rene Haas Dodge a Bullet With Jensen Huang’s Reinstatement at Nvidia?",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/did-arm-ceo-rene-haas-dodge-a-bullet-with-jensen-huangs-reinstatement-at-nvidia/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1a91c0016acc8bf85350c2ce32bd4bd7ff6b103e50308ecd4a977753a7c11c73",
       "pub": "2026-11-26T16:49:41.000Z",
       "sum": "Arm's CEO weighed the top job at NVIDIA, then pledged to stay put through 2033 as Jensen Huang returned. One stock has soared this year while the other has sunk, yet a head-to-head look at valuation, growth, and risk tells a surprising story for retirement portfolios."
      },
      {
       "hd": "Cerebras Expands AI Inference Reach: Can It Challenge NVDA & AMD?",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/cerebras-expands-ai-inference-reach-161400247.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=03f38cb1cb453ba672ce13a0e3df51366c1b059d752ca9fabb5702e4d1a10cb8",
       "pub": "2026-11-26T16:14:00.000Z",
       "sum": "CBRS is ramping up its AI inference capabilities with hyperscaler partnerships, wafer-scale innovations, and expanding capacity to challenge NVIDIA and Advanced Micro Devices."
-     },
-     {
-      "hd": "BlackBerry (TSX:BB) Rebounds Before Earnings, Is The Stock Fully Priced?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/blackberry-tsx-bb-rebounds-earnings-161012685.html?.tsrc=rss",
-      "pub": "2026-11-26T16:10:12.000Z",
-      "sum": "BlackBerry stock reacts to tech rebound and upcoming earnings BlackBerry (TSX:BB) moved back into the spotlight after an 8.38% jump on a broader technology rally sparked by Nvidia's CEO reinstatement, with traders now watching the December 17, 2026 earnings announcement. At a CA$12.07 share price, BlackBerry has locked in a very strong year-to-date share price return of 131.23%, even though the 30-day share price return is down 6.36% and short-term momentum has cooled, while the 1-year total..."
-     },
-     {
-      "hd": "NVIDIA Just Dropped 31% in a Month. Will NVDA Stock Hit $125 or $200 First?",
-      "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/nvidia-just-dropped-31-in-a-month-will-nvda-stock-hit-125-or-200-first/?.tsrc=rss",
-      "pub": "2026-11-26T16:06:22.000Z",
-      "sum": "A CEO resignation, a credit rating on watch, and export rules scrambling China-bound GPUs have rattled the AI trade's biggest name. Two very different futures now compete for NVIDIA shares, and the next catalysts could tip the balance."
-     },
-     {
-      "hd": "S&P’s NVIDIA Warning is Backward Looking Governance Theater That Gives Everyone an Opportunity to Buy at $150",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4b381c34877592e853a0c49b44d87f4662bac04de5b8b8fd88e00cd4f8c97e4b",
-      "pub": "2026-11-26T15:45:38.000Z",
-      "sum": "NVIDIA lost its CEO, drew a credit warning, and watched its stock slide nearly a third in a month. So why does one investor keep buying more every week, and which three numbers convinced him the real story lies elsewhere?"
      },
      {
       "hd": "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
@@ -15584,9 +15585,9 @@
      }
     ],
     "fetched": {
-     "Finnhub": 114,
+     "Finnhub": 113,
      "Yahoo": 8,
-     "Google News": 85,
+     "Google News": 90,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
@@ -15594,16 +15595,23 @@
    "TSLA": {
     "items": [
      {
+      "hd": "EU Delays Vote On Tesla's Assisted Driving System To December 15: Reports",
+      "src": "Nasdaq",
+      "url": "https://www.nasdaq.com/articles/eu-delays-vote-teslas-assisted-driving-system-december-15-reports",
+      "pub": "2026-11-26T17:57:53.000Z",
+      "sum": "(RTTNews) - The European Union has reportedly postponed a meeting to consider bloc-wide approval of Tesla Inc.'s (TSLA) Assisted Driving system until December 15, extending the wait for the automaker to expand the technology's rollout across Europe."
+     },
+     {
       "hd": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8e3aa8c9d10cb7fdfd62bca9b994eb2ef8497f2d62675ed9d54ae251f748a98b",
       "pub": "2026-11-26T17:46:06.000Z",
       "sum": "Tesla Investors Could Get a Piece of SpaceX. The Potential Windfall Is Huge"
      },
      {
       "hd": "XPeng Raises Stakes for Tesla Stock Investors' Big Growth Bet",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/xpeng-raises-stakes-tesla-stock-163240808.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=5777f1d88ea012ca1ab7cffab89be06bbfbdd9b9ef47bfbd0379499ec62dd200",
       "pub": "2026-11-26T16:32:40.000Z",
       "sum": "A familiar automotive rivalry is entering potentially lucrative territory."
      },
@@ -15760,19 +15768,12 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeEdHa3JaV1FnaExBWDEtY1FaT0hubE5OcXZHSDNFNlRWYkw4Nk5YbWtmRkxIaTVUMHRLZ042V1llZlV2VWRaZ2pieEpKbXFpNlZtNHNWY0tWWDI2YWNrMjFPd1EySzVXWnh2ZGJqRzNIbDZXUUE1Wnc3ZFI0dFlhWHR4N3k?oc=5",
       "pub": "2026-11-24T05:01:52.000Z",
       "sum": "https://www.ft.com/content/2585e45e-9133-4215-a2d8-e1275e1033b9?syn-25a6b1a6=1"
-     },
-     {
-      "hd": "SpaceX Stock Rebounds as Musk Starlink Talk Fuels Hopes of Tesla Merger",
-      "src": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOUxsUlFqNGZUWlRrN0FIX2tPcXRkWWNDckFUcEpWTFg0TjFLZmNCbXR3dktoU0wxTFNONWxoRG4tUi1EYlk5Tnk0aDRSTlJveTEyU0dBamVtX0lfNWlfZzdMV0tWMl90NldKUGlZMGtKU1NqZi1nekVkOVNuNVJxcXFqMFBack5r?oc=5",
-      "pub": "2026-11-23T15:55:02.000Z",
-      "sum": "HSBC analyst Michael Tyndall upgraded shares of Tesla to Hold from Sell."
      }
     ],
     "fetched": {
-     "Finnhub": 153,
+     "Finnhub": 151,
      "Yahoo": 7,
-     "Google News": 13,
+     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
@@ -15780,39 +15781,53 @@
    "SPCX": {
     "items": [
      {
+      "hd": "SpaceX Gets a Fresh Vote of Confidence From Cathie Wood",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-gets-fresh-vote-confidence-181158897.html?.tsrc=rss",
+      "pub": "2026-11-26T18:11:58.000Z",
+      "sum": "Cathie Wood Loads Up on SpaceX. Here's How Much ARK Just Bought"
+     },
+     {
       "hd": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-spacex-merger-could-turn-174606474.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8e3aa8c9d10cb7fdfd62bca9b994eb2ef8497f2d62675ed9d54ae251f748a98b",
       "pub": "2026-11-26T17:46:06.000Z",
       "sum": "Tesla Investors Could Get a Piece of SpaceX. The Potential Windfall Is Huge"
      },
      {
       "hd": "Cathie Wood Buys $87.8 Million in Anthropic Shares This Week",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/cathie-wood-buys-87-8-174136348.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=7029c8597adbabdd3c3e1e6065c7e3c265c9691dea5db8be6c178b107a5b5690",
       "pub": "2026-11-26T17:41:36.000Z",
       "sum": "ARK Invest increases its exposure to Anthropic and SpaceX while reducing streaming and cryptocurrency-related holdings."
      },
      {
       "hd": "SpaceX President Joins Musk in $18 billion Share Donation to Trump Accounts",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-president-joins-musk-18-170943473.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=976e8559d9470dce53c397e05a6ef85ed298ab70d39ae092feb253bf9f353b1e",
       "pub": "2026-11-26T17:09:43.000Z",
       "sum": "SpaceX's Billion-Dollar Gift Gets Bigger as Musk Promises to Match Company Contribution"
      },
      {
       "hd": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-didn-t-sell-170000854.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a576a2644b7c0fe65180f26fdab08de6425626e2f474ce4c6b9535baaee95c1c",
       "pub": "2026-11-26T17:00:00.000Z",
       "sum": "Musk says he has no plans to sell his SpaceX shares, while Anthropic’s founders pocketed nearly $2 billion from their IPO. But insider selling doesn’t necessarily spell trouble for investors."
      },
      {
       "hd": "Elon Musk says he’ll gift every US kid 1 of his own SpaceX shares, plus 1 from SpaceX — but there’s a catch to claim",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-says-ll-gift-164000030.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d55da2d8f5defc43049f4ef6f7c62d9004dfc2cc90356b029c250ae15afb46a2",
       "pub": "2026-11-26T16:40:00.000Z",
       "sum": "Musk, whose net worth is around $824 billion, held about 6.42 billion shares in the company as of June."
+     },
+     {
+      "hd": "Mexico seeking talks with US on SpaceX airspace use",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNU3MtcGEzRThwZDdGaEZ4RktzRml6Y0hfNllQby1FQi02alpfdmdXM2ROZk1idmpVcHFoYXJaRG53UnEwWjhDXzRtYzVPWjB4UVJ5Tno1OXV6OGFJZEtyTHc2RHNYVE9Uc0hseU5IaEdHNXdOSlI0MkNWYTFUUXNjNVhHdXpQanEzaWhvQ3NaUk11Nlc5Z1lUR3VFak5WX2JPZWdPOUVDaFEtLWRzMVZ5cHJHLTg?oc=5",
+      "pub": "2026-11-26T16:33:03.000Z",
+      "sum": ""
      },
      {
       "hd": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
@@ -15827,13 +15842,6 @@
       "url": "https://finnhub.io/api/news?id=530ba3b219c6f2d412805eda6d73daaa98404a1be450f735426cbc1549970117",
       "pub": "2026-11-26T15:08:35.000Z",
       "sum": "The FCC just handed SpaceX permission for a constellation no regulator has ever approved, yet the stock keeps sliding. Between orbital AI dreams, cooling doubts, and years of heavy spending, can Starmind move the needle on Wall Street any time soon?"
-     },
-     {
-      "hd": "Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4587377aaa8de7e8dae7c4d6fa355b09ca91f27f862ef323be7e4b330a117737",
-      "pub": "2026-11-26T14:38:55.000Z",
-      "sum": "The SpaceX founder claims the firm could one day be worth a million times the global economy, as he pledges free shares to American children."
      },
      {
       "hd": "Anthropic And SpaceX Slink Below Their IPO Prices",
@@ -15946,19 +15954,12 @@
       "url": "https://finnhub.io/api/news?id=a0ad9c0603012436b5eb523a7f1942b476790549e993109996e0d6060824f2ad",
       "pub": "2026-11-25T05:57:40.000Z",
       "sum": "Joe Rogan says SpaceX intentionally pushes rockets to failure to uncover weaknesses and improve reusability."
-     },
-     {
-      "hd": "SpaceX (SPCX) Stock Is Trending in Pre-Market as Gary Black Eyes $100 Entry Point Amid Tesla Merger Dilution Fears",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=53aa22a144c96b61452135cb1dc0b4f7b8f5ba8044191cae9b22cbd043165715",
-      "pub": "2026-11-25T05:26:21.000Z",
-      "sum": "Space Exploration Technologies shares fall 2.17% in pre-market trading as Gary Black flags valuation concerns."
      }
     ],
     "fetched": {
-     "Finnhub": 165,
+     "Finnhub": 166,
      "Yahoo": 15,
-     "Google News": 19,
+     "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 13
     }
@@ -15969,8 +15970,36 @@
       "hd": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
-      "pub": "2026-11-26T16:48:35.000Z",
+      "pub": "2026-11-26T18:11:14.000Z",
       "sum": "Futures are rising with U.S. markets shut after a wild session in which the Nasdaq rallied off lows while the Dow Jones and Anthropic reversed higher."
+     },
+     {
+      "hd": "Cathie Wood Just Bought $88 Million of Anthropic Stock",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-just-bought-88-180915500.html?.tsrc=rss",
+      "pub": "2026-11-26T18:09:15.000Z",
+      "sum": "Cathie Wood's ARK Invest Buys Another $26.2 Million of Anthropic Shares"
+     },
+     {
+      "hd": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/26/alphabet-could-be-the-safest-way-to-own-anthropic-here-s-the-math/?.tsrc=rss",
+      "pub": "2026-11-26T17:47:02.000Z",
+      "sum": "Alphabet owns a piece of Anthropic and also gets paid to supply its computing power, which is a nice way to be on both sides of the AI boom."
+     },
+     {
+      "hd": "Cathie Wood Buys $87.8 Million in Anthropic Shares This Week",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/cathie-wood-buys-87-8-174136348.html?.tsrc=rss",
+      "pub": "2026-11-26T17:41:36.000Z",
+      "sum": "ARK Invest increases its exposure to Anthropic and SpaceX while reducing streaming and cryptocurrency-related holdings."
+     },
+     {
+      "hd": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-didn-t-sell-170000854.html?.tsrc=rss",
+      "pub": "2026-11-26T17:00:00.000Z",
+      "sum": "Musk says he has no plans to sell his SpaceX shares, while Anthropic’s founders pocketed nearly $2 billion from their IPO. But insider selling doesn’t necessarily spell trouble for investors."
      },
      {
       "hd": "Anthropic Stock Snapped Its Losing Streak. The Case to Buy.",
@@ -15992,34 +16021,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-long-term-data-150921107.html?.tsrc=rss",
       "pub": "2026-11-26T15:09:21.000Z",
       "sum": "TeraWulf has been caught in a wider AI infrastructure selloff in recent days, even as its core energy and data center operations remain tied to long-dated contracts such as a roughly US$19b, 20-year lease with Anthropic covering about 401 MW in Kentucky. The shift from Bitcoin mining toward high-performance computing leases, combined with U.S. rules that incentivize domestic AI data center capacity, puts TeraWulf’s contracted power and infrastructure footprint at the center of how its..."
-     },
-     {
-      "hd": "AI's self-improvement era is nearly here. It will be felt everywhere",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/ais-self-improvement-era-nearly-150000618.html?.tsrc=rss",
-      "pub": "2026-11-26T15:00:00.000Z",
-      "sum": "In the Loop host Ejaaz Ahamadeen talks about how Anthropic's (ANT) revenue has blown past CEO Dario Amodei's early-year forecast because AI models are nearing recursive self-improvement and the broader economy will feel the effects in 2027."
-     },
-     {
-      "hd": "Anthropic Signed a $19 Billion Lease. Is TeraWulf (WULF) Ready?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-signed-19-billion-lease-144202573.html?.tsrc=rss",
-      "pub": "2026-11-26T14:42:02.000Z",
-      "sum": "We just published our list of the 10 Best Small Cap AI Stocks to Buy for 2027, and TeraWulf Inc. (NASDAQ:WULF) rounds it out at No. 10. On November 5, two days after the US midterm elections, the Nasdaq Composite fell 5.52%, its worst day in 19 months. Voters backed restrictive data center measures in"
-     },
-     {
-      "hd": "Can TeraWulf (WULF) Justify Its Price Following Its Anthropic Backed HPC Shift?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-justify-price-following-141246465.html?.tsrc=rss",
-      "pub": "2026-11-26T14:12:46.000Z",
-      "sum": "TeraWulf (WULF) is in the spotlight after CEO Paul Prager highlighted that recent AI and tech stock selling has weighed on the share price, while contracted demand for its energy infrastructure has remained intact. The recent AI pullback has not just hit sentiment. TeraWulf’s share price has fallen about 39% over the past 90 days and is down roughly 21% year to date. The 1-year total shareholder return is lower by about 32%, even after a very large 3-year total shareholder return near 7x..."
-     },
-     {
-      "hd": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
-      "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/is-anthropic-joining-sp-500-what-investors-need-to-know/?.tsrc=rss",
-      "pub": "2026-11-26T13:23:02.000Z",
-      "sum": "Don't expect major changes to your ETF portfolio."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16062,13 +16063,6 @@
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMGhQYy1TNTdJcnJDbUg5RFFZRl91OE1OZHNvdTFfYm81NTFTR1JGLXRsR1RFTnhnajZMT1ZjNEFIMjlJX2pfS092R2JGLUFZb2ZhVE5fRU5DUHhub1ZKb3VQUkJUSUpuX2wwZ2ZpdmR1M1BNcTVYb0pBQXlZMVFmNkNVbElaUEg0a2c?oc=5",
       "pub": "2026-11-25T23:28:32.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Cathie Wood Buys More Anthropic Stock Below IPO Price, Adds $4.8 Million in SpaceX as Ark Dumps Crypto and Streaming Shares",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=74723d558288ce684567113f1159c6dc0f0abd885621efbd87c8344ec70a23cf",
-      "pub": "2026-11-25T22:15:01.000Z",
-      "sum": "Cathie Wood’s Ark bought Anthropic and SpaceX shares while selling Netflix and Robinhood on Wednesday, Nov. 25, 2026."
      },
      {
       "hd": "Stocks Pare Losses as Anthropic Shares Swing Higher",
@@ -16139,23 +16133,44 @@
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1MS01wSHJ0d1J3eDhpZk1OYUk4ZWpWanhRYkU1OGhtV3lhODJib3hxOGkzNUJNVjdBVHN3U3NwOHZVcTBLa3I4cm5fVl9tak9OSHhPTlVxUEhGcHJuYjZYN3BwVC1RUzFmN2F1ZFhvSERxenPSAXhBVV95cUxNMk9GalFIT19DZThwZ3hGd3BjVkh2TGQtOGVOdkFoUjZjZnBURm0tTFBhb29nX3ppX0w5Y0xLV3p2S25QekdRVlRrcHo4OXlYaEFmYVNPY25JeFNpNldQbHprSkpmUVNBS0JvMmw1VkxtV0ViMnI4aWU?oc=5",
       "pub": "2026-11-25T17:10:17.000Z",
       "sum": ""
+     },
+     {
+      "hd": "SpaceX Stock Has an Anthropic Problem",
+      "src": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZDFmOWxFWjlTR1FDN0w3d2VadFQxdm9nZVpBVFBQOU5STEw0eXgtOG5faEx4QUxWZzZHcW5xOUdxSnhtdTU4dVc4SjZmOTJWU012V2VHYjB1b2JOX3otUEtjRXY3YXNObmpFUFFCa3NKMTNHMmtWRjNjRXBmZmdxM29HVQ?oc=5",
+      "pub": "2026-11-25T16:41:00.000Z",
+      "sum": "Artificial intelligence developer Anthropic attracted more than $615 billion in combined retail and institutional orders for its historic initial public offering, Bloomberg reported."
      }
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 0,
-     "Google News": 62,
+     "Yahoo": 15,
+     "Google News": 56,
      "Nasdaq": 13,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T18:00:16.329Z",
-  "lastAttempt": "2026-11-26T18:00:16.329Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/europe/europe-preppers-survivalists-cyberattacks-threats.html",
+    "pub": "2026-11-26T18:23:08.000Z",
+    "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
+   },
+   {
+    "hd": "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "pub": "2026-11-26T18:18:21.000Z",
+    "sum": "The deaths follow a series of strikes on Gulf Arab states that host U.S. military facilities in recent weeks as talks to end the war continue to stall."
+   },
    {
     "hd": "Two Italians killed in strike in Kuwait, as Iran denies responsibility",
     "src": "BBC News",
@@ -16171,10 +16186,10 @@
     "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
    },
    {
-    "hd": "Iranian Drone Attack Kills Two Italians in Kuwait",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR0JXYTAzOTNnajlLczdFM0FKUXdjbHlSLUFPRlhHQWpXaV9JRnQzNGRETWR6c1pWM3hQZnptczZaQVZqeExWa1JqdFRDWlJDcUItNEVra09WVEFfSDlSUm1nT3B3SUVZRGZHMTdieHlaSDhBWDdvMUhTVjJ0eTZmbFlfWHM2MUYyYnpHNWtFcTg3Q2JndEw4LTl3MHg?oc=5",
-    "pub": "2026-11-26T16:55:00.000Z",
+    "hd": "Trump tells Putin to ‘pull back all military aggression’ as he tries for peace deal to end ‘complete bloodbath’ in Ukraine",
+    "src": "New York Post",
+    "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPSGNHWWx0MXhIQkx3V2pRdlZYWGdJLURodms0ZGk1MTdOaXNhczdYVk5kOURoZ1JKR3ZQbTBUV3llaHdzdTBBa0ZFN1hDOFlQaFlUcWkwbXRpTFJ5SGxWaVhUVnZ2T3lWaWtiWExfcThNZWFrUVhMa0JjTWwtQnhtSjhqcEJPZ01xT21hRnBZM080M1M5aHNXVlBMazY5RUtIdzRUenBkYVkza1k2RDBXUVlST3ZZR1RoWmNQNjI3TGp6a2pxcEI4NjNFcnRTUk54UVlvX1ROSUN0eGFXbEFQYnp3aXQyMzdodndvZ193?oc=5",
+    "pub": "2026-11-26T17:07:44.000Z",
     "sum": ""
    },
    {
@@ -16190,13 +16205,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82VmIyOXM0dFF5ZVFScjVxU0IzbUV3cU53d1JybkZ3eEJxaUFCTXR4Y0dmS3FjREhrcVZ4QW5GN3AtMHJNdWFDT1JaeWppVkZrXzkteDgzZ0MzTFk?oc=5",
     "pub": "2026-11-26T16:39:30.000Z",
     "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
-   },
-   {
-    "hd": "Trump says he asked Putin to 'pull back' military aggression throughout Europe",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLTBqZDFmdVZMYUhDSHRObmlwNXBGNXRpXzdBVnBTc2hZTk54NU9BYThqQUswalJPMklvaGhHNmJiNW5venFCYk1FbjdNQUdJU1RISjlXbGtpc0lWektRUThRNEhOdFdSZ3B3cGZTSlk5blFMWnhGOGNfaEFjbzBha29XdlNxTXUzemUzR1FIc0FPc0kybGZLSmp5OVNNSGRLOXNZM21pd0Fac2prOVoxcC1rMnFIUQ?oc=5",
-    "pub": "2026-11-26T16:31:40.000Z",
-    "sum": ""
    },
    {
     "hd": "Russia arrests deputy aerospace commander in reported corruption case",
@@ -16332,6 +16340,13 @@
     "sum": ""
    },
    {
+    "hd": "German police arrest two Iraqis over alleged Cologne synagogue bomb plot",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONnk2X1RfVHc3VF8ybnZCVzdIbjFrdTNMbzI2SXhxVW9VTGx4RV94OV8zdU9yRzJPS1daUUZzMXBKM0o5aW1HMklsR1Y5OUlxMEhWTVpNX0tXclphbWhDcE1kb050ekVqaWtrcEpyenZQdS1MWlE2ZVp3ZjNJUjg4ay1HM2VPa0l3emJ0MHpGNHFmdUhsWGIwRXdfMUFuRlBWNDZSNXNzcE9kTkFLd2VnREE1Vl8zOVU0REpaT3o5dkhtTElF?oc=5",
+    "pub": "2026-11-26T12:28:28.000Z",
+    "sum": ""
+   },
+   {
     "hd": "EU leaders divided over budget spending as they weigh a $49 billion loan to Ukraine",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObUt5bnNUdEVaVjhETTRjWFI5cnZYaUtyV0R1VE50ZGFPcnJyVmppY2xxeVFpOEtPWURRSFpKUGFXcDVkZGVtZnF2Ykg5aEk2NXY4VTVBVHZQWEstSk9CRGp6cHZLUWhyQkdDQ2ktQjl6WldZSlFRdzhfVUQ0dGNkNlZJaFZKMkFYeWdFUmNQSXdSTDJscjlEcXBZdVdhZWs?oc=5",
@@ -16351,20 +16366,6 @@
     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTmFaekZkXy1DMFpvdmFRMkpoSnVwcm45d2dZYnFDeVFma1hBUURCb0RPNDFKdVdSajZ2Znk1Y0ltZDlYODVYbTFBTFlxVExKVzY2My1tVzF5NnRNXzZpRExpQ0FjU3MxaEhORTdlM2tWWWxzc2o5XzVBRzV3NlZ2MVVMZGV2MWkzZnI2ZDJsaW84WmY0azEyVQ?oc=5",
     "pub": "2026-11-26T11:21:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Attack Blamed on ISIS Kills 2 Syrian Security Force Members",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/middleeast/isis-attack-syria.html",
-    "pub": "2026-11-26T11:08:41.000Z",
-    "sum": "The assault on a security headquarters in the northeastern city of Hasakah was carried out by four militants who local officials linked to the Islamic State."
-   },
-   {
-    "hd": "Trump's new tariffs would put rates right back where they were before the Supreme Court stepped in",
-    "src": "Yahoo Finance",
-    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTVg5UHpONGNFdFNFMDVfQlFwT1p3dDItcHg2TWRmdDFkT1hCMTlXSGoxM2JLTXViNG1pbUwtZXY2WnB2U050QkViTVJQQkJsSnozaE1ISDMyRGJtSUJuTGNtdjhNWVNoVHVsV1ExYUhyWVM4QVdzNXlmbUg2LWE4b1hraGFCYXdkNEEzYW9LTExIZExfalhEOUtfTUh4MFFlU2dvT0hWUDRXLW1aUDZzNDJlWTNELVRSc09TVFA3SGpRR2FwcF82bXVHUnk0dHQ2TkhIbFJuUFNtNTJjelpfWURfMEFPakhHX2c?oc=5",
-    "pub": "2026-11-26T11:04:36.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16383,8 +16384,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T18:00:16.329Z",
-  "lastAttempt": "2026-11-26T18:00:16.329Z",
+  "asOf": "2026-11-26T18:30:13.441Z",
+  "lastAttempt": "2026-11-26T18:30:13.441Z",
   "lastError": null
  }
 }
