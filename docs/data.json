@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T21:30:12.496Z",
+ "generatedAt": "2026-11-26T21:45:10.826Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T21:30:12.496Z"
+   "checkedAt": "2026-11-26T21:45:10.826Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,12 +7523,10 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T21:30:12.496Z",
+  "at": "2026-11-26T21:45:10.826Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "stockNews",
-   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13897,8 +13895,8 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T21:30:12.496Z",
-  "lastAttempt": "2026-11-26T21:30:12.496Z",
+  "asOf": "2026-11-26T21:45:10.826Z",
+  "lastAttempt": "2026-11-26T21:45:10.826Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
@@ -13906,12 +13904,12 @@
     "name": "S&P 500",
     "last": 7234.5,
     "lastTime": 1795715999,
-    "settle": 7196.75,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 37.75,
-    "changePct": 0.5245423281342272,
-    "expectedOpen": 7220.45672143676,
+    "change": 38,
+    "changePct": 0.5280344611964148,
+    "expectedOpen": 7220.707553671924,
     "valid": true
    },
    "NASDAQ": {
@@ -13920,12 +13918,12 @@
     "name": "Nasdaq 100",
     "last": 26221.25,
     "lastTime": 1795715999,
-    "settle": 26105.75,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 115.5,
-    "changePct": 0.44243126514273673,
-    "expectedOpen": 23690.153966606973,
+    "change": 116.5,
+    "changePct": 0.4462789339104952,
+    "expectedOpen": 23691.06147018263,
     "valid": true
    },
    "DOW": {
@@ -13934,12 +13932,12 @@
     "name": "Dow",
     "last": 50443,
     "lastTime": 1795715985,
-    "settle": 50229,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 214,
-    "changePct": 0.4260486969678871,
-    "expectedOpen": 50396.75380457505,
+    "change": 216,
+    "changePct": 0.43004758396878173,
+    "expectedOpen": 50398.76056403926,
     "valid": true
    },
    "RUT": {
@@ -13948,11 +13946,11 @@
     "name": "Russell 2000",
     "last": 2720.8,
     "lastTime": 1795715998,
-    "settle": 2705.800048828125,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 14.999951171875182,
-    "changePct": 0.5543628834795691,
+    "change": 15.100048828125182,
+    "changePct": 0.5580829027839967,
     "expectedOpen": null,
     "valid": true
    }
@@ -13965,39 +13963,6 @@
   "season": 2026,
   "byes": [],
   "games": [
-   {
-    "id": "401873081",
-    "start": "2026-11-26T18:00Z",
-    "state": "in",
-    "status": "Q4 0:03",
-    "period": 4,
-    "clock": "0:03",
-    "completed": false,
-    "away": {
-     "name": "Chicago Bears",
-     "short": "Bears",
-     "id": "3",
-     "abbrev": "CHI",
-     "score": "38",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
-     "record": "8-2",
-     "winner": false,
-     "color": "#0b1c3a",
-     "rank": null
-    },
-    "home": {
-     "name": "Detroit Lions",
-     "short": "Lions",
-     "id": "8",
-     "abbrev": "DET",
-     "score": "35",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
-     "record": "8-2",
-     "winner": false,
-     "color": "#0076b6",
-     "rank": null
-    }
-   },
    {
     "id": "401873080",
     "start": "2026-11-26T21:30Z",
@@ -14492,10 +14457,43 @@
      "color": "#003594",
      "rank": null
     }
+   },
+   {
+    "id": "401873081",
+    "start": "2026-11-26T18:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Chicago Bears",
+     "short": "Bears",
+     "id": "3",
+     "abbrev": "CHI",
+     "score": "39",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/chi.png",
+     "record": "9-2",
+     "winner": true,
+     "color": "#0b1c3a",
+     "rank": null
+    },
+    "home": {
+     "name": "Detroit Lions",
+     "short": "Lions",
+     "id": "8",
+     "abbrev": "DET",
+     "score": "35",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/det.png",
+     "record": "8-3",
+     "winner": false,
+     "color": "#0076b6",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-26T21:30:12.496Z",
-  "lastAttempt": "2026-11-26T21:30:12.496Z",
+  "asOf": "2026-11-26T21:45:10.826Z",
+  "lastAttempt": "2026-11-26T21:45:10.826Z",
   "lastError": null
  },
  "alerts": {
@@ -14506,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T21:30:12.496Z",
-  "lastAttempt": "2026-11-26T21:30:12.496Z",
+  "asOf": "2026-11-26T21:45:10.826Z",
+  "lastAttempt": "2026-11-26T21:45:10.826Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T21:30:12.496Z",
+  "lastAttempt": "2026-11-26T21:45:10.826Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15359,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T21:30:12.496Z",
-  "lastAttempt": "2026-11-26T21:30:12.496Z",
+  "asOf": "2026-11-26T21:45:10.826Z",
+  "lastAttempt": "2026-11-26T21:45:10.826Z",
   "items": {
    "NVDA": {
     "session": "post",
