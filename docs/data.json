@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T10:45:15.374Z",
+ "generatedAt": "2026-11-26T11:00:16.848Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -452,21 +452,21 @@
     "team": "Green Bay Packers",
     "color": "#227052",
     "gold": "#FFB612",
-    "record": "6–4",
+    "record": "6–5",
     "rank": "4th NFC North",
-    "streak": "L1",
+    "streak": "L2",
     "next": {
-     "date": "2026-11-26T01:00Z",
+     "date": "2026-12-06T18:00Z",
      "homeAway": "away",
-     "opponent": "Rams",
-     "oppCode": "LAR",
+     "opponent": "Saints",
+     "oppCode": "NO",
      "state": "pre"
     },
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-25T11:00:11.739Z",
-  "lastAttempt": "2026-11-25T11:00:11.739Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  },
  "news": {
@@ -487,6 +487,13 @@
     "sum": "Investors appeared to have shrugged off a fresh set of tariffs unveiled by the White House on Wednesday, targeting more than a dozen major trading partners."
    },
    {
+    "hd": "Stocks, Nasdaq Futures Climb as AI Trade Rebounds: Markets Wrap",
+    "src": "Bloomberg",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeEQtTUQwY0ZyTEpubU1fOUV6eVQzR2llam9uaF9UUnQ5LVNvcWJFT0dRYW9NRHM2cDQtYkpaOF9rS1ZuVE8zaDhmYWk0S1IzdU1sOER5aWJLOTQteFZFTjRkMUJwUTdta0ZnemNITTBEa1VVb1c1MGJkUnZoMFRKNDZjM1d6SDBqZ1g2NDZTenZfSEZK?oc=5",
+    "pub": "2026-11-26T09:15:23.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNlM1cEVZV2FiQzNweFlINDdoTDVGaDFnOS02eWpIV3BDUks0Q2FNc2dUWUkxOHl4LThWVXJCeXFRMHFETVpORjR2Y0lKSkh5YVN0Y2dUR0pTb1dmWUJoQmtCWTdETmpwYWtDZ1otOTlHb2lpdWNpSG5Kc3Z2QW94VjlWX1doeEJOLW01NU04aDBBYmxFY3RnLU1Vek9jdmEtVE9TTmFJZ1pWd0xLUXpnUnZjOEx3UQ?oc=5",
@@ -499,13 +506,6 @@
     "url": "https://www.cnbc.com/2026/11/26/latin-america-copper-energy-ai-investment.html",
     "pub": "2026-11-26T08:59:11.000Z",
     "sum": "Latin America’s copper, oil, gas and rare earths could benefit from rising AI energy demand, if infrastructure and fiscal policy attract investment."
-   },
-   {
-    "hd": "Stocks, Nasdaq Futures Climb as AI Trade Rebounds: Markets Wrap",
-    "src": "Bloomberg",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPeEQtTUQwY0ZyTEpubU1fOUV6eVQzR2llam9uaF9UUnQ5LVNvcWJFT0dRYW9NRHM2cDQtYkpaOF9rS1ZuVE8zaDhmYWk0S1IzdU1sOER5aWJLOTQteFZFTjRkMUJwUTdta0ZnemNITTBEa1VVb1c1MGJkUnZoMFRKNDZjM1d6SDBqZ1g2NDZTenZfSEZK?oc=5",
-    "pub": "2026-11-26T08:33:54.000Z",
-    "sum": ""
    },
    {
     "hd": "Nvidia halts chip shipments to south-east Asia",
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-26T10:00:21.274Z",
-  "lastAttempt": "2026-11-26T10:00:21.274Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -7523,10 +7523,15 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T10:45:15.374Z",
+  "at": "2026-11-26T11:00:16.848Z",
   "ran": [
    "alerts",
-   "nflScoreboard",
+   "nfl",
+   "news",
+   "stockNews",
+   "worldNews",
+   "world",
+   "rates",
    "extended",
    "futures",
    "usTempGrid"
@@ -7540,16 +7545,16 @@
     "id": "DGS10",
     "name": "10-Year Treasury",
     "latest": {
+     "date": "2026-11-24",
+     "v": 4.91
+    },
+    "prior": {
      "date": "2026-11-23",
      "v": 4.92
     },
-    "prior": {
-     "date": "2026-11-20",
-     "v": 4.92
-    },
     "yearAgo": {
-     "date": "2025-11-21",
-     "v": 4.06
+     "date": "2025-11-24",
+     "v": 4.04
     },
     "history5y": [
      [
@@ -8597,8 +8602,8 @@
       4.92
      ],
      [
-      "2026-11-23",
-      4.92
+      "2026-11-24",
+      4.91
      ]
     ],
     "history10y": [
@@ -10691,8 +10696,8 @@
       4.92
      ],
      [
-      "2026-11-23",
-      4.92
+      "2026-11-24",
+      4.91
      ]
     ]
    },
@@ -10700,16 +10705,16 @@
     "id": "DGS7",
     "name": "7-Year Treasury",
     "latest": {
+     "date": "2026-11-24",
+     "v": 4.79
+    },
+    "prior": {
      "date": "2026-11-23",
      "v": 4.81
     },
-    "prior": {
-     "date": "2026-11-20",
-     "v": 4.8
-    },
     "yearAgo": {
-     "date": "2025-11-21",
-     "v": 3.82
+     "date": "2025-11-24",
+     "v": 3.8
     },
     "history5y": [
      [
@@ -11757,8 +11762,8 @@
       4.8
      ],
      [
-      "2026-11-23",
-      4.81
+      "2026-11-24",
+      4.79
      ]
     ],
     "history10y": [
@@ -13851,8 +13856,8 @@
       4.8
      ],
      [
-      "2026-11-23",
-      4.81
+      "2026-11-24",
+      4.79
      ]
     ]
    },
@@ -13860,15 +13865,15 @@
     "id": "DFF",
     "name": "Fed funds (effective)",
     "latest": {
-     "date": "2026-11-23",
+     "date": "2026-11-24",
      "v": 3.88
     },
     "prior": {
-     "date": "2026-11-22",
+     "date": "2026-11-23",
      "v": 3.88
     },
     "yearAgo": {
-     "date": "2025-11-23",
+     "date": "2025-11-24",
      "v": 3.88
     }
    },
@@ -13876,81 +13881,81 @@
     "id": "MORTGAGE30US",
     "name": "30-yr mortgage",
     "latest": {
+     "date": "2026-11-25",
+     "v": 7.21
+    },
+    "prior": {
      "date": "2026-11-19",
      "v": 7.28
     },
-    "prior": {
-     "date": "2026-11-12",
-     "v": 7.11
-    },
     "yearAgo": {
-     "date": "2025-11-13",
-     "v": 6.24
+     "date": "2025-11-20",
+     "v": 6.26
     }
    }
   },
-  "asOf": "2026-11-25T11:00:11.739Z",
-  "lastAttempt": "2026-11-25T11:00:11.739Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T10:45:15.374Z",
-  "lastAttempt": "2026-11-26T10:45:15.374Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7227.75,
-    "lastTime": 1795689313,
+    "last": 7218.5,
+    "lastTime": 1795690222,
     "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 31,
-    "changePct": 0.4307499913155243,
-    "expectedOpen": 7213.719824226212,
+    "change": 21.75,
+    "changePct": 0.30221975197137596,
+    "expectedOpen": 7204.48777990065,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26216,
-    "lastTime": 1795689313,
+    "last": 26152.25,
+    "lastTime": 1795690220,
     "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 110.25,
-    "changePct": 0.42232075309079414,
-    "expectedOpen": 23685.41074085211,
+    "change": 46.5,
+    "changePct": 0.17812167817434857,
+    "expectedOpen": 23627.814428114496,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50359,
-    "lastTime": 1795689311,
+    "last": 50304,
+    "lastTime": 1795690222,
     "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 130,
-    "changePct": 0.2588146289991837,
-    "expectedOpen": 50312.830815863344,
+    "change": 75,
+    "changePct": 0.1493161321149137,
+    "expectedOpen": 50257.88123992115,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2715.2,
-    "lastTime": 1795689311,
+    "last": 2711.2,
+    "lastTime": 1795690216,
     "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 9.399951171874818,
-    "changePct": 0.34740006660676614,
+    "change": 5.399951171874818,
+    "changePct": 0.1995694831262023,
     "expectedOpen": null,
     "valid": true
    }
@@ -14504,8 +14509,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T10:45:15.374Z",
-  "lastAttempt": "2026-11-26T10:45:15.374Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,30 +15153,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T10:45:15.374Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
    {
     "src": "BBC News",
-    "hd": "New UK-EU treaty has 10-year termination clause",
-    "pub": "2026-11-26T09:59:14.000Z"
+    "hd": "US Army says controlled blast of explosives in Iowa was 'huge success'",
+    "pub": "2026-11-26T10:38:35.000Z"
    },
    {
-    "src": "Euronews",
-    "hd": "Who pays the new EU taxes? A breakdown of who will foot the bill",
-    "pub": "2026-11-26T08:19:15.000Z"
+    "src": "Reuters",
+    "hd": "Argentina's Senate poised to suspend primaries, boosting Milei's re-election bid",
+    "pub": "2026-11-26T10:05:43.000Z"
    },
    {
-    "src": "CNBC",
-    "hd": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
-    "pub": "2026-11-26T07:58:19.000Z"
+    "src": "France 24",
+    "hd": "'Unacceptable': Major economies push back against new US tariffs",
+    "pub": "2026-11-26T07:16:41.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T10:00:21.274Z",
-  "lastAttempt": "2026-11-26T10:00:21.274Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  },
  "movers": {
@@ -15359,8 +15364,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T10:45:15.374Z",
-  "lastAttempt": "2026-11-26T10:45:15.374Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15406,6 +15411,13 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Nvidia tightens AI chip shipments to Southeast Asia amid US export curbs - report",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-26T10:45:20.000Z",
+      "sum": ""
+     },
      {
       "hd": "Shopify (NasdaqGS:SHOP) Rebound Rekindles The Debate Over Its Fair Value",
       "src": "Yahoo Finance",
@@ -15573,25 +15585,25 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-25T20:00:10.000Z",
       "sum": ""
-     },
-     {
-      "hd": "How China got access to Nvidia's AI chips despite rules to stop them",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPU05FY1hvQmJod19oM3p3aTZQaS1CdktCWEZsSnk0TmVWREE1a0tmVW5kVnBxdG5VNU1TX2FmWnZ1aTc1UEQyblFkSklCZ3NlcU1XQUZQVDUwTXZ6R3BoVjlRb1RPY0pTNGdmUUdNZkw0Zi1oanJOcXFieGlBdzRTN05pa3FsaVhUWVk0UWpzc0hkN2kySGF6bGRpU1Y1a2IyNi1iaUFQZThLNVZON0E?oc=5",
-      "pub": "2026-11-25T19:58:10.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 126,
-     "Yahoo": 7,
-     "Google News": 88,
+     "Yahoo": 6,
+     "Google News": 90,
      "Nasdaq": 10,
      "Seeking Alpha": 24
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "General Motors (GM) Bets On Egypt Assembly And Wider EV Charging Access",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/general-motors-gm-bets-egypt-101402167.html?.tsrc=rss",
+      "pub": "2026-11-26T10:14:02.000Z",
+      "sum": "General Motors (NasdaqGS:GM) is starting local production of the Chevrolet Groove in Egypt with a strong local sourcing commitment. The automaker is also broadening its collaboration with Tesla by adopting the NACS charging standard for GM electric vehicles in South Korea. Together, Egypt based Groove assembly and NACS charging access in South Korea only capture part of General Motors' current repositioning efforts. Ask Charlie whether the 3 warning signs (1 major) affect GM’s Egypt Groove..."
+     },
      {
       "hd": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
       "src": "Yahoo Finance",
@@ -15654,13 +15666,6 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcXhETkRReGlSN3ZZcVhmT29qVUFCOVdfcmlXYmQ0RmV4ODJzUWZUV0NBSnBtbmFNdGFVMVpuNFZKc2xQQ2NOMjY2UlNzeW1QSHc0aEJEWFpoZjBOUURIdS10TzJDbXVOaHBPaHZxcnllVkFnR0dYNnAxSUdfQWJYTnYybkJZaDlsMXVBQkNvQW03ZmFjN3pzY3VRNXbSAaIBQVVfeXFMTnhRSXI5VmxubHZidkhJUjNHdG9pbXk2MWtHaUdMeHl4c2tlTUlUVkZUNTBwTEtaLUxKVjRDNzRHYWJzQXBoeW95YmVXUW1kVHRGSENJeHdhOS1lMkljanFPRDhEa3R6YmdmTjRNZEV5Qk9waDhabm5ZMXFoaklOQ2RrUnlYSkVmaExIUUhMVHZZTkFUSlQxNXFRc18zTWJPZXNn?oc=5",
       "pub": "2026-11-25T19:54:42.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Ford Motor vs. Tesla: Which Automaker Stock Is a Better Buy for 2027?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=20f4f00b72c95809bf9240cd0a0f8701c7bb841c37671053599cf3f0ffb87d30",
-      "pub": "2026-11-25T18:13:01.000Z",
-      "sum": "Ford's truck empire and commercial fleet business stand against Tesla's EV leadership and AI ambitions, with valuations that sharply diverge."
      },
      {
       "hd": "SpaceX (SPCX) Stock Is Trending in Pre-Market as Gary Black Eyes $100 Entry Point Amid Tesla Merger Dilution Fears",
@@ -15770,7 +15775,7 @@
     ],
     "fetched": {
      "Finnhub": 160,
-     "Yahoo": 11,
+     "Yahoo": 12,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 9
@@ -15956,7 +15961,7 @@
     ],
     "fetched": {
      "Finnhub": 161,
-     "Yahoo": 15,
+     "Yahoo": 16,
      "Google News": 18,
      "Nasdaq": 0,
      "Seeking Alpha": 14
@@ -15964,6 +15969,13 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+      "pub": "2026-11-26T09:55:44.000Z",
+      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
+     },
      {
       "hd": "ANT Stock Gains Overnight: US Exchange-Traded Funds’ Anthropic Holdings Swell To Over $2B",
       "src": "Yahoo Finance",
@@ -15986,6 +15998,20 @@
       "sum": ""
      },
      {
+      "hd": "Musk Confirms He Pushed Trump to Bring Back Jensen Huang. The White House Had Anthropic in Mind",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-confirms-he-pushed-trump-to-bring-back-jensen-huang-the-white-house-had-anthropic-in-mind?ref=yahoofinance&tlnk=yf-261126-66q3rrhh&.tsrc=rss",
+      "pub": "2026-11-26T08:59:12.000Z",
+      "sum": "Key TakeawaysElon Musk confirmed he spoke with President Trump before NVIDIA reinstated Jensen Huang as CEO, and the White House reportedly backed Huang partly as a champion of open AI models over closed labs like Anthropic. Anthropic closed below its $83 IPO price the day after Huang returned, as AI stocks gave back Monday’s rally."
+     },
+     {
+      "hd": "Broadcom Sinks 15% in a Week to a 52-Week Low as Google Reportedly Cuts TPU Orders. Is the Selling Overdone?",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/broadcom-sinks-15-in-a-week-to-a-52-week-low-as-google-reportedly-cuts-tpu-orders-is-the-selling-overdone?ref=yahoofinance&tlnk=yf-261126-c892j8cp&.tsrc=rss",
+      "pub": "2026-11-26T08:30:34.000Z",
+      "sum": "Key TakeawaysBroadcom fell 15% in the past week and hit a 52-week low, mostly after analyst Ming-Chi Kuo said Alphabet’s Google cut 2027 shipments of one Broadcom-designed TPU line by about 20%. Marvell fell too, and Anthropic’s slide below its IPO price added to the selling."
+     },
+     {
       "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3",
@@ -16005,27 +16031,6 @@
       "url": "https://finnhub.io/api/news?id=0f795e97b828fe75c0ad5b79dca686f5a424cf13254852e72294887e130361a3",
       "pub": "2026-11-26T05:20:02.000Z",
       "sum": "A large equity stake and nearly guaranteed cloud sales make Anthropic's future success a boon for Alphabet."
-     },
-     {
-      "hd": "‘Free Pop Is Over’ for OpenAI After Anthropic’s Rout, Tech Analyst Luke Lango Says: But a Late-2027 IPO Could ‘Ride the Recovery’",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4901fe6c79fe8769b395462c0ff0e1e24335a7f6d3fa89de9b47d5dea5f2ef7d",
-      "pub": "2026-11-26T04:41:49.000Z",
-      "sum": "OpenAI can no longer count on an easy debut, market experts told Benzinga, after Anthropic, PBC (NASDAQ:ANT) fell about 28% from its IPO high, and Chinese artificial intelligence stocks show how fast a hot listing can fade. OpenAI Faces a Tougher IPO Debut “For OpenAI, the free pop is over,” tech analyst Luke Lango said in emailed comments to Benzinga on Tuesday. “Public markets will price OpenAI against where Anthropic trades, not its debut-day hype.” Anthropic priced its record IPO at $83 on N"
-     },
-     {
-      "hd": "Does Anthropic Want AI to Run the World? CEO Dario Amodei Pushes Back Against ‘Surrender Human Free Will’ Claims",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5e8a9b063e89d12c046d8dd2201ab83bf36214fc080650912131392acce296b0",
-      "pub": "2026-11-26T04:13:14.000Z",
-      "sum": "Anthropic PBC (NASDAQ:ANT) CEO Dario Amodei has rejected concerns that he supports handing humanity’s decision-making power to superintelligent AI. Dario Amodei Rejects Claims of AI Governance On Wednesday, Amodei responded to an Axios report that some Anthropic employees believe humans should eventually hand over certain decisions to superintelligent AI systems. \"No, I do not believe that we should ‘surrender human free will’ to AI systems, and it’s absurd to suggest that I do,\" Amodei wrote on"
-     },
-     {
-      "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a0d43b3eb4a909a4aac44c3d968497747a467d227e9de03170793573844b8eb5",
-      "pub": "2026-11-26T04:06:32.000Z",
-      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
      },
      {
       "hd": "What Comes Next After Anthropic’s Historic IPO",
@@ -16142,19 +16147,26 @@
     ],
     "fetched": {
      "Finnhub": 148,
-     "Yahoo": 0,
+     "Yahoo": 14,
      "Google News": 59,
      "Nasdaq": 13,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T10:30:12.118Z",
-  "lastAttempt": "2026-11-26T10:30:12.118Z",
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "US Army says controlled blast of explosives in Iowa was 'huge success'",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T10:38:35.000Z",
+    "sum": "Officials say no lead has been detected in the surrounding area, which continues to be tested following concerns from locals."
+   },
    {
     "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
     "src": "The New York Times",
@@ -16175,6 +16187,27 @@
     "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-26T09:59:14.000Z",
     "sum": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal."
+   },
+   {
+    "hd": "China's defence ministry urges Japan to stop 'stirring up' South China Sea disputes",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbUJVQ2JZcnNsSFBFOTVuU0tTUjZUOHpSNFhpMXFkOVIxR0NFSUJ5d0F4a3BVa1BRcXdIUldMZjFKd1lMV2c3VjYxRHZEWnpvOTY2UE92dXowSUh6U00xRHpVYm52Y3VYQklTaVNQWFJBdFVFNUxxSk9uX2R6X25qNjkzNE1LOUM1a011ZmpUd29sMHI2OTdyNmJrSVFScmNUTkl3WFhfc0h4N3ZHZkctRnlWNFRncUg1Wi13SHVDU0ZldkE?oc=5",
+    "pub": "2026-11-26T09:41:22.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "How Trump's proposed tariffs for India compare with rival nations",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNazJTSjI3dk40ZnhoM2ZJR2N2eXp0NUFoaWUxNUI4NW9wV19YWEtpd24tS0t5YnFHV2YzSkRmSXdiTnR6cjRuMTROY1d1VlQ2NUR3UjNNMUJkeU5XQVBOeUQ1VnVTQmtQU3BVOUNndHdyeUhvWDcxdmRHMGtheVJCREs4UzdCWS1VVDQwcmdQYWtILXltMHRhN1UxeTVtdGhuMFhpemlOdDRkLTB5?oc=5",
+    "pub": "2026-11-26T09:33:45.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "North Korea’s Kim vows to build more nuclear weapons after ignoring Trump’s overture",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcjR1N2UyTm5TeG50ZVdtSHRYd1NuZ2lfeWxNQWluM182WUtVUHpGbGRSN05QdkQ2Ti00ZUZzeFFxTE9yMU1SbEVYMlM5RHRicmtoT1R2QTlJUjQ5VFp3Y0RwQmFGRzJpd3lYWmUzUjBFQThMTkhYbGs1TnZSTEF3RnotdE5QVWhaaG54dm9UYW0xQUNJeTg1YXRHZ1JvQQ?oc=5",
+    "pub": "2026-11-26T09:16:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
@@ -16209,6 +16242,20 @@
     "src": "France 24",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSzlzNkVzNEdFVU9tanZOU0tVbWJxVW9oV2VueklTWlU5bDNSbFFLNkRzbEZlRGVJVnkzWjk5cGdLZzdmXy1PNmtHTHROU0VPY1ZSdk1QUmVZWVYzQ0xSWXhHUWxtVXd4M0xvSHRpNFNiNkdWMm9sRW16ZjktcEg5dnl6bWx1a0pKRlo2bXl4VE1yNTlqTVpnTFF6WVJhd2dWSlhXQVhMek55Nkk?oc=5",
     "pub": "2026-11-26T07:16:41.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Ukraine Strikes Russian Power Plant as Drone Attacks Deepen Energy Crisis Across 16 Regions",
+    "src": "Kyiv Post",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5uVXlQem1KNzN0Z0lpN0dfQ0k4M0FBX2xvbFFBSVAxSUZoVEFlcnlVYnRFMGxNRW1oRjhjZ3lfcWdKTWFxeDFFYUg1dw?oc=5",
+    "pub": "2026-11-26T07:08:39.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "A Chinese consumer advocate is stranded in South Korea as a crackdown in China targets campaigners",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONTZhUFowQURIdVh5VjR6VUFXcW5zM0tZdDBDeU5jQXo2Yld4N1pvcjRKVEI2cmdZOTlOQXhBdTVlaFQxczViV3ZCd19NYkdvNjQwUWRyUHJVZkpTdkVsdk1DbmJrN29JMlQxcGVmMHh2c3BudlJ3N0h3R25zTFNadndRZWVrdUFEY1dPSDU4YVJubk5ZVk1YUTlZYk1JdzI4MlZhRUJudw?oc=5",
+    "pub": "2026-11-26T07:08:00.000Z",
     "sum": ""
    },
    {
@@ -16247,6 +16294,13 @@
     "sum": ""
    },
    {
+    "hd": "China, Japan, South Korea and ASEAN launch talks on digital payments across borders",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQWFVpME5hQ1VTaDIwVWlteDB0akRPQjJYYldDck5GTUVSNmdjelZXZnBTcU03R01fVW9CZE8zTXZVYVc0dl92M3hxcDhjZlhicUFEQndIS1Iyd1RPRXNjS1ZkUnFjWTNHeFZIcmFMUGRadXdvYnpXZkhhMFJwSjJVYnRWTlJrTkxIaFpucUdNQzJQQ0cxOGd6Z2J5WmJKVGVFSjdTUGJDWU5YSm1KUUNaWktTRzk3a3VPT3JrczlvWXpuaG9PV0huag?oc=5",
+    "pub": "2026-11-26T05:01:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcVE1ZllSR0xRNHFVUjR0WWJjQXF2MllxbUV3WUQ2Vno2WFFCbzkyODBvWjE1WmtscC1rdkVLdVJXUDhUUXFiMDZQbS01akV2UjhQQUFwMWp2aWdrdm5ZQy11b0tvX3BkSVU1WmdUV2J4N2l0UF9tcHVqRzBuWkxhRUVsU1FtMTl1aEhRWkx3RFI2VDlraEhKemFOV0ZEX0todDFpTTBsTndhZk0zclNaWk5lNA?oc=5",
@@ -16279,13 +16333,6 @@
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
     "pub": "2026-11-26T03:01:11.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "North Korea’s Kim vows to build more nuclear weapons after ignoring Trump’s overture",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcjR1N2UyTm5TeG50ZVdtSHRYd1NuZ2lfeWxNQWluM182WUtVUHpGbGRSN05QdkQ2Ti00ZUZzeFFxTE9yMU1SbEVYMlM5RHRicmtoT1R2QTlJUjQ5VFp3Y0RwQmFGRzJpd3lYWmUzUjBFQThMTkhYbGs1TnZSTEF3RnotdE5QVWhaaG54dm9UYW0xQUNJeTg1YXRHZ1JvQQ?oc=5",
-    "pub": "2026-11-26T02:43:00.000Z",
     "sum": ""
    },
    {
@@ -16322,53 +16369,12 @@
     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUkpYNWJheFpTc3l5ZjdodEktRGpjcDVVZVo5ZDA1cW9DLVJ5X2wwMFJPZzhBcnhTUHJwRTR1bXN4eURKLXJVUmp6NWFTRzBTVnBxekd2aXJnSV9rMThJdHo0LTdVU2U2bk1Zd0s3VFpDSGtEekpxZjhDelVtNlI5TXpkTFlHZUJWampYc0Y0Mlp6VXVNMzZJLUI5OUF2NlFyQWlfZThSYmt4enZD?oc=5",
     "pub": "2026-11-26T01:01:16.000Z",
     "sum": ""
-   },
-   {
-    "hd": "France's political mainstream risks presidential vote debacle with no clear candidate",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cq772vedgepro?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T00:23:27.000Z",
-    "sum": "Hard-right and hard-left candidates dominate the polls ahead of next year's presidential election."
-   },
-   {
-    "hd": "US Army says controlled blast of explosives in Iowa was 'huge success'",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T00:23:05.000Z",
-    "sum": "Despite widespread concern from residents ahead of the blast, officials say that lead readings in the area so far have been promising."
-   },
-   {
-    "hd": "Trump proposes new tariffs on China, Europe and other trade partners",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRG9IZXZjbjBEQ2tzam5pT0FPZWNFc2hac3ZURjRUaTJITlQwQmt4RElZVGlnM0luQndHeXdRaGRwTUVVbHVqQlcyZC01OC1adzBLT3JWWlNadmw2N01zR3JZT1VwWG1mVVNaSkNUSWExNTlYRWtCejNRUE1KSXk0TFpjaUt5X0Z4LUFLMzB1c3QtRXNpUVc5UzNMeHY4d2paMjVEVGpveFlpM1BvZWRlZzFR?oc=5",
-    "pub": "2026-11-26T00:12:18.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Ukraine’s Shadow War in Africa",
-    "src": "Foreign Policy",
-    "url": "https://foreignpolicy.com/2026/11/25/ukraine-russia-proxy-war-africa-libya-ship-attack/",
-    "pub": "2026-11-26T00:00:59.000Z",
-    "sum": "The continent is increasingly becoming a proxy theater in the Russia-Ukraine conflict."
-   },
-   {
-    "hd": "For Trump, doubling down on tariffs is about power, not popularity",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUGF3UXNuQWFId2NPaERJLTVlLUhkQlp0WGpPNWRaamVTN3BmVFc5YkY3NVkzNHhJLUx6aTN4c2hZVnRucS13S1hMVlJWMEhzNllrYjJDSzczMndmRm5EeUhreW1qb0dpUG1HdTBrdnUtdGRLdFRVaDBWcFFEOXBsZ3gxMXlMNjJFbWk4ZzVtYXF3bWF2Z2NzZ3dTMmE5THV4VGdnRw?oc=5",
-    "pub": "2026-11-25T23:41:32.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Russia has passed the biggest military budget since Soviet times",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMHRLYUVoclBrczZzTW1yQko0dVQtTWI1Rk1tM0YyMkNub1p5V2lqTzlpVWoxZGxPbDEzXzJjWW9VR1JPYVItdWJmSjBmMUJuNGhuVlRFNWVkZHF2UW9VdzFzNjM2aGUwM0JUN1U0LUFFcThuRHEyMGhMMzZaOVZqeDdOTWZGVXhYckxrTVZ1ZUdJT19SVTNNTEpzT3JDVlhNb2FoUXlST0ZzZ0diWEE?oc=5",
-    "pub": "2026-11-25T23:40:00.000Z",
-    "sum": "Planned military spending for the 2027-29 period is over $600 billion, a sign President Vladimir Putin does not intend to end his war in Ukraine anytime soon."
    }
   ],
   "feeds": [
    "Google News",
    "AP",
+   "Reuters",
    "WSJ",
    "The New York Times",
    "The Washington Post",
@@ -16380,11 +16386,9 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [
-   "Reuters (Google News): HTTP 429 from news.google.com"
-  ],
-  "asOf": "2026-11-26T10:30:12.118Z",
-  "lastAttempt": "2026-11-26T10:30:12.118Z",
+  "feedErrors": [],
+  "asOf": "2026-11-26T11:00:16.848Z",
+  "lastAttempt": "2026-11-26T11:00:16.848Z",
   "lastError": null
  }
 }
