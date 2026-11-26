@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T03:15:12.914Z",
+ "generatedAt": "2026-11-26T03:30:12.773Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,11 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T03:15:12.914Z",
+  "at": "2026-11-26T03:30:12.773Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13895,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T03:15:12.914Z",
-  "lastAttempt": "2026-11-26T03:15:12.914Z",
+  "asOf": "2026-11-26T03:30:12.773Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7238.75,
-    "lastTime": 1795662306,
-    "settle": 7196.75,
+    "last": 7236.25,
+    "lastTime": 1795663220,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 42,
-    "changePct": 0.5835967624274846,
-    "expectedOpen": 7224.698471532288,
+    "change": 39.75,
+    "changePct": 0.5523518376988814,
+    "expectedOpen": 7222.454217327868,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26317,
-    "lastTime": 1795662311,
-    "settle": 26105.75,
+    "last": 26306.75,
+    "lastTime": 1795663220,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 211.25,
-    "changePct": 0.8092086992329276,
-    "expectedOpen": 23776.66136965994,
+    "change": 202,
+    "changePct": 0.7738055334757085,
+    "expectedOpen": 23768.311248728678,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50414,
-    "lastTime": 1795662312,
-    "settle": 50229,
+    "last": 50397,
+    "lastTime": 1795663146,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 185,
-    "changePct": 0.3683131258834538,
-    "expectedOpen": 50367.78039180553,
+    "change": 170,
+    "changePct": 0.33846337627172635,
+    "expectedOpen": 50352.800906882745,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2718.4,
-    "lastTime": 1795662284,
-    "settle": 2705.800048828125,
+    "last": 2717,
+    "lastTime": 1795663209,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 12.599951171875091,
-    "changePct": 0.4656645333912274,
+    "change": 11.300048828125,
+    "changePct": 0.41763865291976654,
     "expectedOpen": null,
     "valid": true
    }
@@ -13967,9 +13968,9 @@
     "id": "401873079",
     "start": "2026-11-26T01:00Z",
     "state": "in",
-    "status": "Q3 8:34",
+    "status": "Q3 5:22",
     "period": 3,
-    "clock": "8:34",
+    "clock": "5:22",
     "completed": false,
     "away": {
      "name": "Green Bay Packers",
@@ -13988,7 +13989,7 @@
      "short": "Rams",
      "id": "14",
      "abbrev": "LAR",
-     "score": "13",
+     "score": "20",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
      "record": "6-4",
      "winner": false,
@@ -14492,8 +14493,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T03:15:12.914Z",
-  "lastAttempt": "2026-11-26T03:15:12.914Z",
+  "asOf": "2026-11-26T03:30:12.773Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "lastError": null
  },
  "alerts": {
@@ -14504,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T03:15:12.914Z",
-  "lastAttempt": "2026-11-26T03:15:12.914Z",
+  "asOf": "2026-11-26T03:30:12.773Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T03:15:12.914Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15407,32 +15408,74 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/trump-admin-weighed-using-cold-032247551.html?.tsrc=rss",
+      "pub": "2026-11-26T03:22:47.000Z",
+      "sum": "Investing.com -- Senior Trump administration officials discussed using a Cold War-era law to pressure Nvidia to bring back Jensen Huang as chief executive, the Washington Post reported on Wednesday, citing three people familiar with the matter."
+     },
+     {
       "hd": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
-      "pub": "2026-11-26T02:17:28.000Z",
+      "pub": "2026-11-26T03:15:07.000Z",
       "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
      },
      {
-      "hd": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
+      "hd": "Nvidia chips reach Chinese-owned U.S. firms despite export curbs, CBS reports",
       "src": "Yahoo Finance",
-      "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
-      "pub": "2026-11-26T01:19:53.000Z",
-      "sum": "Tech stocks stall into Thanksgiving as Nvidia slips 4% and inflation fears return, leaving AI-linked shares under pressure."
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-chips-reach-chinese-owned-031146505.html?.tsrc=rss",
+      "pub": "2026-11-26T03:11:46.000Z",
+      "sum": "Investing.com -- Nvidia’s most advanced artificial intelligence chips are reaching Chinese-owned companies through U.S.-based businesses, raising fresh concerns over the enforcement of American export restrictions on sensitive semiconductor technology, a CBS News investigation revealed."
      },
      {
-      "hd": "'Alarming, if unsurprising': Trump administration cut corners with hasty Nvidia investigation, former CIA officer warns",
+      "hd": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
       "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=6f393e1fab1b62c1644942b6aa5fccf3176a6f8d0b74f8d155f48dc81e146e9a",
-      "pub": "2026-11-26T01:00:00.000Z",
-      "sum": "The FBI has provided at least two \"defensive briefings\" to Nvidia leadership regarding Chinese espionage tactics, according to a separate law enforcement official."
+      "url": "https://finance.yahoo.com/technology/ai/articles/kioxia-nvidia-collaborate-expand-effective-031000587.html?.tsrc=rss",
+      "pub": "2026-11-26T03:10:00.000Z",
+      "sum": "SAN JOSE, Calif., November 26, 2026--A Kioxia and NVIDIA collaboration has demonstrated the potential to extend effective GPU memory capacity to petabyte scale."
      },
      {
-      "hd": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
+      "hd": "Is Nvidia Stock a Buy After Dell's Record AI Backlog?",
       "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646",
-      "pub": "2026-11-26T01:00:00.000Z",
-      "sum": "Apple stock is up 30.61% in 2026 while Nvidia falls 21.35%. See how low AI capex and a Gemini deal shaped the gap."
+      "url": "https://www.fool.com/investing/2026/11/25/is-nvidia-stock-a-buy-after-dell-s-record-ai-backlog/?.tsrc=rss",
+      "pub": "2026-11-26T03:07:02.000Z",
+      "sum": "Most of the server maker's newest AI orders run on the chip giant's latest system."
+     },
+     {
+      "hd": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-s-market-cap-falls-below-microsoft-s-analyst-flags-five-overhangs-for-nvda-stock/cNbx4KZR9Z3?.tsrc=rss",
+      "pub": "2026-11-26T02:39:42.000Z",
+      "sum": "Nvidia shares fell nearly 4% on Wednesday, knocking the chipmaker down to third place in the U.S. market-cap rankings."
+     },
+     {
+      "hd": "Asian stocks enjoy another bounce as tech holds court",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
+      "pub": "2026-11-26T02:30:24.000Z",
+      "sum": "Asian stocks staged another rebound Thursday from another hard day of selling as trading in the tech sector stabilised, while investors took in their stride a fresh round of proposed US tariffs.Beaten-down Asian tech firms led the gains Thursday, with Seoul, Tokyo and Taipei again at the centre of the action, having seen wild swings this week amid concerns about the AI boom, while the euphoria over Jensen Huang's reinstatement at Nvidia has worn off."
+     },
+     {
+      "hd": "The Other Nvidia Romance With an Executive at a Company Linked to China",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM2JKcnNFYk5jM09EUEZXNjdqZ1N6V05CbnNQR1gzd09nUlhzRVpTSlM4ZjM4SG1uVXExci1OWWdCY05oNkpTOVFjbzk5amIyeHNzdHNpejM1THVZNFdYVWw5dGx3MFF6YndNbGVnN0dTbHNuVDdSSlQwVWl4MDRadXVxbkJyV0FnVEhjNDlVN21JRDVKRkpGeQ?oc=5",
+      "pub": "2026-11-26T02:00:00.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Put on Negative Credit Watch by S&P Over ‘Key Man’ Risk: Moody’s Says Jensen Huang’s Return as CEO ‘Reduces Near-Term Uncertainty’",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-put-negative-credit-watch-013558626.html?.tsrc=rss",
+      "pub": "2026-11-26T01:35:58.000Z",
+      "sum": "Nvidia Corp. (NASDAQ:NVDA) faces a possible credit downgrade as S&P Global Ratings cites board independence and heavy reliance on CEO Jensen Huang, while Moody’s kept its rating unchanged. S&P Could Downgrade Nvidia Within 90 Days S&P said on Wednesday that “recent events undermine our view” of Nvidia’s management and governance, adding that the long tenure of certain board members “may have compromised their independence.” Weak executive oversight and a lack of succession planning “have brought"
+     },
+     {
+      "hd": "We are living in perilous times if Nvidia’s Jensen Huang dictates your 401(k) balance",
+      "src": "MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
+      "pub": "2026-11-26T01:15:00.000Z",
+      "sum": ""
      },
      {
       "hd": "‘Jensanity’ erupts in Taiwan and China on Nvidia founder’s comeback",
@@ -15447,27 +15490,6 @@
       "url": "https://seekingalpha.com/article/4972080-nvidia-silicon-takes-a-back-seat-upgrading-to-buy?source=feed_symbol_NVDA",
       "pub": "2026-11-26T00:42:20.000Z",
       "sum": "Analyst upgrades Nvidia Corporation to Buy: Huang's reinstatement restores AI ecosystem leadership; shares trade at 9x FY2028 earnings if 75% growth holds."
-     },
-     {
-      "hd": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c6dfdcab5190999e3b1cc53253d4a097aa42a9f3abc948ea292b3aea25e0ff60",
-      "pub": "2026-11-26T00:09:50.000Z",
-      "sum": "The Nasdaq 100 briefly touched bear market territory on Wednesday before paring some losses."
-     },
-     {
-      "hd": "Altimeter’s Brad Gerstner Says Nvidia Was Priced for “Negative Growth for 2028 and 2029.” Wall Street Expects 29%",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=d770f4fdc86e5b30c9d3d6a4d9cf85135d8e263481f11187b0825a7388865971",
-      "pub": "2026-11-25T23:39:02.000Z",
-      "sum": "Key TakeawaysNVIDIA (NVDA:NASDAQ) jumped 31. 5% on Monday after its board reinstated Jensen Huang as CEO, but it still traded at about 11x forward earnings at the close."
-     },
-     {
-      "hd": "The Nvidia Scandal Set Off a Chip Crackdown in Congress. Which Stocks Are Most at Risk?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=72eb5ff677fe03be1de71531baa773bb55fed9ef238127d57e6e34ba382cd7fc",
-      "pub": "2026-11-25T23:18:05.000Z",
-      "sum": "Congress is moving toward sweeping new chip export controls. One research firm says the biggest loser may not be an American company at all."
      },
      {
       "hd": "Pentagon considered invoking wartime law to reinstate Nvidia's Huang: WaPo",
@@ -15489,13 +15511,6 @@
       "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNb1ZBby1iVDJnTmJwX3hDYWJpU2lxTUdLTHdlWHFqRHJUcmtTOWFuQkFRTlUyZTJBcGdNMWR3N3d1YlJIV05kWk1mU21JSDZmSVpZR1BlanpqRzFXSkg3NkxkeElWcHM0Q2Y4eFJKb3Fha29XakxYNFJ4cXExZHo4MFVDOHdDbENrQWs0d0lqQ3Z5cEVDRVBQR1hNNWZxSmhiUll4NFg1amZlU01oWm9fN2hkUFBBNkdKT21v?oc=5",
       "pub": "2026-11-25T22:44:42.000Z",
       "sum": ""
-     },
-     {
-      "hd": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=39c69e588dde2a64530db074586871d1ce36da1543a4cc1954790f1b6ed9c4b4",
-      "pub": "2026-11-25T22:44:32.000Z",
-      "sum": "The credit rating agency may lower Nvidia's credit rating to AA-, the fourth-highest rating."
      },
      {
       "hd": "How the Trump administration determined Jensen Huang is not a national security threat",
@@ -15566,25 +15581,11 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPYzItSUR4SzlJaHlBR0NFVVVqZjZsSnpzR1BGZy1QRk8tN0J3X1puRExQdWwyal90Y3NuZGlIakswU1BkQXkxMnl3cUc4NkZHS3NTdGxmNm01WGN5Mk9DalI1c3pvMjMwMnY2aE4tQXhYVjl3Slc2UlJkRGxMRmdNYkIyNkZWeWRRS3hNcmwxNXZmWGhkV1hZZEpETjh6Sk50b0RGd9IBqgFBVV95cUxPTERtVkRCekFTdThqeU9RQUNnbTRhYmE5VmxEUEpNcVhnZkNtRFc2V1IxX1BjR1Y0ejlfbmJvcTIyWXJTcDZzUVZldjVRTGdhRUJSaC1NMmRNeTV2VnFfMGFfekFuU184UnFUV3V1WnlxRjRobUlRQkJ0YTNXU1NKQjhITVJSRTdnYW42aXVOdUFBLTdOQmFWU0tFUUxfSnBPeE1rTzhIc3FWQQ?oc=5",
       "pub": "2026-11-25T18:02:45.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia chip sellers looking for new buyers after US tightens export controls: report",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-25T17:45:55.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Treasury Yields Rise After Huang Returns as Nvidia CEO; European Bond Yields Slip",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZ01XVnNSdmRPYmYxOWNxejJQZ3Zsa3Ywa21rWWNDSi0ydnk5N0RjZ1BNQS1BRnNuSlZDcXpkUkZ4QkQ0V25rLUQ1MjRMa2hsRWlOQy1HOVRadlBZcG5TT3NIZ0duRDJvb0JGVHc4ZFE4dlVQSDBQcDhuMTFsdkRuRGQ4djl3bDE4c3lpMjEzU0dZWHo1dlNRTWo5LThIMHZtVk9iVjhoWGR1azJKUEE?oc=5",
-      "pub": "2026-11-25T17:41:35.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 124,
-     "Yahoo": 6,
+     "Yahoo": 12,
      "Google News": 88,
      "Nasdaq": 9,
      "Seeking Alpha": 25
@@ -15771,7 +15772,7 @@
     "fetched": {
      "Finnhub": 161,
      "Yahoo": 11,
-     "Google News": 10,
+     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 10
     }
@@ -15779,11 +15780,18 @@
    "SPCX": {
     "items": [
      {
-      "hd": "SpaceX wins approval to launch one million AI data centre satellites",
+      "hd": "SpaceX gets approval for 1 million data center satellites",
       "src": "Yahoo Finance",
-      "url": "https://www.proactiveinvestors.com/companies/news/1102478/spacex-wins-approval-to-launch-one-million-ai-data-centre-satellites-1102478.html?.tsrc=rss",
-      "pub": "2026-11-26T00:27:00.000Z",
-      "sum": "SpaceX Corp (NASDAQ:SPCX) has secured approval from the US Federal Communications Commission (FCC) to launch up to one million artificial intelligence (AI) data centre satellites, marking a major regulatory breakthrough for Elon Musk’s ambitions to take advanced computing into space. FCC chair..."
+      "url": "https://finance.yahoo.com/technology/ai/articles/spacex-gets-approval-1-million-023847485.html?.tsrc=rss",
+      "pub": "2026-11-26T02:38:47.000Z",
+      "sum": "The Federal Communications Commission announced the approval on Wednesday but some of SpaceX's rivals have expressed skepticism about the company's data center satellite efforts."
+     },
+     {
+      "hd": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
+      "src": "Yahoo Finance",
+      "url": "https://beincrypto.com/coinbase-ceo-anthropic-spacex-ipo-money/?.tsrc=rss",
+      "pub": "2026-11-26T02:10:04.000Z",
+      "sum": "Anthropic and SpaceX trade below their IPO prices. Coinbase CEO Brian Armstrong says private backers took the gains."
      },
      {
       "hd": "SPCX Stock Rebounds From 9% Drop: SpaceX Pledges Shares To Trump Accounts And Wins FCC Starmind Nod",
@@ -15828,18 +15836,11 @@
       "sum": "SpaceX believes solar-powered satellites could eventually reduce the enormous energy demands of terrestrial AI infrastructure."
      },
      {
-      "hd": "SpaceX’s New Stock Giveaway Sweetens the Deal on Trump Accounts",
+      "hd": "Elon Musk’s plan for SpaceX to launch 1 million satellites for ‘constellation’ of data centers approved by FCC",
       "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=503663101afc52aa28606dd7acaf9a99ce8f2c0c0a5e5ec929a1475aa891b3a0",
-      "pub": "2026-11-25T22:22:00.000Z",
-      "sum": "The gift is in addition to the shares Elon Musk and SpaceX President Gwynne Shotwell previously said they were donating."
-     },
-     {
-      "hd": "SpaceX Stock Surges on AI Satellite Approval and Trump Accounts Plan",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7484a09d95facf2bf341578e9d975d80c56ed8e3d63cd742e8d7a57e11c5c97f",
-      "pub": "2026-11-25T22:03:37.000Z",
-      "sum": "SpaceX stock turned green as it pledged shares to every Trump Account and won FCC approval for 1 million AI satellites."
+      "url": "https://finnhub.io/api/news?id=b3e3f1d2617a9e3af271064314c02cbb71b67b0bda996e20f42a1bfba3418806",
+      "pub": "2026-11-25T22:38:54.000Z",
+      "sum": "The orbital compute modules launched into space will be used to process massive amounts of data to be used back on Earth."
      },
      {
       "hd": "Elon Musk and SpaceX to donate roughly $17.8 billion to ‘Trump accounts’",
@@ -15847,6 +15848,13 @@
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSHVtaDN3UFZOZDlGTHVmSjVKLXRuU1BiY1JqM3ZDdmZMUko5dXdFbk1ZeTlpeEoxR1M0c0p0eEV4QUx0RXp5dm9JeUdSbnh1LS1ibWtVX0RLbXRMSWJPMV9QRmllNDNGLUtoU2J6UV9vWmtIZENEZ0d4T01pbFU3dHNsLVNnaXJVMEFYNk1xS0wwcXlLZVM2WW96Y29NRURnbHE1LXlQMGxLZ2g0Tmx6MjJB?oc=5",
       "pub": "2026-11-25T21:50:00.000Z",
       "sum": "SpaceX and Elon Musk promise to donate one share each to active Trump accounts."
+     },
+     {
+      "hd": "SpaceX Receives Government Approval to Launch Space Data Centers",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVVHT0RrcFA5ZTBDVVhtcHdtNEdyTWswVGdocnhkX0JGYXljVEtWSGppeHNRSHRPUFBPZTBfLXpSeXVrM2RsdmJ0bnJlcFlmNkFiNUxqWDQtblFzcjdVSDNiRThEbEdtRzlSOW9URDYxYUZPMDlFZ0h0Zk1RSUN4YWE4Tk9CV1E2ekdQODVHSktDMXdKejdJNzl4cEUyVUlnQnItaE1XRkgwRVdrT05FYUY5dU4zZw?oc=5",
+      "pub": "2026-11-25T20:54:12.000Z",
+      "sum": "The FCC authorized SpaceX to deploy up to 1 million data center satellites."
      },
      {
       "hd": "Anthropic’s Post-IPO Struggles Contrast With SpaceX’s Early Days",
@@ -15875,6 +15883,13 @@
       "url": "https://finnhub.io/api/news?id=e782b7cf169e6b539e64c18d76bea49c0497e51cab93670bd389c0653bd5829f",
       "pub": "2026-11-25T17:09:58.000Z",
       "sum": "Analyst rates Tesla, Inc., a Sell: $325 probability-weighted value implies 16% downside, with shares worth an estimated $123 if the SpaceX merger fails."
+     },
+     {
+      "hd": "SpaceX gets US authorization to deploy up to 1M orbital satellites for space data centers",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
+      "pub": "2026-11-25T16:55:27.000Z",
+      "sum": ""
      },
      {
       "hd": "A Starship Caught, A Constituent Added: SpaceX Arrives In QGRW",
@@ -15938,26 +15953,12 @@
       "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVkJKZjg3QXVSYS1FNFlTX0cyeElVdm9OVVNuUTBZeFNpUXh4dDNSYmRWSkdKMnNxa3Nia185QS1XMEwxUVVyZXJFeVdKcUpERGV6V2Foc1EtcUlaRzRENWFZQzZrRGF6VkFEZGFTamZadzZTbWlMVE9tbWtuZ3V1X0Q2SjZiWVlJbWM1a1hrS252ZjRKVG5ZYkU4QmZGRndIZUpjYUd3ejVGemFlZ2ZrT21CMmRocG5xQkxuRw?oc=5",
       "pub": "2026-11-24T18:57:57.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Elon Musk Says Making 'Epic Burgers' at In-N-Out Is Harder Than Wiring His AI Data Centers",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=ef54381b4ef401c0631d20a02339cf9275e2c485500ee72f12f231a297283473",
-      "pub": "2026-11-24T18:00:07.000Z",
-      "sum": "Elon Musk says former Starbucks baristas, Target stockers and In-N-Out workers can become top SpaceX AI data center technicians with days of training."
-     },
-     {
-      "hd": "SpaceX, Anthropic Could Rewrite the IPO Playbook As Private Companies Find New Ways to Retain Control",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=27169067d0df704b51e37e453e591f3719a1eee7b15ae4a7ee42c1b4a94f5eab",
-      "pub": "2026-11-24T16:14:56.000Z",
-      "sum": "SpaceX and Anthropic could reshape how the next generation of mega-cap private companies approach initial public offerings."
      }
     ],
     "fetched": {
      "Finnhub": 158,
      "Yahoo": 14,
-     "Google News": 22,
+     "Google News": 21,
      "Nasdaq": 0,
      "Seeking Alpha": 15
     }
@@ -16142,19 +16143,33 @@
     ],
     "fetched": {
      "Finnhub": 147,
-     "Yahoo": 9,
-     "Google News": 65,
+     "Yahoo": 0,
+     "Google News": 61,
      "Nasdaq": 13,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-26T02:30:12.005Z",
-  "lastAttempt": "2026-11-26T02:30:12.005Z",
+  "asOf": "2026-11-26T03:30:12.773Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "US announces new tariffs on host of countries including China",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T03:01:40.000Z",
+    "sum": "The new levies would hit many of America's biggest trading partners, including China and the EU."
+   },
+   {
+    "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
+    "pub": "2026-11-26T03:00:00.000Z",
+    "sum": ""
+   },
    {
     "hd": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
     "src": "BBC News",
@@ -16163,11 +16178,11 @@
     "sum": "Somalia relies heavily on foreign funding and military support for its very survival."
    },
    {
-    "hd": "US announces new tariffs on host of countries including China",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T01:20:14.000Z",
-    "sum": "The new levies would hit many of America's biggest trading partners, including China and the EU."
+    "hd": "Ukraine attacks Russian military base, says five planes struck",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcnZLbDdzMzg2dFlMM0c3d2FkbHpsRTB5Uk1QampGSXI4Sk9lZDRxZDA1LWFBVDVtaGlFS0k0ajljeVBDbEhlS0YwZUQ3bkVDalhCREV3RkhoZEcxamNwMTI1c0E0RUhhdzhhX0h3cnFqOXp1UTNYemRUZ1RwUGFYelBnSlZhekZaeXU2WF9oNU1ja0kxV2hXOGd3V3FwN1dleGg5eGZR0gGrAUFVX3lxTE4xZ05BNnZGZ3J0QWtNeFJ0b0hOSXRkZEJDX2RhR3hNRjluNHFRNTQ2YmhaSFFPR3hCd1luNE1WYUhJaE5YWmFZX3hIcEJXQlJJc1JjdjJKTjYzdVdiUWJ1anBpVF9QaTZBNndlRDlNX0hWWDZaLUVuU2phSm9maVFST3lUNUxtTWJ0MTY1SV9fU0pVVVhYYW1UcU01bEd4WEhteURlMXVMQWxwNA?oc=5",
+    "pub": "2026-11-26T01:41:15.000Z",
+    "sum": "The Savasleyka airfield hosts aircraft used by Russia to launch hypersonic missiles and glide bombs at Ukraine."
    },
    {
     "hd": "North Korea’s Kim vows to build more nuclear weapons after ignoring Trump’s overture",
@@ -16350,20 +16365,6 @@
     "url": "https://www.washingtonpost.com/world/2026/11/25/israeli-parliament-advances-bill-that-could-block-netanyahu-forming-government/",
     "pub": "2026-11-25T19:15:00.000Z",
     "sum": "The proposed amendment would prevent anyone facing criminal charges involving “dishonor” from forming a government. The prime minister is fighting three corruption cases."
-   },
-   {
-    "hd": "Libyan Forces Threaten Retaliation Over Ukraine’s Attack on Russian Ships",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/25/world/middleeast/libya-ukraine-russia-haftar.html",
-    "pub": "2026-11-25T19:02:51.000Z",
-    "sum": "The Ukrainian drone strike off Libya’s coast killed two Libyan naval officers, according to the forces controlling the country’s east."
-   },
-   {
-    "hd": "Colombian police storm supermarket to free 76 held hostage for 17 hours",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/ckp80mjr9emyo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-25T18:41:33.000Z",
-    "sum": "One gunman was killed after what the country's president described as a robbery of a cash-laden armoured car gone wrong."
    }
   ],
   "feeds": [
@@ -16382,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T03:00:11.856Z",
-  "lastAttempt": "2026-11-26T03:00:11.856Z",
+  "asOf": "2026-11-26T03:30:12.773Z",
+  "lastAttempt": "2026-11-26T03:30:12.773Z",
   "lastError": null
  }
 }
