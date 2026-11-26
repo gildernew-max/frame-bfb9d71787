@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T22:15:13.122Z",
+ "generatedAt": "2026-11-26T22:30:11.094Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T22:15:13.122Z"
+   "checkedAt": "2026-11-26T22:30:11.094Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,13 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T22:15:13.122Z",
+  "at": "2026-11-26T22:30:11.094Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -13969,9 +13968,9 @@
     "id": "401873080",
     "start": "2026-11-26T21:30Z",
     "state": "in",
-    "status": "Q1 6:27",
-    "period": 1,
-    "clock": "6:27",
+    "status": "Q2 15:00",
+    "period": 2,
+    "clock": "15:00",
     "completed": false,
     "away": {
      "name": "Philadelphia Eagles",
@@ -13990,7 +13989,7 @@
      "short": "Cowboys",
      "id": "6",
      "abbrev": "DAL",
-     "score": "7",
+     "score": "14",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
      "record": "5-6",
      "winner": false,
@@ -14494,8 +14493,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T22:15:13.122Z",
-  "lastAttempt": "2026-11-26T22:15:13.122Z",
+  "asOf": "2026-11-26T22:30:11.094Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "lastError": null
  },
  "alerts": {
@@ -14506,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T22:15:13.122Z",
-  "lastAttempt": "2026-11-26T22:15:13.122Z",
+  "asOf": "2026-11-26T22:30:11.094Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T22:15:13.122Z",
-  "lastAttempt": "2026-11-26T22:15:13.122Z",
+  "asOf": "2026-11-26T22:30:11.094Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15409,23 +15408,30 @@
    "NVDA": {
     "items": [
      {
+      "hd": "‘Room to Spare,’ Says Investor About Oracle Stock",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/room-spare-says-investor-oracle-215243159.html?.tsrc=rss",
+      "pub": "2026-11-26T21:52:43.000Z",
+      "sum": "For most of this year, the big question around Oracle (NYSE:ORCL) was whether it could pay for its data center ambitions. The company now says it can. In a Nov. 20 statement, it said all the funding for its OpenAI contract is in place. That message, along with Jensen Huang’s reinstatement at Nvidia, sent the stock sharply higher on Monday. The rally didn’t last. A broad AI selloff on Tuesday and Wednesday wiped out the gains, and Oracle goes into the Thanksgiving break close to the 52-week low i"
+     },
+     {
       "hd": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-return-doesn-t-212200380.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724",
       "pub": "2026-11-26T21:22:00.000Z",
       "sum": "Jensen Huang’s return as CEO doesn’t make Nvidia (NVDA) stock a Buy, despite the market’s positive reaction. Shares of the leading semiconductor manufacturer jumped roughly 31.5% on November 23 after Nvidia’s board unanimously reinstated Huang with immediate effect. Yet the stock remains down roughly 31% over the past month following a steep sell-off. Although Nvidia enjoys a long runway for growth, I believe investors should closely watch the regulatory scrutiny still surrounding the company. I"
      },
      {
       "hd": "Nvidia halts server shipments to 4 countries just weeks after Jensen Huang’s affair with alleged spy was exposed",
       "src": "Yahoo Finance",
-      "url": "https://nypost.com/2026/11/26/business/nvidia-halts-server-shipments-to-4-southeast-asian-countries-report/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e1f06da1ffe569934d843268e20768ce169b3c229d7b2ee1649963d3933403ef",
       "pub": "2026-11-26T20:30:14.000Z",
       "sum": "It was unclear whether the halt would be temporary as Nvidia and its partners work through compliance requirements under new US export controls, the FT reported."
      },
      {
       "hd": "Nvidia hits pause on chip shipments to Southeast Asia",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/nvidia-hits-pause-chip-shipments-200354308.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a263bd4ebba4460b372fe1a18c418d5ce72fa16a16ab614ad675984d70472a27",
       "pub": "2026-11-26T20:03:54.000Z",
       "sum": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips out of China."
      },
@@ -15456,13 +15462,6 @@
       "url": "https://finnhub.io/api/news?id=132a2f3c7c34144031468fe47bb822d6b06f5aa111adf9bb86db6d7ba2ba6ac2",
       "pub": "2026-11-26T18:12:50.000Z",
       "sum": "Key TakeawaysSix famous investors held Nvidia at Sept. 30."
-     },
-     {
-      "hd": "Nvidia Now Has 41% of Its Stock Portfolio in SpaceX. Here’s What That Means for Nvidia Shareholders",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a5b0a987f43f745cd28fa0cf80045e0524489618f270c52db273a3f24f0da2b4",
-      "pub": "2026-11-26T18:12:10.000Z",
-      "sum": "Key TakeawaysNvidia’s 13F for the quarter ended Sept. 30 shows SpaceX as its largest holding, at 41% of its US stocks, just ahead of Intel."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15585,9 +15584,9 @@
      }
     ],
     "fetched": {
-     "Finnhub": 112,
-     "Yahoo": 7,
-     "Google News": 84,
+     "Finnhub": 111,
+     "Yahoo": 4,
+     "Google News": 91,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
@@ -15783,14 +15782,14 @@
      {
       "hd": "SpaceX Is a Great Company. Is It a Great Stock at This Price?",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/spacex-is-a-great-company-is-it-a-great-stock-at-this-price/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=69fc518bd930d68cb6b163140816a62f1e05688488484c7d0abde4ef9d4d16f6",
       "pub": "2026-11-26T20:56:02.000Z",
       "sum": "SpaceX's current stock price leaves no room for error."
      },
      {
       "hd": "SpaceX gets approval to deploy 1 million satellites for data centers in space",
       "src": "Yahoo Finance",
-      "url": "https://www.independent.co.uk/tech/elon-musk-spacex-data-centre-satellites-b3092444.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e43acb33da6774fdbc68978a23346e6c28bc19b768f207c612a9ef75754a6b7a",
       "pub": "2026-11-26T20:37:15.000Z",
       "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
      },
@@ -15958,8 +15957,8 @@
     ],
     "fetched": {
      "Finnhub": 166,
-     "Yahoo": 17,
-     "Google News": 20,
+     "Yahoo": 15,
+     "Google News": 19,
      "Nasdaq": 0,
      "Seeking Alpha": 13
     }
@@ -16144,15 +16143,15 @@
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 15,
+     "Yahoo": 0,
      "Google News": 58,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T22:00:10.860Z",
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "asOf": "2026-11-26T22:30:11.094Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "lastError": null
  },
  "worldNews": {
@@ -16163,6 +16162,13 @@
     "url": "https://www.nytimes.com/2026/11/26/world/europe/peter-mandelson-epstein-uk.html",
     "pub": "2026-11-26T21:40:09.000Z",
     "sum": "Documents released Thursday shed new light on the rushed appointment of Peter Mandelson and his continued ties to Global Counsel, a lobbying group."
+   },
+   {
+    "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
+    "src": "The Washington Post",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdFVJenQ4a3hlOERnbnhWVGJ1QkNhUVQ1UjFGdUl2QjRFTjVaQUM4VC1sN2ZIWV9INVA3Y1hjUDA5VV94Zk4yOGF2Z00zak5OcGVNYTA3d2trbUxneVR6NnV0YXZ5Y3R5RDh3cTN0LVNqenltbmZMX2E1VkswTmNOT0t4R3hKWDNNeTRRbThMN2lFcUpRUjRwTjVnWS1sSDRLN2NTczlQNGg1Zw?oc=5",
+    "pub": "2026-11-26T21:34:52.000Z",
+    "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
    },
    {
     "hd": "Two Italians killed in strike in Kuwait, as Iran denies responsibility",
@@ -16186,6 +16192,20 @@
     "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
    },
    {
+    "hd": "Hamas in talks with Palestinian factions over Israeli targeted killings in Gaza",
+    "src": "The Jerusalem Post",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZLTR5dXJUVGdNbk5QWHI0U1JoNTdQQkhOT2FJd0o0Wmk5RkEyZ3EydnYtNEcwcmg3UEJwMXN2SzRBY3hDQkxOLXRhelByMnRhZFN0OHlZY283Zm9hLVVUQVlqUEhWQnVyQmViaWJ3?oc=5",
+    "pub": "2026-11-26T20:32:07.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Israeli strikes kill 10 in Gaza as Iranian drones kill 2 Italians in Kuwait, and other Mideast news",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUUFfcUhOc0dCeENHdXg3OW44TjRqZ3lma0NiVzNRMjZWYjZhc1duOG9pLXQ5U0FSdjM0RDB5VlFxTlhkWWFVUDFlMElTdk5FZkM4NS1GR2hCZ2lOdHltTVJNVG51MWlxZUZQV2pRcXlCd1JjSU4wWE51U0trR2JubTBmc1YzMEhDMHZpVFprM3ktSGlXVW9yQmhnVUNyRXRUNzFXaUdiSQ?oc=5",
+    "pub": "2026-11-26T20:09:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Mexican president blasts DEA over tip lines",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/mexican-president-blasts-dea-tip-lines-accusing-fighting-138471560",
@@ -16205,13 +16225,6 @@
     "url": "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
     "pub": "2026-11-26T19:33:06.000Z",
     "sum": "The deaths follow a series of strikes on Gulf Arab states that host U.S. military facilities in recent weeks as talks to end the war continue to stall."
-   },
-   {
-    "hd": "Israeli strikes kill 10 in Gaza as Iranian drones kill 2 Italians in Kuwait, and other Mideast news",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUUFfcUhOc0dCeENHdXg3OW44TjRqZ3lma0NiVzNRMjZWYjZhc1duOG9pLXQ5U0FSdjM0RDB5VlFxTlhkWWFVUDFlMElTdk5FZkM4NS1GR2hCZ2lOdHltTVJNVG51MWlxZUZQV2pRcXlCd1JjSU4wWE51U0trR2JubTBmc1YzMEhDMHZpVFprM3ktSGlXVW9yQmhnVUNyRXRUNzFXaUdiSQ?oc=5",
-    "pub": "2026-11-26T18:59:00.000Z",
-    "sum": ""
    },
    {
     "hd": "Germany arrests 2 Iraqis allegedly tied to Iran-linked terror group",
@@ -16254,20 +16267,6 @@
     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPLXo4cXNsVjIzOVYyWnIxR1JOUjY5UUkzU0xCSXc2ampKcnhKajJ2VjdjWWdzSkY3QlV5Z0xNQkd1aUtKUWh6d19mMXlsTEc5RTk3T0NvbkJyM2Y4VWZ5bW9sRFhUX2Q4aGx5dGhLLXVLb0VDWDFaSGQ0eGZaZVRacTVlWkx1eVYwZEwwUWNSZEFpVGlQbVA5dkRGWXVmeHlpYzE5VFB3NVo5TzBmWHk1YXZjZmN2XzZjdS0w?oc=5",
     "pub": "2026-11-26T17:32:41.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Hamas in talks with Palestinian factions over Israeli targeted killings in Gaza",
-    "src": "The Jerusalem Post",
-    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZLTR5dXJUVGdNbk5QWHI0U1JoNTdQQkhOT2FJd0o0Wmk5RkEyZ3EydnYtNEcwcmg3UEJwMXN2SzRBY3hDQkxOLXRhelByMnRhZFN0OHlZY283Zm9hLVVUQVlqUEhWQnVyQmViaWJ3?oc=5",
-    "pub": "2026-11-26T17:26:21.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/world/2026/11/26/two-italians-killed-kuwait-strained-iran-ramps-up-attacks/",
-    "pub": "2026-11-26T17:12:53.000Z",
-    "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
    },
    {
     "hd": "Mexico urges Asian trade partners to crack down on tariff dodging",
@@ -16372,7 +16371,6 @@
    "Google News",
    "AP",
    "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16383,9 +16381,11 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-26T22:00:10.860Z",
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "feedErrors": [
+   "WSJ (Google News): HTTP 429 from news.google.com"
+  ],
+  "asOf": "2026-11-26T22:30:11.094Z",
+  "lastAttempt": "2026-11-26T22:30:11.094Z",
   "lastError": null
  }
 }
