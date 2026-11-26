@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T17:15:17.958Z",
+ "generatedAt": "2026-11-26T17:30:11.453Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T17:15:17.958Z"
+   "checkedAt": "2026-11-26T17:30:11.453Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,10 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T17:15:17.958Z",
+  "at": "2026-11-26T17:30:11.453Z",
   "ran": [
-   "weather",
    "alerts",
+   "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "movers",
    "sectors",
    "usTempGrid"
@@ -14492,8 +14494,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T17:00:17.951Z",
-  "lastAttempt": "2026-11-26T17:00:17.951Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  },
  "alerts": {
@@ -14504,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T17:15:17.958Z",
-  "lastAttempt": "2026-11-26T17:15:17.958Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15150,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T17:15:17.958Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15265,8 +15267,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-26T17:15:17.958Z",
-  "lastAttempt": "2026-11-26T17:15:17.958Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  },
  "sectors": {
@@ -15353,8 +15355,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-26T17:15:17.958Z",
-  "lastAttempt": "2026-11-26T17:15:17.958Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  },
  "extended": {
@@ -15411,7 +15413,14 @@
       "src": "Yahoo Finance",
       "url": "https://247wallst.com/investing/2026/11/26/did-arm-ceo-rene-haas-dodge-a-bullet-with-jensen-huangs-reinstatement-at-nvidia/?.tsrc=rss",
       "pub": "2026-11-26T16:49:41.000Z",
-      "sum": "Which looks stronger for a retirement-focused investor right now: Arm Holdings (NASDAQ:ARM) or NVIDIA (NASDAQ:NVDA)? The question got sharper this month. Arm CEO Rene Haas was reportedly considered for NVIDIA’s top job after Jensen Huang’s November 12 resignation. Bloomberg reported that Haas spoke with NVIDIA directors but expressed reservations, and Huang was reinstated on November"
+      "sum": "Arm's CEO weighed the top job at NVIDIA, then pledged to stay put through 2033 as Jensen Huang returned. One stock has soared this year while the other has sunk, yet a head-to-head look at valuation, growth, and risk tells a surprising story for retirement portfolios."
+     },
+     {
+      "hd": "Cerebras Expands AI Inference Reach: Can It Challenge NVDA & AMD?",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/cerebras-expands-ai-inference-reach-161400247.html?.tsrc=rss",
+      "pub": "2026-11-26T16:14:00.000Z",
+      "sum": "CBRS is ramping up its AI inference capabilities with hyperscaler partnerships, wafer-scale innovations, and expanding capacity to challenge NVIDIA and Advanced Micro Devices."
      },
      {
       "hd": "BlackBerry (TSX:BB) Rebounds Before Earnings, Is The Stock Fully Priced?",
@@ -15470,13 +15479,6 @@
       "sum": "The chip maker missed out on the best of the stunning AI comeback before Thanksgiving and now there’s more worrying news for the stock."
      },
      {
-      "hd": "Oracle Is Down 47% in 2026. Is There Really a “Reasonable Chance Oracle Goes Bankrupt”?",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/oracle-is-down-47-in-2026-is-there-really-a-reasonable-chance-oracle-goes-bankrupt?ref=yahoofinance&tlnk=yf-261126-97j6xfvm&.tsrc=rss",
-      "pub": "2026-11-26T13:50:19.000Z",
-      "sum": "Key TakeawaysOracle stock is down 47% in 2026 and hit a fresh 52-week low as the cost of insuring its debt against default reached a record. The same AI credit fears have hit CoreWeave, whose debt insurance also hit a record, and Nvidia, which sells both companies their chips."
-     },
-     {
       "hd": "Nvidia’s ‘great man theory’ is flawed",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSHd4NWdic2VObXZYQmM1Q25PbHVDNDdOUFluUjI3aEZ4V0Q4MDJKc0dzUnBtclprYVppaTV4VmlKM3lNS2p4R2F5WjhEUEV2Uy03S2tYOEhHLVBhMjQ5ay0wcWRpYjA0ZjREak8wa0xVZVBabUVCdUJueV9RYmJlY0l5YmY?oc=5",
@@ -15517,6 +15519,13 @@
       "url": "https://finnhub.io/api/news?id=a60060538b6acf37aff2ae17ea936461c392b55fb8ec1041139ce5ceccf1b453",
       "pub": "2026-11-26T08:00:05.000Z",
       "sum": "Officials across key U.S. national security agencies, including the White House, FBI, and CIA, reportedly have been examining whether Alice Huang was a Chinese spy."
+     },
+     {
+      "hd": "Jensen Huang's Bank of Nvidia Dilemma Is Still Looming Large",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa01SdVN6ZC1Lc2pSc3JpRXZPUjRLcUFqTWRfdjNCczB0T3Y1NktpVHljaVhHU1BINTlFTUJrMU9CaGlFZG5vY1ZsRFpiOWlZRzNxUEJYSlY2TlFCQmJxa1hLWmxONGl0ck85ZXdnZm1HUkdwUjNuWGtFS24ybVlseFFESDQzcjRKZWhrZjhjNFd2S0lEMWhrX3I5bGpxZnVKN3RIWV9teWVobTRTa3JIclZxSTc?oc=5",
+      "pub": "2026-11-26T07:00:00.000Z",
+      "sum": ""
      },
      {
       "hd": "Nvidia's Aa1 rating, stable outlook unchanged after Huang's return: Moody's",
@@ -15573,19 +15582,12 @@
       "url": "https://finnhub.io/api/news?id=6ed2c4d043153fb32c233733ce97f260b2bff05df8af3c3e3f5022a061eb7106",
       "pub": "2026-11-26T02:11:26.000Z",
       "sum": "El-Sayed accused Trump of putting Nvidia’s market interests ahead of national security by pushing for Jensen Huang’s return as CEO."
-     },
-     {
-      "hd": "The Other Nvidia Romance With an Executive at a Company Linked to China",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM2JKcnNFYk5jM09EUEZXNjdqZ1N6V05CbnNQR1gzd09nUlhzRVpTSlM4ZjM4SG1uVXExci1OWWdCY05oNkpTOVFjbzk5amIyeHNzdHNpejM1THVZNFdYVWw5dGx3MFF6YndNbGVnN0dTbHNuVDdSSlQwVWl4MDRadXVxbkJyV0FnVEhjNDlVN21JRDVKRkpGeQ?oc=5",
-      "pub": "2026-11-26T02:00:47.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 115,
-     "Yahoo": 4,
-     "Google News": 89,
+     "Yahoo": 5,
+     "Google News": 90,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
@@ -15770,7 +15772,7 @@
     ],
     "fetched": {
      "Finnhub": 153,
-     "Yahoo": 8,
+     "Yahoo": 7,
      "Google News": 12,
      "Nasdaq": 11,
      "Seeking Alpha": 8
@@ -15778,6 +15780,13 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Elon Musk didn’t sell a single share in SpaceX’s record $85.7B IPO. Anthropic’s 7 cofounders cashed out $1.96B in theirs",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/elon-musk-didn-t-sell-170000854.html?.tsrc=rss",
+      "pub": "2026-11-26T17:00:00.000Z",
+      "sum": "Musk says he has no plans to sell his SpaceX shares, while Anthropic’s founders pocketed nearly $2 billion from their IPO. But insider selling doesn’t necessarily spell trouble for investors."
+     },
      {
       "hd": "Elon Musk says he’ll gift every US kid 1 of his own SpaceX shares, plus 1 from SpaceX — but there’s a catch to claim",
       "src": "Yahoo Finance",
@@ -15826,13 +15835,6 @@
       "url": "https://finnhub.io/api/news?id=e69dc65a7ef20ff8f96cce9929d9dc2c3fae132e45a556f9b023be833401315d",
       "pub": "2026-11-26T13:54:00.000Z",
       "sum": "SpaceX Corp (NASDAQ:SPCX) pledged Wednesday to give one share to each currently active Trump Account and said CEO Elon Musk would personally match the number of shares donated. The rocket company will issue new Class A common stock shares for its contribution to the tax-advantaged investment..."
-     },
-     {
-      "hd": "Jensen Huang Says Grok Bot Consumption Is “Really Skyrocketing.” That’s Good News for SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9f6f09d056231eda68f196cdf512ceef68516722c219bc81455248007034abe1",
-      "pub": "2026-11-26T13:16:25.000Z",
-      "sum": "Key TakeawaysNvidia CEO Jensen Huang said consumption of SpaceX’s Grok Bot is “really skyrocketing. ”That in-house demand gives SpaceX’s data centers a paying user that can’t leave on short notice."
      },
      {
       "hd": "Anthropic And SpaceX Slink Below Their IPO Prices",
@@ -16142,19 +16144,33 @@
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 15,
-     "Google News": 53,
+     "Yahoo": 0,
+     "Google News": 62,
      "Nasdaq": 13,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T17:00:17.951Z",
-  "lastAttempt": "2026-11-26T17:00:17.951Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
+    "src": "The Washington Post",
+    "url": "https://www.washingtonpost.com/world/2026/11/26/two-italians-killed-kuwait-strained-iran-ramps-up-attacks/",
+    "pub": "2026-11-26T17:12:53.000Z",
+    "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
+   },
+   {
+    "hd": "Iranian Drone Attack Kills Two Italians in Kuwait",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR0JXYTAzOTNnajlLczdFM0FKUXdjbHlSLUFPRlhHQWpXaV9JRnQzNGRETWR6c1pWM3hQZnptczZaQVZqeExWa1JqdFRDWlJDcUItNEVra09WVEFfSDlSUm1nT3B3SUVZRGZHMTdieHlaSDhBWDdvMUhTVjJ0eTZmbFlfWHM2MUYyYnpHNWtFcTg3Q2JndEw4LTl3MHg?oc=5",
+    "pub": "2026-11-26T16:55:00.000Z",
+    "sum": ""
+   },
    {
     "hd": "Spain's former central bank head chosen as next European Central Bank president",
     "src": "ABC News",
@@ -16164,10 +16180,24 @@
    },
    {
     "hd": "Italy says two citizens killed in Iranian strike in Kuwait",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82VmIyOXM0dFF5ZVFScjVxU0IzbUV3cU53d1JybkZ3eEJxaUFCTXR4Y0dmS3FjREhrcVZ4QW5GN3AtMHJNdWFDT1JaeWppVkZrXzkteDgzZ0MzTFk?oc=5",
     "pub": "2026-11-26T16:39:30.000Z",
     "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
+   },
+   {
+    "hd": "Trump says he asked Putin to 'pull back' military aggression throughout Europe",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLTBqZDFmdVZMYUhDSHRObmlwNXBGNXRpXzdBVnBTc2hZTk54NU9BYThqQUswalJPMklvaGhHNmJiNW5venFCYk1FbjdNQUdJU1RISjlXbGtpc0lWektRUThRNEhOdFdSZ3B3cGZTSlk5blFMWnhGOGNfaEFjbzBha29XdlNxTXUzemUzR1FIc0FPc0kybGZLSmp5OVNNSGRLOXNZM21pd0Fac2prOVoxcC1rMnFIUQ?oc=5",
+    "pub": "2026-11-26T16:31:40.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Russia arrests deputy aerospace commander in reported corruption case",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNQzFOeDFjM0VPTXBIZkxlelN0ZFAtQ25fOUZkTVVheGM0cURoX1RqVXUzTGttUDlLTmhuczVlelh1eGJUYkVWQllDQ1ZzTlB3OUdQMjloczZsRGR4WGwzbF9XWURoSk9Tb2FybGNlbExBc243elBHTGxtNnpacDR3Y1pSaDctcFZqdUs5UkJiZ1R1Q09lTWxkUmN2TnNSZUdaQlpPNUl1N0tZVDJGd0xOT0lTU0tGUzA?oc=5",
+    "pub": "2026-11-26T16:29:52.000Z",
+    "sum": ""
    },
    {
     "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
@@ -16184,6 +16214,13 @@
     "sum": "The Russia-Ukraine war is spilling into the Black Sea, where violent incidents have surged, running right up to NATO's doorstep."
    },
    {
+    "hd": "Israel's Eisenkot reaches deal with left-wing faction as coalition talks gain steam",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQnltOGlBZG16OU1LUGlBS25WVUFhN2VnM0NhWHpzTlVscC1iOE5kdFZnaGhBbmNOdm80b05IQWttZm9MV0liVmZzVE56bXVxSHJXYXBmMktWSVQwZ2hfNmVGdWVJQmp5RkRtS1dXR0wwT0pXX1dFdUM5dDJrUWNTNHVsYjRNWXBWcmx3RTlqQ0ZQNEJWWFVxalA1Z0tkRExSbGJVOWpWX1pMY25aZHB3VnlvTWF0QUNvaElpM0FORVM5a1ZPa05mWDBXQQ?oc=5",
+    "pub": "2026-11-26T16:16:29.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
@@ -16191,17 +16228,17 @@
     "sum": ""
    },
    {
-    "hd": "Iranian Drone Attack Kills Two Italians in Kuwait",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPR0JXYTAzOTNnajlLczdFM0FKUXdjbHlSLUFPRlhHQWpXaV9JRnQzNGRETWR6c1pWM3hQZnptczZaQVZqeExWa1JqdFRDWlJDcUItNEVra09WVEFfSDlSUm1nT3B3SUVZRGZHMTdieHlaSDhBWDdvMUhTVjJ0eTZmbFlfWHM2MUYyYnpHNWtFcTg3Q2JndEw4LTl3MHg?oc=5",
-    "pub": "2026-11-26T15:41:21.000Z",
+    "hd": "Argentina's Senate poised to suspend primaries, boosting Milei's re-election bid",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOME12Z2hWeXJDdjhYQll0TW9vYWFaMzgwdWdBQ05BR3k4ckdrdFo3SkdfOXZrOGVXU1VUOTNtYXRXWEJBYlExUllERjdYRGxqR3lCelZyQTJxd0o2Q1VacWw0Sk5QajJWbGlDaDV1Y2hjWDE4dEVjNFpSQXdhQWg4MmFydGdDMEhmQjI2TjNiMUliZ1hBX1lXaDBoRlN0RHoxeUpxV3JuMkU2TmFncHhfWXdyOFNaUlVrUC1NZnlSS0NoRFE?oc=5",
+    "pub": "2026-11-26T16:11:15.000Z",
     "sum": ""
    },
    {
-    "hd": "‘War Is Hell’: A Foreign Soldier Writes Home From Ukraine",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTUtzUk9TS1EtOENIeS1WOUVKS21xTTA5MFNRa1lmTmtHbnN3cDloV0JLbklJeGlnNDlCWGxBdmpnVGZ1QVVPNTNHR2NZNFU0Z0FTOW9ZZHF5dS10VGRWZnZFS3BRbGtleGo4T21CMmxGX0pIV1EyLVdFVkY4VkNjWEgzN2pPZkJE?oc=5",
-    "pub": "2026-11-26T15:27:03.000Z",
+    "hd": "Zelenskyy warns of imminent major Russian attack on Ukraine’s power grid",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQR3dNRHNDWkJtLWk2U1poUUJkTjNwb2lHcXZweUN1d3ZNRDRkZ0FsRU5adXNVRzcxWVVvbGE2ZTBYRzZDUlhPa3IwT3JlMlpzS055Z0Rqb3R0RTdHQkwwVXlzSXhXamVNU2c4cS1iQTZoREZicHZKUmVGRHNKQlQ1QjNGMnNWdm1lcWk1Nk9MZ1FJNmRtRjNmZEJB?oc=5",
+    "pub": "2026-11-26T15:50:00.000Z",
     "sum": ""
    },
    {
@@ -16212,18 +16249,18 @@
     "sum": "Dozens of Brazilians have joined the Russian army, some say lured by a pair of recruiters promising money and adventure. Here is one soldier’s story."
    },
    {
+    "hd": "‘War Is Hell’: A Foreign Soldier Writes Home From Ukraine",
+    "src": "The New York Times",
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTUtzUk9TS1EtOENIeS1WOUVKS21xTTA5MFNRa1lmTmtHbnN3cDloV0JLbklJeGlnNDlCWGxBdmpnVGZ1QVVPNTNHR2NZNFU0Z0FTOW9ZZHF5dS10VGRWZnZFS3BRbGtleGo4T21CMmxGX0pIV1EyLVdFVkY4VkNjWEgzN2pPZkJE?oc=5",
+    "pub": "2026-11-26T15:27:03.000Z",
+    "sum": ""
+   },
+   {
     "hd": "New UK-EU treaty has 10-year termination clause",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-26T15:23:17.000Z",
     "sum": "Text of the treaties was published this afternoon, alongside legislation designed to enact the bulk of the deal."
-   },
-   {
-    "hd": "Israel's Eisenkot reaches deal with left-wing faction as coalition talks gain steam",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQnltOGlBZG16OU1LUGlBS25WVUFhN2VnM0NhWHpzTlVscC1iOE5kdFZnaGhBbmNOdm80b05IQWttZm9MV0liVmZzVE56bXVxSHJXYXBmMktWSVQwZ2hfNmVGdWVJQmp5RkRtS1dXR0wwT0pXX1dFdUM5dDJrUWNTNHVsYjRNWXBWcmx3RTlqQ0ZQNEJWWFVxalA1Z0tkRExSbGJVOWpWX1pMY25aZHB3VnlvTWF0QUNvaElpM0FORVM5a1ZPa05mWDBXQQ?oc=5",
-    "pub": "2026-11-26T14:50:34.000Z",
-    "sum": ""
    },
    {
     "hd": "Five takeaways from Trump's new tariffs",
@@ -16289,13 +16326,6 @@
     "sum": ""
    },
    {
-    "hd": "German police arrest two Iraqis over alleged Cologne synagogue bomb plot",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxONnk2X1RfVHc3VF8ybnZCVzdIbjFrdTNMbzI2SXhxVW9VTGx4RV94OV8zdU9yRzJPS1daUUZzMXBKM0o5aW1HMklsR1Y5OUlxMEhWTVpNX0tXclphbWhDcE1kb050ekVqaWtrcEpyenZQdS1MWlE2ZVp3ZjNJUjg4ay1HM2VPa0l3emJ0MHpGNHFmdUhsWGIwRXdfMUFuRlBWNDZSNXNzcE9kTkFLd2VnREE1Vl8zOVU0REpaT3o5dkhtTElF?oc=5",
-    "pub": "2026-11-26T12:28:28.000Z",
-    "sum": ""
-   },
-   {
     "hd": "EU leaders divided over budget spending as they weigh a $49 billion loan to Ukraine",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObUt5bnNUdEVaVjhETTRjWFI5cnZYaUtyV0R1VE50ZGFPcnJyVmppY2xxeVFpOEtPWURRSFpKUGFXcDVkZGVtZnF2Ykg5aEk2NXY4VTVBVHZQWEstSk9CRGp6cHZLUWhyQkdDQ2ktQjl6WldZSlFRdzhfVUQ0dGNkNlZJaFZKMkFYeWdFUmNQSXdSTDJscjlEcXBZdVdhZWs?oc=5",
@@ -16303,9 +16333,9 @@
     "sum": ""
    },
    {
-    "hd": "Ukraine says it downed a Russian jet-powered drone with a laser",
+    "hd": "Ukraine says it has intercepted a Russian jet-powered drone with a laser for the first time",
     "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/russia-ukraine-war-laser-interception-russian-jet-powered-geran-drone/",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGVSaWFRWm5vY1pIZ2R5RFVxSjRwVjBNN3dWcTh0Z3VFR0o0Xzc0TWhMTHJQX0RHWG54RWI2dWhxenZmbGo1RFJsZ2Q3TC1aSmwyTzBRZWc3S3lDT2tNVGlQVWQzbmVyYTJ6U1pUcm9jcG5rQngtb3Q4R2JoXzBxSW1XWkZYZVV6SWt6YTNQbHBDejBFSzJ0Zy1OX0RVTVJY?oc=5",
     "pub": "2026-11-26T12:02:53.000Z",
     "sum": "Ukraine has used a laser weapon to shoot down a Russian jet-powered drone for the first time, a senior adviser to President Volodymyr Zelenskyy says."
    },
@@ -16314,13 +16344,6 @@
     "src": "POLITICO.eu",
     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTmFaekZkXy1DMFpvdmFRMkpoSnVwcm45d2dZYnFDeVFma1hBUURCb0RPNDFKdVdSajZ2Znk1Y0ltZDlYODVYbTFBTFlxVExKVzY2My1tVzF5NnRNXzZpRExpQ0FjU3MxaEhORTdlM2tWWWxzc2o5XzVBRzV3NlZ2MVVMZGV2MWkzZnI2ZDJsaW84WmY0azEyVQ?oc=5",
     "pub": "2026-11-26T11:21:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "How Trump's proposed tariffs for India compare with rival nations",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNazJTSjI3dk40ZnhoM2ZJR2N2eXp0NUFoaWUxNUI4NW9wV19YWEtpd24tS0t5YnFHV2YzSkRmSXdiTnR6cjRuMTROY1d1VlQ2NUR3UjNNMUJkeU5XQVBOeUQ1VnVTQmtQU3BVOUNndHdyeUhvWDcxdmRHMGtheVJCREs4UzdCWS1VVDQwcmdQYWtILXltMHRhN1UxeTVtdGhuMFhpemlOdDRkLTB5?oc=5",
-    "pub": "2026-11-26T11:10:56.000Z",
     "sum": ""
    },
    {
@@ -16343,27 +16366,6 @@
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdTJjem9wYVZqdmdGdDlyX2c2YS1PX3N0SVRPNVlQb2xNTkxGNHg4dXhlVkF3Q3dMRTdmdE1GTWpLNEVILXA2b1ZEd2o1N1NHSzVPV3RVM19UY2dnSmx3TWtVb2hETDZ4eDNsdTBJNnkwOTI5c0d1VzV6STM4TFIzRUZWUHRPRmVMeTRvVDlhRmtmaDVU0gGUAUFVX3lxTE5WQ2ZSLVF6VTZ5WFNtYXRnUjFRcUNzMU90TWZrYzBnSlNVR2w0XzE1Vy1GbkRMZXRsTXVJbHpDNl90SWgtT0c1VVY5OWkxdTRnMnY3N0FhSlduRG1xXzVQcUw4Y1RKR3ZzVHFqRzJTaVRQS2R1Q2dtRWw2bGczamU5Q2RaVzdwOWExaGtUSFVrMTVIdWM?oc=5",
     "pub": "2026-11-26T10:42:31.000Z",
     "sum": ""
-   },
-   {
-    "hd": "US Army says controlled blast of explosives in Iowa was 'huge success'",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cwg7l5ve251ko?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T10:38:35.000Z",
-    "sum": "Officials say no lead has been detected in the surrounding area, which continues to be tested following concerns from locals."
-   },
-   {
-    "hd": "Hamas political official and wife among eight Palestinians killed in Israeli strikes on Gaza",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cqvg2n4mzl1jo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T10:14:08.000Z",
-    "sum": "The killings are the latest from a series of near daily attacks by Israel against what it says are Hamas targets."
-   },
-   {
-    "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMUxSQ20tSWhWSGQ2SzgxbGhaYnhvOF9ZVHF5bFpURncxcW4wOWNRbmRNSlBTeGhKMWZYSXozVUdIcmhVcUc5RDYxaHN0UG44UmxkSmNHcXU3V2FvYmlieXZCS3JzQ1QxNlM4T05WOE03RXBwNlhHanBMcVhEVWFTRmRDVFFBMmEycXlKUldBdEFIY2VraUpmcndvQm1LLVRodlVyUA?oc=5",
-    "pub": "2026-11-26T10:02:53.000Z",
-    "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
    }
   ],
   "feeds": [
@@ -16382,8 +16384,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T17:00:17.951Z",
-  "lastAttempt": "2026-11-26T17:00:17.951Z",
+  "asOf": "2026-11-26T17:30:11.453Z",
+  "lastAttempt": "2026-11-26T17:30:11.453Z",
   "lastError": null
  }
 }
