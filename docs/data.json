@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T01:30:11.562Z",
+ "generatedAt": "2026-11-26T01:45:21.475Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,10 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T01:30:11.562Z",
+  "at": "2026-11-26T01:45:21.475Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "stockNews",
-   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13896,62 +13894,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T01:30:11.562Z",
-  "lastAttempt": "2026-11-26T01:30:11.562Z",
+  "asOf": "2026-11-26T01:45:21.475Z",
+  "lastAttempt": "2026-11-26T01:45:21.475Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7244.75,
-    "lastTime": 1795656015,
-    "settle": 7196.5,
+    "last": 7236.5,
+    "lastTime": 1795656919,
+    "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 48.25,
-    "changePct": 0.67046480928229,
-    "expectedOpen": 7230.938012228167,
+    "change": 39.75,
+    "changePct": 0.5523326501545837,
+    "expectedOpen": 7222.452839128772,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26307,
-    "lastTime": 1795656023,
-    "settle": 26104.75,
+    "last": 26267.25,
+    "lastTime": 1795656920,
+    "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 202.25,
-    "changePct": 0.7747632135913962,
-    "expectedOpen": 23768.537125274135,
+    "change": 161.5,
+    "changePct": 0.6186376564549956,
+    "expectedOpen": 23731.713658935292,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50478,
-    "lastTime": 1795656021,
-    "settle": 50227,
+    "last": 50429,
+    "lastTime": 1795656912,
+    "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 251,
-    "changePct": 0.4997312202600195,
-    "expectedOpen": 50433.729868397466,
+    "change": 200,
+    "changePct": 0.39817635230643655,
+    "expectedOpen": 50382.766639789756,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2721.5,
-    "lastTime": 1795656023,
-    "settle": 2705.699951171875,
+    "last": 2717.8,
+    "lastTime": 1795656905,
+    "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 15.800048828125,
-    "changePct": 0.5839542119695049,
+    "change": 11.999951171875182,
+    "changePct": 0.44348994586914614,
     "expectedOpen": null,
     "valid": true
    }
@@ -13968,9 +13966,9 @@
     "id": "401873079",
     "start": "2026-11-26T01:00Z",
     "state": "in",
-    "status": "Q1 8:49",
+    "status": "Q1 2:43",
     "period": 1,
-    "clock": "8:49",
+    "clock": "2:43",
     "completed": false,
     "away": {
      "name": "Green Bay Packers",
@@ -13989,7 +13987,7 @@
      "short": "Rams",
      "id": "14",
      "abbrev": "LAR",
-     "score": "3",
+     "score": "6",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
      "record": "6-4",
      "winner": false,
@@ -14493,8 +14491,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T01:30:11.562Z",
-  "lastAttempt": "2026-11-26T01:30:11.562Z",
+  "asOf": "2026-11-26T01:45:21.475Z",
+  "lastAttempt": "2026-11-26T01:45:21.475Z",
   "lastError": null
  },
  "alerts": {
@@ -14505,8 +14503,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T01:30:11.562Z",
-  "lastAttempt": "2026-11-26T01:30:11.562Z",
+  "asOf": "2026-11-26T01:45:21.475Z",
+  "lastAttempt": "2026-11-26T01:45:21.475Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15149,7 +15147,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T01:30:11.562Z",
+  "lastAttempt": "2026-11-26T01:45:21.475Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
