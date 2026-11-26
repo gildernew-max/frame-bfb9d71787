@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T10:15:11.838Z",
+ "generatedAt": "2026-11-26T10:30:12.118Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T10:15:11.838Z",
+  "at": "2026-11-26T10:30:12.118Z",
   "ran": [
-   "weather",
    "alerts",
+   "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13895,62 +13897,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T10:15:11.838Z",
-  "lastAttempt": "2026-11-26T10:15:11.838Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7236.25,
-    "lastTime": 1795687509,
+    "last": 7229.5,
+    "lastTime": 1795688421,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 39.75,
-    "changePct": 0.5523518376988814,
-    "expectedOpen": 7222.454217327868,
+    "change": 33,
+    "changePct": 0.45855624261793926,
+    "expectedOpen": 7215.717086083513,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26247.25,
-    "lastTime": 1795687509,
+    "last": 26214,
+    "lastTime": 1795688419,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 142.5,
-    "changePct": 0.545877665942022,
-    "expectedOpen": 23714.552630910086,
+    "change": 109.25,
+    "changePct": 0.41850621055555026,
+    "expectedOpen": 23684.511050364395,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50425,
-    "lastTime": 1795687491,
+    "last": 50383,
+    "lastTime": 1795688392,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 198,
-    "changePct": 0.39421028530471663,
-    "expectedOpen": 50380.77635036931,
+    "change": 156,
+    "changePct": 0.31058992175523126,
+    "expectedOpen": 50338.813185139465,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2717.5,
-    "lastTime": 1795687503,
+    "last": 2714.4,
+    "lastTime": 1795688413,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 11.800048828125,
-    "changePct": 0.4361181594808486,
+    "change": 8.700048828125091,
+    "changePct": 0.3215452188021433,
     "expectedOpen": null,
     "valid": true
    }
@@ -14504,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T10:15:11.838Z",
-  "lastAttempt": "2026-11-26T10:15:11.838Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15143,12 +15145,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-26T04:15:12.120Z",
-  "lastAttempt": "2026-11-26T04:15:12.120Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T10:15:11.838Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15359,8 +15361,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T10:15:11.838Z",
-  "lastAttempt": "2026-11-26T10:15:11.838Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15407,16 +15409,44 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Shopify (NasdaqGS:SHOP) Rebound Rekindles The Debate Over Its Fair Value",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/shopify-nasdaqgs-shop-rebound-rekindles-100844802.html?.tsrc=rss",
+      "pub": "2026-11-26T10:08:44.000Z",
+      "sum": "Shopify (NasdaqGS:SHOP) jumped 8.96% on the S&P/TSX Composite after a broad technology rebound tied to Nvidia’s CEO reinstatement, drawing attention to how AI enthusiasm can ripple into this ecommerce platform. The recent Shopify spike comes after a tougher stretch. The 30 day share price return is down 20.68% and the year to date share price return is down 15.14%, while the 3 year total shareholder return is up 81.92% and the 5 year total shareholder return is down 8.61%. This suggests long..."
+     },
+     {
+      "hd": "A vocal cohort of tech leaders celebrates Huang’s Nvidia return, but others are keeping quiet",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/vocal-cohort-tech-leaders-celebrates-100052004.html?.tsrc=rss",
+      "pub": "2026-11-26T10:00:52.000Z",
+      "sum": "Elon Musk and Sam Altman among those rejoicing but Google, Meta and Apple chiefs have declined to weigh in"
+     },
+     {
+      "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+      "pub": "2026-11-26T09:55:44.000Z",
+      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
+     },
+     {
       "hd": "Nvidia halts chip exports to south-east Asia after US crackdown",
       "src": "Yahoo Finance",
-      "url": "https://uk.finance.yahoo.com/news/nvidia-halts-chip-exports-south-091719498.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=791e85b8bfa9017b91307bb33ec778728186286cf7810e00519fc463b1704e8b",
       "pub": "2026-11-26T09:17:19.000Z",
       "sum": "Nvidia has blocked shipments of powerful AI servers to four Asian countries as Washington cracks down on Chinese access to cutting-edge American technology."
      },
      {
+      "hd": "Musk Confirms He Pushed Trump to Bring Back Jensen Huang. The White House Had Anthropic in Mind",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-confirms-he-pushed-trump-to-bring-back-jensen-huang-the-white-house-had-anthropic-in-mind?ref=yahoofinance&tlnk=yf-261126-66q3rrhh&.tsrc=rss",
+      "pub": "2026-11-26T08:59:12.000Z",
+      "sum": "Key TakeawaysElon Musk confirmed he spoke with President Trump before NVIDIA reinstated Jensen Huang as CEO, and the White House reportedly backed Huang partly as a champion of open AI models over closed labs like Anthropic. Anthropic closed below its $83 IPO price the day after Huang returned, as AI stocks gave back Monday’s rally."
+     },
+     {
       "hd": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/nvda-jensen-huang-return-stock-upgrades-crwd-li-amba-dkng/cNbxi4aR9ZF?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b9be9151e09e73bc6fe03b0d88bd71e854ac561fef9ed19ef32f23f1c0a577f8",
       "pub": "2026-11-26T08:43:12.000Z",
       "sum": "Wall Street analysts upgraded Nvidia, CrowdStrike and Li Auto on leadership stability, AI growth and strong earnings."
      },
@@ -15430,37 +15460,9 @@
      {
       "hd": "Nvidia Reportedly Halts AI Server Shipments To Southeast Asia Ahead Of Jensen Huang's Congress Testimony",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-reportedly-halts-ai-server-shipments-to-southeast-asia-ahead-of-jensen-huang-s-congress-testimony/cNbxLXJR9ZN?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=121d9ac9fbcc903b3bb93491a89bcea1814d496e1622eba4006a255410f56a59",
       "pub": "2026-11-26T08:11:47.000Z",
       "sum": "Dell and Super Micro informed buyers that pending orders cannot be shipped, according to a report in The Financial Times."
-     },
-     {
-      "hd": "S&P Weighs Nvidia Downgrade Despite Huang's Return. What Would a Cut Mean?",
-      "src": "Yahoo Finance",
-      "url": "https://beincrypto.com/sp-nvidia-credit-rating-downgrade-watch/?.tsrc=rss",
-      "pub": "2026-11-26T08:00:00.000Z",
-      "sum": "S&P Global Ratings may cut Nvidia's AA credit rating within 90 days over board oversight concerns after Huang's return."
-     },
-     {
-      "hd": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f57559fd410b7bf93d1b1a62b6f1dd6a376c2787e595888bb20f3a760d22bf7a",
-      "pub": "2026-11-26T07:41:08.000Z",
-      "sum": "Analyst says Nvidia could choose to support better-funded neocloud operators as financing pressures threaten weaker players."
-     },
-     {
-      "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3",
-      "pub": "2026-11-26T07:32:42.000Z",
-      "sum": "The Anthropic IPO and Nvidia CEO’s ouster and rehiring flummoxed AI investors this month."
-     },
-     {
-      "hd": "Mike Pompeo Has ‘No Doubt’ Alice Huang Coordinated With Communist Party of China: Crypto Bettors Weigh Odds of Her Arrest",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1f39f507667934bc0bee09dd9dbeee093dd4b093d323f28ae148374b50e71640",
-      "pub": "2026-11-26T07:22:13.000Z",
-      "sum": "Former Secretary of State Mike Pompeo alleged that Alice Huang, a central figure in the Nvidia Corp. (NASDAQ:NVDA) scandal, has ties to the Chinese Communist Party, even as cryptocurrency bettors doubt she will be arrested. Relationship Raises a Lot of..."
      },
      {
       "hd": "Nvidia's Aa1 rating, stable outlook unchanged after Huang's return: Moody's",
@@ -15508,7 +15510,7 @@
       "hd": "‘Jensanity’ erupts in Taiwan and China on Nvidia founder’s comeback",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbjJtWWlsdkpJSnp1U3RPWDFDNDZNZnduNEtiRVExb0JtejRhYWR1T05TY2FORGlSUzRHeFNSdUh4RjhPMHBGaG5jZ2QtSmZzRGlTdkM4VmRYWW1iUkM4MWVfZkRHOFRCZUowc2J6ei1yNHJVSERQOWpnY0tPT1pkdXoxcDQ?oc=5",
-      "pub": "2026-11-26T00:45:54.000Z",
+      "pub": "2026-11-26T00:46:37.000Z",
       "sum": ""
      },
      {
@@ -15575,22 +15577,20 @@
       "sum": ""
      },
      {
-      "hd": "Most-Active US Stocks: Today's High-Volume Session",
-      "src": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=092e73bc20e36c6df5afb9a4893bf98b7b2b79af940a8523c001921333819df6",
-      "pub": "2026-11-25T19:00:26.000Z",
-      "sum": "Today's most-active US stocks include NIVF, NVDA, CHSN, PLUG, NXAT, RAYA, SNDK, INTC, VIVK and BGL, highlighting high volume and sharp price moves."
+      "hd": "How China got access to Nvidia's AI chips despite rules to stop them",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPU05FY1hvQmJod19oM3p3aTZQaS1CdktCWEZsSnk0TmVWREE1a0tmVW5kVnBxdG5VNU1TX2FmWnZ1aTc1UEQyblFkSklCZ3NlcU1XQUZQVDUwTXZ6R3BoVjlRb1RPY0pTNGdmUUdNZkw0Zi1oanJOcXFieGlBdzRTN05pa3FsaVhUWVk0UWpzc0hkN2kySGF6bGRpU1Y1a2IyNi1iaUFQZThLNVZON0E?oc=5",
+      "pub": "2026-11-25T19:58:10.000Z",
+      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 128,
-     "Yahoo": 12,
+     "Finnhub": 126,
+     "Yahoo": 7,
+     "Google News": 88,
      "Nasdaq": 10,
      "Seeking Alpha": 24
-    },
-    "errors": [
-     "Google News: HTTP 503 from news.google.com"
-    ]
+    }
    },
    "TSLA": {
     "items": [
@@ -15773,15 +15773,34 @@
     "fetched": {
      "Finnhub": 160,
      "Yahoo": 11,
+     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 9
-    },
-    "errors": [
-     "Google News: HTTP 503 from news.google.com"
-    ]
+    }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Musk Calls FCC’s Million-Satellite Approval “a Great Asset.” SpaceX Has Until 2033 to Fly the First One",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-calls-fccs-million-satellite-approval-a-great-asset-spacex-has-until-2033-to-fly-the-first-one?ref=yahoofinance&tlnk=yf-261126-wm7jp73w&.tsrc=rss",
+      "pub": "2026-11-26T09:50:35.000Z",
+      "sum": "Key TakeawaysThe FCC approved SpaceX’s request for up to 1 million Starmind data-center satellites, and Elon Musk called it “a great asset to America and the world. ”SpaceX has until November 2033 to have its first satellite working and until 2035 to reach 100,000."
+     },
+     {
+      "hd": "SpaceX Catalyst Puts 3 Space AI Infrastructure Stocks In Focus",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=0ed137de62933c1872d25076fbbc0fc3b384a7eb9296c8da5ecc421c1ea37db4",
+      "pub": "2026-11-26T09:12:00.000Z",
+      "sum": "SpaceX’s FCC approval for its “Starmind” orbital data centers has pushed the idea of space-enabled AI from science fiction into the investment pages, and investors are paying attention after the stock moved 1.3% on the news. The potential prize is simple: Data and power are scarce on the ground, yet AI keeps demanding more. This article breaks down three stocks exposed to that story and how this catalyst might matter for your portfolio. The three stocks covered below are only a small sample..."
+     },
+     {
+      "hd": "SpaceX Will “Pay $3.6B to Upgrade the Grid” for Its Arizona Supercomputer. That’s the New Price of AI",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/spacex-will-pay-3-6b-to-upgrade-the-grid-for-its-arizona-supercomputer-thats-the-new-price-of-ai?ref=yahoofinance&tlnk=yf-261126-fmqqr22c&.tsrc=rss",
+      "pub": "2026-11-26T09:01:36.000Z",
+      "sum": "Key TakeawaysSpaceX says it will pay $3. 6 billion to upgrade the grid for its Cochise County, Arizona, supercomputer site, with no gas plant and no industrial water use."
+     },
      {
       "hd": "Musk says will give two SpaceX shares to 'every child in America'",
       "src": "Yahoo Finance",
@@ -15830,27 +15849,6 @@
       "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
       "pub": "2026-11-26T05:19:41.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Elon Musk, SpaceX pledge major stock donations to active Trump Accounts",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=626dac37215952b700d2f21420d7c9a02db6b7a01b53cd024856088ad1eef48c",
-      "pub": "2026-11-26T04:29:55.000Z",
-      "sum": "SpaceX will give one share of its Class A common stock to every active Trump Account, with Elon Musk pledging to personally match the donation."
-     },
-     {
-      "hd": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e20a1c6864b0638103683a558a2c7228a0744bf93030d68b2b61b1dbc26e5cd8",
-      "pub": "2026-11-26T03:32:35.000Z",
-      "sum": "Influencer Alexandra Merz says Goldman Sachs and Morgan Stanley give SpaceX a merger edge because they helped take it public and lent it money."
-     },
-     {
-      "hd": "SpaceX gets approval for 1 million data center satellites",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e5c4a9a58b2e8c633368209063723cc1b556ba3a8d6fe1e2da4e524a8dc219cd",
-      "pub": "2026-11-26T02:38:47.000Z",
-      "sum": "The Federal Communications Commission announced the approval on Wednesday but some of SpaceX's rivals have expressed skepticism about the company's data center satellite efforts."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15951,22 +15949,20 @@
       "sum": "Elon Musk confirms SpaceX will provide eligible Americans free Starlink hardware, low-cost internet and 10 years of service."
      },
      {
-      "hd": "SpaceX, Tesla appoint five directors to negotiate on possible deal - FT",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
-      "pub": "2026-11-24T20:27:23.000Z",
+      "hd": "Tesla-SpaceX Merger: The AI Logic, Valuation Math, and Risks",
+      "src": "Barron's",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAyWjJfbG1QVklLakxQYmxta19aS0Voc1JBZUF6aGc5YUhGUS1CVWc1NW1LZXF5U3lYSVROMWJEUDNSb182dXFPV0JOT3AwVjJfaTR4SWVjS0NaZ3c1Sko1eEZ6TVQtQ2pUZlppVzZyZEY0UFozU1FnRzVjVk0?oc=5",
+      "pub": "2026-11-24T21:23:00.000Z",
       "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 161,
-     "Yahoo": 16,
+     "Yahoo": 15,
+     "Google News": 18,
      "Nasdaq": 0,
      "Seeking Alpha": 14
-    },
-    "errors": [
-     "Google News: HTTP 503 from news.google.com"
-    ]
+    }
    },
    "ANT": {
     "items": [
@@ -15983,6 +15979,13 @@
       "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-fell-below-its-ipo-price-is-it-a-buy-or-is-more-downside-just-ahead/?.tsrc=rss",
       "pub": "2026-11-26T09:22:02.000Z",
       "sum": "The stock is disappointing investors after its explosive IPO."
+     },
+     {
+      "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
+      "src": "Bloomberg",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNlM1cEVZV2FiQzNweFlINDdoTDVGaDFnOS02eWpIV3BDUks0Q2FNc2dUWUkxOHl4LThWVXJCeXFRMHFETVpORjR2Y0lKSkh5YVN0Y2dUR0pTb1dmWUJoQmtCWTdETmpwYWtDZ1otOTlHb2lpdWNpSG5Kc3Z2QW94VjlWX1doeEJOLW01NU04aDBBYmxFY3RnLU1Vek9jdmEtVE9TTmFJZ1pWd0xLUXpnUnZjOEx3UQ?oc=5",
+      "pub": "2026-11-26T09:08:53.000Z",
+      "sum": ""
      },
      {
       "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
@@ -16031,13 +16034,6 @@
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMGhQYy1TNTdJcnJDbUg5RFFZRl91OE1OZHNvdTFfYm81NTFTR1JGLXRsR1RFTnhnajZMT1ZjNEFIMjlJX2pfS092R2JGLUFZb2ZhVE5fRU5DUHhub1ZKb3VQUkJUSUpuX2wwZ2ZpdmR1M1BNcTVYb0pBQXlZMVFmNkNVbElaUEg0a2c?oc=5",
       "pub": "2026-11-25T23:28:32.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNlM1cEVZV2FiQzNweFlINDdoTDVGaDFnOS02eWpIV3BDUks0Q2FNc2dUWUkxOHl4LThWVXJCeXFRMHFETVpORjR2Y0lKSkh5YVN0Y2dUR0pTb1dmWUJoQmtCWTdETmpwYWtDZ1otOTlHb2lpdWNpSG5Kc3Z2QW94VjlWX1doeEJOLW01NU04aDBBYmxFY3RnLU1Vek9jdmEtVE9TTmFJZ1pWd0xLUXpnUnZjOEx3UQ?oc=5",
-      "pub": "2026-11-25T21:35:47.000Z",
       "sum": ""
      },
      {
@@ -16147,28 +16143,54 @@
      }
     ],
     "fetched": {
-     "Finnhub": 149,
-     "Yahoo": 13,
+     "Finnhub": 148,
+     "Yahoo": 0,
+     "Google News": 59,
      "Nasdaq": 13,
      "Seeking Alpha": 21
-    },
-    "errors": [
-     "Google News: HTTP 503 from news.google.com"
-    ]
+    }
    }
   },
-  "asOf": "2026-11-26T09:30:11.840Z",
-  "lastAttempt": "2026-11-26T09:30:11.840Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/europe/europe-preppers-survivalists-cyberattacks-threats.html",
+    "pub": "2026-11-26T10:02:53.000Z",
+    "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
+   },
+   {
+    "hd": "Brazilian Duped Into Fighting for Russia: ‘War Is Hell’",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/americas/brazil-soldier-ukraine-war.html",
+    "pub": "2026-11-26T10:00:09.000Z",
+    "sum": "Dozens of Brazilians have joined the Russian army, some say lured by a pair of recruiters promising money and adventure. Here is one soldier’s story."
+   },
+   {
+    "hd": "New UK-EU treaty has 10-year termination clause",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T09:59:14.000Z",
+    "sum": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal."
+   },
    {
     "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
     "src": "The New York Times",
     "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
     "pub": "2026-11-26T09:14:29.000Z",
     "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
+   },
+   {
+    "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUcwQ3JjLUlNWjhSZnFuYWMzVEFGd0RMR2lZT2VmWUdBejNHckpxbWFSb0lsTUNuTzktdm9qTk94eTgxMXFRQkplOTdZZkFDSEVaUkVZcWFfb1lEMTNEVzFHd013bXhoRFU4ajZjOTB0UXFhM1FacVliRVdqcFY5dG11UURVYmFZang5ZEpaZEVCazhBMjFz?oc=5",
+    "pub": "2026-11-26T08:42:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Attack Blamed on ISIS Kills 2 Syrian Security Force Members",
@@ -16185,11 +16207,11 @@
     "sum": ""
    },
    {
-    "hd": "New UK-EU treaty has 10-year termination clause, BBC understands",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T07:40:04.000Z",
-    "sum": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal."
+    "hd": "'Unacceptable': Major economies push back against new US tariffs",
+    "src": "France 24",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSzlzNkVzNEdFVU9tanZOU0tVbWJxVW9oV2VueklTWlU5bDNSbFFLNkRzbEZlRGVJVnkzWjk5cGdLZzdmXy1PNmtHTHROU0VPY1ZSdk1QUmVZWVYzQ0xSWXhHUWxtVXd4M0xvSHRpNFNiNkdWMm9sRW16ZjktcEg5dnl6bWx1a0pKRlo2bXl4VE1yNTlqTVpnTFF6WVJhd2dWSlhXQVhMek55Nkk?oc=5",
+    "pub": "2026-11-26T07:16:41.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump's new tariffs aim to prise global trade from China's grip",
@@ -16241,6 +16263,20 @@
     "sum": "The new levies would hit many of America's biggest trading partners, including China and the EU."
    },
    {
+    "hd": "Magyar meets Zelenskyy: Hungary and Ukraine make a fresh start after the icy relations of the Orban era",
+    "src": "DW",
+    "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT0s0Mlp1cUhyQzZ0QUN4QkZLSjV0dnV6cjMtMzZlZmVjbF9nX1YtNzRBYk96alI0djM4dGFtNzZqRl9KWU1uMFQtdE5lZHA3Y2NiQkhaSWJRXzQzNmtWaUlBVUpOVmx2cVpsLTZld05rXzJKbjJvSkVOREJDQTNZS0haSDlISmVadEUxUUFyekJ1RFZ1RmVLUmJMMzNZcS1qTHNYWE9SSmdtd3dMWUx3SVBqVG5ydVNsaUdZd1h3LW16cXBxZF9OZFh1QlM2bTJvcU8tM25DRXJlNlRqX3FJVC1UN3dQQ041UDRNRGs5SdIB7wFBVV95cUxObHpLMnlGRGZQR29EMm02VkZ6T3B3VUdwSVI0cE5WMjkxZno2RkJIUkZuRUJSQ29GSEYwWXQ2Qm1DNzR5eml4X2RUZzdHelF3WDNyRF9ORUtnbFczMHdaMXktcU4xeXdDUW5IOWRaLU8tODRmRWR4MWxHY2VzT0ZuS25lRFlidG14N3dSRWVkX3FDUDl5cmNzMHFYbmM4MngzTzRBRVJxODM2enJlY1ZhUFp5RTdZcWVLTEVUUkRxT1d1cVc3a0RZcWtZMkEzVEZvTmNRaHVLSWlFMDhyY1RQXy1Ydl9CdWliSkhjY1FBOA?oc=5",
+    "pub": "2026-11-26T03:49:04.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Ukrainian drones attack key Russian fertilizer plant linked to explosives production, Stavropol Krai governor says",
+    "src": "The Kyiv Independent",
+    "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNNi1PVUF6OVE2U3ZjNGtPRWFkU00zQ1RQTDNjcVI5WXpxM1o1NGlHM3dSMkhfMEFaX0ZDd19SbGhrT2N6b1J2aks2T1VXNGZhc2dhTTlmajVlamZHT1VoZ0RVd2tRa284d1R3LWNBSy1KUTFXN21yYXFfTlJwdWcxaVZLME1RWVVjSktidnAzempGMEhteklIOHhTanJGZzFOVmVQQy1OZ3JyTXY4dHExaTJNMlpiT1Y4SVpoMUFPZU9VSmNPamp0cWMtZzgtTGY2MEtDZzdiZEprWG15MlFUbmF1MVQxZw?oc=5",
+    "pub": "2026-11-26T03:14:17.000Z",
+    "sum": ""
+   },
+   {
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
@@ -16290,13 +16326,6 @@
     "sum": ""
    },
    {
-    "hd": "Magyar meets Zelenskyy: Hungary and Ukraine make a fresh start after the icy relations of the Orban era",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT0s0Mlp1cUhyQzZ0QUN4QkZLSjV0dnV6cjMtMzZlZmVjbF9nX1YtNzRBYk96alI0djM4dGFtNzZqRl9KWU1uMFQtdE5lZHA3Y2NiQkhaSWJRXzQzNmtWaUlBVUpOVmx2cVpsLTZld05rXzJKbjJvSkVOREJDQTNZS0haSDlISmVadEUxUUFyekJ1RFZ1RmVLUmJMMzNZcS1qTHNYWE9SSmdtd3dMWUx3SVBqVG5ydVNsaUdZd1h3LW16cXBxZF9OZFh1QlM2bTJvcU8tM25DRXJlNlRqX3FJVC1UN3dQQ041UDRNRGs5SdIB7wFBVV95cUxObHpLMnlGRGZQR29EMm02VkZ6T3B3VUdwSVI0cE5WMjkxZno2RkJIUkZuRUJSQ29GSEYwWXQ2Qm1DNzR5eml4X2RUZzdHelF3WDNyRF9ORUtnbFczMHdaMXktcU4xeXdDUW5IOWRaLU8tODRmRWR4MWxHY2VzT0ZuS25lRFlidG14N3dSRWVkX3FDUDl5cmNzMHFYbmM4MngzTzRBRVJxODM2enJlY1ZhUFp5RTdZcWVLTEVUUkRxT1d1cVc3a0RZcWtZMkEzVEZvTmNRaHVLSWlFMDhyY1RQXy1Ydl9CdWliSkhjY1FBOA?oc=5",
-    "pub": "2026-11-26T00:27:21.000Z",
-    "sum": ""
-   },
-   {
     "hd": "France's political mainstream risks presidential vote debacle with no clear candidate",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/cq772vedgepro?at_medium=RSS&at_campaign=rss",
@@ -16337,44 +16366,12 @@
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMHRLYUVoclBrczZzTW1yQko0dVQtTWI1Rk1tM0YyMkNub1p5V2lqTzlpVWoxZGxPbDEzXzJjWW9VR1JPYVItdWJmSjBmMUJuNGhuVlRFNWVkZHF2UW9VdzFzNjM2aGUwM0JUN1U0LUFFcThuRHEyMGhMMzZaOVZqeDdOTWZGVXhYckxrTVZ1ZUdJT19SVTNNTEpzT3JDVlhNb2FoUXlST0ZzZ0diWEE?oc=5",
     "pub": "2026-11-25T23:40:00.000Z",
     "sum": "Planned military spending for the 2027-29 period is over $600 billion, a sign President Vladimir Putin does not intend to end his war in Ukraine anytime soon."
-   },
-   {
-    "hd": "Taiwan says it is confident of keeping previously agreed tariffs with US",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcG1xdFN1WlF6MWxzVDZhdVZhOUpVMGprdUVpSE1hbUxZRjB2Q0RuTE9JOVRmX1pJYlVDUDJYdW1hVGk2UmRJVWxwbVNYOUlSOWlJb2NpRnRsSlppc1RoUUpONl9ndEQzTVYwY3RKdm1RZFNGX2xEemFBcVN1M2dWSUU3cXB6UWRZU1l3eWp2dTZQQ25Lcm8tX0hObGVneWFZR3V1ZlJoOXctQUZmdGREb1hjS3htWlhNRHN6UjRXTkxQUQ?oc=5",
-    "pub": "2026-11-25T23:31:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Vance serves up turkey and ‘unfiltered’ conversation to Air Force troops at an Ohio base",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYUt2QXRiZ2JUdVlJTUZBNjVQUWRSOFh2UnlQTkJYcnB0TFhZaGJRMUM5RXdwRTVzNjBCcXNSeS12NWc4bXNBWEY2Y0xudmd2ZjQ0QUdhdkpRWDZFOHNqODFrZjlHM3pEUGlHWlFjM2N1UGVVY1pFdlBCRXU4c3phS2h4MFRXbnNqS0FpT0hfWW1hbmlWMTNiaTB4bmJUU0lVNFJjVVR3?oc=5",
-    "pub": "2026-11-25T23:24:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Tariff Man Strikes Again",
-    "src": "Foreign Policy",
-    "url": "https://foreignpolicy.com/2026/11/25/trump-new-tariffs-section-301-china-eu-india-abrego-garcia-deportation-spain/",
-    "pub": "2026-11-25T23:07:50.000Z",
-    "sum": "The Trump administration unveils new proposed tariffs on 14 economies, from China to the European Union."
-   },
-   {
-    "hd": "Trump unveils new tariffs over excess industrial capacity, undeterred by midterms defeat",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcjZ1MUw5RG5fdk0tUjNTRFNIRzl5amR0VklFSzdTOUlUS2hxNWk5aV9xcm5VWmQtZGRkdXVKMWZ3Um5qZHluSFp4MGNIdHNETlZPck1RcmJmUC1oZHFtWFdYT29PbkdjUU1IbjQyWE9GRFJZdXFwTVFRMEtDcl81bXpDS3RHSHNka3VSbGlHNmNFV09uMTE1aExBRVkxUldZUmpwX3hYdGduS1BJcW1QRlY4ZjdyYkZyWTI0dVBB?oc=5",
-    "pub": "2026-11-25T22:47:39.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "US Army declares success in detonation of lead-based explosives stockpile in Iowa",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPV3JaTmxlVEkyOG9FXzM3d0dwUEdpV0ZwZk1FUUdZNG45Q0xYMWxaMndSZXNib0NXdDNNN1p3UzI5MnJBRTVhdll0Rm1EamNoMUpYRHg2R2JrcFlqTXFpdE9PeTgtVWktV3YzY012TDMtclByVHpIQnFucGhJbl9CZVlCMXNBb2pLRkxveWhIVEN0eEtUampuVkNRTzhBV1NPVWRnWEswMHlVbjhkeUZSeWVR?oc=5",
-    "pub": "2026-11-25T22:33:28.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
+   "Google News",
+   "AP",
+   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16386,13 +16383,10 @@
    "ABC News"
   ],
   "feedErrors": [
-   "Google News: HTTP 503 from news.google.com",
-   "AP (Google News): HTTP 503 from news.google.com",
-   "Reuters (Google News): HTTP 503 from news.google.com",
-   "WSJ (Google News): HTTP 503 from news.google.com"
+   "Reuters (Google News): HTTP 429 from news.google.com"
   ],
-  "asOf": "2026-11-26T09:30:11.840Z",
-  "lastAttempt": "2026-11-26T09:30:11.840Z",
+  "asOf": "2026-11-26T10:30:12.118Z",
+  "lastAttempt": "2026-11-26T10:30:12.118Z",
   "lastError": null
  }
 }
