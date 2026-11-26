@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T22:00:10.860Z",
+ "generatedAt": "2026-11-26T22:15:13.122Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -10,12 +10,12 @@
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 40,
+     "temp": 39,
      "i": "cloud",
      "cond": "Overcast",
-     "windMph": 14,
+     "windMph": 13,
      "windDir": "W",
-     "observed": "2026-11-26T16:15"
+     "observed": "2026-11-26T17:15"
     },
     "today": {
      "h": 49,
@@ -119,13 +119,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-26T17:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 39,
-      "pop": 0
-     },
-     {
       "t": "2026-11-26T18:00",
       "i": "cloud",
       "text": "Overcast",
@@ -192,11 +185,18 @@
       "t": "2026-11-27T03:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 36,
+      "temp": 37,
       "pop": 1
      },
      {
       "t": "2026-11-27T04:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T05:00",
       "i": "cloud",
       "text": "Overcast",
       "temp": 37,
@@ -208,15 +208,15 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 39,
+     "temp": 37,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 6,
+     "windMph": 3,
      "windDir": "N",
-     "observed": "2026-11-26T15:15"
+     "observed": "2026-11-26T16:15"
     },
     "today": {
-     "h": 39,
+     "h": 40,
      "l": 20,
      "sunrise": "07:24",
      "sunset": "16:34"
@@ -256,7 +256,7 @@
       "d": "Thu",
       "i": "cloud",
       "text": "Overcast",
-      "h": 39,
+      "h": 40,
       "l": 20,
       "pop": 0
      },
@@ -317,16 +317,9 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-26T16:00",
+      "t": "2026-11-26T17:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 38,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-26T17:00",
-      "i": "cloud",
-      "text": "Overcast",
       "temp": 34,
       "pop": 0
      },
@@ -341,55 +334,55 @@
       "t": "2026-11-26T19:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 32,
+      "temp": 31,
       "pop": 0
      },
      {
       "t": "2026-11-26T20:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 32,
+      "temp": 31,
       "pop": 0
      },
      {
       "t": "2026-11-26T21:00",
-      "i": "partly",
-      "text": "Partly cloudy",
+      "i": "sun",
+      "text": "Clear",
       "temp": 31,
       "pop": 0
      },
      {
       "t": "2026-11-26T22:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 31,
-      "pop": 0
-     },
-     {
-      "t": "2026-11-26T23:00",
       "i": "sun",
       "text": "Mostly clear",
       "temp": 31,
       "pop": 0
      },
      {
+      "t": "2026-11-26T23:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 31,
+      "pop": 0
+     },
+     {
       "t": "2026-11-27T00:00",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "sun",
+      "text": "Clear",
       "temp": 31,
       "pop": 0
      },
      {
       "t": "2026-11-27T01:00",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "sun",
+      "text": "Clear",
       "temp": 31,
       "pop": 0
      },
      {
       "t": "2026-11-27T02:00",
-      "i": "sun",
-      "text": "Clear",
+      "i": "cloud",
+      "text": "Overcast",
       "temp": 31,
       "pop": 0
      },
@@ -399,12 +392,19 @@
       "text": "Clear",
       "temp": 31,
       "pop": 0
+     },
+     {
+      "t": "2026-11-27T04:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 30,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-26T21:15:11.660Z",
-  "lastAttempt": "2026-11-26T21:15:11.660Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": null
  },
  "nfl": {
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T22:00:10.860Z"
+   "checkedAt": "2026-11-26T22:15:13.122Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,14 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T22:00:10.860Z",
+  "at": "2026-11-26T22:15:13.122Z",
   "ran": [
+   "weather",
    "alerts",
    "nflScoreboard",
-   "news",
-   "stockNews",
-   "worldNews",
-   "world",
+   "movers",
+   "sectors",
    "extended",
    "usTempGrid"
   ]
@@ -13970,9 +13969,9 @@
     "id": "401873080",
     "start": "2026-11-26T21:30Z",
     "state": "in",
-    "status": "Q1 8:50",
+    "status": "Q1 6:27",
     "period": 1,
-    "clock": "8:50",
+    "clock": "6:27",
     "completed": false,
     "away": {
      "name": "Philadelphia Eagles",
@@ -14495,8 +14494,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T22:00:10.860Z",
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": null
  },
  "alerts": {
@@ -14507,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T22:00:10.860Z",
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15151,7 +15150,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15268,8 +15267,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-26T21:15:11.660Z",
-  "lastAttempt": "2026-11-26T21:15:11.660Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": null
  },
  "sectors": {
@@ -15356,14 +15355,14 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-26T21:15:11.660Z",
-  "lastAttempt": "2026-11-26T21:15:11.660Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "lastError": null
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T22:00:10.860Z",
-  "lastAttempt": "2026-11-26T22:00:10.860Z",
+  "asOf": "2026-11-26T22:15:13.122Z",
+  "lastAttempt": "2026-11-26T22:15:13.122Z",
   "items": {
    "NVDA": {
     "session": "post",
