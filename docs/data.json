@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T15:15:20.471Z",
+ "generatedAt": "2026-11-26T15:30:11.138Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T15:15:20.471Z"
+   "checkedAt": "2026-11-26T15:30:11.138Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T15:15:20.471Z",
+  "at": "2026-11-26T15:30:11.138Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "movers",
    "sectors",
    "usTempGrid"
@@ -14504,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T15:15:20.471Z",
-  "lastAttempt": "2026-11-26T15:15:20.471Z",
+  "asOf": "2026-11-26T15:30:11.138Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T15:15:20.471Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15265,8 +15266,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-26T15:15:20.471Z",
-  "lastAttempt": "2026-11-26T15:15:20.471Z",
+  "asOf": "2026-11-26T15:30:11.138Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": null
  },
  "sectors": {
@@ -15353,8 +15354,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-26T15:15:20.471Z",
-  "lastAttempt": "2026-11-26T15:15:20.471Z",
+  "asOf": "2026-11-26T15:30:11.138Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": null
  },
  "extended": {
@@ -15584,14 +15585,21 @@
     ],
     "fetched": {
      "Finnhub": 121,
-     "Yahoo": 8,
-     "Google News": 89,
+     "Yahoo": 7,
+     "Google News": 86,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "General Motors Is Up 11% in a Month as the Nasdaq-100 Fell 10%. Is Its Nasdaq Switch Really That Good?",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/general-motors-is-up-11-in-a-month-as-the-nasdaq-100-fell-10-is-its-nasdaq-switch-really-that-good?ref=yahoofinance&tlnk=yf-261126-7326q54f&.tsrc=rss",
+      "pub": "2026-11-26T14:50:28.000Z",
+      "sum": "Key TakeawaysGeneral Motors stock is up 11% in the past month, mostly on its move to Nasdaq, while the Nasdaq-100 fell 10%. Ford’s higher profit floor and a shift out of Tesla helped too, but Ford expects flat 2027 profit."
+     },
      {
       "hd": "Tesla's Self-Driving Expansion in Europe Faces a Crucial Test",
       "src": "Yahoo Finance",
@@ -15661,13 +15669,6 @@
       "url": "https://finnhub.io/api/news?id=57423974c39a5788070df93a39570953d50651c621f2813f64d7461c476724f7",
       "pub": "2026-11-25T21:11:47.000Z",
       "sum": "Apple (NasdaqGS:AAPL) is challenging the trading of tokenized versions of its shares on newly expanded blockchain-based markets. Crypto exchange OKX and the New York Stock Exchange parent have launched a 24/7 tokenized U.S. securities venue that includes Apple, Nvidia, and Tesla. Apple and other issuers are raising questions over control of their equity's digital representation, shareholder rights, and regulatory oversight. The clash over 24/7 tokenized Apple shares trading comes alongside..."
-     },
-     {
-      "hd": "SpaceX stock price crashes on concerns over compute demand",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=37dc7ebbc91e3296a2278578b5b0084d9b60856569f48c577f60b12b4bbcca24",
-      "pub": "2026-11-25T20:32:10.000Z",
-      "sum": "SpaceX's stock price is facing mounting pressure amid speculation surrounding a potential Tesla merger, an upcoming share unlock and weakening GPU rental prices. But the most consequential risk may be…"
      },
      {
       "hd": "EU postpones discussion to approve Tesla's self-driving tech",
@@ -15770,7 +15771,7 @@
     ],
     "fetched": {
      "Finnhub": 151,
-     "Yahoo": 6,
+     "Yahoo": 7,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
@@ -15778,6 +15779,13 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SpaceX Just Slid 11% in a Week. Can Elon Musk’s FCC Win for 1 Million Satellites Get SPCX Stock Back Above Its $135 IPO Price?",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/26/spacex-just-slid-11-in-a-week-can-elon-musks-fcc-win-for-1-million-satellites-get-spcx-stock-back-above-its-135-ipo-price/?.tsrc=rss",
+      "pub": "2026-11-26T15:08:35.000Z",
+      "sum": "The FCC just handed SpaceX permission for a constellation no regulator has ever approved, yet the stock keeps sliding. Between orbital AI dreams, cooling doubts, and years of heavy spending, can Starmind move the needle on Wall Street any time soon?"
+     },
      {
       "hd": "Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion",
       "src": "Yahoo Finance",
@@ -15826,13 +15834,6 @@
       "url": "https://finnhub.io/api/news?id=5220c643ab33c82125b41d3ba846e0dd606b15554fd5c1409c31498ccd5d9ad0",
       "pub": "2026-11-26T12:38:35.000Z",
       "sum": "SpaceX and Musk promised stock to Trump Account holders, but the release never defines \"active,\" never names a transfer date, and never says where Musk's shares come from. The answers decide how big this gift really gets."
-     },
-     {
-      "hd": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ca7788213e9a1f61b0dd77cfccf3f504925b8609a8a56d277921da43433e570a",
-      "pub": "2026-11-26T11:45:59.000Z",
-      "sum": "Key TakeawaysTesla and SpaceX sank early on Nov. 25 before paring losses; SpaceX closed up 1."
      },
      {
       "hd": "Anthropic And SpaceX Slink Below Their IPO Prices",
@@ -15956,7 +15957,7 @@
     ],
     "fetched": {
      "Finnhub": 164,
-     "Yahoo": 14,
+     "Yahoo": 13,
      "Google News": 19,
      "Nasdaq": 0,
      "Seeking Alpha": 14
@@ -15964,6 +15965,27 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
+      "pub": "2026-11-26T15:25:05.000Z",
+      "sum": "Futures are rising with U.S. markets shut after a wild session in which the Nasdaq rallied off lows while the Dow Jones and Anthropic reversed higher."
+     },
+     {
+      "hd": "What TeraWulf (WULF) Long Term Data Center Contracts Mean For Shareholders",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-long-term-data-150921107.html?.tsrc=rss",
+      "pub": "2026-11-26T15:09:21.000Z",
+      "sum": "TeraWulf has been caught in a wider AI infrastructure selloff in recent days, even as its core energy and data center operations remain tied to long-dated contracts such as a roughly US$19b, 20-year lease with Anthropic covering about 401 MW in Kentucky. The shift from Bitcoin mining toward high-performance computing leases, combined with U.S. rules that incentivize domestic AI data center capacity, puts TeraWulf’s contracted power and infrastructure footprint at the center of how its..."
+     },
+     {
+      "hd": "AI's self-improvement era is nearly here. It will be felt everywhere",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/ais-self-improvement-era-nearly-150000618.html?.tsrc=rss",
+      "pub": "2026-11-26T15:00:00.000Z",
+      "sum": "In the Loop host Ejaaz Ahamadeen talks about how Anthropic's (ANT) revenue has blown past CEO Dario Amodei's early-year forecast because AI models are nearing recursive self-improvement and the broader economy will feel the effects in 2027."
+     },
      {
       "hd": "Anthropic Signed a $19 Billion Lease. Is TeraWulf (WULF) Ready?",
       "src": "Yahoo Finance",
@@ -15977,13 +15999,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/terawulf-wulf-justify-price-following-141246465.html?.tsrc=rss",
       "pub": "2026-11-26T14:12:46.000Z",
       "sum": "TeraWulf (WULF) is in the spotlight after CEO Paul Prager highlighted that recent AI and tech stock selling has weighed on the share price, while contracted demand for its energy infrastructure has remained intact. The recent AI pullback has not just hit sentiment. TeraWulf’s share price has fallen about 39% over the past 90 days and is down roughly 21% year to date. The 1-year total shareholder return is lower by about 32%, even after a very large 3-year total shareholder return near 7x..."
-     },
-     {
-      "hd": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
-      "pub": "2026-11-26T14:07:10.000Z",
-      "sum": "Futures are rising with U.S. markets shut after a wild session in which the Nasdaq rallied off lows while the Dow Jones and Anthropic reversed higher."
      },
      {
       "hd": "Is Anthropic Joining the S&P 500? Here's What Investors Need to Know.",
@@ -16005,20 +16020,6 @@
       "url": "https://finance.yahoo.com/technology/ai/articles/charles-schwab-schw-unveils-ai-131409528.html?.tsrc=rss",
       "pub": "2026-11-26T13:14:09.000Z",
       "sum": "Charles Schwab (NYSE:SCHW) unveiled new generative AI assistants for clients, including thinkorswim Assistant and Charley. The firm introduced support for external AI models such as Anthropic’s Claude within its trading and research workflows. Retail traders received expanded access to options trading in extended hours along with broader feature upgrades across Schwab platforms. These AI assistants and extended hours options tools matter, but investors need to weigh them alongside broader..."
-     },
-     {
-      "hd": "Will Anthropic’s Float Tripling by February Sink a Stock Already Below Its IPO Price?",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/will-anthropics-float-tripling-by-february-sink-a-stock-already-below-its-ipo-price?ref=yahoofinance&tlnk=yf-261126-rh7435mm&.tsrc=rss",
-      "pub": "2026-11-26T13:02:31.000Z",
-      "sum": "Key TakeawaysAnthropic fell 6. 5% on Tuesday to $81."
-     },
-     {
-      "hd": "5 things I'm thankful for in AI",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
-      "pub": "2026-11-26T12:00:00.000Z",
-      "sum": "Happy Thanksgiving. Host Ejaaz Ahamadeen counts five things he's grateful for in AI: Jensen Huang back at Nvidia, open-source AI back on the table, Google breaking up the two-horse race, Anthropic's record-breaking IPO and how fast AI is getting smarter and cheaper. Then he gets to the part that worries him."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16142,19 +16143,33 @@
     ],
     "fetched": {
      "Finnhub": 144,
-     "Yahoo": 14,
-     "Google News": 62,
+     "Yahoo": 16,
+     "Google News": 56,
      "Nasdaq": 13,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T15:00:13.473Z",
-  "lastAttempt": "2026-11-26T15:00:13.473Z",
+  "asOf": "2026-11-26T15:30:11.138Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "New UK-EU treaty has 10-year termination clause",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T15:23:17.000Z",
+    "sum": "Text of the treaties was published this afternoon, alongside legislation designed to enact the bulk of the deal."
+   },
+   {
+    "hd": "Israel's Eisenkot reaches deal with left-wing faction as coalition talks gain steam",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQnltOGlBZG16OU1LUGlBS25WVUFhN2VnM0NhWHpzTlVscC1iOE5kdFZnaGhBbmNOdm80b05IQWttZm9MV0liVmZzVE56bXVxSHJXYXBmMktWSVQwZ2hfNmVGdWVJQmp5RkRtS1dXR0wwT0pXX1dFdUM5dDJrUWNTNHVsYjRNWXBWcmx3RTlqQ0ZQNEJWWFVxalA1Z0tkRExSbGJVOWpWX1pMY25aZHB3VnlvTWF0QUNvaElpM0FORVM5a1ZPa05mWDBXQQ?oc=5",
+    "pub": "2026-11-26T14:50:34.000Z",
+    "sum": ""
+   },
    {
     "hd": "North Korea's Kim vows to build more nuclear weapons after ignoring Trump's overture",
     "src": "NPR",
@@ -16205,9 +16220,9 @@
     "sum": ""
    },
    {
-    "hd": "Ukraine says it downed a Russian jet-powered drone with a laser",
+    "hd": "Ukraine says it has intercepted a Russian jet-powered drone with a laser for the first time",
     "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/russia-ukraine-war-laser-interception-russian-jet-powered-geran-drone/",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGVSaWFRWm5vY1pIZ2R5RFVxSjRwVjBNN3dWcTh0Z3VFR0o0Xzc0TWhMTHJQX0RHWG54RWI2dWhxenZmbGo1RFJsZ2Q3TC1aSmwyTzBRZWc3S3lDT2tNVGlQVWQzbmVyYTJ6U1pUcm9jcG5rQngtb3Q4R2JoXzBxSW1XWkZYZVV6SWt6YTNQbHBDejBFSzJ0Zy1OX0RVTVJY?oc=5",
     "pub": "2026-11-26T12:02:53.000Z",
     "sum": "Ukraine has used a laser weapon to shoot down a Russian jet-powered drone for the first time, a senior adviser to President Volodymyr Zelenskyy says."
    },
@@ -16216,6 +16231,13 @@
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
     "pub": "2026-11-26T11:46:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "US warns EU leaders against Big Tech tax",
+    "src": "POLITICO.eu",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQTmFaekZkXy1DMFpvdmFRMkpoSnVwcm45d2dZYnFDeVFma1hBUURCb0RPNDFKdVdSajZ2Znk1Y0ltZDlYODVYbTFBTFlxVExKVzY2My1tVzF5NnRNXzZpRExpQ0FjU3MxaEhORTdlM2tWWWxzc2o5XzVBRzV3NlZ2MVVMZGV2MWkzZnI2ZDJsaW84WmY0azEyVQ?oc=5",
+    "pub": "2026-11-26T11:21:00.000Z",
     "sum": ""
    },
    {
@@ -16282,11 +16304,11 @@
     "sum": "Dozens of Brazilians have joined the Russian army, some say lured by a pair of recruiters promising money and adventure. Here is one soldier’s story."
    },
    {
-    "hd": "New UK-EU treaty has 10-year termination clause",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T09:59:14.000Z",
-    "sum": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal."
+    "hd": "North Korea pauses military aid to Russia, Ukrainian intelligence says",
+    "src": "The Kyiv Independent",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOYmYteGRYRHYtWlFKUGNqMFVfVDYwTnZyNU02bjlEUnRCelpTTmxpWWN6WTU1amFZTnZLWW5JaDdyYW1haFdrSEtkQjRLeVJEdDFNSzNzQkJ4XzBxOGs2TS0yWk5Cb3NDNTdsLWdveXBfY09WTWpDYktLRU1FV0otU21YR1BIdG5VWm9iNzRaS1pfc3FncDhXVUI3T3ZMdmc?oc=5",
+    "pub": "2026-11-26T09:56:07.000Z",
+    "sum": ""
    },
    {
     "hd": "China's defence ministry urges Japan to stop 'stirring up' South China Sea disputes",
@@ -16296,18 +16318,18 @@
     "sum": ""
    },
    {
-    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
-    "pub": "2026-11-26T09:14:29.000Z",
-    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
+    "hd": "Russian court arrests deputy aerospace forces commander, Kommersant reports",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNQzFOeDFjM0VPTXBIZkxlelN0ZFAtQ25fOUZkTVVheGM0cURoX1RqVXUzTGttUDlLTmhuczVlelh1eGJUYkVWQllDQ1ZzTlB3OUdQMjloczZsRGR4WGwzbF9XWURoSk9Tb2FybGNlbExBc243elBHTGxtNnpacDR3Y1pSaDctcFZqdUs5UkJiZ1R1Q09lTWxkUmN2TnNSZUdaQlpPNUl1N0tZVDJGd0xOT0lTU0tGUzA?oc=5",
+    "pub": "2026-11-26T09:26:51.000Z",
+    "sum": ""
    },
    {
-    "hd": "Israel's Eisenkot resumes meetings with left-wing faction as coalition talks gain steam",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOQnltOGlBZG16OU1LUGlBS25WVUFhN2VnM0NhWHpzTlVscC1iOE5kdFZnaGhBbmNOdm80b05IQWttZm9MV0liVmZzVE56bXVxSHJXYXBmMktWSVQwZ2hfNmVGdWVJQmp5RkRtS1dXR0wwT0pXX1dFdUM5dDJrUWNTNHVsYjRNWXBWcmx3RTlqQ0ZQNEJWWFVxalA1Z0tkRExSbGJVOWpWX1pMY25aZHB3VnlvTWF0QUNvaElpM0FORVM5a1ZPa05mWDBXQQ?oc=5",
-    "pub": "2026-11-26T09:02:23.000Z",
-    "sum": ""
+    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
+    "src": "The New York Times",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNc0pLUEZsX0FSZ1BkN3NfS2laZGh2dlg4R3hQUktxdXh2Q3RzQ0RwWGNmbUUwS09YODlVYThWWVBxOUFybnY4TWlrbzkyZEVXTERTOExSeVJudk9RekNvYnJwRUFSR0czRUllaUlNcEhDeVJFRlBCc19KR09vcG9OQjViTF85dw?oc=5",
+    "pub": "2026-11-26T09:14:29.000Z",
+    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
    },
    {
     "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
@@ -16331,13 +16353,6 @@
     "sum": ""
    },
    {
-    "hd": "South Korea unification minister nominee pledges 'realistic' approach to North Korea",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUFRkc1Q0anhMc2ExSG5hX2Z2UFNHQVY2ejc5SmQ1b2NZZXBUMnVUSnVUQnFiMHpwVk5GbmgtNFBxZVpUUFV1V1g3VVVjYW03NHpHYnMyUXdSRTB4eFVmajNDZDg4bEEwcXR5eXBNZmptVkxvZVdXc252WEhhV25KWmhkZ3hCaERjUjB4VlNOMUVMNTVuYXdhLVZsTndWVWhEZVY0eW45RlI0OEVsc1p1TzNJVnRETUpobGZLZDR5enpZTHBlRDdwRFhQRnN1REE?oc=5",
-    "pub": "2026-11-26T07:55:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "'Unacceptable': Major economies push back against new US tariffs",
     "src": "France 24",
     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSzlzNkVzNEdFVU9tanZOU0tVbWJxVW9oV2VueklTWlU5bDNSbFFLNkRzbEZlRGVJVnkzWjk5cGdLZzdmXy1PNmtHTHROU0VPY1ZSdk1QUmVZWVYzQ0xSWXhHUWxtVXd4M0xvSHRpNFNiNkdWMm9sRW16ZjktcEg5dnl6bWx1a0pKRlo2bXl4VE1yNTlqTVpnTFF6WVJhd2dWSlhXQVhMek55Nkk?oc=5",
@@ -16349,20 +16364,6 @@
     "src": "Kyiv Post",
     "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5uVXlQem1KNzN0Z0lpN0dfQ0k4M0FBX2xvbFFBSVAxSUZoVEFlcnlVYnRFMGxNRW1oRjhjZ3lfcWdKTWFxeDFFYUg1dw?oc=5",
     "pub": "2026-11-26T07:08:39.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "A Chinese consumer advocate is stranded in South Korea as a crackdown in China targets campaigners",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxONTZhUFowQURIdVh5VjR6VUFXcW5zM0tZdDBDeU5jQXo2Yld4N1pvcjRKVEI2cmdZOTlOQXhBdTVlaFQxczViV3ZCd19NYkdvNjQwUWRyUHJVZkpTdkVsdk1DbmJrN29JMlQxcGVmMHh2c3BudlJ3N0h3R25zTFNadndRZWVrdUFEY1dPSDU4YVJubk5ZVk1YUTlZYk1JdzI4MlZhRUJudw?oc=5",
-    "pub": "2026-11-26T07:08:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Live - EU summit: Leaders choose Pablo Hernández de Cos as new ECB president",
-    "src": "Euronews",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbTNQLUtHb21Xd1FJMWJOaFRINDZKZ1ZnRUxGZC1GeHJSbS13MEZQUXE2dXlvNnNTWHVyRFVTYkdPZm9sZVNSMk12d1hGV1A1bmJGbzJlaUxtb3ZaM1JlLUZtamZEZXZYaHpJaW1jYXhXd0FfT3RBcWpMTFhYUzlxd3pxdjVjLUdPUml3M2RVWTVySEgtTUMxRUVmalpLRi1F?oc=5",
-    "pub": "2026-11-26T07:00:51.000Z",
     "sum": ""
    }
   ],
@@ -16382,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T15:00:13.473Z",
-  "lastAttempt": "2026-11-26T15:00:13.473Z",
+  "asOf": "2026-11-26T15:30:11.138Z",
+  "lastAttempt": "2026-11-26T15:30:11.138Z",
   "lastError": null
  }
 }
