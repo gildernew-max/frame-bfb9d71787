@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T04:30:12.020Z",
+ "generatedAt": "2026-11-26T04:45:10.452Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,10 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T04:30:12.020Z",
+  "at": "2026-11-26T04:45:10.452Z",
   "ran": [
    "alerts",
    "nflScoreboard",
-   "stockNews",
-   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13896,62 +13894,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T04:30:12.020Z",
-  "lastAttempt": "2026-11-26T04:30:12.020Z",
+  "asOf": "2026-11-26T04:45:10.452Z",
+  "lastAttempt": "2026-11-26T04:45:10.452Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7247.5,
-    "lastTime": 1795666812,
+    "last": 7249.75,
+    "lastTime": 1795667707,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 51,
-    "changePct": 0.7086778295004516,
-    "expectedOpen": 7233.682769401793,
+    "change": 53.25,
+    "changePct": 0.7399430278607656,
+    "expectedOpen": 7235.928479816576,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26380.75,
-    "lastTime": 1795666815,
+    "last": 26404.25,
+    "lastTime": 1795667710,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 276,
-    "changePct": 1.0572788477192847,
-    "expectedOpen": 23835.17070618374,
+    "change": 299.5,
+    "changePct": 1.147300778593934,
+    "expectedOpen": 23856.40310145663,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50411,
-    "lastTime": 1795666820,
+    "last": 50424,
+    "lastTime": 1795667694,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 184,
-    "changePct": 0.3663368307882215,
-    "expectedOpen": 50366.78862862603,
+    "change": 197,
+    "changePct": 0.392219324267824,
+    "expectedOpen": 50379.77722738766,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2720.8,
-    "lastTime": 1795666822,
+    "last": 2721.8,
+    "lastTime": 1795667665,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 15.100048828125182,
-    "changePct": 0.5580829027839967,
+    "change": 16.100048828125182,
+    "changePct": 0.5950419159061607,
     "expectedOpen": null,
     "valid": true
    }
@@ -13964,39 +13962,6 @@
   "season": 2026,
   "byes": [],
   "games": [
-   {
-    "id": "401873079",
-    "start": "2026-11-26T01:00Z",
-    "state": "in",
-    "status": "Q4 0:27",
-    "period": 4,
-    "clock": "0:27",
-    "completed": false,
-    "away": {
-     "name": "Green Bay Packers",
-     "short": "Packers",
-     "id": "9",
-     "abbrev": "GB",
-     "score": "13",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
-     "record": "6-4",
-     "winner": false,
-     "color": "#204e32",
-     "rank": null
-    },
-    "home": {
-     "name": "Los Angeles Rams",
-     "short": "Rams",
-     "id": "14",
-     "abbrev": "LAR",
-     "score": "26",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
-     "record": "6-4",
-     "winner": false,
-     "color": "#003594",
-     "rank": null
-    }
-   },
    {
     "id": "401873081",
     "start": "2026-11-26T18:00Z",
@@ -14491,10 +14456,43 @@
      "color": "#bd1c36",
      "rank": null
     }
+   },
+   {
+    "id": "401873079",
+    "start": "2026-11-26T01:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Green Bay Packers",
+     "short": "Packers",
+     "id": "9",
+     "abbrev": "GB",
+     "score": "13",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/gb.png",
+     "record": "6-5",
+     "winner": false,
+     "color": "#204e32",
+     "rank": null
+    },
+    "home": {
+     "name": "Los Angeles Rams",
+     "short": "Rams",
+     "id": "14",
+     "abbrev": "LAR",
+     "score": "26",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/lar.png",
+     "record": "7-4",
+     "winner": true,
+     "color": "#003594",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-26T04:30:12.020Z",
-  "lastAttempt": "2026-11-26T04:30:12.020Z",
+  "asOf": "2026-11-26T04:45:10.452Z",
+  "lastAttempt": "2026-11-26T04:45:10.452Z",
   "lastError": null
  },
  "alerts": {
@@ -14505,8 +14503,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T04:30:12.020Z",
-  "lastAttempt": "2026-11-26T04:30:12.020Z",
+  "asOf": "2026-11-26T04:45:10.452Z",
+  "lastAttempt": "2026-11-26T04:45:10.452Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15149,7 +15147,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T04:30:12.020Z",
+  "lastAttempt": "2026-11-26T04:45:10.452Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
