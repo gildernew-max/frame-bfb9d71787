@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T12:15:18.215Z",
+ "generatedAt": "2026-11-26T12:30:13.634Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T12:15:18.215Z",
+  "at": "2026-11-26T12:30:13.634Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13895,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T12:15:18.215Z",
-  "lastAttempt": "2026-11-26T12:15:18.215Z",
+  "asOf": "2026-11-26T12:30:13.634Z",
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7240.75,
-    "lastTime": 1795694716,
+    "last": 7247.25,
+    "lastTime": 1795695621,
     "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 44,
-    "changePct": 0.6113870844478411,
-    "expectedOpen": 7226.694589224302,
+    "change": 50.5,
+    "changePct": 0.7017056310139993,
+    "expectedOpen": 7233.181971723347,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26271.5,
-    "lastTime": 1795694705,
+    "last": 26302,
+    "lastTime": 1795695622,
     "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 165.75,
-    "changePct": 0.6349175947827586,
-    "expectedOpen": 23735.5534131178,
+    "change": 196.25,
+    "changePct": 0.7517500933702346,
+    "expectedOpen": 23763.109296074617,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50422,
-    "lastTime": 1795694676,
+    "last": 50446,
+    "lastTime": 1795695620,
     "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 193,
-    "changePct": 0.38424017997571125,
-    "expectedOpen": 50375.77305739712,
+    "change": 217,
+    "changePct": 0.4320213422524836,
+    "expectedOpen": 50399.751054171895,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2718.4,
-    "lastTime": 1795694700,
+    "last": 2720.7,
+    "lastTime": 1795695621,
     "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 12.599951171875091,
-    "changePct": 0.4656645333912274,
+    "change": 14.899951171874818,
+    "changePct": 0.5506671188925416,
     "expectedOpen": null,
     "valid": true
    }
@@ -14504,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T12:15:18.215Z",
-  "lastAttempt": "2026-11-26T12:15:18.215Z",
+  "asOf": "2026-11-26T12:30:13.634Z",
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,8 +15149,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T12:15:18.215Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
@@ -15359,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T12:15:18.215Z",
-  "lastAttempt": "2026-11-26T12:15:18.215Z",
+  "asOf": "2026-11-26T12:30:13.634Z",
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15407,37 +15408,58 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Here’s Why $35 Is The Price to Buy Intel, and No Higher",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/26/heres-why-35-is-the-price-to-buy-intel-and-no-higher/?.tsrc=rss",
+      "pub": "2026-11-26T12:15:26.000Z",
+      "sum": "Intel's data center business is booming, Nvidia is buying in, and analysts see big upside. Yet the stock has plunged in a month, and its foundry still has to prove itself. What would make the entry point finally worth the risk?"
+     },
+     {
+      "hd": "Does S&P's Credit Warning Matter For Nvidia Stock?",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/nvda/articles/629186/does-s-p-s-credit-warning-matter-for-nvidia-stock/2026-11-26?.tsrc=rss",
+      "pub": "2026-11-26T12:03:23.000Z",
+      "sum": "S&P Global Ratings put Nvidia on CreditWatch with negative implications on Wednesday, Nov 25. That is a formal warning that it could cut Nvidia's credit rating. A credit rating is a grade on how safely a company can repay what it borrows. S&P cited rising management and governance risk, not money trouble."
+     },
+     {
+      "hd": "5 things I'm thankful for in AI",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
+      "pub": "2026-11-26T12:00:00.000Z",
+      "sum": "Happy Thanksgiving. Host Ejaaz Ahamadeen counts five things he's grateful for in AI: Jensen Huang back at Nvidia, open-source AI back on the table, Google breaking up the two-horse race, Anthropic's record-breaking IPO and how fast AI is getting smarter and cheaper. Then he gets to the part that worries him."
+     },
+     {
       "hd": "Nvidia: Upgrade To Hold, Too Early To Buy",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4972036-nvidia-upgrade-to-hold-too-early-to-buy?source=feed_symbol_NVDA",
       "pub": "2026-11-26T12:00:00.000Z",
-      "sum": ""
+      "sum": "Analyst rates Nvidia Corporation stock a Hold after a nearly 50% six-week drop; worst-case macro risk is priced in, but investigations make a Buy premature."
      },
      {
       "hd": "Nvidia Makes A Record $115.8 Billion In Revenue. Now S&P Warns Its Credit Rating Could Be Cut In 90 Days.",
       "src": "Yahoo Finance",
-      "url": "https://www.ibtimes.com/nvidia-credit-downgrade-governance-concerns-3810220?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d33c229a85652a12b8cb8bf6d2da6a47bfe1163bfd1e45c874be59045ae5fc1d",
       "pub": "2026-11-26T11:53:40.000Z",
       "sum": "S&P Global Ratings placed Nvidia's AA credit rating on negative CreditWatch, warning of a possible downgrade within 90 days as governance concerns persist despite record AI chip revenue."
      },
      {
       "hd": "Michael Burry Turns Bullish, Exits Nasdaq Shorts but Eyes Nvidia at $200",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/michael-burry-turns-bullish-exits-113036657.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=374b58b20b032873ee701b469960f1de8d415a16564283e1f4d425475d08e221",
       "pub": "2026-11-26T11:30:36.000Z",
       "sum": "The Big Short investor unwinds Nasdaq 100 put options while retaining Nvidia calls that have doubled in value."
      },
      {
       "hd": "Nvidia Wins Three Wall Street Upgrades as Jensen Huang Returns as CEO",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-wins-three-wall-street-112625833.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=57e4372dd65b6fa8b1824e7800c1d48adc7733f0d3b3eb24f5ee9a53896d0847",
       "pub": "2026-11-26T11:26:25.000Z",
       "sum": "Bernstein, Oppenheimer and StoneX restore bullish ratings as leadership uncertainty eases."
      },
      {
       "hd": "Nvidia Is 37.6% Below Its Record. Trim Or Hold?",
       "src": "Yahoo Finance",
-      "url": "https://www.trefis.com/stock/nvda/articles/629192/nvidia-is-37-6-below-its-record-trim-or-hold/2026-11-26?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e7a8fd991fd0f7465ee3eaa4ee3cc01d47d9dfa544a8c8bc48bf7d99a750c8bb",
       "pub": "2026-11-26T11:11:08.000Z",
       "sum": "Nvidia closed at $149.30 on Wednesday, Nov 25. Its record close was $239.24 on Tuesday, Oct 6. Wednesday's close was 37.6% below it. The QQQ fund fell 16.6% over the same stretch."
      },
@@ -15451,30 +15473,9 @@
      {
       "hd": "Nvidia, AMD and Micron Stocks Plunge as AI Selloff Deepens",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-stocks-plunge-110624788.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=0abdffbfc7cbbce236d2df7d1aec91d05272d2f401c3453fd171aab9aab97069",
       "pub": "2026-11-26T11:06:24.000Z",
       "sum": "Semiconductor stocks extend losses Wednesday as investor enthusiasm following Jensen Huang's return fades."
-     },
-     {
-      "hd": "ProShares Ultra QQQ (QLD) Sells Apple and Nvidia on Tuesday",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/proshares-ultra-qqq-qld-sells-110520288.html?.tsrc=rss",
-      "pub": "2026-11-26T11:05:20.000Z",
-      "sum": "The 2x leveraged ETF cut all 101 positions, selling $222.2 million of stock and buying nothing."
-     },
-     {
-      "hd": "State Street Tech Select SPDR (XLK) Adds Apple and Nvidia on Nov. 24",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/state-street-tech-select-spdr-110452004.html?.tsrc=rss",
-      "pub": "2026-11-26T11:04:52.000Z",
-      "sum": "The fund bought $306.2 million of stock and sold nothing, lifting all 76 positions."
-     },
-     {
-      "hd": "iShares MSCI ACWI (ACWI) Adds Apple and Nvidia on Tuesday",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-msci-acwi-acwi-adds-110448380.html?.tsrc=rss",
-      "pub": "2026-11-26T11:04:48.000Z",
-      "sum": "The $31.78 billion fund bought $327.8 million more than it sold, lifting 551 positions and trimming one."
      },
      {
       "hd": "Nvidia tightens AI chip shipments to Southeast Asia amid US export curbs - report",
@@ -15488,6 +15489,13 @@
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-26T06:01:45.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOM1ZtZ1FmQ3d0Nk9xZzFmaDNtd3ZURjZ1cm1sWkptUktqcm1aOUc3eWpIYjVpUGoxWGxWd2FjRTZiTzBGRGtaTTA3ZUFsTEJLNk5BV3VfV2VKNHJVbk1mTDJqYkZkdEFPQ09jdzVHRzBHazlKVko5bVp4WDZMSUpUaEpyZk5ZUUUxbm42MjBIRWJCaGZzVXRkNklKN2dfdDRES3RwazQ1UU55Q3Bf?oc=5",
+      "pub": "2026-11-26T05:09:00.000Z",
       "sum": ""
      },
      {
@@ -15573,19 +15581,12 @@
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeFd1SWlvYjZ0MVJTTHNmN2xNV0t3c0swT19CRF92UnJhLUp0dFNJbzE5aXpVQzlJNDBZSTRRb2RjLXVQcmhUUVdjR1VUdGpPTnVhcm0zT1RhZnF5TmlyaG9VVGIzNXp3eHlBUk5jM1NkdWVVMXNtOWVoNjdMUy1nRkdMWVUtQ1dw?oc=5",
       "pub": "2026-11-25T21:33:58.000Z",
       "sum": ""
-     },
-     {
-      "hd": "SA Asks: What should Nvidia investors be watching for in the next few weeks? (Update)",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
-      "pub": "2026-11-25T21:00:56.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 126,
-     "Yahoo": 9,
-     "Google News": 89,
+     "Finnhub": 121,
+     "Yahoo": 8,
+     "Google News": 90,
      "Nasdaq": 10,
      "Seeking Alpha": 25
     }
@@ -15595,14 +15596,14 @@
      {
       "hd": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=ca7788213e9a1f61b0dd77cfccf3f504925b8609a8a56d277921da43433e570a",
       "pub": "2026-11-26T11:45:59.000Z",
       "sum": "Key TakeawaysTesla and SpaceX sank early on Nov. 25 before paring losses; SpaceX closed up 1."
      },
      {
       "hd": "General Motors (GM) Bets On Egypt Assembly And Wider EV Charging Access",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/general-motors-gm-bets-egypt-101402167.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=bb79cfb7119a3ca47f6457e8778f0b3c01e1b27b9520d0057d7e618f1dfe2244",
       "pub": "2026-11-26T10:14:02.000Z",
       "sum": "General Motors (NasdaqGS:GM) is starting local production of the Chevrolet Groove in Egypt with a strong local sourcing commitment. The automaker is also broadening its collaboration with Tesla by adopting the NACS charging standard for GM electric vehicles in South Korea. Together, Egypt based Groove assembly and NACS charging access in South Korea only capture part of General Motors' current repositioning efforts. Ask Charlie whether the 3 warning signs (1 major) affect GM’s Egypt Groove..."
      },
@@ -15769,8 +15770,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 160,
-     "Yahoo": 9,
+     "Finnhub": 156,
+     "Yahoo": 8,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 9
@@ -15781,58 +15782,58 @@
      {
       "hd": "JPMorgan Says S&P Could Waive Its Rules for a Tesla-SpaceX Merger. That’s Good News for SpaceX Holders",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/jpmorgan-says-sp-could-waive-its-rules-for-a-tesla-spacex-merger-thats-good-news-for-spacex-holders?ref=yahoofinance&tlnk=yf-261126-gpc9wr29&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=ca7788213e9a1f61b0dd77cfccf3f504925b8609a8a56d277921da43433e570a",
       "pub": "2026-11-26T11:45:59.000Z",
       "sum": "Key TakeawaysTesla and SpaceX sank early on Nov. 25 before paring losses; SpaceX closed up 1."
      },
      {
+      "hd": "Elon Musk's 2-Share SpaceX Giveaway Comes With an Extraordinary Prediction",
+      "src": "Yahoo Finance",
+      "url": "https://beincrypto.com/musk-spacex-shares-every-american-child/?.tsrc=rss",
+      "pub": "2026-11-26T11:42:17.000Z",
+      "sum": "Elon Musk pledges 2 SpaceX shares to every US child with a Trump Account and urges families to hold them for decades."
+     },
+     {
       "hd": "SpaceX's $18.4 Billion Share Pledge Raises Dilution Questions",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/spacexs-18-4-billion-share-112938645.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=c6c19d1019fee39c14bc5cfa1803db5be611b32d9e5c0e111e51026bb661fe42",
       "pub": "2026-11-26T11:29:38.000Z",
       "sum": "Musk plans to match SpaceX's contribution to tax-advantaged investment accounts for American children."
      },
      {
       "hd": "SpaceX Wins FCC Approval for 1 Million AI Data Center Satellites",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/spacex-wins-fcc-approval-1-110903667.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=3239066b8167c42b6c76e6e9baf2d378f4882378148cff1a97036d1271ce4a22",
       "pub": "2026-11-26T11:09:03.000Z",
       "sum": "The regulatory authorization advances SpaceX's plans to expand computing infrastructure beyond Earth."
      },
      {
       "hd": "32 ETFs Add to SpaceX (SPCX) Holdings on Nov. 24",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/32-etfs-add-spacex-spcx-110108746.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=da18453354682b6a2eabcd5fbb99f1f265ec2a30cdf73e1de2afcb271018a12c",
       "pub": "2026-11-26T11:01:08.000Z",
       "sum": "ETFs bought $62.8 million of SpaceX stock in Tuesday's session."
      },
      {
       "hd": "Musk says will give two SpaceX shares to 'every child in America'",
       "src": "Yahoo Finance",
-      "url": "https://www.euronews.com/2026/11/26/musk-says-will-give-two-spacex-shares-to-every-child-in-america?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8c20f17179358502888db81078335344614bcd9a1f65d90097c46097b0a6d82f",
       "pub": "2026-11-26T10:59:56.000Z",
       "sum": "Tech billionaire Elon Musk said on Wednesday he would give every child in the United States two shares in his SpaceX rocket company, doubling an offer he made last month.View on euronews"
      },
      {
       "hd": "Why SpaceX’s Approval for Data Centers Is Impossible for Rivals to Copy",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/f2facb44-8fb6-3aed-a0b9-e6e29b08bf05/why-spacex%E2%80%99s-approval-for.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=bfb29c8bccbbe2136f3b9e8cef61c3426692ab3a03e6939a2efc2c333aef6f82",
       "pub": "2026-11-26T10:36:00.000Z",
       "sum": "It may be getting harder to build data centers on earth but it just got easier for Elon Musk’s company to deploy them in space."
      },
      {
       "hd": "Musk Calls FCC’s Million-Satellite Approval “a Great Asset.” SpaceX Has Until 2033 to Fly the First One",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/musk-calls-fccs-million-satellite-approval-a-great-asset-spacex-has-until-2033-to-fly-the-first-one?ref=yahoofinance&tlnk=yf-261126-wm7jp73w&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b5a4e02c86cfe000c2b0203988f3be077353c67f1a4592d73cbe846a97e92f44",
       "pub": "2026-11-26T09:50:35.000Z",
       "sum": "Key TakeawaysThe FCC approved SpaceX’s request for up to 1 million Starmind data-center satellites, and Elon Musk called it “a great asset to America and the world. ”SpaceX has until November 2033 to have its first satellite working and until 2035 to reach 100,000."
-     },
-     {
-      "hd": "SpaceX Catalyst Puts 3 Space AI Infrastructure Stocks In Focus",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0ed137de62933c1872d25076fbbc0fc3b384a7eb9296c8da5ecc421c1ea37db4",
-      "pub": "2026-11-26T09:12:00.000Z",
-      "sum": "SpaceX’s FCC approval for its “Starmind” orbital data centers has pushed the idea of space-enabled AI from science fiction into the investment pages, and investors are paying attention after the stock moved 1.3% on the news. The potential prize is simple: Data and power are scarce on the ground, yet AI keeps demanding more. This article breaks down three stocks exposed to that story and how this catalyst might matter for your portfolio. The three stocks covered below are only a small sample..."
      },
      {
       "hd": "Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk",
@@ -15863,7 +15864,7 @@
       "sum": ""
      },
      {
-      "hd": "SpaceX Receives Government Approval to Launch Space Data Centers",
+      "hd": "SpaceX Wins Government Approval to Launch Space Data Centers",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVVHT0RrcFA5ZTBDVVhtcHdtNEdyTWswVGdocnhkX0JGYXljVEtWSGppeHNRSHRPUFBPZTBfLXpSeXVrM2RsdmJ0bnJlcFlmNkFiNUxqWDQtblFzcjdVSDNiRThEbEdtRzlSOW9URDYxYUZPMDlFZ0h0Zk1RSUN4YWE4Tk9CV1E2ekdQODVHSktDMXdKejdJNzl4cEUyVUlnQnItaE1XRkgwRVdrT05FYUY5dU4zZw?oc=5",
       "pub": "2026-11-25T20:54:12.000Z",
@@ -15955,15 +15956,36 @@
      }
     ],
     "fetched": {
-     "Finnhub": 161,
+     "Finnhub": 164,
      "Yahoo": 13,
-     "Google News": 16,
+     "Google News": 18,
      "Nasdaq": 0,
      "Seeking Alpha": 14
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "5 things I'm thankful for in AI",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/5-things-im-thankful-ai-120000522.html?.tsrc=rss",
+      "pub": "2026-11-26T12:00:00.000Z",
+      "sum": "Happy Thanksgiving. Host Ejaaz Ahamadeen counts five things he's grateful for in AI: Jensen Huang back at Nvidia, open-source AI back on the table, Google breaking up the two-horse race, Anthropic's record-breaking IPO and how fast AI is getting smarter and cheaper. Then he gets to the part that worries him."
+     },
+     {
+      "hd": "Anthropic Broke Its $83 IPO Price. What Did Facebook Do Next?",
+      "src": "Yahoo Finance",
+      "url": "https://www.trefis.com/stock/ant/articles/629153/anthropic-broke-its-83-ipo-price-what-did-facebook-do-next/2026-11-26?.tsrc=rss",
+      "pub": "2026-11-26T11:38:21.000Z",
+      "sum": "Anthropic (ANT) closed at $82.79 on Wednesday, Nov 25. That is 0.3% below its $83 IPO price. It is also 14.8% below its $97.17 first close, only five trading days in. So what happened to other big listings that broke this fast."
+     },
+     {
+      "hd": "KPMG taps Anthropic’s Claude Mythos to power cybersecurity services",
+      "src": "Yahoo Finance",
+      "url": "https://www.internationalaccountingbulletin.com/news/kpmg-taps-anthropics-claude-mythos-to-power-cybersecurity-services/?.tsrc=rss",
+      "pub": "2026-11-26T11:25:04.000Z",
+      "sum": "The services help clients prioritise vulnerabilities, uncover attack paths, assess data-breach risks, and bolster cyber defences."
+     },
      {
       "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
       "src": "Yahoo Finance",
@@ -16007,25 +16029,11 @@
       "sum": "Key TakeawaysBroadcom fell 15% in the past week and hit a 52-week low, mostly after analyst Ming-Chi Kuo said Alphabet’s Google cut 2027 shipments of one Broadcom-designed TPU line by about 20%. Marvell fell too, and Anthropic’s slide below its IPO price added to the selling."
      },
      {
-      "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3",
-      "pub": "2026-11-26T07:32:42.000Z",
-      "sum": "The Anthropic IPO and Nvidia CEO’s ouster and rehiring flummoxed AI investors this month."
-     },
-     {
-      "hd": "Anthropic’s Potential Bond Issue Could Reportedly Be Rated Junk — Here’s When Crypto Bettors Think It Could Go Bankrupt",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=cfb89dac189e935bd15543e91fd7902b70dd6f00ad28a271209eb681a76734e5",
-      "pub": "2026-11-26T06:12:44.000Z",
-      "sum": "Anthropic PBC (NASDAQ:ANT) debuted on the stock market only last week in the largest initial public offering till date, but bettors in prediction markets are already betting on when the Claude-maker will announce bankruptcy. Here’s What Prediction Market Is Saying..."
-     },
-     {
-      "hd": "2 Ways Anthropic's IPO Pays Off for Alphabet Investors",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0f795e97b828fe75c0ad5b79dca686f5a424cf13254852e72294887e130361a3",
-      "pub": "2026-11-26T05:20:02.000Z",
-      "sum": "A large equity stake and nearly guaranteed cloud sales make Anthropic's future success a boon for Alphabet."
+      "hd": "Anthropic's IPO Creates An Instant Securities Lending Market",
+      "src": "Seeking Alpha",
+      "url": "https://finnhub.io/api/news?id=095f2576d8fccb6d3f0a19e0475bb3c70721574ce38431e1f669d31c361276f0",
+      "pub": "2026-11-26T07:10:00.000Z",
+      "sum": "With 24.8 million ANT shares already on loan and more than 87 million still available, securities lending activity is firmly established."
      },
      {
       "hd": "What Comes Next After Anthropic’s Historic IPO",
@@ -16131,30 +16139,37 @@
       "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
       "pub": "2026-11-25T13:29:43.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Chart Of The Day: The Anthropic Aftermath",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/article/4971858-chart-of-day-anthropic-aftermath?source=feed_symbol_ANT",
-      "pub": "2026-11-25T13:05:00.000Z",
-      "sum": "The MoneyShow Chart of the Day shows Anthropicâs post-IPO journey. After pricing at $83 on November 18 and opening at $111.50 on November 19, the stock has pretty much slumped non-stop."
      }
     ],
     "fetched": {
      "Finnhub": 148,
-     "Yahoo": 0,
-     "Google News": 63,
+     "Yahoo": 15,
+     "Google News": 57,
      "Nasdaq": 13,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-26T12:00:14.469Z",
-  "lastAttempt": "2026-11-26T12:00:14.469Z",
+  "asOf": "2026-11-26T12:30:13.634Z",
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Serbia sets presidential election for Dec. 27 after students won parliamentary vote",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/serbia-sets-presidential-election-dec-27-after-students-138465505",
+    "pub": "2026-11-26T12:09:52.000Z",
+    "sum": "Serbia's Parliament speaker has set an early presidential election for December 27"
+   },
+   {
+    "hd": "Ukraine says it downed a Russian jet-powered drone with a laser",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/russia-ukraine-war-laser-interception-russian-jet-powered-geran-drone/",
+    "pub": "2026-11-26T12:02:53.000Z",
+    "sum": "Ukraine has used a laser weapon to shoot down a Russian jet-powered drone for the first time, a senior adviser to President Volodymyr Zelenskyy says."
+   },
    {
     "hd": "How Trump's proposed tariffs for India compare with rival nations",
     "src": "Reuters",
@@ -16184,9 +16199,16 @@
     "sum": "Officials say no lead has been detected in the surrounding area, which continues to be tested following concerns from locals."
    },
    {
+    "hd": "Hamas political official and wife among eight Palestinians killed in Israeli strikes on Gaza",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cqvg2n4mzl1jo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T10:14:08.000Z",
+    "sum": "The killings are the latest from a series of near daily attacks by Israel against what it says are Hamas targets."
+   },
+   {
     "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
     "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/europe/europe-preppers-survivalists-cyberattacks-threats.html",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMUxSQ20tSWhWSGQ2SzgxbGhaYnhvOF9ZVHF5bFpURncxcW4wOWNRbmRNSlBTeGhKMWZYSXozVUdIcmhVcUc5RDYxaHN0UG44UmxkSmNHcXU3V2FvYmlieXZCS3JzQ1QxNlM4T05WOE03RXBwNlhHanBMcVhEVWFTRmRDVFFBMmEycXlKUldBdEFIY2VraUpmcndvQm1LLVRodlVyUA?oc=5",
     "pub": "2026-11-26T10:02:53.000Z",
     "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
    },
@@ -16341,28 +16363,7 @@
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
-    "pub": "2026-11-26T03:01:11.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "UK government set to publish new treaties agreed with EU",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBJZ2lsaWo2Y2dKTElJbm9sTGpQS1FrRHlpaEZkOVJLU0hxNVRTZ0JRZU9tM1ZaYlVPZUNKcjEySlBINEVQaWp4T1FqeXUzcVA0VkQ4RmhIM2ZReWs?oc=5",
-    "pub": "2026-11-26T02:13:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/ck62y23z58yeo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T02:06:10.000Z",
-    "sum": "Somalia relies heavily on foreign funding and military support for its very survival."
-   },
-   {
-    "hd": "Ukraine says five jets damaged in attack on Russia’s Savasleyka airbase",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcnZLbDdzMzg2dFlMM0c3d2FkbHpsRTB5Uk1QampGSXI4Sk9lZDRxZDA1LWFBVDVtaGlFS0k0ajljeVBDbEhlS0YwZUQ3bkVDalhCREV3RkhoZEcxamNwMTI1c0E0RUhhdzhhX0h3cnFqOXp1UTNYemRUZ1RwUGFYelBnSlZhekZaeXU2WF9oNU1ja0kxV2hXOGd3V3FwN1dleGg5eGZR0gGrAUFVX3lxTE4xZ05BNnZGZ3J0QWtNeFJ0b0hOSXRkZEJDX2RhR3hNRjluNHFRNTQ2YmhaSFFPR3hCd1luNE1WYUhJaE5YWmFZX3hIcEJXQlJJc1JjdjJKTjYzdVdiUWJ1anBpVF9QaTZBNndlRDlNX0hWWDZaLUVuU2phSm9maVFST3lUNUxtTWJ0MTY1SV9fU0pVVVhYYW1UcU01bEd4WEhteURlMXVMQWxwNA?oc=5",
-    "pub": "2026-11-26T01:43:51.000Z",
+    "pub": "2026-11-26T03:02:02.000Z",
     "sum": ""
    }
   ],
@@ -16382,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T12:00:14.469Z",
-  "lastAttempt": "2026-11-26T12:00:14.469Z",
+  "asOf": "2026-11-26T12:30:13.634Z",
+  "lastAttempt": "2026-11-26T12:30:13.634Z",
   "lastError": null
  }
 }
