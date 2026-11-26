@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T09:15:12.707Z",
+ "generatedAt": "2026-11-26T09:30:11.840Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T09:15:12.707Z",
+  "at": "2026-11-26T09:30:11.840Z",
   "ran": [
-   "weather",
    "alerts",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13897,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T09:15:12.707Z",
-  "lastAttempt": "2026-11-26T09:15:12.707Z",
+  "asOf": "2026-11-26T09:30:11.840Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7233.75,
-    "lastTime": 1795683912,
+    "last": 7223.75,
+    "lastTime": 1795684904,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 37.25,
-    "changePct": 0.5176127284096436,
-    "expectedOpen": 7219.958983533662,
+    "change": 27.25,
+    "changePct": 0.3786562912526923,
+    "expectedOpen": 7209.978048356839,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26258.5,
-    "lastTime": 1795683913,
+    "last": 26199,
+    "lastTime": 1795684903,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 153.75,
-    "changePct": 0.5889732711479712,
-    "expectedOpen": 23724.717075455617,
+    "change": 94.25,
+    "changePct": 0.3610454036142848,
+    "expectedOpen": 23670.958457637018,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50418,
-    "lastTime": 1795683897,
+    "last": 50380,
+    "lastTime": 1795684898,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 191,
-    "changePct": 0.38027355804646906,
-    "expectedOpen": 50373.78248949767,
+    "change": 153,
+    "changePct": 0.30461703864455375,
+    "expectedOpen": 50335.815816194474,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2718.8,
-    "lastTime": 1795683913,
+    "last": 2715.7,
+    "lastTime": 1795684904,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 13.100048828125182,
-    "changePct": 0.48416487653966855,
+    "change": 10.000048828124818,
+    "changePct": 0.3695919358609465,
     "expectedOpen": null,
     "valid": true
    }
@@ -14506,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T09:15:12.707Z",
-  "lastAttempt": "2026-11-26T09:15:12.707Z",
+  "asOf": "2026-11-26T09:30:11.840Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T09:15:12.707Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T09:15:12.707Z",
-  "lastAttempt": "2026-11-26T09:15:12.707Z",
+  "asOf": "2026-11-26T09:30:11.840Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15409,18 +15408,32 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia halts chip exports to south-east Asia after US crackdown",
+      "src": "Yahoo Finance",
+      "url": "https://uk.finance.yahoo.com/news/nvidia-halts-chip-exports-south-091719498.html?.tsrc=rss",
+      "pub": "2026-11-26T09:17:19.000Z",
+      "sum": "Nvidia has blocked shipments of powerful AI servers to four Asian countries as Washington cracks down on Chinese access to cutting-edge American technology."
+     },
+     {
+      "hd": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvda-jensen-huang-return-stock-upgrades-crwd-li-amba-dkng/cNbxi4aR9ZF?.tsrc=rss",
+      "pub": "2026-11-26T08:43:12.000Z",
+      "sum": "Wall Street analysts upgraded Nvidia, CrowdStrike and Li Auto on leadership stability, AI growth and strong earnings."
+     },
+     {
+      "hd": "Asian stocks stabilise after tech rout",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
+      "pub": "2026-11-26T08:26:59.000Z",
+      "sum": "Asian stocks stabilised Thursday after another hard day of selling as the tech sector enjoyed a much-needed bounce, while investors took a fresh round of proposed US tariffs in their stride.Beaten-down Asian tech firms led the gains Thursday, with Seoul, Tokyo and Taipei again at the centre of the action, having seen wild swings this week amid concerns about the AI boom, while the euphoria over Jensen Huang's reinstatement at Nvidia has worn off."
+     },
+     {
       "hd": "Nvidia Reportedly Halts AI Server Shipments To Southeast Asia Ahead Of Jensen Huang's Congress Testimony",
       "src": "Yahoo Finance",
       "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-reportedly-halts-ai-server-shipments-to-southeast-asia-ahead-of-jensen-huang-s-congress-testimony/cNbxLXJR9ZN?.tsrc=rss",
       "pub": "2026-11-26T08:11:47.000Z",
       "sum": "Dell and Super Micro informed buyers that pending orders cannot be shipped, according to a report in The Financial Times."
-     },
-     {
-      "hd": "Nvidia halts chip shipments to south-east Asia",
-      "src": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbDFtRGxaSmJxdndYb1VMbTBjLWJGOExCdUdULWNlRXF6RG90SDQzQkdYb29GbmI3Q1J5UHp2Yk80N3R1Wkl4UXlfWFdFd0VmQ2FEYUZXdnFpbnR3SndRWkh6dVJYQlY1cHhQMWVkTEpJaV9lbHJteGc1ai0tS0ppYWxuWVI?oc=5",
-      "pub": "2026-11-26T08:07:01.000Z",
-      "sum": ""
      },
      {
       "hd": "S&P Weighs Nvidia Downgrade Despite Huang's Return. What Would a Cut Mean?",
@@ -15449,27 +15462,6 @@
       "url": "https://finnhub.io/api/news?id=1f39f507667934bc0bee09dd9dbeee093dd4b093d323f28ae148374b50e71640",
       "pub": "2026-11-26T07:22:13.000Z",
       "sum": "Former Secretary of State Mike Pompeo alleged that Alice Huang, a central figure in the Nvidia Corp. (NASDAQ:NVDA) scandal, has ties to the Chinese Communist Party, even as cryptocurrency bettors doubt she will be arrested. Relationship Raises a Lot of..."
-     },
-     {
-      "hd": "Asian stocks stabilise after tech rout",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
-      "pub": "2026-11-26T07:11:42.000Z",
-      "sum": "Asian stocks stabilised Thursday after another hard day of selling as the tech sector enjoyed a much-needed bounce, while investors took in their stride a fresh round of proposed US tariffs.Beaten-down Asian tech firms led the gains Thursday, with Seoul, Tokyo and Taipei again at the centre of the action, having seen wild swings this week amid concerns about the AI boom, while the euphoria over Jensen Huang's reinstatement at Nvidia has worn off."
-     },
-     {
-      "hd": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5acae23e11e6f6b78440abd7944bc37cb5ef34cc5dec472d00ad062a9d2f110f",
-      "pub": "2026-11-26T06:30:51.000Z",
-      "sum": "Nvidia and Kioxia tested 144 flash drives in one AI rack. Kioxia estimates the setup could support a database of up to 2 trillion vectors."
-     },
-     {
-      "hd": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=88c73f1195604a0a5859bc1826c0dee647d3b6a445a17168eb2cce63c4a1e06c",
-      "pub": "2026-11-26T06:29:16.000Z",
-      "sum": "Investing.com-- Nvidia has told its manufacturing partners to halt server shipments to four Southeast Asian countries amid tighter U.S. export controls, the Financial Times reported on Thursday."
      },
      {
       "hd": "Nvidia's Aa1 rating, stable outlook unchanged after Huang's return: Moody's",
@@ -15582,15 +15574,24 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-25T20:00:10.000Z",
       "sum": ""
+     },
+     {
+      "hd": "Most-Active US Stocks: Today's High-Volume Session",
+      "src": "ChartMill",
+      "url": "https://finnhub.io/api/news?id=092e73bc20e36c6df5afb9a4893bf98b7b2b79af940a8523c001921333819df6",
+      "pub": "2026-11-25T19:00:26.000Z",
+      "sum": "Today's most-active US stocks include NIVF, NVDA, CHSN, PLUG, NXAT, RAYA, SNDK, INTC, VIVK and BGL, highlighting high volume and sharp price moves."
      }
     ],
     "fetched": {
-     "Finnhub": 127,
-     "Yahoo": 17,
-     "Google News": 90,
+     "Finnhub": 128,
+     "Yahoo": 12,
      "Nasdaq": 10,
      "Seeking Alpha": 24
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "TSLA": {
     "items": [
@@ -15773,19 +15774,35 @@
     "fetched": {
      "Finnhub": 160,
      "Yahoo": 11,
-     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 9
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "SPCX": {
     "items": [
      {
+      "hd": "Musk says will give two SpaceX shares to 'every child in America'",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=b3112d04fcb89ccf4e43485994fe4571ca773ffba2b1fcfc13be60f2a9e1c753",
+      "pub": "2026-11-26T08:58:20.000Z",
+      "sum": "Tech billionaire Elon Musk said Wednesday he would give every child in the United States two shares in his SpaceX rocket company, doubling an offer he made last month.\"Every child in America will receive two SpaceX shares, one from the company and one from me personally,\" Musk said in a post on X, the social media platform he also owns."
+     },
+     {
       "hd": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=5fc40a5e5f00a72e63eb2115ee996417a1502f2db651ebf8756b69ea7da59d5a",
       "pub": "2026-11-26T08:25:59.000Z",
       "sum": "ASTS led the group, gaining nearly 12% over the past week. It rebounded from a 52-week low after a director disclosed that she and her family purchased about $1 million in shares."
+     },
+     {
+      "hd": "AT&T Is Up 10% in a Month. Steve Eisman Calls the Big Three Carriers “Uninvestable.” Who’s Right?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=89a64756e717b9036e21f91e1064f666cc6773e068b088678e53dc358f5f479a",
+      "pub": "2026-11-26T08:24:45.000Z",
+      "sum": "Key TakeawaysAT&T stock is up 10% in the past month as the broader market fell and investors moved into cheap, high-yielding stocks. SpaceX wants to build a fourth US carrier, but the Boost Mobile network it wants to buy runs on AT&T and T-Mobile, which reportedly plan to cut it off."
      },
      {
       "hd": "Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk",
@@ -15800,13 +15817,6 @@
       "url": "https://finnhub.io/api/news?id=74517a39c18b99e8233fcf3fcf0e4f4f9c0952301545d1fc618b8a36da432470",
       "pub": "2026-11-26T05:39:02.000Z",
       "sum": "Elon Musk on Wednesday pledged two SpaceX shares for every child in America, doubling an offer he made just last month."
-     },
-     {
-      "hd": "Musk says every U.S. child will receive two SpaceX shares",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e72a5c03afd44c307a647029f3fc83fffb7ffffe239b771c2d6b453123b5cc27",
-      "pub": "2026-11-26T05:36:39.000Z",
-      "sum": "Investing.com-- Elon Musk said on Wednesday evening that every American child will receive two SpaceX shares, one from him personally and one from the company."
      },
      {
       "hd": "SpaceX Reportedly Slashes Some Nvidia Chip Rents — AI Researcher Sees Musk’s Edge In A GPU Glut",
@@ -15842,13 +15852,6 @@
       "url": "https://finnhub.io/api/news?id=e5c4a9a58b2e8c633368209063723cc1b556ba3a8d6fe1e2da4e524a8dc219cd",
       "pub": "2026-11-26T02:38:47.000Z",
       "sum": "The Federal Communications Commission announced the approval on Wednesday but some of SpaceX's rivals have expressed skepticism about the company's data center satellite efforts."
-     },
-     {
-      "hd": "Coinbase CEO on the Anthropic and SpaceX IPOs: Who Actually Made the Money?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=aa29e249c819eb7d0aa162a6bf91db85378a3a913ccd32b13d62acdf0cd43b4f",
-      "pub": "2026-11-26T02:10:04.000Z",
-      "sum": "Anthropic and SpaceX trade below their IPO prices. Coinbase CEO Brian Armstrong says private backers took the gains."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15957,70 +15960,72 @@
      }
     ],
     "fetched": {
-     "Finnhub": 160,
-     "Yahoo": 15,
-     "Google News": 18,
+     "Finnhub": 161,
+     "Yahoo": 16,
      "Nasdaq": 0,
      "Seeking Alpha": 14
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "ANT": {
     "items": [
      {
+      "hd": "ANT Stock Gains Overnight: US Exchange-Traded Funds’ Anthropic Holdings Swell To Over $2B",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/ant-stock-gains-overnight-us-exchange-traded-funds-anthropic-holdings-swell-to-over-2-b/cNbxKBjR9ZY?.tsrc=rss",
+      "pub": "2026-11-26T09:23:24.000Z",
+      "sum": "U.S. actively managed ETFs owned around $2.1 billion worth of Anthropic stock across 75 funds as of Nov. 20, according to Morningstar."
+     },
+     {
+      "hd": "Anthropic Stock Fell Below Its IPO Price. Is It a Buy, or Is More Downside Just Ahead?",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/26/anthropic-stock-fell-below-its-ipo-price-is-it-a-buy-or-is-more-downside-just-ahead/?.tsrc=rss",
+      "pub": "2026-11-26T09:22:02.000Z",
+      "sum": "The stock is disappointing investors after its explosive IPO."
+     },
+     {
+      "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3",
+      "pub": "2026-11-26T07:32:42.000Z",
+      "sum": "The Anthropic IPO and Nvidia CEO’s ouster and rehiring flummoxed AI investors this month."
+     },
+     {
       "hd": "Anthropic’s Potential Bond Issue Could Reportedly Be Rated Junk — Here’s When Crypto Bettors Think It Could Go Bankrupt",
       "src": "Yahoo Finance",
-      "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659962/anthropic-bankruptcy-prediction-market-bond-issue-junk?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=cfb89dac189e935bd15543e91fd7902b70dd6f00ad28a271209eb681a76734e5",
       "pub": "2026-11-26T06:12:44.000Z",
       "sum": "Anthropic PBC (NASDAQ:ANT) debuted on the stock market only last week in the largest initial public offering till date, but bettors in prediction markets are already betting on when the Claude-maker will announce bankruptcy. Here’s What Prediction Market Is Saying..."
      },
      {
       "hd": "2 Ways Anthropic's IPO Pays Off for Alphabet Investors",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/2-ways-anthropic-s-ipo-pays-off-for-alphabet-investors/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=0f795e97b828fe75c0ad5b79dca686f5a424cf13254852e72294887e130361a3",
       "pub": "2026-11-26T05:20:02.000Z",
       "sum": "A large equity stake and nearly guaranteed cloud sales make Anthropic's future success a boon for Alphabet."
      },
      {
       "hd": "‘Free Pop Is Over’ for OpenAI After Anthropic’s Rout, Tech Analyst Luke Lango Says: But a Late-2027 IPO Could ‘Ride the Recovery’",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/free-pop-over-openai-anthropic-044149243.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=4901fe6c79fe8769b395462c0ff0e1e24335a7f6d3fa89de9b47d5dea5f2ef7d",
       "pub": "2026-11-26T04:41:49.000Z",
       "sum": "OpenAI can no longer count on an easy debut, market experts told Benzinga, after Anthropic, PBC (NASDAQ:ANT) fell about 28% from its IPO high, and Chinese artificial intelligence stocks show how fast a hot listing can fade. OpenAI Faces a Tougher IPO Debut “For OpenAI, the free pop is over,” tech analyst Luke Lango said in emailed comments to Benzinga on Tuesday. “Public markets will price OpenAI against where Anthropic trades, not its debut-day hype.” Anthropic priced its record IPO at $83 on N"
      },
      {
       "hd": "Does Anthropic Want AI to Run the World? CEO Dario Amodei Pushes Back Against ‘Surrender Human Free Will’ Claims",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/does-anthropic-want-ai-run-041314042.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=5e8a9b063e89d12c046d8dd2201ab83bf36214fc080650912131392acce296b0",
       "pub": "2026-11-26T04:13:14.000Z",
       "sum": "Anthropic PBC (NASDAQ:ANT) CEO Dario Amodei has rejected concerns that he supports handing humanity’s decision-making power to superintelligent AI. Dario Amodei Rejects Claims of AI Governance On Wednesday, Amodei responded to an Axios report that some Anthropic employees believe humans should eventually hand over certain decisions to superintelligent AI systems. \"No, I do not believe that we should ‘surrender human free will’ to AI systems, and it’s absurd to suggest that I do,\" Amodei wrote on"
      },
      {
       "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a0d43b3eb4a909a4aac44c3d968497747a467d227e9de03170793573844b8eb5",
       "pub": "2026-11-26T04:06:32.000Z",
       "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
-     },
-     {
-      "hd": "Anthropic CEO Flags AI Job Risks, Says Deployment Should Be Paced To ‘Give People More Time To Adapt’",
-      "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-ceo-flags-ai-job-risks-says-deployment-should-be-paced-to-give-people-more-time-to-adapt/cNbx7gCR9Z7?.tsrc=rss",
-      "pub": "2026-11-26T03:51:26.000Z",
-      "sum": "“It may make sense to slow or even stop some AI deployments to give people more time to adapt,” Dario Amodei said."
-     },
-     {
-      "hd": "Where Will the Money From Anthropic’s Record IPO Go Next: AI or Crypto?",
-      "src": "Yahoo Finance",
-      "url": "https://unchainedcrypto.com/where-will-the-money-from-anthropics-record-ipo-go-next-ai-or-crypto/?.tsrc=rss",
-      "pub": "2026-11-26T03:00:07.000Z",
-      "sum": "Chris Perkins, head of Franklin Crypto, asks where liquidity from Anthropic’s IPO will go and why crypto is taking the brunt of security fears. Ram Ahluwalia, CEO of Lumida, says the money goes back to AI. From Unchained, the no-hype resource for all things crypto."
-     },
-     {
-      "hd": "Anthropic's $150 Wall Street target comes with a $900B catch",
-      "src": "Yahoo Finance",
-      "url": "https://www.thestreet.com/investing/anthropic-150-wall-street-target-comes-with-900b-catch?.tsrc=rss",
-      "pub": "2026-11-26T02:17:00.000Z",
-      "sum": "Wall Street sees enormous upside for the Claude maker."
      },
      {
       "hd": "What Comes Next After Anthropic’s Historic IPO",
@@ -16143,20 +16148,36 @@
      }
     ],
     "fetched": {
-     "Finnhub": 147,
-     "Yahoo": 0,
-     "Google News": 59,
+     "Finnhub": 149,
+     "Yahoo": 13,
      "Nasdaq": 13,
-     "Seeking Alpha": 22
-    }
+     "Seeking Alpha": 21
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    }
   },
-  "asOf": "2026-11-26T08:30:12.879Z",
-  "lastAttempt": "2026-11-26T08:30:12.879Z",
+  "asOf": "2026-11-26T09:30:11.840Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
+    "pub": "2026-11-26T09:14:29.000Z",
+    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
+   },
+   {
+    "hd": "Attack Blamed on ISIS Kills 2 Syrian Security Force Members",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/middleeast/isis-attack-syria.html",
+    "pub": "2026-11-26T08:31:47.000Z",
+    "sum": "The assault on a security headquarters in the northeastern city of Hasakah was carried out by four militants who local officials linked to the Islamic State."
+   },
    {
     "hd": "Alice Huang Had Ties to China’s Intelligence Network. But Was She Really a Spy?",
     "src": "WSJ",
@@ -16165,11 +16186,11 @@
     "sum": ""
    },
    {
-    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
-    "pub": "2026-11-26T07:14:18.000Z",
-    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
+    "hd": "New UK-EU treaty has 10-year termination clause, BBC understands",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T07:40:04.000Z",
+    "sum": "Text of the treaties will be published this afternoon, alongside legislation designed to enact the bulk of the deal."
    },
    {
     "hd": "Trump's new tariffs aim to prise global trade from China's grip",
@@ -16184,6 +16205,13 @@
     "url": "https://abcnews.com/International/wireStory/eu-leaders-seek-bridge-differences-agree-budget-deal-138463077",
     "pub": "2026-11-26T06:43:27.000Z",
     "sum": "European Union leaders are seeking to resolve major differences over the bloc’s future budget and agree on a new loan to support Ukraine"
+   },
+   {
+    "hd": "Desperate appeals from women on death row in Iran after protests",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cm8x0ve4yd7wo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T06:01:58.000Z",
+    "sum": "Female protesters and dissidents are being sentenced to death in numbers not seen for decades, a rights group says."
    },
    {
     "hd": "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume",
@@ -16345,34 +16373,9 @@
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPV3JaTmxlVEkyOG9FXzM3d0dwUEdpV0ZwZk1FUUdZNG45Q0xYMWxaMndSZXNib0NXdDNNN1p3UzI5MnJBRTVhdll0Rm1EamNoMUpYRHg2R2JrcFlqTXFpdE9PeTgtVWktV3YzY012TDMtclByVHpIQnFucGhJbl9CZVlCMXNBb2pLRkxveWhIVEN0eEtUampuVkNRTzhBV1NPVWRnWEswMHlVbjhkeUZSeWVR?oc=5",
     "pub": "2026-11-25T22:33:28.000Z",
     "sum": ""
-   },
-   {
-    "hd": "US to hike tariffs on China, EU, Brazil and others over subsidized factories",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcWJ0MDE3ZEJzV2tVdThRbXdzcGxXN0phLUpNTHAyVWlEQV9JNzVUWlpsRXp6ZHFTNnY1dnpKMHJjNExkUnZxTlRXdzZNTUFOeXhkUTk5XzF0ZW55b1lZcnhJYTkyYUt5N1lvdm5TZ3QyZDh5UkNsVmtHMmhuNm5xcGc3VmVUcV9fellldEtWcTdaYWJpRUlBcm5R?oc=5",
-    "pub": "2026-11-25T22:06:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "North Korea expels Swiss diplomat in sanctions row",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cq0l34e4kkr5o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-25T21:51:17.000Z",
-    "sum": "Swiss officials said relations would be kept through North Korea's embassy in Bern, and its own embassy in Beijing."
-   },
-   {
-    "hd": "Trump's new tariffs would put rates right back where they were before the Supreme Court stepped in",
-    "src": "Yahoo Finance",
-    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTVg5UHpONGNFdFNFMDVfQlFwT1p3dDItcHg2TWRmdDFkT1hCMTlXSGoxM2JLTXViNG1pbUwtZXY2WnB2U050QkViTVJQQkJsSnozaE1ISDMyRGJtSUJuTGNtdjhNWVNoVHVsV1ExYUhyWVM4QVdzNXlmbUg2LWE4b1hraGFCYXdkNEEzYW9LTExIZExfalhEOUtfTUh4MFFlU2dvT0hWUDRXLW1aUDZzNDJlWTNELVRSc09TVFA3SGpRR2FwcF82bXVHUnk0dHQ2TkhIbFJuUFNtNTJjelpfWURfMEFPakhHX2c?oc=5",
-    "pub": "2026-11-25T21:38:55.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16383,9 +16386,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-26T08:30:12.879Z",
-  "lastAttempt": "2026-11-26T08:30:12.879Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-26T09:30:11.840Z",
+  "lastAttempt": "2026-11-26T09:30:11.840Z",
   "lastError": null
  }
 }
