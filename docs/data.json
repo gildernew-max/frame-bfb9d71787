@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T02:15:12.493Z",
+ "generatedAt": "2026-11-26T02:30:12.005Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,11 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T02:15:12.493Z",
+  "at": "2026-11-26T02:30:12.005Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13895,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T02:15:12.493Z",
-  "lastAttempt": "2026-11-26T02:15:12.493Z",
+  "asOf": "2026-11-26T02:30:12.005Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7228.25,
-    "lastTime": 1795658710,
+    "last": 7237.75,
+    "lastTime": 1795659624,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 31.75,
-    "changePct": 0.44118668797332034,
-    "expectedOpen": 7214.469469186411,
+    "change": 41.25,
+    "changePct": 0.5731953032724241,
+    "expectedOpen": 7223.951357604391,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26237.25,
-    "lastTime": 1795658711,
+    "last": 26298.25,
+    "lastTime": 1795659622,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 132.5,
-    "changePct": 0.5075704613145118,
-    "expectedOpen": 23705.517569091833,
+    "change": 193.5,
+    "changePct": 0.7412444095423246,
+    "expectedOpen": 23760.631446183168,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50392,
-    "lastTime": 1795658698,
+    "last": 50443,
+    "lastTime": 1795659619,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 165,
-    "changePct": 0.32850857108726383,
-    "expectedOpen": 50347.80529197443,
+    "change": 216,
+    "changePct": 0.43004758396878173,
+    "expectedOpen": 50398.76056403926,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2715.1,
-    "lastTime": 1795658696,
+    "last": 2718,
+    "lastTime": 1795659622,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 9.400048828124909,
-    "changePct": 0.3474165279876515,
+    "change": 12.300048828125,
+    "changePct": 0.45459766604193064,
     "expectedOpen": null,
     "valid": true
    }
@@ -13967,9 +13968,9 @@
     "id": "401873079",
     "start": "2026-11-26T01:00Z",
     "state": "in",
-    "status": "Q2 6:41",
+    "status": "Q2 2:00",
     "period": 2,
-    "clock": "6:41",
+    "clock": "2:00",
     "completed": false,
     "away": {
      "name": "Green Bay Packers",
@@ -14492,8 +14493,8 @@
     }
    }
   ],
-  "asOf": "2026-11-26T02:15:12.493Z",
-  "lastAttempt": "2026-11-26T02:15:12.493Z",
+  "asOf": "2026-11-26T02:30:12.005Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "lastError": null
  },
  "alerts": {
@@ -14504,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T02:15:12.493Z",
-  "lastAttempt": "2026-11-26T02:15:12.493Z",
+  "asOf": "2026-11-26T02:30:12.005Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T02:15:12.493Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15407,25 +15408,39 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
+      "pub": "2026-11-26T02:17:28.000Z",
+      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
+     },
+     {
+      "hd": "Tech Stocks Stall Into Thanksgiving: Will the AI Rebound Return?",
+      "src": "Yahoo Finance",
+      "url": "https://beincrypto.com/tech-stocks-stall-thanksgiving-nvidia-rebound/?.tsrc=rss",
+      "pub": "2026-11-26T01:19:53.000Z",
+      "sum": "Tech stocks stall into Thanksgiving as Nvidia slips 4% and inflation fears return, leaving AI-linked shares under pressure."
+     },
+     {
       "hd": "'Alarming, if unsurprising': Trump administration cut corners with hasty Nvidia investigation, former CIA officer warns",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/alarming-unsurprising-trump-administration-cut-010000318.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=6f393e1fab1b62c1644942b6aa5fccf3176a6f8d0b74f8d155f48dc81e146e9a",
       "pub": "2026-11-26T01:00:00.000Z",
       "sum": "The FBI has provided at least two \"defensive briefings\" to Nvidia leadership regarding Chinese espionage tactics, according to a separate law enforcement official."
      },
      {
       "hd": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
       "src": "Yahoo Finance",
-      "url": "https://beincrypto.com/apple-stock-ai-selloff-safe-haven/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646",
       "pub": "2026-11-26T01:00:00.000Z",
       "sum": "Apple stock is up 30.61% in 2026 while Nvidia falls 21.35%. See how low AI capex and a Gemini deal shaped the gap."
      },
      {
-      "hd": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
-      "pub": "2026-11-26T00:58:51.000Z",
-      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
+      "hd": "‘Jensanity’ erupts in Taiwan and China on Nvidia founder’s comeback",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPbjJtWWlsdkpJSnp1U3RPWDFDNDZNZnduNEtiRVExb0JtejRhYWR1T05TY2FORGlSUzRHeFNSdUh4RjhPMHBGaG5jZ2QtSmZzRGlTdkM4VmRYWW1iUkM4MWVfZkRHOFRCZUowc2J6ei1yNHJVSERQOWpnY0tPT1pkdXoxcDQ?oc=5",
+      "pub": "2026-11-26T00:45:54.000Z",
+      "sum": ""
      },
      {
       "hd": "Nvidia: Silicon Takes A Back Seat - Upgrading To Buy",
@@ -15482,13 +15497,6 @@
       "url": "https://finnhub.io/api/news?id=39c69e588dde2a64530db074586871d1ce36da1543a4cc1954790f1b6ed9c4b4",
       "pub": "2026-11-25T22:44:32.000Z",
       "sum": "The credit rating agency may lower Nvidia's credit rating to AA-, the fourth-highest rating."
-     },
-     {
-      "hd": "Nvidia settles 8-year-old investor suit for $290M",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1b02b92b9e2e95dc584aa9ce30af19f104a574733027e41ff4f4fba198a8b394",
-      "pub": "2026-11-25T22:30:00.000Z",
-      "sum": "Nvidia reaches a $290 million settlement in a 2018 investor lawsuit."
      },
      {
       "hd": "How the Trump administration determined Jensen Huang is not a national security threat",
@@ -15573,19 +15581,12 @@
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOZ01XVnNSdmRPYmYxOWNxejJQZ3Zsa3Ywa21rWWNDSi0ydnk5N0RjZ1BNQS1BRnNuSlZDcXpkUkZ4QkQ0V25rLUQ1MjRMa2hsRWlOQy1HOVRadlBZcG5TT3NIZ0duRDJvb0JGVHc4ZFE4dlVQSDBQcDhuMTFsdkRuRGQ4djl3bDE4c3lpMjEzU0dZWHo1dlNRTWo5LThIMHZtVk9iVjhoWGR1azJKUEE?oc=5",
       "pub": "2026-11-25T17:41:35.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia sellers seek new buyers as U.S. curbs China AI chip access, sources tell CNBC",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1IN1pwRHJFN1ZiXzJpeXpsLWI5RGJNMTNUU3VSNFY5Q21iUkVkNDhneFg2VFg4TTI3R3k5RXUtb0hBRGRhYkVXdXZablA3dG4zSF9yc3Q5YmVDTjBBZjAxMXJFWUdCUFFwZHQ3dm9QWG5uSWhXdS1KRGRVY9IBgAFBVV95cUxPYW9MbXdwMWFTZFd6dmhZLVNGYzdHUmNDaF9VQk5jN2lMdDFfU010WUdOX2t1ai1qNXYtZi1TbnVTbEt6b0pvejRsdjJoYmZuWXJwZjl4TkpuZHNpeHNIbEpFZkxuc3RnNExQZGRWZ0ZQTy0xYU9wYnhCT3k5a2tBUA?oc=5",
-      "pub": "2026-11-25T17:28:24.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 124,
      "Yahoo": 6,
-     "Google News": 87,
+     "Google News": 88,
      "Nasdaq": 9,
      "Seeking Alpha": 25
     }
@@ -15595,7 +15596,7 @@
      {
       "hd": "Elon Musk tells Tesla investors there is 'only one way' to eliminate poverty",
       "src": "Yahoo Finance",
-      "url": "https://www.thestreet.com/investing/elon-musk-tells-tesla-investors-optimus-robots-will-eliminate-poverty?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1579fa9f77d05dff05f06632abd4653fe397f4e4df6f5e03425344a278fa0279",
       "pub": "2026-11-26T00:37:00.000Z",
       "sum": "Musk says poverty won’t end with government checks, and that Tesla is building the real answer."
      },
@@ -15771,7 +15772,7 @@
     "fetched": {
      "Finnhub": 161,
      "Yahoo": 11,
-     "Google News": 11,
+     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 10
     }
@@ -15957,7 +15958,7 @@
     "fetched": {
      "Finnhub": 158,
      "Yahoo": 14,
-     "Google News": 23,
+     "Google News": 22,
      "Nasdaq": 0,
      "Seeking Alpha": 15
     }
@@ -15968,8 +15969,15 @@
       "hd": "Dow Jones Futures Rise; Market Goes On Wild Ride As Nasdaq Slashes Losses",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B.html?.tsrc=rss",
-      "pub": "2026-11-26T00:58:51.000Z",
+      "pub": "2026-11-26T02:17:28.000Z",
       "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
+     },
+     {
+      "hd": "Anthropic's $150 Wall Street target comes with a $900B catch",
+      "src": "Yahoo Finance",
+      "url": "https://www.thestreet.com/investing/anthropic-150-wall-street-target-comes-with-900b-catch?.tsrc=rss",
+      "pub": "2026-11-26T02:17:00.000Z",
+      "sum": "Wall Street sees enormous upside for the Claude maker."
      },
      {
       "hd": "Review & Preview: A Thanksgiving Reprieve",
@@ -16026,13 +16034,6 @@
       "url": "https://finnhub.io/api/news?id=8c8a08d0f2cbd872b6c211544867e4baa07b47dcef0577605a7e71d78c45f600",
       "pub": "2026-11-25T20:53:02.000Z",
       "sum": "Anthropic is spreading out its demand for AI accelerators across multiple companies."
-     },
-     {
-      "hd": "Anthropic Broke Its $83 IPO Price. Most Giants Recovered",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ec22ad20f7080ace31b67693f84f8fa1912a6c9f8107347cfed163b9d9639fc5",
-      "pub": "2026-11-25T20:16:35.000Z",
-      "sum": "Today's big story: Anthropic Below Its IPO Price: Do Giants Come Back."
      },
      {
       "hd": "Stocks Pare Losses as Anthropic Shares Swing Higher",
@@ -16141,16 +16142,16 @@
      }
     ],
     "fetched": {
-     "Finnhub": 148,
-     "Yahoo": 10,
-     "Google News": 73,
+     "Finnhub": 147,
+     "Yahoo": 9,
+     "Google News": 65,
      "Nasdaq": 13,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-26T01:30:11.562Z",
-  "lastAttempt": "2026-11-26T01:30:11.562Z",
+  "asOf": "2026-11-26T02:30:12.005Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "lastError": null
  },
  "worldNews": {
@@ -16289,6 +16290,13 @@
     "sum": "The administration is facing growing bipartisan calls to be tougher on U.S. chip exports and China."
    },
    {
+    "hd": "Ukraine tells Putin to ‘stop complaining’ about oil refinery attacks",
+    "src": "The Hill",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSGdnYnBDUmwzZ0xlMlFHdnY3Tm9EREFvaFlSRmRFcTE2LWdDUnE3Nl9ueFcta1M4WDQzWXllb0xyQnNJbHZIQXlUN2FOMzNPT0FqcWdmUEhFZV9TTHhGTV9vd1h1RHpBYW1Jek83U2NMODgxWllJaDMyMTlMd053SUJSYlJQZmpYUXE1eXFR0gGTAUFVX3lxTE03RUV5bFNyZF9MNTBIU1VsdHZpcXRvWkYzWnRpZnJOZGFpT0F1SmwxSXl1NzNSbllDeUh1TU1hNkRQZGdBM2xQUDFKanJLWG1iQ0l2U0JrYTNpTWd0aG1mN2lwMjVzaEJ0OVFzUFhhSmZLSXU2RzR2eDVyMERhOUx3MEp0d0NUWnJkQjlVSWhfVTEyMA?oc=5",
+    "pub": "2026-11-25T21:11:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Leaked data shows 490,000 Russian forces have died in Ukraine war",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/russia-ukraine-war-russian-soldier-death-toll-data-leak/",
@@ -16357,13 +16365,6 @@
     "url": "https://www.washingtonpost.com/world/2026/11/25/britain-will-park-warplanes-hangars-protect-against-drone-threats/",
     "pub": "2026-11-25T18:35:00.000Z",
     "sum": "The Ministry of Defense said it was bolstering its “counter-drone technology” and had imposed new airspace restrictions over dozens of military facilities."
-   },
-   {
-    "hd": "Can Shenzhen Summit Reduce Nuclear Risk?",
-    "src": "Foreign Policy",
-    "url": "https://foreignpolicy.com/2026/11/25/shenzhen-summit-trump-xi-putin-nuclear/",
-    "pub": "2026-11-25T18:32:09.000Z",
-    "sum": "Xi, Trump, and Putin promise talks, but action is a long way off."
    }
   ],
   "feeds": [
@@ -16382,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T02:00:11.683Z",
-  "lastAttempt": "2026-11-26T02:00:11.683Z",
+  "asOf": "2026-11-26T02:30:12.005Z",
+  "lastAttempt": "2026-11-26T02:30:12.005Z",
   "lastError": null
  }
 }
