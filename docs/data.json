@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T08:15:18.615Z",
+ "generatedAt": "2026-11-26T08:30:12.879Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T08:15:18.615Z",
+  "at": "2026-11-26T08:30:12.879Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13894,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T08:15:18.615Z",
-  "lastAttempt": "2026-11-26T08:15:18.615Z",
+  "asOf": "2026-11-26T08:30:12.879Z",
+  "lastAttempt": "2026-11-26T08:30:12.879Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7218.5,
-    "lastTime": 1795680316,
-    "settle": 7196.75,
+    "last": 7220.5,
+    "lastTime": 1795681225,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 21.75,
-    "changePct": 0.30221975197137596,
-    "expectedOpen": 7204.48777990065,
+    "change": 24,
+    "changePct": 0.3334954491766831,
+    "expectedOpen": 7206.734244424373,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26201.75,
-    "lastTime": 1795680316,
-    "settle": 26105.75,
+    "last": 26188.25,
+    "lastTime": 1795681215,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 96,
-    "changePct": 0.36773507752123574,
-    "expectedOpen": 23672.536270946057,
+    "change": 83.5,
+    "changePct": 0.31986515863971116,
+    "expectedOpen": 23661.2457661824,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50308,
-    "lastTime": 1795680316,
-    "settle": 50229,
+    "last": 50326,
+    "lastTime": 1795681218,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 79,
-    "changePct": 0.15727965916104242,
-    "expectedOpen": 50261.87757271695,
+    "change": 99,
+    "changePct": 0.19710514265235832,
+    "expectedOpen": 50281.86317518466,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2711.7,
-    "lastTime": 1795680311,
-    "settle": 2705.800048828125,
+    "last": 2711.2,
+    "lastTime": 1795681211,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 5.899951171874818,
-    "changePct": 0.2180483060612728,
+    "change": 5.500048828124818,
+    "changePct": 0.20327637681120825,
     "expectedOpen": null,
     "valid": true
    }
@@ -14503,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T08:15:18.615Z",
-  "lastAttempt": "2026-11-26T08:15:18.615Z",
+  "asOf": "2026-11-26T08:30:12.879Z",
+  "lastAttempt": "2026-11-26T08:30:12.879Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T08:15:18.615Z",
+  "lastAttempt": "2026-11-26T08:30:12.879Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15406,9 +15407,44 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia Reportedly Halts AI Server Shipments To Southeast Asia Ahead Of Jensen Huang's Congress Testimony",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/nvidia-reportedly-halts-ai-server-shipments-to-southeast-asia-ahead-of-jensen-huang-s-congress-testimony/cNbxLXJR9ZN?.tsrc=rss",
+      "pub": "2026-11-26T08:11:47.000Z",
+      "sum": "Dell and Super Micro informed buyers that pending orders cannot be shipped, according to a report in The Financial Times."
+     },
+     {
+      "hd": "Nvidia halts chip shipments to south-east Asia",
+      "src": "Financial Times",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbDFtRGxaSmJxdndYb1VMbTBjLWJGOExCdUdULWNlRXF6RG90SDQzQkdYb29GbmI3Q1J5UHp2Yk80N3R1Wkl4UXlfWFdFd0VmQ2FEYUZXdnFpbnR3SndRWkh6dVJYQlY1cHhQMWVkTEpJaV9lbHJteGc1ai0tS0ppYWxuWVI?oc=5",
+      "pub": "2026-11-26T08:07:01.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "S&P Weighs Nvidia Downgrade Despite Huang's Return. What Would a Cut Mean?",
+      "src": "Yahoo Finance",
+      "url": "https://beincrypto.com/sp-nvidia-credit-rating-downgrade-watch/?.tsrc=rss",
+      "pub": "2026-11-26T08:00:00.000Z",
+      "sum": "S&P Global Ratings may cut Nvidia's AA credit rating within 90 days over board oversight concerns after Huang's return."
+     },
+     {
+      "hd": "Nvidia Could Shift Chips To ‘Better-Funded Buyers’ As Neoclouds Face Shakeout: Analyst Sees ‘Smaller Top Tier’",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=f57559fd410b7bf93d1b1a62b6f1dd6a376c2787e595888bb20f3a760d22bf7a",
+      "pub": "2026-11-26T07:41:08.000Z",
+      "sum": "Analyst says Nvidia could choose to support better-funded neocloud operators as financing pressures threaten weaker players."
+     },
+     {
+      "hd": "Apple Is November's Mag7 Winner — Nvidia Takes The Biggest Hit",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=222e495311d1cbd45224d5505ca825715a0b76fa3c8a67ee624dc2133f1edfd3",
+      "pub": "2026-11-26T07:32:42.000Z",
+      "sum": "The Anthropic IPO and Nvidia CEO’s ouster and rehiring flummoxed AI investors this month."
+     },
+     {
       "hd": "Mike Pompeo Has ‘No Doubt’ Alice Huang Coordinated With Communist Party of China: Crypto Bettors Weigh Odds of Her Arrest",
       "src": "Yahoo Finance",
-      "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63660281/mike-pompeo-has-no-doubt-alice-huang-coordinated-with-communist-party-of-china-crypto-bettors-weigh-odds-of-her-arrest?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1f39f507667934bc0bee09dd9dbeee093dd4b093d323f28ae148374b50e71640",
       "pub": "2026-11-26T07:22:13.000Z",
       "sum": "Former Secretary of State Mike Pompeo alleged that Alice Huang, a central figure in the Nvidia Corp. (NASDAQ:NVDA) scandal, has ties to the Chinese Communist Party, even as cryptocurrency bettors doubt she will be arrested. Relationship Raises a Lot of..."
      },
@@ -15422,23 +15458,16 @@
      {
       "hd": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=5acae23e11e6f6b78440abd7944bc37cb5ef34cc5dec472d00ad062a9d2f110f",
       "pub": "2026-11-26T06:30:51.000Z",
       "sum": "Nvidia and Kioxia tested 144 flash drives in one AI rack. Kioxia estimates the setup could support a database of up to 2 trillion vectors."
      },
      {
       "hd": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stops-shipping-ai-servers-062916311.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=88c73f1195604a0a5859bc1826c0dee647d3b6a445a17168eb2cce63c4a1e06c",
       "pub": "2026-11-26T06:29:16.000Z",
       "sum": "Investing.com-- Nvidia has told its manufacturing partners to halt server shipments to four Southeast Asian countries amid tighter U.S. export controls, the Financial Times reported on Thursday."
-     },
-     {
-      "hd": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-jumps-14-nvidia-collaboration-062844097.html?.tsrc=rss",
-      "pub": "2026-11-26T06:28:44.000Z",
-      "sum": "Investing.com -- Kioxia Holdings shares surged on Thursday, extending a sharp rebound in Japanese semiconductor stocks after the memory chipmaker announced a collaboration with Nvidia to expand effective GPU memory capacity using its solid-state drives."
      },
      {
       "hd": "Nvidia's Aa1 rating, stable outlook unchanged after Huang's return: Moody's",
@@ -15448,38 +15477,10 @@
       "sum": ""
      },
      {
-      "hd": "ANT, NVDA Slide Tests Investor Resolve, Software Firms Post Sharp Growth",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=21df9492788bb247bd105596f3ede6962cc85b154b8d2a0231b677df9e3342c5",
-      "pub": "2026-11-26T05:33:34.000Z",
-      "sum": "Investors faced intense volatility in the Thanksgiving week."
-     },
-     {
-      "hd": "SpaceX Reportedly Slashes Some Nvidia Chip Rents — AI Researcher Sees Musk’s Edge In A GPU Glut",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0274b704585d2a8c24471e77cd4094530c23fcb51d2bb7dd82131efd4190bffa",
-      "pub": "2026-11-26T05:32:55.000Z",
-      "sum": "SpaceX is reportedly seeking a new renter for 50,000 H200 chips leased to Anthropic."
-     },
-     {
-      "hd": "Asian stocks rally as Taiwan, South Korea rebound; Nvidia risks linger",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a6cf0056ec72816d195b6085f6e9d256201823d7d3fef0e63c10eb6322405e8c",
-      "pub": "2026-11-26T05:31:37.000Z",
-      "sum": "Investing.com -- Most Asian stocks rose on Thursday as a recovery in technology shares and improving sentiment around U.S. trade policy helped markets regain some footing after a volatile November, although concerns over Nvidia's governance continued to temper confidence."
-     },
-     {
       "hd": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOM1ZtZ1FmQ3d0Nk9xZzFmaDNtd3ZURjZ1cm1sWkptUktqcm1aOUc3eWpIYjVpUGoxWGxWd2FjRTZiTzBGRGtaTTA3ZUFsTEJLNk5BV3VfV2VKNHJVbk1mTDJqYkZkdEFPQ09jdzVHRzBHazlKVko5bVp4WDZMSUpUaEpyZk5ZUUUxbm42MjBIRWJCaGZzVXRkNklKN2dfdDRES3RwazQ1UU55Q3Bf?oc=5",
       "pub": "2026-11-26T05:09:00.000Z",
-      "sum": ""
-     },
-     {
-      "hd": "Nvidia halts chip shipments to south-east Asia",
-      "src": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbDFtRGxaSmJxdndYb1VMbTBjLWJGOExCdUdULWNlRXF6RG90SDQzQkdYb29GbmI3Q1J5UHp2Yk80N3R1Wkl4UXlfWFdFd0VmQ2FEYUZXdnFpbnR3SndRWkh6dVJYQlY1cHhQMWVkTEpJaV9lbHJteGc1ai0tS0ppYWxuWVI?oc=5",
-      "pub": "2026-11-26T05:02:48.000Z",
       "sum": ""
      },
      {
@@ -15582,8 +15583,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 126,
-     "Yahoo": 14,
+     "Finnhub": 127,
+     "Yahoo": 17,
      "Google News": 90,
      "Nasdaq": 10,
      "Seeking Alpha": 24
@@ -15772,11 +15773,25 @@
      "Yahoo": 11,
      "Google News": 10,
      "Nasdaq": 11,
-     "Seeking Alpha": 10
+     "Seeking Alpha": 9
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SPCX Wins Million-Satellite Nod And Retail Attention — But ASTS Leads Space Stocks Into Thanksgiving",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/spcx-stock-million-satellite-nod-asts-leads-rklb-lunr-bksy-thanksgiving/cNbxLqbR9ZV?.tsrc=rss",
+      "pub": "2026-11-26T08:25:59.000Z",
+      "sum": "ASTS led the group, gaining nearly 12% over the past week. It rebounded from a 52-week low after a director disclosed that she and her family purchased about $1 million in shares."
+     },
+     {
+      "hd": "Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZm9uV2s2WngtTGYzQ000dWdaTnlsbzV4Tzc2TmprcDg5M1JXTWxoYU1PXzBqZlM0WkFjYl9SYTI1V2VFUE9aSlA2cXlJeEw2RlhiMHZmelZlVkx6aW1lbHFVODBvNXhfSmwzV2x6LVlLankzQk85SE5rUDJuNjNac2Y2Qncxdy1VdWduNm1B0gGTAUFVX3lxTE9jWGxXRXdzR1pPZU9QLVVvOG9KblpoQmlEV1FKeWlVRFNkczhwMU5YVnk3T3RFNWRPdmtFREdIQXh3SDh3WTNOUU9KRHlhekxWNnRaY2JodXhoY2Z4TmFjUzVvOERNOW9PRlI3MU9pUDlqSndKT0xzTGR4akdkZEVmd2N1YndSbXI1VVlYazJzRGdaQQ?oc=5",
+      "pub": "2026-11-26T07:45:05.000Z",
+      "sum": ""
+     },
      {
       "hd": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
       "src": "Yahoo Finance",
@@ -15808,7 +15823,7 @@
      {
       "hd": "Elon Musk, SpaceX pledge major stock donations to active Trump Accounts",
       "src": "Yahoo Finance",
-      "url": "https://www.foxbusiness.com/markets/elon-musk-spacex-pledge-major-stock-donations-active-trump-accounts?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=626dac37215952b700d2f21420d7c9a02db6b7a01b53cd024856088ad1eef48c",
       "pub": "2026-11-26T04:29:55.000Z",
       "sum": "SpaceX will give one share of its Class A common stock to every active Trump Account, with Elon Musk pledging to personally match the donation."
      },
@@ -15832,13 +15847,6 @@
       "url": "https://finnhub.io/api/news?id=aa29e249c819eb7d0aa162a6bf91db85378a3a913ccd32b13d62acdf0cd43b4f",
       "pub": "2026-11-26T02:10:04.000Z",
       "sum": "Anthropic and SpaceX trade below their IPO prices. Coinbase CEO Brian Armstrong says private backers took the gains."
-     },
-     {
-      "hd": "SPCX Stock Rebounds From 9% Drop: SpaceX Pledges Shares To Trump Accounts And Wins FCC Starmind Nod",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=b59c15b23c116dc74de1e875f182b2dade0d16b59828b70cf32fa05dd3b40b52",
-      "pub": "2026-11-26T00:22:41.000Z",
-      "sum": "SpaceX said on Wednesday it would contribute one newly issued Class A share to every currently active Trump Account, the tax-advantaged investment accounts created for American children."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15944,21 +15952,14 @@
       "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
       "pub": "2026-11-24T20:27:23.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Monday's Euphoria Ends With Tuesday's Hangover",
-      "src": "Seeking Alpha",
-      "url": "https://finnhub.io/api/news?id=3dbc07b4bcd383f602f692d4ae4f52e0194c4528b5c319d627085bcc52525766",
-      "pub": "2026-11-24T19:10:00.000Z",
-      "sum": "Nvdia leads the downhill charge. Parallels seen between Anthropic and SpaceX trades"
      }
     ],
     "fetched": {
-     "Finnhub": 159,
-     "Yahoo": 16,
-     "Google News": 19,
+     "Finnhub": 160,
+     "Yahoo": 15,
+     "Google News": 18,
      "Nasdaq": 0,
-     "Seeking Alpha": 15
+     "Seeking Alpha": 14
     }
    },
    "ANT": {
@@ -16141,19 +16142,26 @@
     ],
     "fetched": {
      "Finnhub": 147,
-     "Yahoo": 13,
+     "Yahoo": 0,
      "Google News": 59,
      "Nasdaq": 13,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-26T07:30:10.594Z",
-  "lastAttempt": "2026-11-26T07:30:10.594Z",
+  "asOf": "2026-11-26T08:30:12.879Z",
+  "lastAttempt": "2026-11-26T08:30:12.879Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Alice Huang Had Ties to China’s Intelligence Network. But Was She Really a Spy?",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5sNDVoNV9xcTIyQnZYS3BwSDlwQWFGMFhDelJGWXc3VUNMX0thTjIzNnhRdk1pajB2akpIeU8xQ1NHcWpfNGtXUW9VcHAtdDVJOHh4dzhLT3Fha0hUYmdPTVRKdmlaX1J5YU9XcWtDOWhVZHM1Mmw5Q3RmczFNOTA?oc=5",
+    "pub": "2026-11-26T08:01:17.000Z",
+    "sum": ""
+   },
    {
     "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
     "src": "The New York Times",
@@ -16183,6 +16191,13 @@
     "sum": ""
    },
    {
+    "hd": "What to know about Taiwan’s local elections and why they matter to China",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQkJtZkJkd3k1QWVRN1AyYU9YZUtNWG4wRndpSThLaHVoUUYyLWYySUVRbXlVTFdNVHZZdkFxNkoyOEhJVWJudHI4Y2FzUVA4b1kwclljQi1CVkFuSUxfaDVCSXoxeXF4YklYTXUtckpSWEFkOTdwM18xdjJNWHFHM0dhRHVBXzRsZElucnRjdWRONkJjcGYyeFFsSGE?oc=5",
+    "pub": "2026-11-26T05:02:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcVE1ZllSR0xRNHFVUjR0WWJjQXF2MllxbUV3WUQ2Vno2WFFCbzkyODBvWjE1WmtscC1rdkVLdVJXUDhUUXFiMDZQbS01akV2UjhQQUFwMWp2aWdrdm5ZQy11b0tvX3BkSVU1WmdUV2J4N2l0UF9tcHVqRzBuWkxhRUVsU1FtMTl1aEhRWkx3RFI2VDlraEhKemFOV0ZEX0todDFpTTBsTndhZk0zclNaWk5lNA?oc=5",
@@ -16195,13 +16210,6 @@
     "url": "https://www.bbc.co.uk/news/articles/c893r9ke5p97o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-26T04:10:58.000Z",
     "sum": "The new levies would hit many of America's biggest trading partners, including China and the EU."
-   },
-   {
-    "hd": "What to know about Taiwan’s local elections and why they matter to China",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNQkJtZkJkd3k1QWVRN1AyYU9YZUtNWG4wRndpSThLaHVoUUYyLWYySUVRbXlVTFdNVHZZdkFxNkoyOEhJVWJudHI4Y2FzUVA4b1kwclljQi1CVkFuSUxfaDVCSXoxeXF4YklYTXUtckpSWEFkOTdwM18xdjJNWHFHM0dhRHVBXzRsZElucnRjdWRONkJjcGYyeFFsSGE?oc=5",
-    "pub": "2026-11-26T03:18:00.000Z",
-    "sum": ""
    },
    {
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
@@ -16230,6 +16238,13 @@
     "url": "https://www.bbc.co.uk/news/articles/ck62y23z58yeo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-26T02:06:10.000Z",
     "sum": "Somalia relies heavily on foreign funding and military support for its very survival."
+   },
+   {
+    "hd": "Ukraine says five jets damaged in attack on Russia’s Savasleyka airbase",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOcnZLbDdzMzg2dFlMM0c3d2FkbHpsRTB5Uk1QampGSXI4Sk9lZDRxZDA1LWFBVDVtaGlFS0k0ajljeVBDbEhlS0YwZUQ3bkVDalhCREV3RkhoZEcxamNwMTI1c0E0RUhhdzhhX0h3cnFqOXp1UTNYemRUZ1RwUGFYelBnSlZhekZaeXU2WF9oNU1ja0kxV2hXOGd3V3FwN1dleGg5eGZR0gGrAUFVX3lxTE4xZ05BNnZGZ3J0QWtNeFJ0b0hOSXRkZEJDX2RhR3hNRjluNHFRNTQ2YmhaSFFPR3hCd1luNE1WYUhJaE5YWmFZX3hIcEJXQlJJc1JjdjJKTjYzdVdiUWJ1anBpVF9QaTZBNndlRDlNX0hWWDZaLUVuU2phSm9maVFST3lUNUxtTWJ0MTY1SV9fU0pVVVhYYW1UcU01bEd4WEhteURlMXVMQWxwNA?oc=5",
+    "pub": "2026-11-26T01:43:51.000Z",
+    "sum": ""
    },
    {
     "hd": "Ukraine attacks Russian military base, says five planes struck",
@@ -16349,24 +16364,11 @@
     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPTVg5UHpONGNFdFNFMDVfQlFwT1p3dDItcHg2TWRmdDFkT1hCMTlXSGoxM2JLTXViNG1pbUwtZXY2WnB2U050QkViTVJQQkJsSnozaE1ISDMyRGJtSUJuTGNtdjhNWVNoVHVsV1ExYUhyWVM4QVdzNXlmbUg2LWE4b1hraGFCYXdkNEEzYW9LTExIZExfalhEOUtfTUh4MFFlU2dvT0hWUDRXLW1aUDZzNDJlWTNELVRSc09TVFA3SGpRR2FwcF82bXVHUnk0dHQ2TkhIbFJuUFNtNTJjelpfWURfMEFPakhHX2c?oc=5",
     "pub": "2026-11-25T21:38:55.000Z",
     "sum": ""
-   },
-   {
-    "hd": "In backing Nvidia’s Huang, Trump deals his China hawks a setback",
-    "src": "The Washington Post",
-    "url": "https://www.washingtonpost.com/politics/2026/11/25/backing-jensen-huang-trump-delivers-setback-china-hawks/",
-    "pub": "2026-11-25T21:20:13.000Z",
-    "sum": "The administration is facing growing bipartisan calls to be tougher on U.S. chip exports and China."
-   },
-   {
-    "hd": "Ukraine tells Putin to ‘stop complaining’ about oil refinery attacks",
-    "src": "The Hill",
-    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSGdnYnBDUmwzZ0xlMlFHdnY3Tm9EREFvaFlSRmRFcTE2LWdDUnE3Nl9ueFcta1M4WDQzWXllb0xyQnNJbHZIQXlUN2FOMzNPT0FqcWdmUEhFZV9TTHhGTV9vd1h1RHpBYW1Jek83U2NMODgxWllJaDMyMTlMd053SUJSYlJQZmpYUXE1eXFR0gGTAUFVX3lxTE03RUV5bFNyZF9MNTBIU1VsdHZpcXRvWkYzWnRpZnJOZGFpT0F1SmwxSXl1NzNSbllDeUh1TU1hNkRQZGdBM2xQUDFKanJLWG1iQ0l2U0JrYTNpTWd0aG1mN2lwMjVzaEJ0OVFzUFhhSmZLSXU2RzR2eDVyMERhOUx3MEp0d0NUWnJkQjlVSWhfVTEyMA?oc=5",
-    "pub": "2026-11-25T21:11:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
    "Google News",
+   "AP",
    "Reuters",
    "WSJ",
    "The New York Times",
@@ -16379,11 +16381,9 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [
-   "AP (Google News): HTTP 429 from news.google.com"
-  ],
-  "asOf": "2026-11-26T07:30:10.594Z",
-  "lastAttempt": "2026-11-26T07:30:10.594Z",
+  "feedErrors": [],
+  "asOf": "2026-11-26T08:30:12.879Z",
+  "lastAttempt": "2026-11-26T08:30:12.879Z",
   "lastError": null
  }
 }
