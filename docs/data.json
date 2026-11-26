@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T06:45:12.760Z",
+ "generatedAt": "2026-11-26T07:00:19.075Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -690,18 +690,18 @@
    "Ars Technica",
    "CNBC",
    "The Information",
-   "Wired",
-   "Google News",
-   "Reuters",
-   "Bloomberg",
-   "Axios"
+   "Wired"
   ],
   "feedErrors": [
-   "VentureBeat: HTTP 429 from venturebeat.com"
+   "VentureBeat: HTTP 429 from venturebeat.com",
+   "Google News: HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "Bloomberg (Google News): HTTP 503 from news.google.com",
+   "Axios (Google News): HTTP 503 from news.google.com"
   ],
-  "asOf": "2026-11-26T06:00:14.402Z",
-  "lastAttempt": "2026-11-26T06:00:14.402Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
+  "asOf": "2026-11-26T07:00:19.075Z",
+  "lastAttempt": "2026-11-26T07:00:19.075Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired",
   "lastError": null
  },
  "stocks": {
@@ -7523,9 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T06:45:12.760Z",
+  "at": "2026-11-26T07:00:19.075Z",
   "ran": [
    "alerts",
+   "news",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13893,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T06:45:12.760Z",
-  "lastAttempt": "2026-11-26T06:45:12.760Z",
+  "asOf": "2026-11-26T07:00:19.075Z",
+  "lastAttempt": "2026-11-26T07:00:19.075Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7225.25,
-    "lastTime": 1795674907,
+    "last": 7221.5,
+    "lastTime": 1795675852,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 28.75,
-    "changePct": 0.39949975682623495,
-    "expectedOpen": 7211.475188633362,
+    "change": 25,
+    "changePct": 0.34739109289237824,
+    "expectedOpen": 7207.732337942054,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26249.25,
-    "lastTime": 1795674907,
+    "last": 26221.75,
+    "lastTime": 1795675855,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 144.5,
-    "changePct": 0.5535391068675242,
-    "expectedOpen": 23716.359643273736,
+    "change": 117,
+    "changePct": 0.4481942941418707,
+    "expectedOpen": 23691.51322327354,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50330,
-    "lastTime": 1795674909,
+    "last": 50329,
+    "lastTime": 1795675847,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 103,
-    "changePct": 0.20506898679992833,
-    "expectedOpen": 50285.85966711131,
+    "change": 102,
+    "changePct": 0.20307802576303582,
+    "expectedOpen": 50284.860544129646,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2716.9,
-    "lastTime": 1795674910,
+    "last": 2716.1,
+    "lastTime": 1795675847,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 11.200048828125091,
-    "changePct": 0.4139427516075535,
+    "change": 10.400048828124909,
+    "changePct": 0.38437554110981553,
     "expectedOpen": null,
     "valid": true
    }
@@ -14502,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T06:45:12.760Z",
-  "lastAttempt": "2026-11-26T06:45:12.760Z",
+  "asOf": "2026-11-26T07:00:19.075Z",
+  "lastAttempt": "2026-11-26T07:00:19.075Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15146,30 +15148,33 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T06:45:12.760Z",
+  "lastAttempt": "2026-11-26T07:00:19.075Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
-   {
-    "src": "Reuters",
-    "hd": "China, Japan, South Korea and ASEAN launch talks on digital payments across borders",
-    "pub": "2026-11-26T05:01:00.000Z"
-   },
    {
     "src": "BBC News",
     "hd": "US announces new tariffs on host of countries including China",
     "pub": "2026-11-26T04:10:58.000Z"
    },
    {
-    "src": "BBC",
-    "hd": "UK government set to publish new treaties agreed with EU",
-    "pub": "2026-11-26T02:13:00.000Z"
+    "src": "NPR",
+    "hd": "Army to detonate tons of lead azide after delays. And, Abrego Garcia leaves U.S.",
+    "pub": "2026-11-25T12:18:09.000Z"
+   },
+   {
+    "src": "BBC News",
+    "hd": "As foreign troops withdraw from Somalia, could al-Shabab take over?",
+    "pub": "2026-11-26T02:06:10.000Z"
    }
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-26T06:00:14.402Z",
-  "lastAttempt": "2026-11-26T06:00:14.402Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "Reuters: HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-26T07:00:19.075Z",
+  "lastAttempt": "2026-11-26T07:00:19.075Z",
   "lastError": null
  },
  "movers": {
