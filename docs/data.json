@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T16:15:13.030Z",
+ "generatedAt": "2026-11-26T16:30:12.018Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-26T16:15:13.030Z"
+   "checkedAt": "2026-11-26T16:30:12.018Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T16:15:13.030Z",
+  "at": "2026-11-26T16:30:12.018Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "movers",
    "sectors",
    "usTempGrid"
@@ -14504,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T16:15:13.030Z",
-  "lastAttempt": "2026-11-26T16:15:13.030Z",
+  "asOf": "2026-11-26T16:30:12.018Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T16:15:13.030Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15265,8 +15266,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-26T16:15:13.030Z",
-  "lastAttempt": "2026-11-26T16:15:13.030Z",
+  "asOf": "2026-11-26T16:30:12.018Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": null
  },
  "sectors": {
@@ -15353,8 +15354,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-26T16:15:13.030Z",
-  "lastAttempt": "2026-11-26T16:15:13.030Z",
+  "asOf": "2026-11-26T16:30:12.018Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": null
  },
  "extended": {
@@ -15407,11 +15408,25 @@
    "NVDA": {
     "items": [
      {
+      "hd": "NVIDIA Just Dropped 31% in a Month. Will NVDA Stock Hit $125 or $200 First?",
+      "src": "Yahoo Finance",
+      "url": "https://247wallst.com/investing/2026/11/26/nvidia-just-dropped-31-in-a-month-will-nvda-stock-hit-125-or-200-first/?.tsrc=rss",
+      "pub": "2026-11-26T16:06:22.000Z",
+      "sum": "A CEO resignation, a credit rating on watch, and export rules scrambling China-bound GPUs have rattled the AI trade's biggest name. Two very different futures now compete for NVIDIA shares, and the next catalysts could tip the balance."
+     },
+     {
       "hd": "S&P’s NVIDIA Warning is Backward Looking Governance Theater That Gives Everyone an Opportunity to Buy at $150",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/sps-nvidia-warning-is-backward-looking-governance-theater-that-gives-everyone-an-opportunity-to-buy-at-150/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=4b381c34877592e853a0c49b44d87f4662bac04de5b8b8fd88e00cd4f8c97e4b",
       "pub": "2026-11-26T15:45:38.000Z",
       "sum": "NVIDIA lost its CEO, drew a credit warning, and watched its stock slide nearly a third in a month. So why does one investor keep buying more every week, and which three numbers convinced him the real story lies elsewhere?"
+     },
+     {
+      "hd": "Nvidia chip buyers told to rule out Chinese renters to buy GPUs, sources say",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1ydHdQWUpYRU16SjgyRXBibzZ6UFN4RThEMUV3VkRJV0NCNmk1Nm1wTFlvTnpsLS1VVHdmczlIQjZRN0RKZnlBdm5oSmFUY0lCaWV5dTY2bDBiRHcyV0lfMjk3ZS1TQW1oM3F0TTJFRdIBdEFVX3lxTE1hb0dnX1V6U3RzcVduQUhNcHBONFFMMVVaaThOcEc5dy1EOVMwUXBVM1lSMWljNm12aTJXT0FvMWdkaUdyTEZyZGY0dHJ0R3kxQllKQ2RaMl9MYmxIY2pHcTh6TWVDRkhCSkVqUVUtbVFOam81?oc=5",
+      "pub": "2026-11-26T15:34:08.000Z",
+      "sum": ""
      },
      {
       "hd": "Jensen Huang’s Vision for the New Nvidia Is a Lot Like the Old One",
@@ -15423,7 +15438,7 @@
      {
       "hd": "Nvidia’s Reliance on Huang Could Now Hurt Its Credit Rating",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/nvidias-reliance-on-huang-could-now-hurt-its-credit-rating/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=0b8d40807711cd6b214fe03d4b5cd4d45acad312f323e211f2a4880e7357bb84",
       "pub": "2026-11-26T14:17:28.000Z",
       "sum": "Jensen Huang resigned, returned within days, and refused to name a successor. Now a bond rater is asking whether one founder holds too much of Nvidia's fate, and a deadline, hearings, and a key price level will decide the answer."
      },
@@ -15461,13 +15476,6 @@
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-after.html?.tsrc=rss",
       "pub": "2026-11-26T13:22:04.000Z",
       "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
-     },
-     {
-      "hd": "Jensen Huang Says Grok Bot Consumption Is “Really Skyrocketing.” That’s Good News for SpaceX",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9f6f09d056231eda68f196cdf512ceef68516722c219bc81455248007034abe1",
-      "pub": "2026-11-26T13:16:25.000Z",
-      "sum": "Key TakeawaysNvidia CEO Jensen Huang said consumption of SpaceX’s Grok Bot is “really skyrocketing. ”That in-house demand gives SpaceX’s data centers a paying user that can’t leave on short notice."
      },
      {
       "hd": "Nvidia’s ‘great man theory’ is flawed",
@@ -15573,19 +15581,12 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-25T23:15:39.000Z",
       "sum": ""
-     },
-     {
-      "hd": "NEWSLETTER: Jensen is back. What’s next for Nvidia?",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPanZEaGMtUmdmSmZPX1BXTmtqRG4xUXpNcFFiRmxWY0d2MnBmR0ZUWVRJM1d6Q0N6QzVjZ2NnYXVZTFNXejg5N2JaeWZTYTlHWlZJNFZYb09kS1JsY0ZadXVrLXZXN0lWNmRQdThKMmZOV1NBd0FYNk1CNnVPN0g5Zkd2ajh0c1l4VlFLbkNCYldadTl3c0Jrek0zak9XeW9BTWJMVkJ3?oc=5",
-      "pub": "2026-11-25T22:25:00.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
-     "Finnhub": 121,
-     "Yahoo": 4,
-     "Google News": 91,
+     "Finnhub": 115,
+     "Yahoo": 3,
+     "Google News": 86,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
@@ -15595,21 +15596,21 @@
      {
       "hd": "Lucid Sinks 13% in a Week as the Tech Selloff Hits EV Stocks. Seaport Sets a $1 Target",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/lucid-sinks-13-in-a-week-as-the-tech-selloff-hits-ev-stocks-seaport-sets-a-1-target?ref=yahoofinance&tlnk=yf-261126-44rpr8gm&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=cfb26b49c9fb75a37cd6d61d4295d104110437dbebc6705e50ebd5584b44f035",
       "pub": "2026-11-26T15:05:24.000Z",
       "sum": "Key TakeawaysLucid fell 13% in the past week, mostly in Friday’s tech selloff, which also hit Rivian and Tesla. Seaport initiated coverage with a Sell and a $1 target the same morning Lucid, Nuro and Uber began driverless robotaxi tests."
      },
      {
       "hd": "General Motors Is Up 11% in a Month as the Nasdaq-100 Fell 10%. Is Its Nasdaq Switch Really That Good?",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/general-motors-is-up-11-in-a-month-as-the-nasdaq-100-fell-10-is-its-nasdaq-switch-really-that-good?ref=yahoofinance&tlnk=yf-261126-7326q54f&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8acba3042743f76b584351eb41ecf930c7e674bcd39876a0afb425931c9d09ef",
       "pub": "2026-11-26T14:50:28.000Z",
       "sum": "Key TakeawaysGeneral Motors stock is up 11% in the past month, mostly on its move to Nasdaq, while the Nasdaq-100 fell 10%. Ford’s higher profit floor and a shift out of Tesla helped too, but Ford expects flat 2027 profit."
      },
      {
       "hd": "Tesla's Self-Driving Expansion in Europe Faces a Crucial Test",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/teslas-self-driving-expansion-europe-134400727.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=53eb5277ff2fe8b4b9be8cb7c78b67ab26309b33177bf967e60acdf6c35d1a6c",
       "pub": "2026-11-26T13:44:00.000Z",
       "sum": "TSLA's European self-driving expansion faces a crucial Dec. 15 EU vote that could unlock a larger market or jeopardize existing national approvals."
      },
@@ -15769,7 +15770,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 151,
+     "Finnhub": 153,
      "Yahoo": 8,
      "Google News": 11,
      "Nasdaq": 11,
@@ -15779,37 +15780,44 @@
    "SPCX": {
     "items": [
      {
+      "hd": "Musk makes $18 billion SpaceX stock pledge for every kid in America",
+      "src": "Yahoo Finance",
+      "url": "https://www.axios.com/2026/11/26/musk-spacex-shares-trump-accounts#utm_source=yahoo_finance&utm_medium=partner&utm_campaign=subs-partner-yahoo-finance-AI?.tsrc=rss",
+      "pub": "2026-11-26T15:54:15.000Z",
+      "sum": "Elon Musk on Wednesday pledged two SpaceX shares for every child in America, doubling an offer he made just last month."
+     },
+     {
       "hd": "SpaceX Just Slid 11% in a Week. Can Elon Musk’s FCC Win for 1 Million Satellites Get SPCX Stock Back Above Its $135 IPO Price?",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/spacex-just-slid-11-in-a-week-can-elon-musks-fcc-win-for-1-million-satellites-get-spcx-stock-back-above-its-135-ipo-price/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=530ba3b219c6f2d412805eda6d73daaa98404a1be450f735426cbc1549970117",
       "pub": "2026-11-26T15:08:35.000Z",
       "sum": "The FCC just handed SpaceX permission for a constellation no regulator has ever approved, yet the stock keeps sliding. Between orbital AI dreams, cooling doubts, and years of heavy spending, can Starmind move the needle on Wall Street any time soon?"
      },
      {
       "hd": "Elon Musk Says ‘Multiplanetary’ SpaceX Could Be Worth $118 Quintillion. Yes, Quintillion",
       "src": "Yahoo Finance",
-      "url": "https://decrypt.co/384043/elon-musk-says-multiplanetary-spacex-could-be-worth-118-quintillion-yes-quintillion?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=4587377aaa8de7e8dae7c4d6fa355b09ca91f27f862ef323be7e4b330a117737",
       "pub": "2026-11-26T14:38:55.000Z",
       "sum": "The SpaceX founder claims the firm could one day be worth a million times the global economy, as he pledges free shares to American children."
      },
      {
       "hd": "SpaceX Gets the First U.S. Approval for Data Centers in Space",
       "src": "Yahoo Finance",
-      "url": "https://247wallst.com/investing/2026/11/26/spacex-gets-the-first-u-s-approval-for-data-centers-in-space/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1ec25cf8d14be8f2873e14bd522c9d893505602e08fccad3f4f07160e83ec8cf",
       "pub": "2026-11-26T14:28:07.000Z",
       "sum": "The FCC just gave SpaceX permission to launch a constellation of orbital data centers, yet the company has no working satellite and the deadlines stretch years out. What does this approval actually buy, and what could still undo it?"
      },
      {
       "hd": "SpaceX refused $738M in fed grants to give rural homes free Starlink gear. It got what it wanted from Trump in return",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/spacex-refused-738m-fed-grants-140000981.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d3741ef904ee01d7e04441596d9e8464f8e060d7402cf396195ca4abd10cbc76",
       "pub": "2026-11-26T14:00:00.000Z",
       "sum": "Under the deal, SpaceX is poised to provide Starlink hardware at no cost to eligible U.S. households."
      },
      {
       "hd": "SpaceX pledges stock for active Trump Accounts, Elon Musk to match",
       "src": "Yahoo Finance",
-      "url": "https://www.proactiveinvestors.com/companies/news/1102523/spacex-pledges-stock-for-active-trump-accounts-elon-musk-to-match-1102523.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e69dc65a7ef20ff8f96cce9929d9dc2c3fae132e45a556f9b023be833401315d",
       "pub": "2026-11-26T13:54:00.000Z",
       "sum": "SpaceX Corp (NASDAQ:SPCX) pledged Wednesday to give one share to each currently active Trump Account and said CEO Elon Musk would personally match the number of shares donated. The rocket company will issue new Class A common stock shares for its contribution to the tax-advantaged investment..."
      },
@@ -15826,13 +15834,6 @@
       "url": "https://finnhub.io/api/news?id=9895f805a85f31adf01203c8270882f4a5650cce6ac06ba89c7ca9c284ed777d",
       "pub": "2026-11-26T13:12:14.000Z",
       "sum": "Elon Musk has promised to donate two SpaceX shares to every child in the US, in a giveaway worth up to $18bn (£14bn)."
-     },
-     {
-      "hd": "SpaceX and Elon Musk Will Each Give a Share to Every Active Trump Account",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5220c643ab33c82125b41d3ba846e0dd606b15554fd5c1409c31498ccd5d9ad0",
-      "pub": "2026-11-26T12:38:35.000Z",
-      "sum": "SpaceX and Musk promised stock to Trump Account holders, but the release never defines \"active,\" never names a transfer date, and never says where Musk's shares come from. The answers decide how big this gift really gets."
      },
      {
       "hd": "Anthropic And SpaceX Slink Below Their IPO Prices",
@@ -15955,7 +15956,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 164,
+     "Finnhub": 165,
      "Yahoo": 13,
      "Google News": 19,
      "Nasdaq": 0,
@@ -15968,7 +15969,7 @@
       "hd": "Dow Jones Futures Rise With U.S. Markets Shut; Look For This Bullish Signal",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise-with.html?.tsrc=rss",
-      "pub": "2026-11-26T15:39:29.000Z",
+      "pub": "2026-11-26T16:17:03.000Z",
       "sum": "Futures are rising with U.S. markets shut after a wild session in which the Nasdaq rallied off lows while the Dow Jones and Anthropic reversed higher."
      },
      {
@@ -16149,12 +16150,33 @@
     }
    }
   },
-  "asOf": "2026-11-26T16:00:12.177Z",
-  "lastAttempt": "2026-11-26T16:00:12.177Z",
+  "asOf": "2026-11-26T16:30:12.018Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Two Italians killed after Iranian strike in Kuwait",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T16:27:09.000Z",
+    "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
+   },
+   {
+    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
+    "pub": "2026-11-26T16:26:33.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Could the Black Sea pull the U.S. into war in Europe?",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/news/black-sea-incidents-nato-russia-ukraine-war/",
+    "pub": "2026-11-26T16:18:46.000Z",
+    "sum": "The Russia-Ukraine war is spilling into the Black Sea, where violent incidents have surged, running right up to NATO's doorstep."
+   },
    {
     "hd": "Iranian Drone Attack Kills Two Italians in Kuwait",
     "src": "WSJ",
@@ -16191,10 +16213,17 @@
     "sum": ""
    },
    {
-    "hd": "Two Italian workers killed in Iranian strike in Kuwait, source says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZ2hPQWhhdW9HTWxtRndjQkN3aFhQTzhyWV9sQ0NTbHNsRFpINkRjMHhKRGN4QTk1NTJYWU1yVHhmYVJSazJEVGtOdVIzZ2xsNFJFeHF0YXNEbXBqTF94bnBDOEFnMV9JdGRRbWVROFJGRmZISmZWUXhtYTlJTXFFMlBWa2IwdXBfUXY4OENRd2tVeWh0Q1M1OThsMl9kMkVEamJiTjMzdWxwZHRzdlVHYmtwTUI?oc=5",
-    "pub": "2026-11-26T14:02:19.000Z",
+    "hd": "Exclusive | Poland Nears Construction Deal With U.S. Consortium for $50 Billion Nuclear Plant",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxORV9KbWp6SnZ2NF8zUzg5d3FucHFtSWZXa0FsaGF2SERCcnpwdzY5T3ZNZlhmTkhsRlhRWDFkcUw5ZjUwY1dlRVRZLXM5aEN4dDlWeTlPc1RXMGVoTnFDdEZWTHgxRVRnM1VVek9Ya1NfNlNXRjlXVGJFbm5nMVNfTWQ4QnowTTVwS0hKdXg2eFNVSkFwU3M2QnFaYUpCTmg1NHNGdC12LUtORU1pMnd2UkhVX1lnWW8?oc=5",
+    "pub": "2026-11-26T14:27:11.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "China and other US trading partners hit back at Trump’s new tariff plans",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
+    "pub": "2026-11-26T14:13:00.000Z",
     "sum": ""
    },
    {
@@ -16254,18 +16283,11 @@
     "sum": ""
    },
    {
-    "hd": "Ukraine says it has intercepted a Russian jet-powered drone with a laser for the first time",
+    "hd": "Ukraine says it downed a Russian jet-powered drone with a laser",
     "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPWGVSaWFRWm5vY1pIZ2R5RFVxSjRwVjBNN3dWcTh0Z3VFR0o0Xzc0TWhMTHJQX0RHWG54RWI2dWhxenZmbGo1RFJsZ2Q3TC1aSmwyTzBRZWc3S3lDT2tNVGlQVWQzbmVyYTJ6U1pUcm9jcG5rQngtb3Q4R2JoXzBxSW1XWkZYZVV6SWt6YTNQbHBDejBFSzJ0Zy1OX0RVTVJY?oc=5",
+    "url": "https://www.cbsnews.com/news/russia-ukraine-war-laser-interception-russian-jet-powered-geran-drone/",
     "pub": "2026-11-26T12:02:53.000Z",
     "sum": "Ukraine has used a laser weapon to shoot down a Russian jet-powered drone for the first time, a senior adviser to President Volodymyr Zelenskyy says."
-   },
-   {
-    "hd": "China and other U.S. trading partners hit back at Trump’s new tariff plans",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQVWQ3MnMzTlQ5Y2lUTW9RTzloTmp3MmtycjBUbmZUOTExYWNsVmlXX1JmLVJGYUYyRjNHSGV1b2hzLWhWclNBRDRZb2hyQ2UxSE9tYktjUTBKR2VDU2w1YlZlU0xaZ0JSMlQ1ZzhwMEJpSVk5N05XbHhnNi1ESktvTVNGNlZpMkNjX0dUNHdvLWJ2YTVqeDFv?oc=5",
-    "pub": "2026-11-26T11:46:00.000Z",
-    "sum": ""
    },
    {
     "hd": "US warns EU leaders against Big Tech tax",
@@ -16338,31 +16360,10 @@
     "sum": ""
    },
    {
-    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNc0pLUEZsX0FSZ1BkN3NfS2laZGh2dlg4R3hQUktxdXh2Q3RzQ0RwWGNmbUUwS09YODlVYThWWVBxOUFybnY4TWlrbzkyZEVXTERTOExSeVJudk9RekNvYnJwRUFSR0czRUllaUlNcEhDeVJFRlBCc19KR09vcG9OQjViTF85dw?oc=5",
-    "pub": "2026-11-26T09:14:29.000Z",
-    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
-   },
-   {
-    "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUcwQ3JjLUlNWjhSZnFuYWMzVEFGd0RMR2lZT2VmWUdBejNHckpxbWFSb0lsTUNuTzktdm9qTk94eTgxMXFRQkplOTdZZkFDSEVaUkVZcWFfb1lEMTNEVzFHd013bXhoRFU4ajZjOTB0UXFhM1FacVliRVdqcFY5dG11UURVYmFZang5ZEpaZEVCazhBMjFz?oc=5",
-    "pub": "2026-11-26T08:43:23.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "UK nuclear test veterans win 40-year battle for inquiry into Cold War tests",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/uk-nuclear-test-veterans-win-40-year-battle-138436079",
-    "pub": "2026-11-26T08:26:13.000Z",
-    "sum": "Britain’s prime minister has authorized an inquiry into the impact of nuclear weapons tests on military veterans after a 40-year campaign by survivors who say they were used as guinea pigs for tests that damaged their health and that of their children"
-   },
-   {
-    "hd": "Alice Huang Had Ties to China’s Intelligence Network. But Was She Really a Spy?",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5sNDVoNV9xcTIyQnZYS3BwSDlwQWFGMFhDelJGWXc3VUNMX0thTjIzNnhRdk1pajB2akpIeU8xQ1NHcWpfNGtXUW9VcHAtdDVJOHh4dzhLT3Fha0hUYmdPTVRKdmlaX1J5YU9XcWtDOWhVZHM1Mmw5Q3RmczFNOTA?oc=5",
-    "pub": "2026-11-26T08:01:17.000Z",
+    "hd": "China's defence ministry urges Japan to stop 'stirring up' South China Sea disputes",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbUJVQ2JZcnNsSFBFOTVuU0tTUjZUOHpSNFhpMXFkOVIxR0NFSUJ5d0F4a3BVa1BRcXdIUldMZjFKd1lMV2c3VjYxRHZEWnpvOTY2UE92dXowSUh6U00xRHpVYm52Y3VYQklTaVNQWFJBdFVFNUxxSk9uX2R6X25qNjkzNE1LOUM1a011ZmpUd29sMHI2OTdyNmJrSVFScmNUTkl3WFhfc0h4N3ZHZkctRnlWNFRncUg1Wi13SHVDU0ZldkE?oc=5",
+    "pub": "2026-11-26T09:41:22.000Z",
     "sum": ""
    }
   ],
@@ -16382,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-26T16:00:12.177Z",
-  "lastAttempt": "2026-11-26T16:00:12.177Z",
+  "asOf": "2026-11-26T16:30:12.018Z",
+  "lastAttempt": "2026-11-26T16:30:12.018Z",
   "lastError": null
  }
 }
