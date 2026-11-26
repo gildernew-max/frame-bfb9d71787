@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-26T07:15:13.684Z",
+ "generatedAt": "2026-11-26T07:30:10.594Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-26T07:15:13.684Z",
+  "at": "2026-11-26T07:30:10.594Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13894,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-26T07:15:13.684Z",
-  "lastAttempt": "2026-11-26T07:15:13.684Z",
+  "asOf": "2026-11-26T07:30:10.594Z",
+  "lastAttempt": "2026-11-26T07:30:10.594Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7219.25,
-    "lastTime": 1795676712,
-    "settle": 7196.75,
+    "last": 7223,
+    "lastTime": 1795677621,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 22.5,
-    "changePct": 0.3126411227290096,
-    "expectedOpen": 7205.236324035155,
+    "change": 26.5,
+    "changePct": 0.3682345584659209,
+    "expectedOpen": 7209.229478218579,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26224.5,
-    "lastTime": 1795676712,
-    "settle": 26105.75,
+    "last": 26237.25,
+    "lastTime": 1795677621,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 118.75,
-    "changePct": 0.45488062974632026,
-    "expectedOpen": 23693.090249217126,
+    "change": 132.5,
+    "changePct": 0.5075704613145118,
+    "expectedOpen": 23705.517569091833,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50300,
-    "lastTime": 1795676709,
-    "settle": 50229,
+    "last": 50340,
+    "lastTime": 1795677619,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 71,
-    "changePct": 0.14135260506878494,
-    "expectedOpen": 50253.88490712536,
+    "change": 113,
+    "changePct": 0.2249785971688534,
+    "expectedOpen": 50295.85089692794,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2714.8,
-    "lastTime": 1795676697,
-    "settle": 2705.800048828125,
+    "last": 2715.8,
+    "lastTime": 1795677619,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 8.999951171875182,
-    "changePct": 0.33261700825872326,
+    "change": 10.100048828125182,
+    "changePct": 0.37328783717317643,
     "expectedOpen": null,
     "valid": true
    }
@@ -14503,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-26T07:15:13.684Z",
-  "lastAttempt": "2026-11-26T07:15:13.684Z",
+  "asOf": "2026-11-26T07:30:10.594Z",
+  "lastAttempt": "2026-11-26T07:30:10.594Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-26T07:15:13.684Z",
+  "lastAttempt": "2026-11-26T07:30:10.594Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15409,6 +15410,41 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Mike Pompeo Has ‘No Doubt’ Alice Huang Coordinated With Communist Party of China: Crypto Bettors Weigh Odds of Her Arrest",
+      "src": "Yahoo Finance",
+      "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63660281/mike-pompeo-has-no-doubt-alice-huang-coordinated-with-communist-party-of-china-crypto-bettors-weigh-odds-of-her-arrest?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+      "pub": "2026-11-26T07:22:13.000Z",
+      "sum": "Former Secretary of State Mike Pompeo alleged that Alice Huang, a central figure in the Nvidia Corp. (NASDAQ:NVDA) scandal, has ties to the Chinese Communist Party, even as cryptocurrency bettors doubt she will be arrested. Relationship Raises a Lot of..."
+     },
+     {
+      "hd": "Asian stocks stabilise after tech rout",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/world-indices/articles/asian-stocks-enjoy-another-bounce-023024729.html?.tsrc=rss",
+      "pub": "2026-11-26T07:11:42.000Z",
+      "sum": "Asian stocks stabilised Thursday after another hard day of selling as the tech sector enjoyed a much-needed bounce, while investors took in their stride a fresh round of proposed US tariffs.Beaten-down Asian tech firms led the gains Thursday, with Seoul, Tokyo and Taipei again at the centre of the action, having seen wild swings this week amid concerns about the AI boom, while the euphoria over Jensen Huang's reinstatement at Nvidia has worn off."
+     },
+     {
+      "hd": "MU, SNDK, SKHY Jump As Nvidia Tests Kioxia Memory Fix — Analyst Presses Memory Giants For ‘Massive’ Buybacks",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/mu-sndk-skhy-nvidia-kioxia-memory-fix-analyst-memory-giants-buybacks/cNbxQFgR9ZK?.tsrc=rss",
+      "pub": "2026-11-26T06:30:51.000Z",
+      "sum": "Nvidia and Kioxia tested 144 flash drives in one AI rack. Kioxia estimates the setup could support a database of up to 2 trillion vectors."
+     },
+     {
+      "hd": "Nvidia stops shipping AI servers to 4 Southeast Asian countries- FT",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-stops-shipping-ai-servers-062916311.html?.tsrc=rss",
+      "pub": "2026-11-26T06:29:16.000Z",
+      "sum": "Investing.com-- Nvidia has told its manufacturing partners to halt server shipments to four Southeast Asian countries amid tighter U.S. export controls, the Financial Times reported on Thursday."
+     },
+     {
+      "hd": "Kioxia jumps 14% after Nvidia collaboration as chip stocks rebound",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-jumps-14-nvidia-collaboration-062844097.html?.tsrc=rss",
+      "pub": "2026-11-26T06:28:44.000Z",
+      "sum": "Investing.com -- Kioxia Holdings shares surged on Thursday, extending a sharp rebound in Japanese semiconductor stocks after the memory chipmaker announced a collaboration with Nvidia to expand effective GPU memory capacity using its solid-state drives."
+     },
+     {
       "hd": "Nvidia's Aa1 rating, stable outlook unchanged after Huang's return: Moody's",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
@@ -15437,11 +15473,11 @@
       "sum": "Investing.com -- Most Asian stocks rose on Thursday as a recovery in technology shares and improving sentiment around U.S. trade policy helped markets regain some footing after a volatile November, although concerns over Nvidia's governance continued to temper confidence."
      },
      {
-      "hd": "Asian shares rebound led by AI stocks after Wall Street pares sharp losses",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=76df12b1a41b31f4308635beb86841e82e6fab412bc0e335f852f4218b4ac5e6",
-      "pub": "2026-11-26T05:21:53.000Z",
-      "sum": "HONG KONG (AP) — Asian shares rebounded on Thursday led by artificial intelligence -related stocks after Wall Street pared its sharp losses Wednesday.Nvidia, one of Wall Street’s biggest drivers, fell 3."
+      "hd": "Nvidia halts server shipments to four Southeast Asian countries, FT reports",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOM1ZtZ1FmQ3d0Nk9xZzFmaDNtd3ZURjZ1cm1sWkptUktqcm1aOUc3eWpIYjVpUGoxWGxWd2FjRTZiTzBGRGtaTTA3ZUFsTEJLNk5BV3VfV2VKNHJVbk1mTDJqYkZkdEFPQ09jdzVHRzBHazlKVko5bVp4WDZMSUpUaEpyZk5ZUUUxbm42MjBIRWJCaGZzVXRkNklKN2dfdDRES3RwazQ1UU55Q3Bf?oc=5",
+      "pub": "2026-11-26T05:09:00.000Z",
+      "sum": ""
      },
      {
       "hd": "Nvidia halts chip shipments to south-east Asia",
@@ -15449,34 +15485,6 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQbDFtRGxaSmJxdndYb1VMbTBjLWJGOExCdUdULWNlRXF6RG90SDQzQkdYb29GbmI3Q1J5UHp2Yk80N3R1Wkl4UXlfWFdFd0VmQ2FEYUZXdnFpbnR3SndRWkh6dVJYQlY1cHhQMWVkTEpJaV9lbHJteGc1ai0tS0ppYWxuWVI?oc=5",
       "pub": "2026-11-26T05:02:48.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Nvidia Reportedly Sold Its Most Advanced AI Chips to US Firms Controlled by Chinese Parents as Jensen Huang Set to Face Congress",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=64154a7476930f06cea46227128dc3d595b102b86e028afb0be10ece1eafe795",
-      "pub": "2026-11-26T04:22:55.000Z",
-      "sum": "Nvidia Corp. (NASDAQ:NVDA) has reportedly sold its most advanced chips to at least two U.S. companies controlled by Chinese-owned firms, as CEO Jensen Huang prepares to face lawmakers next week. Firms Hold Nvidia Partner Status Ricloud AI Inc., Nvidia’s cloud partner headquartered in San Jose, is controlled by Yuxing InfoTech Investment Holdings, based in Shenzhen and listed in Hong Kong, while Aivres Systems Inc., based in Fremont, was formerly known as Inspur, after its Chinese parent, accordi"
-     },
-     {
-      "hd": "Kioxia and NVIDIA Collaborate to Expand Effective High-Bandwidth Memory Capacity with SSDs",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4477e5e6603d215bdd29c214b86d6e011582231a752e552d2208785d3e37ae7e",
-      "pub": "2026-11-26T04:19:00.000Z",
-      "sum": "TOKYO, November 26, 2026--Kioxia and NVIDIA collaborate to extend effective GPU memory capacity to petabyte scale using NVIDIA SCADA software and Kioxia SSDs."
-     },
-     {
-      "hd": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=13528ddab86963fa1c1da0da62ff7b000369f9caa4d6f752f8f9489464757709",
-      "pub": "2026-11-26T04:14:03.000Z",
-      "sum": "Vice President JD Vance said on Wednesday he has seen no evidence that Jensen Huang committed a crime, even as prediction markets wagered on the reinstated Nvidia Corp. (NASDAQ:NVDA) CEO’s pardon. Vance Says Huang Isn’t Under Investigation In a CBS..."
-     },
-     {
-      "hd": "Dow Jones Futures Rise After Nasdaq Slashes Losses In Wild Market Ride",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a0d43b3eb4a909a4aac44c3d968497747a467d227e9de03170793573844b8eb5",
-      "pub": "2026-11-26T04:06:32.000Z",
-      "sum": "The market went on a wild ride before Thanksgiving, but the Dow and Anthropic reversed higher while the Nasdaq and Nvidia came well off lows."
      },
      {
       "hd": "EXCLUSIVE: US officials divided over Chinese spying allegations following Jensen Huang's return",
@@ -15575,19 +15583,12 @@
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-25T20:00:10.000Z",
       "sum": ""
-     },
-     {
-      "hd": "How China got access to Nvidia's AI chips despite rules to stop them",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPU05FY1hvQmJod19oM3p3aTZQaS1CdktCWEZsSnk0TmVWREE1a0tmVW5kVnBxdG5VNU1TX2FmWnZ1aTc1UEQyblFkSklCZ3NlcU1XQUZQVDUwTXZ6R3BoVjlRb1RPY0pTNGdmUUdNZkw0Zi1oanJOcXFieGlBdzRTN05pa3FsaVhUWVk0UWpzc0hkN2kySGF6bGRpU1Y1a2IyNi1iaUFQZThLNVZON0E?oc=5",
-      "pub": "2026-11-25T19:58:10.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 126,
-     "Yahoo": 12,
-     "Google News": 88,
+     "Yahoo": 14,
+     "Google News": 90,
      "Nasdaq": 10,
      "Seeking Alpha": 24
     }
@@ -15773,7 +15774,7 @@
     "fetched": {
      "Finnhub": 160,
      "Yahoo": 11,
-     "Google News": 11,
+     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 10
     }
@@ -15809,6 +15810,13 @@
       "sum": ""
      },
      {
+      "hd": "Elon Musk, SpaceX pledge major stock donations to active Trump Accounts",
+      "src": "Yahoo Finance",
+      "url": "https://www.foxbusiness.com/markets/elon-musk-spacex-pledge-major-stock-donations-active-trump-accounts?.tsrc=rss",
+      "pub": "2026-11-26T04:29:55.000Z",
+      "sum": "SpaceX will give one share of its Class A common stock to every active Trump Account, with Elon Musk pledging to personally match the donation."
+     },
+     {
       "hd": "Cathie Wood Buys More SpaceX Amid Tesla Merger Talks — Ron Baron Says SpaceX Could Make $50B A Year From One Data Center",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=e20a1c6864b0638103683a558a2c7228a0744bf93030d68b2b61b1dbc26e5cd8",
@@ -15837,13 +15845,6 @@
       "sum": "SpaceX said on Wednesday it would contribute one newly issued Class A share to every currently active Trump Account, the tax-advantaged investment accounts created for American children."
      },
      {
-      "hd": "S&P 500, Nasdaq End Lower But Dow Rebounds As Traders Rotate Out Of AI — NVDA, SPCX, PANW In Focus",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c6dfdcab5190999e3b1cc53253d4a097aa42a9f3abc948ea292b3aea25e0ff60",
-      "pub": "2026-11-26T00:09:50.000Z",
-      "sum": "The Nasdaq 100 briefly touched bear market territory on Wednesday before paring some losses."
-     },
-     {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qWUtZX1p5dVJja3JzN1l2Q1p3VFc2UF9wSEhpNFJqQWZ0ZjJEWkFNV25HR1dLNDJLSXpDckRMN19JZWk5QWhFRGR3YWlwQWtDSDBaSjZLRTI4ZjVmZTFTUUpIOHM1Qm5uSURj?oc=5",
@@ -15851,14 +15852,7 @@
       "sum": ""
      },
      {
-      "hd": "Elon Musk and SpaceX to donate roughly $17.8 billion to ‘Trump accounts’",
-      "src": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNSHVtaDN3UFZOZDlGTHVmSjVKLXRuU1BiY1JqM3ZDdmZMUko5dXdFbk1ZeTlpeEoxR1M0c0p0eEV4QUx0RXp5dm9JeUdSbnh1LS1ibWtVX0RLbXRMSWJPMV9QRmllNDNGLUtoU2J6UV9vWmtIZENEZ0d4T01pbFU3dHNsLVNnaXJVMEFYNk1xS0wwcXlLZVM2WW96Y29NRURnbHE1LXlQMGxLZ2g0Tmx6MjJB?oc=5",
-      "pub": "2026-11-25T21:50:00.000Z",
-      "sum": "SpaceX and Elon Musk promise to donate one share each to active Trump accounts."
-     },
-     {
-      "hd": "SpaceX Wins Government Approval to Launch Space Data Centers",
+      "hd": "SpaceX Receives Government Approval to Launch Space Data Centers",
       "src": "Bloomberg",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPMVVHT0RrcFA5ZTBDVVhtcHdtNEdyTWswVGdocnhkX0JGYXljVEtWSGppeHNRSHRPUFBPZTBfLXpSeXVrM2RsdmJ0bnJlcFlmNkFiNUxqWDQtblFzcjdVSDNiRThEbEdtRzlSOW9URDYxYUZPMDlFZ0h0Zk1RSUN4YWE4Tk9CV1E2ekdQODVHSktDMXdKejdJNzl4cEUyVUlnQnItaE1XRkgwRVdrT05FYUY5dU4zZw?oc=5",
       "pub": "2026-11-25T20:54:12.000Z",
@@ -15954,6 +15948,13 @@
       "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
       "pub": "2026-11-24T20:27:23.000Z",
       "sum": ""
+     },
+     {
+      "hd": "Monday's Euphoria Ends With Tuesday's Hangover",
+      "src": "Seeking Alpha",
+      "url": "https://finnhub.io/api/news?id=3dbc07b4bcd383f602f692d4ae4f52e0194c4528b5c319d627085bcc52525766",
+      "pub": "2026-11-24T19:10:00.000Z",
+      "sum": "Nvdia leads the downhill charge. Parallels seen between Anthropic and SpaceX trades"
      }
     ],
     "fetched": {
@@ -16145,31 +16146,45 @@
     "fetched": {
      "Finnhub": 147,
      "Yahoo": 13,
-     "Google News": 60,
+     "Google News": 59,
      "Nasdaq": 13,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-26T06:30:11.969Z",
-  "lastAttempt": "2026-11-26T06:30:11.969Z",
+  "asOf": "2026-11-26T07:30:10.594Z",
+  "lastAttempt": "2026-11-26T07:30:10.594Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
+    "pub": "2026-11-26T07:14:18.000Z",
+    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
+   },
+   {
+    "hd": "Trump's new tariffs aim to prise global trade from China's grip",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaUdXQjZTRVJvNzVESnNzMlpfZmxhTEgweFZsUHRZRTVLa29xcENmUjJaUUNjWExsaVNTREJqNlNwSFZzNXFuRUFqSlpRam4tZkZHWXEwZXQ5VlhPVFJzcmNnZEw5a3N2ZVBndnpnNzhiN1Y1NkRtU1M5WE05UmRFcGMzUVk0NXYyRTVpM05MOUhISDhmb3BPTERXcmNHWE9zc2dR?oc=5",
+    "pub": "2026-11-26T07:03:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "EU leaders seek to agree on a budget deal and a new loan for Ukraine",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/eu-leaders-seek-bridge-differences-agree-budget-deal-138463077",
+    "pub": "2026-11-26T06:43:27.000Z",
+    "sum": "European Union leaders are seeking to resolve major differences over the bloc’s future budget and agree on a new loan to support Ukraine"
+   },
    {
     "hd": "Army calls detonation of bomb chemicals in Iowa a success after earlier fears of a toxic plume",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPZi1lalA4QTR1T3RxVkRDblVuYkY3SDBXV3A3bWhpaWJzN29ZT2xEWTR5b1RDMzZWUWRfdldya2R1ZlZiQ2ptLThvVjMxQmpMWUFKeFVEWnhjOGMzVUcyZDVjb3ZYa1o0RjFiYXVQSUFCczNFelNVYjQ2ZzFiOWxUSmlKdFVXWW8?oc=5",
     "pub": "2026-11-26T05:53:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Was Japan Prime Minister Takaichi Snubbed at China’s Big Summit?",
-    "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/asia/japan-china-takaichi-snubbed.html",
-    "pub": "2026-11-26T05:01:04.000Z",
-    "sum": "Images show the differences between the welcomes afforded to Sanae Takaichi and other world leaders in Shenzhen, as some officials in Japan cry foul."
    },
    {
     "hd": "Trump and NATO chief urge Russia to avoid actions that widen Ukraine war",
@@ -16319,13 +16334,6 @@
     "sum": ""
    },
    {
-    "hd": "North Korea's Kim calls for wider deployment of tactical nuclear weapons",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPWmxZanZuLVM5QUcwTnVIS2FTQlJQQk1nQzRUd2dzUTRvUzZxbkpRMmxMdG1SUUNSLUgtNlRfbTRjcHpab2hGMHczTU02aDl6NnJOd2tXWlJ5MGJtQ0QtZDQ2SW4xOEVNVk55T1E4bmJEU2x6T3R0UUVmVnYzSllaZnRLNzRhOFp6dU80dEtUWTByZDloR1U4RlI1U1M1dF9wTnFaTTRYOUl1V05IVU43M0NtdC1TTVB6cWtoOGFLald3bU4xc2xlM1pBNkgyM0U?oc=5",
-    "pub": "2026-11-25T22:15:25.000Z",
-    "sum": ""
-   },
-   {
     "hd": "US to hike tariffs on China, EU, Brazil and others over subsidized factories",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcWJ0MDE3ZEJzV2tVdThRbXdzcGxXN0phLUpNTHAyVWlEQV9JNzVUWlpsRXp6ZHFTNnY1dnpKMHJjNExkUnZxTlRXdzZNTUFOeXhkUTk5XzF0ZW55b1lZcnhJYTkyYUt5N1lvdm5TZ3QyZDh5UkNsVmtHMmhuNm5xcGc3VmVUcV9fellldEtWcTdaYWJpRUlBcm5R?oc=5",
@@ -16359,18 +16367,10 @@
     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSGdnYnBDUmwzZ0xlMlFHdnY3Tm9EREFvaFlSRmRFcTE2LWdDUnE3Nl9ueFcta1M4WDQzWXllb0xyQnNJbHZIQXlUN2FOMzNPT0FqcWdmUEhFZV9TTHhGTV9vd1h1RHpBYW1Jek83U2NMODgxWllJaDMyMTlMd053SUJSYlJQZmpYUXE1eXFR0gGTAUFVX3lxTE03RUV5bFNyZF9MNTBIU1VsdHZpcXRvWkYzWnRpZnJOZGFpT0F1SmwxSXl1NzNSbllDeUh1TU1hNkRQZGdBM2xQUDFKanJLWG1iQ0l2U0JrYTNpTWd0aG1mN2lwMjVzaEJ0OVFzUFhhSmZLSXU2RzR2eDVyMERhOUx3MEp0d0NUWnJkQjlVSWhfVTEyMA?oc=5",
     "pub": "2026-11-25T21:11:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Melania Trump reunites her seventh group of Ukrainian and Russian children with their families",
-    "src": "PBS",
-    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQZDhpdEhZa3ZTdnBCdV9iRFhQc1FLcC16WjJXSUVsS0JqWEFPOWRSdjlhMFZUWGhGZWF1SEF5dU5XMDJ1UDMxT0Rmajd3WVE0VTc0NWZzRGR2cS1CZUJ6LU9vbTZZWFBIYU8wRHA3NElQQlVMSzJIYXh2ZTZQU190T2ZHb0MzV3NMTl9DNzBTaS10bmFWUV94VHNubUdGcnRmMFNOUTZscHFwNDhXSnlzN0dsXy1TWXVhSnp2bDJPQkpnbFppREJ6M9IBzgFBVV95cUxNVTFvbzdEOVBKcmZfbk5kTDd6b2JJenFWeXlOaG9XcjJBZVZodTExaDF0T1ljT09Sd08tdlNGT1lNN01sM2QtMVpNUm1fQWl6OTZzVC1icVI5d0pLY3dHWWNvWnh1QXgtZEZWLS1fcjR6WU5VZEtGdlhwcjJqYmpMZFhMMGxPQUcwNl8xemtROVVhNy1saF9zSm1BZDhGa0hNbmlKV3pDcmRsNnRndDJLQTh1bDkzWlBOclNIQW5qVkVyOVN5ckNNRDRPZXQxUQ?oc=5",
-    "pub": "2026-11-25T21:08:56.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
    "Google News",
-   "AP",
    "Reuters",
    "WSJ",
    "The New York Times",
@@ -16383,9 +16383,11 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-26T06:30:11.969Z",
-  "lastAttempt": "2026-11-26T06:30:11.969Z",
+  "feedErrors": [
+   "AP (Google News): HTTP 429 from news.google.com"
+  ],
+  "asOf": "2026-11-26T07:30:10.594Z",
+  "lastAttempt": "2026-11-26T07:30:10.594Z",
   "lastError": null
  }
 }
