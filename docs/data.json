@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T11:45:14.035Z",
+ "generatedAt": "2026-11-27T12:00:20.465Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -473,6 +473,13 @@
   "kind": "ai",
   "items": [
    {
+    "hd": "Tech German software major SAP is reportedly weighing cutting at least 10,000 jobs in AI push",
+    "src": "CNBC",
+    "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html",
+    "pub": "2026-11-27T11:49:18.000Z",
+    "sum": "SAP is reportedly considering cutting 10,000 jobs as it reshapes its software business around AI."
+   },
+   {
     "hd": "Apple Pulls MiniMax Chatbot from App Store After Report of Sexualized Content",
     "src": "The Information",
     "url": "https://www.theinformation.com/briefings/apple-pulls-minimax-chatbot-app-store-report-sexualized-content",
@@ -527,13 +534,6 @@
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQTXk0cDktZnoxUS1oZk1LS2ZULTVJbExxV3k4bFg3Mkl0OENlMWd2a2FlUUhfTGZpWjdfUVlIRTBQLXNmSDVNdW9rVUlrOEhTMjBlQnpnWkxacC1tVWQyZ3NFdzFLUEN3NGlselE1SVRxR1FtcTlZeEYzNTF0MWYzaTZxXzY5M1hkcWdEZ3F6ak9TcmM2QjYwS2R2bU9nQlNSNFhUMi1aSENaTHVfeUNRNnBQSEY?oc=5",
     "pub": "2026-11-27T07:20:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Tech German software major SAP is reportedly weighing cutting at least 10,000 jobs in AI push",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/27/sap-job-cuts-ai-restructuring.html",
-    "pub": "2026-11-27T07:15:44.000Z",
-    "sum": "SAP is weighing cuts of at least 10,000 jobs as it reshapes its software business around AI, Bloomberg reported."
    },
    {
     "hd": "Saudi Engineer Accused of Bugging OpenAI to Be Released on $1 Million Bond",
@@ -690,18 +690,18 @@
    "Ars Technica",
    "CNBC",
    "The Information",
-   "Wired",
-   "Google News",
-   "Reuters",
-   "Bloomberg",
-   "Axios"
+   "Wired"
   ],
   "feedErrors": [
-   "VentureBeat: HTTP 429 from venturebeat.com"
+   "VentureBeat: HTTP 429 from venturebeat.com",
+   "Google News: HTTP 503 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "Bloomberg (Google News): HTTP 503 from news.google.com",
+   "Axios (Google News): HTTP 503 from news.google.com"
   ],
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired",
   "lastError": null
  },
  "stocks": {
@@ -7523,9 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T11:45:14.035Z",
+  "at": "2026-11-27T12:00:20.465Z",
   "ran": [
    "alerts",
+   "news",
+   "stockNews",
+   "worldNews",
+   "world",
    "extended",
    "futures",
    "usTempGrid"
@@ -13894,62 +13898,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T11:45:14.035Z",
-  "lastAttempt": "2026-11-27T11:45:14.035Z",
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7318,
-    "lastTime": 1795779310,
+    "last": 7297.75,
+    "lastTime": 1795780327,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 121.5,
-    "changePct": 1.6883207114569583,
-    "expectedOpen": 7304.048362398387,
+    "change": 101.25,
+    "changePct": 1.4069339262141318,
+    "expectedOpen": 7283.836968665323,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26698.25,
-    "lastTime": 1795779303,
+    "last": 26608,
+    "lastTime": 1795780329,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 593.5,
-    "changePct": 2.2735325946427376,
-    "expectedOpen": 24122.033918913225,
+    "change": 503.25,
+    "changePct": 1.927810072879457,
+    "expectedOpen": 24040.492486003506,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50886,
-    "lastTime": 1795779313,
+    "last": 50782,
+    "lastTime": 1795780323,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 659,
-    "changePct": 1.3120433233121627,
-    "expectedOpen": 50841.372044916076,
+    "change": 555,
+    "changePct": 1.104983375475342,
+    "expectedOpen": 50737.463254823095,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2743.9,
-    "lastTime": 1795779305,
+    "last": 2739.4,
+    "lastTime": 1795780331,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 38.20004882812509,
-    "changePct": 1.4118361059059832,
+    "change": 33.70004882812509,
+    "changePct": 1.245520546856245,
     "expectedOpen": null,
     "valid": true
    }
@@ -14503,8 +14507,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T11:45:14.035Z",
-  "lastAttempt": "2026-11-27T11:45:14.035Z",
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15151,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T11:45:14.035Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15158,19 +15162,22 @@
     "pub": "2026-11-27T10:39:31.000Z"
    },
    {
-    "src": "Reuters",
-    "hd": "Four Jehovah's Witnesses convicted of 'extremism' in Russian-annexed Crimea",
-    "pub": "2026-11-27T10:22:17.000Z"
-   },
-   {
     "src": "NPR",
     "hd": "As UN Secretary General's last day approaches, search for his replacement continues",
     "pub": "2026-11-27T09:46:13.000Z"
+   },
+   {
+    "src": "BBC News",
+    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
+    "pub": "2026-11-27T09:07:48.000Z"
    }
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
+  "feedErrors": [
+   "Google News: HTTP 429 from news.google.com",
+   "Reuters: HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "lastError": null
  },
  "movers": {
@@ -15358,8 +15365,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T11:45:14.035Z",
-  "lastAttempt": "2026-11-27T11:45:14.035Z",
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15405,6 +15412,13 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Nvidia gains premarket as stock heads for end to volatile week",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-27T11:32:50.000Z",
+      "sum": ""
+     },
      {
       "hd": "Nvidia Sellers Deliver a Stark Warning. These AI Stocks Could Feel the Pressure",
       "src": "Yahoo Finance",
@@ -15572,22 +15586,17 @@
       "url": "https://finnhub.io/api/news?id=153b78d22b8f5d6cf1b5fbc2fe432fe80ea72726a49a7ad9c2be9d1f3f4bc23a",
       "pub": "2026-11-26T03:29:20.000Z",
       "sum": "Anthony Scaramucci claimed someone cashed in on Nvidia call options bought Sunday night before the board reinstated CEO Jensen Huang Monday."
-     },
-     {
-      "hd": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE51YVJtVWRQVW9UQ2F0TmcyYnRIY1o3eTdTX1pPamJjRWlod2stNjhCRnIwdndsRm4zTkdWR1NSblpacElZSUdVcmc3ZlB5WDdUNk02VHRid19Nak83VjVVYmlhcVlwZ3BUQVg4RXB3V2N5UU9v0gF6QVVfeXFMT05JRkhHVWFocEE4YlFWMHpMb29MZzJSa2NpX1VuSVNtSGxJbkpsLXEtbHBocEh4Zk1NQVlmMVdFd1FNX0FhT0dRUFJ5dGo0aGozelJMY3VYVDNhUmRzR1pkVzViaUdRc1RxU19xWWstT2xtMDNELW9oaHc?oc=5",
-      "pub": "2026-11-26T02:57:00.000Z",
-      "sum": "Investing.com -- S&P Global Ratings placed NVIDIA on CreditWatch with negative implications Wednesday, citing concerns about the company's management and governance framework following recent news about its chief executive and potential export control violations."
      }
     ],
     "fetched": {
      "Finnhub": 112,
-     "Yahoo": 5,
-     "Google News": 87,
+     "Yahoo": 3,
      "Nasdaq": 12,
      "Seeking Alpha": 25
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "TSLA": {
     "items": [
@@ -15597,6 +15606,13 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110448164.html?.tsrc=rss",
       "pub": "2026-11-27T11:04:48.000Z",
       "sum": "The fund sold $149.6 million of stock, cutting 33 positions and adding none, with Tesla and SpaceX the largest reductions."
+     },
+     {
+      "hd": "Elon Musk Hopes All Teslas Will Get SpaceX’s Starlink Connectivity—Except in China, Where It’s ‘Illegal’: Says It Will Be Key for Unsupervised FSD",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/elon-musk-hopes-teslas-spacex-104507393.html?.tsrc=rss",
+      "pub": "2026-11-27T10:45:07.000Z",
+      "sum": "Tesla Inc. CEO Elon Musk said on Sunday he hopes that the automaker can integrate Space Exploration Technologies Corp.’s Starlink satellite internet connectivity across its entire vehicle lineup by the end of 2027. Starlink in All Tesla Cars? Responding to..."
      },
      {
       "hd": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
@@ -15639,13 +15655,6 @@
       "url": "https://finnhub.io/api/news?id=251c6e99197ce8f54f1f5cc64dcdcd6a04e029c4494ebea81efd09bece90c6a4",
       "pub": "2026-11-26T18:30:03.000Z",
       "sum": "BYD sold around 600,000 more pure-electric cars in 2025 than Tesla; Berkshire's 2008 BYD stake, bought for about $230 million, was sold off by September 2025."
-     },
-     {
-      "hd": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8e3aa8c9d10cb7fdfd62bca9b994eb2ef8497f2d62675ed9d54ae251f748a98b",
-      "pub": "2026-11-26T17:46:06.000Z",
-      "sum": "Tesla Investors Could Get a Piece of SpaceX. The Potential Windfall Is Huge"
      },
      {
       "hd": "EU may vote on authorising Tesla assisted-driving system at Dec 15 meeting",
@@ -15770,19 +15779,35 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 13,
-     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 8
-    }
+    },
+    "errors": [
+     "Google News: HTTP 503 from news.google.com"
+    ]
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SpaceX Stock Jumps 7.47% as Musk Expands Share Donation Pledge",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-jumps-7-47-113008534.html?.tsrc=rss",
+      "pub": "2026-11-27T11:30:08.000Z",
+      "sum": "Musk pledges to donate an additional SpaceX share to every American child annually, expanding his commitment to Trump Accounts."
+     },
      {
       "hd": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110448164.html?.tsrc=rss",
       "pub": "2026-11-27T11:04:48.000Z",
       "sum": "The fund sold $149.6 million of stock, cutting 33 positions and adding none, with Tesla and SpaceX the largest reductions."
+     },
+     {
+      "hd": "Elon Musk Hopes All Teslas Will Get SpaceX’s Starlink Connectivity—Except in China, Where It’s ‘Illegal’: Says It Will Be Key for Unsupervised FSD",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/elon-musk-hopes-teslas-spacex-104507393.html?.tsrc=rss",
+      "pub": "2026-11-27T10:45:07.000Z",
+      "sum": "Tesla Inc. CEO Elon Musk said on Sunday he hopes that the automaker can integrate Space Exploration Technologies Corp.’s Starlink satellite internet connectivity across its entire vehicle lineup by the end of 2027. Starlink in All Tesla Cars? Responding to..."
      },
      {
       "hd": "Biggest stock movers Friday: SPCX, PHAR, VRTX, ALVO, and more",
@@ -15832,20 +15857,6 @@
       "url": "https://finnhub.io/api/news?id=5ba7bbfe6332c14ee7092a4b5fa4647e1a0ecb09b8ee56159f9f94b4953b195f",
       "pub": "2026-11-27T03:53:02.000Z",
       "sum": "The failed launch is a blow to Amazon's plans, but SpaceX isn't going out of its way to help other companies."
-     },
-     {
-      "hd": "Cold Water for Grok: Musk Says SpaceX Is “Not Yet Even on the Podium” in AI",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8dd7e704c357d81f5d2d0ff980dbdc307edf6957fe29041bc9e2932972ada8ea",
-      "pub": "2026-11-27T03:22:03.000Z",
-      "sum": "Key TakeawaysElon Musk wrote on Nov. 26 that SpaceX is “not yet even on the podium” in AI, days after praising Google’s Gemini 4 Neon."
-     },
-     {
-      "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
-      "pub": "2026-11-27T01:30:07.000Z",
-      "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15955,14 +15966,37 @@
     ],
     "fetched": {
      "Finnhub": 170,
-     "Yahoo": 12,
-     "Google News": 17,
+     "Yahoo": 13,
      "Nasdaq": 0,
-     "Seeking Alpha": 13
-    }
+     "Seeking Alpha": 12
+    },
+    "errors": [
+     "Google News: HTTP 429 from news.google.com"
+    ]
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
+      "pub": "2026-11-27T11:56:50.000Z",
+      "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
+     },
+     {
+      "hd": "The Anatomy of an AI Rally: Anthropic Stock Quickly Finds Its Place",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/eac9c281-033c-3c73-8b9a-a27703a8cdc9/the-anatomy-of-an-ai-rally%3A.html?.tsrc=rss",
+      "pub": "2026-11-27T11:01:00.000Z",
+      "sum": "By now, we’re all familiar with how an artificial-intelligence rally works. Less so, when it comes to Anthropic's role in it all."
+     },
+     {
+      "hd": "Anthropic and OpenAI Race to Embed Engineers as Faith in AI Buildout Wobbles",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/de03ba4c-b160-33f0-a172-cfde9f4eb51f/anthropic-and-openai-race-to.html?.tsrc=rss",
+      "pub": "2026-11-27T11:00:00.000Z",
+      "sum": "The artificial-intelligence labs have hired hundreds of specialized engineers over recent months in a bid to drive enterprise revenue."
+     },
      {
       "hd": "Anthropic’s Lock-Up Expirations Start Dec. 15. Here’s What Investors Should Know Before Then.",
       "src": "Yahoo Finance",
@@ -15992,13 +16026,6 @@
       "sum": "Anthropic (ANT) stock is a hold, as S&M costs increased to 16.6% of revenue compared to 12.7% in the comparable period in 2025."
      },
      {
-      "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-      "pub": "2026-11-27T04:23:58.000Z",
-      "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
-     },
-     {
       "hd": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/ai/articles/dxc-technology-dxc-fully-valued-021346564.html?.tsrc=rss",
@@ -16011,20 +16038,6 @@
       "url": "https://finnhub.io/api/news?id=b6c930629e7ea794bc18185c9e5b46f9e267370097b770a0b72e08155b978fc3",
       "pub": "2026-11-26T22:27:45.000Z",
       "sum": "Shares of Claude maker Anthropic (ANT) rose more than 1% on Wednesday after declining for three consecutive trading sessions. The AI stock made a stellar Nasdaq debut on November 19, rising 17% from its IPO (initial public offering) price of $83. However, ANT and other AI-related stocks have been under pressure due to concerns about the sustainability of AI spending and macro pressures. Nevertheless, Wall Street analysts are bullish on Anthropic stock and see solid upside, given the company’s le"
-     },
-     {
-      "hd": "Cathie Wood Just Bought $26 Million of Anthropic Across 6 ARK Funds",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=007dac00e1d080fcca64fc3002a0fd35b7d5e89468190fab0a5a4a414c34734f",
-      "pub": "2026-11-26T21:06:01.000Z",
-      "sum": "Key TakeawaysCathie Wood’s ARK Invest bought 317,053 shares of Anthropic across six ETFs on Wednesday, about $26 million at the day’s close. Anthropic closed Wednesday at $82."
-     },
-     {
-      "hd": "I'd Buy Anthropic Stock Early — but Only If I Liked the Answers to These 3 Questions",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c3337a05d3a04e1085847e26053e689f13e53bc42c01829762f28d5b487deca7",
-      "pub": "2026-11-26T19:37:02.000Z",
-      "sum": "The AI lab's revenue is soaring, but the outlook for its profitability and valuation will determine whether the stock is worth buying at current prices."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16141,19 +16154,35 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 14,
-     "Google News": 56,
-     "Nasdaq": 14,
+     "Yahoo": 13,
+     "Nasdaq": 15,
      "Seeking Alpha": 22
-    }
+    },
+    "errors": [
+     "Google News: HTTP 429 from news.google.com"
+    ]
    }
   },
-  "asOf": "2026-11-27T11:30:11.204Z",
-  "lastAttempt": "2026-11-27T11:30:11.204Z",
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Zelenskyy urges the US to pressure Putin, calling Trump’s 'my friend' remark strange",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/zelenskyy-urges-us-pressure-putin-calling-trumps-friend-138478386",
+    "pub": "2026-11-27T11:55:58.000Z",
+    "sum": "Ukrainian President Volodymyr Zelenskyy is expressing frustration with the U.S. approach to Russian leader Vladimir Putin"
+   },
+   {
+    "hd": "Trump says he's giving Iran \"a chance to be smart\"",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
+    "pub": "2026-11-27T11:37:30.000Z",
+    "sum": "Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
+   },
    {
     "hd": "Armed group kills 13 soldiers in western Niger attack, defense ministry says",
     "src": "ABC News",
@@ -16349,27 +16378,9 @@
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObUt5bnNUdEVaVjhETTRjWFI5cnZYaUtyV0R1VE50ZGFPcnJyVmppY2xxeVFpOEtPWURRSFpKUGFXcDVkZGVtZnF2Ykg5aEk2NXY4VTVBVHZQWEstSk9CRGp6cHZLUWhyQkdDQ2ktQjl6WldZSlFRdzhfVUQ0dGNkNlZJaFZKMkFYeWdFUmNQSXdSTDJscjlEcXBZdVdhZWs?oc=5",
     "pub": "2026-11-26T21:27:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "UK shields fighter jets, contacts reservists in Cold War-scale push amid Russia threat",
-    "src": "Fox News",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX3UwOXNyb0NoQkd5dWprbW5CZjhYU09lT0I3UFQxRnQ1QUtNemg2T2k2RzFvU0FodTlncHhnUG5nVGt1Qno5d3Z3VXNIajBQV3hFQUdnWFdJdVpNeGZTX2dGMldXTVpvbS05SWZuMXY0NmVsNm1wUkw2WHBoUWwtRmNyZEo2MkFqc2RpYnVNSl9kc1JMeHBGamE0aHhZRFhuRW04MUF0TzVYWUEzSWtlVVJ30gG3AUFVX3lxTFA4UUxFOU8tQ25NZzZMY0V1QnhhS2hWOFhVRG1KcVN0eHVuaXVLaDA5UVJnQjRENUVrYVhja0tYenpXWS1SSGI2ZlAtejdGdUt1T1lkZ1dVRkU0bUVXNk5XU1VYZTItT1FfSU1IanhSeXdXYUNjVDZFT2xGcnFRTE5YNDdid2JiZVlDMUVhYWlNODNnZmFFU1hSQlkycmdkcjN5MTlUSEdFMFNFX1kxdkRvZWFfX0JvRQ?oc=5",
-    "pub": "2026-11-26T21:14:20.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Hamas in talks with Palestinian factions over Israeli targeted killings in Gaza",
-    "src": "The Jerusalem Post",
-    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZLTR5dXJUVGdNbk5QWHI0U1JoNTdQQkhOT2FJd0o0Wmk5RkEyZ3EydnYtNEcwcmg3UEJwMXN2SzRBY3hDQkxOLXRhelByMnRhZFN0OHlZY283Zm9hLVVUQVlqUEhWQnVyQmViaWJ3?oc=5",
-    "pub": "2026-11-26T20:32:07.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
-   "Google News",
-   "AP",
-   "Reuters",
-   "WSJ",
    "The New York Times",
    "The Washington Post",
    "NPR",
@@ -16380,9 +16391,14 @@
    "NBC News",
    "ABC News"
   ],
-  "feedErrors": [],
-  "asOf": "2026-11-27T11:30:11.204Z",
-  "lastAttempt": "2026-11-27T11:30:11.204Z",
+  "feedErrors": [
+   "Google News: HTTP 503 from news.google.com",
+   "AP (Google News): HTTP 429 from news.google.com",
+   "Reuters (Google News): HTTP 503 from news.google.com",
+   "WSJ (Google News): HTTP 503 from news.google.com"
+  ],
+  "asOf": "2026-11-27T12:00:20.465Z",
+  "lastAttempt": "2026-11-27T12:00:20.465Z",
   "lastError": null
  }
 }
