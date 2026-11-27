@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T21:15:10.297Z",
+ "generatedAt": "2026-11-27T21:30:10.456Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,16 +7502,13 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T21:15:10.297Z",
+  "at": "2026-11-27T21:30:10.456Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "movers",
-   "sectors",
-   "stocks:close",
-   "series",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13880,8 +13877,8 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T21:15:10.297Z",
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "items": {},
   "tradingNow": true,
   "symbolErrors": [
@@ -13901,9 +13898,9 @@
     "id": "401873083",
     "start": "2026-11-27T20:00Z",
     "state": "in",
-    "status": "Q2 1:51",
+    "status": "Halftime",
     "period": 2,
-    "clock": "1:51",
+    "clock": "0:00",
     "completed": false,
     "away": {
      "name": "Denver Broncos",
@@ -13922,7 +13919,7 @@
      "short": "Steelers",
      "id": "23",
      "abbrev": "PIT",
-     "score": "17",
+     "score": "24",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
      "record": "6-4",
      "winner": false,
@@ -14426,8 +14423,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T21:15:10.297Z",
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": null
  },
  "alerts": {
@@ -14438,8 +14435,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T21:15:10.297Z",
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15046,9 +15043,9 @@
     "id": "401856759",
     "start": "2026-11-27T20:30Z",
     "state": "in",
-    "status": "Q1 1:41",
-    "period": 1,
-    "clock": "1:41",
+    "status": "Q2 13:27",
+    "period": 2,
+    "clock": "13:27",
     "completed": false,
     "away": {
      "name": "Florida Gators",
@@ -15077,12 +15074,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T21:15:10.297Z",
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15293,44 +15290,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T21:15:10.297Z",
-  "lastAttempt": "2026-11-27T21:15:10.297Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 149.8595,
-    "time": 1795813800,
+    "price": 149.925,
+    "time": 1795814700,
     "ref": 150.49,
     "refTime": 1795802400,
-    "change": -0.630500000000012,
-    "changePct": -0.4189647152634806
+    "change": -0.5649999999999977,
+    "changePct": -0.3754402285866155
    },
    "TSLA": {
     "session": "post",
-    "price": 398.8,
-    "time": 1795813800,
+    "price": 398.7923,
+    "time": 1795814700,
     "ref": 400,
     "refTime": 1795802400,
-    "change": -1.1999999999999886,
-    "changePct": -0.29999999999999716
+    "change": -1.2076999999999884,
+    "changePct": -0.3019249999999971
    },
    "SPCX": {
     "session": "post",
-    "price": 132.52,
-    "time": 1795813800,
+    "price": 132.5989,
+    "time": 1795814700,
     "ref": 133.59,
     "refTime": 1795802400,
-    "change": -1.0699999999999932,
-    "changePct": -0.8009581555505599
+    "change": -0.9911000000000172,
+    "changePct": -0.7418968485665223
    },
    "ANT": {
     "session": "post",
-    "price": 91.6545,
-    "time": 1795813800,
+    "price": 91.6803,
+    "time": 1795814700,
     "ref": 91.88,
     "refTime": 1795802401,
-    "change": -0.2254999999999967,
-    "changePct": -0.24542882020025764
+    "change": -0.19969999999999288,
+    "changePct": -0.21734871571614375
    }
   }
  },
@@ -15340,6 +15337,13 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Jensen Huang Is Back. Nvidia’s (NVDA) Bull Case Remains",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-back-nvidia-nvda-210600721.html?.tsrc=rss",
+      "pub": "2026-11-27T21:06:00.000Z",
+      "sum": "Jensen Huang is back at the helm, and Nvidia’s (NVDA) bull case remains in play. Nvidia shares surged 31.5% on November 23 after news of Jensen Huang’s reinstatement, underscoring how closely investor confidence in the company is tied to its co-founder. While near-term volatility is likely to persist, I remain decisively Bullish over the long term. Nvidia makes the chips, networking gear, and software powering the artificial intelligence (AI) boom, and its earnings story is strong enough to ride"
+     },
      {
       "hd": "Nvidia Stocks Slip 1.66% as S&P Weighs Downgrade Over Key-Man Risk",
       "src": "Yahoo Finance",
@@ -15402,13 +15406,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-jump-12-85-181316890.html?.tsrc=rss",
       "pub": "2026-11-27T18:13:16.000Z",
       "sum": "A proof of concept used 144 Kioxia SSDs in an Nvidia GB200 rack to reach about 1.1 petabytes of extended memory."
-     },
-     {
-      "hd": "Kioxia Stocks Jump 8.86% as Nvidia SSD Test and Index Buying Lift Shares",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/kioxia-stocks-jump-8-86-181157042.html?.tsrc=rss",
-      "pub": "2026-11-27T18:11:57.000Z",
-      "sum": "The flash maker gained about 23% in two sessions, helped by a TOPIX weighting increase that took effect at Friday's close."
      },
      {
       "hd": "Dow Movers: NVDA, HONIV",
@@ -15519,7 +15516,7 @@
     "fetched": {
      "Finnhub": 103,
      "Yahoo": 6,
-     "Google News": 88,
+     "Google News": 86,
      "Nasdaq": 8,
      "Seeking Alpha": 25
     }
@@ -15705,7 +15702,7 @@
     "fetched": {
      "Finnhub": 150,
      "Yahoo": 9,
-     "Google News": 9,
+     "Google News": 10,
      "Nasdaq": 9,
      "Seeking Alpha": 8
     }
@@ -16076,25 +16073,39 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 11,
+     "Yahoo": 0,
      "Google News": 49,
      "Nasdaq": 14,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T21:00:11.947Z",
-  "lastAttempt": "2026-11-27T21:00:11.947Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
+    "src": "CBS News",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0lGZ2x0YXZLeTRTdE1zN09yX3E5enVIX0ZnUmhUVDVfMlVNeVpqUmlxN3ZLZFM1X2hfZGl0MVZmV1ZQZTFoUkpFNDVMM3E5bVhpZTRWdWZ5SVQtTEx6UFBGRWRkNjM0b0hvbnRpNzJscmVLMG95Mk1vUGt0YW1DQmxxbTZzUEVVOFJWdTVGNThiLU9G?oc=5",
+    "pub": "2026-11-27T21:12:14.000Z",
+    "sum": ""
+   },
    {
     "hd": "Trump says he's giving Iran \"a chance to be smart\"",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
     "pub": "2026-11-27T20:08:21.000Z",
     "sum": "President Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
+   },
+   {
+    "hd": "Zelenskyy urges US to pressure Putin and questions Trump’s reference to Putin as a ‘friend’",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
+    "pub": "2026-11-27T19:33:00.000Z",
+    "sum": "Ukrainian President Volodymyr Zelenskyy has expressed frustration with the U.S. approach to Russian leader Vladimir Putin"
    },
    {
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
@@ -16116,13 +16127,6 @@
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeDNxUmhfQTJHSHlfSlBjMjljTFEtaUJvdXpHQVROM08zYkMzRUluRHBlSnRkMzVMY3M1WmdYZXpCZjFxYUpteVRTczMzNHlxVm5ReTdTZTAtUkpLQnAxbjlOaDNVVlZYQUxkTVRrVVJORVdHSGhSZEJQUm9vRXE4Tm5fU19CcENJd0ZzVTRQVGhsVTZTQVVCU095Qm9DSDgzTWo1OFF1emNjLTlIUEdjNGRrcW5rSUxn0gG-AUFVX3lxTE9WanJuUmVjc3NDUUJtX1NOZXJVSm9GbXdKd3phb1RyZkppbnVERGczMEVwNW5NT3Y1WGd1bWlQRDdVMElxRjhCb1NGT1BHQXNmQ0tnbU1JRWdBeGhZNEY0MndWMzdVX0FvY2h2UXVOZkVHak1IRnY5R2ZFRWFMUEZYQ2Jyam9OZ01iaGc2cFNIT0IxZEdqVDVrdXFCX2MwRVhRZllwVXg3WVJxRU5rR3pxQlhKanpNTTJsY21keFE?oc=5",
     "pub": "2026-11-27T18:48:07.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Zelenskyy urges US to pressure Putin and questions Trump’s reference to Putin as a ‘friend’",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
-    "pub": "2026-11-27T18:47:00.000Z",
-    "sum": "Ukrainian President Volodymyr Zelenskyy has expressed frustration with the U.S. approach to Russian leader Vladimir Putin"
    },
    {
     "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
@@ -16158,6 +16162,13 @@
     "url": "https://abcnews.com/International/wireStory/lulas-choice-bradesco-banker-brazils-finance-minister-lifts-138482032",
     "pub": "2026-11-27T17:30:27.000Z",
     "sum": "Brazilian markets have rallied after President Luiz In&aacute;cio Lula da Silva confirmed that veteran banker Luiz Carlos Trabuco would lead his finance ministry in 2027, a move seen as a commitment to fiscal discipline"
+   },
+   {
+    "hd": "AP Exclusive: Lebanon's prime minister says a proposal is underway to have UN peacekeepers stay on",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTnZncFctRF9kSk1HUGFISFF6Ykk2MVpqemdmd0w5SU5tRTczZXdTcll5Rmk0T1RMUUtZZmxtRDIxMmhXcUN2TmZhQjBSQ3VIX196dVBheDBPSGxjeEp4MXMyV2JYeDZDa1VqVWtaSWhuZ2c5SnprREtPaERrTjJjTkhkYTViRWpick5McV9weWNWUzJ0dnkyd1Y3aWc0emkyd3RhNkhn?oc=5",
+    "pub": "2026-11-27T16:51:00.000Z",
+    "sum": ""
    },
    {
     "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
@@ -16207,13 +16218,6 @@
     "url": "https://abcnews.com/International/wireStory/houthis-report-11-killed-including-children-airstrike-mideast-138478032",
     "pub": "2026-11-27T15:14:20.000Z",
     "sum": "Houthi rebels say an airstrike in southwestern Yemen has killed at least 11 people, including children"
-   },
-   {
-    "hd": "AP Exclusive: Lebanon's prime minister says a proposal is underway to have UN peacekeepers stay on",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTnZncFctRF9kSk1HUGFISFF6Ykk2MVpqemdmd0w5SU5tRTczZXdTcll5Rmk0T1RMUUtZZmxtRDIxMmhXcUN2TmZhQjBSQ3VIX196dVBheDBPSGxjeEp4MXMyV2JYeDZDa1VqVWtaSWhuZ2c5SnprREtPaERrTjJjTkhkYTViRWpick5McV9weWNWUzJ0dnkyd1Y3aWc0emkyd3RhNkhn?oc=5",
-    "pub": "2026-11-27T15:10:00.000Z",
-    "sum": ""
    },
    {
     "hd": "Trump embraced Xi, then slapped new tariffs on China: What’s his game plan?",
@@ -16291,13 +16295,6 @@
     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYU5YQVdzaHpXYmVSRG9uaWNkNVB4UTl5blFhczE3aTk1ZXV4N3FDOHE1Y0ludElpV0dyVE54eXR6TjZsR3Mxd2p2RmVwMUhpenBqNl9MVy00djNYd0RHSm04ZEZXQzg5R0JHcWw4bEZUZ0ppRkxwUkxkbDFvY3hUMDZBSzE4Q3RwRTZCdmZvMUZBTThhTklOWVF0TldZZ2hUc29tSXRBQmJPNmJC?oc=5",
     "pub": "2026-11-27T10:22:17.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
-    "pub": "2026-11-27T10:07:05.000Z",
-    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
    }
   ],
   "feeds": [
@@ -16316,8 +16313,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T21:00:11.947Z",
-  "lastAttempt": "2026-11-27T21:00:11.947Z",
+  "asOf": "2026-11-27T21:30:10.456Z",
+  "lastAttempt": "2026-11-27T21:30:10.456Z",
   "lastError": null
  }
 }
