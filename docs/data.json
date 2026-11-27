@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T22:45:19.029Z",
+ "generatedAt": "2026-11-27T23:00:13.137Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,13 +7502,13 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T22:45:19.029Z",
+  "at": "2026-11-27T23:00:13.137Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -13894,39 +13894,6 @@
   "byes": [],
   "games": [
    {
-    "id": "401873083",
-    "start": "2026-11-27T20:00Z",
-    "state": "in",
-    "status": "Q4 4:09",
-    "period": 4,
-    "clock": "4:09",
-    "completed": false,
-    "away": {
-     "name": "Denver Broncos",
-     "short": "Broncos",
-     "id": "7",
-     "abbrev": "DEN",
-     "score": "5",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
-     "record": "8-2",
-     "winner": false,
-     "color": "#0a2343",
-     "rank": null
-    },
-    "home": {
-     "name": "Pittsburgh Steelers",
-     "short": "Steelers",
-     "id": "23",
-     "abbrev": "PIT",
-     "score": "27",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
-     "record": "6-4",
-     "winner": false,
-     "color": "#000000",
-     "rank": null
-    }
-   },
-   {
     "id": "401873084",
     "start": "2026-11-29T18:00Z",
     "state": "pre",
@@ -14420,10 +14387,43 @@
      "color": "#00338d",
      "rank": null
     }
+   },
+   {
+    "id": "401873083",
+    "start": "2026-11-27T20:00Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Denver Broncos",
+     "short": "Broncos",
+     "id": "7",
+     "abbrev": "DEN",
+     "score": "5",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/den.png",
+     "record": "8-3",
+     "winner": false,
+     "color": "#0a2343",
+     "rank": null
+    },
+    "home": {
+     "name": "Pittsburgh Steelers",
+     "short": "Steelers",
+     "id": "23",
+     "abbrev": "PIT",
+     "score": "27",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
+     "record": "7-4",
+     "winner": true,
+     "color": "#000000",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-27T22:45:19.029Z",
-  "lastAttempt": "2026-11-27T22:45:19.029Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": null
  },
  "alerts": {
@@ -14434,8 +14434,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T22:45:19.029Z",
-  "lastAttempt": "2026-11-27T22:45:19.029Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15042,9 +15042,9 @@
     "id": "401856759",
     "start": "2026-11-27T20:30Z",
     "state": "in",
-    "status": "Q3 8:46",
+    "status": "Q3 2:54",
     "period": 3,
-    "clock": "8:46",
+    "clock": "2:54",
     "completed": false,
     "away": {
      "name": "Florida Gators",
@@ -15063,7 +15063,7 @@
      "short": "Florida St",
      "id": "52",
      "abbrev": "FSU",
-     "score": "3",
+     "score": "10",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/52.png",
      "record": "5-6",
      "winner": false,
@@ -15073,12 +15073,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T22:45:19.029Z",
-  "lastAttempt": "2026-11-27T22:45:19.029Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T22:45:19.029Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15289,8 +15289,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T22:45:19.029Z",
-  "lastAttempt": "2026-11-27T22:45:19.029Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15515,7 +15515,7 @@
     "fetched": {
      "Finnhub": 104,
      "Yahoo": 5,
-     "Google News": 86,
+     "Google News": 83,
      "Nasdaq": 7,
      "Seeking Alpha": 25
     }
@@ -15856,6 +15856,13 @@
       "sum": "A key trading signal flashed for SpaceX shares at a price of $117.36, after which SPCX rose over 9% to an intraday high."
      },
      {
+      "hd": "Musk pledges two SpaceX shares for every US child in $18 billion AI charm offensive",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNklmekFZWmFURnFwVlBHa2FlTGZwYkxaSkNSRUxMV2lsanFDc2hkdGF1RGhHWlJoUTBicHFXY1B3dWxHa0xmdU5mYzFBbGpYN3Z5N2xTS2U1bVBJeVZQVHRucldkRVhsVlVfNldnTWpRclIzSjJQa0tMMnBFVGhDTS1HYzdwVlctaXowdDJtdVJaNkxLcXo2Tk9Odi1XZnI0c1JScHZycXhWRUNUZmQ4?oc=5",
+      "pub": "2026-11-26T20:27:35.000Z",
+      "sum": "Elon Musk has promised to donate two SpaceX shares to every child in the US, in a giveaway worth up to $18bn (£14bn)."
+     },
+     {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
       "src": "Reuters",
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNU3MtcGEzRThwZDdGaEZ4RktzRml6Y0hfNllQby1FQi02alpfdmdXM2ROZk1idmpVcHFoYXJaRG53UnEwWjhDXzRtYzVPWjB4UVJ5Tno1OXV6OGFJZEtyTHc2RHNYVE9Uc0hseU5IaEdHNXdOSlI0MkNWYTFUUXNjNVhHdXpQanEzaWhvQ3NaUk11Nlc5Z1lUR3VFak5WX2JPZWdPOUVDaFEtLWRzMVZ5cHJHLTg?oc=5",
@@ -15875,13 +15882,6 @@
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZm9uV2s2WngtTGYzQ000dWdaTnlsbzV4Tzc2TmprcDg5M1JXTWxoYU1PXzBqZlM0WkFjYl9SYTI1V2VFUE9aSlA2cXlJeEw2RlhiMHZmelZlVkx6aW1lbHFVODBvNXhfSmwzV2x6LVlLankzQk85SE5rUDJuNjNac2Y2Qncxdy1VdWduNm1B0gGTAUFVX3lxTE9jWGxXRXdzR1pPZU9QLVVvOG9KblpoQmlEV1FKeWlVRFNkczhwMU5YVnk3T3RFNWRPdmtFREdIQXh3SDh3WTNOUU9KRHlhekxWNnRaY2JodXhoY2Z4TmFjUzVvOERNOW9PRlI3MU9pUDlqSndKT0xzTGR4akdkZEVmd2N1YndSbXI1VVlYazJzRGdaQQ?oc=5",
       "pub": "2026-11-26T07:45:05.000Z",
       "sum": ""
-     },
-     {
-      "hd": "‘Extraordinary’: Ted Cruz Hails Elon Musk’s SPCX Stock Donation to Trump Accounts — Brad Gerstner Says 70 Million Children Are Eligible",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=4a383acc816f6f150c65cc73799ccae199b355f8996aab969f25bcf6a6b98474",
-      "pub": "2026-11-26T06:11:49.000Z",
-      "sum": "Ted Cruz praised SpaceX, Elon Musk and Gwynne Shotwell for donating billions in shares to Trump investment accounts for children."
      }
     ],
     "fetched": {
@@ -15894,6 +15894,13 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Anthropic: A Commodity Priced As A Monopoly",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4972648-anthropic-a-commodity-priced-as-a-monopoly?source=feed_symbol_ANT",
+      "pub": "2026-11-27T22:37:43.000Z",
+      "sum": "Analyst rates Anthropic a Sell: at 54x 2028 earnings, $746B in compute commitments require roughly $141B in annual revenue through 2030 to break even."
+     },
      {
       "hd": "Anthropic vs. Coinbase: One Stock Is Overhyped, One Is Oversold, Says Top Investor",
       "src": "Yahoo Finance",
@@ -16061,30 +16068,30 @@
       "url": "https://finnhub.io/api/news?id=0ba0115218b9f490620d9514960bda8a4a899703c9a3b68b8bb68aefe2640c2c",
       "pub": "2026-11-26T06:44:35.000Z",
       "sum": "Chamath Palihapitiya says Anthropic's valuation has 'nothing to do' with ANT, warning inflation and rising yields are bad for equities."
-     },
-     {
-      "hd": "What Comes Next After Anthropic’s Historic IPO",
-      "src": "WSJ",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPMGhQYy1TNTdJcnJDbUg5RFFZRl91OE1OZHNvdTFfYm81NTFTR1JGLXRsR1RFTnhnajZMT1ZjNEFIMjlJX2pfS092R2JGLUFZb2ZhVE5fRU5DUHhub1ZKb3VQUkJUSUpuX2wwZ2ZpdmR1M1BNcTVYb0pBQXlZMVFmNkNVbElaUEg0a2c?oc=5",
-      "pub": "2026-11-25T23:28:32.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 48,
+     "Google News": 47,
      "Nasdaq": 14,
-     "Seeking Alpha": 22
+     "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-27T22:30:13.383Z",
-  "lastAttempt": "2026-11-27T22:30:13.383Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "EXCLUSIVE: Russian military flotilla bound for Libya turns around after warship sunk on November 22, sources say",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYmlHdGhKd3RFRUNYajhTdlVqdUdrckt5RmtIZEltNjE0OTVPMDhaSS1DTFlGQTU5Z19LRFpLRmpXdVJkcVpRY19iLU40eXpEWUhYdDNjMXhfRkJqckxleW8tY25rOVJFTzlGeGVaUTlwb1M1NVBXSzQwSG9hX2VQR1JiMVhXYk1mdG01ei1nR1ZmOFY5RWpnejVHRkJSa2RVTHRLeURHS3hCSHJMcGluWG1fQWNjS19wTy1RejVTWE5BMW8?oc=5",
+    "pub": "2026-11-27T22:55:47.000Z",
+    "sum": ""
+   },
    {
     "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
     "src": "WSJ",
@@ -16133,13 +16140,6 @@
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
     "pub": "2026-11-27T19:33:00.000Z",
     "sum": "Ukrainian President Volodymyr Zelenskyy has expressed frustration with the U.S. approach to Russian leader Vladimir Putin"
-   },
-   {
-    "hd": "EXCLUSIVE: Russian military flotilla bound for Libya turns around after warship sunk on November 22, sources say",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOYmlHdGhKd3RFRUNYajhTdlVqdUdrckt5RmtIZEltNjE0OTVPMDhaSS1DTFlGQTU5Z19LRFpLRmpXdVJkcVpRY19iLU40eXpEWUhYdDNjMXhfRkJqckxleW8tY25rOVJFTzlGeGVaUTlwb1M1NVBXSzQwSG9hX2VQR1JiMVhXYk1mdG01ei1nR1ZmOFY5RWpnejVHRkJSa2RVTHRLeURHS3hCSHJMcGluWG1fQWNjS19wTy1RejVTWE5BMW8?oc=5",
-    "pub": "2026-11-27T19:17:56.000Z",
-    "sum": ""
    },
    {
     "hd": "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day",
@@ -16312,8 +16312,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T22:30:13.383Z",
-  "lastAttempt": "2026-11-27T22:30:13.383Z",
+  "asOf": "2026-11-27T23:00:13.137Z",
+  "lastAttempt": "2026-11-27T23:00:13.137Z",
   "lastError": null
  }
 }
