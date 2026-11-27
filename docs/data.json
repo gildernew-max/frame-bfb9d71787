@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T21:54:54.146Z",
+ "generatedAt": "2026-11-27T22:00:11.896Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,10 +7502,14 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T21:54:54.146Z",
+  "at": "2026-11-27T22:00:11.896Z",
   "ran": [
-   "news",
-   "world",
+   "alerts",
+   "nflScoreboard",
+   "cfbScoreboard",
+   "stockNews",
+   "worldNews",
+   "extended",
    "usTempGrid"
   ]
  },
@@ -13893,9 +13897,9 @@
     "id": "401873083",
     "start": "2026-11-27T20:00Z",
     "state": "in",
-    "status": "Q3 12:25",
+    "status": "Q3 6:15",
     "period": 3,
-    "clock": "12:25",
+    "clock": "6:15",
     "completed": false,
     "away": {
      "name": "Denver Broncos",
@@ -14418,8 +14422,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T21:45:11.506Z",
-  "lastAttempt": "2026-11-27T21:45:11.506Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": null
  },
  "alerts": {
@@ -14430,8 +14434,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T21:45:11.506Z",
-  "lastAttempt": "2026-11-27T21:45:11.506Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15038,16 +15042,16 @@
     "id": "401856759",
     "start": "2026-11-27T20:30Z",
     "state": "in",
-    "status": "Q2 7:18",
+    "status": "Q2 1:42",
     "period": 2,
-    "clock": "7:18",
+    "clock": "1:42",
     "completed": false,
     "away": {
      "name": "Florida Gators",
      "short": "Florida",
      "id": "57",
      "abbrev": "FLA",
-     "score": "7",
+     "score": "10",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
      "record": "7-4",
      "winner": false,
@@ -15069,12 +15073,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T21:45:11.506Z",
-  "lastAttempt": "2026-11-27T21:45:11.506Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T21:54:54.146Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15285,44 +15289,44 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T21:45:11.506Z",
-  "lastAttempt": "2026-11-27T21:45:11.506Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 149.7,
-    "time": 1795815600,
+    "price": 149.8201,
+    "time": 1795816500,
     "ref": 150.49,
     "refTime": 1795802400,
-    "change": -0.7900000000000205,
-    "changePct": -0.5249518240414781
+    "change": -0.6699000000000126,
+    "changePct": -0.4451458568675743
    },
    "TSLA": {
     "session": "post",
-    "price": 398.7254,
-    "time": 1795815600,
+    "price": 398.86,
+    "time": 1795816500,
     "ref": 400,
     "refTime": 1795802400,
-    "change": -1.2746000000000208,
-    "changePct": -0.3186500000000052
+    "change": -1.1399999999999864,
+    "changePct": -0.2849999999999966
    },
    "SPCX": {
     "session": "post",
-    "price": 132.5996,
-    "time": 1795815600,
+    "price": 132.62,
+    "time": 1795816500,
     "ref": 133.59,
     "refTime": 1795802400,
-    "change": -0.990399999999994,
-    "changePct": -0.7413728572497896
+    "change": -0.9699999999999989,
+    "changePct": -0.726102253162661
    },
    "ANT": {
     "session": "post",
-    "price": 91.406,
-    "time": 1795815600,
+    "price": 91.44,
+    "time": 1795816500,
     "ref": 91.88,
     "refTime": 1795802401,
-    "change": -0.47399999999998954,
-    "changePct": -0.5158902916847949
+    "change": -0.4399999999999977,
+    "changePct": -0.47888550282977554
    }
   }
  },
@@ -15510,9 +15514,9 @@
     ],
     "fetched": {
      "Finnhub": 103,
-     "Yahoo": 6,
-     "Google News": 86,
-     "Nasdaq": 8,
+     "Yahoo": 5,
+     "Google News": 87,
+     "Nasdaq": 7,
      "Seeking Alpha": 25
     }
    },
@@ -15697,7 +15701,7 @@
     "fetched": {
      "Finnhub": 150,
      "Yahoo": 9,
-     "Google News": 10,
+     "Google News": 9,
      "Nasdaq": 9,
      "Seeking Alpha": 8
     }
@@ -16068,24 +16072,38 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 0,
+     "Yahoo": 10,
      "Google News": 49,
      "Nasdaq": 14,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T21:30:10.456Z",
-  "lastAttempt": "2026-11-27T21:30:10.456Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
    {
+    "hd": "Russia’s Big Ambitions for A.I. Are Undercut by Constraints of War",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/27/world/europe/russia-ai-journey-conference.html",
+    "pub": "2026-11-27T21:41:12.000Z",
+    "sum": "Russian officials see artificial intelligence as a way to solve the country’s pressing problems. But Russia’s technological development has been held back."
+   },
+   {
     "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
     "src": "CBS News",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0lGZ2x0YXZLeTRTdE1zN09yX3E5enVIX0ZnUmhUVDVfMlVNeVpqUmlxN3ZLZFM1X2hfZGl0MVZmV1ZQZTFoUkpFNDVMM3E5bVhpZTRWdWZ5SVQtTEx6UFBGRWRkNjM0b0hvbnRpNzJscmVLMG95Mk1vUGt0YW1DQmxxbTZzUEVVOFJWdTVGNThiLU9G?oc=5",
     "pub": "2026-11-27T21:12:14.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
+    "pub": "2026-11-27T21:01:15.000Z",
     "sum": ""
    },
    {
@@ -16101,13 +16119,6 @@
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOZHZncjd6TjJOQy1tZVlWUVowZ0hBY2NWMjN2d1k3WXdzUlB4VUdlbl9kMDdLTnZ2bzY5eGlZUGFNSEQxYVNCaVNRYWlBTkZneUxoZm5ub1Q2MVd3QjFza1BJWWhiWEQ2Tk1aUE1jVlByV0h6NldmUC1NOUQ5WW5ka3pqdUFwaXI1SEd4VzNzUGNoZ2c5WG5Yd3dFeWpyY0taN3c?oc=5",
     "pub": "2026-11-27T19:33:00.000Z",
     "sum": "Ukrainian President Volodymyr Zelenskyy has expressed frustration with the U.S. approach to Russian leader Vladimir Putin"
-   },
-   {
-    "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
-    "pub": "2026-11-27T19:31:15.000Z",
-    "sum": ""
    },
    {
     "hd": "EXCLUSIVE: Russian military flotilla bound for Libya turns around after warship sunk on November 22, sources say",
@@ -16283,13 +16294,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HQUFHU1p6SVB5NnBsR25kTV9wX2Z6YUJBdy1SR1NnNTg5ek5nSUtxVE5lVXRjZ00zMVZFYjJFeGRIaVAyeGJ1Mng2RHY5OW43ZHN5RmFuUVpIZ2M?oc=5",
     "pub": "2026-11-27T10:39:31.000Z",
     "sum": "The Ugandan army is helping the Congolese military fight an Islamist militant group in the east of the country."
-   },
-   {
-    "hd": "Four Jehovah's Witnesses convicted of 'extremism' in Russian-annexed Crimea",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYU5YQVdzaHpXYmVSRG9uaWNkNVB4UTl5blFhczE3aTk1ZXV4N3FDOHE1Y0ludElpV0dyVE54eXR6TjZsR3Mxd2p2RmVwMUhpenBqNl9MVy00djNYd0RHSm04ZEZXQzg5R0JHcWw4bEZUZ0ppRkxwUkxkbDFvY3hUMDZBSzE4Q3RwRTZCdmZvMUZBTThhTklOWVF0TldZZ2hUc29tSXRBQmJPNmJC?oc=5",
-    "pub": "2026-11-27T10:22:17.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16308,8 +16312,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T21:30:10.456Z",
-  "lastAttempt": "2026-11-27T21:30:10.456Z",
+  "asOf": "2026-11-27T22:00:11.896Z",
+  "lastAttempt": "2026-11-27T22:00:11.896Z",
   "lastError": null
  }
 }
