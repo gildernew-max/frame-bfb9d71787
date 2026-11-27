@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T01:45:11.346Z",
+ "generatedAt": "2026-11-27T02:00:11.398Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -476,7 +476,7 @@
     "hd": "Wall Street Flips From AI Euphoria to Gloom",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZ3dMUTlPVV9IdUJTQ0NWSjV2ZEZLbmNnWWtoMEpQT05KdzZSX0d5cjRtNzBCYTZMdzBVZmQ0QU14a3B3dnRncGxPMmMyR0I3djQycmp0VWtWV0NqY3NQdHdPQlhDZGZuX2MwSHFFRmI2N3NydV9Bb3BRR1ZzUUs5NWNucklfOEZVNzczamJQdEY1OHRzRGdNdGZjb2ZYdw?oc=5",
-    "pub": "2026-11-27T00:28:17.000Z",
+    "pub": "2026-11-27T01:58:17.000Z",
     "sum": ""
    },
    {
@@ -634,6 +634,13 @@
     "sum": ""
    },
    {
+    "hd": "Thomson Reuters is playing both sides of the US-China AI race",
+    "src": "Business Insider",
+    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUmc0TG1UQV9QOGJ6ZlVxWG1QbEN2OFVza2VoM29LWXFQMGpsTDlvQmo2V0d5M0FvVXFrWlVrQlp1d3RWelNZckp1SDJxd1ozSVB6UWo0TUM2NU5lX01sUXJFcGlHNFpPMzBTWkZoY0ptWkFzLWRNTGdPcGo4M0lSSVRjOVlRUWhpdG1R?oc=5",
+    "pub": "2026-11-26T10:00:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "42 state AGs are trying to stop Character.AI from selling users’ chats",
     "src": "The Verge",
     "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
@@ -674,13 +681,6 @@
     "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
     "pub": "2026-11-26T03:19:44.000Z",
     "sum": "S&P Global Ratings said Nvidia's credit rating could be cut by one notch as it flagged \"rising\" management and governance risk at the chipmaker."
-   },
-   {
-    "hd": "SpaceX wins FCC approval to deploy 1 million orbital data center satellites",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
-    "pub": "2026-11-26T02:35:39.000Z",
-    "sum": "SpaceX won approval from the FCC to put 1 million orbital data center satellites into space, a proposal that was opposed by Amazon and other groups."
    }
   ],
   "feeds": [
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-27T01:00:18.185Z",
-  "lastAttempt": "2026-11-27T01:00:18.185Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T01:45:11.346Z"
+   "checkedAt": "2026-11-27T02:00:11.398Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,13 +7523,14 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T01:45:11.346Z",
+  "at": "2026-11-27T02:00:11.398Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "movers",
-   "sectors",
+   "news",
+   "worldNews",
+   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13897,62 +13898,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T01:45:11.346Z",
-  "lastAttempt": "2026-11-27T01:45:11.346Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7272.25,
-    "lastTime": 1795743311,
+    "last": 7269.5,
+    "lastTime": 1795744213,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 75.75,
-    "changePct": 1.0525950114639062,
-    "expectedOpen": 7258.3855839644275,
+    "change": 73,
+    "changePct": 1.0143819912457446,
+    "expectedOpen": 7255.640826790801,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26472.5,
-    "lastTime": 1795743312,
+    "last": 26468.75,
+    "lastTime": 1795744223,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 367.75,
-    "changePct": 1.4087474501766921,
-    "expectedOpen": 23918.067398366198,
+    "change": 364,
+    "changePct": 1.3943822484413755,
+    "expectedOpen": 23914.679250184352,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50583,
-    "lastTime": 1795743298,
+    "last": 50574,
+    "lastTime": 1795744194,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 356,
-    "changePct": 0.7087821291337328,
-    "expectedOpen": 50538.637781472105,
+    "change": 347,
+    "changePct": 0.6908634798017003,
+    "expectedOpen": 50529.64567463714,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2726.9,
-    "lastTime": 1795743296,
+    "last": 2726.8,
+    "lastTime": 1795744207,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 21.20004882812509,
-    "changePct": 0.7835328828291941,
+    "change": 21.100048828125182,
+    "changePct": 0.7798369815169811,
     "expectedOpen": null,
     "valid": true
    }
@@ -13969,9 +13970,9 @@
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
     "state": "in",
-    "status": "Q1 7:29",
-    "period": 1,
-    "clock": "7:29",
+    "status": "Q2 15:00",
+    "period": 2,
+    "clock": "15:00",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
@@ -14494,8 +14495,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T01:45:11.346Z",
-  "lastAttempt": "2026-11-27T01:45:11.346Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": null
  },
  "alerts": {
@@ -14506,8 +14507,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T01:45:11.346Z",
-  "lastAttempt": "2026-11-27T01:45:11.346Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14784,9 +14785,9 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Q1 0:19",
-    "period": 1,
-    "clock": "0:19",
+    "status": "Q2 12:51",
+    "period": 2,
+    "clock": "12:51",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
@@ -14805,7 +14806,7 @@
      "short": "Texas Tech",
      "id": "2641",
      "abbrev": "TTU",
-     "score": "0",
+     "score": "3",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
      "record": "10-1",
      "winner": false,
@@ -15145,12 +15146,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T01:45:11.346Z",
-  "lastAttempt": "2026-11-27T01:45:11.346Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15161,19 +15162,19 @@
     "pub": "2026-11-27T00:48:11.000Z"
    },
    {
+    "src": "Reuters",
+    "hd": "Trump says Putin can come to G20 if he wants",
+    "pub": "2026-11-27T00:35:00.000Z"
+   },
+   {
     "src": "The Washington Post",
     "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
     "pub": "2026-11-27T00:34:52.000Z"
-   },
-   {
-    "src": "Reuters",
-    "hd": "Final New Zealand election vote count to confirm parliament make up",
-    "pub": "2026-11-26T22:34:34.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T01:00:18.185Z",
-  "lastAttempt": "2026-11-27T01:00:18.185Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": null
  },
  "movers": {
@@ -16200,6 +16201,13 @@
     "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
    },
    {
+    "hd": "UK shields fighter jets, contacts reservists in Cold War-scale push amid Russia threat",
+    "src": "Fox News",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX3UwOXNyb0NoQkd5dWprbW5CZjhYU09lT0I3UFQxRnQ1QUtNemg2T2k2RzFvU0FodTlncHhnUG5nVGt1Qno5d3Z3VXNIajBQV3hFQUdnWFdJdVpNeGZTX2dGMldXTVpvbS05SWZuMXY0NmVsNm1wUkw2WHBoUWwtRmNyZEo2MkFqc2RpYnVNSl9kc1JMeHBGamE0aHhZRFhuRW04MUF0TzVYWUEzSWtlVVJ30gG3AUFVX3lxTFA4UUxFOU8tQ25NZzZMY0V1QnhhS2hWOFhVRG1KcVN0eHVuaXVLaDA5UVJnQjRENUVrYVhja0tYenpXWS1SSGI2ZlAtejdGdUt1T1lkZ1dVRkU0bUVXNk5XU1VYZTItT1FfSU1IanhSeXdXYUNjVDZFT2xGcnFRTE5YNDdid2JiZVlDMUVhYWlNODNnZmFFU1hSQlkycmdkcjN5MTlUSEdFMFNFX1kxdkRvZWFfX0JvRQ?oc=5",
+    "pub": "2026-11-26T21:14:20.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORnNINWJlUzU0bDVSQ1Z5TWhtZTl1dzVxa01lbWhiMTg0bjBKZzQtbld6RmpIQ3NOSkctT29wTmdmR3VCcHpMbzdBQUdQSU0wVWItQU1COHhCS1BzYnpoOTJsRzl2TWp0aVNNZWVpZVFhS2cwWXVtNnA0bzRfUXNTRTJRTEVHem5BY2V2SURxZG9Vb3VkT3FNa1RuR3RfZWJQUE15WTdGaVFudnJaeVJIdVhXdE9PcWFuY2c?oc=5",
@@ -16359,13 +16367,6 @@
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
     "pub": "2026-11-26T16:26:33.000Z",
     "sum": ""
-   },
-   {
-    "hd": "How the Black Sea front in the Russia-Ukraine war is threatening to pull the U.S. into the conflict",
-    "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1XSG11OFNDMy1CT0lldVd0S21WUVE4SERyVUFSRWpqZUw1LXo0MEdVWmJWNWpjaWcxUGVXeVREcGt5SGplbzZsQURVdUVJZjZZQkEyMUh1cHl4RXpxV1pDblUyNUkweXJ5THRiNWJhSGNQMm14QVdFS2IyUEZyQQ?oc=5",
-    "pub": "2026-11-26T16:18:46.000Z",
-    "sum": "The Russia-Ukraine war is spilling into the Black Sea, where violent incidents have surged, running right up to NATO's doorstep."
    }
   ],
   "feeds": [
@@ -16384,8 +16385,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T02:00:11.398Z",
+  "lastAttempt": "2026-11-27T02:00:11.398Z",
   "lastError": null
  }
 }
