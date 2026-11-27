@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T10:15:13.084Z",
+ "generatedAt": "2026-11-27T10:30:12.361Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T10:15:13.084Z",
+  "at": "2026-11-27T10:30:12.361Z",
   "ran": [
-   "weather",
    "alerts",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13897,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T10:15:13.084Z",
-  "lastAttempt": "2026-11-27T10:15:13.084Z",
+  "asOf": "2026-11-27T10:30:12.361Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7320,
-    "lastTime": 1795773911,
-    "settle": 7196.75,
+    "last": 7323.75,
+    "lastTime": 1795774818,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 123.25,
-    "changePct": 1.7125785945044638,
-    "expectedOpen": 7305.790752770347,
+    "change": 127.25,
+    "changePct": 1.7682206628222052,
+    "expectedOpen": 7309.78740012506,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26706,
-    "lastTime": 1795773913,
-    "settle": 26105.75,
+    "last": 26731.75,
+    "lastTime": 1795774823,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 600.25,
-    "changePct": 2.299301877938768,
-    "expectedOpen": 24128.11181130594,
+    "change": 627,
+    "changePct": 2.401861730144897,
+    "expectedOpen": 24152.301376004365,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50872,
-    "lastTime": 1795773911,
-    "settle": 50229,
+    "last": 50892,
+    "lastTime": 1795774794,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 643,
-    "changePct": 1.2801369726651934,
-    "expectedOpen": 50825.36049692409,
+    "change": 665,
+    "changePct": 1.3239890895335178,
+    "expectedOpen": 50847.366782806064,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2746.7,
-    "lastTime": 1795773912,
-    "settle": 2705.800048828125,
+    "last": 2745.5,
+    "lastTime": 1795774815,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 40.89995117187482,
-    "changePct": 1.511565911516207,
+    "change": 39.800048828125,
+    "changePct": 1.4709705269014424,
     "expectedOpen": null,
     "valid": true
    }
@@ -14506,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T10:15:13.084Z",
-  "lastAttempt": "2026-11-27T10:15:13.084Z",
+  "asOf": "2026-11-27T10:30:12.361Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T10:15:13.084Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T10:15:13.084Z",
-  "lastAttempt": "2026-11-27T10:15:13.084Z",
+  "asOf": "2026-11-27T10:30:12.361Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15409,18 +15408,32 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Market Chatter: Nvidia Stops Southeast Asia Chip Sales Following Proposed US Restrictions",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-nvidia-stops-southeast-102254508.html?.tsrc=rss",
+      "pub": "2026-11-27T10:22:54.000Z",
+      "sum": "Nvidia (NVDA) has stopped some sales of its highest-end artificial intelligence microchips to Malays"
+     },
+     {
       "hd": "Nvidia: Sell The Rallies, The Parabolic Gains Are Gone",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4972476-nvidia-sell-the-rallies-the-parabolic-gains-are-gone?source=feed_symbol_NVDA",
       "pub": "2026-11-27T09:25:19.000Z",
-      "sum": ""
+      "sum": "NVIDIA (NVDA) stock is a sell, as its 31% rebound is a chance to sell, as fading AI enthusiasm and financing risks could compress its 15-18x earnings multiple."
      },
      {
       "hd": "Nvidia, AI Fears Jolt Markets: Market Snapshot",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/video/nvidia-ai-fears-jolt-markets-082748065.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=1e6a06c509e87940c7a59a3d4938989362157605ae7409c590072af3bbcfa9ac",
       "pub": "2026-11-27T08:27:48.000Z",
       "sum": "Nvidia reinstated Jensen Huang as CEO, sending tech stocks soaring. But it wasn't enough to quell jitters in the artificial intelligence trade. Bloomberg's \"The Opening Trade\" spoke to global strategists and tech leaders about whether recent volatility signals a new era for AI investment."
+     },
+     {
+      "hd": "Former SEC Chair Gensler: Nvidia Has “a Disclosure Vulnerability.” The White House’s Huang Assurances May Have to Be Filed",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=ecddd312c75fa8e0a78edc8ea860338928d8a586e267c28dca89eece87d801d8",
+      "pub": "2026-11-27T06:54:18.000Z",
+      "sum": "Key TakeawaysFormer SEC Chair Gary Gensler says NVIDIA has “a disclosure vulnerability” and that Washington’s assurances on Huang belong in a filing. Those assurances cover Huang, not the SEC’s reported probe of NVIDIA’s own disclosures."
      },
      {
       "hd": "Nvidia, neoclouds in focus as chip sellers rule out Chinese renters",
@@ -15472,25 +15485,11 @@
       "sum": "Nvidia Corp. (NASDAQ:NVDA) chip sellers are reportedly barring neoclouds from buying GPUs if Chinese firms rent any capacity, after a Commerce Department rule restricting remote access to AI chips took effect Nov. 19. Commerce Rule Targets Remote Access Loophole Chip sellers relayed the message to neoclouds after the rule was announced Nov. 16, CNBC reported on Thursday, citing sources. Neoclouds are specialized cloud providers that rent out computing power built on graphics processing units (GP"
      },
      {
-      "hd": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1db74882d7bda4ed7c34d919e47ea600e66f05946f48ec1ec09c1c1846c3f471",
-      "pub": "2026-11-27T03:20:02.000Z",
-      "sum": "Nvidia is a bargain buy right now."
-     },
-     {
       "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
       "src": "MarketWatch",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
       "pub": "2026-11-27T00:31:00.000Z",
       "sum": "NVIDIA has just announced that it is bringing back Jensen Huang as the CEO of the company, following his resignation earlier this month after a scandalous set of events. The company announced that the board unanimously agreed in favor of bringing back Huang, but the independent investigation will proceed. “The Board of Directors voted unanimously"
-     },
-     {
-      "hd": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8f377026c02684c28af2245b965ae35185baa4b14dea7345993296adb4c5f08d",
-      "pub": "2026-11-27T00:20:02.000Z",
-      "sum": "Nvidia and Broadcom shares have pulled back sharply even as AI demand holds up. Past sell-offs offer clues for long-term investors."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15585,9 +15584,9 @@
      }
     ],
     "fetched": {
-     "Finnhub": 116,
+     "Finnhub": 112,
      "Yahoo": 4,
-     "Google News": 87,
+     "Google News": 90,
      "Nasdaq": 12,
      "Seeking Alpha": 25
     }
@@ -15773,7 +15772,7 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 12,
-     "Google News": 10,
+     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
@@ -15781,11 +15780,32 @@
    "SPCX": {
     "items": [
      {
+      "hd": "Biggest stock movers Friday: SPCX, PHAR, VRTX, ALVO, and more",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/SPCX/news?source=feed_symbol_SPCX",
+      "pub": "2026-11-27T10:27:41.000Z",
+      "sum": ""
+     },
+     {
       "hd": "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX0hjaTV1MVlwMmJMM2ZxTVk3SVNhdTlPWUlhYlJlc2ZJcDVscW1VRTdKTUEwczNHRlpPeURRVnhQQzlMeVQwblFXcFdzVVV5S2JWc3d3WUpYbk94NTdmVjh6SFU0VWoxRmZZOFMzdVI3Ukk0UHBub3Vtc0xWbTM1RzhKY0NaeGx5TmNzY0RmNWFiWDAxQmx4Y0NFNUhfMk5DS2c?oc=5",
       "pub": "2026-11-27T08:58:54.000Z",
       "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
+     },
+     {
+      "hd": "Gwynne Shotwell Joins Musk’s SpaceX Gift to Trump Accounts, Now an $18 Billion Share Donation",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=ac2975aacc04cd91397e55baba9ea14850fa6037c758e8b2298dc92915bc7f2f",
+      "pub": "2026-11-27T06:27:39.000Z",
+      "sum": "Key TakeawaysSpaceX and Elon Musk will each give one share to every active Trump Account, and with Gwynne Shotwell’s 2 million shares, that’s up to $18 billion of stock at today’s prices. SpaceX’s share is newly issued, diluting existing holders by up to about half a percent."
+     },
+     {
+      "hd": "Musk Says SpaceX Leads the World “by an Order of Magnitude.” Here’s What That Means for Orbital Compute",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-says-spacex-leads-the-world-by-an-order-of-magnitude-heres-what-that-means-for-orbital-compute?ref=yahoofinance&tlnk=yf-261127-c8w2pxr8&.tsrc=rss",
+      "pub": "2026-11-27T04:25:06.000Z",
+      "sum": "Key TakeawaysThe FCC approved up to 1 million SpaceX compute satellites on Nov. 25, and Musk says SpaceX leads the world “by an order of magnitude."
      },
      {
       "hd": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
@@ -15800,6 +15820,13 @@
       "url": "https://finnhub.io/api/news?id=5ba7bbfe6332c14ee7092a4b5fa4647e1a0ecb09b8ee56159f9f94b4953b195f",
       "pub": "2026-11-27T03:53:02.000Z",
       "sum": "The failed launch is a blow to Amazon's plans, but SpaceX isn't going out of its way to help other companies."
+     },
+     {
+      "hd": "Cold Water for Grok: Musk Says SpaceX Is “Not Yet Even on the Podium” in AI",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=8dd7e704c357d81f5d2d0ff980dbdc307edf6957fe29041bc9e2932972ada8ea",
+      "pub": "2026-11-27T03:22:03.000Z",
+      "sum": "Key TakeawaysElon Musk wrote on Nov. 26 that SpaceX is “not yet even on the podium” in AI, days after praising Google’s Gemini 4 Neon."
      },
      {
       "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
@@ -15821,27 +15848,6 @@
       "url": "https://finnhub.io/api/news?id=2b031339203489c62d7c318ddcb9d7a0b5249a23f36eb8c77f02a19d3f0d0fff",
       "pub": "2026-11-27T00:01:47.000Z",
       "sum": "Investing.com-- Elon Musk said on Thursday he will donate an additional share of SpaceX to all children in the U.S. every year, after earlier pledging to donate two shares to each American child."
-     },
-     {
-      "hd": "Amazon tried to kill Musk’s plan for 1 million AI satellites. The FCC chair scolded it and gave SpaceX the green light",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ac404d27a7626b1a33a4b3e77a8c3c67520a0badc80c4687a37bdc3f57ae0b3a",
-      "pub": "2026-11-26T23:30:00.000Z",
-      "sum": "Musk says moving AI data centers into space could save money and energy, but critics warn his plan could threaten scientific research and the environment."
-     },
-     {
-      "hd": "Stanley Druckenmiller Sees 70% Chance of Data Centers in Space Within 10 Years — Duquesne Adds $30 Million to SpaceX Stake in Q3",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=32e3d5c99797fd339a993648aec2ffb2641604aaa0dcd6cadc823614117b9cd8",
-      "pub": "2026-11-26T21:30:04.000Z",
-      "sum": "Stanley Druckenmiller said he sees an \"at least 70%\" chance of data centers operating in space over the next decade, after his Duquesne Family Office disclosed a new roughly $30.5 million position in Space Exploration Technologies Corp. in its third-quarter..."
-     },
-     {
-      "hd": "SpaceX Is a Great Company. Is It a Great Stock at This Price?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=69fc518bd930d68cb6b163140816a62f1e05688488484c7d0abde4ef9d4d16f6",
-      "pub": "2026-11-26T20:56:02.000Z",
-      "sum": "SpaceX's current stock price leaves no room for error."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15947,25 +15953,25 @@
       "url": "https://finnhub.io/api/news?id=d5e67981283bcc085b4ed6c51b0315a739bbbcc623a14f1907bf368bbf3a737c",
       "pub": "2026-11-25T13:52:00.000Z",
       "sum": "SpaceX joined the WisdomTree U.S. Quality Growth Index at a 3.29% weight on November 13, 2026."
-     },
-     {
-      "hd": "SpaceX Shares Drop Wednesday: What's Going On?",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=2356ca133f56bee130fda82e4130c4ba4a8d23bb043e57609e007839d5371cd8",
-      "pub": "2026-11-25T11:17:31.000Z",
-      "sum": "SpaceX shares are trading lower Wednesday, extending Tuesday's losses amid concerns a potential merger with Tesla could dilute shareholders."
      }
     ],
     "fetched": {
      "Finnhub": 170,
      "Yahoo": 12,
-     "Google News": 17,
+     "Google News": 18,
      "Nasdaq": 0,
-     "Seeking Alpha": 12
+     "Seeking Alpha": 13
     }
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Yikes! Anthropic Stock Is Down 28%, but Wall Street says This Will Happen Next.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/27/anthropic-stock-down-28-wall-street-this-happens-next/?.tsrc=rss",
+      "pub": "2026-11-27T10:04:02.000Z",
+      "sum": "Wall Street expects Anthropic to rebound sharply, but historical IPO performance and the stock’s rich valuation suggest investors should exercise caution."
+     },
      {
       "hd": "Anthropic: 3 Reasons Why I Am Not Investing",
       "src": "Seeking Alpha",
@@ -16021,13 +16027,6 @@
       "url": "https://finnhub.io/api/news?id=83cce37cdaa790b44d9360146fa0e0712c26c2dcabeb494bd41c337f717478f3",
       "pub": "2026-11-26T19:05:52.000Z",
       "sum": "Shares rebounded from a 7.6% early drop to $75.71 yet ended at $82.79, one week after the record offering."
-     },
-     {
-      "hd": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=20293754165b732c4daa2b3fd0e28d7a92e12843ae62234831a59d659a3da32f",
-      "pub": "2026-11-26T18:30:41.000Z",
-      "sum": "Shares erased a 7.7% intraday slide to their lowest level since July 2025 as Google and Anthropic exposure stays in focus."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16145,24 +16144,52 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 14,
-     "Google News": 55,
+     "Google News": 56,
      "Nasdaq": 14,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T09:30:12.335Z",
-  "lastAttempt": "2026-11-27T09:30:12.335Z",
+  "asOf": "2026-11-27T10:30:12.361Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
+    "pub": "2026-11-27T10:07:05.000Z",
+    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
+   },
    {
     "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-27T09:07:48.000Z",
     "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
+   },
+   {
+    "hd": "Guinea-Bissau's military leaders delay return to civilian rule until 2028",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cm879e5yxjq5o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-27T08:58:08.000Z",
+    "sum": "The announcement comes a year after a military coup with its leaders promising a return to civilian rule within 12 months."
+   },
+   {
+    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
+    "pub": "2026-11-27T08:56:34.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "The main issues driving Spain’s election and why they matter for Europe",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTVpPaFdxTUpHbXNSemNIelRrb2xZQm5jZTBvT2VncV9EbWdWdjd3ZWdaUVVWSkl0dGpQaFRIcGFicTBKZDlFeG1lMHlyNTV2aHAtYXR6eFM2N2RwTDZyeS10VWtWNjhUcUtoamd3R3IzSzBaXzFDNl9KeXZUZlFRYXhhUUlzcF96OXJmZFpKTXN0ZDNERUY2b1RsYkhvbklYNXpTeW1na3Y?oc=5",
+    "pub": "2026-11-27T08:31:00.000Z",
+    "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
    },
    {
     "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
@@ -16214,7 +16241,7 @@
     "sum": ""
    },
    {
-    "hd": "Houthi attacks test Saudi Arabia's image of security",
+    "hd": "Inside Saudi Arabia, Houthi attacks test kingdom's image of security",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/c6ly7jgv7jzdo?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-27T06:04:51.000Z",
@@ -16235,25 +16262,11 @@
     "sum": ""
    },
    {
-    "hd": "Here are the main issues driving Spain's national election and why they matter for Europe",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/main-issues-driving-spains-national-election-matter-europe-138476510",
-    "pub": "2026-11-27T05:10:38.000Z",
-    "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
-   },
-   {
     "hd": "Drone briefly violates Latvian airspace, Latvian armed forces say",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRlBDakRsQmlwdGpaNjZkd1hiSGMzbHlSWDZvSWhyX1JUVGRYTWtHYkE1aUhJMWduQzNXU1NTVVdWclMxQlBKeWNWemFFdmNteUlxZXdhSTE1cVdrZUdSMTZtVUtOeGdJZ2RRUGhGamxsSk02UFFxdXcwaTZIMU4zaWlfZDl1c3NZT254ZkpBMndleEwxMmMwM0I1Y2I0MkJreDJnUjlMNnNRQQ?oc=5",
     "pub": "2026-11-27T04:59:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
-    "src": "CNBC",
-    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWXdZWk9aY1VrSmlEbExnWV93RnFxTDFwV3RLdjhtYW1SaXU0aXJCbGJBRUVOS0FramRyaVdva0VwUWRLQlBZdHcwYktUWVlwaEp4MTNEeUN3Y2Q1bi1RUG5TRTZoWlY0S2lFUVpqSVF3NzJQZ2hiUGFjU19LTW93cERfYzNNY3VKalHSAY8BQVVfeXFMTXlQSEhkZ20xOFJXTzlvczJPelo5S294dENlYTBpMzAxVHVxeHhFNUk3eHZVYVQzY0t6cWZ5T1hEYUdjbkc1SmROUVVTVWc4Mjdza3FYNXplRTE0Qk5NY1NyTTNwdEN6Z2JyWEJhOVRVd3RVOVRoTVlubGNUYTBsWS1zTkZ3czV6WThYWkk4RVU?oc=5",
-    "pub": "2026-11-27T03:30:00.000Z",
-    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
    },
    {
     "hd": "Zelenskyy warns of major Russian attack as Trump urges Putin to ‘pull back’",
@@ -16340,31 +16353,17 @@
     "sum": ""
    },
    {
-    "hd": "Guinea-Bissau’s military junta postpones elections until 2028, extending its rule by two years",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/guinea-bissaus-military-junta-postpones-elections-2028-extending-138470757",
-    "pub": "2026-11-26T19:46:30.000Z",
-    "sum": "Guinea-Bissau’s military government has postponed presidential and legislative elections until November 2028, extending its promised yearlong transition to civilian rule by roughly two years"
-   },
-   {
-    "hd": "Spain's former central bank head chosen as next European Central Bank president",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/leaders-choose-spains-former-central-bank-head-european-138468703",
-    "pub": "2026-11-26T19:38:15.000Z",
-    "sum": "Eurozone leaders have chosen a new president of the European Central Bank"
-   },
-   {
-    "hd": "Duterte’s defense: Use of ‘offensive, threatening’ speech in drug war is ‘regional way of speaking’",
-    "src": "ABS-CBN",
-    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNNllVdk13M3BwdW9MV3ZURVV0OHFfVmNlM0ZPaXR4aVU4N1N5U3I5VVNCd0RfYUJ3VS1rbjBncV9XMlIxZFlFaEVqeHNnai01cTBLLUVsTVc1R0pMZGFTWVY0LWgxLXJUa0swd3lWWTdQNDJDUFlBWXVjcGJMWXJSRmVpb0FEZUJDVnN1cWgzZWxhdVd2VTlCXzZmX2Rvb3NXWmlDczRWRWUzc3BETUlhaXBTcTBjRzJEaGZVdWdrSDU1ZFhJeEhPX2xiUURmaHczamt2TmoyT3Rud2piRFE?oc=5",
-    "pub": "2026-11-26T19:35:05.000Z",
+    "hd": "‘Trucks on fire and drones overhead’: the Russians risking the long road to Crimea",
+    "src": "The Guardian",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdVhGZF9aVy0tamY0ZTdiLUVqaHVsNkYyMXRjdW5od3RyYVoyb09TZFhfUU1ZdjFoS1V1VTNpMURqM01hSXljZmtfeHc1Rl9jYWZGWVJlSzk1NjNQNWRJU2pDYm1XVEVRdUFxSzhUSGtrR3N3OVg1MnNZY29SLWo1cGRaWmUzY1RJbDc5akduM1Z2WDA?oc=5",
+    "pub": "2026-11-26T20:01:00.000Z",
     "sum": ""
    },
    {
-    "hd": "How a Nigerian journalist uncovered Russia's war machine in Africa",
-    "src": "The Kyiv Independent",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQkY4UERnOXV4QjFWbDhSdFNyN1J2R1BzMFVDUXhfMVh2NndIZGhCQU10eFpqT1JJTS1rdjIzdlNxVllGbWFMXzE5SlRzYjVKdUE1Z2lJbWRyRVBxa2F6andLU2ZCeFNsejFYYWZudkEzeEJ3ZWc2cEZONkpUZWkzYzhxVkMyS3NCdjRBOFNfUkYtZzhUZm5PODB1VlZleVREQmhsc3czYXJDWWdGLTFzaVhUZ3M?oc=5",
-    "pub": "2026-11-26T19:06:58.000Z",
+    "hd": "Faisal Islam: Why Trump's new tariffs are less of a threat",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1lV1N2Q2hJZWtleVhlNEFZQWpyWjAtUlg4cGVhcVh4VVcweGhHdnFlMkNIdFFhMkE0Z2wxb0tYSFptZDhHZnhCN1F6bXVwNVZEREdRd1VUdlZ5YUE?oc=5",
+    "pub": "2026-11-26T19:55:58.000Z",
     "sum": ""
    }
   ],
@@ -16384,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T09:30:12.335Z",
-  "lastAttempt": "2026-11-27T09:30:12.335Z",
+  "asOf": "2026-11-27T10:30:12.361Z",
+  "lastAttempt": "2026-11-27T10:30:12.361Z",
   "lastError": null
  }
 }
