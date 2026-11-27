@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T04:15:19.800Z",
+ "generatedAt": "2026-11-27T04:30:12.359Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -405,7 +405,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T04:15:19.800Z"
+   "checkedAt": "2026-11-27T04:30:12.359Z"
   },
   "quotes": {
    "NVDA": {
@@ -7216,12 +7216,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T04:15:19.800Z",
+  "at": "2026-11-27T04:30:12.359Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13589,62 +13590,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T04:15:19.800Z",
-  "lastAttempt": "2026-11-27T04:15:19.800Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7314.75,
-    "lastTime": 1795752340,
+    "last": 7315,
+    "lastTime": 1795753218,
     "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 118,
-    "changePct": 1.639628999201028,
-    "expectedOpen": 7300.550943828811,
+    "change": 118.25,
+    "changePct": 1.6431027894535728,
+    "expectedOpen": 7300.800458540312,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26719,
-    "lastTime": 1795752344,
+    "last": 26723.75,
+    "lastTime": 1795753219,
     "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 613.25,
-    "changePct": 2.349099336353102,
-    "expectedOpen": 24139.856941746548,
+    "change": 618,
+    "changePct": 2.367294561542955,
+    "expectedOpen": 24144.14843171524,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50738,
-    "lastTime": 1795752335,
+    "last": 50731,
+    "lastTime": 1795753156,
     "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 509,
-    "changePct": 1.0133588166198808,
-    "expectedOpen": 50691.48334826494,
+    "change": 502,
+    "changePct": 0.9994226442891557,
+    "expectedOpen": 50684.489765872306,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2738,
-    "lastTime": 1795752339,
+    "last": 2738.4,
+    "lastTime": 1795753197,
     "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 32.199951171875,
-    "changePct": 1.190034392445987,
+    "change": 32.59995117187509,
+    "changePct": 1.204817450794047,
     "expectedOpen": null,
     "valid": true
    }
@@ -13657,39 +13658,6 @@
   "season": 2026,
   "byes": [],
   "games": [
-   {
-    "id": "401873082",
-    "start": "2026-11-27T01:20Z",
-    "state": "in",
-    "status": "Q4 1:40",
-    "period": 4,
-    "clock": "1:40",
-    "completed": false,
-    "away": {
-     "name": "Kansas City Chiefs",
-     "short": "Chiefs",
-     "id": "12",
-     "abbrev": "KC",
-     "score": "10",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
-     "record": "8-2",
-     "winner": false,
-     "color": "#e31837",
-     "rank": null
-    },
-    "home": {
-     "name": "Buffalo Bills",
-     "short": "Bills",
-     "id": "2",
-     "abbrev": "BUF",
-     "score": "10",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
-     "record": "9-1",
-     "winner": false,
-     "color": "#00338d",
-     "rank": null
-    }
-   },
    {
     "id": "401873083",
     "start": "2026-11-27T20:00Z",
@@ -14184,10 +14152,43 @@
      "color": "#002a5c",
      "rank": null
     }
+   },
+   {
+    "id": "401873082",
+    "start": "2026-11-27T01:20Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Kansas City Chiefs",
+     "short": "Chiefs",
+     "id": "12",
+     "abbrev": "KC",
+     "score": "10",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
+     "record": "8-3",
+     "winner": false,
+     "color": "#e31837",
+     "rank": null
+    },
+    "home": {
+     "name": "Buffalo Bills",
+     "short": "Bills",
+     "id": "2",
+     "abbrev": "BUF",
+     "score": "13",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/buf.png",
+     "record": "10-1",
+     "winner": true,
+     "color": "#00338d",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-27T04:15:19.800Z",
-  "lastAttempt": "2026-11-27T04:15:19.800Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "lastError": null
  },
  "alerts": {
@@ -14198,8 +14199,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T04:15:19.800Z",
-  "lastAttempt": "2026-11-27T04:15:19.800Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14475,19 +14476,19 @@
    {
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
-    "state": "in",
-    "status": "Q4 5:16",
+    "state": "post",
+    "status": "Final",
     "period": 4,
-    "clock": "5:16",
-    "completed": false,
+    "clock": "0:00",
+    "completed": true,
     "away": {
      "name": "TCU Horned Frogs",
      "short": "TCU",
      "id": "2628",
      "abbrev": "TCU",
-     "score": "20",
+     "score": "27",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
-     "record": "5-6",
+     "record": "5-7",
      "winner": false,
      "color": "#4d1979",
      "rank": null
@@ -14499,8 +14500,8 @@
      "abbrev": "TTU",
      "score": "48",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
-     "record": "10-1",
-     "winner": false,
+     "record": "11-1",
+     "winner": true,
      "color": "#da291c",
      "rank": 9
     }
@@ -14837,13 +14838,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T04:15:19.800Z",
-  "lastAttempt": "2026-11-27T04:15:19.800Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T04:15:19.800Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15101,9 +15102,23 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Singapore yet to confirm if Nvidia has halted advanced chip shipments- deputy PM",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/singapore-yet-confirm-nvidia-halted-041419330.html?.tsrc=rss",
+      "pub": "2026-11-27T04:14:19.000Z",
+      "sum": "Investing.com-- Singapore has not yet confirmed whether Nvidia has stopped supplying advanced chips to the country, Deputy Prime Minister Gan Kim Yong said on Friday."
+     },
+     {
+      "hd": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=1db74882d7bda4ed7c34d919e47ea600e66f05946f48ec1ec09c1c1846c3f471",
+      "pub": "2026-11-27T03:20:02.000Z",
+      "sum": "Nvidia is a bargain buy right now."
+     },
+     {
       "hd": "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-huang-excited-second-003925008.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=54d9d566c5d094bdedb06f298cf04a1fcc6c5cd56d651f51f1008145c5bfc78e",
       "pub": "2026-11-27T00:39:25.000Z",
       "sum": "President Donald Trump said Jensen Huang is looking forward to his “second term” as chief executive officer of Nvidia Corp., reiterating his praise for the man whose reinstatement he pushed hard for despite bipartisan backlash over national security concerns."
      },
@@ -15148,20 +15163,6 @@
       "url": "https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724",
       "pub": "2026-11-26T21:22:00.000Z",
       "sum": "Jensen Huang’s return as CEO doesn’t make Nvidia (NVDA) stock a Buy, despite the market’s positive reaction. Shares of the leading semiconductor manufacturer jumped roughly 31.5% on November 23 after Nvidia’s board unanimously reinstated Huang with immediate effect. Yet the stock remains down roughly 31% over the past month following a steep sell-off. Although Nvidia enjoys a long runway for growth, I believe investors should closely watch the regulatory scrutiny still surrounding the company. I"
-     },
-     {
-      "hd": "Nvidia halts server shipments to 4 countries just weeks after Jensen Huang’s affair with alleged spy was exposed",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e1f06da1ffe569934d843268e20768ce169b3c229d7b2ee1649963d3933403ef",
-      "pub": "2026-11-26T20:30:14.000Z",
-      "sum": "It was unclear whether the halt would be temporary as Nvidia and its partners work through compliance requirements under new US export controls, the FT reported."
-     },
-     {
-      "hd": "Nvidia hits pause on chip shipments to Southeast Asia",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a263bd4ebba4460b372fe1a18c418d5ce72fa16a16ab614ad675984d70472a27",
-      "pub": "2026-11-26T20:03:54.000Z",
-      "sum": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips out of China."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15277,8 +15278,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 112,
-     "Yahoo": 5,
+     "Finnhub": 114,
+     "Yahoo": 6,
      "Google News": 92,
      "Nasdaq": 13,
      "Seeking Alpha": 25
@@ -15287,18 +15288,18 @@
    "TSLA": {
     "items": [
      {
+      "hd": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=2d3b8dce8229733f406d9423b814407161739483c231ce4f35f8d2ce3ffdd293",
+      "pub": "2026-11-27T01:30:07.000Z",
+      "sum": "Investor Gary Black of The Future Fund LLC slammed Tesla Inc.‘s bullish supporters, backing Alphabet Inc.‘s Waymo Robotaxi service in the autonomous race instead. Waymo Is Not ‘Terrified’ Of Tesla’s FSD On Sunday, user Randy Kirk took to X, quoting..."
+     },
+     {
       "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
       "pub": "2026-11-27T01:30:07.000Z",
       "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
-     },
-     {
-      "hd": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
-      "pub": "2026-11-27T01:30:07.000Z",
-      "sum": "Investor Gary Black of The Future Fund LLC slammed Tesla Inc.‘s bullish supporters, backing Alphabet Inc.‘s Waymo Robotaxi service in the autonomous race instead. Waymo Is Not ‘Terrified’ Of Tesla’s FSD On Sunday, user Randy Kirk took to X, quoting..."
      },
      {
       "hd": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
@@ -15473,6 +15474,20 @@
    "SPCX": {
     "items": [
      {
+      "hd": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=c816440d0198fcb24f990e1a5b48d89c1beefad20bb647eaba2f856e8a3956ab",
+      "pub": "2026-11-27T03:55:03.000Z",
+      "sum": "Space Exploration Technologies Corp. (NASDAQ:SPCX) ranks sixth in 10 High-Conviction Stocks Billionaire Philippe Laffont Is Betting On for 2027, with satellite connectivity and AI expansion shaping its outlook. Coatue Management’s November 16 regulatory filing puts billionaire Philippe Laffont’s positioning back in focus as investors look toward 2027. Its ten largest disclosed stock holdings represented 55.9%"
+     },
+     {
+      "hd": "Amazon Lost 40 Satellites on a Boeing-Lockheed Rocket in November. SpaceX Is the Only Company That Can Fix Amazon’s Problem. Is the Stock a Buy Near $130?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=5ba7bbfe6332c14ee7092a4b5fa4647e1a0ecb09b8ee56159f9f94b4953b195f",
+      "pub": "2026-11-27T03:53:02.000Z",
+      "sum": "The failed launch is a blow to Amazon's plans, but SpaceX isn't going out of its way to help other companies."
+     },
+     {
       "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
@@ -15513,20 +15528,6 @@
       "url": "https://finnhub.io/api/news?id=69fc518bd930d68cb6b163140816a62f1e05688488484c7d0abde4ef9d4d16f6",
       "pub": "2026-11-26T20:56:02.000Z",
       "sum": "SpaceX's current stock price leaves no room for error."
-     },
-     {
-      "hd": "SpaceX gets approval to deploy 1 million satellites for data centers in space",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e43acb33da6774fdbc68978a23346e6c28bc19b768f207c612a9ef75754a6b7a",
-      "pub": "2026-11-26T20:37:15.000Z",
-      "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
-     },
-     {
-      "hd": "Nvidia Cut Its Intel Stake and Bought More SpaceX. Cathie Wood Is Buying Too. Why SPCX Stock Faces a Big Test on December 8.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0a21db26c9b7f3fb6db055e89e1f48046f8e62be858c181676926d72c53e0e65",
-      "pub": "2026-11-26T19:30:03.000Z",
-      "sum": "Nvidia and Cathie Wood both added to SpaceX after its steep fall, but the Dec. 8 lock-up expiry will test whether the stock can hold up."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15649,8 +15650,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 168,
-     "Yahoo": 16,
+     "Finnhub": 170,
+     "Yahoo": 14,
      "Google News": 17,
      "Nasdaq": 0,
      "Seeking Alpha": 13
@@ -15658,6 +15659,13 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
+      "pub": "2026-11-27T04:19:29.000Z",
+      "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
+     },
      {
       "hd": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
       "src": "Yahoo Finance",
@@ -15671,13 +15679,6 @@
       "url": "https://www.fool.com/investing/2026/11/26/thinking-about-investing-in-anthropic-make-this-1-portfolio-move-first/?.tsrc=rss",
       "pub": "2026-11-27T01:35:02.000Z",
       "sum": "There's nothing wrong with buying Anthropic, as long as you understand and are prepared for the risks."
-     },
-     {
-      "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-      "pub": "2026-11-27T01:34:35.000Z",
-      "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
      },
      {
       "hd": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
@@ -15837,18 +15838,25 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 14,
-     "Google News": 52,
+     "Google News": 58,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T03:30:13.129Z",
-  "lastAttempt": "2026-11-27T03:30:13.129Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Meet the rising mayoral candidate in Taiwan who's also sanctioned by China",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/meet-rising-mayoral-candidate-taiwan-sanctioned-china-138473812",
+    "pub": "2026-11-27T04:07:06.000Z",
+    "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
+   },
    {
     "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
     "src": "CBS News",
@@ -15964,7 +15972,7 @@
    {
     "hd": "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say",
     "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQzFiWi01aU5HaTlZaHd0THlxMFB6RTdtR1hpUGh1RHVuclpWOGxwNVJEdXFDXzN1LWpBOUpuWmEzR3c5VGp0SGYwajFLYm90eU9OM29VVkFWWlUtQWh4eUZiUHJQN2s4STBELUZfNVhOZHVfRVltRjZsVDloTFdwVUlTU0QyVmFBTHVfQzBBYV80aXhxREh0MzVydXcydw?oc=5",
     "pub": "2026-11-26T19:33:06.000Z",
     "sum": "The deaths follow a series of strikes on Gulf Arab states that host U.S. military facilities in recent weeks as talks to end the war continue to stall."
    },
@@ -16051,13 +16059,6 @@
     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1odENQTk1RR0JMbTlRYWhYcnh6cGdvcktJUGVNZURvbUFtTHZ0end3RjhpclNNNEF0ZnZFTDVHTy1Vcy1jMF90U240MEZFUURvdkJDN3I2aE55R193X1VjVW9PaU5sVWZvU1Y4dmt5M3ZmeE1YcVE?oc=5",
     "pub": "2026-11-26T17:03:31.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Italy says two citizens killed in Iranian strike in Kuwait",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82VmIyOXM0dFF5ZVFScjVxU0IzbUV3cU53d1JybkZ3eEJxaUFCTXR4Y0dmS3FjREhrcVZ4QW5GN3AtMHJNdWFDT1JaeWppVkZrXzkteDgzZ0MzTFk?oc=5",
-    "pub": "2026-11-26T16:39:30.000Z",
-    "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
    }
   ],
   "feeds": [
@@ -16076,8 +16077,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T03:30:13.129Z",
-  "lastAttempt": "2026-11-27T03:30:13.129Z",
+  "asOf": "2026-11-27T04:30:12.359Z",
+  "lastAttempt": "2026-11-27T04:30:12.359Z",
   "lastError": null
  }
 }
