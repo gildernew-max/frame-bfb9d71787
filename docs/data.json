@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T09:15:12.575Z",
+ "generatedAt": "2026-11-27T09:30:12.335Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T09:15:12.575Z",
+  "at": "2026-11-27T09:30:12.335Z",
   "ran": [
-   "weather",
    "alerts",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13897,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T09:15:12.575Z",
-  "lastAttempt": "2026-11-27T09:15:12.575Z",
+  "asOf": "2026-11-27T09:30:12.335Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7338.25,
-    "lastTime": 1795770311,
-    "settle": 7196.75,
+    "last": 7335,
+    "lastTime": 1795771221,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 141.5,
-    "changePct": 1.9661652829402159,
-    "expectedOpen": 7324.005326709974,
+    "change": 138.5,
+    "changePct": 1.9245466546237755,
+    "expectedOpen": 7321.015952198986,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26844,
-    "lastTime": 1795770313,
-    "settle": 26105.75,
+    "last": 26827.25,
+    "lastTime": 1795771223,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 738.25,
-    "changePct": 2.8279210518755447,
-    "expectedOpen": 24252.790888290896,
+    "change": 722.5,
+    "changePct": 2.7676955343376206,
+    "expectedOpen": 24238.58621636867,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50893,
-    "lastTime": 1795770311,
-    "settle": 50229,
+    "last": 50879,
+    "lastTime": 1795771210,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 664,
-    "changePct": 1.3219454896573692,
-    "expectedOpen": 50846.341244102005,
+    "change": 652,
+    "changePct": 1.298106596053915,
+    "expectedOpen": 50834.378184044435,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2748,
-    "lastTime": 1795770313,
-    "settle": 2705.800048828125,
+    "last": 2747.4,
+    "lastTime": 1795771224,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 42.199951171875,
-    "changePct": 1.5596108511473967,
+    "change": 41.70004882812509,
+    "changePct": 1.5411926518335575,
     "expectedOpen": null,
     "valid": true
    }
@@ -14506,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T09:15:12.575Z",
-  "lastAttempt": "2026-11-27T09:15:12.575Z",
+  "asOf": "2026-11-27T09:30:12.335Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T09:15:12.575Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T09:15:12.575Z",
-  "lastAttempt": "2026-11-27T09:15:12.575Z",
+  "asOf": "2026-11-27T09:30:12.335Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15408,6 +15407,20 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Nvidia: Sell The Rallies, The Parabolic Gains Are Gone",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4972476-nvidia-sell-the-rallies-the-parabolic-gains-are-gone?source=feed_symbol_NVDA",
+      "pub": "2026-11-27T09:25:19.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia, AI Fears Jolt Markets: Market Snapshot",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/nvidia-ai-fears-jolt-markets-082748065.html?.tsrc=rss",
+      "pub": "2026-11-27T08:27:48.000Z",
+      "sum": "Nvidia reinstated Jensen Huang as CEO, sending tech stocks soaring. But it wasn't enough to quell jitters in the artificial intelligence trade. Bloomberg's \"The Opening Trade\" spoke to global strategists and tech leaders about whether recent volatility signals a new era for AI investment."
+     },
      {
       "hd": "Nvidia, neoclouds in focus as chip sellers rule out Chinese renters",
       "src": "Seeking Alpha",
@@ -15477,13 +15490,6 @@
       "url": "https://finnhub.io/api/news?id=8f377026c02684c28af2245b965ae35185baa4b14dea7345993296adb4c5f08d",
       "pub": "2026-11-27T00:20:02.000Z",
       "sum": "Nvidia and Broadcom shares have pulled back sharply even as AI demand holds up. Past sell-offs offer clues for long-term investors."
-     },
-     {
-      "hd": "Did Jensen Huang’s Alleged Chinese Spy Get Him to Do Anything Nvidia Didn’t Want?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=549d58c0687944ed251bd01b581409ad37503dc43d6b2fba79a06933d06acad9",
-      "pub": "2026-11-26T23:00:49.000Z",
-      "sum": "Kain Warwick, founder of Infinex and Synthetix, says Jensen Huang’s alleged spy scandal is far worse than the affairs, while security expert Taylor Monahan argues the spy never got him to act against Nvidia. From Unchained, the no-hype resource for all things crypto."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15575,24 +15581,15 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE51YVJtVWRQVW9UQ2F0TmcyYnRIY1o3eTdTX1pPamJjRWlod2stNjhCRnIwdndsRm4zTkdWR1NSblpacElZSUdVcmc3ZlB5WDdUNk02VHRid19Nak83VjVVYmlhcVlwZ3BUQVg4RXB3V2N5UU9v0gF6QVVfeXFMT05JRkhHVWFocEE4YlFWMHpMb29MZzJSa2NpX1VuSVNtSGxJbkpsLXEtbHBocEh4Zk1NQVlmMVdFd1FNX0FhT0dRUFJ5dGo0aGozelJMY3VYVDNhUmRzR1pkVzViaUdRc1RxU19xWWstT2xtMDNELW9oaHc?oc=5",
       "pub": "2026-11-26T02:57:00.000Z",
       "sum": "Investing.com -- S&P Global Ratings placed NVIDIA on CreditWatch with negative implications Wednesday, citing concerns about the company's management and governance framework following recent news about its chief executive and potential export control violations."
-     },
-     {
-      "hd": "Denny’s Restores Jensen Huang’s Nvidia Founding Plaque After Controversy: ‘Every Story Starts Somewhere. We’re Proud to Be Part of Jensen’s’",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=de9f61146567d9d9e8ec3e53ad95c0e3afecec87a76f4e9f30bb233c3cce5205",
-      "pub": "2026-11-26T02:30:52.000Z",
-      "sum": "Denny’s says on X it reinstalled the Nvidia founding booth plaque after its removal, telling CEO Jensen Huang his “booth is waiting.”"
      }
     ],
     "fetched": {
      "Finnhub": 116,
-     "Yahoo": 7,
-     "Nasdaq": 13,
+     "Yahoo": 4,
+     "Google News": 87,
+     "Nasdaq": 12,
      "Seeking Alpha": 25
-    },
-    "errors": [
-     "Google News: HTTP 429 from news.google.com"
-    ]
+    }
    },
    "TSLA": {
     "items": [
@@ -15775,13 +15772,20 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 12,
-     "Google News": 11,
+     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX0hjaTV1MVlwMmJMM2ZxTVk3SVNhdTlPWUlhYlJlc2ZJcDVscW1VRTdKTUEwczNHRlpPeURRVnhQQzlMeVQwblFXcFdzVVV5S2JWc3d3WUpYbk94NTdmVjh6SFU0VWoxRmZZOFMzdVI3Ukk0UHBub3Vtc0xWbTM1RzhKY0NaeGx5TmNzY0RmNWFiWDAxQmx4Y0NFNUhfMk5DS2c?oc=5",
+      "pub": "2026-11-27T08:58:54.000Z",
+      "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
+     },
      {
       "hd": "SpaceX (SPCX) Balances Starlink Growth With Its AI Funding Needs",
       "src": "Yahoo Finance",
@@ -15949,18 +15953,11 @@
       "url": "https://finnhub.io/api/news?id=2356ca133f56bee130fda82e4130c4ba4a8d23bb043e57609e007839d5371cd8",
       "pub": "2026-11-25T11:17:31.000Z",
       "sum": "SpaceX shares are trading lower Wednesday, extending Tuesday's losses amid concerns a potential merger with Tesla could dilute shareholders."
-     },
-     {
-      "hd": "Joe Rogan Says Elon Musk Expects SpaceX Rockets to Explode During Testing: 'Pushing It to the Limit'",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=a0ad9c0603012436b5eb523a7f1942b476790549e993109996e0d6060824f2ad",
-      "pub": "2026-11-25T05:57:40.000Z",
-      "sum": "Joe Rogan says SpaceX intentionally pushes rockets to failure to uncover weaknesses and improve reusability."
      }
     ],
     "fetched": {
      "Finnhub": 170,
-     "Yahoo": 13,
+     "Yahoo": 12,
      "Google News": 17,
      "Nasdaq": 0,
      "Seeking Alpha": 12
@@ -15968,6 +15965,13 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Anthropic: 3 Reasons Why I Am Not Investing",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/article/4972469-anthropic-3-reasons-why-i-am-not-investing?source=feed_symbol_ANT",
+      "pub": "2026-11-27T08:55:40.000Z",
+      "sum": "Anthropic (ANT) stock is a hold, as S&M costs increased to 16.6% of revenue compared to 12.7% in the comparable period in 2025."
+     },
      {
       "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
       "src": "Yahoo Finance",
@@ -15981,13 +15985,6 @@
       "url": "https://finance.yahoo.com/technology/ai/articles/dxc-technology-dxc-fully-valued-021346564.html?.tsrc=rss",
       "pub": "2026-11-27T02:13:46.000Z",
       "sum": "DXC Technology (DXC) just rolled out DXC Frontier Code Assurance, an AI-driven cybersecurity service built with Anthropic's Claude Mythos, giving investors a fresh lens on the stock's role in enterprise security and AI. Recent trading shows how investors are processing this story. DXC Technology’s share price has climbed 36% over the past 90 days, despite a 1 month share price return that fell 8.22%. The 1 year total shareholder return of 14.11% also contrasts with a 5 year total shareholder..."
-     },
-     {
-      "hd": "Thinking About Investing in Anthropic? Make This 1 Portfolio Move First",
-      "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/thinking-about-investing-in-anthropic-make-this-1-portfolio-move-first/?.tsrc=rss",
-      "pub": "2026-11-27T01:35:02.000Z",
-      "sum": "There's nothing wrong with buying Anthropic, as long as you understand and are prepared for the risks."
      },
      {
       "hd": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
@@ -16023,6 +16020,13 @@
       "url": "https://finnhub.io/api/news?id=83cce37cdaa790b44d9360146fa0e0712c26c2dcabeb494bd41c337f717478f3",
       "pub": "2026-11-26T19:05:52.000Z",
       "sum": "Shares rebounded from a 7.6% early drop to $75.71 yet ended at $82.79, one week after the record offering."
+     },
+     {
+      "hd": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=20293754165b732c4daa2b3fd0e28d7a92e12843ae62234831a59d659a3da32f",
+      "pub": "2026-11-26T18:30:41.000Z",
+      "sum": "Shares erased a 7.7% intraday slide to their lowest level since July 2025 as Google and Anthropic exposure stays in focus."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16135,30 +16139,30 @@
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1MS01wSHJ0d1J3eDhpZk1OYUk4ZWpWanhRYkU1OGhtV3lhODJib3hxOGkzNUJNVjdBVHN3U3NwOHZVcTBLa3I4cm5fVl9tak9OSHhPTlVxUEhGcHJuYjZYN3BwVC1RUzFmN2F1ZFhvSERxenPSAXhBVV95cUxNMk9GalFIT19DZThwZ3hGd3BjVkh2TGQtOGVOdkFoUjZjZnBURm0tTFBhb29nX3ppX0w5Y0xLV3p2S25QekdRVlRrcHo4OXlYaEFmYVNPY25JeFNpNldQbHprSkpmUVNBS0JvMmw1VkxtV0ViMnI4aWU?oc=5",
       "pub": "2026-11-25T17:10:17.000Z",
       "sum": ""
-     },
-     {
-      "hd": "SpaceX Stock Has an Anthropic Problem",
-      "src": "Barron's",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZDFmOWxFWjlTR1FDN0w3d2VadFQxdm9nZVpBVFBQOU5STEw0eXgtOG5faEx4QUxWZzZHcW5xOUdxSnhtdTU4dVc4SjZmOTJWU012V2VHYjB1b2JOX3otUEtjRXY3YXNObmpFUFFCa3NKMTNHMmtWRjNjRXBmZmdxM29HVQ?oc=5",
-      "pub": "2026-11-25T16:41:00.000Z",
-      "sum": "Artificial intelligence developer Anthropic attracted more than $615 billion in combined retail and institutional orders for its historic initial public offering, Bloomberg reported."
      }
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 0,
-     "Google News": 54,
+     "Yahoo": 14,
+     "Google News": 55,
      "Nasdaq": 14,
-     "Seeking Alpha": 21
+     "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T08:30:11.099Z",
-  "lastAttempt": "2026-11-27T08:30:11.099Z",
+  "asOf": "2026-11-27T09:30:12.335Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-27T09:07:48.000Z",
+    "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
+   },
    {
     "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
     "src": "ABC News",
@@ -16188,10 +16192,24 @@
     "sum": ""
    },
    {
+    "hd": "Israel's Eisenkot agrees to coalition deal with left-wing Democrats",
+    "src": "France 24",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPTS1pUVlhWFdfTXhLT29HT0g3RG8tMEJfQ1I5cm5Ucl9hTFZjVEZxV3NHdXdvcEFFcXpSM1FISWxiWWFZMVRUOXd6aXRDQ0hnWlF0T21JajVVYV9OV1dmSlBDSFZaclZNS1JwZVA3UDlhZDh4Ml83QWs2ZEhoVEN1bzI1aGZqWG9XR3hwWlVmaEhNalJROW9SVkhEbDZzOFl3NUlxT0FILTZsMmNtLXpLUFFHeGFUZ00?oc=5",
+    "pub": "2026-11-27T06:46:42.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Taiwan local election campaigns enter final day; China sends warplanes",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRzJNWEpPd2tGOERUMUhtUXFlcjBfSzhwZ2xnTVRGUjVSQlJIbEZ3TjJuT3hUMFJCa2tJVGhJdlNsVFBSVW9JVGw3ZHE4dWhZZElLNnVmWnhDS2pYWDgyemx6YzRsQURWV1psM1h4ancxWm15bGFKV0wzMkZZOXk1cVRMZ2JJcXlqazV2OEJmWkpWT29USEFSOHRPaFpxRG82OVVZWHVRNA?oc=5",
     "pub": "2026-11-27T06:07:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Poland's Russia-friendly party creates conundrum for conservatives ahead of 2027 vote",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPWDc2S1dpMVlLemM0Qnlkbzl1ZGgtS3NkZGpiVWVVQ1J1QW1MWHFjNG5OYkEzdnhLM0lKRFJSbDBpR1ByWVRRMWFZRmFxWmkyWERXVGhlNnpMTzc1ZUx3ZnJMSTRvdk9vOEpZVTJkNWVyYzA5XzhlMUdPUkttUjFwZzRGYWJBNUNiXzdXVnZBVEc3ZDRrNkRyZTRpMEx3OVJWYWdYMTRJd1BzTlkwVWpRSU1aS05VbmY1d1ZJ?oc=5",
+    "pub": "2026-11-27T06:06:00.000Z",
     "sum": ""
    },
    {
@@ -16223,10 +16241,10 @@
     "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
    },
    {
-    "hd": "Chinese military tests new Taiwan landing tactics in coastal drills",
+    "hd": "Drone briefly violates Latvian airspace, Latvian armed forces say",
     "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRHU2ODhzTFRNUi1YM1VpRVZEZlg4MXFpaGxIZU5SZ2xxNVZFTWlFWHlITkJLNXhSendCb3RYckhpQkhqcDRVeDdRdVJWRl9WWnJWYlZvV2tMM1VaalU2SlRQQTRYNVZzc0Y2SVp0WmJKai1kN3NtSEU1MkxLSkhGN0M2TW9JOHFianYwZEtrNTE2NW81aGlLTWRpc18xd2hwUmI1XzdQVGxON0dJREhldE5R?oc=5",
-    "pub": "2026-11-27T04:36:00.000Z",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRlBDakRsQmlwdGpaNjZkd1hiSGMzbHlSWDZvSWhyX1JUVGRYTWtHYkE1aUhJMWduQzNXU1NTVVdWclMxQlBKeWNWemFFdmNteUlxZXdhSTE1cVdrZUdSMTZtVUtOeGdJZ2RRUGhGamxsSk02UFFxdXcwaTZIMU4zaWlfZDl1c3NZT254ZkpBMndleEwxMmMwM0I1Y2I0MkJreDJnUjlMNnNRQQ?oc=5",
+    "pub": "2026-11-27T04:59:00.000Z",
     "sum": ""
    },
    {
@@ -16237,17 +16255,17 @@
     "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
    },
    {
-    "hd": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSHBtblZnbWZBQUo5LVNGb2sxQkpHOFdJTGI0YlozM0YxUGh0bnZkLWZOeWJrMFBoX0h3aGNkTEtCVVA3Zjg0WEpuYi1MdjBEa2dKVDg3Rk5yWFJCNEs1NDFnYTRrVmpJeVQ1Y1lMR0daaDItcWczSEhzT3VfVTRxVno4Zm9HVGdTN2RDT2NtYmk5NlZqTGJnekNMSTI5dERMY1dZaFpFUy1IM01aVUFjbzI3MDEteXFNS2FvaEhFLTJhZnBvRTVRbzln?oc=5",
-    "pub": "2026-11-27T03:17:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Zelenskyy warns of major Russian attack as Trump urges Putin to ‘pull back’",
     "src": "Al Jazeera",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUWhTZEtvSHh2TnVxc2VyZHdvaTFta0F0WGI4TTc3aHhIZzk0dV9iZXJSSGk0VEFDd3JQZ2puU3dERnlzc0h2TEdFcVVSaXhOZXVrTlN3MDBmZmZXUlFrQno0MDNWQ1dCU1hsTnVWYzBFOUlXRjQzd21CX3ExWmR1T1JDNEkyTm9yU2JZeW8waFFCTDI1cHB3cmFWXzNuemkyR3NRZ1hnMDdUZHVTOGpjN3U3MDA1QdIBuwFBVV95cUxOd242M2lqRVpQSGdGdEEyMk4wQWZzZjFPTnJBWXoxaURLaFdhUnZHQUpubzlVVTJzYWp2SUtRTVNKS1FhWG5TMGNLSlltVmdFZXNNdUEyUmx0THZ5aTdhQ1ZzTlFQaFJ1TThZY1B0MHpObS1YeGFxeFk4czg3aVZpRElDcVVnYTJjRDB4SjRXYlY4QzkxZ0V1SWNQZ3hnOXRaNWRLam5HdkxZRTF0NzFkWmxicmNEbWNodkxj?oc=5",
     "pub": "2026-11-27T02:20:43.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Ontario Premier Doug Ford urges residents to use guns, knives and bats to fend off home invaders",
+    "src": "New York Post",
+    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOFBGTU9WbzVCNFJoVFdSTlVaWVhIcDRpU0lXVXhtSXNwV05LTG9PV1lJdlBQcUktalBCRGtfejgzeUl3bldfV2dzUDBZNE5QQWI4MmtKbW5tY3ItU0VVSWNDS3E2Y2lEQThoM2RVbmFESFBiaWtDMmI4TjEzZnpqQl83Vzl1MzdrQnB5ZjZ1aGtOdnVkS2dHWXY0b3ZELXlZcmlkWmZtcHJ3U1NyYlRsdDZHUm5qdmVjb1BuV21uVjB3a25VOFFZdm9WUTFHUQ?oc=5",
+    "pub": "2026-11-27T01:20:00.000Z",
     "sum": ""
    },
    {
@@ -16277,13 +16295,6 @@
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRmt2ZGhhd0V4aDVhQmk5QU96b3k4bEpCU2FYalRyWmd0WU82UHBEMjI3M255R1JHQk56bm1qRi1hOWRHaXc3Ny1jalZRYUpYQ1JROXlIczRvTGpweHhqM0ZlM3R6QnVvR2tSRlVaTU83VHFkd3NlSlMtbWNCZzdMQWhDdlRVOFJhQ01EYlo4b1lacG9ydnd0ZGpLN3VsbFE?oc=5",
     "pub": "2026-11-26T23:53:00.000Z",
     "sum": "Mexico's president has criticized the U.S. Drug Enforcement Administration for setting up anonymous tip lines in the country"
-   },
-   {
-    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-26T22:49:27.000Z",
-    "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
    },
    {
     "hd": "U.K. Releases Files on Peter Mandelson, Ambassador Tied to Jeffrey Epstein",
@@ -16349,24 +16360,10 @@
     "sum": ""
    },
    {
-    "hd": "Threatened by Wagner, this Nigerian journalist uncovered Russia’s war machine in Africa",
+    "hd": "How a Nigerian journalist uncovered Russia's war machine in Africa",
     "src": "The Kyiv Independent",
     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQkY4UERnOXV4QjFWbDhSdFNyN1J2R1BzMFVDUXhfMVh2NndIZGhCQU10eFpqT1JJTS1rdjIzdlNxVllGbWFMXzE5SlRzYjVKdUE1Z2lJbWRyRVBxa2F6andLU2ZCeFNsejFYYWZudkEzeEJ3ZWc2cEZONkpUZWkzYzhxVkMyS3NCdjRBOFNfUkYtZzhUZm5PODB1VlZleVREQmhsc3czYXJDWWdGLTFzaVhUZ3M?oc=5",
     "pub": "2026-11-26T19:06:58.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Germany arrests 2 Iraqis allegedly tied to Iran-linked terror group",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/germany-arrests-iraqi-iran-linked-terror-suspects/",
-    "pub": "2026-11-26T18:58:15.000Z",
-    "sum": "German police arrested two Iraqi men alleged to be members of an Iran-linked terrorist organization​ that is said to have targeted U.S., Israeli and Jewish institutions in Europe."
-   },
-   {
-    "hd": "Magyar meets Zelenskyy: Hungary and Ukraine make a fresh start after the icy relations of the Orban era",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT0s0Mlp1cUhyQzZ0QUN4QkZLSjV0dnV6cjMtMzZlZmVjbF9nX1YtNzRBYk96alI0djM4dGFtNzZqRl9KWU1uMFQtdE5lZHA3Y2NiQkhaSWJRXzQzNmtWaUlBVUpOVmx2cVpsLTZld05rXzJKbjJvSkVOREJDQTNZS0haSDlISmVadEUxUUFyekJ1RFZ1RmVLUmJMMzNZcS1qTHNYWE9SSmdtd3dMWUx3SVBqVG5ydVNsaUdZd1h3LW16cXBxZF9OZFh1QlM2bTJvcU8tM25DRXJlNlRqX3FJVC1UN3dQQ041UDRNRGs5SdIB7wFBVV95cUxObHpLMnlGRGZQR29EMm02VkZ6T3B3VUdwSVI0cE5WMjkxZno2RkJIUkZuRUJSQ29GSEYwWXQ2Qm1DNzR5eml4X2RUZzdHelF3WDNyRF9ORUtnbFczMHdaMXktcU4xeXdDUW5IOWRaLU8tODRmRWR4MWxHY2VzT0ZuS25lRFlidG14N3dSRWVkX3FDUDl5cmNzMHFYbmM4MngzTzRBRVJxODM2enJlY1ZhUFp5RTdZcWVLTEVUUkRxT1d1cVc3a0RZcWtZMkEzVEZvTmNRaHVLSWlFMDhyY1RQXy1Ydl9CdWliSkhjY1FBOA?oc=5",
-    "pub": "2026-11-26T18:55:41.000Z",
     "sum": ""
    }
   ],
@@ -16386,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T08:30:11.099Z",
-  "lastAttempt": "2026-11-27T08:30:11.099Z",
+  "asOf": "2026-11-27T09:30:12.335Z",
+  "lastAttempt": "2026-11-27T09:30:12.335Z",
   "lastError": null
  }
 }
