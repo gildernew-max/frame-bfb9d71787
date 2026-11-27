@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T05:45:12.703Z",
+ "generatedAt": "2026-11-27T06:00:11.789Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -508,7 +508,7 @@
     "sum": ""
    },
    {
-    "hd": "Dollar lingers near 22-month peak as AI worries simmer",
+    "hd": "Dollar lingers near 22-month peak as AI worries simmer; kiwi rises",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWkt5OU9rSlNUam1waVVQSzc0cWNjMWk3N0xXSnk5Q1p4UlVHSG5JdGpkZGxVLWI5bW9QOVUwMGRsOExnNkc1VkZWUHllWWQxOV9QX0xTLUVxbGcxOFV3NHQxUnpUQUJRTFh6aXZ6MlpOb3d0eHRucTNQOERjNHlfS01YTlk3dTBwX2ZfWVFjdER1Tkl5V0NDODlzclpSckpUT3c?oc=5",
     "pub": "2026-11-27T01:03:00.000Z",
@@ -590,6 +590,13 @@
     "url": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
     "pub": "2026-11-26T16:00:00.000Z",
     "sum": "On the same day that Anthropic entered the public market, a painstakingly human video game became one of most successful entertainment launches of all time."
+   },
+   {
+    "hd": "Bank of England sees growing financial risks as AI borrowing surges",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMlNESVMtMnZuRm9TZ0FHOGE2NkE2anNKbkwwVlpqbThWRW5WdGpYMnJyMVZrX1dheTRXTGtRT2xqckxNdEo1Y1V3aUthRU5QTUJGY21qaDBnamg1cVRlSG5ZQ1IzZTVnUzJ1djJfS25sOC03WlgwOVY1LXJ0ZHZhRFFwWk5ubV9KWWIxal93a25QaDBmTGMxUmg3OFUta2NWNmFBRGNJVUlNakE3ak82Sm9tRzI?oc=5",
+    "pub": "2026-11-26T15:39:19.000Z",
+    "sum": ""
    },
    {
     "hd": "Jensen Huang’s Vision for the New Nvidia Is a Lot Like the Old One",
@@ -674,13 +681,6 @@
     "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
     "pub": "2026-11-26T03:19:44.000Z",
     "sum": "S&P Global Ratings said Nvidia's credit rating could be cut by one notch as it flagged \"rising\" management and governance risk at the chipmaker."
-   },
-   {
-    "hd": "SpaceX wins FCC approval to deploy 1 million orbital data center satellites",
-    "src": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/25/spacex-fcc-satellite-approval.html",
-    "pub": "2026-11-26T02:35:39.000Z",
-    "sum": "SpaceX won approval from the FCC to put 1 million orbital data center satellites into space, a proposal that was opposed by Amazon and other groups."
    }
   ],
   "feeds": [
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-27T05:00:11.671Z",
-  "lastAttempt": "2026-11-27T05:00:11.671Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -7523,9 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T05:45:12.703Z",
+  "at": "2026-11-27T06:00:11.789Z",
   "ran": [
    "alerts",
+   "news",
+   "world",
+   "movers",
+   "sectors",
    "futures",
    "usTempGrid"
   ]
@@ -13893,62 +13897,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T05:45:12.703Z",
-  "lastAttempt": "2026-11-27T05:45:12.703Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7327.5,
-    "lastTime": 1795757710,
-    "settle": 7196.75,
+    "last": 7324.25,
+    "lastTime": 1795758613,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 130.75,
-    "changePct": 1.8167923020808003,
-    "expectedOpen": 7313.276194115399,
+    "change": 127.75,
+    "changePct": 1.7751684846800528,
+    "expectedOpen": 7310.286446883901,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26841,
-    "lastTime": 1795757710,
-    "settle": 26105.75,
+    "last": 26850.25,
+    "lastTime": 1795758614,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 735.25,
-    "changePct": 2.816429330703006,
-    "expectedOpen": 24250.08047357383,
+    "change": 745.5,
+    "changePct": 2.855802104980894,
+    "expectedOpen": 24259.366858550646,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50739,
-    "lastTime": 1795757705,
-    "settle": 50229,
+    "last": 50714,
+    "lastTime": 1795758606,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 510,
-    "changePct": 1.015349698381413,
-    "expectedOpen": 50692.4824314639,
+    "change": 487,
+    "changePct": 0.9695980249666515,
+    "expectedOpen": 50669.52289207,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2740.6,
-    "lastTime": 1795757684,
-    "settle": 2705.800048828125,
+    "last": 2739.7,
+    "lastTime": 1795758611,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 34.79995117187491,
-    "changePct": 1.2861242717083503,
+    "change": 34.00004882812482,
+    "changePct": 1.256608250792884,
     "expectedOpen": null,
     "valid": true
    }
@@ -14502,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T05:45:12.703Z",
-  "lastAttempt": "2026-11-27T05:45:12.703Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15146,30 +15150,30 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T05:45:12.703Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
     "src": "Reuters",
-    "hd": "South Korea repatriates six North Koreans rescued from drifting boat",
-    "pub": "2026-11-27T04:44:00.000Z"
+    "hd": "India-US trade deal is nearing completion, minister says",
+    "pub": "2026-11-27T05:21:00.000Z"
+   },
+   {
+    "src": "The Daily Beast",
+    "hd": "Humiliated Putin Gets Abandoned by His Evil BFF",
+    "pub": "2026-11-27T04:25:00.000Z"
    },
    {
     "src": "AP News",
-    "hd": "Final count in New Zealand’s election gives neither right nor left bloc enough seats for a majority",
+    "hd": "Deadlocked final result in New Zealand’s election leaves a centrist newcomer the decider",
     "pub": "2026-11-27T03:16:00.000Z"
-   },
-   {
-    "src": "BBC News",
-    "hd": "Met Police ruined my life, says Kenyan man wrongly sentenced over attack on UK couple",
-    "pub": "2026-11-27T00:48:11.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T05:00:11.671Z",
-  "lastAttempt": "2026-11-27T05:00:11.671Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "lastError": null
  },
  "movers": {
@@ -15263,8 +15267,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-27T05:00:11.671Z",
-  "lastAttempt": "2026-11-27T05:00:11.671Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "lastError": null
  },
  "sectors": {
@@ -15351,8 +15355,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-27T05:00:11.671Z",
-  "lastAttempt": "2026-11-27T05:00:11.671Z",
+  "asOf": "2026-11-27T06:00:11.789Z",
+  "lastAttempt": "2026-11-27T06:00:11.789Z",
   "lastError": null
  },
  "extended": {
