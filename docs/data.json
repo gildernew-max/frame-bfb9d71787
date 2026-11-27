@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T22:15:13.454Z",
+ "generatedAt": "2026-11-27T22:30:13.383Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,12 +7502,13 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T22:15:13.454Z",
+  "at": "2026-11-27T22:30:13.383Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -13896,9 +13897,9 @@
     "id": "401873083",
     "start": "2026-11-27T20:00Z",
     "state": "in",
-    "status": "End Q3",
-    "period": 3,
-    "clock": "0:00",
+    "status": "Q4 11:11",
+    "period": 4,
+    "clock": "11:11",
     "completed": false,
     "away": {
      "name": "Denver Broncos",
@@ -13917,7 +13918,7 @@
      "short": "Steelers",
      "id": "23",
      "abbrev": "PIT",
-     "score": "24",
+     "score": "27",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/pit.png",
      "record": "6-4",
      "winner": false,
@@ -14421,8 +14422,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T22:15:13.454Z",
-  "lastAttempt": "2026-11-27T22:15:13.454Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": null
  },
  "alerts": {
@@ -14433,8 +14434,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T22:15:13.454Z",
-  "lastAttempt": "2026-11-27T22:15:13.454Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15072,12 +15073,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T22:15:13.454Z",
-  "lastAttempt": "2026-11-27T22:15:13.454Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T22:15:13.454Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15288,26 +15289,26 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T22:15:13.454Z",
-  "lastAttempt": "2026-11-27T22:15:13.454Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "items": {
    "NVDA": {
     "session": "post",
-    "price": 149.8201,
+    "price": 149.8,
     "time": 1795816500,
     "ref": 150.49,
     "refTime": 1795802400,
-    "change": -0.6699000000000126,
-    "changePct": -0.4451458568675743
+    "change": -0.6899999999999977,
+    "changePct": -0.4585022260615308
    },
    "TSLA": {
     "session": "post",
-    "price": 398.86,
+    "price": 398.85,
     "time": 1795816500,
     "ref": 400,
     "refTime": 1795802400,
-    "change": -1.1399999999999864,
-    "changePct": -0.2849999999999966
+    "change": -1.1499999999999773,
+    "changePct": -0.2874999999999943
    },
    "SPCX": {
     "session": "post",
@@ -15338,14 +15339,14 @@
      {
       "hd": "Jensen Huang Is Back. Nvidia’s (NVDA) Bull Case Remains",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/jensen-huang-back-nvidia-nvda-210600721.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a3adb5dfaf174dffb6f21e2a31c6eadd3eb5208d57c2c682d0a5fd92dc772fb4",
       "pub": "2026-11-27T21:06:00.000Z",
       "sum": "Jensen Huang is back at the helm, and Nvidia’s (NVDA) bull case remains in play. Nvidia shares surged 31.5% on November 23 after news of Jensen Huang’s reinstatement, underscoring how closely investor confidence in the company is tied to its co-founder. While near-term volatility is likely to persist, I remain decisively Bullish over the long term. Nvidia makes the chips, networking gear, and software powering the artificial intelligence (AI) boom, and its earnings story is strong enough to ride"
      },
      {
       "hd": "Nvidia Stocks Slip 1.66% as S&P Weighs Downgrade Over Key-Man Risk",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stocks-slip-1-66-194936975.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=6e3204be59ea37f81ad7a186dc63f1972f26ae9d79b0bd5267c3f24444d438ca",
       "pub": "2026-11-27T19:49:36.000Z",
       "sum": "Jensen Huang is back as CEO, but a possible cut to AA- puts board oversight and succession planning under a 90-day spotlight."
      },
@@ -15512,9 +15513,9 @@
      }
     ],
     "fetched": {
-     "Finnhub": 103,
+     "Finnhub": 104,
      "Yahoo": 5,
-     "Google News": 87,
+     "Google News": 86,
      "Nasdaq": 7,
      "Seeking Alpha": 25
     }
@@ -15894,6 +15895,13 @@
    "ANT": {
     "items": [
      {
+      "hd": "Anthropic vs. Coinbase: One Stock Is Overhyped, One Is Oversold, Says Top Investor",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-vs-coinbase-one-stock-221205035.html?.tsrc=rss",
+      "pub": "2026-11-27T22:12:05.000Z",
+      "sum": "Crypto bulls spent the fall waiting for fresh money to find its way back to them. Some of it may have gone to the year’s most anticipated listing instead. Days before Anthropic (NASDAQ:ANT) made its Nasdaq debut on Nov. 19, an executive at Coinbase (NASDAQ:COIN) called the idea that AI IPOs are drawing risk capital away from bitcoin “a reasonable argument.” Neither stock has had much to cheer about since. Anthropic closed below its $83 IPO price in the two sessions before Thanksgiving, then clim"
+     },
+     {
       "hd": "How Cathie Wood's Ark Played Wednesday's Whipsaw Action",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/87d0ca4c-2eda-36df-a72e-8da0f7c40b4d/how-cathie-wood%27s-ark-played.html?.tsrc=rss",
@@ -15948,13 +15956,6 @@
       "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-rises-ai-spending-175746847.html?.tsrc=rss",
       "pub": "2026-11-27T17:57:46.000Z",
       "sum": "Anthropic Stock Tries to Bounce Back. Junk Debt Fears Are Raising New Questions"
-     },
-     {
-      "hd": "Anthropic Stock Investors Face Major December Test",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stock-investors-face-major-173652408.html?.tsrc=rss",
-      "pub": "2026-11-27T17:36:52.000Z",
-      "sum": "A massive pool of untapped wealth could complicate matters."
      },
      {
       "hd": "Anthropic shares extend gains, recovering from post-IPO slump",
@@ -16072,18 +16073,25 @@
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 49,
+     "Google News": 48,
      "Nasdaq": 14,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T22:00:11.896Z",
-  "lastAttempt": "2026-11-27T22:00:11.896Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUcwQ3JjLUlNWjhSZnFuYWMzVEFGd0RMR2lZT2VmWUdBejNHckpxbWFSb0lsTUNuTzktdm9qTk94eTgxMXFRQkplOTdZZkFDSEVaUkVZcWFfb1lEMTNEVzFHd013bXhoRFU4ajZjOTB0UXFhM1FacVliRVdqcFY5dG11UURVYmFZang5ZEpaZEVCazhBMjFz?oc=5",
+    "pub": "2026-11-27T22:13:52.000Z",
+    "sum": ""
+   },
    {
     "hd": "Russia’s Big Ambitions for A.I. Are Undercut by Constraints of War",
     "src": "The New York Times",
@@ -16111,6 +16119,13 @@
     "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
     "pub": "2026-11-27T20:08:21.000Z",
     "sum": "President Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
+   },
+   {
+    "hd": "Army deems lead azide detonation a success but criticism lingers over notification",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR0EtR1JfYXg0UHhDSHFDWWtYcXE4eWFIcjhydk1IbVZjQUh4VjItVmYtQ3J1SzBQQ0JqcUlrcVBoODlTeHNPTUdpdmxKVHlycUU1NVFFc1BGMWxFS2NYOXlpU3dObXpiZ3ZYQ1RrYTdWc2tmREtqTXNNVWxkZG9aa1hMOGZDLVU?oc=5",
+    "pub": "2026-11-27T20:06:33.000Z",
+    "sum": ""
    },
    {
     "hd": "Zelenskyy urges US to pressure Putin and questions Trump’s reference to Putin as a ‘friend’",
@@ -16176,11 +16191,11 @@
     "sum": ""
    },
    {
-    "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUcwQ3JjLUlNWjhSZnFuYWMzVEFGd0RMR2lZT2VmWUdBejNHckpxbWFSb0lsTUNuTzktdm9qTk94eTgxMXFRQkplOTdZZkFDSEVaUkVZcWFfb1lEMTNEVzFHd013bXhoRFU4ajZjOTB0UXFhM1FacVliRVdqcFY5dG11UURVYmFZang5ZEpaZEVCazhBMjFz?oc=5",
-    "pub": "2026-11-27T16:17:53.000Z",
-    "sum": ""
+    "hd": "Yemen's Houthis say an airstrike killed 11 people, including children, and other Mideast news",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVlJjWkszRWtsblptbVZSdklWc0pQeTZOOTYxLWhJS3o2eC02YTJjc0MxQkZDbk5iU1FSSklIT3k4YzVzenBQTzhpZ1pXWTJ2aTNtOTY1S1FyeWhhdjdwTnE2RENkSDN1Q3AyZHlzUlAzckJvNkxUYU5lLTdkZ1pDN0tiM3ZhYjEzZ1dzY09Od1U3ZkZXck5ndHE1SkdCbVJWRGc?oc=5",
+    "pub": "2026-11-27T16:48:00.000Z",
+    "sum": "Houthi rebels say an airstrike in southwestern Yemen has killed at least 11 people, including children"
    },
    {
     "hd": "Using a drone and a poop-sniffing dog, scientists perform health checks on endangered orcas",
@@ -16218,13 +16233,6 @@
     "sum": "Armed men killed 13 members of Niger’s National Guard and wounded 20 others in an attack on an outpost in western Niger, the country’s defense ministry said"
    },
    {
-    "hd": "Houthis report 11 killed, including children, in an airstrike, and other Mideast news",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/houthis-report-11-killed-including-children-airstrike-mideast-138478032",
-    "pub": "2026-11-27T15:14:20.000Z",
-    "sum": "Houthi rebels say an airstrike in southwestern Yemen has killed at least 11 people, including children"
-   },
-   {
     "hd": "Trump embraced Xi, then slapped new tariffs on China: What’s his game plan?",
     "src": "Al Jazeera",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPMXRrMjFFcHlmR0hqa0dhQ3UzLTlXZi1BdEphd1VMYVQ2Um1rMlp1bzVtNmFGcWNqdEZlZ3o0bTRLMEJoa3E5MTZRRkdITmhxQlpOM19QbnNhZ2RUZ1F1ZGdNSWdBVDk3SDRJQTc0ZHV4Z2ljU1ZRTUFUdm4zRmZiYmZoamtuYWt0cFRCWElNLVY2T2V1clVlVWdMLXltWThmZGtQZWJ2OElxd3BvTS1sSzl2Xy1ma2Zm0gG-AUFVX3lxTE05bWo1cEplMVQtNjlEaERCcXJpRU1YN3NocHEzWF9nVXUyMG1CNXhZbVR6Y215N1BQaXZ1dzZVWkRsc0lEV3p3ajZTUVRCVDdtNGR0TFVlU3NCOGFQdmhrX1FwOFdNY3RHaHAtb3hoTlcyLUt1eHRyenNZcVJDY053MDV1REFOZ1k5dDM3X0FtNWpkZ0daR2Q3QWZ2V054b2xQVnBfYVFNSDJ5ZUlHREdMLXZsazBTZXJCZ0FNV2c?oc=5",
@@ -16243,20 +16251,6 @@
     "src": "Euronews",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWVNIZ0d2OHBnRERBR05hTDN3ZVFtVnJWRXBVTmxrdTk1bHBSMjViVF9WY0N1eWdYSzFyRmdub09HWHRHT1dHMlRSZVJzeG5FX0J1N21rcnY2WXNUeWtBUUUwbTVJV21tYWMyU2wwczJKNHYwWjhzRFFQNnEwRmQ4ZzFERmstQjljODFYdmVGQzM3dTVzRklpakRoeHpWUzg?oc=5",
     "pub": "2026-11-27T12:53:58.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Republicans rethink tariffs, giving Democrats an opening to challenge Trump",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPOXJMNWlyS1R4eWNOblA5OEJ4eFktZUlZY3c3eGNMNjJ3MzNKWWR6b0xSdzIxOHh2Wm5WbEhlLTY3YlN2THhUVVV3VVpoc3AwdVBhR1M2V0ZudTR5Nlhac0hVQUV1UXh4YmU4ODlxZ0FhVDI5SUtwUlloN2dOR05lWjkzQXpMX29KM3Z0c0YwV18zUTZOWDRBZ1BR?oc=5",
-    "pub": "2026-11-27T12:30:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM3VVVVBIV1cyVWpzRnk1Z0s4TXE3cG1iTktySldaMGc3N1ZiV1BxLUJXdTlZcTd3R3k1bmE4b2ZXd3pZOE5NZUR3Q2FOMTBySEhVbXhQWHpKLU5ybExlaGc0ajU1MDFEa3YyYmI1WTR1dmZxdV8tc0YyUk1NemM2bFF1T2d1N2psR29UVWt5MUJNQ2dkV1lEVHROLW1tZw?oc=5",
-    "pub": "2026-11-27T12:15:00.000Z",
     "sum": ""
    },
    {
@@ -16293,6 +16287,13 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HQUFHU1p6SVB5NnBsR25kTV9wX2Z6YUJBdy1SR1NnNTg5ek5nSUtxVE5lVXRjZ00zMVZFYjJFeGRIaVAyeGJ1Mng2RHY5OW43ZHN5RmFuUVpIZ2M?oc=5",
     "pub": "2026-11-27T10:39:31.000Z",
     "sum": "The Ugandan army is helping the Congolese military fight an Islamist militant group in the east of the country."
+   },
+   {
+    "hd": "Four Jehovah's Witnesses convicted of 'extremism' in Russian-annexed Crimea",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYU5YQVdzaHpXYmVSRG9uaWNkNVB4UTl5blFhczE3aTk1ZXV4N3FDOHE1Y0ludElpV0dyVE54eXR6TjZsR3Mxd2p2RmVwMUhpenBqNl9MVy00djNYd0RHSm04ZEZXQzg5R0JHcWw4bEZUZ0ppRkxwUkxkbDFvY3hUMDZBSzE4Q3RwRTZCdmZvMUZBTThhTklOWVF0TldZZ2hUc29tSXRBQmJPNmJC?oc=5",
+    "pub": "2026-11-27T10:22:17.000Z",
+    "sum": ""
    }
   ],
   "feeds": [
@@ -16311,8 +16312,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T22:00:11.896Z",
-  "lastAttempt": "2026-11-27T22:00:11.896Z",
+  "asOf": "2026-11-27T22:30:13.383Z",
+  "lastAttempt": "2026-11-27T22:30:13.383Z",
   "lastError": null
  }
 }
