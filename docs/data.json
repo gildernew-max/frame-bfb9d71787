@@ -1,52 +1,206 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T03:00:14.912Z",
+ "generatedAt": "2026-11-27T03:15:12.601Z",
  "timezone": "America/New_York",
  "weather": {
-  "provider": "National Weather Service",
-  "credit": "Weather: NWS",
+  "provider": "Open-Meteo",
+  "credit": "Weather: Open-Meteo",
   "cities": {
    "atlanta": {
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 37,
-     "i": "rain",
-     "cond": "Light Drizzle",
+     "temp": 36,
+     "i": "cloud",
+     "cond": "Overcast",
      "windMph": 15,
      "windDir": "WSW",
-     "observed": "2026-11-27T01:50:00+00:00"
+     "observed": "2026-11-26T22:15"
     },
     "today": {
-     "h": null,
-     "l": 35,
+     "h": 49,
+     "l": 36,
      "sunrise": "07:19",
-     "sunset": "17:30"
+     "sunset": "17:29"
     },
     "forecast": [
      {
       "date": "2026-11-27",
       "d": "Fri",
       "i": "cloud",
-      "text": "Mostly Cloudy",
-      "h": 51,
-      "l": 35
+      "text": "Overcast",
+      "h": 43,
+      "l": 36,
+      "pop": 1
      },
      {
       "date": "2026-11-28",
       "d": "Sat",
-      "i": "sun",
-      "text": "Sunny",
-      "h": 59,
-      "l": 39
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 58,
+      "l": 33,
+      "pop": 1
      },
      {
       "date": "2026-11-29",
       "d": "Sun",
       "i": "rain",
-      "text": "Partly Sunny then Showers And Thunderstorms Likely",
-      "h": 65,
-      "l": 46
+      "text": "Showers",
+      "h": 64,
+      "l": 46,
+      "pop": 90
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-26",
+      "d": "Thu",
+      "i": "rain",
+      "text": "Light rain",
+      "h": 49,
+      "l": 36,
+      "pop": 91
+     },
+     {
+      "date": "2026-11-27",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 43,
+      "l": 36,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-28",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 58,
+      "l": 33,
+      "pop": 1
+     },
+     {
+      "date": "2026-11-29",
+      "d": "Sun",
+      "i": "rain",
+      "text": "Showers",
+      "h": 64,
+      "l": 46,
+      "pop": 90
+     },
+     {
+      "date": "2026-11-30",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 57,
+      "l": 43,
+      "pop": 54
+     },
+     {
+      "date": "2026-12-01",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 60,
+      "l": 46,
+      "pop": 3
+     },
+     {
+      "date": "2026-12-02",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 62,
+      "l": 45,
+      "pop": 2
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-26T23:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 36,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T00:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 36,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T01:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T02:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T03:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T04:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T05:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T06:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T07:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 37,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T08:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 38,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T09:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 39,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-27T10:00",
+      "i": "cloud",
+      "text": "Overcast",
+      "temp": 40,
+      "pop": 0
      }
     ]
    },
@@ -54,50 +208,203 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 28,
+     "temp": 31,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 6,
-     "windDir": "NW",
-     "observed": "2026-11-27T01:55:00+00:00"
+     "windMph": 3,
+     "windDir": "NNW",
+     "observed": "2026-11-26T21:15"
     },
     "today": {
-     "h": null,
-     "l": 19,
-     "sunrise": "07:23",
-     "sunset": "16:36"
+     "h": 40,
+     "l": 20,
+     "sunrise": "07:24",
+     "sunset": "16:34"
     },
     "forecast": [
      {
       "date": "2026-11-27",
       "d": "Fri",
-      "i": "rain",
-      "text": "Mostly Sunny then Chance Light Rain",
-      "h": 42,
-      "l": 31
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 44,
+      "l": 26,
+      "pop": 28
      },
      {
       "date": "2026-11-28",
       "d": "Sat",
-      "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 46,
-      "l": 29
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 48,
+      "l": 32,
+      "pop": 2
      },
      {
       "date": "2026-11-29",
       "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 30,
+      "pop": 0
+     }
+    ],
+    "days7": [
+     {
+      "date": "2026-11-26",
+      "d": "Thu",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 20,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-27",
+      "d": "Fri",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 44,
+      "l": 26,
+      "pop": 28
+     },
+     {
+      "date": "2026-11-28",
+      "d": "Sat",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 48,
+      "l": 32,
+      "pop": 2
+     },
+     {
+      "date": "2026-11-29",
+      "d": "Sun",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 40,
+      "l": 30,
+      "pop": 0
+     },
+     {
+      "date": "2026-11-30",
+      "d": "Mon",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 35,
+      "l": 29,
+      "pop": 1
+     },
+     {
+      "date": "2026-12-01",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 43,
+      "l": 32,
+      "pop": 4
+     },
+     {
+      "date": "2026-12-02",
+      "d": "Wed",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 48,
+      "l": 36,
+      "pop": 5
+     }
+    ],
+    "hourly": [
+     {
+      "t": "2026-11-26T22:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 31,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-26T23:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 30,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T00:00",
+      "i": "sun",
+      "text": "Mostly clear",
+      "temp": 30,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T01:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 28,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T02:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 28,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T03:00",
       "i": "partly",
-      "text": "Partly Sunny",
-      "h": 34,
-      "l": 22
+      "text": "Partly cloudy",
+      "temp": 29,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T04:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 29,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T05:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 29,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T06:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 27,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T07:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 26,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T08:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 26,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T09:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 28,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-27T02:15:11.467Z",
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
-  "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
+  "asOf": "2026-11-27T03:15:12.601Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "lastError": null
  },
  "nfl": {
@@ -405,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T03:00:14.912Z"
+   "checkedAt": "2026-11-27T03:15:12.601Z"
   },
   "quotes": {
    "NVDA": {
@@ -7216,14 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T03:00:14.912Z",
+  "at": "2026-11-27T03:15:12.601Z",
   "ran": [
+   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "news",
-   "worldNews",
-   "world",
    "futures",
    "usTempGrid"
   ]
@@ -13591,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T03:00:14.912Z",
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "asOf": "2026-11-27T03:15:12.601Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7297,
-    "lastTime": 1795747817,
+    "last": 7295.75,
+    "lastTime": 1795748711,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 100.5,
-    "changePct": 1.3965121934273605,
-    "expectedOpen": 7283.088398527061,
+    "change": 99.25,
+    "changePct": 1.3791426387827417,
+    "expectedOpen": 7281.840781629959,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26674.25,
-    "lastTime": 1795747817,
+    "last": 26645.25,
+    "lastTime": 1795748710,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 569.5,
-    "changePct": 2.181595303536713,
-    "expectedOpen": 24100.349770549423,
+    "change": 540.5,
+    "changePct": 2.070504410116933,
+    "expectedOpen": 24074.148091276493,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50642,
-    "lastTime": 1795747816,
+    "last": 50648,
+    "lastTime": 1795748688,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 415,
-    "changePct": 0.8262488303103909,
-    "expectedOpen": 50597.58603739025,
+    "change": 421,
+    "changePct": 0.8381945965317458,
+    "expectedOpen": 50603.58077528022,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2734.5,
-    "lastTime": 1795747813,
+    "last": 2734.3,
+    "lastTime": 1795748710,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 28.800048828125,
-    "changePct": 1.0644213825576379,
+    "change": 28.600048828125182,
+    "changePct": 1.0570295799332117,
     "expectedOpen": null,
     "valid": true
    }
@@ -13663,16 +13968,16 @@
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 11:28",
+    "period": 3,
+    "clock": "11:28",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
      "short": "Chiefs",
      "id": "12",
      "abbrev": "KC",
-     "score": "3",
+     "score": "10",
      "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/kc.png",
      "record": "8-2",
      "winner": false,
@@ -14188,8 +14493,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T03:00:14.912Z",
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "asOf": "2026-11-27T03:15:12.601Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "lastError": null
  },
  "alerts": {
@@ -14200,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T03:00:14.912Z",
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "asOf": "2026-11-27T03:15:12.601Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14478,9 +14783,9 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Halftime",
-    "period": 2,
-    "clock": "0:00",
+    "status": "Q3 12:43",
+    "period": 3,
+    "clock": "12:43",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
@@ -14499,7 +14804,7 @@
      "short": "Texas Tech",
      "id": "2641",
      "abbrev": "TTU",
-     "score": "27",
+     "score": "34",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
      "record": "10-1",
      "winner": false,
@@ -14839,12 +15144,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T03:00:14.912Z",
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "asOf": "2026-11-27T03:15:12.601Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "lastAttempt": "2026-11-27T03:15:12.601Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
