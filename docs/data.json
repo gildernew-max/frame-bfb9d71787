@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T13:00:11.984Z",
+ "generatedAt": "2026-11-27T13:15:14.427Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -15,7 +15,7 @@
      "cond": "Overcast",
      "windMph": 12,
      "windDir": "WSW",
-     "observed": "2026-11-27T07:15"
+     "observed": "2026-11-27T08:15"
     },
     "today": {
      "h": 47,
@@ -119,13 +119,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-27T08:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 38,
-      "pop": 0
-     },
-     {
       "t": "2026-11-27T09:00",
       "i": "cloud",
       "text": "Overcast",
@@ -176,27 +169,34 @@
      },
      {
       "t": "2026-11-27T16:00",
-      "i": "sun",
-      "text": "Mostly clear",
+      "i": "cloud",
+      "text": "Overcast",
       "temp": 47,
       "pop": 0
      },
      {
       "t": "2026-11-27T17:00",
       "i": "sun",
-      "text": "Clear",
+      "text": "Mostly clear",
       "temp": 46,
       "pop": 0
      },
      {
       "t": "2026-11-27T18:00",
-      "i": "sun",
-      "text": "Clear",
+      "i": "cloud",
+      "text": "Overcast",
       "temp": 43,
       "pop": 0
      },
      {
       "t": "2026-11-27T19:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 42,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-27T20:00",
       "i": "sun",
       "text": "Clear",
       "temp": 42,
@@ -208,15 +208,15 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 22,
+     "temp": 21,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 2,
+     "windMph": 4,
      "windDir": "N",
-     "observed": "2026-11-27T06:15"
+     "observed": "2026-11-27T07:15"
     },
     "today": {
-     "h": 41,
+     "h": 42,
      "l": 21,
      "sunrise": "07:25",
      "sunset": "16:34"
@@ -254,9 +254,9 @@
      {
       "date": "2026-11-27",
       "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 41,
+      "i": "rain",
+      "text": "Drizzle",
+      "h": 42,
       "l": 21,
       "pop": 7
      },
@@ -317,13 +317,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-27T07:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 22,
-      "pop": 0
-     },
-     {
       "t": "2026-11-27T08:00",
       "i": "sun",
       "text": "Clear",
@@ -341,49 +334,49 @@
       "t": "2026-11-27T10:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 27,
+      "temp": 28,
       "pop": 0
      },
      {
       "t": "2026-11-27T11:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 31,
+      "temp": 33,
       "pop": 0
      },
      {
       "t": "2026-11-27T12:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 35,
+      "temp": 37,
       "pop": 0
      },
      {
       "t": "2026-11-27T13:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 37,
+      "i": "partly",
+      "text": "Partly cloudy",
+      "temp": 40,
       "pop": 0
      },
      {
       "t": "2026-11-27T14:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 39,
+      "temp": 42,
       "pop": 1
      },
      {
       "t": "2026-11-27T15:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 41,
+      "temp": 42,
       "pop": 3
      },
      {
       "t": "2026-11-27T16:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 39,
+      "temp": 40,
       "pop": 2
      },
      {
@@ -395,16 +388,23 @@
      },
      {
       "t": "2026-11-27T18:00",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "rain",
+      "text": "Drizzle",
       "temp": 37,
       "pop": 7
+     },
+     {
+      "t": "2026-11-27T19:00",
+      "i": "rain",
+      "text": "Drizzle",
+      "temp": 36,
+      "pop": 3
      }
     ]
    }
   },
-  "asOf": "2026-11-27T12:15:12.660Z",
-  "lastAttempt": "2026-11-27T12:15:12.660Z",
+  "asOf": "2026-11-27T13:15:14.427Z",
+  "lastAttempt": "2026-11-27T13:15:14.427Z",
   "lastError": null
  },
  "nfl": {
@@ -7523,8 +7523,12 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T13:00:11.984Z",
+  "at": "2026-11-27T13:15:14.427Z",
   "ran": [
+   "weather",
+   "alerts",
+   "extended",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -13891,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T12:59:06.016Z",
-  "lastAttempt": "2026-11-27T12:59:06.016Z",
+  "asOf": "2026-11-27T13:15:14.427Z",
+  "lastAttempt": "2026-11-27T13:15:14.427Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7308.25,
-    "lastTime": 1795783756,
-    "settle": 7196.5,
+    "last": 7319,
+    "lastTime": 1795784712,
+    "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 111.75,
-    "changePct": 1.5528381852289308,
-    "expectedOpen": 7294.316950600986,
+    "change": 122.25,
+    "changePct": 1.6986834334942857,
+    "expectedOpen": 7304.792693924341,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26671.75,
-    "lastTime": 1795783757,
-    "settle": 26104.75,
+    "last": 26738.5,
+    "lastTime": 1795784708,
+    "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 567,
-    "changePct": 2.172018502379835,
-    "expectedOpen": 24098.091005094855,
+    "change": 632.75,
+    "changePct": 2.4237955239746034,
+    "expectedOpen": 24157.474637407468,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50860,
-    "lastTime": 1795783754,
-    "settle": 50227,
+    "last": 50936,
+    "lastTime": 1795784710,
+    "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 633,
-    "changePct": 1.2602783363529575,
-    "expectedOpen": 50815.39484739283,
+    "change": 707,
+    "changePct": 1.407553405403253,
+    "expectedOpen": 50889.301821656816,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2742.8,
-    "lastTime": 1795783754,
-    "settle": 2705.699951171875,
+    "last": 2745.6,
+    "lastTime": 1795784710,
+    "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 37.10004882812518,
-    "changePct": 1.3711811914716063,
+    "change": 39.79995117187491,
+    "changePct": 1.4709125010590551,
     "expectedOpen": null,
     "valid": true
    }
@@ -14500,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T12:59:06.016Z",
-  "lastAttempt": "2026-11-27T12:59:06.016Z",
+  "asOf": "2026-11-27T13:15:14.427Z",
+  "lastAttempt": "2026-11-27T13:15:14.427Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15144,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T13:00:11.984Z",
+  "lastAttempt": "2026-11-27T13:15:14.427Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15355,8 +15359,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T12:59:06.016Z",
-  "lastAttempt": "2026-11-27T12:59:06.016Z",
+  "asOf": "2026-11-27T13:15:14.427Z",
+  "lastAttempt": "2026-11-27T13:15:14.427Z",
   "items": {
    "NVDA": {
     "session": "post",
