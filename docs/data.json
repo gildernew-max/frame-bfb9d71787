@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T13:15:14.427Z",
+ "generatedAt": "2026-11-27T13:30:11.808Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T13:15:14.427Z",
+  "at": "2026-11-27T13:30:11.808Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
+   "movers",
+   "sectors",
    "extended",
    "futures",
    "usTempGrid"
@@ -13895,62 +13898,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T13:15:14.427Z",
-  "lastAttempt": "2026-11-27T13:15:14.427Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7319,
-    "lastTime": 1795784712,
-    "settle": 7196.75,
+    "last": 7314.75,
+    "lastTime": 1795785622,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 122.25,
-    "changePct": 1.6986834334942857,
-    "expectedOpen": 7304.792693924341,
+    "change": 118.25,
+    "changePct": 1.643159869380949,
+    "expectedOpen": 7300.80455846592,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26738.5,
-    "lastTime": 1795784708,
-    "settle": 26105.75,
+    "last": 26703.5,
+    "lastTime": 1795785623,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 632.75,
-    "changePct": 2.4237955239746034,
-    "expectedOpen": 24157.474637407468,
+    "change": 598.75,
+    "changePct": 2.29364387707218,
+    "expectedOpen": 24126.777326367806,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50936,
-    "lastTime": 1795784710,
-    "settle": 50229,
+    "last": 50938,
+    "lastTime": 1795785618,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 707,
-    "changePct": 1.407553405403253,
-    "expectedOpen": 50889.301821656816,
+    "change": 711,
+    "changePct": 1.4155732972305732,
+    "expectedOpen": 50893.32643996256,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2745.6,
-    "lastTime": 1795784710,
-    "settle": 2705.800048828125,
+    "last": 2747,
+    "lastTime": 1795785618,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 39.79995117187491,
-    "changePct": 1.4709125010590551,
+    "change": 41.300048828125,
+    "changePct": 1.5264090465846885,
     "expectedOpen": null,
     "valid": true
    }
@@ -14504,8 +14507,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T13:15:14.427Z",
-  "lastAttempt": "2026-11-27T13:15:14.427Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15148,7 +15151,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T13:15:14.427Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15265,8 +15268,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-27T12:30:11.599Z",
-  "lastAttempt": "2026-11-27T12:30:11.599Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": null
  },
  "sectors": {
@@ -15353,14 +15356,14 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-27T12:30:11.599Z",
-  "lastAttempt": "2026-11-27T12:30:11.599Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": null
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T13:15:14.427Z",
-  "lastAttempt": "2026-11-27T13:15:14.427Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15414,11 +15417,11 @@
       "sum": "Nvidia's stock will need some time to find solid footing."
      },
      {
-      "hd": "Nvidia Blackwell chips found in Shanghai data center tied to Alice Huang",
+      "hd": "Nvidia Blackwell Chips Turn Up at China Site Tied to Alice Huang",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-blackwell-chips-found-shanghai-124008621.html?.tsrc=rss",
-      "pub": "2026-11-27T12:40:08.000Z",
-      "sum": "Investing.com -- Nvidia Corp.'s most powerful Blackwell processors have been found inside a Shanghai data center linked to Alice Huang, the Singapore-based businesswoman at the center of a chip smuggling controversy involving the US chipmaker, according to a Bloomberg report Friday."
+      "url": "https://finance.yahoo.com/video/nvidia-blackwell-chips-turn-china-124506631.html?.tsrc=rss",
+      "pub": "2026-11-27T12:45:06.000Z",
+      "sum": "A pair of Chinese firms installed Nvidia Corp.'s powerful Blackwell semiconductors in a Shanghai data center linked to Alice Huang, the woman at the heart of a controversy surrounding the US chipmaker. The gear installed at the Yangtze River Delta Project included a GB300 NVL72 rack, among Nvidia's most powerful products, according to a serial number specified in documents submitted to Chinese regulators in November. Shanghai Shuoyao offered the hardware as collateral to obtain a 96 million yuan ($14 million) loan from Shanghai Innovation Bank, according to filings from the lender that were…"
      },
      {
       "hd": "Constellation Energy Sinks 10% in a Week, NuScale 17%, as “the Jensen Huang Stock Put Is Fading”",
@@ -15426,6 +15429,13 @@
       "url": "https://www.tikr.com/blog/constellation-energy-sinks-10-in-a-week-nuscale-17-as-the-jensen-huang-stock-put-is-fading?ref=yahoofinance&tlnk=yf-261127-7ffc6jh2&.tsrc=rss",
       "pub": "2026-11-27T12:33:40.000Z",
       "sum": "Key TakeawaysConstellation Energy fell 10% in the week to Nov. 25, along with NuScale Power and Bloom Energy, as Nvidia’s CEO saga swung AI stocks."
+     },
+     {
+      "hd": "Nvidia Stock Looks to Be Finding a Floor With Huang 2.0",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/0d471144-6b84-377d-b9f4-c11d9bb92ead/nvidia-stock-looks-to-be.html?.tsrc=rss",
+      "pub": "2026-11-27T12:30:00.000Z",
+      "sum": "Nvidia stock was steadying as the chip maker rushes to comply with new export controls."
      },
      {
       "hd": "President Donald Trump Just Floated the Idea of the U.S. Government Buying a Stake in Nvidia -- but It Wouldn't Fix the Company's Biggest Flaw",
@@ -15454,13 +15464,6 @@
       "url": "https://www.trefis.com/stock/dxcm/articles/629445/the-sensor-that-shows-what-breakfast-does-to-your-blood-sugar-dexcom-grows-11-abbott-8/2026-11-27?.tsrc=rss",
       "pub": "2026-11-27T11:54:57.000Z",
       "sum": "Today's big story: How Much Of Big Tech's AI Spending Reaches Nvidia."
-     },
-     {
-      "hd": "Asian Data Centers Are Racing to Sell Spare Compute to US Buyers. That’s Bad News for Nvidia’s Next Orders",
-      "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/asian-data-centers-are-racing-to-sell-spare-compute-to-us-buyers-thats-bad-news-for-nvidias-next-orders?ref=yahoofinance&tlnk=yf-261127-344qjq28&.tsrc=rss",
-      "pub": "2026-11-27T11:51:31.000Z",
-      "sum": "Key TakeawaysA new US chip rule cut many Asian data centers off from their Chinese customers, and Bloomberg reports they’re trying to rent that spare computing power to American buyers. Each US lab that rents that capacity can mean one less new Nvidia order."
      },
      {
       "hd": "Nvidia gains premarket as stock heads for end to volatile week",
@@ -15584,9 +15587,9 @@
     ],
     "fetched": {
      "Finnhub": 108,
-     "Yahoo": 8,
+     "Yahoo": 11,
      "Google News": 90,
-     "Nasdaq": 12,
+     "Nasdaq": 10,
      "Seeking Alpha": 25
     }
    },
@@ -15771,13 +15774,27 @@
     "fetched": {
      "Finnhub": 147,
      "Yahoo": 12,
-     "Google News": 10,
+     "Google News": 12,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Berenberg Just Cut Its AST SpaceMobile Target From $92 to $30",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/berenberg-just-cut-its-ast-spacemobile-target-from-92-to-30?ref=yahoofinance&tlnk=yf-261127-gqgjmqwj&.tsrc=rss",
+      "pub": "2026-11-27T12:45:49.000Z",
+      "sum": "Key TakeawaysBerenberg downgraded AST SpaceMobile to Hold from Buy and cut its price target to $30 from $92, citing satellite launch delays. Three BlueBirds are still waiting on a launch date from SpaceX, and the next three are booked on Blue Origin’s New Glenn, which hasn’t flown since an explosion on its pad in May."
+     },
+     {
+      "hd": "SpaceX Stock Jumps Thanks to AI Rally. Why It Should Be Rising Even More.",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/m/4d380fe9-e29b-3b6c-8f18-28ee89ad558e/spacex-stock-jumps-thanks-to.html?.tsrc=rss",
+      "pub": "2026-11-27T12:18:00.000Z",
+      "sum": "The rocket and AI stock is benefiting from a broader tech rally, but shareholders may still feel a little disappointed."
+     },
      {
       "hd": "SpaceX Cratered 13.5% This Month: Near 300% Returns to Materialize at Today’s Price According to this Pro Analyst",
       "src": "Yahoo Finance",
@@ -15833,20 +15850,6 @@
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNX0hjaTV1MVlwMmJMM2ZxTVk3SVNhdTlPWUlhYlJlc2ZJcDVscW1VRTdKTUEwczNHRlpPeURRVnhQQzlMeVQwblFXcFdzVVV5S2JWc3d3WUpYbk94NTdmVjh6SFU0VWoxRmZZOFMzdVI3Ukk0UHBub3Vtc0xWbTM1RzhKY0NaeGx5TmNzY0RmNWFiWDAxQmx4Y0NFNUhfMk5DS2c?oc=5",
       "pub": "2026-11-27T08:58:54.000Z",
       "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
-     },
-     {
-      "hd": "Gwynne Shotwell Joins Musk’s SpaceX Gift to Trump Accounts, Now an $18 Billion Share Donation",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ac2975aacc04cd91397e55baba9ea14850fa6037c758e8b2298dc92915bc7f2f",
-      "pub": "2026-11-27T06:27:39.000Z",
-      "sum": "Key TakeawaysSpaceX and Elon Musk will each give one share to every active Trump Account, and with Gwynne Shotwell’s 2 million shares, that’s up to $18 billion of stock at today’s prices. SpaceX’s share is newly issued, diluting existing holders by up to about half a percent."
-     },
-     {
-      "hd": "Musk Says SpaceX Leads the World “by an Order of Magnitude.” Here’s What That Means for Orbital Compute",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c44b2e21ed6f41cf9a01d5725874f90a14b024421edf532bdec1312b4c47a8c2",
-      "pub": "2026-11-27T04:25:06.000Z",
-      "sum": "Key TakeawaysThe FCC approved up to 1 million SpaceX compute satellites on Nov. 25, and Musk says SpaceX leads the world “by an order of magnitude."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15956,7 +15959,7 @@
     ],
     "fetched": {
      "Finnhub": 170,
-     "Yahoo": 13,
+     "Yahoo": 14,
      "Google News": 17,
      "Nasdaq": 0,
      "Seeking Alpha": 12
@@ -15965,18 +15968,32 @@
    "ANT": {
     "items": [
      {
-      "hd": "Anthropic stock gains premarket, reclaiming IPO price",
-      "src": "Seeking Alpha",
-      "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
-      "pub": "2026-11-27T12:50:12.000Z",
-      "sum": ""
+      "hd": "What Does Zscaler (ZS) Joining A $43.9 Billion Deal Mean For Investors?",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/does-zscaler-zs-joining-43-130941963.html?.tsrc=rss",
+      "pub": "2026-11-27T13:09:41.000Z",
+      "sum": "Zscaler (NasdaqGS:ZS) agreed to be acquired by CrowdStrike in an all stock transaction valued at US$43.9b. The companies signed a definitive merger agreement that would combine CrowdStrike's endpoint security with Zscaler's cloud protection platform. Zscaler announced new AI security collaborations with Anthropic and Mistral focused on protecting enterprise use of emerging AI applications. The CrowdStrike acquisition agreement and Zscaler's fresh AI alliances only capture one slice of..."
+     },
+     {
+      "hd": "Advanced Micro Devices (AMD) After AI Data Center Wins Looks Cheap Or Already Priced In",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-amd-ai-130859777.html?.tsrc=rss",
+      "pub": "2026-11-27T13:08:59.000Z",
+      "sum": "Advanced Micro Devices (AMD) stock is back in the spotlight after fresh data center milestones and heavy AI demand, with Helios rack systems and Instinct GPUs drawing large orders from Anthropic, Meta, Microsoft, OpenAI, and Oracle. Recent trading tells a mixed story for Advanced Micro Devices. The share price has pulled back sharply with a 30-day share price return of down 29.81% and a 90-day move of down 12.79%; yet momentum over a longer stretch remains strong, with an 81.69% year-to-date..."
      },
      {
       "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-      "pub": "2026-11-27T12:49:03.000Z",
+      "pub": "2026-11-27T13:06:54.000Z",
       "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
+     },
+     {
+      "hd": "Anthropic stock gains premarket, reclaiming IPO price",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/ANT/news?source=feed_symbol_ANT",
+      "pub": "2026-11-27T12:50:12.000Z",
+      "sum": ""
      },
      {
       "hd": "The Anatomy of an AI Rally: Anthropic Stock Quickly Finds Its Place",
@@ -16019,20 +16036,6 @@
       "url": "https://seekingalpha.com/article/4972469-anthropic-3-reasons-why-i-am-not-investing?source=feed_symbol_ANT",
       "pub": "2026-11-27T08:55:40.000Z",
       "sum": "Anthropic (ANT) stock is a hold, as S&M costs increased to 16.6% of revenue compared to 12.7% in the comparable period in 2025."
-     },
-     {
-      "hd": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/dxc-technology-dxc-fully-valued-021346564.html?.tsrc=rss",
-      "pub": "2026-11-27T02:13:46.000Z",
-      "sum": "DXC Technology (DXC) just rolled out DXC Frontier Code Assurance, an AI-driven cybersecurity service built with Anthropic's Claude Mythos, giving investors a fresh lens on the stock's role in enterprise security and AI. Recent trading shows how investors are processing this story. DXC Technology’s share price has climbed 36% over the past 90 days, despite a 1 month share price return that fell 8.22%. The 1 year total shareholder return of 14.11% also contrasts with a 5 year total shareholder..."
-     },
-     {
-      "hd": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=b6c930629e7ea794bc18185c9e5b46f9e267370097b770a0b72e08155b978fc3",
-      "pub": "2026-11-26T22:27:45.000Z",
-      "sum": "Shares of Claude maker Anthropic (ANT) rose more than 1% on Wednesday after declining for three consecutive trading sessions. The AI stock made a stellar Nasdaq debut on November 19, rising 17% from its IPO (initial public offering) price of $83. However, ANT and other AI-related stocks have been under pressure due to concerns about the sustainability of AI spending and macro pressures. Nevertheless, Wall Street analysts are bullish on Anthropic stock and see solid upside, given the company’s le"
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16143,18 +16146,32 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 10,
-     "Google News": 51,
+     "Google News": 52,
      "Nasdaq": 15,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T12:59:06.016Z",
-  "lastAttempt": "2026-11-27T12:59:06.016Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "A Ukraine loan is in limbo after EU budget talks stall. Leaders will try again in 3 weeks",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/ukraine-loan-limbo-after-eu-budget-talks-stall-138478913",
+    "pub": "2026-11-27T13:22:27.000Z",
+    "sum": "European Council President Ant&oacute;nio Costa says European Union leaders have failed to agree on the 2028-2034 budget"
+   },
+   {
+    "hd": "Trump says he's giving Iran \"a chance to be smart\"",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
+    "pub": "2026-11-27T13:21:49.000Z",
+    "sum": "Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
+   },
    {
     "hd": "EU proposes sweeping new Russia sanctions targeting banks, crypto and sports events",
     "src": "AP News",
@@ -16163,11 +16180,11 @@
     "sum": ""
    },
    {
-    "hd": "Trump says he's giving Iran \"a chance to be smart\"",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
-    "pub": "2026-11-27T12:45:17.000Z",
-    "sum": "Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
+    "hd": "Trump defends Putin friendship that Zelensky calls ‘strange’",
+    "src": "The Washington Post",
+    "url": "https://www.washingtonpost.com/world/2026/11/27/trump-defends-putin-friendship-that-zelensky-calls-strange/",
+    "pub": "2026-11-27T12:55:25.000Z",
+    "sum": "Asked about their relationship, President Donald Trump said: “We want to make a deal,” blaming the Russian and Ukrainian leaders' “hate” as the biggest problem keeping them from peace."
    },
    {
     "hd": "Zelenskyy urges the US to pressure Putin, calling Trump’s 'my friend' remark strange",
@@ -16175,6 +16192,13 @@
     "url": "https://abcnews.com/International/wireStory/zelenskyy-urges-us-pressure-putin-calling-trumps-friend-138478386",
     "pub": "2026-11-27T11:55:58.000Z",
     "sum": "Ukrainian President Volodymyr Zelenskyy is expressing frustration with the U.S. approach to Russian leader Vladimir Putin"
+   },
+   {
+    "hd": "Russia’s hybrid war on Europe evolving, but failing: IISS",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSi1EdWxpNDFBQ2NFLWNNZUJjSHloMDd4cXM0QVIxY2dKOVk1SlA4SThmTWVEVGc1SFB3WTQ0WWZBejU0dUZlRE5CblRjbC04UTBJLWlGSzFEX0gxMVVHQkc4X1dhUmJMRHdKdjdlNV8tUkU3WnhfeHlCQ2h0OXoxUzVIdHI2cC1KMEN4cGUzTG9vTHo4MGxhR1lPTnHSAaIBQVVfeXFMT3ZGMERBTzlsUVd0a240SlpPNVhJYjB0akdlMXI1U1RwR2sxSHdpWjhLWVhNcTcxQWg0MVFZRzY0ZTZpZ0FZRHZ4SzFMdHhKYjNxaTY2RWdpNzcxMVZwXzRfVlpNakw2RlV6cXpKOGMySjJxWTl6QUVpQXBJZWJrOWhGNnhROHUtVzJMb196d3N5dVJjTldtZ19CSnFFYkUxMHNn?oc=5",
+    "pub": "2026-11-27T11:48:45.000Z",
+    "sum": ""
    },
    {
     "hd": "Houthis report 11 killed, including children, in an airstrike, and other Mideast news",
@@ -16189,6 +16213,13 @@
     "url": "https://abcnews.com/International/wireStory/armed-group-kills-13-soldiers-western-niger-attack-138477943",
     "pub": "2026-11-27T11:24:51.000Z",
     "sum": "Armed men killed 13 members of Niger’s National Guard and injured 20 others in an attack on an outpost in western Niger, the country’s defense ministry said"
+   },
+   {
+    "hd": "French politician who stood up to Bush over the invasion of Iraq is back to stop Le Pen",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPM3VVVVBIV1cyVWpzRnk1Z0s4TXE3cG1iTktySldaMGc3N1ZiV1BxLUJXdTlZcTd3R3k1bmE4b2ZXd3pZOE5NZUR3Q2FOMTBySEhVbXhQWHpKLU5ybExlaGc0ajU1MDFEa3YyYmI1WTR1dmZxdV8tc0YyUk1NemM2bFF1T2d1N2psR29UVWt5MUJNQ2dkV1lEVHROLW1tZw?oc=5",
+    "pub": "2026-11-27T11:09:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Uganda to withdraw troops from DR Congo town amid diplomatic row",
@@ -16212,11 +16243,11 @@
     "sum": ""
    },
    {
-    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-27T09:07:48.000Z",
-    "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
+    "hd": "UN warns hunger will deepen in the Middle East as war, fuel costs and aid cuts collide",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPXzRxcnU0VFhjX1p3QUo4RFE2di1Hd1pYdGh6M1otOEF6UzdwNldfZ1lMSW1HQlQ3bUVvYWRtRXQ4alBZaHBacjB1VWNWN04wTFdybm5aSzZZUjh4N2JMZ3phaDE0dG02S2tVdzg4b0RNalRCOHZsa291Y0NVdTBacEFBSGMzUXN2V2h4TTdYOXVoMnBocGRJekY3VVZKdw?oc=5",
+    "pub": "2026-11-27T09:54:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Guinea-Bissau's military leaders delay return to civilian rule until 2028",
@@ -16336,34 +16367,6 @@
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUWhTZEtvSHh2TnVxc2VyZHdvaTFta0F0WGI4TTc3aHhIZzk0dV9iZXJSSGk0VEFDd3JQZ2puU3dERnlzc0h2TEdFcVVSaXhOZXVrTlN3MDBmZmZXUlFrQno0MDNWQ1dCU1hsTnVWYzBFOUlXRjQzd21CX3ExWmR1T1JDNEkyTm9yU2JZeW8waFFCTDI1cHB3cmFWXzNuemkyR3NRZ1hnMDdUZHVTOGpjN3U3MDA1QdIBuwFBVV95cUxOd242M2lqRVpQSGdGdEEyMk4wQWZzZjFPTnJBWXoxaURLaFdhUnZHQUpubzlVVTJzYWp2SUtRTVNKS1FhWG5TMGNLSlltVmdFZXNNdUEyUmx0THZ5aTdhQ1ZzTlFQaFJ1TThZY1B0MHpObS1YeGFxeFk4czg3aVZpRElDcVVnYTJjRDB4SjRXYlY4QzkxZ0V1SWNQZ3hnOXRaNWRLam5HdkxZRTF0NzFkWmxicmNEbWNodkxj?oc=5",
     "pub": "2026-11-27T02:20:43.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Ontario Premier Doug Ford urges residents to use guns, knives and bats to fend off home invaders",
-    "src": "New York Post",
-    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOFBGTU9WbzVCNFJoVFdSTlVaWVhIcDRpU0lXVXhtSXNwV05LTG9PV1lJdlBQcUktalBCRGtfejgzeUl3bldfV2dzUDBZNE5QQWI4MmtKbW5tY3ItU0VVSWNDS3E2Y2lEQThoM2RVbmFESFBiaWtDMmI4TjEzZnpqQl83Vzl1MzdrQnB5ZjZ1aGtOdnVkS2dHWXY0b3ZELXlZcmlkWmZtcHJ3U1NyYlRsdDZHUm5qdmVjb1BuV21uVjB3a25VOFFZdm9WUTFHUQ?oc=5",
-    "pub": "2026-11-27T01:20:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
-    "src": "The Washington Post",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdFVJenQ4a3hlOERnbnhWVGJ1QkNhUVQ1UjFGdUl2QjRFTjVaQUM4VC1sN2ZIWV9INVA3Y1hjUDA5VV94Zk4yOGF2Z00zak5OcGVNYTA3d2trbUxneVR6NnV0YXZ5Y3R5RDh3cTN0LVNqenltbmZMX2E1VkswTmNOT0t4R3hKWDNNeTRRbThMN2lFcUpRUjRwTjVnWS1sSDRLN2NTczlQNGg1Zw?oc=5",
-    "pub": "2026-11-27T00:34:52.000Z",
-    "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
-   },
-   {
-    "hd": "Armenia plans full withdrawal of Russian border guards in coming years, prime minister says",
-    "src": "The Kyiv Independent",
-    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX1FTcVlxTVFMZktFZEdWamQ3c3RBaVJFOGdXeWhsR1RYTlVocW40djg0bXktRkRzTGw1NTBpSk1EVC1qQ1dMN3paOWc5c1hqOFNONjBqWW1CYlZLLUhNaUh4TjBrVnNqWmNZdjBIeTZiTmIzWHBXZkdabm1lVzljWURpb21zU015SlZPR29Fak9FMEFhTDVFaXpUckVnY2pNdFc0WGUzY09aanJsWDBTa2dsLTlvcE1ENjNn?oc=5",
-    "pub": "2026-11-26T23:58:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Mexican president blasts DEA over tip lines, accusing it of not fighting fentanyl enough inside US",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRmt2ZGhhd0V4aDVhQmk5QU96b3k4bEpCU2FYalRyWmd0WU82UHBEMjI3M255R1JHQk56bm1qRi1hOWRHaXc3Ny1jalZRYUpYQ1JROXlIczRvTGpweHhqM0ZlM3R6QnVvR2tSRlVaTU83VHFkd3NlSlMtbWNCZzdMQWhDdlRVOFJhQ01EYlo4b1lacG9ydnd0ZGpLN3VsbFE?oc=5",
-    "pub": "2026-11-26T23:53:00.000Z",
-    "sum": "Mexico's president has criticized the U.S. Drug Enforcement Administration for setting up anonymous tip lines in the country"
    }
   ],
   "feeds": [
@@ -16382,8 +16385,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T12:59:06.016Z",
-  "lastAttempt": "2026-11-27T12:59:06.016Z",
+  "asOf": "2026-11-27T13:30:11.808Z",
+  "lastAttempt": "2026-11-27T13:30:11.808Z",
   "lastError": null
  }
 }
