@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T02:15:11.467Z",
+ "generatedAt": "2026-11-27T02:30:12.576Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -405,7 +405,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T02:15:11.467Z"
+   "checkedAt": "2026-11-27T02:30:12.576Z"
   },
   "quotes": {
    "NVDA": {
@@ -7216,12 +7216,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T02:15:11.467Z",
+  "at": "2026-11-27T02:30:12.576Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13589,62 +13590,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T02:15:11.467Z",
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7282.5,
-    "lastTime": 1795745134,
+    "last": 7287.75,
+    "lastTime": 1795746022,
     "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 85.75,
-    "changePct": 1.191510056622781,
-    "expectedOpen": 7268.3635460450905,
+    "change": 91,
+    "changePct": 1.2644596519262168,
+    "expectedOpen": 7273.603354986625,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26514.75,
-    "lastTime": 1795745135,
+    "last": 26569.75,
+    "lastTime": 1795746022,
     "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 409,
-    "changePct": 1.5667046531894313,
-    "expectedOpen": 23955.32287309309,
+    "change": 464,
+    "changePct": 1.7773862080193061,
+    "expectedOpen": 24005.013809572603,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50639,
-    "lastTime": 1795745134,
+    "last": 50641,
+    "lastTime": 1795746020,
     "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 410,
-    "changePct": 0.8162615222281948,
-    "expectedOpen": 50592.57411156901,
+    "change": 412,
+    "changePct": 0.8202432857512593,
+    "expectedOpen": 50594.57227796691,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2729.7,
-    "lastTime": 1795745135,
+    "last": 2731,
+    "lastTime": 1795746020,
     "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 23.899951171874818,
-    "changePct": 0.8832859317238102,
+    "change": 25.199951171875,
+    "changePct": 0.9313308713550004,
     "expectedOpen": null,
     "valid": true
    }
@@ -13661,9 +13662,9 @@
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
     "state": "in",
-    "status": "Q2 12:17",
+    "status": "Q2 4:32",
     "period": 2,
-    "clock": "12:17",
+    "clock": "4:32",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
@@ -14186,8 +14187,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T02:15:11.467Z",
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "lastError": null
  },
  "alerts": {
@@ -14198,8 +14199,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T02:15:11.467Z",
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14476,9 +14477,9 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Q2 5:53",
+    "status": "Q2 1:58",
     "period": 2,
-    "clock": "5:53",
+    "clock": "1:58",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
@@ -14497,7 +14498,7 @@
      "short": "Texas Tech",
      "id": "2641",
      "abbrev": "TTU",
-     "score": "6",
+     "score": "13",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
      "record": "10-1",
      "winner": false,
@@ -14837,13 +14838,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T02:15:11.467Z",
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T02:15:11.467Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15101,6 +15102,13 @@
    "NVDA": {
     "items": [
      {
+      "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
+      "src": "MarketWatch",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
+      "pub": "2026-11-27T00:31:00.000Z",
+      "sum": "NVIDIA has just announced that it is bringing back Jensen Huang as the CEO of the company, following his resignation earlier this month after a scandalous set of events. The company announced that the board unanimously agreed in favor of bringing back Huang, but the independent investigation will proceed. “The Board of Directors voted unanimously"
+     },
+     {
       "hd": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=8f377026c02684c28af2245b965ae35185baa4b14dea7345993296adb4c5f08d",
@@ -15169,13 +15177,6 @@
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1ydHdQWUpYRU16SjgyRXBibzZ6UFN4RThEMUV3VkRJV0NCNmk1Nm1wTFlvTnpsLS1VVHdmczlIQjZRN0RKZnlBdm5oSmFUY0lCaWV5dTY2bDBiRHcyV0lfMjk3ZS1TQW1oM3F0TTJFRdIBdEFVX3lxTE1hb0dnX1V6U3RzcVduQUhNcHBONFFMMVVaaThOcEc5dy1EOVMwUXBVM1lSMWljNm12aTJXT0FvMWdkaUdyTEZyZGY0dHJ0R3kxQllKQ2RaMl9MYmxIY2pHcTh6TWVDRkhCSkVqUVUtbVFOam81?oc=5",
       "pub": "2026-11-26T15:34:08.000Z",
       "sum": "A new BIS rule was intended to close \"loopholes,\" U.S. Trade Representative Jamieson Greer told CNBC's \"Squawk Box\" on Wednesday."
-     },
-     {
-      "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
-      "src": "MarketWatch",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
-      "pub": "2026-11-26T15:30:00.000Z",
-      "sum": ""
      },
      {
       "hd": "Nvidia’s ‘great man theory’ is flawed",
@@ -15278,14 +15279,21 @@
     ],
     "fetched": {
      "Finnhub": 112,
-     "Yahoo": 6,
-     "Google News": 88,
-     "Nasdaq": 11,
+     "Yahoo": 5,
+     "Google News": 91,
+     "Nasdaq": 12,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
+      "pub": "2026-11-27T01:30:07.000Z",
+      "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
+     },
      {
       "hd": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
       "src": "Yahoo Finance",
@@ -15343,13 +15351,6 @@
       "sum": "TSLA's European self-driving expansion faces a crucial Dec. 15 EU vote that could unlock a larger market or jeopardize existing national approvals."
      },
      {
-      "hd": "General Motors (GM) Bets On Egypt Assembly And Wider EV Charging Access",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=bb79cfb7119a3ca47f6457e8778f0b3c01e1b27b9520d0057d7e618f1dfe2244",
-      "pub": "2026-11-26T10:14:02.000Z",
-      "sum": "General Motors (NasdaqGS:GM) is starting local production of the Chevrolet Groove in Egypt with a strong local sourcing commitment. The automaker is also broadening its collaboration with Tesla by adopting the NACS charging standard for GM electric vehicles in South Korea. Together, Egypt based Groove assembly and NACS charging access in South Korea only capture part of General Motors' current repositioning efforts. Ask Charlie whether the 3 warning signs (1 major) affect GM’s Egypt Groove..."
-     },
-     {
       "hd": "Situational Awareness Lost 65% in Q3, Investor Leopold Aschenbrenner Warns Nvidia, Microsoft, Tesla Could Lose Their Edge: Report",
       "src": "Benzinga",
       "url": "https://finnhub.io/api/news?id=b1a5fac72d45f8da504a5e2a10ea7440f86161b6d0a3c55608707f11ba15348b",
@@ -15383,13 +15384,6 @@
       "url": "https://finnhub.io/api/news?id=53aa22a144c96b61452135cb1dc0b4f7b8f5ba8044191cae9b22cbd043165715",
       "pub": "2026-11-25T05:26:21.000Z",
       "sum": "Space Exploration Technologies shares fall 2.17% in pre-market trading as Gary Black flags valuation concerns."
-     },
-     {
-      "hd": "Ross Gerber Warns SpaceX Could ‘Dilute’ Shareholders With TSLA Stock Amid Merger Talks, Explains Why He Avoids IPOs Like SPCX, ANT",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=3b4bb2088529e0af42ac9482e197792277d034dba5b1cef9efb34fd48a901c78",
-      "pub": "2026-11-25T04:46:17.000Z",
-      "sum": "Ross Gerber warns a Tesla-SpaceX stock merger could dilute SpaceX owners, explains why he refrains from IPOs."
      },
      {
       "hd": "This Analyst Sees $4 Billion in Robotaxi Revenue for Tesla, Initiates Coverage With 25% Upside",
@@ -15448,6 +15442,13 @@
       "sum": ""
      },
      {
+      "hd": "This Tesla Analyst Begins Coverage On A Bullish Note; Here Are Top 5 Initiations For Tuesday",
+      "src": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=303b607126fb4e5622f8b5a03f918a0a468599bc92f5f9a9acaff255b2e9dbd0",
+      "pub": "2026-11-24T09:16:25.000Z",
+      "sum": "Analysts initiated bullish coverage on Anthropic, GameStop, Littelfuse, Tesla and Lockheed Martin with Buy or Outperform ratings and price targets."
+     },
+     {
       "hd": "We are the ‘Tesla’ of ratings, says tiny agency behind private credit boom",
       "src": "Financial Times",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPczZTYmlPVzUyejlCYVB1WHRsZXE0MV9VRGNON2xETE8yT09RX3hkaFBZMVRHd1VqT3ZXb1h3MUlHU3l5NXMtb0N1R0ppWGRtdkpoQ1BZQzUwSGI5Vmc1YmFzMDBCS2dCU0JIS3hmQnVULVVPdGJxZWxydm82TEhnVnFHanM?oc=5",
@@ -15464,7 +15465,7 @@
     ],
     "fetched": {
      "Finnhub": 151,
-     "Yahoo": 9,
+     "Yahoo": 10,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
@@ -15473,9 +15474,16 @@
    "SPCX": {
     "items": [
      {
+      "hd": "What Could Tesla (TSLA) Merger Talks Mean For Its Stock?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
+      "pub": "2026-11-27T01:30:07.000Z",
+      "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
+     },
+     {
       "hd": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=379e11cca733ccd615a094c8dbec14c700eb91926112710eb954d1b54b989281",
       "pub": "2026-11-27T00:30:00.000Z",
       "sum": "Mexico has also raised concerns about disruptions to its airspace."
      },
@@ -15515,18 +15523,11 @@
       "sum": "The FCC said it was approving SpaceX’s Starmind constellation to help meet rapidly growing demand for AI computing"
      },
      {
-      "hd": "SpaceX Stocks Rise 1.3% as FCC Approves 1 Million Orbital Data Center Satellites",
+      "hd": "Nvidia Cut Its Intel Stake and Bought More SpaceX. Cathie Wood Is Buying Too. Why SPCX Stock Faces a Big Test on December 8.",
       "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=d8fed1f936d21ab5dcf0c37ad2bc3fc5adf7e5a6b195b7175f3efb23276feb2b",
-      "pub": "2026-11-26T19:10:28.000Z",
-      "sum": "The conditional license for the Starmind network sets a seven-year deadline for the first satellite and full deployment by 2040."
-     },
-     {
-      "hd": "Goldman Sachs Stocks Edge Lower After Touching a 52-Week Low of $772.74",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=962b839ea922046f6f3fcad80cd191979011bf1fa8cf0d02bc66f6d1fe79c2c7",
-      "pub": "2026-11-26T18:41:58.000Z",
-      "sum": "The bank's 8% weekly slide tracks AI-linked risk, including about $44 billion of notes it helped arrange for SpaceX GPUs."
+      "url": "https://finnhub.io/api/news?id=0a21db26c9b7f3fb6db055e89e1f48046f8e62be858c181676926d72c53e0e65",
+      "pub": "2026-11-26T19:30:03.000Z",
+      "sum": "Nvidia and Cathie Wood both added to SpaceX after its steep fall, but the Dec. 8 lock-up expiry will test whether the stock can hold up."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15649,7 +15650,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 166,
+     "Finnhub": 168,
      "Yahoo": 16,
      "Google News": 17,
      "Nasdaq": 0,
@@ -15659,10 +15660,17 @@
    "ANT": {
     "items": [
      {
+      "hd": "Thinking About Investing in Anthropic? Make This 1 Portfolio Move First",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/26/thinking-about-investing-in-anthropic-make-this-1-portfolio-move-first/?.tsrc=rss",
+      "pub": "2026-11-27T01:35:02.000Z",
+      "sum": "There's nothing wrong with buying Anthropic, as long as you understand and are prepared for the risks."
+     },
+     {
       "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
       "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ad1499815de9fcb015c4d8f9a5870e9036fff5d0b19bac37e6ac3602b1115bc7",
-      "pub": "2026-11-27T00:44:26.000Z",
+      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
+      "pub": "2026-11-27T01:34:35.000Z",
       "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
      },
      {
@@ -15687,6 +15695,13 @@
       "sum": "The AI lab's revenue is soaring, but the outlook for its profitability and valuation will determine whether the stock is worth buying at current prices."
      },
      {
+      "hd": "Apple Enters the AI Agent Race as It Takes on OpenAI, Anthropic, and Meta. What That Means for AAPL Stock.",
+      "src": "Yahoo Finance",
+      "url": "https://www.barchart.com/story/news/9022924/apple-enters-the-ai-agent-race-as-it-takes-on-openai-anthropic-and-meta-what-that-means-for-aapl-stock?.tsrc=rss",
+      "pub": "2026-11-26T19:30:03.000Z",
+      "sum": "Apple is reportedly developing an autonomous AI agent capable of controlling apps, writing code, and completing complex tasks as competition with OpenAI, Anthropic, and Meta intensifies."
+     },
+     {
       "hd": "Anthropic Stocks Rise but Close Below $83 IPO Price for a Second Day",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=83cce37cdaa790b44d9360146fa0e0712c26c2dcabeb494bd41c337f717478f3",
@@ -15699,20 +15714,6 @@
       "url": "https://finnhub.io/api/news?id=20293754165b732c4daa2b3fd0e28d7a92e12843ae62234831a59d659a3da32f",
       "pub": "2026-11-26T18:30:41.000Z",
       "sum": "Shares erased a 7.7% intraday slide to their lowest level since July 2025 as Google and Anthropic exposure stays in focus."
-     },
-     {
-      "hd": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=933686949bd26892b9dfaf34b94d6cbd056000419b49f64cfe45d4232220786b",
-      "pub": "2026-11-26T17:47:02.000Z",
-      "sum": "Alphabet owns a piece of Anthropic and also gets paid to supply its computing power, which is a nice way to be on both sides of the AI boom."
-     },
-     {
-      "hd": "Cathie Wood Buys $87.8 Million in Anthropic Shares This Week",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=7029c8597adbabdd3c3e1e6065c7e3c265c9691dea5db8be6c178b107a5b5690",
-      "pub": "2026-11-26T17:41:36.000Z",
-      "sum": "ARK Invest increases its exposure to Anthropic and SpaceX while reducing streaming and cryptocurrency-related holdings."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -15836,19 +15837,26 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 0,
-     "Google News": 52,
+     "Yahoo": 14,
+     "Google News": 48,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
+    "src": "CBS News",
+    "url": "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
+    "pub": "2026-11-27T02:29:01.000Z",
+    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
+   },
    {
     "hd": "Met Police ruined my life, says Kenyan man wrongly sentenced over attack on UK couple",
     "src": "BBC News",
@@ -15885,6 +15893,13 @@
     "sum": "Documents released Thursday shed new light on the rushed appointment of Peter Mandelson and his continued ties to Global Counsel, a lobbying group."
    },
    {
+    "hd": "EU leaders split over budget spending and a $49 billion loan to Ukraine",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxObUt5bnNUdEVaVjhETTRjWFI5cnZYaUtyV0R1VE50ZGFPcnJyVmppY2xxeVFpOEtPWURRSFpKUGFXcDVkZGVtZnF2Ykg5aEk2NXY4VTVBVHZQWEstSk9CRGp6cHZLUWhyQkdDQ2ktQjl6WldZSlFRdzhfVUQ0dGNkNlZJaFZKMkFYeWdFUmNQSXdSTDJscjlEcXBZdVdhZWs?oc=5",
+    "pub": "2026-11-26T21:27:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Two Italians killed in strike in Kuwait, as Iran denies responsibility",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/c39w9y5dx4k5o?at_medium=RSS&at_campaign=rss",
@@ -15904,13 +15919,6 @@
     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORnNINWJlUzU0bDVSQ1Z5TWhtZTl1dzVxa01lbWhiMTg0bjBKZzQtbld6RmpIQ3NOSkctT29wTmdmR3VCcHpMbzdBQUdQSU0wVWItQU1COHhCS1BzYnpoOTJsRzl2TWp0aVNNZWVpZVFhS2cwWXVtNnA0bzRfUXNTRTJRTEVHem5BY2V2SURxZG9Vb3VkT3FNa1RuR3RfZWJQUE15WTdGaVFudnJaeVJIdVhXdE9PcWFuY2c?oc=5",
     "pub": "2026-11-26T20:56:28.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
-    "pub": "2026-11-26T20:35:23.000Z",
-    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
    },
    {
     "hd": "Hamas in talks with Palestinian factions over Israeli targeted killings in Gaza",
@@ -15948,9 +15956,16 @@
     "sum": "Eurozone leaders have chosen a new president of the European Central Bank"
    },
    {
+    "hd": "Duterte’s defense: Use of ‘offensive, threatening’ speech in drug war is ‘regional way of speaking’",
+    "src": "ABS-CBN",
+    "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNNllVdk13M3BwdW9MV3ZURVV0OHFfVmNlM0ZPaXR4aVU4N1N5U3I5VVNCd0RfYUJ3VS1rbjBncV9XMlIxZFlFaEVqeHNnai01cTBLLUVsTVc1R0pMZGFTWVY0LWgxLXJUa0swd3lWWTdQNDJDUFlBWXVjcGJMWXJSRmVpb0FEZUJDVnN1cWgzZWxhdVd2VTlCXzZmX2Rvb3NXWmlDczRWRWUzc3BETUlhaXBTcTBjRzJEaGZVdWdrSDU1ZFhJeEhPX2xiUURmaHczamt2TmoyT3Rud2piRFE?oc=5",
+    "pub": "2026-11-26T19:35:05.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say",
     "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQzFiWi01aU5HaTlZaHd0THlxMFB6RTdtR1hpUGh1RHVuclpWOGxwNVJEdXFDXzN1LWpBOUpuWmEzR3c5VGp0SGYwajFLYm90eU9OM29VVkFWWlUtQWh4eUZiUHJQN2s4STBELUZfNVhOZHVfRVltRjZsVDloTFdwVUlTU0QyVmFBTHVfQzBBYV80aXhxREh0MzVydXcydw?oc=5",
     "pub": "2026-11-26T19:33:06.000Z",
     "sum": "The deaths follow a series of strikes on Gulf Arab states that host U.S. military facilities in recent weeks as talks to end the war continue to stall."
    },
@@ -16044,20 +16059,6 @@
     "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE82VmIyOXM0dFF5ZVFScjVxU0IzbUV3cU53d1JybkZ3eEJxaUFCTXR4Y0dmS3FjREhrcVZ4QW5GN3AtMHJNdWFDT1JaeWppVkZrXzkteDgzZ0MzTFk?oc=5",
     "pub": "2026-11-26T16:39:30.000Z",
     "sum": "The pair were technicians for German company Rheinmetall, according to Italy's foreign ministry."
-   },
-   {
-    "hd": "Iranian activist and Oscar-nominated screenwriter Mehdi Mahmoudian arrested in Tehran",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbzNyQXhjYjAxWFltcXJvVW02V3lBZVlIQzdHdHYwWjFqX25EeW5WUXVROFczbXZsaERySUNOVmhXN1dDZGM4aWo1VkJOQUVMb1dZbElKdWpJTXFteEVfY0NQdGp3Vkc4TlN3cTNXQW5pRjBCTGVKRVptb29yZlczWWhhWHdNMDVsUV80emFSOUZVZTBEUnR0alI3Z3M?oc=5",
-    "pub": "2026-11-26T16:39:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
-    "pub": "2026-11-26T16:26:33.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16076,8 +16077,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T02:00:11.398Z",
-  "lastAttempt": "2026-11-27T02:00:11.398Z",
+  "asOf": "2026-11-27T02:30:12.576Z",
+  "lastAttempt": "2026-11-27T02:30:12.576Z",
   "lastError": null
  }
 }
