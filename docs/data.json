@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T01:15:12.370Z",
+ "generatedAt": "2026-11-27T01:30:10.784Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T01:15:12.370Z"
+   "checkedAt": "2026-11-27T01:30:10.784Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,12 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T01:15:12.370Z",
+  "at": "2026-11-27T01:30:10.784Z",
   "ran": [
-   "weather",
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13896,62 +13897,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T01:15:12.370Z",
-  "lastAttempt": "2026-11-27T01:15:12.370Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7247.5,
-    "lastTime": 1795741510,
-    "settle": 7196.75,
+    "last": 7259,
+    "lastTime": 1795742420,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 50.75,
-    "changePct": 0.7051794212665439,
-    "expectedOpen": 7233.431486434848,
+    "change": 62.5,
+    "changePct": 0.8684777322309456,
+    "expectedOpen": 7245.160844855139,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26284.75,
-    "lastTime": 1795741513,
-    "settle": 26105.75,
+    "last": 26367.25,
+    "lastTime": 1795742421,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 179,
-    "changePct": 0.6856726966281375,
-    "expectedOpen": 23747.5244114515,
+    "change": 262.5,
+    "changePct": 1.0055641214721458,
+    "expectedOpen": 23822.973372729102,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50524,
-    "lastTime": 1795741505,
-    "settle": 50229,
+    "last": 50563,
+    "lastTime": 1795742412,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 295,
-    "changePct": 0.5873101196519939,
-    "expectedOpen": 50477.67954368989,
+    "change": 336,
+    "changePct": 0.6689629083958827,
+    "expectedOpen": 50518.65532183885,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2722.3,
-    "lastTime": 1795741495,
-    "settle": 2705.800048828125,
+    "last": 2723.7,
+    "lastTime": 1795742420,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 16.499951171875182,
-    "changePct": 0.6097993522847805,
+    "change": 18.000048828124818,
+    "changePct": 0.6652640408382591,
     "expectedOpen": null,
     "valid": true
    }
@@ -13968,9 +13969,9 @@
     "id": "401873080",
     "start": "2026-11-26T21:30Z",
     "state": "in",
-    "status": "Q4 2:00",
+    "status": "Q4 0:11",
     "period": 4,
-    "clock": "2:00",
+    "clock": "0:11",
     "completed": false,
     "away": {
      "name": "Philadelphia Eagles",
@@ -14000,10 +14001,10 @@
    {
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
-    "state": "pre",
-    "status": "Thu 8:20 PM ET",
-    "period": 0,
-    "clock": "0:00",
+    "state": "in",
+    "status": "Q1 15:00",
+    "period": 1,
+    "clock": "15:00",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
@@ -14493,8 +14494,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T01:15:12.370Z",
-  "lastAttempt": "2026-11-27T01:15:12.370Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": null
  },
  "alerts": {
@@ -14505,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T01:15:12.370Z",
-  "lastAttempt": "2026-11-27T01:15:12.370Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14783,9 +14784,9 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Q1 12:11",
+    "status": "Q1 5:26",
     "period": 1,
-    "clock": "12:11",
+    "clock": "5:26",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
@@ -15144,12 +15145,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T01:15:12.370Z",
-  "lastAttempt": "2026-11-27T01:15:12.370Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T01:15:12.370Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15408,6 +15409,13 @@
    "NVDA": {
     "items": [
      {
+      "hd": "These 2 AI Chip Stocks Are Down 36% to 39% From Their Highs. Here’s What History Says Happens Next.",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=8f377026c02684c28af2245b965ae35185baa4b14dea7345993296adb4c5f08d",
+      "pub": "2026-11-27T00:20:02.000Z",
+      "sum": "Nvidia and Broadcom shares have pulled back sharply even as AI demand holds up. Past sell-offs offer clues for long-term investors."
+     },
+     {
       "hd": "Did Jensen Huang’s Alleged Chinese Spy Get Him to Do Anything Nvidia Didn’t Want?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=549d58c0687944ed251bd01b581409ad37503dc43d6b2fba79a06933d06acad9",
@@ -15455,13 +15463,6 @@
       "url": "https://finnhub.io/api/news?id=56e39cd3373b1bf4ef065b7721afd547db57b13fe2eaa9ab552e1c233b6e82ad",
       "pub": "2026-11-26T18:17:02.000Z",
       "sum": "Nvidia's physical AI revenue is growing at an incredible pace."
-     },
-     {
-      "hd": "Super Micro Computer (SMCI) Faces Southeast Asia AI Server Disruption After Export Halt",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=24d83d38e3e0407a79720184c9405186f26cc5a5359491dd82b48f4d7d025460",
-      "pub": "2026-11-26T18:15:32.000Z",
-      "sum": "Super Micro Computer (NasdaqGS:SMCI) faces supply disruption after Nvidia suspended advanced AI server shipments to Southeast Asia under new US export controls. The pause affects Nvidia's high end AI chips used in Supermicro systems that target large scale AI data center deployments in the region. Customers in key Southeast Asian markets that had been expanding AI data centers as an alternative to China are now exposed to delivery uncertainty. Nvidia's export control driven halt on advanced..."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15586,7 +15587,7 @@
     "fetched": {
      "Finnhub": 112,
      "Yahoo": 6,
-     "Google News": 92,
+     "Google News": 88,
      "Nasdaq": 11,
      "Seeking Alpha": 25
     }
@@ -15599,6 +15600,13 @@
       "url": "https://finnhub.io/api/news?id=33e94637ee57050ed7351c4c5d29f4846041bfb6dd6edc3c6bcc0557f653e1d9",
       "pub": "2026-11-26T19:03:57.000Z",
       "sum": "The bloc's vehicle committee postponed a discussion on approving Tesla Assisted Driving, originally expected December 1, without giving a reason."
+     },
+     {
+      "hd": "Charlie Munger Said BYD Was ‘So Much Ahead Of Tesla, It’s Almost Ridiculous’ in 2023. BYD Then Outsold Tesla, But Berkshire Sold Every Share.",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=251c6e99197ce8f54f1f5cc64dcdcd6a04e029c4494ebea81efd09bece90c6a4",
+      "pub": "2026-11-26T18:30:03.000Z",
+      "sum": "BYD sold around 600,000 more pure-electric cars in 2025 than Tesla; Berkshire's 2008 BYD stake, bought for about $230 million, was sold off by September 2025."
      },
      {
       "hd": "Tesla: A SpaceX Merger Could Turn $5,000 Into $10,000",
@@ -15655,13 +15663,6 @@
       "url": "https://finnhub.io/api/news?id=b1a5fac72d45f8da504a5e2a10ea7440f86161b6d0a3c55608707f11ba15348b",
       "pub": "2026-11-26T09:37:01.000Z",
       "sum": "Leopold Aschenbrenner's AI hedge fund lost 65% in Q3 after an AI selloff, prompting tighter risk controls and portfolio changes."
-     },
-     {
-      "hd": "Elon Musk tells Tesla investors there is 'only one way' to eliminate poverty",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1579fa9f77d05dff05f06632abd4653fe397f4e4df6f5e03425344a278fa0279",
-      "pub": "2026-11-26T00:37:00.000Z",
-      "sum": "Musk says poverty won’t end with government checks, and that Tesla is building the real answer."
      },
      {
       "hd": "Tesla: The Potential Merger Is Now Doing All The Work",
@@ -15771,7 +15772,7 @@
     ],
     "fetched": {
      "Finnhub": 151,
-     "Yahoo": 8,
+     "Yahoo": 9,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
@@ -15779,6 +15780,13 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/economy/policy/articles/mexico-wants-where-spacex-flies-003000153.html?.tsrc=rss",
+      "pub": "2026-11-27T00:30:00.000Z",
+      "sum": "Mexico has also raised concerns about disruptions to its airspace."
+     },
      {
       "hd": "Musk says he will donate another SpaceX share to American kids annually",
       "src": "Yahoo Finance",
@@ -15827,13 +15835,6 @@
       "url": "https://finnhub.io/api/news?id=962b839ea922046f6f3fcad80cd191979011bf1fa8cf0d02bc66f6d1fe79c2c7",
       "pub": "2026-11-26T18:41:58.000Z",
       "sum": "The bank's 8% weekly slide tracks AI-linked risk, including about $44 billion of notes it helped arrange for SpaceX GPUs."
-     },
-     {
-      "hd": "Elon Musk doubles SpaceX share pledge for U.S. children",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ac592cd0cd4a684f1b254850ff33f353cb86c302d48899e2b5261c145e2516ce",
-      "pub": "2026-11-26T18:22:34.000Z",
-      "sum": "Every child in the U.S. will receive one share of SpaceX from the company and one from Elon Musk."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15968,56 +15969,56 @@
      {
       "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-      "pub": "2026-11-26T23:51:44.000Z",
+      "url": "https://finnhub.io/api/news?id=ad1499815de9fcb015c4d8f9a5870e9036fff5d0b19bac37e6ac3602b1115bc7",
+      "pub": "2026-11-27T00:44:26.000Z",
       "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
      },
      {
       "hd": "Anthropic Stock (ANT) Forecast – Analysts See 60%+ Upside Despite Ongoing AI Trade Concerns",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/anthropic-stock-ant-forecast-analysts-222745210.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=b6c930629e7ea794bc18185c9e5b46f9e267370097b770a0b72e08155b978fc3",
       "pub": "2026-11-26T22:27:45.000Z",
       "sum": "Shares of Claude maker Anthropic (ANT) rose more than 1% on Wednesday after declining for three consecutive trading sessions. The AI stock made a stellar Nasdaq debut on November 19, rising 17% from its IPO (initial public offering) price of $83. However, ANT and other AI-related stocks have been under pressure due to concerns about the sustainability of AI spending and macro pressures. Nevertheless, Wall Street analysts are bullish on Anthropic stock and see solid upside, given the company’s le"
      },
      {
       "hd": "Cathie Wood Just Bought $26 Million of Anthropic Across 6 ARK Funds",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/cathie-wood-just-bought-26-million-of-anthropic-across-6-ark-funds?ref=yahoofinance&tlnk=yf-261126-p2m2c5g4&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=007dac00e1d080fcca64fc3002a0fd35b7d5e89468190fab0a5a4a414c34734f",
       "pub": "2026-11-26T21:06:01.000Z",
       "sum": "Key TakeawaysCathie Wood’s ARK Invest bought 317,053 shares of Anthropic across six ETFs on Wednesday, about $26 million at the day’s close. Anthropic closed Wednesday at $82."
      },
      {
       "hd": "I'd Buy Anthropic Stock Early — but Only If I Liked the Answers to These 3 Questions",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/id-buy-anthropic-stock-on-day-1-but-only-if-you-can-answer-these-3-questions/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=c3337a05d3a04e1085847e26053e689f13e53bc42c01829762f28d5b487deca7",
       "pub": "2026-11-26T19:37:02.000Z",
       "sum": "The AI lab's revenue is soaring, but the outlook for its profitability and valuation will determine whether the stock is worth buying at current prices."
      },
      {
       "hd": "Anthropic Stocks Rise but Close Below $83 IPO Price for a Second Day",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/anthropic-stocks-rise-close-below-190552499.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=83cce37cdaa790b44d9360146fa0e0712c26c2dcabeb494bd41c337f717478f3",
       "pub": "2026-11-26T19:05:52.000Z",
       "sum": "Shares rebounded from a 7.6% early drop to $75.71 yet ended at $82.79, one week after the record offering."
      },
      {
       "hd": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-edge-lower-rebounding-183041028.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=20293754165b732c4daa2b3fd0e28d7a92e12843ae62234831a59d659a3da32f",
       "pub": "2026-11-26T18:30:41.000Z",
       "sum": "Shares erased a 7.7% intraday slide to their lowest level since July 2025 as Google and Anthropic exposure stays in focus."
      },
      {
       "hd": "Alphabet Could Be the Safest Way to Own Anthropic. Here’s the Math.",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/26/alphabet-could-be-the-safest-way-to-own-anthropic-here-s-the-math/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=933686949bd26892b9dfaf34b94d6cbd056000419b49f64cfe45d4232220786b",
       "pub": "2026-11-26T17:47:02.000Z",
       "sum": "Alphabet owns a piece of Anthropic and also gets paid to supply its computing power, which is a nice way to be on both sides of the AI boom."
      },
      {
       "hd": "Cathie Wood Buys $87.8 Million in Anthropic Shares This Week",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/cathie-wood-buys-87-8-174136348.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=7029c8597adbabdd3c3e1e6065c7e3c265c9691dea5db8be6c178b107a5b5690",
       "pub": "2026-11-26T17:41:36.000Z",
       "sum": "ARK Invest increases its exposure to Anthropic and SpaceX while reducing streaming and cryptocurrency-related holdings."
      },
@@ -16142,16 +16143,16 @@
      }
     ],
     "fetched": {
-     "Finnhub": 144,
-     "Yahoo": 14,
-     "Google News": 60,
+     "Finnhub": 145,
+     "Yahoo": 0,
+     "Google News": 52,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T00:30:13.215Z",
-  "lastAttempt": "2026-11-27T00:30:13.215Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": null
  },
  "worldNews": {
@@ -16171,17 +16172,17 @@
     "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
    },
    {
+    "hd": "France's Macron says Le Pen should be less arrogant after she criticises EU budget talks",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQTlISjVuc0VWRk9XLWpHbFBVNUxKNWk4NzVSX3ZFVDZLbG12em9VX2RVLThzaHI0SXJ5M0dKOG9pR2VnZWhFelVYZXNnbjBvOUVDQW1xaHNYUl9wSmRRNl80a19GcDRwdnRva0NsMlI4Y3hPamhGUnlSbkpqWmRSRkJxVUNsdGNUUzJCcERsN3kzVFJmY1psTTh5ekhyX2x2N2JWNXl5Z3BIZ2hvYi0wNDBIRGJtTzQ?oc=5",
+    "pub": "2026-11-26T23:41:41.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Trump says he asked Putin to 'pull back' military aggression throughout Europe",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOLTBqZDFmdVZMYUhDSHRObmlwNXBGNXRpXzdBVnBTc2hZTk54NU9BYThqQUswalJPMklvaGhHNmJiNW5venFCYk1FbjdNQUdJU1RISjlXbGtpc0lWektRUThRNEhOdFdSZ3B3cGZTSlk5blFMWnhGOGNfaEFjbzBha29XdlNxTXUzemUzR1FIc0FPc0kybGZLSmp5OVNNSGRLOXNZM21pd0Fac2prOVoxcC1rMnFIUQ?oc=5",
     "pub": "2026-11-26T22:32:57.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "France's Macron says Le Pen should be less arrogant after she criticises EU budget talks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQTlISjVuc0VWRk9XLWpHbFBVNUxKNWk4NzVSX3ZFVDZLbG12em9VX2RVLThzaHI0SXJ5M0dKOG9pR2VnZWhFelVYZXNnbjBvOUVDQW1xaHNYUl9wSmRRNl80a19GcDRwdnRva0NsMlI4Y3hPamhGUnlSbkpqWmRSRkJxVUNsdGNUUzJCcERsN3kzVFJmY1psTTh5ekhyX2x2N2JWNXl5Z3BIZ2hvYi0wNDBIRGJtTzQ?oc=5",
-    "pub": "2026-11-26T21:42:10.000Z",
     "sum": ""
    },
    {
@@ -16318,6 +16319,13 @@
     "sum": ""
    },
    {
+    "hd": "UK to get ‘Swiss-style’ consultative rights under new EU deals",
+    "src": "POLITICO.eu",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNV0d1ZTl2cmN3OFJmVUhGemh6bndsT1J0Y1A1eGp5QVdMbGVSNzR2T0Y2Z1FLVEVQbXlZYjNSRk4ybVpnbHdpX29hMVBzazJYUEZkRnpuaWZZNkVyZnRzZWJIZkJKVFE0ZHI2bDQzdEN3dkVGMDZIN2w3VWRZaGlNUi1ZbWZCakFwM3FUZVJiM0UyVHhsX0ZjWQ?oc=5",
+    "pub": "2026-11-26T17:06:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Germany: 2 suspected Islamists arrested in Heidelberg and Cologne, suspected of plotting synagogue attack",
     "src": "DW",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdTJjem9wYVZqdmdGdDlyX2c2YS1PX3N0SVRPNVlQb2xNTkxGNHg4dXhlVkF3Q3dMRTdmdE1GTWpLNEVILXA2b1ZEd2o1N1NHSzVPV3RVM19UY2dnSmx3TWtVb2hETDZ4eDNsdTBJNnkwOTI5c0d1VzV6STM4TFIzRUZWUHRPRmVMeTRvVDlhRmtmaDVU0gGUAUFVX3lxTE5WQ2ZSLVF6VTZ5WFNtYXRnUjFRcUNzMU90TWZrYzBnSlNVR2w0XzE1Vy1GbkRMZXRsTXVJbHpDNl90SWgtT0c1VVY5OWkxdTRnMnY3N0FhSlduRG1xXzVQcUw4Y1RKR3ZzVHFqRzJTaVRQS2R1Q2dtRWw2bGczamU5Q2RaVzdwOWExaGtUSFVrMTVIdWM?oc=5",
@@ -16358,13 +16366,6 @@
     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1XSG11OFNDMy1CT0lldVd0S21WUVE4SERyVUFSRWpqZUw1LXo0MEdVWmJWNWpjaWcxUGVXeVREcGt5SGplbzZsQURVdUVJZjZZQkEyMUh1cHl4RXpxV1pDblUyNUkweXJ5THRiNWJhSGNQMm14QVdFS2IyUEZyQQ?oc=5",
     "pub": "2026-11-26T16:18:46.000Z",
     "sum": "The Russia-Ukraine war is spilling into the Black Sea, where violent incidents have surged, running right up to NATO's doorstep."
-   },
-   {
-    "hd": "Israeli Spy Chief Pressed for Renewed Iran Strikes During U.S. Visit",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2poV3JYSVEtZHRZTmlXWXNpcUR6VEVZUnZEY01xeTB0WlhhMUVvTngyM1YwMHRieTY0R0lnMjhsWEJwa2lsY1RvNkluUXlKQ0dlZXlwR2VSdV9OSGE0RVZsNUJSTkRheno5NGJnbG1TRk9waG1CMFhCV3FadzgtbmlsQzAwd0dfZHRRMkZMWkpXcmVmMG9neVhtZUxkMUlka2tVdTdNbjRhcm5TZmY2dWw4SUs?oc=5",
-    "pub": "2026-11-26T16:14:39.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16383,8 +16384,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T01:00:18.185Z",
-  "lastAttempt": "2026-11-27T01:00:18.185Z",
+  "asOf": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:30:10.784Z",
   "lastError": null
  }
 }
