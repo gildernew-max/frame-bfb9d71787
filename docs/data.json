@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T03:17:54.977Z",
+ "generatedAt": "2026-11-27T03:30:13.129Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T03:17:54.977Z"
+   "checkedAt": "2026-11-27T03:30:13.129Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,8 +7523,14 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T03:17:54.977Z",
+  "at": "2026-11-27T03:30:13.129Z",
   "ran": [
+   "alerts",
+   "nflScoreboard",
+   "cfbScoreboard",
+   "stockNews",
+   "worldNews",
+   "futures",
    "usTempGrid"
   ]
  },
@@ -13891,62 +13897,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T03:15:12.601Z",
-  "lastAttempt": "2026-11-27T03:15:12.601Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7295.75,
-    "lastTime": 1795748711,
-    "settle": 7196.5,
+    "last": 7296.25,
+    "lastTime": 1795749623,
+    "settle": 7196.75,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 99.25,
-    "changePct": 1.3791426387827417,
-    "expectedOpen": 7281.840781629959,
+    "change": 99.5,
+    "changePct": 1.3825685205127316,
+    "expectedOpen": 7282.086855177684,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26645.25,
-    "lastTime": 1795748710,
-    "settle": 26104.75,
+    "last": 26654.5,
+    "lastTime": 1795749624,
+    "settle": 26105.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 540.5,
-    "changePct": 2.070504410116933,
-    "expectedOpen": 24074.148091276493,
+    "change": 548.75,
+    "changePct": 2.102027331143522,
+    "expectedOpen": 24081.58302532967,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50648,
-    "lastTime": 1795748688,
-    "settle": 50227,
+    "last": 50637,
+    "lastTime": 1795749618,
+    "settle": 50229,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 421,
-    "changePct": 0.8381945965317458,
-    "expectedOpen": 50603.58077528022,
+    "change": 408,
+    "changePct": 0.8122797587051305,
+    "expectedOpen": 50590.57594517111,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2734.3,
-    "lastTime": 1795748710,
-    "settle": 2705.699951171875,
+    "last": 2733,
+    "lastTime": 1795749623,
+    "settle": 2705.800048828125,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 28.600048828125182,
-    "changePct": 1.0570295799332117,
+    "change": 27.199951171875,
+    "changePct": 1.0052461630952823,
     "expectedOpen": null,
     "valid": true
    }
@@ -13963,9 +13969,9 @@
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
     "state": "in",
-    "status": "Q3 11:28",
+    "status": "Q3 4:40",
     "period": 3,
-    "clock": "11:28",
+    "clock": "4:40",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
@@ -14488,8 +14494,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T03:15:12.601Z",
-  "lastAttempt": "2026-11-27T03:15:12.601Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": null
  },
  "alerts": {
@@ -14500,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T03:15:12.601Z",
-  "lastAttempt": "2026-11-27T03:15:12.601Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14778,9 +14784,9 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Q3 12:43",
+    "status": "Q3 8:59",
     "period": 3,
-    "clock": "12:43",
+    "clock": "8:59",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
@@ -14799,7 +14805,7 @@
      "short": "Texas Tech",
      "id": "2641",
      "abbrev": "TTU",
-     "score": "34",
+     "score": "41",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png",
      "record": "10-1",
      "winner": false,
@@ -15139,12 +15145,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T03:15:12.601Z",
-  "lastAttempt": "2026-11-27T03:15:12.601Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T03:17:54.977Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15403,6 +15409,13 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/trump-says-huang-excited-second-003925008.html?.tsrc=rss",
+      "pub": "2026-11-27T00:39:25.000Z",
+      "sum": "President Donald Trump said Jensen Huang is looking forward to his “second term” as chief executive officer of Nvidia Corp., reiterating his praise for the man whose reinstatement he pushed hard for despite bipartisan backlash over national security concerns."
+     },
+     {
       "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
       "src": "MarketWatch",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
@@ -15457,13 +15470,6 @@
       "url": "https://finnhub.io/api/news?id=a263bd4ebba4460b372fe1a18c418d5ce72fa16a16ab614ad675984d70472a27",
       "pub": "2026-11-26T20:03:54.000Z",
       "sum": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand and Indonesia as the U.S. tightens its push to keep AI chips out of China."
-     },
-     {
-      "hd": "Nvidia Stock Has Found Its Next Big Catalyst, Making the Stock a Once-in-a-Decade Buying Opportunity.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=56e39cd3373b1bf4ef065b7721afd547db57b13fe2eaa9ab552e1c233b6e82ad",
-      "pub": "2026-11-26T18:17:02.000Z",
-      "sum": "Nvidia's physical AI revenue is growing at an incredible pace."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15581,8 +15587,8 @@
     "fetched": {
      "Finnhub": 112,
      "Yahoo": 5,
-     "Google News": 91,
-     "Nasdaq": 12,
+     "Google News": 92,
+     "Nasdaq": 13,
      "Seeking Alpha": 25
     }
    },
@@ -15594,6 +15600,13 @@
       "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
       "pub": "2026-11-27T01:30:07.000Z",
       "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
+     },
+     {
+      "hd": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/tsla-compete-waymo-gary-black-013007370.html?.tsrc=rss",
+      "pub": "2026-11-27T01:30:07.000Z",
+      "sum": "Investor Gary Black of The Future Fund LLC slammed Tesla Inc.‘s bullish supporters, backing Alphabet Inc.‘s Waymo Robotaxi service in the autonomous race instead. Waymo Is Not ‘Terrified’ Of Tesla’s FSD On Sunday, user Randy Kirk took to X, quoting..."
      },
      {
       "hd": "Tesla Stocks Slip 1.18% as EU Delays Self-Driving Vote to December 15",
@@ -15643,13 +15656,6 @@
       "url": "https://finnhub.io/api/news?id=8acba3042743f76b584351eb41ecf930c7e674bcd39876a0afb425931c9d09ef",
       "pub": "2026-11-26T14:50:28.000Z",
       "sum": "Key TakeawaysGeneral Motors stock is up 11% in the past month, mostly on its move to Nasdaq, while the Nasdaq-100 fell 10%. Ford’s higher profit floor and a shift out of Tesla helped too, but Ford expects flat 2027 profit."
-     },
-     {
-      "hd": "Tesla's Self-Driving Expansion in Europe Faces a Crucial Test",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=53eb5277ff2fe8b4b9be8cb7c78b67ab26309b33177bf967e60acdf6c35d1a6c",
-      "pub": "2026-11-26T13:44:00.000Z",
-      "sum": "TSLA's European self-driving expansion faces a crucial Dec. 15 EU vote that could unlock a larger market or jeopardize existing national approvals."
      },
      {
       "hd": "Situational Awareness Lost 65% in Q3, Investor Leopold Aschenbrenner Warns Nvidia, Microsoft, Tesla Could Lose Their Edge: Report",
@@ -15766,7 +15772,7 @@
     ],
     "fetched": {
      "Finnhub": 151,
-     "Yahoo": 10,
+     "Yahoo": 11,
      "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
@@ -15961,6 +15967,13 @@
    "ANT": {
     "items": [
      {
+      "hd": "Is DXC Technology (DXC) Fully Valued On Its New AI Security Push?",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/dxc-technology-dxc-fully-valued-021346564.html?.tsrc=rss",
+      "pub": "2026-11-27T02:13:46.000Z",
+      "sum": "DXC Technology (DXC) just rolled out DXC Frontier Code Assurance, an AI-driven cybersecurity service built with Anthropic's Claude Mythos, giving investors a fresh lens on the stock's role in enterprise security and AI. Recent trading shows how investors are processing this story. DXC Technology’s share price has climbed 36% over the past 90 days, despite a 1 month share price return that fell 8.22%. The 1 year total shareholder return of 14.11% also contrasts with a 5 year total shareholder..."
+     },
+     {
       "hd": "Thinking About Investing in Anthropic? Make This 1 Portfolio Move First",
       "src": "Yahoo Finance",
       "url": "https://www.fool.com/investing/2026/11/26/thinking-about-investing-in-anthropic-make-this-1-portfolio-move-first/?.tsrc=rss",
@@ -16008,13 +16021,6 @@
       "url": "https://finnhub.io/api/news?id=83cce37cdaa790b44d9360146fa0e0712c26c2dcabeb494bd41c337f717478f3",
       "pub": "2026-11-26T19:05:52.000Z",
       "sum": "Shares rebounded from a 7.6% early drop to $75.71 yet ended at $82.79, one week after the record offering."
-     },
-     {
-      "hd": "Broadcom Stocks Edge Lower After Rebounding From an Intraday Low of $278",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=20293754165b732c4daa2b3fd0e28d7a92e12843ae62234831a59d659a3da32f",
-      "pub": "2026-11-26T18:30:41.000Z",
-      "sum": "Shares erased a 7.7% intraday slide to their lowest level since July 2025 as Google and Anthropic exposure stays in focus."
      },
      {
       "hd": "Anthropic’s Stock Sparks Rare Divide Inside One Wall Street Firm",
@@ -16139,14 +16145,14 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 14,
-     "Google News": 48,
+     "Google News": 52,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T02:30:12.576Z",
-  "lastAttempt": "2026-11-27T02:30:12.576Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": null
  },
  "worldNews": {
@@ -16378,8 +16384,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T03:00:14.912Z",
-  "lastAttempt": "2026-11-27T03:00:14.912Z",
+  "asOf": "2026-11-27T03:30:13.129Z",
+  "lastAttempt": "2026-11-27T03:30:13.129Z",
   "lastError": null
  }
 }
