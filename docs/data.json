@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T05:15:19.183Z",
+ "generatedAt": "2026-11-27T05:30:11.564Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T05:15:19.183Z",
+  "at": "2026-11-27T05:30:11.564Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13894,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T05:15:19.183Z",
-  "lastAttempt": "2026-11-27T05:15:19.183Z",
+  "asOf": "2026-11-27T05:30:11.564Z",
+  "lastAttempt": "2026-11-27T05:30:11.564Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7322.25,
-    "lastTime": 1795755915,
-    "settle": 7196.75,
+    "last": 7327.25,
+    "lastTime": 1795756820,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 125.5,
-    "changePct": 1.7438427067773647,
-    "expectedOpen": 7308.036385173863,
+    "change": 130.75,
+    "changePct": 1.8168554158271382,
+    "expectedOpen": 7313.280727436949,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26767.25,
-    "lastTime": 1795755918,
-    "settle": 26105.75,
+    "last": 26827.75,
+    "lastTime": 1795756821,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 661.5,
-    "changePct": 2.533924518544765,
-    "expectedOpen": 24183.449445112667,
+    "change": 723,
+    "changePct": 2.769610894568996,
+    "expectedOpen": 24239.03796945958,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50762,
-    "lastTime": 1795755904,
-    "settle": 50229,
+    "last": 50748,
+    "lastTime": 1795756817,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 533,
-    "changePct": 1.0611399788966533,
-    "expectedOpen": 50715.461345039716,
+    "change": 521,
+    "changePct": 1.0372907002209968,
+    "expectedOpen": 50703.49307344655,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2740.8,
-    "lastTime": 1795755904,
-    "settle": 2705.800048828125,
+    "last": 2741.6,
+    "lastTime": 1795756816,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 34.99995117187518,
-    "changePct": 1.2935158008823886,
+    "change": 35.90004882812491,
+    "changePct": 1.3268303757249993,
     "expectedOpen": null,
     "valid": true
    }
@@ -14503,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T05:15:19.183Z",
-  "lastAttempt": "2026-11-27T05:15:19.183Z",
+  "asOf": "2026-11-27T05:30:11.564Z",
+  "lastAttempt": "2026-11-27T05:30:11.564Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T05:15:19.183Z",
+  "lastAttempt": "2026-11-27T05:30:11.564Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15406,6 +15407,27 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/learn-why-bull-case-nvidia-051409281.html?.tsrc=rss",
+      "pub": "2026-11-27T05:14:09.000Z",
+      "sum": "Nvidia reinstated founder Jensen Huang as CEO and president in late November while multiple US investigations into export controls, governance and disclosure practices continue. Kioxia also announced a collaboration with Nvidia to use SCADA software and high performance SSDs to extend effective GPU memory capacity to roughly 1.1 PB at rack scale. The Kioxia partnership around Nvidia’s Storage Next initiative highlights how the business is trying to tackle AI data bottlenecks at the system..."
+     },
+     {
+      "hd": "Trump says Huang is excited about his 'second term' at Nvidia",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-27T04:32:25.000Z",
+      "sum": "President Donald Trump said Jensen Huang is looking forward to his “second term” as chief executive officer of Nvidia Corp., reiterating his praise for the man whose reinstatement he pushed hard for despite bipartisan backlash over national security concerns."
+     },
+     {
+      "hd": "Nvidia (NVDA) Stock Fair Value Falls After Analysts Reassess Leadership And Regulatory Risks",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-fair-value-042301514.html?.tsrc=rss",
+      "pub": "2026-11-27T04:23:01.000Z",
+      "sum": "Analysts have reset their fair value estimate for Nvidia from about US$320 to about US$242, which marks a clear change in how the stock’s long term potential is being framed. This shift comes alongside fresh Street research that points to renewed confidence in Jensen Huang’s leadership and AI execution, while still flagging governance and regulatory risks that could influence how closely market prices track these updated targets. As you read on, you will see how these moving pieces fit..."
+     },
+     {
       "hd": "Singapore yet to confirm if Nvidia has halted advanced chip shipments- deputy PM",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/articles/singapore-yet-confirm-nvidia-halted-041419330.html?.tsrc=rss",
@@ -15413,18 +15435,18 @@
       "sum": "Investing.com-- Singapore has not yet confirmed whether Nvidia has stopped supplying advanced chips to the country, Deputy Prime Minister Gan Kim Yong said on Friday."
      },
      {
+      "hd": "Neoclouds Told To Choose: Nvidia Chips Or Chinese Customers",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/articles/neoclouds-told-choose-nvidia-chips-041120920.html?.tsrc=rss",
+      "pub": "2026-11-27T04:11:20.000Z",
+      "sum": "Nvidia Corp. (NASDAQ:NVDA) chip sellers are reportedly barring neoclouds from buying GPUs if Chinese firms rent any capacity, after a Commerce Department rule restricting remote access to AI chips took effect Nov. 19. Commerce Rule Targets Remote Access Loophole Chip sellers relayed the message to neoclouds after the rule was announced Nov. 16, CNBC reported on Thursday, citing sources. Neoclouds are specialized cloud providers that rent out computing power built on graphics processing units (GP"
+     },
+     {
       "hd": "Nvidia Is Down 35% From Its All-Time High, Tied for Its Biggest Drop Since the AI Boom Began. Is It a Buy?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=1db74882d7bda4ed7c34d919e47ea600e66f05946f48ec1ec09c1c1846c3f471",
       "pub": "2026-11-27T03:20:02.000Z",
       "sum": "Nvidia is a bargain buy right now."
-     },
-     {
-      "hd": "Trump Says Huang Is Excited About His ‘Second Term’ at Nvidia",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=54d9d566c5d094bdedb06f298cf04a1fcc6c5cd56d651f51f1008145c5bfc78e",
-      "pub": "2026-11-27T00:39:25.000Z",
-      "sum": "President Donald Trump said Jensen Huang is looking forward to his “second term” as chief executive officer of Nvidia Corp., reiterating his praise for the man whose reinstatement he pushed hard for despite bipartisan backlash over national security concerns."
      },
      {
       "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
@@ -15453,20 +15475,6 @@
       "url": "https://finnhub.io/api/news?id=82bbdc1f980d9510642c4f9b8837ce329a0a724d0d62b617025b5aab498b6725",
       "pub": "2026-11-26T22:50:49.000Z",
       "sum": "Even with Jensen Huang back as CEO, Nvidia is drastically underperforming the S&P 500 and Nasdaq this year."
-     },
-     {
-      "hd": "‘Room to Spare,’ Says Investor About Oracle Stock",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=1e45011a78ed7a8d8446a032bd6ba4bfc4e45e445c4e2a2168ac038da217f727",
-      "pub": "2026-11-26T21:52:43.000Z",
-      "sum": "For most of this year, the big question around Oracle (NYSE:ORCL) was whether it could pay for its data center ambitions. The company now says it can. In a Nov. 20 statement, it said all the funding for its OpenAI contract is in place. That message, along with Jensen Huang’s reinstatement at Nvidia, sent the stock sharply higher on Monday. The rally didn’t last. A broad AI selloff on Tuesday and Wednesday wiped out the gains, and Oracle goes into the Thanksgiving break close to the 52-week low i"
-     },
-     {
-      "hd": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724",
-      "pub": "2026-11-26T21:22:00.000Z",
-      "sum": "Jensen Huang’s return as CEO doesn’t make Nvidia (NVDA) stock a Buy, despite the market’s positive reaction. Shares of the leading semiconductor manufacturer jumped roughly 31.5% on November 23 after Nvidia’s board unanimously reinstated Huang with immediate effect. Yet the stock remains down roughly 31% over the past month following a steep sell-off. Although Nvidia enjoys a long runway for growth, I believe investors should closely watch the regulatory scrutiny still surrounding the company. I"
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15572,19 +15580,12 @@
       "url": "https://finnhub.io/api/news?id=de9f61146567d9d9e8ec3e53ad95c0e3afecec87a76f4e9f30bb233c3cce5205",
       "pub": "2026-11-26T02:30:52.000Z",
       "sum": "Denny’s says on X it reinstalled the Nvidia founding booth plaque after its removal, telling CEO Jensen Huang his “booth is waiting.”"
-     },
-     {
-      "hd": "Abdul El-Sayed Says ‘Too Big to Fail’ Wasn't Pretty Last Time: Trump Chose Stock Market Over National Security",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=6ed2c4d043153fb32c233733ce97f260b2bff05df8af3c3e3f5022a061eb7106",
-      "pub": "2026-11-26T02:11:26.000Z",
-      "sum": "El-Sayed accused Trump of putting Nvidia’s market interests ahead of national security by pushing for Jensen Huang’s return as CEO."
      }
     ],
     "fetched": {
      "Finnhub": 114,
-     "Yahoo": 6,
-     "Google News": 92,
+     "Yahoo": 7,
+     "Google News": 89,
      "Nasdaq": 13,
      "Seeking Alpha": 25
     }
@@ -15967,7 +15968,7 @@
       "hd": "Dow Jones Futures Rise; Look For This Bullish Market Signal On Black Friday",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/m/158e82fc-b889-34b6-8704-99a49e9a83ae/dow-jones-futures-rise%3B-look.html?.tsrc=rss",
-      "pub": "2026-11-27T04:19:29.000Z",
+      "pub": "2026-11-27T04:23:58.000Z",
       "sum": "Futures rose on Thanksgiving after a wild market session, with the Nasdaq rallying off lows and Anthropic reversing higher."
      },
      {
@@ -16142,24 +16143,45 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 14,
-     "Google News": 58,
+     "Google News": 57,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T04:30:12.359Z",
-  "lastAttempt": "2026-11-27T04:30:12.359Z",
+  "asOf": "2026-11-27T05:30:11.564Z",
+  "lastAttempt": "2026-11-27T05:30:11.564Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Here are the main issues driving Spain's national election and why they matter for Europe",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/main-issues-driving-spains-national-election-matter-europe-138476510",
+    "pub": "2026-11-27T05:10:38.000Z",
+    "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
+   },
    {
     "hd": "Meet the rising mayoral candidate in Taiwan who's also sanctioned by China",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/meet-rising-mayoral-candidate-taiwan-sanctioned-china-138473812",
     "pub": "2026-11-27T04:07:06.000Z",
     "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
+   },
+   {
+    "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRC1MVFk4b0w4Y2JmSFlwUDdSZTRJU3FYSEV4alp3dWg2OVNDMUM1b00wQndGb2VtSkR4N2dhV0FfV1NCUzFBd2I4ckt6NU9HVDJNckNaY05EUjB6V1I2NWRsVWN0eVFzZGFTa0dULWhBZGVORUo4WXNHM29ZQjFfbFprZkNmdEI1U1gtdFB3SU1VNG5kR001c0J0UGJJMWFmc2xPdllVbnVaRTA?oc=5",
+    "pub": "2026-11-27T03:46:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Australia sanctions two alleged Iranian agents over antisemitic attacks",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSHBtblZnbWZBQUo5LVNGb2sxQkpHOFdJTGI0YlozM0YxUGh0bnZkLWZOeWJrMFBoX0h3aGNkTEtCVVA3Zjg0WEpuYi1MdjBEa2dKVDg3Rk5yWFJCNEs1NDFnYTRrVmpJeVQ1Y1lMR0daaDItcWczSEhzT3VfVTRxVno4Zm9HVGdTN2RDT2NtYmk5NlZqTGJnekNMSTI5dERMY1dZaFpFUy1IM01aVUFjbzI3MDEteXFNS2FvaEhFLTJhZnBvRTVRbzln?oc=5",
+    "pub": "2026-11-27T03:17:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
@@ -16188,6 +16210,13 @@
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdFVJenQ4a3hlOERnbnhWVGJ1QkNhUVQ1UjFGdUl2QjRFTjVaQUM4VC1sN2ZIWV9INVA3Y1hjUDA5VV94Zk4yOGF2Z00zak5OcGVNYTA3d2trbUxneVR6NnV0YXZ5Y3R5RDh3cTN0LVNqenltbmZMX2E1VkswTmNOT0t4R3hKWDNNeTRRbThMN2lFcUpRUjRwTjVnWS1sSDRLN2NTczlQNGg1Zw?oc=5",
     "pub": "2026-11-27T00:34:52.000Z",
     "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
+   },
+   {
+    "hd": "Mexican president blasts DEA over tip lines, accusing it of not fighting fentanyl enough inside US",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRmt2ZGhhd0V4aDVhQmk5QU96b3k4bEpCU2FYalRyWmd0WU82UHBEMjI3M255R1JHQk56bm1qRi1hOWRHaXc3Ny1jalZRYUpYQ1JROXlIczRvTGpweHhqM0ZlM3R6QnVvR2tSRlVaTU83VHFkd3NlSlMtbWNCZzdMQWhDdlRVOFJhQ01EYlo4b1lacG9ydnd0ZGpLN3VsbFE?oc=5",
+    "pub": "2026-11-26T23:53:00.000Z",
+    "sum": "Mexico's president has criticized the U.S. Drug Enforcement Administration for setting up anonymous tip lines in the country"
    },
    {
     "hd": "France's Macron says Le Pen should be less arrogant after she criticises EU budget talks",
@@ -16244,13 +16273,6 @@
     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUUFfcUhOc0dCeENHdXg3OW44TjRqZ3lma0NiVzNRMjZWYjZhc1duOG9pLXQ5U0FSdjM0RDB5VlFxTlhkWWFVUDFlMElTdk5FZkM4NS1GR2hCZ2lOdHltTVJNVG51MWlxZUZQV2pRcXlCd1JjSU4wWE51U0trR2JubTBmc1YzMEhDMHZpVFprM3ktSGlXVW9yQmhnVUNyRXRUNzFXaUdiSQ?oc=5",
     "pub": "2026-11-26T20:09:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Mexican president blasts DEA over tip lines",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/mexican-president-blasts-dea-tip-lines-accusing-fighting-138471560",
-    "pub": "2026-11-26T20:02:26.000Z",
-    "sum": "Mexico's president has criticized the U.S. Drug Enforcement Administration for setting up anonymous tip lines in the country"
    },
    {
     "hd": "Guinea-Bissau’s military junta postpones elections until 2028, extending its rule by two years",
@@ -16316,6 +16338,13 @@
     "sum": ""
    },
    {
+    "hd": "Katz threatens to launch fresh Gaza offensive, bucking Board of Peace push",
+    "src": "The Times of Israel",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWEpSYTUwbXlyNDRzbFZkMHVfYnhoMm9oNUJ0Y1Zyd2hVUHRualB5SThIc3JPR0tMZlVUa0hjcWxaYlVBZW9OZXZPN0ZYSWg5cmlVQmpZVVVwREdRV1J6VVVRa24xcmlnYkNTOElDZXFfMEVpVDN1YmFoTDA5WThtUTRGbGVJNDZFdlJUVEx3TDVVRzl6MHkwbFNnMlV3U01sMWxLN2tqWdIBrAFBVV95cUxNbFZxQlp3MEtTMXBMR3g3bWFRbXg3alNFSVNIVXlEdWEwTjBQLWRpa0UtNlpBaVVqYnRXR2VSWDQ0YVJINHZFTEhBcm5QODN6M2VrQnh4SkFTN00zWVpwTlV4ckNLNHJraDJsLVJIWF94UVBlLWZaLVN0OFZGXzlIQzVnUk9qOHRFeUluVlc3ajBfRENnRjBTeF9RNG5oeTYxYkVWc29EWFU3QVFo?oc=5",
+    "pub": "2026-11-26T17:54:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOWczelB1MldEZ2RSX1luOHBST0ZrMGtNMl81TTgwVE5fQTZtNnJxeElKMmlzSmdnLVpVTDRfVjluMVZSa09QaTluWGk5X2VTcEw2aFlPcmx1VmlsVHd5eUFMaWM4Nm5EX29OYlhlMzZyZW9fMmcxLUxkZ2kycGFiLWtQbU1jSVBsbWRwM3p0RDFEUU8yXzVOOGM5T3pRTWx0ZDZkTmptem0teU1WVjZCdk5lcDFpZ2F2UU1mbTVHOHJqRWVnRUFYdmR3?oc=5",
@@ -16335,34 +16364,6 @@
     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQU2xzeTBscnBPTnIxN2luZDI2cDEzckRDSjJ3RjNpN3doTjh4N0pPNmlJY21YNkc5c29nOEd3Mm5KZjVaZDJMUkp2RHc3bXFyYmM4LVhtRUxiZ3hCWEZIcFZwVWJJeTBKLS1oMm1XeTNGVzdueTdhbmUzUUdRLUdONlNYVzdhLVFFa05TdWVNZTdQYlk?oc=5",
     "pub": "2026-11-26T17:22:07.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Mexico urges Asian trade partners to crack down on tariff dodging",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaHhmUFduZ0tRbWFBQ2xIRmtIZDU0S012anU5bEx3SGVzOXVmV1JkNGxIZkNXV0RYTWJlNEVqUTFoS0tnQ1QtcXI0bVlJT25XQ1Y4TFZvczVTbTFPWTc3eUF6MzF6M0swR3JYTGR0ZjNwZVhhb2dWUjNBSjBod1ZfWU4zajFXMnBYUU1YY3pNQXNDWlRQa2VILWVJc25tcnJpV3ljRW95RjViUXM?oc=5",
-    "pub": "2026-11-26T17:09:43.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "UK to get ‘Swiss-style’ consultative rights under new EU deals",
-    "src": "POLITICO.eu",
-    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNV0d1ZTl2cmN3OFJmVUhGemh6bndsT1J0Y1A1eGp5QVdMbGVSNzR2T0Y2Z1FLVEVQbXlZYjNSRk4ybVpnbHdpX29hMVBzazJYUEZkRnpuaWZZNkVyZnRzZWJIZkJKVFE0ZHI2bDQzdEN3dkVGMDZIN2w3VWRZaGlNUi1ZbWZCakFwM3FUZVJiM0UyVHhsX0ZjWQ?oc=5",
-    "pub": "2026-11-26T17:06:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Germany: 2 suspected Islamists arrested in Heidelberg and Cologne, suspected of plotting synagogue attack",
-    "src": "DW",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQdTJjem9wYVZqdmdGdDlyX2c2YS1PX3N0SVRPNVlQb2xNTkxGNHg4dXhlVkF3Q3dMRTdmdE1GTWpLNEVILXA2b1ZEd2o1N1NHSzVPV3RVM19UY2dnSmx3TWtVb2hETDZ4eDNsdTBJNnkwOTI5c0d1VzV6STM4TFIzRUZWUHRPRmVMeTRvVDlhRmtmaDVU0gGUAUFVX3lxTE5WQ2ZSLVF6VTZ5WFNtYXRnUjFRcUNzMU90TWZrYzBnSlNVR2w0XzE1Vy1GbkRMZXRsTXVJbHpDNl90SWgtT0c1VVY5OWkxdTRnMnY3N0FhSlduRG1xXzVQcUw4Y1RKR3ZzVHFqRzJTaVRQS2R1Q2dtRWw2bGczamU5Q2RaVzdwOWExaGtUSFVrMTVIdWM?oc=5",
-    "pub": "2026-11-26T17:05:49.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump’s Latest Tariffs Revive Focus on Pressuring China",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1odENQTk1RR0JMbTlRYWhYcnh6cGdvcktJUGVNZURvbUFtTHZ0end3RjhpclNNNEF0ZnZFTDVHTy1Vcy1jMF90U240MEZFUURvdkJDN3I2aE55R193X1VjVW9PaU5sVWZvU1Y4dmt5M3ZmeE1YcVE?oc=5",
-    "pub": "2026-11-26T17:03:31.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16381,8 +16382,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T04:30:12.359Z",
-  "lastAttempt": "2026-11-27T04:30:12.359Z",
+  "asOf": "2026-11-27T05:30:11.564Z",
+  "lastAttempt": "2026-11-27T05:30:11.564Z",
   "lastError": null
  }
 }
