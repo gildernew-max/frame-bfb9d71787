@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T11:15:15.557Z",
+ "generatedAt": "2026-11-27T11:30:11.204Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T11:15:15.557Z",
+  "at": "2026-11-27T11:30:11.204Z",
   "ran": [
-   "weather",
    "alerts",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "extended",
    "futures",
    "usTempGrid"
@@ -13897,62 +13896,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T11:15:15.557Z",
-  "lastAttempt": "2026-11-27T11:15:15.557Z",
+  "asOf": "2026-11-27T11:30:11.204Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7325.25,
-    "lastTime": 1795777514,
-    "settle": 7196.75,
+    "last": 7322,
+    "lastTime": 1795778418,
+    "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 128.5,
-    "changePct": 1.7855281898078994,
-    "expectedOpen": 7311.030561711884,
+    "change": 125.5,
+    "changePct": 1.7439032863197388,
+    "expectedOpen": 7308.040736469117,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26732.75,
-    "lastTime": 1795777512,
-    "settle": 26105.75,
+    "last": 26722.25,
+    "lastTime": 1795778415,
+    "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 627,
-    "changePct": 2.401769725060571,
-    "expectedOpen": 24152.279675866426,
+    "change": 617.5,
+    "changePct": 2.365469885748762,
+    "expectedOpen": 24143.71806727703,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50936,
-    "lastTime": 1795777502,
-    "settle": 50229,
+    "last": 50909,
+    "lastTime": 1795778412,
+    "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 707,
-    "changePct": 1.407553405403253,
-    "expectedOpen": 50889.301821656816,
+    "change": 682,
+    "changePct": 1.3578354271606905,
+    "expectedOpen": 50864.35187349433,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2746.4,
-    "lastTime": 1795777511,
-    "settle": 2705.800048828125,
+    "last": 2745.4,
+    "lastTime": 1795778405,
+    "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 40.59995117187509,
-    "changePct": 1.5004786177551748,
+    "change": 39.70004882812509,
+    "changePct": 1.4672746255892295,
     "expectedOpen": null,
     "valid": true
    }
@@ -14506,8 +14505,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T11:15:15.557Z",
-  "lastAttempt": "2026-11-27T11:15:15.557Z",
+  "asOf": "2026-11-27T11:30:11.204Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15150,7 +15149,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T11:15:15.557Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15361,8 +15360,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T11:15:15.557Z",
-  "lastAttempt": "2026-11-27T11:15:15.557Z",
+  "asOf": "2026-11-27T11:30:11.204Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15409,6 +15408,34 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia Sellers Deliver a Stark Warning. These AI Stocks Could Feel the Pressure",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-sellers-deliver-stark-warning-111929474.html?.tsrc=rss",
+      "pub": "2026-11-27T11:19:29.000Z",
+      "sum": "Nvidia's New China Restrictions Put CoreWeave and Other Neocloud Stocks in the Hot Seat"
+     },
+     {
+      "hd": "President Trump Says 'Huang Is Happy to Return as Nvidia CEO'",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/president-trump-says-huang-happy-111035641.html?.tsrc=rss",
+      "pub": "2026-11-27T11:10:35.000Z",
+      "sum": "Trump Calls Huang's Nvidia Comeback a Win as National Security Questions Mount"
+     },
+     {
+      "hd": "iShares S&P 500 Growth (IVW) Adds Microsoft and Nvidia on Wednesday",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ishares-p-500-growth-ivw-110506557.html?.tsrc=rss",
+      "pub": "2026-11-27T11:05:06.000Z",
+      "sum": "The fund bought $98.5 million of stock, lifting all 152 positions and selling nothing."
+     },
+     {
+      "hd": "NVIDIA (NVDA) Sees $166.1 Million in Net ETF Buying on Nov. 25",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-sees-166-1-110047656.html?.tsrc=rss",
+      "pub": "2026-11-27T11:00:47.000Z",
+      "sum": "50 ETFs bought NVIDIA shares versus 29 that sold, for net inflows of $166.1 million."
+     },
+     {
       "hd": "Market Chatter: Nvidia Stops Southeast Asia Chip Sales Following Proposed US Restrictions",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/ai/articles/market-chatter-nvidia-stops-southeast-102254508.html?.tsrc=rss",
@@ -15451,39 +15478,11 @@
       "sum": "\"The Big Short\" investor Michael Burry has drawn attention to concerns that rising borrowing risks among major AI companies and data center developers could threaten the financing behind the industry’s massive infrastructure expansion. AI Credit Risks Rise as CDS Spreads Widen The warning comes from a Groundbreaker analysis titled \"Mark to Swap: How the Market is Mispricing the AI Boom,\" which Burry shared on X while clarifying that it was not his own work. \"Must read. This is not me. But it mus"
      },
      {
-      "hd": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=3b8fa1a5161f0d7f5892f27c549575d7b745cbdea20791e68dab73864b3367ba",
-      "pub": "2026-11-27T05:14:09.000Z",
-      "sum": "Nvidia reinstated founder Jensen Huang as CEO and president in late November while multiple US investigations into export controls, governance and disclosure practices continue. Kioxia also announced a collaboration with Nvidia to use SCADA software and high performance SSDs to extend effective GPU memory capacity to roughly 1.1 PB at rack scale. The Kioxia partnership around Nvidia’s Storage Next initiative highlights how the business is trying to tackle AI data bottlenecks at the system..."
-     },
-     {
       "hd": "Trump says Huang is excited about his 'second term' at Nvidia",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
       "pub": "2026-11-27T04:32:25.000Z",
       "sum": "President Donald Trump said Jensen Huang is looking forward to his “second term” as chief executive officer of Nvidia Corp., reiterating his praise for the man whose reinstatement he pushed hard for despite bipartisan backlash over national security concerns."
-     },
-     {
-      "hd": "Nvidia (NVDA) Stock Fair Value Falls After Analysts Reassess Leadership And Regulatory Risks",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a379bd04041b159f4371c933a2ede013632185a2d03e0a51c59c24b6a3543d67",
-      "pub": "2026-11-27T04:23:01.000Z",
-      "sum": "Analysts have reset their fair value estimate for Nvidia from about US$320 to about US$242, which marks a clear change in how the stock’s long term potential is being framed. This shift comes alongside fresh Street research that points to renewed confidence in Jensen Huang’s leadership and AI execution, while still flagging governance and regulatory risks that could influence how closely market prices track these updated targets. As you read on, you will see how these moving pieces fit..."
-     },
-     {
-      "hd": "Singapore yet to confirm if Nvidia has halted advanced chip shipments- deputy PM",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=348f382219f1104f8fc5b36e53be60dc502ff14ad3fbf6236f0cbd2651a2912c",
-      "pub": "2026-11-27T04:14:19.000Z",
-      "sum": "Investing.com-- Singapore has not yet confirmed whether Nvidia has stopped supplying advanced chips to the country, Deputy Prime Minister Gan Kim Yong said on Friday."
-     },
-     {
-      "hd": "Neoclouds Told To Choose: Nvidia Chips Or Chinese Customers",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e496b0eed7ad050d8d9705cc8a700543994e5d8ec35be0c8e52fffc07e5d36a4",
-      "pub": "2026-11-27T04:11:20.000Z",
-      "sum": "Nvidia Corp. (NASDAQ:NVDA) chip sellers are reportedly barring neoclouds from buying GPUs if Chinese firms rent any capacity, after a Commerce Department rule restricting remote access to AI chips took effect Nov. 19. Commerce Rule Targets Remote Access Loophole Chip sellers relayed the message to neoclouds after the rule was announced Nov. 16, CNBC reported on Thursday, citing sources. Neoclouds are specialized cloud providers that rent out computing power built on graphics processing units (GP"
      },
      {
       "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
@@ -15586,14 +15585,21 @@
     ],
     "fetched": {
      "Finnhub": 112,
-     "Yahoo": 2,
-     "Google News": 86,
+     "Yahoo": 5,
+     "Google News": 87,
      "Nasdaq": 12,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110448164.html?.tsrc=rss",
+      "pub": "2026-11-27T11:04:48.000Z",
+      "sum": "The fund sold $149.6 million of stock, cutting 33 positions and adding none, with Tesla and SpaceX the largest reductions."
+     },
      {
       "hd": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
       "src": "Yahoo Finance",
@@ -15642,13 +15648,6 @@
       "url": "https://finnhub.io/api/news?id=8e3aa8c9d10cb7fdfd62bca9b994eb2ef8497f2d62675ed9d54ae251f748a98b",
       "pub": "2026-11-26T17:46:06.000Z",
       "sum": "Tesla Investors Could Get a Piece of SpaceX. The Potential Windfall Is Huge"
-     },
-     {
-      "hd": "XPeng Raises Stakes for Tesla Stock Investors' Big Growth Bet",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5777f1d88ea012ca1ab7cffab89be06bbfbdd9b9ef47bfbd0379499ec62dd200",
-      "pub": "2026-11-26T16:32:40.000Z",
-      "sum": "A familiar automotive rivalry is entering potentially lucrative territory."
      },
      {
       "hd": "EU may vote on authorising Tesla assisted-driving system at Dec 15 meeting",
@@ -15773,13 +15772,20 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 13,
-     "Google News": 11,
+     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "What ARK Autonomous Technology & Robotics ETF (ARKQ) Sold: Tesla Leads on Nov. 25",
+      "src": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/ark-autonomous-technology-robotics-etf-110448164.html?.tsrc=rss",
+      "pub": "2026-11-27T11:04:48.000Z",
+      "sum": "The fund sold $149.6 million of stock, cutting 33 positions and adding none, with Tesla and SpaceX the largest reductions."
+     },
      {
       "hd": "Biggest stock movers Friday: SPCX, PHAR, VRTX, ALVO, and more",
       "src": "Seeking Alpha",
@@ -15842,13 +15848,6 @@
       "url": "https://finnhub.io/api/news?id=b7f4059e5be7b0bd5019ca2bb6f2e6ef51fab2658e903025a374e6782a66ca3e",
       "pub": "2026-11-27T01:30:07.000Z",
       "sum": "Tesla (NasdaqGS:TSLA) and SpaceX are reportedly in advanced talks over a potential merger of their operations. The proposed deal would bring Tesla's automotive, AI, and robotics units under a shared structure with SpaceX's aerospace business. A combined group would consolidate Elon Musk's AI compute infrastructure, autonomous systems research, and launch capabilities into a single corporate entity. The reported Tesla and SpaceX merger talks are important, but investors should weigh them..."
-     },
-     {
-      "hd": "Mexico wants a say in where SpaceX flies — says harmful rocket debris keeps washing up on its shores",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=379e11cca733ccd615a094c8dbec14c700eb91926112710eb954d1b54b989281",
-      "pub": "2026-11-27T00:30:00.000Z",
-      "sum": "Mexico has also raised concerns about disruptions to its airspace."
      },
      {
       "hd": "Mexico seeking talks with US on SpaceX airspace use",
@@ -15958,7 +15957,7 @@
     ],
     "fetched": {
      "Finnhub": 170,
-     "Yahoo": 13,
+     "Yahoo": 12,
      "Google News": 17,
      "Nasdaq": 0,
      "Seeking Alpha": 13
@@ -16145,18 +16144,25 @@
     "fetched": {
      "Finnhub": 145,
      "Yahoo": 14,
-     "Google News": 54,
+     "Google News": 56,
      "Nasdaq": 14,
      "Seeking Alpha": 22
     }
    }
   },
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
+  "asOf": "2026-11-27T11:30:11.204Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Armed group kills 13 soldiers in western Niger attack, defense ministry says",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/armed-group-kills-13-soldiers-western-niger-attack-138477943",
+    "pub": "2026-11-27T11:24:51.000Z",
+    "sum": "Armed men killed 13 members of Niger’s National Guard and injured 20 others in an attack on an outpost in western Niger, the country’s defense ministry said"
+   },
    {
     "hd": "Uganda to withdraw troops from DR Congo town amid diplomatic row",
     "src": "BBC News",
@@ -16207,6 +16213,13 @@
     "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
    },
    {
+    "hd": "Meet the rising mayoral candidate in Taiwan who’s also sanctioned by China",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ0tsMjNfSi1fbVBpV3ZtNmRiYzhNMmZsbUh4dThyNXotSEd6Q0hldlY4bWYyUWdmb055bm83RmF6VFpZYjl5OHh2bnkyNkRmbThDV1lobXY3Qm5NRElfNDRNYXk2Ni1pVDlDZy1zRjdMaFE3c2d4bFh4WkZLMXZWTkRJc2hCci1PMU9vNnVvZjBjREkzRlUtSmx3?oc=5",
+    "pub": "2026-11-27T08:29:00.000Z",
+    "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
+   },
+   {
     "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/north-korean-move-shut-swiss-diplomatic-office-138475957",
@@ -16219,13 +16232,6 @@
     "url": "https://abcnews.com/International/wireStory/zelenskyy-warns-imminent-major-russian-attack-ukraines-power-138468250",
     "pub": "2026-11-27T07:21:00.000Z",
     "sum": "Ukrainian President Volodymyr Zelenskyy says that Russia is preparing a major attack on Ukraine’s energy infrastructure as crews race to repair damage from earlier strikes"
-   },
-   {
-    "hd": "Meet the rising mayoral candidate in Taiwan who’s also sanctioned by China",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ0tsMjNfSi1fbVBpV3ZtNmRiYzhNMmZsbUh4dThyNXotSEd6Q0hldlY4bWYyUWdmb055bm83RmF6VFpZYjl5OHh2bnkyNkRmbThDV1lobXY3Qm5NRElfNDRNYXk2Ni1pVDlDZy1zRjdMaFE3c2d4bFh4WkZLMXZWTkRJc2hCci1PMU9vNnVvZjBjREkzRlUtSmx3?oc=5",
-    "pub": "2026-11-27T07:20:00.000Z",
-    "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
    },
    {
     "hd": "Serbia's student movement yet to name prime minister as deadlines loom",
@@ -16359,13 +16365,6 @@
     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1ZLTR5dXJUVGdNbk5QWHI0U1JoNTdQQkhOT2FJd0o0Wmk5RkEyZ3EydnYtNEcwcmg3UEJwMXN2SzRBY3hDQkxOLXRhelByMnRhZFN0OHlZY283Zm9hLVVUQVlqUEhWQnVyQmViaWJ3?oc=5",
     "pub": "2026-11-26T20:32:07.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Israeli strikes kill 10 in Gaza as Iranian drones kill 2 Italians in Kuwait, and other Mideast news",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQUUFfcUhOc0dCeENHdXg3OW44TjRqZ3lma0NiVzNRMjZWYjZhc1duOG9pLXQ5U0FSdjM0RDB5VlFxTlhkWWFVUDFlMElTdk5FZkM4NS1GR2hCZ2lOdHltTVJNVG51MWlxZUZQV2pRcXlCd1JjSU4wWE51U0trR2JubTBmc1YzMEhDMHZpVFprM3ktSGlXVW9yQmhnVUNyRXRUNzFXaUdiSQ?oc=5",
-    "pub": "2026-11-26T20:09:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16384,8 +16383,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
+  "asOf": "2026-11-27T11:30:11.204Z",
+  "lastAttempt": "2026-11-27T11:30:11.204Z",
   "lastError": null
  }
 }
