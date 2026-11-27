@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T01:30:10.784Z",
+ "generatedAt": "2026-11-27T01:45:11.346Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -712,7 +712,7 @@
    "isOpen": false,
    "session": null,
    "holiday": "Thanksgiving Day",
-   "checkedAt": "2026-11-27T01:30:10.784Z"
+   "checkedAt": "2026-11-27T01:45:11.346Z"
   },
   "quotes": {
    "NVDA": {
@@ -7523,13 +7523,13 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T01:30:10.784Z",
+  "at": "2026-11-27T01:45:11.346Z",
   "ran": [
    "alerts",
    "nflScoreboard",
    "cfbScoreboard",
-   "stockNews",
-   "worldNews",
+   "movers",
+   "sectors",
    "futures",
    "usTempGrid"
   ]
@@ -13897,62 +13897,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7259,
-    "lastTime": 1795742420,
+    "last": 7272.25,
+    "lastTime": 1795743311,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 62.5,
-    "changePct": 0.8684777322309456,
-    "expectedOpen": 7245.160844855139,
+    "change": 75.75,
+    "changePct": 1.0525950114639062,
+    "expectedOpen": 7258.3855839644275,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26367.25,
-    "lastTime": 1795742421,
+    "last": 26472.5,
+    "lastTime": 1795743312,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 262.5,
-    "changePct": 1.0055641214721458,
-    "expectedOpen": 23822.973372729102,
+    "change": 367.75,
+    "changePct": 1.4087474501766921,
+    "expectedOpen": 23918.067398366198,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50563,
-    "lastTime": 1795742412,
+    "last": 50583,
+    "lastTime": 1795743298,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 336,
-    "changePct": 0.6689629083958827,
-    "expectedOpen": 50518.65532183885,
+    "change": 356,
+    "changePct": 0.7087821291337328,
+    "expectedOpen": 50538.637781472105,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2723.7,
-    "lastTime": 1795742420,
+    "last": 2726.9,
+    "lastTime": 1795743296,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 18.000048828124818,
-    "changePct": 0.6652640408382591,
+    "change": 21.20004882812509,
+    "changePct": 0.7835328828291941,
     "expectedOpen": null,
     "valid": true
    }
@@ -13966,45 +13966,12 @@
   "byes": [],
   "games": [
    {
-    "id": "401873080",
-    "start": "2026-11-26T21:30Z",
-    "state": "in",
-    "status": "Q4 0:11",
-    "period": 4,
-    "clock": "0:11",
-    "completed": false,
-    "away": {
-     "name": "Philadelphia Eagles",
-     "short": "Eagles",
-     "id": "21",
-     "abbrev": "PHI",
-     "score": "36",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
-     "record": "3-7",
-     "winner": false,
-     "color": "#06424d",
-     "rank": null
-    },
-    "home": {
-     "name": "Dallas Cowboys",
-     "short": "Cowboys",
-     "id": "6",
-     "abbrev": "DAL",
-     "score": "38",
-     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
-     "record": "5-6",
-     "winner": false,
-     "color": "#002a5c",
-     "rank": null
-    }
-   },
-   {
     "id": "401873082",
     "start": "2026-11-27T01:20Z",
     "state": "in",
-    "status": "Q1 15:00",
+    "status": "Q1 7:29",
     "period": 1,
-    "clock": "15:00",
+    "clock": "7:29",
     "completed": false,
     "away": {
      "name": "Kansas City Chiefs",
@@ -14492,10 +14459,43 @@
      "color": "#0076b6",
      "rank": null
     }
+   },
+   {
+    "id": "401873080",
+    "start": "2026-11-26T21:30Z",
+    "state": "post",
+    "status": "Final",
+    "period": 4,
+    "clock": "0:00",
+    "completed": true,
+    "away": {
+     "name": "Philadelphia Eagles",
+     "short": "Eagles",
+     "id": "21",
+     "abbrev": "PHI",
+     "score": "39",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/phi.png",
+     "record": "4-7",
+     "winner": true,
+     "color": "#06424d",
+     "rank": null
+    },
+    "home": {
+     "name": "Dallas Cowboys",
+     "short": "Cowboys",
+     "id": "6",
+     "abbrev": "DAL",
+     "score": "38",
+     "logo": "https://a.espncdn.com/i/teamlogos/nfl/500/scoreboard/dal.png",
+     "record": "5-7",
+     "winner": false,
+     "color": "#002a5c",
+     "rank": null
+    }
    }
   ],
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": null
  },
  "alerts": {
@@ -14506,8 +14506,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14784,16 +14784,16 @@
     "id": "401856879",
     "start": "2026-11-27T01:00Z",
     "state": "in",
-    "status": "Q1 5:26",
+    "status": "Q1 0:19",
     "period": 1,
-    "clock": "5:26",
+    "clock": "0:19",
     "completed": false,
     "away": {
      "name": "TCU Horned Frogs",
      "short": "TCU",
      "id": "2628",
      "abbrev": "TCU",
-     "score": "0",
+     "score": "10",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png",
      "record": "5-6",
      "winner": false,
@@ -15145,12 +15145,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T01:30:10.784Z",
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T01:30:10.784Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15267,8 +15267,8 @@
     "t": 1795640402
    }
   ],
-  "asOf": "2026-11-27T00:30:13.215Z",
-  "lastAttempt": "2026-11-27T00:30:13.215Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": null
  },
  "sectors": {
@@ -15355,8 +15355,8 @@
   ],
   "sessionTime": "2026-11-25T21:00:00.000Z",
   "sessionDate": "2026-11-25",
-  "asOf": "2026-11-27T00:30:13.215Z",
-  "lastAttempt": "2026-11-27T00:30:13.215Z",
+  "asOf": "2026-11-27T01:45:11.346Z",
+  "lastAttempt": "2026-11-27T01:45:11.346Z",
   "lastError": null
  },
  "extended": {
