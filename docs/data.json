@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T23:15:11.455Z",
+ "generatedAt": "2026-11-27T23:30:11.513Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,11 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T23:15:11.455Z",
+  "at": "2026-11-27T23:30:11.513Z",
   "ran": [
-   "weather",
    "alerts",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14432,8 +14433,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T23:15:11.455Z",
-  "lastAttempt": "2026-11-27T23:15:11.455Z",
+  "asOf": "2026-11-27T23:30:11.513Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15040,9 +15041,9 @@
     "id": "401856759",
     "start": "2026-11-27T20:30Z",
     "state": "in",
-    "status": "Q4 13:32",
+    "status": "Q4 8:13",
     "period": 4,
-    "clock": "13:32",
+    "clock": "8:13",
     "completed": false,
     "away": {
      "name": "Florida Gators",
@@ -15071,12 +15072,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T23:15:11.455Z",
-  "lastAttempt": "2026-11-27T23:15:11.455Z",
+  "asOf": "2026-11-27T23:30:11.513Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T23:15:11.455Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15287,8 +15288,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T23:15:11.455Z",
-  "lastAttempt": "2026-11-27T23:15:11.455Z",
+  "asOf": "2026-11-27T23:30:11.513Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15513,8 +15514,8 @@
     "fetched": {
      "Finnhub": 104,
      "Yahoo": 5,
-     "Google News": 83,
-     "Nasdaq": 7,
+     "Google News": 84,
+     "Nasdaq": 6,
      "Seeking Alpha": 25
     }
    },
@@ -15893,6 +15894,13 @@
    "ANT": {
     "items": [
      {
+      "hd": "Anthropic’s Claude Output Can Be Installed as Software",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNLUJxLW9ZUWtVc0pTOVo1N3NOOExIUU5SQXJmQ2tsMEJOek4zdmFjWHFLM25FWW1scWRSaThpYkFhSjBaYVRYUmFzWFUwcW8tck1hellEMDRvTGN4TFlLemFCZ1FLellGRDZhSlFHWU1zUXQtdmw5SWI5UmlEcTJRVUpISENrMHVZZExSalJSLVBMMTdONk9yeGtB?oc=5",
+      "pub": "2026-11-27T23:27:57.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Anthropic: A Commodity Priced As A Monopoly",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4972648-anthropic-a-commodity-priced-as-a-monopoly?source=feed_symbol_ANT",
@@ -16059,30 +16067,30 @@
       "url": "https://finnhub.io/api/news?id=095f2576d8fccb6d3f0a19e0475bb3c70721574ce38431e1f669d31c361276f0",
       "pub": "2026-11-26T07:10:00.000Z",
       "sum": "With 24.8 million ANT shares already on loan and more than 87 million still available, securities lending activity is firmly established."
-     },
-     {
-      "hd": "Chamath Palihapitiya Says Anthropic’s Valuation in Near-Term Has ‘Mostly Nothing to Do’ With ANT Stock as Market Risks Mount: ‘Things Could Still Rip in Your Face’",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=0ba0115218b9f490620d9514960bda8a4a899703c9a3b68b8bb68aefe2640c2c",
-      "pub": "2026-11-26T06:44:35.000Z",
-      "sum": "Chamath Palihapitiya says Anthropic's valuation has 'nothing to do' with ANT, warning inflation and rising yields are bad for equities."
      }
     ],
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 47,
-     "Nasdaq": 14,
+     "Google News": 48,
+     "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-27T23:00:13.137Z",
-  "lastAttempt": "2026-11-27T23:00:13.137Z",
+  "asOf": "2026-11-27T23:30:11.513Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Taiwan holds elections to choose mayors and other local leaders",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/taiwan-holds-elections-choose-mayors-local-leaders-138489345",
+    "pub": "2026-11-27T23:27:24.000Z",
+    "sum": "Taiwan is holding elections across its 22 cities and counties for mayors, council members and other local leaders"
+   },
    {
     "hd": "EXCLUSIVE: Russian military flotilla bound for Libya turns around after warship sunk on November 22, sources say",
     "src": "Reuters",
@@ -16109,6 +16117,13 @@
     "src": "CBS News",
     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0lGZ2x0YXZLeTRTdE1zN09yX3E5enVIX0ZnUmhUVDVfMlVNeVpqUmlxN3ZLZFM1X2hfZGl0MVZmV1ZQZTFoUkpFNDVMM3E5bVhpZTRWdWZ5SVQtTEx6UFBGRWRkNjM0b0hvbnRpNzJscmVLMG95Mk1vUGt0YW1DQmxxbTZzUEVVOFJWdTVGNThiLU9G?oc=5",
     "pub": "2026-11-27T21:12:14.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "U.S. military says it disabled another ship that tried to breach naval blockade on Iranian ports",
+    "src": "PBS",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQR1B2RFZaTUhIUVFpQm5Vb3pOS2l5cW1XcU5STXJma1VfQWpYcno2bGNWN1dWakY4Ym9HbTFZQkVPNGk2R011SFppOXNnMFhlM0NhTVY5NUJGRDlCM3dtUkI1T0Q0bzZObGdpYjB4ODdKc3QxTW0wR29mcDZHY3JwTFZKTTlaZ2l2R2VJMklsb2h0M2ExTkFBQjNTbGJnR2hUMDdNdHloeHk4ZjFTUkI2ZFVaUkNqVUdrcmtFTzlvY3ZybUpVS0NXbFhn0gHPAUFVX3lxTE9UUEY1bWZtMVVXSXY5d2pRdHBYcnR1amgxZ3Jkc1I4R0owMThFbzltRzU0NWlMS0JBNUtlRlg4YmNrRml3cjZUaFoxQjJUdktYSkt3RWctVFdCWC1EanVLc2Q0REZSS20zMFRodV9OQkstNmItZl9YajA0OE9KeGM4NlF5QUhPbE5IMnh6ampFY01sQm1rYkFQcjh4anZzdkhjZkVJTl9OcjBaRjZ0VjNtZUJUaGtIbEQ0bVdOWFNDOHA4MXd0cjZvS0pEY1hySQ?oc=5",
+    "pub": "2026-11-27T21:10:00.000Z",
     "sum": ""
    },
    {
@@ -16180,6 +16195,13 @@
     "url": "https://abcnews.com/International/wireStory/lulas-choice-bradesco-banker-brazils-finance-minister-lifts-138482032",
     "pub": "2026-11-27T17:30:27.000Z",
     "sum": "Brazilian markets have rallied after President Luiz In&aacute;cio Lula da Silva confirmed that veteran banker Luiz Carlos Trabuco would lead his finance ministry in 2027, a move seen as a commitment to fiscal discipline"
+   },
+   {
+    "hd": "EU budget summit ends abruptly in Brussels",
+    "src": "DW",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNOWVXOVY0VDdvcFY0bDVROG81bEdsVWxiVTlzODhDYm5ILWtFMjlpMFVseWZQb0t2WnE2Q20xQTlPVlVoS09Cd2xRRGZiZTYxcGdWRmFkRUU1X294UHJHYkVUSklCLU43d3pjTlh6OWJPNDFjNmNCT05EeEw4QXBabzhFRG9jVjlxR0hnVUU5RlhLZU5IVjRmN205TXo4ZnNyOXfSAaIBQVVfeXFMT0tqZlRIeF9HNXZmM0NqOEFHenJYTWlqSGp1Z3ZxbElEUjYzRXBCOFR5MU44NTdQd0p0ZEZmQlBQN0Q5STlLWFdCNUhDNV9wem1FUWxoS0E0ODB3cmRoNEd1QkNhaEFqNTdZeDBoeUdHR1hZOFoxRG5oMGdfWFV0X09reTRUS2p6d3dtNXMwVFJLUEVLZHZ2N01Za0FXdmNZMUpB?oc=5",
+    "pub": "2026-11-27T16:52:32.000Z",
+    "sum": ""
    },
    {
     "hd": "AP Exclusive: Lebanon's prime minister says a proposal is underway to have UN peacekeepers stay on",
@@ -16271,27 +16293,6 @@
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSi1EdWxpNDFBQ2NFLWNNZUJjSHloMDd4cXM0QVIxY2dKOVk1SlA4SThmTWVEVGc1SFB3WTQ0WWZBejU0dUZlRE5CblRjbC04UTBJLWlGSzFEX0gxMVVHQkc4X1dhUmJMRHdKdjdlNV8tUkU3WnhfeHlCQ2h0OXoxUzVIdHI2cC1KMEN4cGUzTG9vTHo4MGxhR1lPTnHSAaIBQVVfeXFMT3ZGMERBTzlsUVd0a240SlpPNVhJYjB0akdlMXI1U1RwR2sxSHdpWjhLWVhNcTcxQWg0MVFZRzY0ZTZpZ0FZRHZ4SzFMdHhKYjNxaTY2RWdpNzcxMVZwXzRfVlpNakw2RlV6cXpKOGMySjJxWTl6QUVpQXBJZWJrOWhGNnhROHUtVzJMb196d3N5dVJjTldtZ19CSnFFYkUxMHNn?oc=5",
     "pub": "2026-11-27T11:51:40.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Israeli attacks on women and girls meant ‘to destroy life’ in Gaza: Amnesty",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOeUNrZGhqcGFMYlk0Y2o3aTROYS1nYmxKZEJ4VnB5ZzM3OEdWTVpKakhvU3NfV2dxVGJhUW1DU3JlQl9RYldmam9CdzJ4eGR5TU5ZaFNMZFpqangxT3VMSEJ5MmVlSURHRmZfTmVjWGhjN29RdUYyS2hremE2RFdmSkxlTTYyakRlQzFXamU4aFdYZkh4TUN2TktkUUlaTThTblZyTjhzVTJwWHlVTVVsYXBtMEbSAboBQVVfeXFMTkhwMks3S042enVMWlhOdGY4VHlsSnhFZGlMNUloX0ZzMG9MYzlrcjc1b1FWSl9WWnVWTDc0MDJZNG8yNEg4QWJWQXp2RDY0VXdpSUVhUm1DN21BYjJtWEtjcnQxWnFWLTQzVTNZUVN3TlR3NjUteGNJdlNaSmdFR2hmOER0UFNBcnRXenpkWWhMbUJlTjd6cjNCSDJEMC15bjMxaF83VjNWX3g5N3dtM2ZLWi1NOURKMlBn?oc=5",
-    "pub": "2026-11-27T11:41:56.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Uganda to withdraw troops from DR Congo town amid diplomatic row",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HQUFHU1p6SVB5NnBsR25kTV9wX2Z6YUJBdy1SR1NnNTg5ek5nSUtxVE5lVXRjZ00zMVZFYjJFeGRIaVAyeGJ1Mng2RHY5OW43ZHN5RmFuUVpIZ2M?oc=5",
-    "pub": "2026-11-27T10:39:31.000Z",
-    "sum": "The Ugandan army is helping the Congolese military fight an Islamist militant group in the east of the country."
-   },
-   {
-    "hd": "Four Jehovah's Witnesses convicted of 'extremism' in Russian-annexed Crimea",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYU5YQVdzaHpXYmVSRG9uaWNkNVB4UTl5blFhczE3aTk1ZXV4N3FDOHE1Y0ludElpV0dyVE54eXR6TjZsR3Mxd2p2RmVwMUhpenBqNl9MVy00djNYd0RHSm04ZEZXQzg5R0JHcWw4bEZUZ0ppRkxwUkxkbDFvY3hUMDZBSzE4Q3RwRTZCdmZvMUZBTThhTklOWVF0TldZZ2hUc29tSXRBQmJPNmJC?oc=5",
-    "pub": "2026-11-27T10:22:17.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16310,8 +16311,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T23:00:13.137Z",
-  "lastAttempt": "2026-11-27T23:00:13.137Z",
+  "asOf": "2026-11-27T23:30:11.513Z",
+  "lastAttempt": "2026-11-27T23:30:11.513Z",
   "lastError": null
  }
 }
