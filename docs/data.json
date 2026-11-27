@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T07:15:10.735Z",
+ "generatedAt": "2026-11-27T07:30:11.321Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T07:15:10.735Z",
+  "at": "2026-11-27T07:30:11.321Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13894,49 +13895,49 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T07:15:10.735Z",
-  "lastAttempt": "2026-11-27T07:15:10.735Z",
+  "asOf": "2026-11-27T07:30:11.321Z",
+  "lastAttempt": "2026-11-27T07:30:11.321Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7319.75,
-    "lastTime": 1795763101,
+    "last": 7317.25,
+    "lastTime": 1795764019,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 123.25,
-    "changePct": 1.7126380879594247,
-    "expectedOpen": 7305.795026054332,
+    "change": 120.75,
+    "changePct": 1.6778989786701868,
+    "expectedOpen": 7303.299792260126,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26773.5,
-    "lastTime": 1795763110,
+    "last": 26748,
+    "lastTime": 1795764021,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 668.75,
-    "changePct": 2.561794309464753,
-    "expectedOpen": 24190.022759095566,
+    "change": 643.25,
+    "changePct": 2.4641109376646013,
+    "expectedOpen": 24166.98335145903,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50700,
-    "lastTime": 1795763103,
+    "last": 50710,
+    "lastTime": 1795764010,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 473,
-    "changePct": 0.9417245704501562,
-    "expectedOpen": 50655.535170326715,
+    "change": 483,
+    "changePct": 0.9616341808190814,
+    "expectedOpen": 50665.52640014334,
     "valid": true
    },
    "RUT": {
@@ -13944,7 +13945,7 @@
     "label": "RTY",
     "name": "Russell 2000",
     "last": 2738.7,
-    "lastTime": 1795763103,
+    "lastTime": 1795763991,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
@@ -14503,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T07:15:10.735Z",
-  "lastAttempt": "2026-11-27T07:15:10.735Z",
+  "asOf": "2026-11-27T07:30:11.321Z",
+  "lastAttempt": "2026-11-27T07:30:11.321Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T07:15:10.735Z",
+  "lastAttempt": "2026-11-27T07:30:11.321Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15406,6 +15407,13 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia, neoclouds in focus as chip sellers rule out Chinese renters",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-27T06:46:29.000Z",
+      "sum": "A new BIS rule was intended to close \"loopholes,\" U.S. Trade Representative Jamieson Greer told CNBC's \"Squawk Box\" on Wednesday."
+     },
+     {
       "hd": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=3b8fa1a5161f0d7f5892f27c549575d7b745cbdea20791e68dab73864b3367ba",
@@ -15481,13 +15489,6 @@
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNX25IV1otSXF1N2JqSWF2MDlxaUJtanYtaE1hcUF6SE9tdDg3YzZtXy1tbFhTQm84cXBtdG1TTmxaUUxSYzZockR4dXZ1TjlfYnhDVFJMVXJ5eVBPNTZFeHBSb0NaRnZqZjFqQXhYRVFWTDc5ZmZOa0FDV2hXSm54ejQxZGhwUnp1RlBDQlIyS3FVMm51M3doTHd30gGfAUFVX3lxTE1jYVNXRlpkVERiTmJDMWJLN3dsTzI5M0VNUkZEckFOeFBlUGNMZUVFaG13VmVWdmpsbTVucUhERmRXZkk0MGQ2RFAwdVBjT0dpSE5lUWVGUGZoRS04RFRYTzU5ZEw4MnJRUFZ2NVhwMWVVb1l3UnVNcFBaY21abll1MHVxcXEzV2FfRnlSeVZkZWhkRFdoa054b0hEM0w5OA?oc=5",
       "pub": "2026-11-26T16:00:01.000Z",
       "sum": "ETF Action founding partner Mike Akins and GraniteShares CEO Will Rhind react to Nvidia's sharp losses and latest comeback."
-     },
-     {
-      "hd": "Nvidia chip buyers told to rule out Chinese renters to purchase GPUs, sources say",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1ydHdQWUpYRU16SjgyRXBibzZ6UFN4RThEMUV3VkRJV0NCNmk1Nm1wTFlvTnpsLS1VVHdmczlIQjZRN0RKZnlBdm5oSmFUY0lCaWV5dTY2bDBiRHcyV0lfMjk3ZS1TQW1oM3F0TTJFRdIBdEFVX3lxTE1hb0dnX1V6U3RzcVduQUhNcHBONFFMMVVaaThOcEc5dy1EOVMwUXBVM1lSMWljNm12aTJXT0FvMWdkaUdyTEZyZGY0dHJ0R3kxQllKQ2RaMl9MYmxIY2pHcTh6TWVDRkhCSkVqUVUtbVFOam81?oc=5",
-      "pub": "2026-11-26T15:34:08.000Z",
-      "sum": "A new BIS rule was intended to close \"loopholes,\" U.S. Trade Representative Jamieson Greer told CNBC's \"Squawk Box\" on Wednesday."
      },
      {
       "hd": "Nvidia’s ‘great man theory’ is flawed",
@@ -15584,7 +15585,7 @@
     "fetched": {
      "Finnhub": 116,
      "Yahoo": 6,
-     "Google News": 88,
+     "Google News": 87,
      "Nasdaq": 13,
      "Seeking Alpha": 25
     }
@@ -15770,7 +15771,7 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 11,
-     "Google News": 11,
+     "Google News": 10,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
@@ -15956,9 +15957,9 @@
     "fetched": {
      "Finnhub": 170,
      "Yahoo": 14,
-     "Google News": 17,
+     "Google News": 16,
      "Nasdaq": 0,
-     "Seeking Alpha": 13
+     "Seeking Alpha": 12
     }
    },
    "ANT": {
@@ -16141,19 +16142,40 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 0,
-     "Google News": 49,
+     "Yahoo": 14,
+     "Google News": 56,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T06:30:09.975Z",
-  "lastAttempt": "2026-11-27T06:30:09.975Z",
+  "asOf": "2026-11-27T07:30:11.321Z",
+  "lastAttempt": "2026-11-27T07:30:11.321Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/north-korean-move-shut-swiss-diplomatic-office-138475957",
+    "pub": "2026-11-27T07:23:27.000Z",
+    "sum": "North Korea has shut down a Swiss diplomatic office in Pyongyang and expelled its head, signaling a more assertive foreign policy"
+   },
+   {
+    "hd": "Zelenskyy warns of imminent major Russian attack on Ukraine’s power grid",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/zelenskyy-warns-imminent-major-russian-attack-ukraines-power-138468250",
+    "pub": "2026-11-27T07:21:00.000Z",
+    "sum": "Ukrainian President Volodymyr Zelenskyy says that Russia is preparing a major attack on Ukraine’s energy infrastructure as crews race to repair damage from earlier strikes"
+   },
+   {
+    "hd": "Iran warns on Gulf military presence as South Korea readies expanded naval role",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNjgyMVEwOUJRYll3NXdiU29vVVlmcGMxc3VhTGdEZ3BaZzZ0bUFtemt1c01oMXhjcHlJMEoxVWppTFV2YU12Qk4xRjlzVTNZaEVyR0dBZGtRNEdvaGhCTHhPY2VEVTUtZUw3a3dGekV4VTZkYmp3ZzFjVmxMRnliRmhwZmJOdkZhS3dBNWVfVkU4SjdObjF4WFY4Mmo4ZDlGWFcxYTZnMmVDUXN3NTVPY2lObHZlRFd0aXhjbTR0NXkwWkFkSHVr?oc=5",
+    "pub": "2026-11-27T05:12:00.000Z",
+    "sum": ""
+   },
    {
     "hd": "Here are the main issues driving Spain's national election and why they matter for Europe",
     "src": "ABC News",
@@ -16174,13 +16196,6 @@
     "url": "https://abcnews.com/International/wireStory/meet-rising-mayoral-candidate-taiwan-sanctioned-china-138473812",
     "pub": "2026-11-27T04:07:06.000Z",
     "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
-   },
-   {
-    "hd": "What to know about North Korean move to shut down Swiss diplomatic office",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRC1MVFk4b0w4Y2JmSFlwUDdSZTRJU3FYSEV4alp3dWg2OVNDMUM1b00wQndGb2VtSkR4N2dhV0FfV1NCUzFBd2I4ckt6NU9HVDJNckNaY05EUjB6V1I2NWRsVWN0eVFzZGFTa0dULWhBZGVORUo4WXNHM29ZQjFfbFprZkNmdEI1U1gtdFB3SU1VNG5kR001c0J0UGJJMWFmc2xPdllVbnVaRTA?oc=5",
-    "pub": "2026-11-27T03:46:00.000Z",
-    "sum": ""
    },
    {
     "hd": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
@@ -16223,6 +16238,13 @@
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdFVJenQ4a3hlOERnbnhWVGJ1QkNhUVQ1UjFGdUl2QjRFTjVaQUM4VC1sN2ZIWV9INVA3Y1hjUDA5VV94Zk4yOGF2Z00zak5OcGVNYTA3d2trbUxneVR6NnV0YXZ5Y3R5RDh3cTN0LVNqenltbmZMX2E1VkswTmNOT0t4R3hKWDNNeTRRbThMN2lFcUpRUjRwTjVnWS1sSDRLN2NTczlQNGg1Zw?oc=5",
     "pub": "2026-11-27T00:34:52.000Z",
     "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
+   },
+   {
+    "hd": "Armenia plans full withdrawal of Russian border guards in coming years, prime minister says",
+    "src": "The Kyiv Independent",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX1FTcVlxTVFMZktFZEdWamQ3c3RBaVJFOGdXeWhsR1RYTlVocW40djg0bXktRkRzTGw1NTBpSk1EVC1qQ1dMN3paOWc5c1hqOFNONjBqWW1CYlZLLUhNaUh4TjBrVnNqWmNZdjBIeTZiTmIzWHBXZkdabm1lVzljWURpb21zU015SlZPR29Fak9FMEFhTDVFaXpUckVnY2pNdFc0WGUzY09aanJsWDBTa2dsLTlvcE1ENjNn?oc=5",
+    "pub": "2026-11-26T23:58:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Mexican president blasts DEA over tip lines, accusing it of not fighting fentanyl enough inside US",
@@ -16332,7 +16354,7 @@
    {
     "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
     "src": "The New York Times",
-    "url": "https://www.nytimes.com/2026/11/26/world/europe/europe-preppers-survivalists-cyberattacks-threats.html",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMUxSQ20tSWhWSGQ2SzgxbGhaYnhvOF9ZVHF5bFpURncxcW4wOWNRbmRNSlBTeGhKMWZYSXozVUdIcmhVcUc5RDYxaHN0UG44UmxkSmNHcXU3V2FvYmlieXZCS3JzQ1QxNlM4T05WOE03RXBwNlhHanBMcVhEVWFTRmRDVFFBMmEycXlKUldBdEFIY2VraUpmcndvQm1LLVRodlVyUA?oc=5",
     "pub": "2026-11-26T18:23:08.000Z",
     "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
    },
@@ -16341,27 +16363,6 @@
     "src": "New York Post",
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaVpIQ3ZpYU5tRVZCLTF1N1lYSU0tekFCbWVMMUNhb21MTE5ESFl4ZEpKMTBoMGVNQS0xalhrT3JsbW9FYTlsTWc4Unhaa0haWXdkTVowUk1OZ3RnYTF3S3RFay1qbGpOUHpiUXhacUpDZEhUTTFlRFR2SE5NTU15UVZXbVQwdVp4TFZHVGw0SS0wbFJwNUZaQ3J6Yk5feW13X3RMMkZoQ2RnM3ZjRGJN?oc=5",
     "pub": "2026-11-26T18:20:45.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Katz threatens to launch fresh Gaza offensive, bucking Board of Peace push",
-    "src": "The Times of Israel",
-    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNWEpSYTUwbXlyNDRzbFZkMHVfYnhoMm9oNUJ0Y1Zyd2hVUHRualB5SThIc3JPR0tMZlVUa0hjcWxaYlVBZW9OZXZPN0ZYSWg5cmlVQmpZVVVwREdRV1J6VVVRa24xcmlnYkNTOElDZXFfMEVpVDN1YmFoTDA5WThtUTRGbGVJNDZFdlJUVEx3TDVVRzl6MHkwbFNnMlV3U01sMWxLN2tqWdIBrAFBVV95cUxNbFZxQlp3MEtTMXBMR3g3bWFRbXg3alNFSVNIVXlEdWEwTjBQLWRpa0UtNlpBaVVqYnRXR2VSWDQ0YVJINHZFTEhBcm5QODN6M2VrQnh4SkFTN00zWVpwTlV4ckNLNHJraDJsLVJIWF94UVBlLWZaLVN0OFZGXzlIQzVnUk9qOHRFeUluVlc3ajBfRENnRjBTeF9RNG5oeTYxYkVWc29EWFU3QVFo?oc=5",
-    "pub": "2026-11-26T17:54:00.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Turkish elections to be held in 2028, ruling alliance agrees on Erdogan candidacy, vice president says",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPOWczelB1MldEZ2RSX1luOHBST0ZrMGtNMl81TTgwVE5fQTZtNnJxeElKMmlzSmdnLVpVTDRfVjluMVZSa09QaTluWGk5X2VTcEw2aFlPcmx1VmlsVHd5eUFMaWM4Nm5EX29OYlhlMzZyZW9fMmcxLUxkZ2kycGFiLWtQbU1jSVBsbWRwM3p0RDFEUU8yXzVOOGM5T3pRTWx0ZDZkTmptem0teU1WVjZCdk5lcDFpZ2F2UU1mbTVHOHJqRWVnRUFYdmR3?oc=5",
-    "pub": "2026-11-26T17:41:43.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Zelenskyy warns of imminent major Russian attack on Ukraine’s power grid",
-    "src": "MS NOW",
-    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQU2xzeTBscnBPTnIxN2luZDI2cDEzckRDSjJ3RjNpN3doTjh4N0pPNmlJY21YNkc5c29nOEd3Mm5KZjVaZDJMUkp2RHc3bXFyYmM4LVhtRUxiZ3hCWEZIcFZwVWJJeTBKLS1oMm1XeTNGVzdueTdhbmUzUUdRLUdONlNYVzdhLVFFa05TdWVNZTdQYlk?oc=5",
-    "pub": "2026-11-26T17:22:07.000Z",
     "sum": ""
    }
   ],
@@ -16381,8 +16382,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T06:30:09.975Z",
-  "lastAttempt": "2026-11-27T06:30:09.975Z",
+  "asOf": "2026-11-27T07:30:11.321Z",
+  "lastAttempt": "2026-11-27T07:30:11.321Z",
   "lastError": null
  }
 }
