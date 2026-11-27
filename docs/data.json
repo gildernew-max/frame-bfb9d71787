@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T08:15:11.928Z",
+ "generatedAt": "2026-11-27T08:30:11.099Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,12 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T08:15:11.928Z",
+  "at": "2026-11-27T08:30:11.099Z",
   "ran": [
-   "weather",
    "alerts",
-   "movers",
-   "sectors",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13896,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T08:15:11.928Z",
-  "lastAttempt": "2026-11-27T08:15:11.928Z",
+  "asOf": "2026-11-27T08:30:11.099Z",
+  "lastAttempt": "2026-11-27T08:30:11.099Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7317.5,
-    "lastTime": 1795766711,
+    "last": 7320.5,
+    "lastTime": 1795767620,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 121,
-    "changePct": 1.6813728895991107,
-    "expectedOpen": 7303.549315639547,
+    "change": 124,
+    "changePct": 1.723059820746196,
+    "expectedOpen": 7306.543596192592,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26706.75,
-    "lastTime": 1795766711,
+    "last": 26781.5,
+    "lastTime": 1795767620,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 602,
-    "changePct": 2.306093718576121,
-    "expectedOpen": 24129.713721458742,
+    "change": 676.75,
+    "changePct": 2.592440073166761,
+    "expectedOpen": 24197.25080855017,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50780,
-    "lastTime": 1795766711,
+    "last": 50768,
+    "lastTime": 1795767618,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 553,
-    "changePct": 1.101001453401557,
-    "expectedOpen": 50735.46500885977,
+    "change": 541,
+    "changePct": 1.0771099209588468,
+    "expectedOpen": 50723.475533079814,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2739.8,
-    "lastTime": 1795766704,
+    "last": 2741,
+    "lastTime": 1795767613,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 34.10004882812518,
-    "changePct": 1.260304152105114,
+    "change": 35.300048828125,
+    "changePct": 1.304654967851704,
     "expectedOpen": null,
     "valid": true
    }
@@ -14505,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T08:15:11.928Z",
-  "lastAttempt": "2026-11-27T08:15:11.928Z",
+  "asOf": "2026-11-27T08:30:11.099Z",
+  "lastAttempt": "2026-11-27T08:30:11.099Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15149,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T08:15:11.928Z",
+  "lastAttempt": "2026-11-27T08:30:11.099Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15415,6 +15414,13 @@
       "sum": "A new BIS rule was intended to close \"loopholes,\" U.S. Trade Representative Jamieson Greer told CNBC's \"Squawk Box\" on Wednesday."
      },
      {
+      "hd": "Michael Burry Shares Stark Warning About AI Boom, as Nvidia, Oracle and Meta Face Surging Debt Insurance Costs",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=939496e0b643ce0dbbf96b87b6097cf073e8fd6a5a7c94d1f7f5b90c0d704245",
+      "pub": "2026-11-27T06:31:28.000Z",
+      "sum": "\"The Big Short\" investor Michael Burry has drawn attention to concerns that rising borrowing risks among major AI companies and data center developers could threaten the financing behind the industry’s massive infrastructure expansion. AI Credit Risks Rise as CDS Spreads Widen The warning comes from a Groundbreaker analysis titled \"Mark to Swap: How the Market is Mispricing the AI Boom,\" which Burry shared on X while clarifying that it was not his own work. \"Must read. This is not me. But it mus"
+     },
+     {
       "hd": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=3b8fa1a5161f0d7f5892f27c549575d7b745cbdea20791e68dab73864b3367ba",
@@ -15476,13 +15482,6 @@
       "url": "https://finnhub.io/api/news?id=549d58c0687944ed251bd01b581409ad37503dc43d6b2fba79a06933d06acad9",
       "pub": "2026-11-26T23:00:49.000Z",
       "sum": "Kain Warwick, founder of Infinex and Synthetix, says Jensen Huang’s alleged spy scandal is far worse than the affairs, while security expert Taylor Monahan argues the spy never got him to act against Nvidia. From Unchained, the no-hype resource for all things crypto."
-     },
-     {
-      "hd": "Nvidia Is the Worst-Performing \"Magnificent Seven\" Stock This Year. Is It a Buy Before 2027?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=82bbdc1f980d9510642c4f9b8837ce329a0a724d0d62b617025b5aab498b6725",
-      "pub": "2026-11-26T22:50:49.000Z",
-      "sum": "Even with Jensen Huang back as CEO, Nvidia is drastically underperforming the S&P 500 and Nasdaq this year."
      },
      {
       "hd": "Buyer beware? Nvidia's volatile swings expose risks of single-stock ETFs",
@@ -15585,14 +15584,23 @@
     ],
     "fetched": {
      "Finnhub": 116,
-     "Yahoo": 6,
-     "Google News": 87,
+     "Yahoo": 7,
      "Nasdaq": 13,
      "Seeking Alpha": 25
-    }
+    },
+    "errors": [
+     "Google News: HTTP 429 from news.google.com"
+    ]
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "Elon Musk Offers Samsung Long-Term Chip Deals and Factory Funding, Gets Brushed Off: 'Everyone Else Was Offering That'",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=319c769754d7f91571732f60f99222c65307cbb95cee8c27bda5fd7ac8d4bf7b",
+      "pub": "2026-11-27T06:44:55.000Z",
+      "sum": "Samsung Electronics Co. Ltd. (OTC:SSNLF) was reportedly unmoved by offers from Tesla Inc. CEO Elon Musk (NASDAQ:TSLA) for long-term chip purchase commitments and guarantees to fund new factories. Capital Group Recalls Musk’s Samsung Talks Musk offered Samsung a long-term chip purchase commitment, but executive chairman Lee Jae-yong replied that “everyone else was offering him that,” according to a Wall Street Journal report on Wednesday that cited Carl Kawaja, a Capital Group portfolio manager."
+     },
      {
       "hd": "‘How Can TSLA Compete With Waymo?’ Gary Black Questions Tesla’s Robotaxi Strategy, Predicts Waymo Will Lead in Miles and Trips",
       "src": "Yahoo Finance",
@@ -15648,13 +15656,6 @@
       "url": "https://finnhub.io/api/news?id=cfb26b49c9fb75a37cd6d61d4295d104110437dbebc6705e50ebd5584b44f035",
       "pub": "2026-11-26T15:05:24.000Z",
       "sum": "Key TakeawaysLucid fell 13% in the past week, mostly in Friday’s tech selloff, which also hit Rivian and Tesla. Seaport initiated coverage with a Sell and a $1 target the same morning Lucid, Nuro and Uber began driverless robotaxi tests."
-     },
-     {
-      "hd": "General Motors Is Up 11% in a Month as the Nasdaq-100 Fell 10%. Is Its Nasdaq Switch Really That Good?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=8acba3042743f76b584351eb41ecf930c7e674bcd39876a0afb425931c9d09ef",
-      "pub": "2026-11-26T14:50:28.000Z",
-      "sum": "Key TakeawaysGeneral Motors stock is up 11% in the past month, mostly on its move to Nasdaq, while the Nasdaq-100 fell 10%. Ford’s higher profit floor and a shift out of Tesla helped too, but Ford expects flat 2027 profit."
      },
      {
       "hd": "Situational Awareness Lost 65% in Q3, Investor Leopold Aschenbrenner Warns Nvidia, Microsoft, Tesla Could Lose Their Edge: Report",
@@ -15720,6 +15721,13 @@
       "sum": "Investors in Tesla Inc (Symbol: TSLA) saw new options begin trading today, for the December 9th expiration. At Stock Options Channel, our YieldBoost formula has looked up and down the TSLA options chain for the new December 9th contracts and identified one put and one call con"
      },
      {
+      "hd": "Here are Tuesday's biggest analyst calls: Anthropic, SpaceX, Nvidia, Tesla, Boeing, JetBlue & more",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYTJSUjNRWXp0WWNSVXM3SE0tRkJQZVVHUmg4SDB5MzZIbVdZZmVraFN3MmlKbHRNclMtUFpNOXFCYUhXOGFPR2JLVHVVVi1ITk1iT1U1WXpwUFhBbG81S0VoUWNMU0FETXRhN3pPN1ZXUGpNc2RxVmlVdml1VG1ONUJEM3NzU2ZuOGYzWQ?oc=5",
+      "pub": "2026-11-24T13:35:07.000Z",
+      "sum": ""
+     },
+     {
       "hd": "UBS Maintains Neutral on Tesla, Raises Price Target to $430",
       "src": "Benzinga",
       "url": "https://finnhub.io/api/news?id=4904249651347f0c2550ed1642eb5154ea670bce470d41f25613c446bc60c1f3",
@@ -15760,19 +15768,12 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPczZTYmlPVzUyejlCYVB1WHRsZXE0MV9VRGNON2xETE8yT09RX3hkaFBZMVRHd1VqT3ZXb1h3MUlHU3l5NXMtb0N1R0ppWGRtdkpoQ1BZQzUwSGI5Vmc1YmFzMDBCS2dCU0JIS3hmQnVULVVPdGJxZWxydm82TEhnVnFHanM?oc=5",
       "pub": "2026-11-24T05:02:01.000Z",
       "sum": ""
-     },
-     {
-      "hd": "SpaceX-Tesla: the directors negotiating the biggest merger ever",
-      "src": "Financial Times",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPeEdHa3JaV1FnaExBWDEtY1FaT0hubE5OcXZHSDNFNlRWYkw4Nk5YbWtmRkxIaTVUMHRLZ042V1llZlV2VWRaZ2pieEpKbXFpNlZtNHNWY0tWWDI2YWNrMjFPd1EySzVXWnh2ZGJqRzNIbDZXUUE1Wnc3ZFI0dFlhWHR4N3k?oc=5",
-      "pub": "2026-11-24T05:01:52.000Z",
-      "sum": "https://www.ft.com/content/2585e45e-9133-4215-a2d8-e1275e1033b9?syn-25a6b1a6=1"
      }
     ],
     "fetched": {
      "Finnhub": 151,
-     "Yahoo": 11,
-     "Google News": 10,
+     "Yahoo": 12,
+     "Google News": 11,
      "Nasdaq": 11,
      "Seeking Alpha": 8
     }
@@ -15957,8 +15958,8 @@
     ],
     "fetched": {
      "Finnhub": 170,
-     "Yahoo": 14,
-     "Google News": 16,
+     "Yahoo": 13,
+     "Google News": 17,
      "Nasdaq": 0,
      "Seeking Alpha": 12
     }
@@ -16143,15 +16144,15 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 14,
-     "Google News": 56,
+     "Yahoo": 0,
+     "Google News": 54,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T07:30:11.321Z",
-  "lastAttempt": "2026-11-27T07:30:11.321Z",
+  "asOf": "2026-11-27T08:30:11.099Z",
+  "lastAttempt": "2026-11-27T08:30:11.099Z",
   "lastError": null
  },
  "worldNews": {
@@ -16169,6 +16170,41 @@
     "url": "https://abcnews.com/International/wireStory/zelenskyy-warns-imminent-major-russian-attack-ukraines-power-138468250",
     "pub": "2026-11-27T07:21:00.000Z",
     "sum": "Ukrainian President Volodymyr Zelenskyy says that Russia is preparing a major attack on Ukraine’s energy infrastructure as crews race to repair damage from earlier strikes"
+   },
+   {
+    "hd": "Meet the rising mayoral candidate in Taiwan who’s also sanctioned by China",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZ0tsMjNfSi1fbVBpV3ZtNmRiYzhNMmZsbUh4dThyNXotSEd6Q0hldlY4bWYyUWdmb055bm83RmF6VFpZYjl5OHh2bnkyNkRmbThDV1lobXY3Qm5NRElfNDRNYXk2Ni1pVDlDZy1zRjdMaFE3c2d4bFh4WkZLMXZWTkRJc2hCci1PMU9vNnVvZjBjREkzRlUtSmx3?oc=5",
+    "pub": "2026-11-27T07:20:00.000Z",
+    "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
+   },
+   {
+    "hd": "EXCLUSIVE: India's election body website flaw exposing voter data fixed after Reuters findings",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQQmxHYlRsZWJBc0E5YmI5dWJMMlZueVZHY2Z2VnVvRHlFTDdZbnpTVDNHcVBPeG1sczJuMWQ4R3BHU3dBWmVqVlRKOTQ4RzRscm9JdWxkVVZlQU5KMlQ2WThVcTl3dEhGN2s1VDl6ZF9vWGpMNjY5cWUyWG8zWVYyazdXSXhaRVNQUGYzMVJxUXk1bkpfRkNCZkhWZXlkN0VvOHBCaUg5d1YyX3lsMWhveTNYYUlJQQ?oc=5",
+    "pub": "2026-11-27T06:58:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Taiwan local election campaigns enter final day; China sends warplanes",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNRzJNWEpPd2tGOERUMUhtUXFlcjBfSzhwZ2xnTVRGUjVSQlJIbEZ3TjJuT3hUMFJCa2tJVGhJdlNsVFBSVW9JVGw3ZHE4dWhZZElLNnVmWnhDS2pYWDgyemx6YzRsQURWV1psM1h4ancxWm15bGFKV0wzMkZZOXk1cVRMZ2JJcXlqazV2OEJmWkpWT29USEFSOHRPaFpxRG82OVVZWHVRNA?oc=5",
+    "pub": "2026-11-27T06:07:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Houthi attacks test Saudi Arabia's image of security",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c6ly7jgv7jzdo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-27T06:04:51.000Z",
+    "sum": "Despite the strikes, markets and restaurants in Riyadh remain busy as residents express trust in the government to protect them."
+   },
+   {
+    "hd": "India-US trade deal is nearing completion, minister says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMkR3N0t3ZmV1SDk5LWNGa3hCcXVleWpPVFpORzVUZnUtYUJoUXQ2eFEzN3ZrQjcxMHhCaXk0NzY4M2NkSFNic1Q2aGJYZlZoYnFlSG5iU0NQX1dUNWZzci1xTU10bm5UbGRYSWkzdno1c3dDRlpZWjVxNjRaWkF5ZzlJdGxsUlJpWUFTbDZCN0d4bFlqN3NNOG4xdy1zZy05TmxNZTlR?oc=5",
+    "pub": "2026-11-27T05:21:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Iran warns on Gulf military presence as South Korea readies expanded naval role",
@@ -16190,13 +16226,6 @@
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRHU2ODhzTFRNUi1YM1VpRVZEZlg4MXFpaGxIZU5SZ2xxNVZFTWlFWHlITkJLNXhSendCb3RYckhpQkhqcDRVeDdRdVJWRl9WWnJWYlZvV2tMM1VaalU2SlRQQTRYNVZzc0Y2SVp0WmJKai1kN3NtSEU1MkxLSkhGN0M2TW9JOHFianYwZEtrNTE2NW81aGlLTWRpc18xd2hwUmI1XzdQVGxON0dJREhldE5R?oc=5",
     "pub": "2026-11-27T04:36:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Meet the rising mayoral candidate in Taiwan who's also sanctioned by China",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/meet-rising-mayoral-candidate-taiwan-sanctioned-china-138473812",
-    "pub": "2026-11-27T04:07:06.000Z",
-    "sum": "Puma Shen is gaining unexpected popularity as an opposition candidate in Taiwan's capital"
    },
    {
     "hd": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
@@ -16227,13 +16256,6 @@
     "sum": "Evidence from a British police officer helped convict Ali Kololo over a 2011 attack in the Kenyan resort of Lamu."
    },
    {
-    "hd": "Trump says Putin can come to G20 if he wants",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNUjY3Sm9MUkZXUEQyNDc3MFdwRlFBaWcyWkpxbDRYT21RVFYySkgtUm9WeFNFb1lZUU9lM1BqbDBWLW5VLW9PR1ZvMjFxVHZNX2Q2b01rNXdVQUJIYmZ5ZHd4eEI1RkI3dlctelgwODgwczQta2ZWZEpDU2Jwa29MT21ZMlJ1clVNMkM0?oc=5",
-    "pub": "2026-11-27T00:35:00.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Two Italians killed in Kuwait as a strained Iran ramps up attacks",
     "src": "The Washington Post",
     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPdFVJenQ4a3hlOERnbnhWVGJ1QkNhUVQ1UjFGdUl2QjRFTjVaQUM4VC1sN2ZIWV9INVA3Y1hjUDA5VV94Zk4yOGF2Z00zak5OcGVNYTA3d2trbUxneVR6NnV0YXZ5Y3R5RDh3cTN0LVNqenltbmZMX2E1VkswTmNOT0t4R3hKWDNNeTRRbThMN2lFcUpRUjRwTjVnWS1sSDRLN2NTczlQNGg1Zw?oc=5",
@@ -16255,11 +16277,11 @@
     "sum": "Mexico's president has criticized the U.S. Drug Enforcement Administration for setting up anonymous tip lines in the country"
    },
    {
-    "hd": "France's Macron says Le Pen should be less arrogant after she criticises EU budget talks",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQTlISjVuc0VWRk9XLWpHbFBVNUxKNWk4NzVSX3ZFVDZLbG12em9VX2RVLThzaHI0SXJ5M0dKOG9pR2VnZWhFelVYZXNnbjBvOUVDQW1xaHNYUl9wSmRRNl80a19GcDRwdnRva0NsMlI4Y3hPamhGUnlSbkpqWmRSRkJxVUNsdGNUUzJCcERsN3kzVFJmY1psTTh5ekhyX2x2N2JWNXl5Z3BIZ2hvYi0wNDBIRGJtTzQ?oc=5",
-    "pub": "2026-11-26T23:41:41.000Z",
-    "sum": ""
+    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-26T22:49:27.000Z",
+    "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
    },
    {
     "hd": "U.K. Releases Files on Peter Mandelson, Ambassador Tied to Jeffrey Epstein",
@@ -16287,13 +16309,6 @@
     "src": "Fox News",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX3UwOXNyb0NoQkd5dWprbW5CZjhYU09lT0I3UFQxRnQ1QUtNemg2T2k2RzFvU0FodTlncHhnUG5nVGt1Qno5d3Z3VXNIajBQV3hFQUdnWFdJdVpNeGZTX2dGMldXTVpvbS05SWZuMXY0NmVsNm1wUkw2WHBoUWwtRmNyZEo2MkFqc2RpYnVNSl9kc1JMeHBGamE0aHhZRFhuRW04MUF0TzVYWUEzSWtlVVJ30gG3AUFVX3lxTFA4UUxFOU8tQ25NZzZMY0V1QnhhS2hWOFhVRG1KcVN0eHVuaXVLaDA5UVJnQjRENUVrYVhja0tYenpXWS1SSGI2ZlAtejdGdUt1T1lkZ1dVRkU0bUVXNk5XU1VYZTItT1FfSU1IanhSeXdXYUNjVDZFT2xGcnFRTE5YNDdid2JiZVlDMUVhYWlNODNnZmFFU1hSQlkycmdkcjN5MTlUSEdFMFNFX1kxdkRvZWFfX0JvRQ?oc=5",
     "pub": "2026-11-26T21:14:20.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Attack on Saudi Aramco's Jazan refinery kills worker, halts some operations",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORnNINWJlUzU0bDVSQ1Z5TWhtZTl1dzVxa01lbWhiMTg0bjBKZzQtbld6RmpIQ3NOSkctT29wTmdmR3VCcHpMbzdBQUdQSU0wVWItQU1COHhCS1BzYnpoOTJsRzl2TWp0aVNNZWVpZVFhS2cwWXVtNnA0bzRfUXNTRTJRTEVHem5BY2V2SURxZG9Vb3VkT3FNa1RuR3RfZWJQUE15WTdGaVFudnJaeVJIdVhXdE9PcWFuY2c?oc=5",
-    "pub": "2026-11-26T20:56:28.000Z",
     "sum": ""
    },
    {
@@ -16332,6 +16347,13 @@
     "sum": ""
    },
    {
+    "hd": "Threatened by Wagner, this Nigerian journalist uncovered Russia’s war machine in Africa",
+    "src": "The Kyiv Independent",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOQkY4UERnOXV4QjFWbDhSdFNyN1J2R1BzMFVDUXhfMVh2NndIZGhCQU10eFpqT1JJTS1rdjIzdlNxVllGbWFMXzE5SlRzYjVKdUE1Z2lJbWRyRVBxa2F6andLU2ZCeFNsejFYYWZudkEzeEJ3ZWc2cEZONkpUZWkzYzhxVkMyS3NCdjRBOFNfUkYtZzhUZm5PODB1VlZleVREQmhsc3czYXJDWWdGLTFzaVhUZ3M?oc=5",
+    "pub": "2026-11-26T19:06:58.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Germany arrests 2 Iraqis allegedly tied to Iran-linked terror group",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/germany-arrests-iraqi-iran-linked-terror-suspects/",
@@ -16343,27 +16365,6 @@
     "src": "DW",
     "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQT0s0Mlp1cUhyQzZ0QUN4QkZLSjV0dnV6cjMtMzZlZmVjbF9nX1YtNzRBYk96alI0djM4dGFtNzZqRl9KWU1uMFQtdE5lZHA3Y2NiQkhaSWJRXzQzNmtWaUlBVUpOVmx2cVpsLTZld05rXzJKbjJvSkVOREJDQTNZS0haSDlISmVadEUxUUFyekJ1RFZ1RmVLUmJMMzNZcS1qTHNYWE9SSmdtd3dMWUx3SVBqVG5ydVNsaUdZd1h3LW16cXBxZF9OZFh1QlM2bTJvcU8tM25DRXJlNlRqX3FJVC1UN3dQQ041UDRNRGs5SdIB7wFBVV95cUxObHpLMnlGRGZQR29EMm02VkZ6T3B3VUdwSVI0cE5WMjkxZno2RkJIUkZuRUJSQ29GSEYwWXQ2Qm1DNzR5eml4X2RUZzdHelF3WDNyRF9ORUtnbFczMHdaMXktcU4xeXdDUW5IOWRaLU8tODRmRWR4MWxHY2VzT0ZuS25lRFlidG14N3dSRWVkX3FDUDl5cmNzMHFYbmM4MngzTzRBRVJxODM2enJlY1ZhUFp5RTdZcWVLTEVUUkRxT1d1cVc3a0RZcWtZMkEzVEZvTmNRaHVLSWlFMDhyY1RQXy1Ydl9CdWliSkhjY1FBOA?oc=5",
     "pub": "2026-11-26T18:55:41.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Passenger flights diverted as Kuwait intercepts Iranian drone attack",
-    "src": "Euronews",
-    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPeTVRaEJwRjVGNTBMemFRQ0NEYlAyZktOd2lhbV9iV2tNbjFmVVBKR2ViSW51RzBKS003TXFXNl82TVBZYm5zUnJ0UzhOdjVHMXY5cVNjS0FXblVwcGdiMWxHU0taNjFNUi1LcFZKbzRKdVkyOGhSU2dWelpCTWNSZk0zcmI1bWZWWHYtNmlOd3hSbEgtLWJZVjd2b3ViVjlVVWlIR0tRbzdrd093?oc=5",
-    "pub": "2026-11-26T18:50:53.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "After Cyberattacks and Bomb Threats Hit Europe, Survivalism Goes Mainstream",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPMUxSQ20tSWhWSGQ2SzgxbGhaYnhvOF9ZVHF5bFpURncxcW4wOWNRbmRNSlBTeGhKMWZYSXozVUdIcmhVcUc5RDYxaHN0UG44UmxkSmNHcXU3V2FvYmlieXZCS3JzQ1QxNlM4T05WOE03RXBwNlhHanBMcVhEVWFTRmRDVFFBMmEycXlKUldBdEFIY2VraUpmcndvQm1LLVRodlVyUA?oc=5",
-    "pub": "2026-11-26T18:23:08.000Z",
-    "sum": "More governments in Europe are telling citizens to prepare for emergencies. After unexpected disruptions, many are listening."
-   },
-   {
-    "hd": "Russia targets Kyiv with ballistic missiles — wounding 7 — as Ukraine takes out drone with laser in world-first",
-    "src": "New York Post",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQaVpIQ3ZpYU5tRVZCLTF1N1lYSU0tekFCbWVMMUNhb21MTE5ESFl4ZEpKMTBoMGVNQS0xalhrT3JsbW9FYTlsTWc4Unhaa0haWXdkTVowUk1OZ3RnYTF3S3RFay1qbGpOUHpiUXhacUpDZEhUTTFlRFR2SE5NTU15UVZXbVQwdVp4TFZHVGw0SS0wbFJwNUZaQ3J6Yk5feW13X3RMMkZoQ2RnM3ZjRGJN?oc=5",
-    "pub": "2026-11-26T18:20:45.000Z",
     "sum": ""
    }
   ],
@@ -16383,8 +16384,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T07:30:11.321Z",
-  "lastAttempt": "2026-11-27T07:30:11.321Z",
+  "asOf": "2026-11-27T08:30:11.099Z",
+  "lastAttempt": "2026-11-27T08:30:11.099Z",
   "lastError": null
  }
 }
