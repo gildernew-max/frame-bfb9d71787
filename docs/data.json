@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T06:15:10.936Z",
+ "generatedAt": "2026-11-27T06:30:09.975Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7523,10 +7523,11 @@
   "closeFetchedFor": "2026-11-25"
  },
  "lastRun": {
-  "at": "2026-11-27T06:15:10.936Z",
+  "at": "2026-11-27T06:30:09.975Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "futures",
    "usTempGrid"
   ]
@@ -13894,62 +13895,62 @@
  },
  "futures": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T06:15:10.936Z",
-  "lastAttempt": "2026-11-27T06:15:10.936Z",
+  "asOf": "2026-11-27T06:30:09.975Z",
+  "lastAttempt": "2026-11-27T06:30:09.975Z",
   "items": {
    "SPX": {
     "symbol": "ES=F",
     "label": "ES",
     "name": "S&P 500",
-    "last": 7318.25,
-    "lastTime": 1795759507,
+    "last": 7318.5,
+    "lastTime": 1795760418,
     "settle": 7196.5,
     "settleDate": "2026-11-25",
     "indexClose": 7182.78,
-    "change": 121.75,
-    "changePct": 1.691794622385882,
-    "expectedOpen": 7304.297885777809,
+    "change": 122,
+    "changePct": 1.695268533314806,
+    "expectedOpen": 7304.54740915723,
     "valid": true
    },
    "NASDAQ": {
     "symbol": "NQ=F",
     "label": "NQ",
     "name": "Nasdaq 100",
-    "last": 26830,
-    "lastTime": 1795759507,
+    "last": 26854.5,
+    "lastTime": 1795760417,
     "settle": 26104.75,
     "settleDate": "2026-11-25",
     "indexClose": 23585.803,
-    "change": 725.25,
-    "changePct": 2.778230015610186,
-    "expectedOpen": 24241.07085836869,
+    "change": 749.75,
+    "changePct": 2.8720826669475863,
+    "expectedOpen": 24263.206759823403,
     "valid": true
    },
    "DOW": {
     "symbol": "YM=F",
     "label": "YM",
     "name": "Dow",
-    "last": 50676,
-    "lastTime": 1795759504,
+    "last": 50648,
+    "lastTime": 1795760414,
     "settle": 50227,
     "settleDate": "2026-11-25",
     "indexClose": 50182.95,
-    "change": 449,
-    "changePct": 0.8939415055647361,
-    "expectedOpen": 50631.5562187668,
+    "change": 421,
+    "changePct": 0.8381945965317458,
+    "expectedOpen": 50603.58077528022,
     "valid": true
    },
    "RUT": {
     "symbol": "RTY=F",
     "label": "RTY",
     "name": "Russell 2000",
-    "last": 2738.3,
-    "lastTime": 1795759505,
+    "last": 2737.6,
+    "lastTime": 1795760414,
     "settle": 2705.699951171875,
     "settleDate": "2026-11-25",
     "indexClose": null,
-    "change": 32.60004882812518,
-    "changePct": 1.2048656324218678,
+    "change": 31.90004882812491,
+    "changePct": 1.178994323236343,
     "expectedOpen": null,
     "valid": true
    }
@@ -14503,8 +14504,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T06:15:10.936Z",
-  "lastAttempt": "2026-11-27T06:15:10.936Z",
+  "asOf": "2026-11-27T06:30:09.975Z",
+  "lastAttempt": "2026-11-27T06:30:09.975Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15147,7 +15148,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T06:15:10.936Z",
+  "lastAttempt": "2026-11-27T06:30:09.975Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15408,7 +15409,7 @@
      {
       "hd": "Learn Why The Bull Case For Nvidia Stock Could Change Following CEO Reinstatement",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/learn-why-bull-case-nvidia-051409281.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=3b8fa1a5161f0d7f5892f27c549575d7b745cbdea20791e68dab73864b3367ba",
       "pub": "2026-11-27T05:14:09.000Z",
       "sum": "Nvidia reinstated founder Jensen Huang as CEO and president in late November while multiple US investigations into export controls, governance and disclosure practices continue. Kioxia also announced a collaboration with Nvidia to use SCADA software and high performance SSDs to extend effective GPU memory capacity to roughly 1.1 PB at rack scale. The Kioxia partnership around Nvidia’s Storage Next initiative highlights how the business is trying to tackle AI data bottlenecks at the system..."
      },
@@ -15422,21 +15423,21 @@
      {
       "hd": "Nvidia (NVDA) Stock Fair Value Falls After Analysts Reassess Leadership And Regulatory Risks",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-nvda-stock-fair-value-042301514.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a379bd04041b159f4371c933a2ede013632185a2d03e0a51c59c24b6a3543d67",
       "pub": "2026-11-27T04:23:01.000Z",
       "sum": "Analysts have reset their fair value estimate for Nvidia from about US$320 to about US$242, which marks a clear change in how the stock’s long term potential is being framed. This shift comes alongside fresh Street research that points to renewed confidence in Jensen Huang’s leadership and AI execution, while still flagging governance and regulatory risks that could influence how closely market prices track these updated targets. As you read on, you will see how these moving pieces fit..."
      },
      {
       "hd": "Singapore yet to confirm if Nvidia has halted advanced chip shipments- deputy PM",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/singapore-yet-confirm-nvidia-halted-041419330.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=348f382219f1104f8fc5b36e53be60dc502ff14ad3fbf6236f0cbd2651a2912c",
       "pub": "2026-11-27T04:14:19.000Z",
       "sum": "Investing.com-- Singapore has not yet confirmed whether Nvidia has stopped supplying advanced chips to the country, Deputy Prime Minister Gan Kim Yong said on Friday."
      },
      {
       "hd": "Neoclouds Told To Choose: Nvidia Chips Or Chinese Customers",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/articles/neoclouds-told-choose-nvidia-chips-041120920.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e496b0eed7ad050d8d9705cc8a700543994e5d8ec35be0c8e52fffc07e5d36a4",
       "pub": "2026-11-27T04:11:20.000Z",
       "sum": "Nvidia Corp. (NASDAQ:NVDA) chip sellers are reportedly barring neoclouds from buying GPUs if Chinese firms rent any capacity, after a Commerce Department rule restricting remote access to AI chips took effect Nov. 19. Commerce Rule Targets Remote Access Loophole Chip sellers relayed the message to neoclouds after the rule was announced Nov. 16, CNBC reported on Thursday, citing sources. Neoclouds are specialized cloud providers that rent out computing power built on graphics processing units (GP"
      },
@@ -15582,9 +15583,9 @@
      }
     ],
     "fetched": {
-     "Finnhub": 114,
-     "Yahoo": 7,
-     "Google News": 89,
+     "Finnhub": 116,
+     "Yahoo": 6,
+     "Google News": 88,
      "Nasdaq": 13,
      "Seeking Alpha": 25
     }
@@ -16141,15 +16142,15 @@
     ],
     "fetched": {
      "Finnhub": 145,
-     "Yahoo": 14,
-     "Google News": 57,
+     "Yahoo": 0,
+     "Google News": 49,
      "Nasdaq": 14,
      "Seeking Alpha": 21
     }
    }
   },
-  "asOf": "2026-11-27T05:30:11.564Z",
-  "lastAttempt": "2026-11-27T05:30:11.564Z",
+  "asOf": "2026-11-27T06:30:09.975Z",
+  "lastAttempt": "2026-11-27T06:30:09.975Z",
   "lastError": null
  },
  "worldNews": {
@@ -16160,6 +16161,13 @@
     "url": "https://abcnews.com/International/wireStory/main-issues-driving-spains-national-election-matter-europe-138476510",
     "pub": "2026-11-27T05:10:38.000Z",
     "sum": "Spain is to elect a new government on Sunday in a snap election that could unseat Prime Minister Pedro S&aacute;nchez"
+   },
+   {
+    "hd": "Chinese military tests new Taiwan landing tactics in coastal drills",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQRHU2ODhzTFRNUi1YM1VpRVZEZlg4MXFpaGxIZU5SZ2xxNVZFTWlFWHlITkJLNXhSendCb3RYckhpQkhqcDRVeDdRdVJWRl9WWnJWYlZvV2tMM1VaalU2SlRQQTRYNVZzc0Y2SVp0WmJKai1kN3NtSEU1MkxLSkhGN0M2TW9JOHFianYwZEtrNTE2NW81aGlLTWRpc18xd2hwUmI1XzdQVGxON0dJREhldE5R?oc=5",
+    "pub": "2026-11-27T04:36:00.000Z",
+    "sum": ""
    },
    {
     "hd": "Meet the rising mayoral candidate in Taiwan who's also sanctioned by China",
@@ -16176,21 +16184,28 @@
     "sum": ""
    },
    {
-    "hd": "Australia sanctions two alleged Iranian agents over antisemitic attacks",
+    "hd": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
+    "src": "CNBC",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOWXdZWk9aY1VrSmlEbExnWV93RnFxTDFwV3RLdjhtYW1SaXU0aXJCbGJBRUVOS0FramRyaVdva0VwUWRLQlBZdHcwYktUWVlwaEp4MTNEeUN3Y2Q1bi1RUG5TRTZoWlY0S2lFUVpqSVF3NzJQZ2hiUGFjU19LTW93cERfYzNNY3VKalHSAY8BQVVfeXFMTXlQSEhkZ20xOFJXTzlvczJPelo5S294dENlYTBpMzAxVHVxeHhFNUk3eHZVYVQzY0t6cWZ5T1hEYUdjbkc1SmROUVVTVWc4Mjdza3FYNXplRTE0Qk5NY1NyTTNwdEN6Z2JyWEJhOVRVd3RVOVRoTVlubGNUYTBsWS1zTkZ3czV6WThYWkk4RVU?oc=5",
+    "pub": "2026-11-27T03:30:00.000Z",
+    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
+   },
+   {
+    "hd": "Australia sanctions alleged Iranian agents suspected of directing antisemitic attacks",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSHBtblZnbWZBQUo5LVNGb2sxQkpHOFdJTGI0YlozM0YxUGh0bnZkLWZOeWJrMFBoX0h3aGNkTEtCVVA3Zjg0WEpuYi1MdjBEa2dKVDg3Rk5yWFJCNEs1NDFnYTRrVmpJeVQ1Y1lMR0daaDItcWczSEhzT3VfVTRxVno4Zm9HVGdTN2RDT2NtYmk5NlZqTGJnekNMSTI5dERMY1dZaFpFUy1IM01aVUFjbzI3MDEteXFNS2FvaEhFLTJhZnBvRTVRbzln?oc=5",
     "pub": "2026-11-27T03:17:00.000Z",
     "sum": ""
    },
    {
-    "hd": "Iran accused of carrying out drone attack killing 2 Italians in Kuwait",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-us-military-ai-weapons-oil/",
-    "pub": "2026-11-27T02:29:01.000Z",
-    "sum": "Iran denies being behind a deadly attack on a Kuwaiti military facility that killed two Italian nationals."
+    "hd": "Zelenskyy warns of major Russian attack as Trump urges Putin to ‘pull back’",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNUWhTZEtvSHh2TnVxc2VyZHdvaTFta0F0WGI4TTc3aHhIZzk0dV9iZXJSSGk0VEFDd3JQZ2puU3dERnlzc0h2TEdFcVVSaXhOZXVrTlN3MDBmZmZXUlFrQno0MDNWQ1dCU1hsTnVWYzBFOUlXRjQzd21CX3ExWmR1T1JDNEkyTm9yU2JZeW8waFFCTDI1cHB3cmFWXzNuemkyR3NRZ1hnMDdUZHVTOGpjN3U3MDA1QdIBuwFBVV95cUxOd242M2lqRVpQSGdGdEEyMk4wQWZzZjFPTnJBWXoxaURLaFdhUnZHQUpubzlVVTJzYWp2SUtRTVNKS1FhWG5TMGNLSlltVmdFZXNNdUEyUmx0THZ5aTdhQ1ZzTlFQaFJ1TThZY1B0MHpObS1YeGFxeFk4czg3aVZpRElDcVVnYTJjRDB4SjRXYlY4QzkxZ0V1SWNQZ3hnOXRaNWRLam5HdkxZRTF0NzFkWmxicmNEbWNodkxj?oc=5",
+    "pub": "2026-11-27T02:20:43.000Z",
+    "sum": ""
    },
    {
-    "hd": "Met Police ruined my life, says Kenyan man wrongly sentenced over attack on UK couple",
+    "hd": "Met Police ruined my life, says Kenyan man wrongly convicted over attack on UK couple",
     "src": "BBC News",
     "url": "https://www.bbc.co.uk/news/articles/cqvg2nlr8kd8o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-27T00:48:11.000Z",
@@ -16295,13 +16310,6 @@
     "sum": ""
    },
    {
-    "hd": "Two Italians Killed in Iranian Drone Attack on Kuwait, Officials Say",
-    "src": "The New York Times",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQzFiWi01aU5HaTlZaHd0THlxMFB6RTdtR1hpUGh1RHVuclpWOGxwNVJEdXFDXzN1LWpBOUpuWmEzR3c5VGp0SGYwajFLYm90eU9OM29VVkFWWlUtQWh4eUZiUHJQN2s4STBELUZfNVhOZHVfRVltRjZsVDloTFdwVUlTU0QyVmFBTHVfQzBBYV80aXhxREh0MzVydXcydw?oc=5",
-    "pub": "2026-11-26T19:33:06.000Z",
-    "sum": "The deaths follow a series of strikes on Gulf Arab states that host U.S. military facilities in recent weeks as talks to end the war continue to stall."
-   },
-   {
     "hd": "Germany arrests 2 Iraqis allegedly tied to Iran-linked terror group",
     "src": "CBS News",
     "url": "https://www.cbsnews.com/news/germany-arrests-iraqi-iran-linked-terror-suspects/",
@@ -16351,13 +16359,6 @@
     "sum": ""
    },
    {
-    "hd": "Iraq closes two border crossings in Kurdistan region with Syria and Iran",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPLXo4cXNsVjIzOVYyWnIxR1JOUjY5UUkzU0xCSXc2ampKcnhKajJ2VjdjWWdzSkY3QlV5Z0xNQkd1aUtKUWh6d19mMXlsTEc5RTk3T0NvbkJyM2Y4VWZ5bW9sRFhUX2Q4aGx5dGhLLXVLb0VDWDFaSGQ0eGZaZVRacTVlWkx1eVYwZEwwUWNSZEFpVGlQbVA5dkRGWXVmeHlpYzE5VFB3NVo5TzBmWHk1YXZjZmN2XzZjdS0w?oc=5",
-    "pub": "2026-11-26T17:32:41.000Z",
-    "sum": ""
-   },
-   {
     "hd": "Zelenskyy warns of imminent major Russian attack on Ukraine’s power grid",
     "src": "MS NOW",
     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQU2xzeTBscnBPTnIxN2luZDI2cDEzckRDSjJ3RjNpN3doTjh4N0pPNmlJY21YNkc5c29nOEd3Mm5KZjVaZDJMUkp2RHc3bXFyYmM4LVhtRUxiZ3hCWEZIcFZwVWJJeTBKLS1oMm1XeTNGVzdueTdhbmUzUUdRLUdONlNYVzdhLVFFa05TdWVNZTdQYlk?oc=5",
@@ -16381,8 +16382,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T05:30:11.564Z",
-  "lastAttempt": "2026-11-27T05:30:11.564Z",
+  "asOf": "2026-11-27T06:30:09.975Z",
+  "lastAttempt": "2026-11-27T06:30:09.975Z",
   "lastError": null
  }
 }
