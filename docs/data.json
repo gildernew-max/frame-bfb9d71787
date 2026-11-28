@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T00:45:11.651Z",
+ "generatedAt": "2026-11-28T01:00:10.900Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,12 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T00:45:11.651Z",
+  "at": "2026-11-28T01:00:10.900Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
-   "news",
-   "world",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14433,8 +14432,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T00:45:11.651Z",
-  "lastAttempt": "2026-11-28T00:45:11.651Z",
+  "asOf": "2026-11-28T01:00:10.900Z",
+  "lastAttempt": "2026-11-28T01:00:10.900Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14579,16 +14578,16 @@
     "id": "401856756",
     "start": "2026-11-28T00:30Z",
     "state": "in",
-    "status": "Q1 15:00",
+    "status": "Q1 9:44",
     "period": 1,
-    "clock": "15:00",
+    "clock": "9:44",
     "completed": false,
     "away": {
      "name": "Texas Longhorns",
      "short": "Texas",
      "id": "251",
      "abbrev": "TEX",
-     "score": "0",
+     "score": "3",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
      "record": "9-2",
      "winner": false,
@@ -15072,13 +15071,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T00:45:11.651Z",
-  "lastAttempt": "2026-11-28T00:45:11.651Z",
+  "asOf": "2026-11-28T01:00:10.900Z",
+  "lastAttempt": "2026-11-28T01:00:10.900Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T00:45:11.651Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-28T01:00:10.900Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15288,13 +15287,13 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-28T00:45:11.651Z",
-  "lastAttempt": "2026-11-28T00:45:11.651Z",
+  "asOf": "2026-11-28T01:00:10.900Z",
+  "lastAttempt": "2026-11-28T01:00:10.900Z",
   "items": {
    "NVDA": {
     "session": "post",
     "price": 149.8,
-    "time": 1795816500,
+    "time": 1795816799,
     "ref": 150.49,
     "refTime": 1795802400,
     "change": -0.6899999999999977,
@@ -15303,7 +15302,7 @@
    "TSLA": {
     "session": "post",
     "price": 398.85,
-    "time": 1795816500,
+    "time": 1795816786,
     "ref": 400,
     "refTime": 1795802400,
     "change": -1.1499999999999773,
@@ -15312,7 +15311,7 @@
    "SPCX": {
     "session": "post",
     "price": 132.63,
-    "time": 1795816500,
+    "time": 1795816789,
     "ref": 133.59,
     "refTime": 1795802400,
     "change": -0.960000000000008,
@@ -15321,7 +15320,7 @@
    "ANT": {
     "session": "post",
     "price": 91.4085,
-    "time": 1795816500,
+    "time": 1795816798,
     "ref": 91.88,
     "refTime": 1795802401,
     "change": -0.4714999999999918,
@@ -16162,6 +16161,13 @@
     "sum": "Ukrainian President Volodymyr Zelenskyy has expressed frustration with the U.S. approach to Russian leader Vladimir Putin"
    },
    {
+    "hd": "Estonia confirms closure of border with Russia from 1 December",
+    "src": "Euronews",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUGRvYVkyUzA3LVU1aXNTMUZNNGVyTWJsUU5oUWJJWTNhaEtIQXltdlZMSE41clhZcDNrMkRCTWM0REtrMFZoX3AzLUVSTER6NnB5VUpvVllGQUdsS1ZwQnI0MXZPNlExY3VzNEdHdlplbmVVRTM4UWVEcWJtZzJsTnFFWGM3SmtVTVNKa1NWQUdlSS1qejNVdDdkLVotMFk4ZDJBY1BVeUloMGh2aEF0aGc1YlpET3BORFVKS3hqdUg2R1JQ?oc=5",
+    "pub": "2026-11-27T18:48:22.000Z",
+    "sum": ""
+   },
+   {
     "hd": "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day",
     "src": "Fox News",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeDNxUmhfQTJHSHlfSlBjMjljTFEtaUJvdXpHQVROM08zYkMzRUluRHBlSnRkMzVMY3M1WmdYZXpCZjFxYUpteVRTczMzNHlxVm5ReTdTZTAtUkpLQnAxbjlOaDNVVlZYQUxkTVRrVVJORVdHSGhSZEJQUm9vRXE4Tm5fU19CcENJd0ZzVTRQVGhsVTZTQVVCU095Qm9DSDgzTWo1OFF1emNjLTlIUEdjNGRrcW5rSUxn0gG-AUFVX3lxTE9WanJuUmVjc3NDUUJtX1NOZXJVSm9GbXdKd3phb1RyZkppbnVERGczMEVwNW5NT3Y1WGd1bWlQRDdVMElxRjhCb1NGT1BHQXNmQ0tnbU1JRWdBeGhZNEY0MndWMzdVX0FvY2h2UXVOZkVHak1IRnY5R2ZFRWFMUEZYQ2Jyam9OZ01iaGc2cFNIT0IxZEdqVDVrdXFCX2MwRVhRZllwVXg3WVJxRU5rR3pxQlhKanpNTTJsY21keFE?oc=5",
@@ -16286,13 +16292,6 @@
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWVNIZ0d2OHBnRERBR05hTDN3ZVFtVnJWRXBVTmxrdTk1bHBSMjViVF9WY0N1eWdYSzFyRmdub09HWHRHT1dHMlRSZVJzeG5FX0J1N21rcnY2WXNUeWtBUUUwbTVJV21tYWMyU2wwczJKNHYwWjhzRFFQNnEwRmQ4ZzFERmstQjljODFYdmVGQzM3dTVzRklpakRoeHpWUzg?oc=5",
     "pub": "2026-11-27T12:53:58.000Z",
     "sum": ""
-   },
-   {
-    "hd": "India's Modi to revive parliament expansion bill tied to women's quota, sources say",
-    "src": "Reuters",
-    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaGVmSDBaZjd6MF8xcFA3WEZUTEItZ2sxLXVDaDVCbS03YUtRM2NWWGJkMnlLS2dJak11aGRucTJZREc2dE9heUt2bnV5NENmeS11SWRRbUtQaWdUeUpKV2V5VXZRdFRaUlJNUU9VZXpORmZVbGZjeWVKZXlEa3gzOU5Ha09lTERuMU5OSG56c1ljNXpPb0NkeG1Rbnd5aVR2eHFWZUxQU3l5N0lkdGFmb2o4aVlSRXB1dDlGdS1SRQ?oc=5",
-    "pub": "2026-11-27T12:00:50.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16311,8 +16310,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T00:30:11.196Z",
-  "lastAttempt": "2026-11-28T00:30:11.196Z",
+  "asOf": "2026-11-28T01:00:10.900Z",
+  "lastAttempt": "2026-11-28T01:00:10.900Z",
   "lastError": null
  }
 }
