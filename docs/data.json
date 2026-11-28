@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T12:15:17.138Z",
+ "generatedAt": "2026-11-28T12:30:12.276Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,10 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T12:15:17.138Z",
+  "at": "2026-11-28T12:30:12.276Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14430,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T12:15:17.138Z",
-  "lastAttempt": "2026-11-28T12:15:17.138Z",
+  "asOf": "2026-11-28T12:30:12.276Z",
+  "lastAttempt": "2026-11-28T12:30:12.276Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15074,7 +15075,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T12:15:17.138Z",
+  "lastAttempt": "2026-11-28T12:30:12.276Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15333,6 +15334,34 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Dan Ives Calls Nvidia’s China and Asia Exposure a “Containable 15% to 20%” of Revenue. Huang Faces Congress Next Week",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=0d00bc575c14380d87ae7565b7f3ae441f199cc1881b12ac4378c6dba1bdcdc2",
+      "pub": "2026-11-28T11:46:08.000Z",
+      "sum": "Key TakeawaysDan Ives called China and the Southeast Asia loophole a “containable” 15% to 20% of Nvidia’s revenue. Even after losing a fifth of its earnings, Nvidia would trade at about 13x, against a five-year average of 35x."
+     },
+     {
+      "hd": "Jensen Huang Returns To Nvidia, Musk Says 'The Mistake Has Been Corrected,' And Trump Weighs In: Mag 7 Voices This Week",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=7fd993fd0b9b21b987a8756f03a4a51f1e9bdd2e64fe266cd9e3abc8b14c887d",
+      "pub": "2026-11-28T11:30:00.000Z",
+      "sum": "Nvidia's board reinstated Jensen Huang as CEO on Monday, less than a week after its chair said the board did not intend to bring him back."
+     },
+     {
+      "hd": "Caterpillar Soars 10% in a Week as Jensen Huang’s Return Revives the AI Trade. Is It Still a Buy?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=4aaf584344f5c34c2a2a32f82c345d6d4ed1d4af05a2af2bd26b3db8021f1c42",
+      "pub": "2026-11-28T10:39:19.000Z",
+      "sum": "Key TakeawaysCaterpillar shares rose 10% in the past week after Nvidia reinstated Jensen Huang as CEO. Caterpillar trades with the AI power stocks, and its rivals GE Vernova and Cummins still report strong data-center power demand."
+     },
+     {
+      "hd": "Alibaba Soars 11% in a Week Even as the U.S. Blacklists Its Singapore Unit. Is the Bottom In?",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=36f71467cc66501afa858c41e21ca601225bbb3235d38a69e3f1e860752df894",
+      "pub": "2026-11-28T10:35:00.000Z",
+      "sum": "Key TakeawaysAlibaba stock rose 11% in the past week as Nvidia’s reinstatement of Jensen Huang lifted the Nasdaq and Beijing pledged to support Chinese stocks. The U."
+     },
+     {
       "hd": "Is Sandisk Stock a Buy After Kioxia and Nvidia Tested Flash Drives as Extra AI Memory?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=fe1c19063084d51e521b53e319c7ed70d1fd429dcd813321dbb95c644c568fe5",
@@ -15354,25 +15383,11 @@
       "sum": "Munster acknowledged that his own approach to the AI sell-off may have overlooked an important part of the market equation."
      },
      {
-      "hd": "Not Good: Nvidia Chips Turn Up at China Site Tied to Alice Huang. Its AA Rating Is at Risk",
+      "hd": "Trump says he talked Nvidia’s board into reinstating Jensen Huang. It’s not the first company he’s stepped into",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/not-good-nvidia-chips-turn-up-at-china-site-tied-to-alice-huang-its-aa-rating-is-at-risk?ref=yahoofinance&tlnk=yf-261128-w4jm7vpw&.tsrc=rss",
-      "pub": "2026-11-28T07:50:16.000Z",
-      "sum": "Key TakeawaysNvidia Blackwell chips, including a GB300 NVL72 rack, were reportedly installed at a Shanghai data center tied to Alice Huang. S&P said any downgrade of Nvidia’s AA rating would be limited to one notch unless disclosures show harm to its reputation or business prospects."
-     },
-     {
-      "hd": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a46a68518bed0c950e2470541846e5df8edb853b633ce9d915532a6ccd39be5b",
-      "pub": "2026-11-28T07:13:02.000Z",
-      "sum": "Ives argued that even a combination of adverse scenarios would not derail the AI revolution over the next several years."
-     },
-     {
-      "hd": "Why Delta Electronics Stock Is A Key AI Data Center Play Outside China",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=e9b0c619659f8ed96ccdc707ec39ef538d8fcffe36f6ca2b9612cd63ada1a0f9",
-      "pub": "2026-11-28T07:11:44.000Z",
-      "sum": "US export controls on Nvidia’s Blackwell chips were meant to draw a hard line on advanced AI compute flowing into China, yet the discovery of sanctioned hardware inside a Shanghai data center shows how porous that line can be. That leak matters for investors, because wherever rules tighten or loopholes appear, capital often follows. This article walks through three stocks exposed to that story and how the same news could help or hurt each one. The three stocks that follow are just a small..."
+      "url": "https://finnhub.io/api/news?id=c87258440195c79d519cf1f06e42f28ecf7794f2daa81dc7714d2b3f3d81613a",
+      "pub": "2026-11-28T08:32:00.000Z",
+      "sum": "From Intel to U.S. Steel, his administration is taking a bigger role in the private sector in what one expert calls \"chaotic state capitalism.\""
      },
      {
       "hd": "Jensen Huang’s Comeback Collides With Furious Lawmakers Demanding Answers",
@@ -15389,25 +15404,11 @@
       "sum": ""
      },
      {
-      "hd": "Nvidia And AI Infrastructure Stocks Worth Watching For Data Center Demand",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a9a053a963aa1265a9af8170b84df0ef7a8f33412b53b25b274faa707a988bbf",
-      "pub": "2026-11-28T06:10:03.000Z",
-      "sum": "Artificial intelligence infrastructure is back in the spotlight after Nvidia reinstated Jensen Huang as CEO, paired with a sharply higher long-term revenue outlook and huge FY 2027 numbers that have refocused attention on the plumbing behind AI. Investors who ignore the hardware and data center layer risk missing where a lot of value could concentrate. This article spotlights three stocks exposed to that same news story. The three stocks below are just a sample of the idea, and the full..."
-     },
-     {
       "hd": "The Other Nvidia Romance With an Executive at a Company Linked to China",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM2JKcnNFYk5jM09EUEZXNjdqZ1N6V05CbnNQR1gzd09nUlhzRVpTSlM4ZjM4SG1uVXExci1OWWdCY05oNkpTOVFjbzk5amIyeHNzdHNpejM1THVZNFdYVWw5dGx3MFF6YndNbGVnN0dTbHNuVDdSSlQwVWl4MDRadXVxbkJyV0FnVEhjNDlVN21JRDVKRkpGeQ?oc=5",
       "pub": "2026-11-28T05:45:59.000Z",
       "sum": ""
-     },
-     {
-      "hd": "NVDA Stock Could Hit A Bottom Next Week As Jensen Huang Faces Congress, Says Analyst — 'I Would Buy It With Both Hands'",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f974e5a64409cddbc3144b8f79af1a179a60d32c04bc1b8fa5e0a490f793c0f4",
-      "pub": "2026-11-28T05:31:54.000Z",
-      "sum": "During an interview with CNBC, Freedom Capital Markets’ Paul Meeks said he believes the recent pessimism could present a buying opportunity."
      },
      {
       "hd": "Nvidia: If You Didn't Sell Before The Jensen Huang Drama, It's Too Late Now",
@@ -15509,15 +15510,22 @@
      }
     ],
     "fetched": {
-     "Finnhub": 102,
-     "Yahoo": 6,
-     "Google News": 84,
+     "Finnhub": 100,
+     "Yahoo": 5,
+     "Google News": 86,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "History Says What Tesla Stock Does After Its Annual Meeting. This Year's Is Dec. 3.",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=287e33002071f747dcc2808dd9adc60f279be2591c31c58fffa795ce3777fa16",
+      "pub": "2026-11-28T11:43:02.000Z",
+      "sum": "The stock has usually dropped the day after the vote. But is the meeting what moved it?"
+     },
      {
       "hd": "Tesla Stock And Other Tariff Protected Manufacturers Investors Are Watching",
       "src": "Yahoo Finance",
@@ -15580,13 +15588,6 @@
       "url": "https://www.nasdaq.com/articles/tesla-reportedly-plans-acquire-german-manufacturing-systems-supplier-emag",
       "pub": "2026-11-27T16:24:57.000Z",
       "sum": "(RTTNews) - Tesla, Inc. (TSLA) has submitted plans to acquire German manufacturing systems supplier EMAG, according to a filing with Germany's antitrust authority, as reported by multiple media outlets."
-     },
-     {
-      "hd": "XPENG Maps Out 2027 Robotaxi Launch and Mass Production of IRON Humanoid Robot",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=dfec6a72fda3a1b4da62d7550839b4fbd1e5a8b57f61e10610668001ccfdcc25",
-      "pub": "2026-11-27T15:12:39.000Z",
-      "sum": "XPENG (NYSE:XPEV) outlined plans to expand its driver-assistance technology, introduce a robotaxi for partners in 2027 and begin mass production of its IRON humanoid robot, as the company described a broader push to integrate artificial intelligence with physical hardware. At the company’s AI Day,"
      },
      {
       "hd": "Tesla Faces Crucial Dec. 15 EU Vote on Self-Driving Tech After Months of Regulatory Delays: Here’s What Elon Musk-Led EV Giant Needs",
@@ -15695,8 +15696,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 151,
-     "Yahoo": 11,
+     "Finnhub": 150,
+     "Yahoo": 12,
      "Google News": 9,
      "Nasdaq": 8,
      "Seeking Alpha": 8
@@ -15704,6 +15705,20 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=e6c5965a6cbe6cca1b6307ae1bb39a6e7885473eabced27cf44c71efb1f1d22f",
+      "pub": "2026-11-28T11:05:18.000Z",
+      "sum": "Key TakeawaysAtreides’ Gavin Baker says Grok Bot gave him “much better versions” of his Claude Code builds in minutes, and Elon Musk boosted the clip. That puts SpaceX’s Grok Bot against Claude Code, a big part of Anthropic’s IPO pitch."
+     },
+     {
+      "hd": "Musk says Google is interested in renting more computing capacity from SpaceX",
+      "src": "CNBC",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVW43NnQ4b1RjWWJMaTR2Sm1uTGlJZFREQlNac0daSUJ1S2hKV1hTWTJwWWRzam9wN1lZdDR5dlQ1OG1uZl93V2xYenB1eDktWFJxakNoZnQta1JkeHpPSk5RaGlHOG41cW9QbzY3NE9UYTlvT1Z6ekZpM0FYcXZINXlWdWlOV25scUVwUHZoX3d5RW5mRlFpRVh2dENlTVZpTVdoT0p30gGrAUFVX3lxTE01aHBUMHB5SzRvWk5mMXgtNXNrM1JGTHNHMEl1YVVVVzFqcmoyT0xsaWdSMFNwNkhoeFFHcEtVRFdaZk0yZXdGUUVoTUVKQ01TLUtNMFpPbS1aWUxPMFhrZ3BoVVZ6dlZwZkRiT1lVcnE2U0l0bjdQdXZUZG9mUTVSVmQ1VndCVjdFTWlJV0hmV01yTU9RVkVFdzJQQXhZYmtYT050NFE0ekpVSQ?oc=5",
+      "pub": "2026-11-28T10:50:44.000Z",
+      "sum": ""
+     },
      {
       "hd": "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers",
       "src": "WSJ",
@@ -15719,13 +15734,6 @@
       "sum": "SpaceX (SPCX) stock is a sell, as its $1.71 trillion valuation leaves little margin of safety, with $48.1 billion in nine-month capex adding funding risk."
      },
      {
-      "hd": "Musk says Google is interested in renting more computing capacity from SpaceX",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNYVpCZ09wSmxscjVrdGlzSlp3RkN6bXBWY1dmaTlWcUFMamp2MVVDLXRGSG5PakRfT1ZJYUI1dWVtbHlKZXVFMlZ0N3doYVBScXBObXVMeEEwTGxpdWVWWjhNN1hjZXUtZ01WdHBZOGpSZDh4bHFIUjdqSW0zc2lXMHdEMXNCZE83WFQ4bUczTS1HWGdQRFdNU2Y1OGtFQVpySnFGSkdzYnNTSHFxSzFSYW5WSmhveTk4RHliaDRNV1l1ZDVDZHRj?oc=5",
-      "pub": "2026-11-28T09:19:43.000Z",
-      "sum": ""
-     },
-     {
       "hd": "SpaceX After Its First Profit: 20x Ebitda And A 41% Cost Edge",
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4972724-spacex-after-its-first-profit-20x-ebitda-and-a-41-percent-cost-edge?source=feed_symbol_SPCX",
@@ -15735,7 +15743,7 @@
      {
       "hd": "Musk Will Give Every U.S. Child a SpaceX Share “Every Year.” That’s About $9 Billion a Year at Today’s Price",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/musk-will-give-every-u-s-child-a-spacex-share-every-year-thats-about-9-billion-a-year-at-todays-price?ref=yahoofinance&tlnk=yf-261128-rwrp49gh&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=d78dbf01c4c1dbc75db6f7aacb8051a2f0fb305abe965bceda9437d4e5dc4f19",
       "pub": "2026-11-28T07:52:18.000Z",
       "sum": "Key TakeawaysElon Musk says he’ll give a SpaceX share to every child in America every year, about $9 billion of stock a year at today’s price. The pledge costs SpaceX shareholders little: Musk’s shares come out of his own stake, and the company’s one-time share adds at most about 0."
      },
@@ -15794,13 +15802,6 @@
       "url": "https://finnhub.io/api/news?id=b8662ce9fbd9bd9ec9c2bf6f2a7c453d6ab05570c641e66cfcbffcd3b80119e6",
       "pub": "2026-11-27T23:20:02.000Z",
       "sum": "Key TakeawaysOne of Texas’s first data-center permits since its freeze went to the gas plant powering SpaceX’s $24 billion Starbase campus, ahead of Governor-elect Gina Hinojosa, who plans to halt approvals when she takes office in January. Starbase’s own gas plant keeps it off the public grid."
-     },
-     {
-      "hd": "SpaceX Stocks Climb 2.74% as FCC Clears One Million AI Satellites",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=ec36f66bfc106e89b0bcc4e6941d5f6963c5e43eb790bab6f2c551fe14fe7abb",
-      "pub": "2026-11-27T19:22:36.000Z",
-      "sum": "The Starmind approval opens a regulatory path to orbital data centers, with a first launch targeted for the third quarter of 2027."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15881,7 +15882,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 182,
+     "Finnhub": 183,
      "Yahoo": 13,
      "Google News": 21,
      "Nasdaq": 0,
@@ -15890,6 +15891,27 @@
    },
    "ANT": {
     "items": [
+     {
+      "hd": "Bad News for Anthropic: OpenAI Nearly Matches Claude Opus 5.5 at “Under a Fifth of the Cost,” per SemiAnalysis",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/bad-news-for-anthropic-openai-nearly-matches-claude-opus-5-5-at-under-a-fifth-of-the-cost-per-semianalysis?ref=yahoofinance&tlnk=yf-261128-f8c3h2j5&.tsrc=rss",
+      "pub": "2026-11-28T12:05:26.000Z",
+      "sum": "Key TakeawaysOn SemiAnalysis’s GDPx benchmark, OpenAI’s GPT-6. 2 Sol scored within half a point of Anthropic’s Claude Opus 5."
+     },
+     {
+      "hd": "Here's What $1,000 Invested in Anthropic Could Be Worth by 2030",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/28/heres-what-1000-invested-in-anthropic-could-be-wor/?.tsrc=rss",
+      "pub": "2026-11-28T11:33:00.000Z",
+      "sum": "What comes next for this AI giant?"
+     },
+     {
+      "hd": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/gavin-baker-got-much-better-versions-of-his-claude-code-builds-from-grok-bot-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261128-fvq3f97r&.tsrc=rss",
+      "pub": "2026-11-28T11:05:18.000Z",
+      "sum": "Key TakeawaysAtreides’ Gavin Baker says Grok Bot gave him “much better versions” of his Claude Code builds in minutes, and Elon Musk boosted the clip. That puts SpaceX’s Grok Bot against Claude Code, a big part of Anthropic’s IPO pitch."
+     },
      {
       "hd": "Here's Why Anthropic Stock Rallied on Friday -- and Why Wall Street Analysts Say It's Still a Buy Right Now",
       "src": "Yahoo Finance",
@@ -15938,27 +15960,6 @@
       "url": "https://finnhub.io/api/news?id=45fe0f94a62bb8ea6559bbc261c84c4d971eea94b0cdb7935b65646f2849927f",
       "pub": "2026-11-27T19:51:11.000Z",
       "sum": "Shares reclaim the $83 offer price after Anthropic detailed a Rust rebuild that cut CPU use per API request by about 70%."
-     },
-     {
-      "hd": "This Anthropic Collar Options Strategy Wins Whether the Stock Goes Up or Down",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=5c9c61a143a061cae4dd3a7ab3f55a95a2547aca4985022d10f81a6e459dcf4d",
-      "pub": "2026-11-27T19:34:10.000Z",
-      "sum": "I promised to look at a potential Anthropic collar trade once options became available, and I found what I was looking for."
-     },
-     {
-      "hd": "Anthropic Gets a Blockbuster IPO; Take-Two Gets a Blockbuster GTA VI Release",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=66f90296e61c072d81163e321f41d9df5422a04d3d3790ea02b1febb04aa37c8",
-      "pub": "2026-11-27T19:19:02.000Z",
-      "sum": "What was initially targeted to be an $80 billion raise ended up being a $100 billion capital raise, the largest in history (so far)."
-     },
-     {
-      "hd": "ANT Stock Ends First Full Week Of Trading Around 11% Above IPO Price: Lockup Expiry, Nasdaq 100 Entry Loom",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=6dc7c92350920efcab193e06a73dfa7208d086468d373aa5dbe1591545690c96",
-      "pub": "2026-11-27T18:57:52.000Z",
-      "sum": "Anthropic shares climbed back above their $83 offering price on Friday as broader tech sentiment rebounded after a turbulent first week of public trading."
      },
      {
       "hd": "Anthropic Shares Jump After Volatile First Week Since IPO",
@@ -16068,15 +16069,15 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 10,
-     "Google News": 40,
+     "Yahoo": 11,
+     "Google News": 43,
      "Nasdaq": 12,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T11:30:12.008Z",
-  "lastAttempt": "2026-11-28T11:30:12.008Z",
+  "asOf": "2026-11-28T12:30:12.276Z",
+  "lastAttempt": "2026-11-28T12:30:12.276Z",
   "lastError": null
  },
  "worldNews": {
@@ -16159,9 +16160,9 @@
     "sum": ""
    },
    {
-    "hd": "Eight killed in Peruvian military helicopter crash on rescue mission",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1qY1VXdXNtSDFOdlhwV3pmREUyZVJYWGpyVDV6TWZMTWU1dVFOQnJLRXdRUVlrdm1BZHI2djRTaXRBQVhIWHJyM3F2UmJUVEhUcjgyeE92YTJqYVU?oc=5",
+    "hd": "Eight killed in Peruvian military helicopter crash",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cwp9d85mlp88o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-28T04:19:16.000Z",
     "sum": "The pilot was the sole survivor of the crash during a rescue mission in a remote area known for drug trafficking."
    },
@@ -16250,7 +16251,7 @@
     "sum": ""
    },
    {
-    "hd": "Pentagon committed $81 million to Guantanamo migrant mission that held just 849 people",
+    "hd": "Pentagon committed $81 million to Guantanamo migrant mission that held just 849 people | CNN Politics",
     "src": "CNN",
     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV1BuWE1yT3pIUnUzZlUzTDRHeElCaG1KUTFzZndSVGpLMzBhZUdRWVJyRzN2djE1M2hFUVRjTGptUU5QSHdoeUhWQWg2SkxtWms5S3ZpQ2JTZ2FkQXRrdEZPUHBLMWUwTm8yV0VRV2l4dHJiTnBuOXRBckFnS1JVTnd6VWZiMTVvbEV5TUVfbVJYOWVGU2RxaTM0cE8?oc=5",
     "pub": "2026-11-27T21:46:31.000Z",
@@ -16308,8 +16309,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T12:00:18.608Z",
-  "lastAttempt": "2026-11-28T12:00:18.608Z",
+  "asOf": "2026-11-28T12:30:12.276Z",
+  "lastAttempt": "2026-11-28T12:30:12.276Z",
   "lastError": null
  }
 }
