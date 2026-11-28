@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T04:15:14.520Z",
+ "generatedAt": "2026-11-28T04:30:11.353Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,11 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T04:15:14.520Z",
+  "at": "2026-11-28T04:30:11.353Z",
   "ran": [
-   "weather",
    "alerts",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14431,8 +14432,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T04:15:14.520Z",
-  "lastAttempt": "2026-11-28T04:15:14.520Z",
+  "asOf": "2026-11-28T04:30:11.353Z",
+  "lastAttempt": "2026-11-28T04:30:11.353Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14478,9 +14479,9 @@
     "id": "401856880",
     "start": "2026-11-28T02:00Z",
     "state": "in",
-    "status": "Q3 13:42",
+    "status": "Q3 8:08",
     "period": 3,
-    "clock": "13:42",
+    "clock": "8:08",
     "completed": false,
     "away": {
      "name": "West Virginia Mountaineers",
@@ -14499,7 +14500,7 @@
      "short": "Utah",
      "id": "254",
      "abbrev": "UTAH",
-     "score": "45",
+     "score": "52",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
      "record": "11-0",
      "winner": false,
@@ -15070,12 +15071,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T04:15:14.520Z",
-  "lastAttempt": "2026-11-28T04:15:14.520Z",
+  "asOf": "2026-11-28T04:30:11.353Z",
+  "lastAttempt": "2026-11-28T04:30:11.353Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T04:15:14.520Z",
+  "lastAttempt": "2026-11-28T04:30:11.353Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15336,7 +15337,7 @@
      {
       "hd": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/27/nvidia-stock-has-swung-5-or-more-in-a-single-day-5-times-in-november-here-s-how-big-a-position-i-think-makes-sense/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=f97997723386d88a9c7bb62e87e71611a60ced291cf5b2fd34d5202b15e17fe0",
       "pub": "2026-11-28T03:13:02.000Z",
       "sum": "The chip giant's profits more than doubled last quarter, but its stock shed over a quarter of its value in November."
      },
@@ -15706,6 +15707,13 @@
    "SPCX": {
     "items": [
      {
+      "hd": "How Starlink Limits Force Ukraine to Fight With the Brakes On",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV3ozNExRZWVIMXV6bkRTZFhxSDBOX2hfLTJDbHlzOGpUQXVtRVB5ZVZzXzBpRzVGbDd3UzhHbUROZlQ0UVNrV2VLNGFuRjVGdGVBWUNsNFZBRXFWOU1BZ2czTlJ2bWFWNVNJa3RPM29JTXREQ3pyeWhYWUlaa004RFlFeThpdWUtSERROHFUVW5yTktIUjRsY0JuRHM?oc=5",
+      "pub": "2026-11-28T03:00:00.000Z",
+      "sum": ""
+     },
+     {
       "hd": "SpaceX satellites could outnumber stars in the night sky, block study of the universe — FCC says that's not our problem",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=a0b7545b0e10860c3110694b3a75116953e6e9551a1bf6aca4d43232a6d5ffe7",
@@ -15872,19 +15880,12 @@
       "url": "https://finnhub.io/api/news?id=b6d929daa486d37ba47ddaf119bbb31d1d0ef0d49e0569b06e9e5f8c9f176013",
       "pub": "2026-11-26T09:00:00.000Z",
       "sum": "Anthropic faces a lockup-related supply overhang, approximately $900 billion in future spending commitments, and a likely non-investment-grade debt rating."
-     },
-     {
-      "hd": "Taking on Starlink: Europe’s largest satellite factory opens in push to rival Musk",
-      "src": "CNBC",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOZm9uV2s2WngtTGYzQ000dWdaTnlsbzV4Tzc2TmprcDg5M1JXTWxoYU1PXzBqZlM0WkFjYl9SYTI1V2VFUE9aSlA2cXlJeEw2RlhiMHZmelZlVkx6aW1lbHFVODBvNXhfSmwzV2x6LVlLankzQk85SE5rUDJuNjNac2Y2Qncxdy1VdWduNm1B0gGTAUFVX3lxTE9jWGxXRXdzR1pPZU9QLVVvOG9KblpoQmlEV1FKeWlVRFNkczhwMU5YVnk3T3RFNWRPdmtFREdIQXh3SDh3WTNOUU9KRHlhekxWNnRaY2JodXhoY2Z4TmFjUzVvOERNOW9PRlI3MU9pUDlqSndKT0xzTGR4akdkZEVmd2N1YndSbXI1VVlYazJzRGdaQQ?oc=5",
-      "pub": "2026-11-26T07:45:05.000Z",
-      "sum": ""
      }
     ],
     "fetched": {
      "Finnhub": 179,
-     "Yahoo": 10,
-     "Google News": 19,
+     "Yahoo": 9,
+     "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 9
     }
@@ -16069,15 +16070,15 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 0,
-     "Google News": 44,
+     "Yahoo": 11,
+     "Google News": 45,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T03:30:17.934Z",
-  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "asOf": "2026-11-28T04:30:11.353Z",
+  "lastAttempt": "2026-11-28T04:30:11.353Z",
   "lastError": null
  },
  "worldNews": {
@@ -16086,14 +16087,28 @@
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
-    "pub": "2026-11-28T03:01:15.000Z",
+    "pub": "2026-11-28T03:58:33.000Z",
     "sum": ""
+   },
+   {
+    "hd": "Taiwan holds elections to choose mayors and other local leaders as China looks on",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSEJHN0tUWVBOd3BrNkpaTm1EaHlTeXp1aDZBZnJ1aUdEbkNVUUJJTXdJbFNXVHhLUWJwNUpRV3lUdEZTUl9Kbi1LWkhlWjBmRUdVRlNQQTVOb3JhWW5sb0pVUklXNXlndFJ2VXRNZnF1WENxMXJjTGN3RHJ4d0FreGRZdzN0ZWQ4WVE?oc=5",
+    "pub": "2026-11-28T03:14:00.000Z",
+    "sum": "Taiwan is holding elections across its 22 cities and counties for mayors, council members and other local leaders"
    },
    {
     "hd": "A Handgun on His Hip, Colombia’s New President Turns Drug War Into Theater",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWGl5OUZtUUp6NzdlNjQwUWt2bVAtVFJVdGdYNTVfNFdoeHVGXzRiXzZIVTZheERsZkY3YlpmSTVyTlBWak1MbnhZT3duZ3NsQ3pkQ0MxbWlaTTR3S0Z4LUtQdW5ZTVZta0tXSlQzbnU1MWE4QmMtSjBEWVZPUFhkRjdoTndBem41UjhPWmlOVkd6U2JEWVl1VlBaek1mQnc?oc=5",
     "pub": "2026-11-28T03:00:19.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Iranian Girl, 14, Beaten To Death By Husband Days After Giving Birth For Asking To Visit Family",
+    "src": "NDTV",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPaG5EbEN5SEVYSWRkSjBNNndzT2lfaTVTZFIxQTMyQTE3UUJYXzMxRGxQRXE3WEFxOE5vc3JDSy03eDEzRmpadzJXTlhwSFpMYWVrYW9FeGd5ZThoS0FXUkd3Mk00QlFidnd6a1pRYXFKaG5CeVo4Zk9YcjdaSGgxb1FGZVFHbGJMMEhXYThzZXAtSVhvM09NaGxleHczSElBWWVHTTBMNF9SUTlWUjUtQkF1MkZsQVAzR3JseVZBTlJLcmVLSDczbFJwbFdIazTSAdcBQVVfeXFMT3BwWU13N0E0cVpfRHRMeEc2WmVnNXlNSkNlSzNRd2d5bk5XQ1dWNnNqbFp6akZxYzRIM29oYWkxUXdoTWpwS2J6Wmh2cXV1Tl83RlBjTC16TlBNRk9KVUxHU3E1enNraTBJdldxRU9tVEZYV0o5STB1c3JwRnh4MU5yS25qSThwelN2c3hwbW51M254M0ZqNHJRaGFhT2VMSXZKX2tUaUJzcjJCXzZVNGdXODlTMXR2b0cxOU5yMHFXYXoxNURuZ05oLXlUMGtnS1NuZk5nVmc?oc=5",
+    "pub": "2026-11-28T02:16:04.000Z",
     "sum": ""
    },
    {
@@ -16104,13 +16119,6 @@
     "sum": ""
    },
    {
-    "hd": "Taiwan holds elections to choose mayors and other local leaders",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSEJHN0tUWVBOd3BrNkpaTm1EaHlTeXp1aDZBZnJ1aUdEbkNVUUJJTXdJbFNXVHhLUWJwNUpRV3lUdEZTUl9Kbi1LWkhlWjBmRUdVRlNQQTVOb3JhWW5sb0pVUklXNXlndFJ2VXRNZnF1WENxMXJjTGN3RHJ4d0FreGRZdzN0ZWQ4WVE?oc=5",
-    "pub": "2026-11-28T00:19:00.000Z",
-    "sum": "Taiwan is holding elections across its 22 cities and counties for mayors, council members and other local leaders"
-   },
-   {
     "hd": "Polls open across Taiwan in closely watched local elections",
     "src": "ABC News",
     "url": "https://abcnews.com/International/wireStory/taiwan-holds-elections-choose-mayors-local-leaders-138489345",
@@ -16118,7 +16126,7 @@
     "sum": ""
    },
    {
-    "hd": "Taiwan votes in key local elections as China looks on",
+    "hd": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPd0hYazFSNFdJenpCQmdWUUh0cUZOTHhJWm5hYnB4ampiMXJRamNxVGtST2NuTV9rS2hjUHFUWElIUjhtX3VlZFlWTkpBOWh5SmJkNGdJd1VFVFFWSmR4LURfQUx0ZDVmWnk3MEpuc3hMN0QwaXFwYnZMc3kteEJpWUduWWNITVkwNTJGaGVRSWdHNVNyNjhn?oc=5",
     "pub": "2026-11-28T00:01:00.000Z",
@@ -16284,13 +16292,6 @@
     "url": "https://abcnews.com/International/wireStory/armed-group-kills-13-soldiers-western-niger-attack-138477943",
     "pub": "2026-11-27T15:22:46.000Z",
     "sum": "Armed men killed 13 members of Niger’s National Guard and wounded 20 others in an attack on an outpost in western Niger, the country’s defense ministry said"
-   },
-   {
-    "hd": "Houthis report 11 killed, including children, in an airstrike, and other Mideast news",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/houthis-report-11-killed-including-children-airstrike-mideast-138478032",
-    "pub": "2026-11-27T15:14:20.000Z",
-    "sum": "Houthi rebels say an airstrike in southwestern Yemen has killed at least 11 people, including children"
    }
   ],
   "feeds": [
@@ -16309,8 +16310,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T03:30:17.934Z",
-  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "asOf": "2026-11-28T04:30:11.353Z",
+  "lastAttempt": "2026-11-28T04:30:11.353Z",
   "lastError": null
  }
 }
