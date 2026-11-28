@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T07:00:11.358Z",
+ "generatedAt": "2026-11-28T07:15:14.517Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -11,15 +11,15 @@
     "tz": "America/New_York",
     "now": {
      "temp": 39,
-     "i": "partly",
-     "cond": "Mostly Clear",
-     "windMph": 7,
-     "windDir": "W",
-     "observed": "2026-11-28T05:45:00+00:00"
+     "i": "sun",
+     "cond": "Clear",
+     "windMph": 6,
+     "windDir": "WSW",
+     "observed": "2026-11-28T06:50:00+00:00"
     },
     "today": {
      "h": 61,
-     "l": 41,
+     "l": 35,
      "sunrise": "07:21",
      "sunset": "17:30"
     },
@@ -28,16 +28,16 @@
       "date": "2026-11-29",
       "d": "Sun",
       "i": "rain",
-      "text": "Partly Sunny then Showers And Thunderstorms",
+      "text": "Partly Sunny then Chance Rain Showers",
       "h": 66,
-      "l": 41
+      "l": 44
      },
      {
       "date": "2026-11-30",
       "d": "Mon",
       "i": "partly",
-      "text": "Mostly Sunny",
-      "h": 57,
+      "text": "Partly Sunny",
+      "h": 56,
       "l": 37
      },
      {
@@ -45,8 +45,8 @@
       "d": "Tue",
       "i": "sun",
       "text": "Sunny",
-      "h": 59,
-      "l": 41
+      "h": 60,
+      "l": 39
      }
     ]
    },
@@ -58,8 +58,8 @@
      "i": "sun",
      "cond": "Clear",
      "windMph": 5,
-     "windDir": "S",
-     "observed": "2026-11-28T05:45:00+00:00"
+     "windDir": "SSE",
+     "observed": "2026-11-28T06:50:00+00:00"
     },
     "today": {
      "h": 48,
@@ -74,7 +74,7 @@
       "i": "cloud",
       "text": "Mostly Cloudy",
       "h": 36,
-      "l": 24
+      "l": 22
      },
      {
       "date": "2026-11-30",
@@ -90,13 +90,13 @@
       "i": "partly",
       "text": "Partly Sunny",
       "h": 44,
-      "l": 33
+      "l": 30
      }
     ]
    }
   },
-  "asOf": "2026-11-28T06:15:23.377Z",
-  "lastAttempt": "2026-11-28T06:15:23.377Z",
+  "asOf": "2026-11-28T07:15:14.517Z",
+  "lastAttempt": "2026-11-28T07:15:14.517Z",
   "note": "Open-Meteo failed: fetch failed (UND_ERR_CONNECT_TIMEOUT)",
   "lastError": null
  },
@@ -7195,8 +7195,9 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T07:00:11.358Z",
+  "at": "2026-11-28T07:15:14.517Z",
   "ran": [
+   "weather",
    "alerts",
    "usTempGrid"
   ]
@@ -14122,8 +14123,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T07:00:11.358Z",
-  "lastAttempt": "2026-11-28T07:00:11.358Z",
+  "asOf": "2026-11-28T07:15:14.517Z",
+  "lastAttempt": "2026-11-28T07:15:14.517Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14766,8 +14767,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T07:00:11.358Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-28T07:15:14.517Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
