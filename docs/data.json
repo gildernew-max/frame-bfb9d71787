@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T00:15:15.042Z",
+ "generatedAt": "2026-11-28T00:30:11.196Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,11 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T00:15:15.042Z",
+  "at": "2026-11-28T00:30:11.196Z",
   "ran": [
-   "weather",
    "alerts",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14432,8 +14433,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T00:15:15.042Z",
-  "lastAttempt": "2026-11-28T00:15:15.042Z",
+  "asOf": "2026-11-28T00:30:11.196Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15071,12 +15072,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T00:15:15.042Z",
-  "lastAttempt": "2026-11-28T00:15:15.042Z",
+  "asOf": "2026-11-28T00:30:11.196Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T00:15:15.042Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15287,8 +15288,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-28T00:15:15.042Z",
-  "lastAttempt": "2026-11-28T00:15:15.042Z",
+  "asOf": "2026-11-28T00:30:11.196Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15334,6 +15335,13 @@
   "tickers": {
    "NVDA": {
     "items": [
+     {
+      "hd": "Nvidia chips on sale for $3M in China — as Jensen Huang scandal and US crackdown chokes supply",
+      "src": "Yahoo Finance",
+      "url": "https://nypost.com/2026/11/27/tech/chinese-ads-selling-banned-nvidia-servers-for-3m-as-jensen-huang-scandal-chokes-supply-market-is-crazy/?.tsrc=rss",
+      "pub": "2026-11-27T21:18:40.000Z",
+      "sum": "Chinese videos are advertising banned Nvidia chips for sale at $3 million apiece, more than five times the US price. Prices have spiked amid a crackdown by both Washington and..."
+     },
      {
       "hd": "Jensen Huang Is Back. Nvidia’s (NVDA) Bull Case Remains",
       "src": "Yahoo Finance",
@@ -15396,13 +15404,6 @@
       "url": "https://finance.yahoo.com/m/6af34eed-47a9-34c0-aebc-a1a78d458605/nvidia-stock-wavers-on.html?.tsrc=rss",
       "pub": "2026-11-27T18:21:17.000Z",
       "sum": "Nvidia stock wavered Friday as investors worried about negative headlines for the AI chipmaker."
-     },
-     {
-      "hd": "SanDisk Stocks Jump 12.85% After Kioxia and Nvidia Stretch GPU Memory With SSDs",
-      "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/sandisk-stocks-jump-12-85-181316890.html?.tsrc=rss",
-      "pub": "2026-11-27T18:13:16.000Z",
-      "sum": "A proof of concept used 144 Kioxia SSDs in an Nvidia GB200 rack to reach about 1.1 petabytes of extended memory."
      },
      {
       "hd": "Dow Movers: NVDA, HONIV",
@@ -15511,15 +15512,29 @@
      }
     ],
     "fetched": {
-     "Finnhub": 104,
-     "Yahoo": 5,
-     "Google News": 85,
+     "Finnhub": 103,
+     "Yahoo": 6,
+     "Google News": 84,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
    },
    "TSLA": {
     "items": [
+     {
+      "hd": "Zero To Sixty: Tesla Cybercab Fleet Tops 1,000 In Texas, Lucid Starts Fully Driverless Tests And Chinese EV Maker Posts Stronger Margins",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/zero-to-sixty-tesla-cybercab-fleet-tops-1-000-in-texas-lucid-starts-fully-driverless-tests-and-chinese-ev-maker-posts-stronger-margins/cNRRKv9R9Vl?.tsrc=rss",
+      "pub": "2026-11-28T00:12:27.000Z",
+      "sum": "Tesla’s Cybercab fleet topped 1,000 units in Texas as it expanded in Dallas, while Lucid began fully driverless testing and U.S.-listed Chinese EV makers reported improving margins and modest growth outlooks."
+     },
+     {
+      "hd": "S&P 500, Nasdaq End Best Week In Over A Year As AI Optimism Makes Comeback — VZ, ANT, ADBE, TSLA In Focus",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/s-and-p-500-nasdaq-end-best-week-in-over-a-year-as-ai-optimism-makes-comeback/cNb6EtcR9VK?.tsrc=rss",
+      "pub": "2026-11-27T21:29:46.000Z",
+      "sum": "Meanwhile, the Dow Jones index recorded its best week since October 2022."
+     },
      {
       "hd": "TSLA Stock Clocks Best Week In 18 Months: Tesla Reportedly Eyes Buying German Toolmaker Amid Cybercab, Optimus Scaling Plans",
       "src": "Yahoo Finance",
@@ -15575,20 +15590,6 @@
       "url": "https://finnhub.io/api/news?id=d69369fa7e4f13e57ca523452239620d2d5bdd59a7e8bc461c5962a8d5e05108",
       "pub": "2026-11-27T11:04:48.000Z",
       "sum": "The fund sold $149.6 million of stock, cutting 33 positions and adding none, with Tesla and SpaceX the largest reductions."
-     },
-     {
-      "hd": "Elon Musk Hopes All Teslas Will Get SpaceX’s Starlink Connectivity—Except in China, Where It’s ‘Illegal’: Says It Will Be Key for Unsupervised FSD",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=4bdc9f666d249d37446dbced1e7a12c600f06464695c41040e42e6a562f27525",
-      "pub": "2026-11-27T10:45:07.000Z",
-      "sum": "Tesla Inc. CEO Elon Musk said on Sunday he hopes that the automaker can integrate Space Exploration Technologies Corp.’s Starlink satellite internet connectivity across its entire vehicle lineup by the end of 2027. Starlink in All Tesla Cars? Responding to..."
-     },
-     {
-      "hd": "Tesla’s Robotaxi Promises “More Cars, Less $” as Its Dallas Zone Grows 83.5%",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=824d790bf0be5e172cdc537bc8804cbf280a2c151f91ad3aed26283aa3f88ca9",
-      "pub": "2026-11-27T09:35:31.000Z",
-      "sum": "Key TakeawaysTesla grew its Dallas Robotaxi zone by 83. 5% to 150 square miles and cut fares, six days after Cybercab rides started there."
      },
      {
       "hd": "Tesla Faces Crucial Dec. 15 EU Vote on Self-Driving Tech After Months of Regulatory Delays: Here’s What Elon Musk-Led EV Giant Needs",
@@ -15698,7 +15699,7 @@
     ],
     "fetched": {
      "Finnhub": 150,
-     "Yahoo": 9,
+     "Yahoo": 10,
      "Google News": 9,
      "Nasdaq": 9,
      "Seeking Alpha": 8
@@ -15706,6 +15707,20 @@
    },
    "SPCX": {
     "items": [
+     {
+      "hd": "SpaceX satellites could outnumber stars in the night sky, block study of the universe — FCC says that's not our problem",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=a0b7545b0e10860c3110694b3a75116953e6e9551a1bf6aca4d43232a6d5ffe7",
+      "pub": "2026-11-28T00:00:00.000Z",
+      "sum": "The FCC approved the Starmind constellation of a million satellites to help meet growing demand for AI computing."
+     },
+     {
+      "hd": "Explainer: A million satellites? What SpaceX's Starmind could mean for Earth and space",
+      "src": "Reuters",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZlFOVkZidW11cWF5bnp4dktKSGE0MG43eWZhOGxuckt4QnlxcHNNTHlSTlFnR2lFWDVRNzlvcEdyZk5DdlM0Y3BDdzJGQVlkQXFCN0VmMVRTeXNHT3F6bU0zb3hwbkZoT1ExV2VfZnNQR2lBRER1bDVWZ010OFFqZTNWRElaRG43dlNfQVN3RGNqS1JFcWlSY0dLbU5LOGRWZ01SdHoxTF8xNEFORk1vLXRUYkVlMTBRekFLTQ?oc=5",
+      "pub": "2026-11-27T23:23:59.000Z",
+      "sum": ""
+     },
      {
       "hd": "SpaceX Gets Approval to Launch One Million Satellites for Orbital Data Centers",
       "src": "WSJ",
@@ -15763,25 +15778,11 @@
       "sum": "Tesla shares jump on unconfirmed word of a SpaceX deal, yet one number is worrying both bulls and skeptics. Whether shareholders cash in or get shortchanged depends on terms that nobody has seen."
      },
      {
-      "hd": "Explainer: A million satellites? What SpaceX's Starmind could mean for Earth and space",
-      "src": "Reuters",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZlFOVkZidW11cWF5bnp4dktKSGE0MG43eWZhOGxuckt4QnlxcHNNTHlSTlFnR2lFWDVRNzlvcEdyZk5DdlM0Y3BDdzJGQVlkQXFCN0VmMVRTeXNHT3F6bU0zb3hwbkZoT1ExV2VfZnNQR2lBRER1bDVWZ010OFFqZTNWRElaRG43dlNfQVN3RGNqS1JFcWlSY0dLbU5LOGRWZ01SdHoxTF8xNEFORk1vLXRUYkVlMTBRekFLTQ?oc=5",
-      "pub": "2026-11-27T15:50:11.000Z",
-      "sum": ""
-     },
-     {
       "hd": "Anthropic vs. SpaceX: Which Is the Better Giant IPO Buy?",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=94db069098a12e5b04fcb2404684a6917840ee2579d14311741e695c1b486579",
       "pub": "2026-11-27T15:25:01.000Z",
       "sum": "Both offer phenomenal growth."
-     },
-     {
-      "hd": "Stocks snap from a $6 trillion washout to a $3 trillion surge as Nvidia, Micron, and SpaceX bounce back",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=b289b06743e04f1d728d84a10ccdbd0bc51991f75c73f198db98ae5a914e2268",
-      "pub": "2026-11-27T15:12:18.000Z",
-      "sum": "Wall Street is no longer running for the exits as chipmakers pull stocks off Wednesday's lows."
      },
      {
       "hd": "SpaceX Stock Jumps Thanks to AI Rally. Why It Should Be Rising Even More.",
@@ -16071,18 +16072,25 @@
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 46,
+     "Google News": 47,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T00:00:13.130Z",
-  "lastAttempt": "2026-11-28T00:00:13.130Z",
+  "asOf": "2026-11-28T00:30:11.196Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Polls open across Taiwan in closely watched local elections",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/taiwan-holds-elections-choose-mayors-local-leaders-138489345",
+    "pub": "2026-11-28T00:18:40.000Z",
+    "sum": ""
+   },
    {
     "hd": "Taiwan holds elections to choose mayors and other local leaders",
     "src": "ABC News",
@@ -16285,13 +16293,6 @@
     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaGVmSDBaZjd6MF8xcFA3WEZUTEItZ2sxLXVDaDVCbS03YUtRM2NWWGJkMnlLS2dJak11aGRucTJZREc2dE9heUt2bnV5NENmeS11SWRRbUtQaWdUeUpKV2V5VXZRdFRaUlJNUU9VZXpORmZVbGZjeWVKZXlEa3gzOU5Ha09lTERuMU5OSG56c1ljNXpPb0NkeG1Rbnd5aVR2eHFWZUxQU3l5N0lkdGFmb2o4aVlSRXB1dDlGdS1SRQ?oc=5",
     "pub": "2026-11-27T12:00:50.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Italians killed in Kuwait: Why is Iran denying responsibility?",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM3JrUmVYMExlMzNxaTY5VU1YWXctcThoZUJmU2FBN1lhbElJVGFrcTBnQWZUTVBtVUpaOTlKcUFwcUZkbTR4UHp1aS1mTUtZYUtmZjZFTGdRdzN3RXduVzZLZTJMLVlTc0tKMGRzTUM1UG9sMDF1dEZHZVZXak5HZnd2dFhkY1RxTFQyTVNpVTJnMU5Vd1NBOU9rYzNmbFlWUE1jQ9IBqgFBVV95cUxONkE1UFBtWXZSQnl0eGFwN2FHMFlrNzE5NEVGYW9ESWVoU2d0S3RUQUtBREdVMGxGOFdtd1hhN3FVVWlBaTYzS1RFLW9IcWZtMTIzdXJDZ2cybWkzWWpqemtqTG5QUFR0eU1pcFpnd2RsbkNldEFFNlo3QmFLc2JZZ21PbDZFaVdOanllUEZERk9IdDBHNjVNXzNKTGtmd0VyTHdfYXNFRzd0Zw?oc=5",
-    "pub": "2026-11-27T11:55:06.000Z",
-    "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
    }
   ],
   "feeds": [
@@ -16310,8 +16311,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T00:00:13.130Z",
-  "lastAttempt": "2026-11-28T00:00:13.130Z",
+  "asOf": "2026-11-28T00:30:11.196Z",
+  "lastAttempt": "2026-11-28T00:30:11.196Z",
   "lastError": null
  }
 }
