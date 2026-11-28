@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T03:30:17.934Z",
+ "generatedAt": "2026-11-28T03:45:10.880Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -169,7 +169,7 @@
     "hd": "Stock Bulls Stir Again After Weeks of AI Anxiety",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZ3VCeHg2b05tdzhRRmprOEUxTWJBQ2VHRWNyT0MzZW1sTVk2RVZBeGoyWVc2QkNBdGstbnlRS3VrOEtMT3hEcE02UjZsYmRLdjJwcTJ6c0t0dUZtbjRmNUotSU9qZ01OODJJLUpaTjN3RzI4cS1xQUhQb1hlN2NBa2tYcFFkMUF3SlExRVMybmZ4Xy0tSXp5am1McGVnOHFGR21xLQ?oc=5",
-    "pub": "2026-11-28T01:41:27.000Z",
+    "pub": "2026-11-28T02:17:30.000Z",
     "sum": ""
    },
    {
@@ -383,18 +383,18 @@
    "Ars Technica",
    "CNBC",
    "The Information",
-   "Wired"
+   "Wired",
+   "Google News",
+   "Reuters",
+   "Bloomberg",
+   "Axios"
   ],
   "feedErrors": [
-   "VentureBeat: HTTP 429 from venturebeat.com",
-   "Google News: HTTP 503 from news.google.com",
-   "Reuters (Google News): HTTP 503 from news.google.com",
-   "Bloomberg (Google News): HTTP 503 from news.google.com",
-   "Axios (Google News): HTTP 503 from news.google.com"
+   "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-28T02:45:19.453Z",
-  "lastAttempt": "2026-11-28T02:45:19.453Z",
-  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired",
+  "asOf": "2026-11-28T03:45:10.880Z",
+  "lastAttempt": "2026-11-28T03:45:10.880Z",
+  "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
  "stocks": {
@@ -7195,12 +7195,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T03:30:17.934Z",
+  "at": "2026-11-28T03:45:10.880Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
-   "stockNews",
-   "worldNews",
+   "news",
+   "world",
    "usTempGrid"
   ]
  },
@@ -14125,8 +14125,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T03:30:17.934Z",
-  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "asOf": "2026-11-28T03:45:10.880Z",
+  "lastAttempt": "2026-11-28T03:45:10.880Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14172,16 +14172,16 @@
     "id": "401856880",
     "start": "2026-11-28T02:00Z",
     "state": "in",
-    "status": "Q2 3:31",
+    "status": "Q2 0:12",
     "period": 2,
-    "clock": "3:31",
+    "clock": "0:12",
     "completed": false,
     "away": {
      "name": "West Virginia Mountaineers",
      "short": "West Virginia",
      "id": "277",
      "abbrev": "WVU",
-     "score": "0",
+     "score": "7",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/277.png",
      "record": "5-6",
      "winner": false,
@@ -14193,7 +14193,7 @@
      "short": "Utah",
      "id": "254",
      "abbrev": "UTAH",
-     "score": "31",
+     "score": "38",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
      "record": "11-0",
      "winner": false,
@@ -14271,16 +14271,16 @@
     "id": "401856756",
     "start": "2026-11-28T00:30Z",
     "state": "in",
-    "status": "Q4 11:04",
+    "status": "Q4 5:19",
     "period": 4,
-    "clock": "11:04",
+    "clock": "5:19",
     "completed": false,
     "away": {
      "name": "Texas Longhorns",
      "short": "Texas",
      "id": "251",
      "abbrev": "TEX",
-     "score": "13",
+     "score": "16",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png",
      "record": "9-2",
      "winner": false,
@@ -14764,38 +14764,35 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T03:30:17.934Z",
-  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "asOf": "2026-11-28T03:45:10.880Z",
+  "lastAttempt": "2026-11-28T03:45:10.880Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "lastAttempt": "2026-11-28T03:45:10.880Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
    {
-    "src": "BBC News",
-    "hd": "Behind China's spectacular rise, voices who defied it say they are being drowned out",
-    "pub": "2026-11-27T23:02:35.000Z"
+    "src": "The Washington Post",
+    "hd": "How Israel’s odd-couple politics could be close to toppling Netanyahu",
+    "pub": "2026-11-28T02:24:12.000Z"
    },
    {
-    "src": "NPR",
-    "hd": "As UN Secretary General's last day approaches, search for his replacement continues",
-    "pub": "2026-11-27T09:46:13.000Z"
+    "src": "CBS News",
+    "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
+    "pub": "2026-11-28T01:10:00.000Z"
    },
    {
-    "src": "BBC News",
-    "hd": "Spanish PM and rivals rally supporters in final pitch for votes",
-    "pub": "2026-11-27T21:55:53.000Z"
+    "src": "Reuters",
+    "hd": "Taiwan votes in key local elections as China looks on",
+    "pub": "2026-11-28T00:01:00.000Z"
    }
   ],
-  "feedErrors": [
-   "Google News: HTTP 503 from news.google.com",
-   "Reuters: HTTP 503 from news.google.com"
-  ],
-  "asOf": "2026-11-28T02:45:19.453Z",
-  "lastAttempt": "2026-11-28T02:45:19.453Z",
+  "feedErrors": [],
+  "asOf": "2026-11-28T03:45:10.880Z",
+  "lastAttempt": "2026-11-28T03:45:10.880Z",
   "lastError": null
  },
  "movers": {
