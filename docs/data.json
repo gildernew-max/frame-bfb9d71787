@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T13:15:10.505Z",
+ "generatedAt": "2026-11-28T13:30:10.829Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,10 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T13:15:10.505Z",
+  "at": "2026-11-28T13:30:10.829Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14430,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T13:15:10.505Z",
-  "lastAttempt": "2026-11-28T13:15:10.505Z",
+  "asOf": "2026-11-28T13:30:10.829Z",
+  "lastAttempt": "2026-11-28T13:30:10.829Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15074,7 +15075,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T13:15:10.505Z",
+  "lastAttempt": "2026-11-28T13:30:10.829Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15333,6 +15334,20 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia prepares for congressional hearings as tech industry braces for impact",
+      "src": "Seeking Alpha",
+      "url": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+      "pub": "2026-11-28T13:00:48.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Nvidia Faces Yet Another Risk. Here's What It Means for Investors.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/28/nvidia-faces-yet-another-risk-here-s-what-it-means-for-investors/?.tsrc=rss",
+      "pub": "2026-11-28T12:25:02.000Z",
+      "sum": "A credit rating cut may be on the way."
+     },
+     {
       "hd": "Dan Ives Calls Nvidia’s China and Asia Exposure a “Containable 15% to 20%” of Revenue. Huang Faces Congress Next Week",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=0d00bc575c14380d87ae7565b7f3ae441f199cc1881b12ac4378c6dba1bdcdc2",
@@ -15382,13 +15397,6 @@
       "sum": "Munster acknowledged that his own approach to the AI sell-off may have overlooked an important part of the market equation."
      },
      {
-      "hd": "Trump says he talked Nvidia’s board into reinstating Jensen Huang. It’s not the first company he’s stepped into",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=c87258440195c79d519cf1f06e42f28ecf7794f2daa81dc7714d2b3f3d81613a",
-      "pub": "2026-11-28T08:32:00.000Z",
-      "sum": "From Intel to U.S. Steel, his administration is taking a bigger role in the private sector in what one expert calls \"chaotic state capitalism.\""
-     },
-     {
       "hd": "Jensen Huang’s Comeback Collides With Furious Lawmakers Demanding Answers",
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOYkVSTDg1Nm9pYXRhai0zSmMzbU5PN1pRcHZlLXcxVFJfRlFGd08yTlZLUU5jUWZHMmdhMklhX1E0TlcySlByVk5vajFIcEVzczF0WlNzQkJKTF9LckdNeWlxckJUMnR5YVVkblBUdVo5TWRSd2p3dlMzQy11N05pYzFha0VBQXgycmxXcktwb1diSDk5bmJ3bjFMNVc4OTJwRFZLMWo1d0JhMGJxbFN0WGxUM2pXTWN6?oc=5",
@@ -15407,6 +15415,13 @@
       "src": "WSJ",
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNM2JKcnNFYk5jM09EUEZXNjdqZ1N6V05CbnNQR1gzd09nUlhzRVpTSlM4ZjM4SG1uVXExci1OWWdCY05oNkpTOVFjbzk5amIyeHNzdHNpejM1THVZNFdYVWw5dGx3MFF6YndNbGVnN0dTbHNuVDdSSlQwVWl4MDRadXVxbkJyV0FnVEhjNDlVN21JRDVKRkpGeQ?oc=5",
       "pub": "2026-11-28T05:45:59.000Z",
+      "sum": ""
+     },
+     {
+      "hd": "Opinion | Nvidia and Failing U.S. Export Controls",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOcXdpX0ZyQWtaQVpUaDUzZ29JRWF6QV9odVlReExLZ1ZjLUw4by1ubnhabmx4c3pOU0J5aC16U3hyRFB4eURpeUgtOVpHWUZZYjNnSjdUcmxVWnlrTWlfaFhoanl2MEUtdUZFdDhpYlBiYkJxTDBGMndxNDdXN2xZWWtmOGthUXhrR20tc0RHZnY3QQ?oc=5",
+      "pub": "2026-11-27T21:52:00.000Z",
       "sum": ""
      },
      {
@@ -15492,26 +15507,12 @@
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1qZGZvNW5WNzZZYWpZRXlKOHpBWWVsYks4QlFnQnlCclZlYkFaUUNaOWY2RmJkc3N2ZDVWNXZ1bjhyOS1vLVlzd29mVFNvRng4aGJTNE12QXNJdHN4U2VJMlNMdlVDYmpTS3FPUFlWZUxSNW9tYVRyRTN3UVZpZ9IBgwFBVV95cUxQQjdINWZib09wZ1lKb185OUpRX2JRYzZucmtBdFVPMGQ5QklxNUsza01hUTgxSGNLcUVSZTVyRXVUZ0F1QTNRX1FQOURJUk5SbE1TT3RaRzEzS0RDcXVJMG0xclBOZUJoeG1ySndOeVVpUno4bktpQ2JMRl9mQ0t1NFlRdw?oc=5",
       "pub": "2026-11-27T12:00:01.000Z",
       "sum": ""
-     },
-     {
-      "hd": "Jensen Huang set to testify before Congress next week: Here’s what to expect",
-      "src": "CNBC",
-      "url": "https://finnhub.io/api/news?id=8ec675d2b589bc5c2c8825f717517eb00069ca870a004603296ea2c252268a03",
-      "pub": "2026-11-27T10:52:48.000Z",
-      "sum": "Sarah Bianchi, chief strategist for international political affairs at Evercore ISI, and Suzanne Spaulding, former assistant general counsel at the CIA, join 'Squawk on the Street; to discuss their expectations for Jensen Huang’s testimony before Congress next week."
-     },
-     {
-      "hd": "SpaceX Could Make $50 Billion a Year From AI Data Centers. Nvidia’s Biggest Customers Should Pay Attention",
-      "src": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=08e5d5c65b6d1c3f2d256772bc65cb221112043700082d57de290ec3c4d3496c",
-      "pub": "2026-11-27T10:28:03.000Z",
-      "sum": "Ron Baron sees SpaceX generating $50 billion annually from AI data centers, potentially challenging Amazon, Microsoft and Google."
      }
     ],
     "fetched": {
      "Finnhub": 100,
      "Yahoo": 5,
-     "Google News": 86,
+     "Google News": 84,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
@@ -15882,8 +15883,8 @@
     ],
     "fetched": {
      "Finnhub": 183,
-     "Yahoo": 13,
-     "Google News": 21,
+     "Yahoo": 12,
+     "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 11
     }
@@ -15893,21 +15894,21 @@
      {
       "hd": "Bad News for Anthropic: OpenAI Nearly Matches Claude Opus 5.5 at “Under a Fifth of the Cost,” per SemiAnalysis",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/bad-news-for-anthropic-openai-nearly-matches-claude-opus-5-5-at-under-a-fifth-of-the-cost-per-semianalysis?ref=yahoofinance&tlnk=yf-261128-f8c3h2j5&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=8c08fe2915ddda9cfdf2334fe47c99301ebe1c5e863508f1298ccc5740556b8c",
       "pub": "2026-11-28T12:05:26.000Z",
       "sum": "Key TakeawaysOn SemiAnalysis’s GDPx benchmark, OpenAI’s GPT-6. 2 Sol scored within half a point of Anthropic’s Claude Opus 5."
      },
      {
       "hd": "Here's What $1,000 Invested in Anthropic Could Be Worth by 2030",
       "src": "Yahoo Finance",
-      "url": "https://www.fool.com/investing/2026/11/28/heres-what-1000-invested-in-anthropic-could-be-wor/?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=0aeb4cab5435016b35f1d63cf1623bf696d0ba0b945d41ba66681b2d9ea9b76f",
       "pub": "2026-11-28T11:33:00.000Z",
       "sum": "What comes next for this AI giant?"
      },
      {
       "hd": "Gavin Baker Got “Much Better Versions” of His Claude Code Builds From Grok Bot. Warning for Anthropic",
       "src": "Yahoo Finance",
-      "url": "https://www.tikr.com/blog/gavin-baker-got-much-better-versions-of-his-claude-code-builds-from-grok-bot-warning-for-anthropic?ref=yahoofinance&tlnk=yf-261128-fvq3f97r&.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=e6c5965a6cbe6cca1b6307ae1bb39a6e7885473eabced27cf44c71efb1f1d22f",
       "pub": "2026-11-28T11:05:18.000Z",
       "sum": "Key TakeawaysAtreides’ Gavin Baker says Grok Bot gave him “much better versions” of his Claude Code builds in minutes, and Elon Musk boosted the clip. That puts SpaceX’s Grok Bot against Claude Code, a big part of Anthropic’s IPO pitch."
      },
@@ -16067,7 +16068,7 @@
      }
     ],
     "fetched": {
-     "Finnhub": 143,
+     "Finnhub": 139,
      "Yahoo": 11,
      "Google News": 43,
      "Nasdaq": 12,
@@ -16075,12 +16076,19 @@
     }
    }
   },
-  "asOf": "2026-11-28T12:30:12.276Z",
-  "lastAttempt": "2026-11-28T12:30:12.276Z",
+  "asOf": "2026-11-28T13:30:10.829Z",
+  "lastAttempt": "2026-11-28T13:30:10.829Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
+    "pub": "2026-11-28T13:26:35.000Z",
+    "sum": ""
+   },
    {
     "hd": "MSF charity condemns Israeli strike that killed two staff outside Gaza clinic",
     "src": "Reuters",
@@ -16101,13 +16109,6 @@
     "url": "https://abcnews.com/International/wireStory/taiwan-holds-elections-choose-mayors-local-leaders-138489345",
     "pub": "2026-11-28T10:50:34.000Z",
     "sum": "Vote counting is underway across Taiwan's 22 cities and counties after local elections on Saturday"
-   },
-   {
-    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
-    "pub": "2026-11-28T10:26:34.000Z",
-    "sum": ""
    },
    {
     "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
@@ -16308,8 +16309,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T13:00:11.023Z",
-  "lastAttempt": "2026-11-28T13:00:11.023Z",
+  "asOf": "2026-11-28T13:30:10.829Z",
+  "lastAttempt": "2026-11-28T13:30:10.829Z",
   "lastError": null
  }
 }
