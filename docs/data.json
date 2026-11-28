@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T11:15:11.012Z",
+ "generatedAt": "2026-11-28T11:30:12.008Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,11 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T11:15:11.012Z",
+  "at": "2026-11-28T11:30:12.008Z",
   "ran": [
-   "weather",
    "alerts",
-   "nflScoreboard",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14431,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T11:15:11.012Z",
-  "lastAttempt": "2026-11-28T11:15:11.012Z",
+  "asOf": "2026-11-28T11:30:12.008Z",
+  "lastAttempt": "2026-11-28T11:30:12.008Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15075,7 +15075,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T11:15:11.012Z",
+  "lastAttempt": "2026-11-28T11:30:12.008Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15355,6 +15355,13 @@
       "sum": "Munster acknowledged that his own approach to the AI sell-off may have overlooked an important part of the market equation."
      },
      {
+      "hd": "Not Good: Nvidia Chips Turn Up at China Site Tied to Alice Huang. Its AA Rating Is at Risk",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/not-good-nvidia-chips-turn-up-at-china-site-tied-to-alice-huang-its-aa-rating-is-at-risk?ref=yahoofinance&tlnk=yf-261128-w4jm7vpw&.tsrc=rss",
+      "pub": "2026-11-28T07:50:16.000Z",
+      "sum": "Key TakeawaysNvidia Blackwell chips, including a GB300 NVL72 rack, were reportedly installed at a Shanghai data center tied to Alice Huang. S&P said any downgrade of Nvidia’s AA rating would be limited to one notch unless disclosures show harm to its reputation or business prospects."
+     },
+     {
       "hd": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=a46a68518bed0c950e2470541846e5df8edb853b633ce9d915532a6ccd39be5b",
@@ -15402,13 +15409,6 @@
       "url": "https://finnhub.io/api/news?id=f974e5a64409cddbc3144b8f79af1a179a60d32c04bc1b8fa5e0a490f793c0f4",
       "pub": "2026-11-28T05:31:54.000Z",
       "sum": "During an interview with CNBC, Freedom Capital Markets’ Paul Meeks said he believes the recent pessimism could present a buying opportunity."
-     },
-     {
-      "hd": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=f97997723386d88a9c7bb62e87e71611a60ced291cf5b2fd34d5202b15e17fe0",
-      "pub": "2026-11-28T03:13:02.000Z",
-      "sum": "The chip giant's profits more than doubled last quarter, but its stock shed over a quarter of its value in November."
      },
      {
       "hd": "Nvidia: If You Didn't Sell Before The Jensen Huang Drama, It's Too Late Now",
@@ -15481,13 +15481,6 @@
       "sum": "Nvidia Corporationâs earnings report reinforced that agentic AI is creating an entirely new infrastructure cycle that goes well beyond AI accelerators."
      },
      {
-      "hd": "Nvidia Blackwell Chips Turn Up at China Site Tied to Alice Huang",
-      "src": "Bloomberg",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOajRDYnpkT2kwWEdlR2REeG93cnBZdkdsYmo3dTFmaVp3enZYN3Jid0RYVWZwNXJvcE00OG5FNjdwd0MzQXpFV1gzeUxkdnhxTVNoaGVNRmpnRllMTGY4emNtNW9VYnc4RWZVX0I2WExQNy1Ha21aV0FNWWVUb0FacnFLM01rUWRudjBCdGJpbGxCVUx3dl9KMEtZb0pyYURCTG1iWW5xUmNpaDlnc0lsMVpldmV6QQ?oc=5",
-      "pub": "2026-11-27T14:53:32.000Z",
-      "sum": "A pair of Chinese firms installed Nvidia Corp.'s powerful Blackwell semiconductors in a Shanghai data center linked to Alice Huang, the woman at the heart of a controversy surrounding the US chipmaker. The gear installed at the Yangtze River Delta Project included a GB300 NVL72 rack, among Nvidia's most powerful products, according to a serial number specified in documents submitted to Chinese regulators in November. Shanghai Shuoyao offered the hardware as collateral to obtain a 96 million yuan ($14 million) loan from Shanghai Innovation Bank, according to filings from the lender that were…"
-     },
-     {
       "hd": "We are living in perilous times if Nvidia CEO Jensen Huang dictates your 401(k) balance",
       "src": "MarketWatch",
       "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNTkZ4TzUwSHNOaFYtVC1xcnRINWZVdHZnWGZCNHpqbUJ4dFF1QmJnNkFOS1Z5cUxRNlVaU0c0Y1JvSFRZMWFxRjU2VWgxWXhOX1hHZHZJc3k5Q3pWb1MwbDdfSU1WQTRjWjZFUWlsUEZlY3NoZUI2NF9mNk1teWRSS0VCdUZ4d1VvUW5mNS1KWWtqRENUX1NKNHpCdElhSnVjZXRIcE44TDRsMkN2VUI2cnZnd08xVVE4OThudzAwT2M0cWNB?oc=5",
@@ -15507,12 +15500,19 @@
       "url": "https://finnhub.io/api/news?id=8ec675d2b589bc5c2c8825f717517eb00069ca870a004603296ea2c252268a03",
       "pub": "2026-11-27T10:52:48.000Z",
       "sum": "Sarah Bianchi, chief strategist for international political affairs at Evercore ISI, and Suzanne Spaulding, former assistant general counsel at the CIA, join 'Squawk on the Street; to discuss their expectations for Jensen Huang’s testimony before Congress next week."
+     },
+     {
+      "hd": "SpaceX Could Make $50 Billion a Year From AI Data Centers. Nvidia’s Biggest Customers Should Pay Attention",
+      "src": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=08e5d5c65b6d1c3f2d256772bc65cb221112043700082d57de290ec3c4d3496c",
+      "pub": "2026-11-27T10:28:03.000Z",
+      "sum": "Ron Baron sees SpaceX generating $50 billion annually from AI data centers, potentially challenging Amazon, Microsoft and Google."
      }
     ],
     "fetched": {
-     "Finnhub": 104,
-     "Yahoo": 7,
-     "Google News": 86,
+     "Finnhub": 102,
+     "Yahoo": 6,
+     "Google News": 84,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
@@ -15698,8 +15698,8 @@
     "fetched": {
      "Finnhub": 151,
      "Yahoo": 11,
-     "Google News": 8,
-     "Nasdaq": 9,
+     "Google News": 9,
+     "Nasdaq": 8,
      "Seeking Alpha": 8
     }
    },
@@ -15717,7 +15717,7 @@
       "src": "Seeking Alpha",
       "url": "https://seekingalpha.com/article/4972748-spacex-increasing-revenue-far-from-justifying-its-excessive-valuation-maintaining-sell?source=feed_symbol_SPCX",
       "pub": "2026-11-28T10:25:45.000Z",
-      "sum": ""
+      "sum": "SpaceX (SPCX) stock is a sell, as its $1.71 trillion valuation leaves little margin of safety, with $48.1 billion in nine-month capex adding funding risk."
      },
      {
       "hd": "Musk says Google is interested in renting more computing capacity from SpaceX",
@@ -15732,6 +15732,13 @@
       "url": "https://seekingalpha.com/article/4972724-spacex-after-its-first-profit-20x-ebitda-and-a-41-percent-cost-edge?source=feed_symbol_SPCX",
       "pub": "2026-11-28T08:36:11.000Z",
       "sum": "SpaceX (SPCX) stock is a buy, as AI profitability drove Q3 operating profit; over half of next year's estimated revenue remains to be sold."
+     },
+     {
+      "hd": "Musk Will Give Every U.S. Child a SpaceX Share “Every Year.” That’s About $9 Billion a Year at Today’s Price",
+      "src": "Yahoo Finance",
+      "url": "https://www.tikr.com/blog/musk-will-give-every-u-s-child-a-spacex-share-every-year-thats-about-9-billion-a-year-at-todays-price?ref=yahoofinance&tlnk=yf-261128-rwrp49gh&.tsrc=rss",
+      "pub": "2026-11-28T07:52:18.000Z",
+      "sum": "Key TakeawaysElon Musk says he’ll give a SpaceX share to every child in America every year, about $9 billion of stock a year at today’s price. The pledge costs SpaceX shareholders little: Musk’s shares come out of his own stake, and the company’s one-time share adds at most about 0."
      },
      {
       "hd": "Elon Musk Says GOOGL Has ‘Expressed Interest’ In Renting More Compute From SPCX",
@@ -15795,13 +15802,6 @@
       "url": "https://finnhub.io/api/news?id=ec36f66bfc106e89b0bcc4e6941d5f6963c5e43eb790bab6f2c551fe14fe7abb",
       "pub": "2026-11-27T19:22:36.000Z",
       "sum": "The Starmind approval opens a regulatory path to orbital data centers, with a first launch targeted for the third quarter of 2027."
-     },
-     {
-      "hd": "Are billionaires gaining too much influence as they invest in Trump Accounts?",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=0bf04bc53580d9d2ae41a9a18c3c2b5c23a3b724d161a1b00e8f1b91e4985838",
-      "pub": "2026-11-27T18:14:19.000Z",
-      "sum": "Wall Street veteran Turney Duff and his expert panel weigh in on whether billionaires are gaining too much influence over the average investor and the White House as more executives seek to contribute to Trump Accounts for the American youth, using Elon Musk and shares of SpaceX (SPCX) as an example. Today's Market Hang panel consists of FAS Wealth Partners chief investment strategist Mike Rode, Founder ETFs partner and portfolio manager Michael Monaghan, Tema ETFs chief investment strategist Paisley Nardini, and 22V Research President Dennis DeBusschere."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -16070,18 +16070,25 @@
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 43,
-     "Nasdaq": 13,
+     "Google News": 40,
+     "Nasdaq": 12,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T10:30:12.385Z",
-  "lastAttempt": "2026-11-28T10:30:12.385Z",
+  "asOf": "2026-11-28T11:30:12.008Z",
+  "lastAttempt": "2026-11-28T11:30:12.008Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "Behind the Story: Canada’s Border Rules Are Splitting Up Haitian Families",
+    "src": "The New York Times",
+    "url": "https://www.nytimes.com/2026/11/28/world/canada/us-border-haitian-families-third-safe-country.html",
+    "pub": "2026-11-28T11:00:08.000Z",
+    "sum": "Asylum seekers coming from the U.S. must qualify for an exception to the Safe Third Country Agreement to make a refugee claim at a Canadian border crossing."
+   },
    {
     "hd": "Taiwan awaits local election results as China watches",
     "src": "ABC News",
@@ -16146,9 +16153,9 @@
     "sum": ""
    },
    {
-    "hd": "Eight killed in Peruvian military helicopter crash on rescue mission",
-    "src": "BBC",
-    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1qY1VXdXNtSDFOdlhwV3pmREUyZVJYWGpyVDV6TWZMTWU1dVFOQnJLRXdRUVlrdm1BZHI2djRTaXRBQVhIWHJyM3F2UmJUVEhUcjgyeE92YTJqYVU?oc=5",
+    "hd": "Eight killed in Peruvian military helicopter crash",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cwp9d85mlp88o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-28T04:19:16.000Z",
     "sum": "The pilot was the sole survivor of the crash during a rescue mission in a remote area known for drug trafficking."
    },
@@ -16239,7 +16246,7 @@
    {
     "hd": "Pentagon committed $81 million to Guantanamo migrant mission that held just 849 people",
     "src": "CNN",
-    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOU1dDNkNTWFNiMUU5Q1JoRE9La2ZYeDRaN1MtdjlLaGZRcFNDQVFjYkpIRXFEZlBMNkJ2d2RnUFdKSGJRajRBU3E5cXV2RXMyRU1raVFxM25Ya2NHNXdnNUw3MXRiRDNsYkJlTG1EWUdvM3dTbS1wd2RDRWZZUm95M1VQVE9fZTVocFdGQXhtanFoSVVMQUVB?oc=5",
+    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV1BuWE1yT3pIUnUzZlUzTDRHeElCaG1KUTFzZndSVGpLMzBhZUdRWVJyRzN2djE1M2hFUVRjTGptUU5QSHdoeUhWQWg2SkxtWms5S3ZpQ2JTZ2FkQXRrdEZPUHBLMWUwTm8yV0VRV2l4dHJiTnBuOXRBckFnS1JVTnd6VWZiMTVvbEV5TUVfbVJYOWVGU2RxaTM0cE8?oc=5",
     "pub": "2026-11-27T21:46:31.000Z",
     "sum": ""
    },
@@ -16272,24 +16279,17 @@
     "sum": ""
    },
    {
+    "hd": "Ukraine submits Black Sea ceasefire offer, awaits Russian response",
+    "src": "France 24",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQXNRZXdNdVkybkZ1TXRQSlFzaXNXT2xNM252Xzg4TWpfUmVYUi1DVjhuREFHT1ZKbVdWNjc1U2pTUWJtZmRFeWtKa2Y1cFBXR1VZRGg4dHZ2NkxPSE80YTl1VG1rdnkyYW1OUFFDRUhzUGJnQzcxOEkxSlUxU0hXb19ZTjQxYmV6eUFCWUZZc24xMkJubE9BNFAxZlVuTXZTRG5OUGdlQTVmWVEyOEE?oc=5",
+    "pub": "2026-11-27T21:09:12.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Putin unveils new Russian nuclear-powered submarine with hypersonic weapons",
     "src": "Al Jazeera",
     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUEFxTF85S2lWaFRwVDdNdm01RDc4bjZHMUxZSC1LNnNReU1QSFV0WkMtbEIxUUQtc0Iwel9WRWhFc2xxVC1rVlJ0X0FaVl8ybTd4Z29rMEpIVzRfOXF5LW5CMmpOSGc0c0NOb2tDcWw4Vm5lc2l3d05QVmhtTnZuc05hbnBRS1ZUaWlBcjg3Z05jeFpBM0VSMTVsQzVXZ1BrbDVHbEoxd2ZaZWJqMm9hLUFpdXdBbmMw0gG-AUFVX3lxTE1Wa2J5VW5zb1pWQWFCOGMtYkV1Rzc0UVloOWhNM1NBVWp5aExXS3hCRHJsUl9iX2pCNFN6MGkzSTByMGloQUxrVnlOTUw4Nk41V3dmT1lDWXVzNG9vV2RwclV4V3VBQmVGcElOSVhXN0lRS0QxdmtZQ3Y0Tlg5UkRvM1RCYzA3Tk1Yd0xWTXBzcGppYTAxUWx4OGtoQi1xVGk2WEo0cE03X1BhM1loa0swamFQdFdIdk16NHZXR3c?oc=5",
     "pub": "2026-11-27T20:57:37.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Trump says he's giving Iran \"a chance to be smart\"",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-threats-diplomacy-strait-of-hormuz/",
-    "pub": "2026-11-27T20:08:21.000Z",
-    "sum": "President Trump says victory over Iran will come \"whenever I want it,\" but he's giving the regime \"a chance to be smart\" while his threat of new strikes looms."
-   },
-   {
-    "hd": "Using a drone and a poop-sniffing dog, scientists perform health checks on endangered orcas",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQndaZ0VPUVlWWUJiWXM5QnVWUmRIMEE2UTFjTXJKN0R1VFpyeFBoUmpTMzRLZUNtTHBFQzIyUzhrclQyLVkzd1VlWnNfRFE1NUhCc3ljbHRFZXoxX3dxdzgwOHJCN0YyTWFNQkhmeGNydUlYdDhFeUlfUWtjMnBDMkthd0VHSmJWbm9HS2RTcFpCTzQzRFVZempTN0J0QQ?oc=5",
-    "pub": "2026-11-27T19:38:00.000Z",
     "sum": ""
    }
   ],
@@ -16309,8 +16309,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T11:00:12.608Z",
-  "lastAttempt": "2026-11-28T11:00:12.608Z",
+  "asOf": "2026-11-28T11:30:12.008Z",
+  "lastAttempt": "2026-11-28T11:30:12.008Z",
   "lastError": null
  }
 }
