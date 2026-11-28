@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T05:00:12.006Z",
+ "generatedAt": "2026-11-28T05:15:10.503Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -10,29 +10,20 @@
     "name": "Atlanta, GA",
     "tz": "America/New_York",
     "now": {
-     "temp": 40,
+     "temp": 39,
      "i": "sun",
      "cond": "Clear",
      "windMph": 6,
      "windDir": "WNW",
-     "observed": "2026-11-27T23:15"
+     "observed": "2026-11-28T00:15"
     },
     "today": {
-     "h": 49,
-     "l": 37,
-     "sunrise": "07:20",
+     "h": 57,
+     "l": 35,
+     "sunrise": "07:21",
      "sunset": "17:29"
     },
     "forecast": [
-     {
-      "date": "2026-11-28",
-      "d": "Sat",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 58,
-      "l": 35,
-      "pop": 0
-     },
      {
       "date": "2026-11-29",
       "d": "Sun",
@@ -50,24 +41,24 @@
       "h": 57,
       "l": 46,
       "pop": 96
+     },
+     {
+      "date": "2026-12-01",
+      "d": "Tue",
+      "i": "cloud",
+      "text": "Overcast",
+      "h": 60,
+      "l": 47,
+      "pop": 0
      }
     ],
     "days7": [
-     {
-      "date": "2026-11-27",
-      "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
-      "h": 49,
-      "l": 37,
-      "pop": 0
-     },
      {
       "date": "2026-11-28",
       "d": "Sat",
       "i": "cloud",
       "text": "Overcast",
-      "h": 58,
+      "h": 57,
       "l": 35,
       "pop": 0
      },
@@ -115,16 +106,18 @@
       "h": 69,
       "l": 50,
       "pop": 8
+     },
+     {
+      "date": "2026-12-04",
+      "d": "Fri",
+      "i": "rain",
+      "text": "Showers",
+      "h": 71,
+      "l": 58,
+      "pop": 56
      }
     ],
     "hourly": [
-     {
-      "t": "2026-11-28T00:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 39,
-      "pop": 0
-     },
      {
       "t": "2026-11-28T01:00",
       "i": "sun",
@@ -150,7 +143,7 @@
       "t": "2026-11-28T04:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 36,
+      "temp": 37,
       "pop": 0
      },
      {
@@ -201,6 +194,13 @@
       "text": "Clear",
       "temp": 49,
       "pop": 0
+     },
+     {
+      "t": "2026-11-28T12:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 52,
+      "pop": 0
      }
     ]
    },
@@ -208,12 +208,12 @@
     "name": "Saint Paul, MN",
     "tz": "America/Chicago",
     "now": {
-     "temp": 35,
-     "i": "sun",
-     "cond": "Clear",
-     "windMph": 4,
-     "windDir": "S",
-     "observed": "2026-11-27T22:15"
+     "temp": 34,
+     "i": "partly",
+     "cond": "Partly cloudy",
+     "windMph": 2,
+     "windDir": "W",
+     "observed": "2026-11-27T23:15"
     },
     "today": {
      "h": 44,
@@ -228,7 +228,7 @@
       "i": "cloud",
       "text": "Overcast",
       "h": 49,
-      "l": 32,
+      "l": 31,
       "pop": 2
      },
      {
@@ -266,7 +266,7 @@
       "i": "cloud",
       "text": "Overcast",
       "h": 49,
-      "l": 32,
+      "l": 31,
       "pop": 2
      },
      {
@@ -316,13 +316,6 @@
      }
     ],
     "hourly": [
-     {
-      "t": "2026-11-27T23:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 34,
-      "pop": 0
-     },
      {
       "t": "2026-11-28T00:00",
       "i": "sun",
@@ -376,21 +369,21 @@
       "t": "2026-11-28T07:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 32,
+      "temp": 31,
       "pop": 1
      },
      {
       "t": "2026-11-28T08:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 32,
+      "temp": 31,
       "pop": 1
      },
      {
       "t": "2026-11-28T09:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 35,
+      "temp": 34,
       "pop": 1
      },
      {
@@ -399,12 +392,19 @@
       "text": "Clear",
       "temp": 39,
       "pop": 1
+     },
+     {
+      "t": "2026-11-28T11:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 43,
+      "pop": 0
      }
     ]
    }
   },
-  "asOf": "2026-11-28T04:15:14.520Z",
-  "lastAttempt": "2026-11-28T04:15:14.520Z",
+  "asOf": "2026-11-28T05:15:10.503Z",
+  "lastAttempt": "2026-11-28T05:15:10.503Z",
   "lastError": null
  },
  "nfl": {
@@ -7502,9 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T05:00:12.006Z",
+  "at": "2026-11-28T05:15:10.503Z",
   "ran": [
+   "weather",
    "alerts",
+   "nflScoreboard",
    "cfbScoreboard",
    "usTempGrid"
   ]
@@ -14418,8 +14420,8 @@
     }
    }
   ],
-  "asOf": "2026-11-27T23:00:13.137Z",
-  "lastAttempt": "2026-11-27T23:00:13.137Z",
+  "asOf": "2026-11-28T05:15:10.503Z",
+  "lastAttempt": "2026-11-28T05:15:10.503Z",
   "lastError": null
  },
  "alerts": {
@@ -14430,8 +14432,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T05:00:12.006Z",
-  "lastAttempt": "2026-11-28T05:00:12.006Z",
+  "asOf": "2026-11-28T05:15:10.503Z",
+  "lastAttempt": "2026-11-28T05:15:10.503Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14477,16 +14479,16 @@
     "id": "401856880",
     "start": "2026-11-28T02:00Z",
     "state": "in",
-    "status": "Q4 12:59",
+    "status": "Q4 7:55",
     "period": 4,
-    "clock": "12:59",
+    "clock": "7:55",
     "completed": false,
     "away": {
      "name": "West Virginia Mountaineers",
      "short": "West Virginia",
      "id": "277",
      "abbrev": "WVU",
-     "score": "14",
+     "score": "21",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/277.png",
      "record": "5-6",
      "winner": false,
@@ -15069,12 +15071,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T05:00:12.006Z",
-  "lastAttempt": "2026-11-28T05:00:12.006Z",
+  "asOf": "2026-11-28T05:15:10.503Z",
+  "lastAttempt": "2026-11-28T05:15:10.503Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T05:00:12.006Z",
+  "lastAttempt": "2026-11-28T05:15:10.503Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
