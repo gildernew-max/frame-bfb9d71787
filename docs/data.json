@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T01:00:10.900Z",
+ "generatedAt": "2026-11-28T01:15:10.955Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -13,9 +13,9 @@
      "temp": 44,
      "i": "sun",
      "cond": "Clear",
-     "windMph": 8,
+     "windMph": 7,
      "windDir": "W",
-     "observed": "2026-11-27T19:15"
+     "observed": "2026-11-27T20:15"
     },
     "today": {
      "h": 49,
@@ -27,10 +27,10 @@
      {
       "date": "2026-11-28",
       "d": "Sat",
-      "i": "sun",
-      "text": "Clear",
+      "i": "partly",
+      "text": "Partly cloudy",
       "h": 57,
-      "l": 35,
+      "l": 36,
       "pop": 0
      },
      {
@@ -65,10 +65,10 @@
      {
       "date": "2026-11-28",
       "d": "Sat",
-      "i": "sun",
-      "text": "Clear",
+      "i": "partly",
+      "text": "Partly cloudy",
       "h": 57,
-      "l": 35,
+      "l": 36,
       "pop": 0
      },
      {
@@ -119,13 +119,6 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-27T20:00",
-      "i": "sun",
-      "text": "Clear",
-      "temp": 44,
-      "pop": 0
-     },
-     {
       "t": "2026-11-27T21:00",
       "i": "sun",
       "text": "Clear",
@@ -164,7 +157,7 @@
       "t": "2026-11-28T02:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 38,
+      "temp": 39,
       "pop": 0
      },
      {
@@ -185,7 +178,7 @@
       "t": "2026-11-28T05:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 36,
+      "temp": 37,
       "pop": 0
      },
      {
@@ -199,7 +192,14 @@
       "t": "2026-11-28T07:00",
       "i": "sun",
       "text": "Clear",
-      "temp": 35,
+      "temp": 36,
+      "pop": 0
+     },
+     {
+      "t": "2026-11-28T08:00",
+      "i": "sun",
+      "text": "Clear",
+      "temp": 37,
       "pop": 0
      }
     ]
@@ -211,9 +211,9 @@
      "temp": 38,
      "i": "cloud",
      "cond": "Overcast",
-     "windMph": 4,
-     "windDir": "SSE",
-     "observed": "2026-11-27T18:15"
+     "windMph": 2,
+     "windDir": "ESE",
+     "observed": "2026-11-27T19:15"
     },
     "today": {
      "h": 44,
@@ -228,7 +228,7 @@
       "i": "cloud",
       "text": "Overcast",
       "h": 48,
-      "l": 31,
+      "l": 32,
       "pop": 2
      },
      {
@@ -254,8 +254,8 @@
      {
       "date": "2026-11-27",
       "d": "Fri",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "rain",
+      "text": "Drizzle",
       "h": 44,
       "l": 20,
       "pop": 8
@@ -266,7 +266,7 @@
       "i": "cloud",
       "text": "Overcast",
       "h": 48,
-      "l": 31,
+      "l": 32,
       "pop": 2
      },
      {
@@ -317,16 +317,9 @@
     ],
     "hourly": [
      {
-      "t": "2026-11-27T19:00",
-      "i": "cloud",
-      "text": "Overcast",
-      "temp": 38,
-      "pop": 7
-     },
-     {
       "t": "2026-11-27T20:00",
-      "i": "cloud",
-      "text": "Overcast",
+      "i": "rain",
+      "text": "Drizzle",
       "temp": 38,
       "pop": 8
      },
@@ -334,20 +327,20 @@
       "t": "2026-11-27T21:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 38,
+      "temp": 37,
       "pop": 3
      },
      {
       "t": "2026-11-27T22:00",
       "i": "cloud",
       "text": "Overcast",
-      "temp": 36,
+      "temp": 35,
       "pop": 1
      },
      {
       "t": "2026-11-27T23:00",
-      "i": "partly",
-      "text": "Partly cloudy",
+      "i": "cloud",
+      "text": "Overcast",
       "temp": 34,
       "pop": 1
      },
@@ -369,7 +362,7 @@
       "t": "2026-11-28T02:00",
       "i": "sun",
       "text": "Mostly clear",
-      "temp": 33,
+      "temp": 32,
       "pop": 1
      },
      {
@@ -396,15 +389,22 @@
      {
       "t": "2026-11-28T06:00",
       "i": "sun",
-      "text": "Mostly clear",
+      "text": "Clear",
+      "temp": 32,
+      "pop": 1
+     },
+     {
+      "t": "2026-11-28T07:00",
+      "i": "sun",
+      "text": "Clear",
       "temp": 32,
       "pop": 1
      }
     ]
    }
   },
-  "asOf": "2026-11-28T00:15:15.042Z",
-  "lastAttempt": "2026-11-28T00:15:15.042Z",
+  "asOf": "2026-11-28T01:15:10.955Z",
+  "lastAttempt": "2026-11-28T01:15:10.955Z",
   "lastError": null
  },
  "nfl": {
@@ -7502,12 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T01:00:10.900Z",
+  "at": "2026-11-28T01:15:10.955Z",
   "ran": [
+   "weather",
    "alerts",
    "cfbScoreboard",
-   "worldNews",
-   "extended",
    "usTempGrid"
   ]
  },
@@ -14432,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T01:00:10.900Z",
-  "lastAttempt": "2026-11-28T01:00:10.900Z",
+  "asOf": "2026-11-28T01:15:10.955Z",
+  "lastAttempt": "2026-11-28T01:15:10.955Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14578,9 +14577,9 @@
     "id": "401856756",
     "start": "2026-11-28T00:30Z",
     "state": "in",
-    "status": "Q1 9:44",
+    "status": "Q1 1:11",
     "period": 1,
-    "clock": "9:44",
+    "clock": "1:11",
     "completed": false,
     "away": {
      "name": "Texas Longhorns",
@@ -15071,12 +15070,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T01:00:10.900Z",
-  "lastAttempt": "2026-11-28T01:00:10.900Z",
+  "asOf": "2026-11-28T01:15:10.955Z",
+  "lastAttempt": "2026-11-28T01:15:10.955Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T01:00:10.900Z",
+  "lastAttempt": "2026-11-28T01:15:10.955Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
