@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T04:30:11.353Z",
+ "generatedAt": "2026-11-28T04:45:11.938Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -476,7 +476,7 @@
     "hd": "Stock Bulls Stir Again After Weeks of AI Anxiety",
     "src": "Bloomberg",
     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZ3VCeHg2b05tdzhRRmprOEUxTWJBQ2VHRWNyT0MzZW1sTVk2RVZBeGoyWVc2QkNBdGstbnlRS3VrOEtMT3hEcE02UjZsYmRLdjJwcTJ6c0t0dUZtbjRmNUotSU9qZ01OODJJLUpaTjN3RzI4cS1xQUhQb1hlN2NBa2tYcFFkMUF3SlExRVMybmZ4Xy0tSXp5am1McGVnOHFGR21xLQ?oc=5",
-    "pub": "2026-11-28T02:17:30.000Z",
+    "pub": "2026-11-28T03:47:31.000Z",
     "sum": ""
    },
    {
@@ -699,8 +699,8 @@
   "feedErrors": [
    "VentureBeat: HTTP 429 from venturebeat.com"
   ],
-  "asOf": "2026-11-28T03:45:10.880Z",
-  "lastAttempt": "2026-11-28T03:45:10.880Z",
+  "asOf": "2026-11-28T04:45:11.938Z",
+  "lastAttempt": "2026-11-28T04:45:11.938Z",
   "credit": "TechCrunch · The Verge · MIT Tech Review · Ars Technica · CNBC · The Information · Wired · Google News · Reuters · Bloomberg · Axios",
   "lastError": null
  },
@@ -7502,12 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T04:30:11.353Z",
+  "at": "2026-11-28T04:45:11.938Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
-   "stockNews",
-   "worldNews",
+   "news",
+   "world",
    "usTempGrid"
   ]
  },
@@ -14432,8 +14432,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T04:30:11.353Z",
-  "lastAttempt": "2026-11-28T04:30:11.353Z",
+  "asOf": "2026-11-28T04:45:11.938Z",
+  "lastAttempt": "2026-11-28T04:45:11.938Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14479,9 +14479,9 @@
     "id": "401856880",
     "start": "2026-11-28T02:00Z",
     "state": "in",
-    "status": "Q3 8:08",
+    "status": "Q3 1:44",
     "period": 3,
-    "clock": "8:08",
+    "clock": "1:44",
     "completed": false,
     "away": {
      "name": "West Virginia Mountaineers",
@@ -15071,35 +15071,35 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T04:30:11.353Z",
-  "lastAttempt": "2026-11-28T04:30:11.353Z",
+  "asOf": "2026-11-28T04:45:11.938Z",
+  "lastAttempt": "2026-11-28T04:45:11.938Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T04:30:11.353Z",
-  "lastError": "Open-Meteo: Open-Meteo grid 429"
+  "lastAttempt": "2026-11-28T04:45:11.938Z",
+  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
  },
  "world": {
   "items": [
+   {
+    "src": "BBC News",
+    "hd": "Eight killed in Peruvian military helicopter crash",
+    "pub": "2026-11-28T04:19:16.000Z"
+   },
    {
     "src": "The Washington Post",
     "hd": "How Israel’s odd-couple politics could be close to toppling Netanyahu",
     "pub": "2026-11-28T02:24:12.000Z"
    },
    {
-    "src": "CBS News",
-    "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
-    "pub": "2026-11-28T01:10:00.000Z"
-   },
-   {
-    "src": "Reuters",
-    "hd": "Taiwan votes in key local elections as China looks on",
-    "pub": "2026-11-28T00:01:00.000Z"
+    "src": "NDTV",
+    "hd": "Iranian Girl, 14, Beaten To Death By Husband Days After Giving Birth For Asking To Visit Family",
+    "pub": "2026-11-28T02:16:04.000Z"
    }
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T03:45:10.880Z",
-  "lastAttempt": "2026-11-28T03:45:10.880Z",
+  "asOf": "2026-11-28T04:45:11.938Z",
+  "lastAttempt": "2026-11-28T04:45:11.938Z",
   "lastError": null
  },
  "movers": {
