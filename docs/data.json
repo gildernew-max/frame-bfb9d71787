@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T03:15:16.509Z",
+ "generatedAt": "2026-11-28T03:30:17.934Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7195,11 +7195,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T03:15:16.509Z",
+  "at": "2026-11-28T03:30:17.934Z",
   "ran": [
-   "weather",
    "alerts",
    "cfbScoreboard",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14124,8 +14125,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T03:15:16.509Z",
-  "lastAttempt": "2026-11-28T03:15:16.509Z",
+  "asOf": "2026-11-28T03:30:17.934Z",
+  "lastAttempt": "2026-11-28T03:30:17.934Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14171,9 +14172,9 @@
     "id": "401856880",
     "start": "2026-11-28T02:00Z",
     "state": "in",
-    "status": "Q2 9:29",
+    "status": "Q2 3:31",
     "period": 2,
-    "clock": "9:29",
+    "clock": "3:31",
     "completed": false,
     "away": {
      "name": "West Virginia Mountaineers",
@@ -14192,7 +14193,7 @@
      "short": "Utah",
      "id": "254",
      "abbrev": "UTAH",
-     "score": "24",
+     "score": "31",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/254.png",
      "record": "11-0",
      "winner": false,
@@ -14270,9 +14271,9 @@
     "id": "401856756",
     "start": "2026-11-28T00:30Z",
     "state": "in",
-    "status": "End of 3rd",
-    "period": 3,
-    "clock": "0:00",
+    "status": "Q4 11:04",
+    "period": 4,
+    "clock": "11:04",
     "completed": false,
     "away": {
      "name": "Texas Longhorns",
@@ -14763,13 +14764,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T03:15:16.509Z",
-  "lastAttempt": "2026-11-28T03:15:16.509Z",
+  "asOf": "2026-11-28T03:30:17.934Z",
+  "lastAttempt": "2026-11-28T03:30:17.934Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T03:15:16.509Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-28T03:30:17.934Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15030,6 +15031,13 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Nvidia Stock Has Swung 5% or More in a Single Day 5 Times in November. Here's How Big a Position I Think Makes Sense.",
+      "src": "Yahoo Finance",
+      "url": "https://www.fool.com/investing/2026/11/27/nvidia-stock-has-swung-5-or-more-in-a-single-day-5-times-in-november-here-s-how-big-a-position-i-think-makes-sense/?.tsrc=rss",
+      "pub": "2026-11-28T03:13:02.000Z",
+      "sum": "The chip giant's profits more than doubled last quarter, but its stock shed over a quarter of its value in November."
+     },
+     {
       "hd": "Nvidia Stock Is Still Down 38% From Its Peak Despite Jensen Huang's Return. History Suggests a $10,000 Investment Today Will Be Worth This Much by Year-End 2027.",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=e07d3a43315060afd5e0d3bc3c2192d50d0b4a848235681d146e184299fe362c",
@@ -15084,13 +15092,6 @@
       "url": "https://finnhub.io/api/news?id=b7762b4a4534ab4ac0e667892554d5b72949ba20071b2450379b0f6dccb7ac52",
       "pub": "2026-11-27T19:09:22.000Z",
       "sum": "The analyst fair value estimate for IREN has shifted from US$56.69 to US$52.74, pointing to a modest reset in the price target used in current valuation work. This updated view comes against a backdrop of sharp share price swings following IREN’s Q1 update, moves in Microsoft’s capex guidance, and sentiment shifts around AI cloud infrastructure tied to Nvidia’s GPU ecosystem. As you read on, you will see how these valuation changes fit into the broader IREN story and what to watch as the..."
-     },
-     {
-      "hd": "US Equity Indexes Rise as Jensen Huang's Return to Nvidia Guardrails AI Trade While Investors Slice Growth Exposure This Week",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=66986135b4c9b220e8424e7e29a498a77e30ab6eba64cf17c5162d5d5eeee730",
-      "pub": "2026-11-27T18:39:02.000Z",
-      "sum": "US equity indexes rose as Jensen Huang's reinstatement as Nvidia's (NVDA) chief executive officer he"
      },
      {
       "hd": "Trump’s Nvidia intervention has a cost for US stocks",
@@ -15207,7 +15208,7 @@
     ],
     "fetched": {
      "Finnhub": 101,
-     "Yahoo": 7,
+     "Yahoo": 6,
      "Google News": 85,
      "Nasdaq": 6,
      "Seeking Alpha": 25
@@ -15582,7 +15583,7 @@
      "Yahoo": 10,
      "Google News": 19,
      "Nasdaq": 0,
-     "Seeking Alpha": 10
+     "Seeking Alpha": 9
     }
    },
    "ANT": {
@@ -15765,19 +15766,40 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 11,
-     "Google News": 43,
+     "Yahoo": 0,
+     "Google News": 44,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T02:30:12.427Z",
-  "lastAttempt": "2026-11-28T02:30:12.427Z",
+  "asOf": "2026-11-28T03:30:17.934Z",
+  "lastAttempt": "2026-11-28T03:30:17.934Z",
   "lastError": null
  },
  "worldNews": {
   "items": [
+   {
+    "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
+    "pub": "2026-11-28T03:01:15.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "A Handgun on His Hip, Colombia’s New President Turns Drug War Into Theater",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNWGl5OUZtUUp6NzdlNjQwUWt2bVAtVFJVdGdYNTVfNFdoeHVGXzRiXzZIVTZheERsZkY3YlpmSTVyTlBWak1MbnhZT3duZ3NsQ3pkQ0MxbWlaTTR3S0Z4LUtQdW5ZTVZta0tXSlQzbnU1MWE4QmMtSjBEWVZPUFhkRjdoTndBem41UjhPWmlOVkd6U2JEWVl1VlBaek1mQnc?oc=5",
+    "pub": "2026-11-28T03:00:19.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
+    "src": "CBS News",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0lGZ2x0YXZLeTRTdE1zN09yX3E5enVIX0ZnUmhUVDVfMlVNeVpqUmlxN3ZLZFM1X2hfZGl0MVZmV1ZQZTFoUkpFNDVMM3E5bVhpZTRWdWZ5SVQtTEx6UFBGRWRkNjM0b0hvbnRpNzJscmVLMG95Mk1vUGt0YW1DQmxxbTZzUEVVOFJWdTVGNThiLU9G?oc=5",
+    "pub": "2026-11-28T01:10:00.000Z",
+    "sum": ""
+   },
    {
     "hd": "Taiwan holds elections to choose mayors and other local leaders",
     "src": "AP News",
@@ -15842,18 +15864,11 @@
     "sum": ""
    },
    {
-    "hd": "Iran War Updates: U.S. forces disable commercial ship that allegedly tried to breach blockade on Iranian ports",
-    "src": "CBS News",
-    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPa0lGZ2x0YXZLeTRTdE1zN09yX3E5enVIX0ZnUmhUVDVfMlVNeVpqUmlxN3ZLZFM1X2hfZGl0MVZmV1ZQZTFoUkpFNDVMM3E5bVhpZTRWdWZ5SVQtTEx6UFBGRWRkNjM0b0hvbnRpNzJscmVLMG95Mk1vUGt0YW1DQmxxbTZzUEVVOFJWdTVGNThiLU9G?oc=5",
-    "pub": "2026-11-27T21:12:14.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
-    "pub": "2026-11-27T21:01:15.000Z",
-    "sum": ""
+    "hd": "Lula’s choice of Bradesco banker as Brazil’s finance minister lifts markets",
+    "src": "AP News",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQU1lWSFNZVHRVSi1Dbm12NWtCT3RhaERTUnNHN3U1RHR2aHVXbzc5N2hCdGxIbkpINnRTZm85aElGWU1BOElob1p2cTd3anNkOGdlQ05rVktpX1F6RDM3WUxfZDg5czNCZi1wODMySzZsNlRULVBaN0RhOWlrSllDVHlvTERqV2F4eWxwYUc1Mm5VVm1kdVFZYVhMNXAzdHY0?oc=5",
+    "pub": "2026-11-27T21:24:00.000Z",
+    "sum": "Brazilian markets have rallied after President Luiz In&aacute;cio Lula da Silva confirmed that veteran banker Luiz Carlos Trabuco would lead his finance ministry in 2027, a move seen as a commitment to fiscal discipline"
    },
    {
     "hd": "Trump says he's giving Iran \"a chance to be smart\"",
@@ -15926,13 +15941,6 @@
     "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
    },
    {
-    "hd": "Lula’s choice of Bradesco banker as Brazil’s finance minister lifts markets",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/lulas-choice-bradesco-banker-brazils-finance-minister-lifts-138482032",
-    "pub": "2026-11-27T17:30:27.000Z",
-    "sum": "Brazilian markets have rallied after President Luiz In&aacute;cio Lula da Silva confirmed that veteran banker Luiz Carlos Trabuco would lead his finance ministry in 2027, a move seen as a commitment to fiscal discipline"
-   },
-   {
     "hd": "Pakistan and Turkey pledge to support Saudi Arabia against Houthi attacks under defense pact",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWWNfVjBoUnQyN3lnTjdDVXdrSFZRaDFTYU9xQzk4ZkZtbE9nLUNxUUhJczE0aTVHRVliZ3Zlal9VanlaTWEyYmt0b2ZfcFlKV1c4SXVxLVE5SXRQaHl4bGJpcnpKWDJRWGVtZXRJOGVkMlIzR3I1TEVieldaZUNXSGdnT2ZxTXpfMkZoWWpycGZSZzRiQjhnN0dxd29Hc1lOZWpjMXppMXlDU3BhWkE?oc=5",
@@ -15944,13 +15952,6 @@
     "src": "DW",
     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNOWVXOVY0VDdvcFY0bDVROG81bEdsVWxiVTlzODhDYm5ILWtFMjlpMFVseWZQb0t2WnE2Q20xQTlPVlVoS09Cd2xRRGZiZTYxcGdWRmFkRUU1X294UHJHYkVUSklCLU43d3pjTlh6OWJPNDFjNmNCT05EeEw4QXBabzhFRG9jVjlxR0hnVUU5RlhLZU5IVjRmN205TXo4ZnNyOXfSAaIBQVVfeXFMT0tqZlRIeF9HNXZmM0NqOEFHenJYTWlqSGp1Z3ZxbElEUjYzRXBCOFR5MU44NTdQd0p0ZEZmQlBQN0Q5STlLWFdCNUhDNV9wem1FUWxoS0E0ODB3cmRoNEd1QkNhaEFqNTdZeDBoeUdHR1hZOFoxRG5oMGdfWFV0X09reTRUS2p6d3dtNXMwVFJLUEVLZHZ2N01Za0FXdmNZMUpB?oc=5",
     "pub": "2026-11-27T16:52:32.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "AP Exclusive: Lebanon's prime minister says a proposal is underway to have UN peacekeepers stay on",
-    "src": "AP News",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPTnZncFctRF9kSk1HUGFISFF6Ykk2MVpqemdmd0w5SU5tRTczZXdTcll5Rmk0T1RMUUtZZmxtRDIxMmhXcUN2TmZhQjBSQ3VIX196dVBheDBPSGxjeEp4MXMyV2JYeDZDa1VqVWtaSWhuZ2c5SnprREtPaERrTjJjTkhkYTViRWpick5McV9weWNWUzJ0dnkyd1Y3aWc0emkyd3RhNkhn?oc=5",
-    "pub": "2026-11-27T16:51:00.000Z",
     "sum": ""
    },
    {
@@ -16005,8 +16006,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T03:00:11.277Z",
-  "lastAttempt": "2026-11-28T03:00:11.277Z",
+  "asOf": "2026-11-28T03:30:17.934Z",
+  "lastAttempt": "2026-11-28T03:30:17.934Z",
   "lastError": null
  }
 }
