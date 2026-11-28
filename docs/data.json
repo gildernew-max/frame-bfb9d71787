@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T08:15:11.007Z",
+ "generatedAt": "2026-11-28T08:30:11.223Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,10 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T08:15:11.007Z",
+  "at": "2026-11-28T08:30:11.223Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14430,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T08:15:11.007Z",
-  "lastAttempt": "2026-11-28T08:15:11.007Z",
+  "asOf": "2026-11-28T08:30:11.223Z",
+  "lastAttempt": "2026-11-28T08:30:11.223Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15074,7 +15075,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T08:15:11.007Z",
+  "lastAttempt": "2026-11-28T08:30:11.223Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15335,9 +15336,16 @@
      {
       "hd": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
       "src": "Yahoo Finance",
-      "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-ai-stocks-rollercoaster-ride-nvidia-bull-case-intact/cNRRs2jR9Vt?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a46a68518bed0c950e2470541846e5df8edb853b633ce9d915532a6ccd39be5b",
       "pub": "2026-11-28T07:13:02.000Z",
       "sum": "Ives argued that even a combination of adverse scenarios would not derail the AI revolution over the next several years."
+     },
+     {
+      "hd": "Why Delta Electronics Stock Is A Key AI Data Center Play Outside China",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=e9b0c619659f8ed96ccdc707ec39ef538d8fcffe36f6ca2b9612cd63ada1a0f9",
+      "pub": "2026-11-28T07:11:44.000Z",
+      "sum": "US export controls on Nvidia’s Blackwell chips were meant to draw a hard line on advanced AI compute flowing into China, yet the discovery of sanctioned hardware inside a Shanghai data center shows how porous that line can be. That leak matters for investors, because wherever rules tighten or loopholes appear, capital often follows. This article walks through three stocks exposed to that story and how the same news could help or hurt each one. The three stocks that follow are just a small..."
      },
      {
       "hd": "Jensen Huang’s Comeback Collides With Furious Lawmakers Demanding Answers",
@@ -15349,7 +15357,7 @@
      {
       "hd": "Nvidia And AI Infrastructure Stocks Worth Watching For Data Center Demand",
       "src": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-ai-infrastructure-stocks-worth-061003955.html?.tsrc=rss",
+      "url": "https://finnhub.io/api/news?id=a9a053a963aa1265a9af8170b84df0ef7a8f33412b53b25b274faa707a988bbf",
       "pub": "2026-11-28T06:10:03.000Z",
       "sum": "Artificial intelligence infrastructure is back in the spotlight after Nvidia reinstated Jensen Huang as CEO, paired with a sharply higher long-term revenue outlook and huge FY 2027 numbers that have refocused attention on the plumbing behind AI. Investors who ignore the hardware and data center layer risk missing where a lot of value could concentrate. This article spotlights three stocks exposed to that same news story. The three stocks below are just a sample of the idea, and the full..."
      },
@@ -15401,13 +15409,6 @@
       "url": "https://finnhub.io/api/news?id=e299fe88567a7a659bfd5f2a6daa4f621b9279aa134e42209b2c5a991d644c68",
       "pub": "2026-11-27T23:23:55.000Z",
       "sum": "Key TakeawaysSemiAnalysis found that Nvidia’s Vera Rubin NVL72 rack delivers 2x to 6. 5x the tokens per dollar of total cost of its GB300 NVL72 rack."
-     },
-     {
-      "hd": "Nvidia chips on sale for $3M in China — as Jensen Huang scandal and US crackdown chokes supply",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9491a22c2c534687927467547dd49c6da73fb76a5db30c33ecbe952c7dfe37d1",
-      "pub": "2026-11-27T21:18:40.000Z",
-      "sum": "Chinese videos are advertising banned Nvidia chips for sale at $3 million apiece, more than five times the US price. Prices have spiked amid a crackdown by both Washington and..."
      },
      {
       "hd": "Nvidia: If You Didn't Sell Before The Jensen Huang Drama, It's Too Late Now",
@@ -15510,8 +15511,8 @@
     ],
     "fetched": {
      "Finnhub": 100,
-     "Yahoo": 7,
-     "Google News": 85,
+     "Yahoo": 6,
+     "Google News": 83,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
@@ -15705,6 +15706,13 @@
    "SPCX": {
     "items": [
      {
+      "hd": "Elon Musk Says GOOGL Has ‘Expressed Interest’ In Renting More Compute From SPCX",
+      "src": "Yahoo Finance",
+      "url": "https://finnhub.io/api/news?id=3ee61dd21242fe7e628550dffcc31705602c3432cc700bb40a314931ae9b7e6a",
+      "pub": "2026-11-28T07:48:29.000Z",
+      "sum": "Musk's latest comments point to an increasingly lucrative infrastructure business for SpaceX, even as the company faces questions about how its own AI ambitions are progressing against rivals."
+     },
+     {
       "hd": "Cathie Wood-Led Ark Invest Loads Up On SPCX, CRSP And TEM — But Sells SHOP, ILMN, BYD",
       "src": "Yahoo Finance",
       "url": "https://finnhub.io/api/news?id=fb3b04a169f43f79299a758b6ca9f4431520a2d17f9a2527f950f6bd00c8a854",
@@ -15773,13 +15781,6 @@
       "url": "https://finnhub.io/api/news?id=083b6874f1482b3f84e0ecb686567f71315bfb3910ed6e081d26f3381c281815",
       "pub": "2026-11-27T17:52:56.000Z",
       "sum": "Chris Guttman-McCabe, Anterix’s head of corporate development, told Bloomberg that it is talking to “all the right parties.”"
-     },
-     {
-      "hd": "Here's Why SpaceX’s Starship Could Lift Linde’s Space Revenue up to 700%",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=9394e1b1429a001afe8e25cf755abf84132814c7e8bde1f08b5b1e8a61765e69",
-      "pub": "2026-11-27T17:46:03.000Z",
-      "sum": "Linde plc (NASDAQ:LIN) could see its space revenue grow as much as sevenfold by 2030 if Elon Musk’s SpaceX (NASDAQ:SPCX) achieves its ambitious Starship launch targets, Morningstar estimates. But those ambitions may face a practical obstacle. Aerospace architect Jennifer Webb..."
      },
      {
       "hd": "Why Amazon’s Rival to Starlink Is Struggling to Catch Up With SpaceX",
@@ -15881,8 +15882,8 @@
      }
     ],
     "fetched": {
-     "Finnhub": 179,
-     "Yahoo": 11,
+     "Finnhub": 180,
+     "Yahoo": 12,
      "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 9
@@ -16069,14 +16070,14 @@
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 40,
+     "Google News": 45,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T07:30:11.446Z",
-  "lastAttempt": "2026-11-28T07:30:11.446Z",
+  "asOf": "2026-11-28T08:30:11.223Z",
+  "lastAttempt": "2026-11-28T08:30:11.223Z",
   "lastError": null
  },
  "worldNews": {
@@ -16103,9 +16104,9 @@
     "sum": ""
    },
    {
-    "hd": "Eight killed in Peruvian military helicopter crash",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cwp9d85mlp88o?at_medium=RSS&at_campaign=rss",
+    "hd": "Eight killed in Peruvian military helicopter crash on rescue mission",
+    "src": "BBC",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1qY1VXdXNtSDFOdlhwV3pmREUyZVJYWGpyVDV6TWZMTWU1dVFOQnJLRXdRUVlrdm1BZHI2djRTaXRBQVhIWHJyM3F2UmJUVEhUcjgyeE92YTJqYVU?oc=5",
     "pub": "2026-11-28T04:19:16.000Z",
     "sum": "The pilot was the sole survivor of the crash during a rescue mission in a remote area known for drug trafficking."
    },
@@ -16166,6 +16167,13 @@
     "sum": ""
    },
    {
+    "hd": "Sudan's lost generation: War is stealing the childhood of millions",
+    "src": "NPR",
+    "url": "https://www.npr.org/2026/11/27/nx-s1-6053049/sudans-lost-generation-war-is-stealing-a-generation-of-childhood",
+    "pub": "2026-11-27T22:54:53.000Z",
+    "sum": "Three years of war have stolen childhood from millions of children in Sudan, leaving them displaced, hungry and fighting for survival instead of learning in a classroom."
+   },
+   {
     "hd": "Army deems lead azide detonation a success but criticism lingers over notification",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR0EtR1JfYXg0UHhDSHFDWWtYcXE4eWFIcjhydk1IbVZjQUh4VjItVmYtQ3J1SzBQQ0JqcUlrcVBoODlTeHNPTUdpdmxKVHlycUU1NVFFc1BGMWxFS2NYOXlpU3dObXpiZ3ZYQ1RrYTdWc2tmREtqTXNNVWxkZG9aa1hMOGZDLVU?oc=5",
@@ -16206,6 +16214,13 @@
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQU1lWSFNZVHRVSi1Dbm12NWtCT3RhaERTUnNHN3U1RHR2aHVXbzc5N2hCdGxIbkpINnRTZm85aElGWU1BOElob1p2cTd3anNkOGdlQ05rVktpX1F6RDM3WUxfZDg5czNCZi1wODMySzZsNlRULVBaN0RhOWlrSllDVHlvTERqV2F4eWxwYUc1Mm5VVm1kdVFZYVhMNXAzdHY0?oc=5",
     "pub": "2026-11-27T21:24:00.000Z",
     "sum": "Brazilian markets have rallied after President Luiz In&aacute;cio Lula da Silva confirmed that veteran banker Luiz Carlos Trabuco would lead his finance ministry in 2027, a move seen as a commitment to fiscal discipline"
+   },
+   {
+    "hd": "Kyiv offers Black Sea ceasefire to protect grain exports",
+    "src": "Al Jazeera",
+    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWW9taURHbFpkMjd6YkFzNEliSVpaOW5zal9CUEY1R0kyS3NWVU9HbkIzRkNhcWtoOWgxUi02WWdWN1dpQTU5UVVpc3dGa04yVVBQbk1NQVMzSFBLVmxvUllTNTVwVEdwR1FtdGI3Nnppb0lvNjNRMUZwYl9EaXI1akI0VE5SRGcxVkxzVzNZbFM2S0RCc2JOdi05R2s1dlg4eVZIdDBB0gGrAUFVX3lxTFB6OWM4c1NpYjVhZUp2MVV1eUppS1lVLW1lNjIwaktRN1lWUDlGOG5meWIySTByVVhUQ2tnSGh4d05pVXN0SWxnSFlFc0lzVzhmQzlWaFRZTW5ELU0yWUpNYTIwVV8tQmhqODBCVzhQMjBseHVydHcydEJya3lJREtMbFd2aW0zMmlndy1oV2M2RHZPbzh2V3FQcV8tNE5xMmx1S3Jfb1NXNXdHVQ?oc=5",
+    "pub": "2026-11-27T21:17:40.000Z",
+    "sum": ""
    },
    {
     "hd": "Trump says he's giving Iran \"a chance to be smart\"",
@@ -16276,20 +16291,6 @@
     "url": "https://www.nytimes.com/2026/11/27/world/europe/russia-ai-journey-conference.html",
     "pub": "2026-11-27T18:01:19.000Z",
     "sum": "Russian officials see artificial intelligence as a way to solve the country’s pressing problems. But Russia’s technological development has been constrained."
-   },
-   {
-    "hd": "Zelensky criticises 'strange' Trump-Putin friendship in BBC interview",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c820q9wgrpyyo?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-27T18:00:40.000Z",
-    "sum": "Ukraine's president voices frustration with US and says it is not pushing Russia hard enough in peace talks to end the war."
-   },
-   {
-    "hd": "Cheating military pilot staged wife’s murder to look like she died in horrific lawn mower accident",
-    "src": "New York Post",
-    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZEM0dHUxSXo3cWdmcjh3dHVZNjFvM2JmTHVqeHRCRGNCZ1hiZjZKMXhfTXdKbVNCbUVDWGR0U185dFkzekFhWkh5ZzU3cU01elNCVWRISzBzM2dQQVpsUF91aTlxdmJzX1NTMVZ0T3NWOHEybGZpX3FlUkdCZHJlckV0aHhMWWR1NFhfQWV6UXctYkhaSTZlSUgwNVEtVWVZYnZaWWZKNHZ3SkhMbktibXV0bmRxeFhSWU5SOA?oc=5",
-    "pub": "2026-11-27T16:10:00.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16308,8 +16309,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T07:30:11.446Z",
-  "lastAttempt": "2026-11-28T07:30:11.446Z",
+  "asOf": "2026-11-28T08:30:11.223Z",
+  "lastAttempt": "2026-11-28T08:30:11.223Z",
   "lastError": null
  }
 }
