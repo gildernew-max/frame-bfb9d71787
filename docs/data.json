@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T10:45:10.138Z",
+ "generatedAt": "2026-11-28T11:00:12.608Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -416,14 +416,14 @@
     "team": "Pittsburgh Steelers",
     "color": "#272727",
     "gold": "#FFB612",
-    "record": "6–4",
+    "record": "7–4",
     "rank": "2nd AFC North",
-    "streak": "L2",
+    "streak": "W1",
     "next": {
-     "date": "2026-11-27T20:00Z",
+     "date": "2026-12-07T01:20Z",
      "homeAway": "home",
-     "opponent": "Broncos",
-     "oppCode": "DEN",
+     "opponent": "Texans",
+     "oppCode": "HOU",
      "state": "pre"
     },
     "season": "2026"
@@ -465,8 +465,8 @@
     "season": "2026"
    }
   ],
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
+  "asOf": "2026-11-28T11:00:12.608Z",
+  "lastAttempt": "2026-11-28T11:00:12.608Z",
   "lastError": null
  },
  "news": {
@@ -7502,11 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T10:45:10.138Z",
+  "at": "2026-11-28T11:00:12.608Z",
   "ran": [
    "alerts",
-   "news",
-   "world",
+   "nfl",
+   "worldNews",
+   "rates",
    "usTempGrid"
   ]
  },
@@ -7518,16 +7519,16 @@
     "id": "DGS10",
     "name": "10-Year Treasury",
     "latest": {
+     "date": "2026-11-25",
+     "v": 4.85
+    },
+    "prior": {
      "date": "2026-11-24",
      "v": 4.91
     },
-    "prior": {
-     "date": "2026-11-23",
-     "v": 4.92
-    },
     "yearAgo": {
-     "date": "2025-11-24",
-     "v": 4.04
+     "date": "2025-11-25",
+     "v": 4.01
     },
     "history5y": [
      [
@@ -8575,8 +8576,8 @@
       4.92
      ],
      [
-      "2026-11-24",
-      4.91
+      "2026-11-25",
+      4.85
      ]
     ],
     "history10y": [
@@ -10669,8 +10670,8 @@
       4.92
      ],
      [
-      "2026-11-24",
-      4.91
+      "2026-11-25",
+      4.85
      ]
     ]
    },
@@ -10678,16 +10679,16 @@
     "id": "DGS7",
     "name": "7-Year Treasury",
     "latest": {
+     "date": "2026-11-25",
+     "v": 4.74
+    },
+    "prior": {
      "date": "2026-11-24",
      "v": 4.79
     },
-    "prior": {
-     "date": "2026-11-23",
-     "v": 4.81
-    },
     "yearAgo": {
-     "date": "2025-11-24",
-     "v": 3.8
+     "date": "2025-11-25",
+     "v": 3.77
     },
     "history5y": [
      [
@@ -11735,8 +11736,8 @@
       4.8
      ],
      [
-      "2026-11-24",
-      4.79
+      "2026-11-25",
+      4.74
      ]
     ],
     "history10y": [
@@ -13829,8 +13830,8 @@
       4.8
      ],
      [
-      "2026-11-24",
-      4.79
+      "2026-11-25",
+      4.74
      ]
     ]
    },
@@ -13838,15 +13839,15 @@
     "id": "DFF",
     "name": "Fed funds (effective)",
     "latest": {
-     "date": "2026-11-24",
+     "date": "2026-11-26",
      "v": 3.88
     },
     "prior": {
-     "date": "2026-11-23",
+     "date": "2026-11-25",
      "v": 3.88
     },
     "yearAgo": {
-     "date": "2025-11-24",
+     "date": "2025-11-26",
      "v": 3.88
     }
    },
@@ -13867,8 +13868,8 @@
     }
    }
   },
-  "asOf": "2026-11-27T11:00:11.195Z",
-  "lastAttempt": "2026-11-27T11:00:11.195Z",
+  "asOf": "2026-11-28T11:00:12.608Z",
+  "lastAttempt": "2026-11-28T11:00:12.608Z",
   "lastError": null
  },
  "futures": {
@@ -14431,8 +14432,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T10:45:10.138Z",
-  "lastAttempt": "2026-11-28T10:45:10.138Z",
+  "asOf": "2026-11-28T11:00:12.608Z",
+  "lastAttempt": "2026-11-28T11:00:12.608Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15075,7 +15076,7 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T10:45:10.138Z",
+  "lastAttempt": "2026-11-28T11:00:12.608Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -16083,6 +16084,34 @@
  "worldNews": {
   "items": [
    {
+    "hd": "Taiwan awaits local election results as China watches",
+    "src": "ABC News",
+    "url": "https://abcnews.com/International/wireStory/taiwan-holds-elections-choose-mayors-local-leaders-138489345",
+    "pub": "2026-11-28T10:50:34.000Z",
+    "sum": "Vote counting is underway across Taiwan's 22 cities and counties after local elections on Saturday"
+   },
+   {
+    "hd": "Two staff killed in Israeli strike on Gaza medical clinic, MSF says",
+    "src": "BBC News",
+    "url": "https://www.bbc.co.uk/news/articles/cm5y10yydln3o?at_medium=RSS&at_campaign=rss",
+    "pub": "2026-11-28T10:34:58.000Z",
+    "sum": "The Israeli military says it targeted \"Hamas terrorists\" in the strike which has been condemned by the World Health Organization."
+   },
+   {
+    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
+    "src": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
+    "pub": "2026-11-28T10:26:34.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Ukraine's attack on Russian ship in Libya was not coordinated with partners, Zelenskiy says",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdTFCMEFWV3I5ZUdPS0xrdm5rTGFSTG5VZmhDdV9fSjFQeTI5bDFEdEg1RlozZF9xT0RKVTluVlh0bG1HTEgtLUVnSlNFelJfRUZXLW5nWU9PNzlTcTNDb0JTWXp2X3NQVFY1ek42RmJMTUdsWHdyMExFNVNLdzdKOENKRHphNld1WGg3UlE1eThvYTFINHl4czM4UWFnM3R0dUlBSGZOaEN3YjlBMjUwT09jWTdLWFZscUhKUXpBckU0WGFPV2c?oc=5",
+    "pub": "2026-11-28T09:38:10.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Zelenskyy questions Trump’s ‘strange’ reference to Putin as a ‘friend’",
     "src": "NBC News",
     "url": "https://www.nbcnews.com/world/ukraine/zelenskyy-questions-trumps-strange-reference-putin-friend-rcna611653",
@@ -16102,13 +16131,6 @@
     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNSEJHN0tUWVBOd3BrNkpaTm1EaHlTeXp1aDZBZnJ1aUdEbkNVUUJJTXdJbFNXVHhLUWJwNUpRV3lUdEZTUl9Kbi1LWkhlWjBmRUdVRlNQQTVOb3JhWW5sb0pVUklXNXlndFJ2VXRNZnF1WENxMXJjTGN3RHJ4d0FreGRZdzN0ZWQ4WVE?oc=5",
     "pub": "2026-11-28T06:55:00.000Z",
     "sum": "Taiwan is holding elections across its 22 cities and counties for mayors, council members and other local leaders"
-   },
-   {
-    "hd": "Two staff killed in Israeli strike on Gaza medical clinic, MSF says",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/cm5y10yydln3o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-28T06:52:05.000Z",
-    "sum": "The Israeli military says it targeted \"Hamas terrorists\" in the strike which has been condemned by the World Health Organization."
    },
    {
     "hd": "New Tariffs on China Risk Undermining Trade Truce With U.S.",
@@ -16174,10 +16196,24 @@
     "sum": ""
    },
    {
+    "hd": "Ruling party set to make gains in Taiwan local elections watched by China",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPd0hYazFSNFdJenpCQmdWUUh0cUZOTHhJWm5hYnB4ampiMXJRamNxVGtST2NuTV9rS2hjUHFUWElIUjhtX3VlZFlWTkpBOWh5SmJkNGdJd1VFVFFWSmR4LURfQUx0ZDVmWnk3MEpuc3hMN0QwaXFwYnZMc3kteEJpWUduWWNITVkwNTJGaGVRSWdHNVNyNjhn?oc=5",
+    "pub": "2026-11-28T00:01:00.000Z",
+    "sum": ""
+   },
+   {
     "hd": "Taiwan votes in local elections as China sends warplanes, lambastes Taipei candidate",
     "src": "Reuters",
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPd0hYazFSNFdJenpCQmdWUUh0cUZOTHhJWm5hYnB4ampiMXJRamNxVGtST2NuTV9rS2hjUHFUWElIUjhtX3VlZFlWTkpBOWh5SmJkNGdJd1VFVFFWSmR4LURfQUx0ZDVmWnk3MEpuc3hMN0QwaXFwYnZMc3kteEJpWUduWWNITVkwNTJGaGVRSWdHNVNyNjhn?oc=5",
     "pub": "2026-11-28T00:01:00.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "NBC Responds to Backlash After Airing Anti-Israel Aid Ad",
+    "src": "Newsweek",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbXB0Q0ZyenpDQ1Z1ZnpxR3RWaTRISGVtTXl4RUFCa3ItdFJ6UkM5N2dFaDVhRHRZSlcxN2VwUzh6V2RJWk5iODctV0ZNUnd6eklDZ0hxMHhpSWdIXy1kenlRWmltU1ctVTlUYnJiRWEyeVY2aUZJSG0td25hOXFvYURRcFR5cGV1NXVULVVqOWRlX2FG?oc=5",
+    "pub": "2026-11-27T23:19:00.000Z",
     "sum": ""
    },
    {
@@ -16256,41 +16292,6 @@
     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQndaZ0VPUVlWWUJiWXM5QnVWUmRIMEE2UTFjTXJKN0R1VFpyeFBoUmpTMzRLZUNtTHBFQzIyUzhrclQyLVkzd1VlWnNfRFE1NUhCc3ljbHRFZXoxX3dxdzgwOHJCN0YyTWFNQkhmeGNydUlYdDhFeUlfUWtjMnBDMkthd0VHSmJWbm9HS2RTcFpCTzQzRFVZempTN0J0QQ?oc=5",
     "pub": "2026-11-27T19:38:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Estonia confirms closure of border with Russia from 1 December",
-    "src": "Euronews",
-    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOUGRvYVkyUzA3LVU1aXNTMUZNNGVyTWJsUU5oUWJJWTNhaEtIQXltdlZMSE41clhZcDNrMkRCTWM0REtrMFZoX3AzLUVSTER6NnB5VUpvVllGQUdsS1ZwQnI0MXZPNlExY3VzNEdHdlplbmVVRTM4UWVEcWJtZzJsTnFFWGM3SmtVTVNKa1NWQUdlSS1qejNVdDdkLVotMFk4ZDJBY1BVeUloMGh2aEF0aGc1YlpET3BORFVKS3hqdUg2R1JQ?oc=5",
-    "pub": "2026-11-27T18:48:22.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "US military disables tanker ship attempting to slip through Iran blockade on Thanksgiving Day",
-    "src": "Fox News",
-    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPeDNxUmhfQTJHSHlfSlBjMjljTFEtaUJvdXpHQVROM08zYkMzRUluRHBlSnRkMzVMY3M1WmdYZXpCZjFxYUpteVRTczMzNHlxVm5ReTdTZTAtUkpLQnAxbjlOaDNVVlZYQUxkTVRrVVJORVdHSGhSZEJQUm9vRXE4Tm5fU19CcENJd0ZzVTRQVGhsVTZTQVVCU095Qm9DSDgzTWo1OFF1emNjLTlIUEdjNGRrcW5rSUxn0gG-AUFVX3lxTE9WanJuUmVjc3NDUUJtX1NOZXJVSm9GbXdKd3phb1RyZkppbnVERGczMEVwNW5NT3Y1WGd1bWlQRDdVMElxRjhCb1NGT1BHQXNmQ0tnbU1JRWdBeGhZNEY0MndWMzdVX0FvY2h2UXVOZkVHak1IRnY5R2ZFRWFMUEZYQ2Jyam9OZ01iaGc2cFNIT0IxZEdqVDVrdXFCX2MwRVhRZllwVXg3WVJxRU5rR3pxQlhKanpNTTJsY21keFE?oc=5",
-    "pub": "2026-11-27T18:48:07.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "The Gap Between China’s Military Spectacle and Battlefield Reality",
-    "src": "WSJ",
-    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNUDN4d1ZQZ3BaZzhDMzFUN0xBa2dqbU14SFltZGdfWmR5eTFRSjRHanJoY1NETTNKWkFkVjBYNTlVLVVFcktuWllBSkdoZnJYblRuMEhVMXdvVHM3M3ZsLXV3TTVONVJjMDg4RVRVcm9kZEN2akJVQklxcXA1a1NDM1ZoeGM4ZGxKb2xZWkI1SHp4Y29zNUF5azdwNF9yNjBwZm1kQlRtT1R0QQ?oc=5",
-    "pub": "2026-11-27T18:43:36.000Z",
-    "sum": ""
-   },
-   {
-    "hd": "Weary of war but with no sign of backing down, Kyiv faces another punishing winter",
-    "src": "BBC News",
-    "url": "https://www.bbc.co.uk/news/articles/c3pw4yrr8kz9o?at_medium=RSS&at_campaign=rss",
-    "pub": "2026-11-27T18:42:50.000Z",
-    "sum": "Ukraine settles in for another devastating winter as the questions persists: how will it all end?"
-   },
-   {
-    "hd": "Relatives say jailed Iranian twins beaten, tortured, one on death row",
-    "src": "Euronews",
-    "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPb2ZXcmllLUxzSDl5MmplMHJ3MTYyTjFNbTNkRW5DYVZFb294Nnp5LU9pSERnYXhzZk5lNml2U3BwQmdjNy1DY0xkVXl4WkN5R3o1ZlluUWxqaEZTSnN6T3g2c1VuVjhZNEVZWkJhR0xWREd2TEdoWkhrMHhzTFU5YmxzVlBUTXo0RE02MThvdV9la003cnVhQll0VXpzOG5HZXRyYkwwdG80SmRYaHRj?oc=5",
-    "pub": "2026-11-27T18:32:04.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16309,8 +16310,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T10:30:12.385Z",
-  "lastAttempt": "2026-11-28T10:30:12.385Z",
+  "asOf": "2026-11-28T11:00:12.608Z",
+  "lastAttempt": "2026-11-28T11:00:12.608Z",
   "lastError": null
  }
 }
