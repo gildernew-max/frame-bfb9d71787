@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-27T23:45:09.817Z",
+ "generatedAt": "2026-11-28T00:00:13.130Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,12 +7502,12 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-27T23:45:09.817Z",
+  "at": "2026-11-28T00:00:13.130Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
-   "news",
-   "world",
+   "stockNews",
+   "worldNews",
    "extended",
    "usTempGrid"
   ]
@@ -14433,8 +14433,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-27T23:45:09.817Z",
-  "lastAttempt": "2026-11-27T23:45:09.817Z",
+  "asOf": "2026-11-28T00:00:13.130Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15041,16 +15041,16 @@
     "id": "401856759",
     "start": "2026-11-27T20:30Z",
     "state": "in",
-    "status": "Q4 4:24",
+    "status": "Q4 1:37",
     "period": 4,
-    "clock": "4:24",
+    "clock": "1:37",
     "completed": false,
     "away": {
      "name": "Florida Gators",
      "short": "Florida",
      "id": "57",
      "abbrev": "FLA",
-     "score": "23",
+     "score": "26",
      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png",
      "record": "7-4",
      "winner": false,
@@ -15072,12 +15072,12 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-27T23:45:09.817Z",
-  "lastAttempt": "2026-11-27T23:45:09.817Z",
+  "asOf": "2026-11-28T00:00:13.130Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-27T23:45:09.817Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
@@ -15288,8 +15288,8 @@
  },
  "extended": {
   "provider": "Yahoo Finance",
-  "asOf": "2026-11-27T23:45:09.817Z",
-  "lastAttempt": "2026-11-27T23:45:09.817Z",
+  "asOf": "2026-11-28T00:00:13.130Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "items": {
    "NVDA": {
     "session": "post",
@@ -15514,7 +15514,7 @@
     "fetched": {
      "Finnhub": 104,
      "Yahoo": 5,
-     "Google News": 84,
+     "Google News": 85,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
@@ -15886,7 +15886,7 @@
     "fetched": {
      "Finnhub": 179,
      "Yahoo": 11,
-     "Google News": 18,
+     "Google News": 19,
      "Nasdaq": 0,
      "Seeking Alpha": 10
     }
@@ -16072,14 +16072,14 @@
     "fetched": {
      "Finnhub": 143,
      "Yahoo": 10,
-     "Google News": 48,
+     "Google News": 46,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-27T23:30:11.513Z",
-  "lastAttempt": "2026-11-27T23:30:11.513Z",
+  "asOf": "2026-11-28T00:00:13.130Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "lastError": null
  },
  "worldNews": {
@@ -16174,6 +16174,13 @@
     "url": "https://www.bbc.co.uk/news/articles/c3pw4yrr8kz9o?at_medium=RSS&at_campaign=rss",
     "pub": "2026-11-27T18:42:50.000Z",
     "sum": "Ukraine settles in for another devastating winter as the questions persists: how will it all end?"
+   },
+   {
+    "hd": "Putin Visits Russia’s New Nuclear Submarine as Kremlin Says Russia Is “Surrounded by Enemies”",
+    "src": "UNITED24 Media",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOWEtDT0J0bkdzNWJYTzRZamlZNVJjcWdfQ3hBQ0xoQ0k5VVlzYUk0YnJ1NHQ2Y3FDYUpDZnl2V3I1QlZzalcteVJEalQ3UlpGWWdfdVJpZTF2Q3h4Q3Nad0VjZnlodUZhbGw3OERfc1dTNlMzdFR1Qnhody1ZZEpudkxjci1RcUZZOGg4Z3NROWJmcl9NRHlfbG9sTzBlcWN4SVpjNERzUFM0UDNVSHlEMTZoVGJ5RDB2Q1B2VjB3U3BhSkVpcXEw?oc=5",
+    "pub": "2026-11-27T18:14:57.000Z",
+    "sum": ""
    },
    {
     "hd": "With Dancing Robots, Russia Projects a Future Shaped by A.I., Not War",
@@ -16286,13 +16293,6 @@
     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQM3JrUmVYMExlMzNxaTY5VU1YWXctcThoZUJmU2FBN1lhbElJVGFrcTBnQWZUTVBtVUpaOTlKcUFwcUZkbTR4UHp1aS1mTUtZYUtmZjZFTGdRdzN3RXduVzZLZTJMLVlTc0tKMGRzTUM1UG9sMDF1dEZHZVZXak5HZnd2dFhkY1RxTFQyTVNpVTJnMU5Vd1NBOU9rYzNmbFlWUE1jQ9IBqgFBVV95cUxONkE1UFBtWXZSQnl0eGFwN2FHMFlrNzE5NEVGYW9ESWVoU2d0S3RUQUtBREdVMGxGOFdtd1hhN3FVVWlBaTYzS1RFLW9IcWZtMTIzdXJDZ2cybWkzWWpqemtqTG5QUFR0eU1pcFpnd2RsbkNldEFFNlo3QmFLc2JZZ21PbDZFaVdOanllUEZERk9IdDBHNjVNXzNKTGtmd0VyTHdfYXNFRzd0Zw?oc=5",
     "pub": "2026-11-27T11:55:06.000Z",
     "sum": "The workers were technicians for Rheinmetall, a Germany defense company. Bahrain and Kuwait in recent weeks have borne the brunt of Iranian strikes."
-   },
-   {
-    "hd": "Russia’s hybrid war on Europe evolving, but failing: IISS",
-    "src": "Al Jazeera",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPSi1EdWxpNDFBQ2NFLWNNZUJjSHloMDd4cXM0QVIxY2dKOVk1SlA4SThmTWVEVGc1SFB3WTQ0WWZBejU0dUZlRE5CblRjbC04UTBJLWlGSzFEX0gxMVVHQkc4X1dhUmJMRHdKdjdlNV8tUkU3WnhfeHlCQ2h0OXoxUzVIdHI2cC1KMEN4cGUzTG9vTHo4MGxhR1lPTnHSAaIBQVVfeXFMT3ZGMERBTzlsUVd0a240SlpPNVhJYjB0akdlMXI1U1RwR2sxSHdpWjhLWVhNcTcxQWg0MVFZRzY0ZTZpZ0FZRHZ4SzFMdHhKYjNxaTY2RWdpNzcxMVZwXzRfVlpNakw2RlV6cXpKOGMySjJxWTl6QUVpQXBJZWJrOWhGNnhROHUtVzJMb196d3N5dVJjTldtZ19CSnFFYkUxMHNn?oc=5",
-    "pub": "2026-11-27T11:51:40.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16311,8 +16311,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-27T23:30:11.513Z",
-  "lastAttempt": "2026-11-27T23:30:11.513Z",
+  "asOf": "2026-11-28T00:00:13.130Z",
+  "lastAttempt": "2026-11-28T00:00:13.130Z",
   "lastError": null
  }
 }
