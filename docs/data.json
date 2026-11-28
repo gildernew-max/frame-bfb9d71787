@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T14:45:12.903Z",
+ "generatedAt": "2026-11-28T15:00:11.676Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "Open-Meteo",
@@ -7502,12 +7502,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T14:45:12.903Z",
+  "at": "2026-11-28T15:00:11.676Z",
   "ran": [
    "alerts",
    "cfbScoreboard",
-   "news",
-   "world",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14432,8 +14431,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T14:45:12.903Z",
-  "lastAttempt": "2026-11-28T14:45:12.903Z",
+  "asOf": "2026-11-28T15:00:11.676Z",
+  "lastAttempt": "2026-11-28T15:00:11.676Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -15071,13 +15070,13 @@
    }
   ],
   "poll": "AP",
-  "asOf": "2026-11-28T14:45:12.903Z",
-  "lastAttempt": "2026-11-28T14:45:12.903Z",
+  "asOf": "2026-11-28T15:00:11.676Z",
+  "lastAttempt": "2026-11-28T15:00:11.676Z",
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T14:45:12.903Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-28T15:00:11.676Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -16084,6 +16083,13 @@
  "worldNews": {
   "items": [
    {
+    "hd": "U.S. repelled drone incursion at British air base",
+    "src": "The Washington Post",
+    "url": "https://www.washingtonpost.com/world/2026/11/28/us-military-repelled-drone-incursion-british-air-base/",
+    "pub": "2026-11-28T14:38:49.000Z",
+    "sum": "In the mid-November incident at RAF Lakenheath, drones were deflected by U.S. electronic jamming mechanisms and other defenses, officials said Saturday."
+   },
+   {
     "hd": "At least 9 reported killed across Ukraine, while Russia downs near-record number of drones",
     "src": "AP News",
     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbEN2eWpEYnUtZ2NrX1RpUU8xRGc1ckpRQzBhdElncEpiLTNZeGFLeVlwUS10Y2p4eEdKYW5IWXFsQ0c4cHlkckxVM09qVW1tcURfRW9xYmg5b3U4dkpkRmEzZU5KMDVld29ycjM3Rms2aTFqcnVFUDJXM3JsZ0ZxNW5VcXJfQUhPT05mQm13SDNFcWFsdjZZLXFlUkFudEJxN0NScjdmbWxHUFE1bGpOcA?oc=5",
@@ -16285,13 +16291,6 @@
     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR0EtR1JfYXg0UHhDSHFDWWtYcXE4eWFIcjhydk1IbVZjQUh4VjItVmYtQ3J1SzBQQ0JqcUlrcVBoODlTeHNPTUdpdmxKVHlycUU1NVFFc1BGMWxFS2NYOXlpU3dObXpiZ3ZYQ1RrYTdWc2tmREtqTXNNVWxkZG9aa1hMOGZDLVU?oc=5",
     "pub": "2026-11-27T22:45:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "Pentagon committed $81 million to Guantanamo migrant mission that held just 849 people",
-    "src": "CNN",
-    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQV1BuWE1yT3pIUnUzZlUzTDRHeElCaG1KUTFzZndSVGpLMzBhZUdRWVJyRzN2djE1M2hFUVRjTGptUU5QSHdoeUhWQWg2SkxtWms5S3ZpQ2JTZ2FkQXRrdEZPUHBLMWUwTm8yV0VRV2l4dHJiTnBuOXRBckFnS1JVTnd6VWZiMTVvbEV5TUVfbVJYOWVGU2RxaTM0cE8?oc=5",
-    "pub": "2026-11-27T21:46:31.000Z",
-    "sum": ""
    }
   ],
   "feeds": [
@@ -16310,8 +16309,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T14:30:19.588Z",
-  "lastAttempt": "2026-11-28T14:30:19.588Z",
+  "asOf": "2026-11-28T15:00:11.676Z",
+  "lastAttempt": "2026-11-28T15:00:11.676Z",
   "lastError": null
  }
 }
