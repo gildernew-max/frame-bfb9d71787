@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generatedAt": "2026-11-28T07:15:14.517Z",
+ "generatedAt": "2026-11-28T07:30:11.446Z",
  "timezone": "America/New_York",
  "weather": {
   "provider": "National Weather Service",
@@ -7195,10 +7195,11 @@
   "closeFetchedFor": "2026-11-27"
  },
  "lastRun": {
-  "at": "2026-11-28T07:15:14.517Z",
+  "at": "2026-11-28T07:30:11.446Z",
   "ran": [
-   "weather",
    "alerts",
+   "stockNews",
+   "worldNews",
    "usTempGrid"
   ]
  },
@@ -14123,8 +14124,8 @@
    "lon": -84.388
   },
   "items": [],
-  "asOf": "2026-11-28T07:15:14.517Z",
-  "lastAttempt": "2026-11-28T07:15:14.517Z",
+  "asOf": "2026-11-28T07:30:11.446Z",
+  "lastAttempt": "2026-11-28T07:30:11.446Z",
   "lastError": null
  },
  "cfbScoreboard": {
@@ -14767,8 +14768,8 @@
   "lastError": null
  },
  "usTempGrid": {
-  "lastAttempt": "2026-11-28T07:15:14.517Z",
-  "lastError": "Open-Meteo: fetch failed (UND_ERR_CONNECT_TIMEOUT)"
+  "lastAttempt": "2026-11-28T07:30:11.446Z",
+  "lastError": "Open-Meteo: Open-Meteo grid 429"
  },
  "world": {
   "items": [
@@ -15026,6 +15027,20 @@
    "NVDA": {
     "items": [
      {
+      "hd": "Dan Ives Sees ‘Rollercoaster Ride’ Ahead For AI Stocks, But Says Nvidia Bull Case Remains Intact — ‘Our Stress Test Stands’",
+      "src": "Yahoo Finance",
+      "url": "https://stocktwits.com/news-articles/markets/equity/dan-ives-ai-stocks-rollercoaster-ride-nvidia-bull-case-intact/cNRRs2jR9Vt?.tsrc=rss",
+      "pub": "2026-11-28T07:13:02.000Z",
+      "sum": "Ives argued that even a combination of adverse scenarios would not derail the AI revolution over the next several years."
+     },
+     {
+      "hd": "Jensen Huang’s Comeback Collides With Furious Lawmakers Demanding Answers",
+      "src": "WSJ",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOYkVSTDg1Nm9pYXRhai0zSmMzbU5PN1pRcHZlLXcxVFJfRlFGd08yTlZLUU5jUWZHMmdhMklhX1E0TlcySlByVk5vajFIcEVzczF0WlNzQkJKTF9LckdNeWlxckJUMnR5YVVkblBUdVo5TWRSd2p3dlMzQy11N05pYzFha0VBQXgycmxXcktwb1diSDk5bmJ3bjFMNVc4OTJwRFZLMWo1d0JhMGJxbFN0WGxUM2pXTWN6?oc=5",
+      "pub": "2026-11-28T06:48:59.000Z",
+      "sum": ""
+     },
+     {
       "hd": "Nvidia And AI Infrastructure Stocks Worth Watching For Data Center Demand",
       "src": "Yahoo Finance",
       "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-ai-infrastructure-stocks-worth-061003955.html?.tsrc=rss",
@@ -15087,13 +15102,6 @@
       "url": "https://finnhub.io/api/news?id=9491a22c2c534687927467547dd49c6da73fb76a5db30c33ecbe952c7dfe37d1",
       "pub": "2026-11-27T21:18:40.000Z",
       "sum": "Chinese videos are advertising banned Nvidia chips for sale at $3 million apiece, more than five times the US price. Prices have spiked amid a crackdown by both Washington and..."
-     },
-     {
-      "hd": "Jensen Huang Is Back. Nvidia’s (NVDA) Bull Case Remains",
-      "src": "Yahoo Finance",
-      "url": "https://finnhub.io/api/news?id=a3adb5dfaf174dffb6f21e2a31c6eadd3eb5208d57c2c682d0a5fd92dc772fb4",
-      "pub": "2026-11-27T21:06:00.000Z",
-      "sum": "Jensen Huang is back at the helm, and Nvidia’s (NVDA) bull case remains in play. Nvidia shares surged 31.5% on November 23 after news of Jensen Huang’s reinstatement, underscoring how closely investor confidence in the company is tied to its co-founder. While near-term volatility is likely to persist, I remain decisively Bullish over the long term. Nvidia makes the chips, networking gear, and software powering the artificial intelligence (AI) boom, and its earnings story is strong enough to ride"
      },
      {
       "hd": "Nvidia: If You Didn't Sell Before The Jensen Huang Drama, It's Too Late Now",
@@ -15192,19 +15200,12 @@
       "url": "https://finnhub.io/api/news?id=d61a449a660762726b3433316074dc36581d1ddbc33709a3b5003ca4149bd58f",
       "pub": "2026-11-27T10:21:07.000Z",
       "sum": "Gil Luria, head of technology research at D.A. Davidson, joins 'Squawk on the Street' to discuss Nvidia as its Blackwell chips were reportedly installed at a Shanghai data center linked to Alice Huang."
-     },
-     {
-      "hd": "President Trump on whether Jensen Huang poses a national security threat: 'He is absolutely fine'",
-      "src": "CNBC",
-      "url": "https://finnhub.io/api/news?id=030de72b175f4cf122f9f219e6361795aab4d9f1cb8ccf323498e2b09747e6a8",
-      "pub": "2026-11-27T10:19:04.000Z",
-      "sum": "CNBC’s Eamon Javers reports on President Trump’s latest remarks about Nvidia CEO Jensen Huang."
      }
     ],
     "fetched": {
      "Finnhub": 100,
-     "Yahoo": 6,
-     "Google News": 84,
+     "Yahoo": 7,
+     "Google News": 85,
      "Nasdaq": 6,
      "Seeking Alpha": 25
     }
@@ -15390,7 +15391,7 @@
     "fetched": {
      "Finnhub": 152,
      "Yahoo": 11,
-     "Google News": 10,
+     "Google News": 9,
      "Nasdaq": 9,
      "Seeking Alpha": 8
     }
@@ -15576,7 +15577,7 @@
     "fetched": {
      "Finnhub": 179,
      "Yahoo": 11,
-     "Google News": 21,
+     "Google News": 20,
      "Nasdaq": 0,
      "Seeking Alpha": 9
     }
@@ -15761,15 +15762,15 @@
     ],
     "fetched": {
      "Finnhub": 143,
-     "Yahoo": 0,
-     "Google News": 46,
+     "Yahoo": 10,
+     "Google News": 40,
      "Nasdaq": 13,
      "Seeking Alpha": 23
     }
    }
   },
-  "asOf": "2026-11-28T06:30:17.811Z",
-  "lastAttempt": "2026-11-28T06:30:17.811Z",
+  "asOf": "2026-11-28T07:30:11.446Z",
+  "lastAttempt": "2026-11-28T07:30:11.446Z",
   "lastError": null
  },
  "worldNews": {
@@ -15778,7 +15779,7 @@
     "hd": "A ‘Silent War’ Grips Iran as Its Economy Strains Under U.S. Blockade",
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQUZoNE5qVlVJSWdVTHRMY1R0bFBac204aUVreDhOR3NtUE4yWjBESlJMUHZoLVo0NjdrTW1kUXF5RUxDQWJfRnhrdkJpSTF5VUduMWVDaU9aVjg3N3dCTW96TDUtQV9SRE9TSEN1Um9LTm0teG9MV2hrQkhEM0RDYnhCVVgzNHhpcEJ1cnc5azMzTm10am04MTZoS2wtc19RSTNSRW5sMlBGdWhaYWNlVmhn?oc=5",
-    "pub": "2026-11-28T06:01:15.000Z",
+    "pub": "2026-11-28T07:00:33.000Z",
     "sum": ""
    },
    {
@@ -15786,6 +15787,13 @@
     "src": "WSJ",
     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWUcwQ3JjLUlNWjhSZnFuYWMzVEFGd0RMR2lZT2VmWUdBejNHckpxbWFSb0lsTUNuTzktdm9qTk94eTgxMXFRQkplOTdZZkFDSEVaUkVZcWFfb1lEMTNEVzFHd013bXhoRFU4ajZjOTB0UXFhM1FacVliRVdqcFY5dG11UURVYmFZang5ZEpaZEVCazhBMjFz?oc=5",
     "pub": "2026-11-28T05:43:52.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "US military repelled drones at UK airbase this month, FT reports",
+    "src": "Reuters",
+    "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPLVBLa19DdUlDcGg5RVY2bjFfYS1QYXJRQmE0Z1ZfNm02WmI5RnBhcEhKSGdRR01XdUJhandJSzQ0SEF5bWRlZlBUbUJPbVJLbjROSUozYnJseGhLekl6bEhTTU5tbEVQMWtCU3Z1YzJiTTZNcnBrdVNYQ3ZudHpLVFREbWhkcUNWSVQ0bHdCVUF5RU0?oc=5",
+    "pub": "2026-11-28T05:18:00.000Z",
     "sum": ""
    },
    {
@@ -15814,6 +15822,13 @@
     "src": "NDTV",
     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPaG5EbEN5SEVYSWRkSjBNNndzT2lfaTVTZFIxQTMyQTE3UUJYXzMxRGxQRXE3WEFxOE5vc3JDSy03eDEzRmpadzJXTlhwSFpMYWVrYW9FeGd5ZThoS0FXUkd3Mk00QlFidnd6a1pRYXFKaG5CeVo4Zk9YcjdaSGgxb1FGZVFHbGJMMEhXYThzZXAtSVhvM09NaGxleHczSElBWWVHTTBMNF9SUTlWUjUtQkF1MkZsQVAzR3JseVZBTlJLcmVLSDczbFJwbFdIazTSAdcBQVVfeXFMT3BwWU13N0E0cVpfRHRMeEc2WmVnNXlNSkNlSzNRd2d5bk5XQ1dWNnNqbFp6akZxYzRIM29oYWkxUXdoTWpwS2J6Wmh2cXV1Tl83RlBjTC16TlBNRk9KVUxHU3E1enNraTBJdldxRU9tVEZYV0o5STB1c3JwRnh4MU5yS25qSThwelN2c3hwbW51M254M0ZqNHJRaGFhT2VMSXZKX2tUaUJzcjJCXzZVNGdXODlTMXR2b0cxOU5yMHFXYXoxNURuZ05oLXlUMGtnS1NuZk5nVmc?oc=5",
     "pub": "2026-11-28T02:16:04.000Z",
+    "sum": ""
+   },
+   {
+    "hd": "Son of Hamas chief and his family survive Israeli airstrike, group says",
+    "src": "Sky News",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPalcySG5PbUR1bkhhNjFMd3FadXRiRzQzLXk3dzhqYkxaeTBOSXR2cUE2M3hMTXE4dG5lYmxKSFRSSGVLanNjLVZ2dWV3VnR4LWVJVjJmbHNicGlNaTFNbEVtRV9RRE4teW1EdXlsZ0Y5VXZhcmdoaE9KZXVuajdrclQ3Z05GcXlONDF1R25LWjFJTS11bEFGblpQbThJM0R6SEhDMjRBZHJBQQ?oc=5",
+    "pub": "2026-11-28T01:25:21.000Z",
     "sum": ""
    },
    {
@@ -15969,20 +15984,6 @@
     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZEM0dHUxSXo3cWdmcjh3dHVZNjFvM2JmTHVqeHRCRGNCZ1hiZjZKMXhfTXdKbVNCbUVDWGR0U185dFkzekFhWkh5ZzU3cU01elNCVWRISzBzM2dQQVpsUF91aTlxdmJzX1NTMVZ0T3NWOHEybGZpX3FlUkdCZHJlckV0aHhMWWR1NFhfQWV6UXctYkhaSTZlSUgwNVEtVWVZYnZaWWZKNHZ3SkhMbktibXV0bmRxeFhSWU5SOA?oc=5",
     "pub": "2026-11-27T16:10:00.000Z",
     "sum": ""
-   },
-   {
-    "hd": "A Ukraine loan is in limbo after EU budget talks stall. Leaders will try again in 3 weeks",
-    "src": "ABC News",
-    "url": "https://abcnews.com/International/wireStory/ukraine-loan-limbo-after-eu-budget-talks-stall-138478913",
-    "pub": "2026-11-27T15:54:17.000Z",
-    "sum": "European Council President Ant&oacute;nio Costa says European Union leaders have failed to agree on the 2028-2034 budget"
-   },
-   {
-    "hd": "Zelenskyy: Trump calling Putin a friend like calling Hitler a friend",
-    "src": "CBS News",
-    "url": "https://www.cbsnews.com/news/zelenskyy-trump-calling-putin-friend-like-hitler-viewed-friend-wwii/",
-    "pub": "2026-11-27T15:32:29.000Z",
-    "sum": "Volodymyr Zelenskyy described President Trump calling Vladimir Putin \"my friend\" as \"strange\" because the Russian leader is \"an aggressor and a killer.\""
    }
   ],
   "feeds": [
@@ -16001,8 +16002,8 @@
    "ABC News"
   ],
   "feedErrors": [],
-  "asOf": "2026-11-28T06:30:17.811Z",
-  "lastAttempt": "2026-11-28T06:30:17.811Z",
+  "asOf": "2026-11-28T07:30:11.446Z",
+  "lastAttempt": "2026-11-28T07:30:11.446Z",
   "lastError": null
  }
 }
